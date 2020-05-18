@@ -1,4 +1,6 @@
-# Getting Help
+---
+title: Getting Help
+---
 
 The best place to ask for help is the slack team: ![slack](http://slack.pact.io/badge.svg)
 

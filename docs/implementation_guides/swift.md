@@ -1,4 +1,6 @@
-# Swift
+---
+title: Swift
+---
 
 Pact for [Swift and Objective-C](https://github.com/DiUS/pact-consumer-swift) is currently targeting Pact specification v2.
 

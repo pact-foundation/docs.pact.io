@@ -1,4 +1,6 @@
-# Contributors
+---
+title: Contributors
+---
 
 ## Organizations
 

@@ -1,4 +1,6 @@
-# Provider States
+---
+title: Provider States
+---
 
 See [Provider States](../../provider/using_provider_states_effectively.md) for an introduction into this advanced topic.
 

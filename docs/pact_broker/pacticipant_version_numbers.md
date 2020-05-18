@@ -1,4 +1,6 @@
-# Pacticipant Version Numbers
+---
+title: Pacticipant Version Numbers
+---
 
 When publishing a pact or a verification, the resource is associated with a particular version of the pacticipant \(application\), which is identified by a version number. Just to make it very clear - the version number that is specified in the URL of a pact or a verification is the _application version number_, not the pact version. Pact versioning is done for you behind the scenes by the Broker, and is based on the content of the pact. On a side note, do not worry about creating too much data by publishing a pact with every build - this is the expected behaviour, and a new database row for the actual pact content is only created when the pact content changes \(so avoid random data in your pacts\).
 

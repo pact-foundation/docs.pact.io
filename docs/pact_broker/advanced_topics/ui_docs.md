@@ -1,4 +1,6 @@
-# UI documentation
+---
+title: UI documentation
+---
 
 ## Index
 

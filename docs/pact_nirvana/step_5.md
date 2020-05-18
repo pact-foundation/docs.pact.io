@@ -1,4 +1,6 @@
-## 5. Allow contracts to change without breaking your builds
+---
+title: 5. Allow contracts to change without breaking your builds
+---
 
 You now have a workflow where:
 

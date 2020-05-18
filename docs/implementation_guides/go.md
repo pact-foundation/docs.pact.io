@@ -1,4 +1,6 @@
-# Go
+---
+title: Go
+---
 
 [Pact Go](https://github.com/pact-foundation/pact-go/) currently supports Pact Specification v2, head over to the [website](https://github.com/pact-foundation/pact-go/) to get started.
 

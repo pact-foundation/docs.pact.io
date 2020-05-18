@@ -1,4 +1,6 @@
-# Handling authentication and authorization
+---
+title: Handling authentication and authorization
+---
 
 There are a few options for handling authentication and authorization during the verification step. When making your decision, it's best to be pragmatic rather than idealistic, and just make sure that you've tested your authentication and authorization integration code _somewhere_ rather than insisting that it has to be in a certain place.
 

@@ -1,8 +1,8 @@
 ---
+title: Javascript
 description: Getting started with Pact JS
 ---
 
-# Javascript
 
 [Pact JS](https://github.com/pact-foundation/pact-js) is currently compliant to Pact Specification Version 2.0.
 

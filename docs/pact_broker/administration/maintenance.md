@@ -1,4 +1,6 @@
-# Maintenance
+---
+title: Maintenance
+---
 
 ## Deleting old data
 

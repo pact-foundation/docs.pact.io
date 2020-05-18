@@ -1,4 +1,6 @@
-# Planned breaking changes in version 3.0
+---
+title: Planned breaking changes in version 3.0
+---
 
 * Removal of deprecated relations without a pb
 * Change to date ordering

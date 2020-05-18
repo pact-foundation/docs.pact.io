@@ -1,4 +1,6 @@
-# Administration
+---
+title: Administration
+---
 
 The Pact Broker exposes its API using a HAL browser. The HAL Browser is a Javascript REST client that allows you to navigate through HAL hypermedia responses in a way similar to following links in HTML pages in a normal web browser.
 

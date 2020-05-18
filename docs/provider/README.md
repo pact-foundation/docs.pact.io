@@ -1,4 +1,6 @@
-# Verifying Pacts
+---
+title: Verifying Pacts
+---
 
 ## Ensure that the latest pact is being verified
 

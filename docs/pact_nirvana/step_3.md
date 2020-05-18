@@ -1,4 +1,6 @@
-## 3. Write and verify a real Pact
+---
+title: 3. Write and verify a real Pact
+---
 
 The hardest thing about setting up Pact in any company is getting buy in from all the teams. Everyone needs to be on the same page to make Pact work.
 

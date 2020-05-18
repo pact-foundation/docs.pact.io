@@ -1,8 +1,8 @@
 ---
+title: Introduction
 description: Fast and reliable testing for your APIs and microservices during development. Safety during deployment.
 ---
 
-# Introduction
 
 ![](.gitbook/assets/pact-logo.png)
 

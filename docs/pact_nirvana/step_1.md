@@ -1,4 +1,6 @@
-## 1. Talk
+---
+title: 1. Talk
+---
 
 Contracts are not a replacement for good communication between or within teams. In fact, contracts require collaboration and communication. One could make the argument that this is one of the main reasons to leverage Pact and enforce communication pathways in large internal and external development organizations.
 

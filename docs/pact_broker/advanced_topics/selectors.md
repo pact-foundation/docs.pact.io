@@ -1,4 +1,6 @@
-# Understanding pacticipant version selectors
+---
+title: Understanding pacticipant version selectors
+---
 
 Selectors are the way we specify which pacticipants and versions we want to use when configuring verifications or querying the matrix. The best way to understand them is to imagine that we start with a Matrix table that contains the pacts/verification results for every consumer and provider in the Pact Broker.
 

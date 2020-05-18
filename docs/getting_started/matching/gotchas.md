@@ -1,4 +1,6 @@
-# Gotchas
+---
+title: Gotchas
+---
 
 ## Pact follows [Postel's law](https://en.wikipedia.org/wiki/Robustness_principle)
 

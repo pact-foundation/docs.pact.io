@@ -1,4 +1,6 @@
-# Configuration
+---
+title: Configuration
+---
 
 ## Menu
 

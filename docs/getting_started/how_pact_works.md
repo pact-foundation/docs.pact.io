@@ -1,4 +1,6 @@
-# How Pact works
+---
+title: How Pact works
+---
 
 Remember these definitions from the [introduction](../):
 

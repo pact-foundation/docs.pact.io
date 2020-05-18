@@ -1,4 +1,6 @@
-# How Pact Works
+---
+title: How Pact Works
+---
 
 ## The problem with integration tests
 

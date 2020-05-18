@@ -1,4 +1,6 @@
-# Using provider states effectively
+---
+title: Using provider states effectively
+---
 
 The purpose of contract testing is to ensure that the consumer and provider have a shared understanding of the messages that will pass between them. When we verify a pact, we are not only ensuring that the provider returns the expected data to the consumer, we are also verifying that the consumer is calling the API correctly.
 

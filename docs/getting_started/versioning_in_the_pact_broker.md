@@ -1,4 +1,6 @@
-# Versioning in the Pact Broker
+---
+title: Versioning in the Pact Broker
+---
 
 ## Versioning in the Pact broker
 

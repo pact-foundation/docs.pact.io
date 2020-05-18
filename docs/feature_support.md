@@ -1,4 +1,6 @@
-# Feature support
+---
+title: Feature support
+---
 
 There are multiple implementations of Pact, and while we try to keep feature parity between them, some implementations are ahead of others in terms of feature support.
 

@@ -1,4 +1,6 @@
-# Question archive
+---
+title: Question archive
+---
 
 Some less commonly, but no less importantly, asked questions.
 

@@ -1,2 +1,4 @@
-# Advanced Topics
+---
+title: Advanced Topics
+---
 

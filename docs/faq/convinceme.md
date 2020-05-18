@@ -1,8 +1,8 @@
 ---
+title: Convince me
 description: How to convince your team, your boss or yourself that Contract Testing is a good idea
 ---
 
-# Convince me
 
 The main thing that any organisation cares about when it comes to software development is cost. When building a product, your time is probably the biggest cost to an organisation. One of the other significant costs is compute resources \(eg. cloud provider, private data centre\). While there will be initial overhead in learning how to use contract tests and integrating them into your build pipeline, using contract tests in conjunction with \(or as a replacement for\) traditional end-to-end integration tests will be cheaper in the long run, for several reasons.
 

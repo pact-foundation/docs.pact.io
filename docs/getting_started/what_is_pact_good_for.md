@@ -1,4 +1,6 @@
-# What is Pact good for?
+---
+title: What is Pact good for?
+---
 
 ## What is Pact good for?
 

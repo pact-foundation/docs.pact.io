@@ -1,4 +1,6 @@
-# Deleting resources
+---
+title: Deleting resources
+---
 
 All resources can be deleted by sending an HTTP Delete request to the resource URL. The easiest way is to do that using the embedded API Browser, which you can get to by clicking the "API Browser" link on the Pact Broker index page.
 

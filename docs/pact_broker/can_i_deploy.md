@@ -1,8 +1,8 @@
 ---
+title: Can I Deploy
 description: How to use Pact + the can-i-deploy tool to ensure that you are safe to deploy your application.
 ---
 
-# Can I Deploy
 
 Before you deploy a new version of an application to a production environment, you need to know whether or not the version you're about to deploy is compatible with the versions of the other apps that already exist in that environment. The old-fashioned way of managing these dependencies involved deploying sets of pre-tested applications together, creating a bottleneck, and meaning that speedy development and testing on one application may be negated by slow development and testing on another.
 

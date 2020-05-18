@@ -1,4 +1,6 @@
-# History
+---
+title: History
+---
 
 Pact was originally written by a development team \(including Ron Holshausen from DiUS\) at realestate.com.au in 2013. They were trying to solve the problem of how to do integration testing for their new Ruby microservices architecture, and they threw together a codebase that was to become the first Pact implementation. As the team was writing Ruby microservices, the serialisation of the "matching logic" \(e.g. regular expressions\) was done using Ruby specific code. The team was under the pump to finish their actual customer deliverable, so they got their Pact MVP working, and left it at that.
 

@@ -1,8 +1,8 @@
 ---
+title: 5 minute guide
 description: From zero to running Pact tests in 5 mins
 ---
 
-# 5 minute guide
 
 This getting started guide runs purely in the browser, with the intention to get you across the key concepts quickly. As we go through, there will be code snippets to demonstrate concepts. These are not runnable, but are there to assist with explanation. When there is code to run, you will be presented with a REPL as per below. Simply hit the green ▶ button, and the output will be displayed in the terminal below. Give it a shot now:
 

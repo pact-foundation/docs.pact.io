@@ -1,4 +1,6 @@
-# Community videos and articles
+---
+title: Community videos and articles
+---
 
 Check out the official Pact blog at [blog.pact.io](http://blog.pact.io)
 

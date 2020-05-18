@@ -1,4 +1,6 @@
-# Python
+---
+title: Python
+---
 
 [Pact Python](https://github.com/pact-foundation/pact-python/) is currently in active development and supports Pact Specification v2, [pending pacts][pending], and [WIP pacts][wip].
 

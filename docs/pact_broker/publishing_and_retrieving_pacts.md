@@ -1,4 +1,6 @@
-# Publishing and retrieving pacts
+---
+title: Publishing and retrieving pacts
+---
 
 ## Publishing
 

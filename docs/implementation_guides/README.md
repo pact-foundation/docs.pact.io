@@ -1,4 +1,6 @@
-# Implementation guides
+---
+title: Implementation guides
+---
 
 ## Pact workshops - from 0 to Pact in ~2 hours
 

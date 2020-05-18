@@ -1,4 +1,6 @@
-# JVM
+---
+title: JVM
+---
 
 [Pact JVM](https://github.com/DiUS/pact-jvm) is currently compliant to Pact Specification Version 2.0, and implements some non-standard features coming in 3.0.
 

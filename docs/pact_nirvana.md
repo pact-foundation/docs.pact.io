@@ -1,4 +1,6 @@
-# Effective Pact Setup Guide
+---
+title: Effective Pact Setup Guide
+---
 
 Or _"The steps for reaching Pact Nirvana"_
 

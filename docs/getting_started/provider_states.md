@@ -1,4 +1,6 @@
-# Provider states
+---
+title: Provider states
+---
 
 Each interaction in a pact should be verified in isolation, with no context maintained from the previous interactions. Tests that depend on the outcome of previous tests are brittle and land you back in integration test hell, which is the nasty place you're trying to escape by using pacts.
 

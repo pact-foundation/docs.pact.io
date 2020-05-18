@@ -1,4 +1,6 @@
-# Who's using Pact?
+---
+title: Who's using Pact?
+---
 
 Here are some of the companies who use Pact to make testing their microservices easier:
 

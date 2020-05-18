@@ -1,4 +1,6 @@
-# Create a network graph
+---
+title: Create a network graph
+---
 
 Due to the naivety of the layout logic for the network graphs, trying to graph all the applications in one diagram using the current layout would not scale very well. We recommend pulling the data out of the broker and using something like graphviz to visualise the relationships. Here is an example of pulling out the data from the DiUS hosted test Broker.
 

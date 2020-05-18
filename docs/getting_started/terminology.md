@@ -1,4 +1,6 @@
-# Terminology
+---
+title: Terminology
+---
 
 ## Service Consumer
 

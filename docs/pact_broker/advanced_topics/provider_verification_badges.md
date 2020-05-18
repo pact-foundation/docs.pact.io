@@ -1,4 +1,6 @@
-# Provider verification badges
+---
+title: Provider verification badges
+---
 
 _See the the_ [_Badges_](../configuration.md#Badges) _section of the configuration page for information about accessing the badges._
 

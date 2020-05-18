@@ -1,8 +1,8 @@
 ---
+title: Terraform Provider
 description: Automating Pact Broker with Terraform
 ---
 
-# Terraform Provider
 
 If infrastructure as code is your thing, we have created a Terraform provider to automate some aspects of your Pact Broker setup.
 

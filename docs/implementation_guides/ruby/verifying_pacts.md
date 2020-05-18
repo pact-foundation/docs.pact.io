@@ -1,4 +1,6 @@
-# Verifying Pacts
+---
+title: Verifying Pacts
+---
 
 See [Verifying Pacts](../../getting_started/verifying_pacts.md) for an introduction into this topic.
 

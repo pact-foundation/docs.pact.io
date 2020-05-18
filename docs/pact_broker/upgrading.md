@@ -1,4 +1,6 @@
-# Upgrading
+---
+title: Upgrading
+---
 
 ## Pact Broker versions &gt;= 2.1.0
 

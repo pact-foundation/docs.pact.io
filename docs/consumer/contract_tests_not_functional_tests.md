@@ -1,4 +1,6 @@
-# Contract Tests vs Functional Tests
+---
+title: Contract Tests vs Functional Tests
+---
 
 Contract tests focus on the messages that flow between a consumer and provider, while functional tests also ensure that the correct side effects have occured. For example, imagine an endpoint for a collection of `/orders` that accepts a `POST` request to create a new order. A contract test would ensure that the consumer and provider had a shared and accurate understanding of the request and response required to create an order, while a functional test for the provider would ensure that when a given request was made, that an `Order` with the correct attributes was actually persisted to the underlying datastore. A contract test _does not check for side effects_.
 

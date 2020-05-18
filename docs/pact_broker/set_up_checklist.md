@@ -1,4 +1,6 @@
-# Set up Checklist
+---
+title: Set up Checklist
+---
 
 This is a high level check list of things that need to be done when setting up an integration to be tested with Pact using the Pact Broker. As there are many Pact implementations in different languages, you will need to consult the documentation for your language to find out how to implement each step. See the [Effect Pact Setup Guide](https://github.com/pact-foundation/pact.io/tree/4e7977105280cf22c19aecfe6aab25b6f6bfbe79/best_practices/pact_nirvana/README.md) for an in depth explanation of the purpose of each step.
 

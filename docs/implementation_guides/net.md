@@ -1,4 +1,6 @@
-# .NET
+---
+title: .NET
+---
 
 PactNet is currently compliant to Pact Specification Version 2.0.
 

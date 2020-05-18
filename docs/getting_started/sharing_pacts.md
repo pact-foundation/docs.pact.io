@@ -1,4 +1,6 @@
-# Sharing Pacts with the Pact Broker
+---
+title: Sharing Pacts with the Pact Broker
+---
 
 The consumer CI generates pact files during the execution of its isolated tests. The provider CI generates verification results during the execution of its isolated tests. These artifacts need to be shared between the projects.
 

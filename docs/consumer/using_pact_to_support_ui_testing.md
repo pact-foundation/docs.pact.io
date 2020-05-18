@@ -1,4 +1,6 @@
-# Using Pact to support UI testing
+---
+title: Using Pact to support UI testing
+---
 
 While we don't recommend you generate pacts from your UI tests, you can use Pact to support your UI testing using one of a few approaches.
 

@@ -1,4 +1,6 @@
-# Pacticipants
+---
+title: Pacticipants
+---
 
 Allowed methods: GET, PATCH, DELETE
 

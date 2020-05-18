@@ -1,4 +1,6 @@
-# Contributing
+---
+title: Contributing
+---
 
 We encourage contribution to any of our libraries, if you see something that should be fixed, simply do the following:
 

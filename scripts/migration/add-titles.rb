@@ -7,7 +7,11 @@ ARGV.each do | path |
   heading_index = lines.find_index { | line | line.start_with?('#') }
   if heading_index
     title = lines.delete_at(heading_index).gsub(/^#+/, '').strip
-    lines = ["---\n", "title: #{title}\n", "---\n"] + lines
+    if lines.first.start_with?('---')
+      lines.insert(1, "title: #{title}\n")
+    else
+      lines = ["---\n", "title: #{title}\n", "---\n"] + lines
+    end
 
     if ENV['DRY_RUN'] == 'true'
       # puts lines.join

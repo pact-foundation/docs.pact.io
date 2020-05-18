@@ -1,6 +1,6 @@
 ---
+title: Getting Started
 description: Pact Guide
 ---
 
-# Getting Started
 

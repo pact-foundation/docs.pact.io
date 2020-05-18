@@ -1,4 +1,6 @@
-# Table of contents
+---
+title: Table of contents
+---
 
 * [Introduction](README.md)
 * [5 minute guide](5-minute-getting-started-guide.md)

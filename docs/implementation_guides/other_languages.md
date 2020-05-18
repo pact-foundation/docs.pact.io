@@ -1,4 +1,6 @@
-# Other Languages
+---
+title: Other Languages
+---
 
 For `Providers` written in languages that don't have native Pact support, you can still verify that they satisfy their Pacts, using the generic [Pact Provider Verification tool](https://github.com/pact-foundation/pact-provider-verifier).
 

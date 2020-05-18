@@ -1,4 +1,6 @@
-# Further reading
+---
+title: Further reading
+---
 
 ## Talks and Presentations
 

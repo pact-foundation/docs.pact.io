@@ -1,4 +1,6 @@
-# Verifying Pacts
+---
+title: Verifying Pacts
+---
 
 "Verifying a pact" is the second step of the Pact testing process. Each request in the pact file is replayed against the provider, and the response is compared with the expected response in the pact file. If the two match, then we know the consumer and provider are compatible.
 

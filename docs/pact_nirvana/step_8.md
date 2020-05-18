@@ -1,4 +1,6 @@
-## 8. Prevent missing verifications
+---
+title: 8. Prevent missing verifications
+---
 
 Step 7 means that you can now know that the production provider has successfully verified the pact from the consumer version you’re about to deploy. However, in some cases, the production version of the provider may never have run a CI against your candidate pact, because your candidate consumer pact may not have existed when the CI for that provider version was run.
 

@@ -1,4 +1,6 @@
-## 6. Ensure backwards compatiblity between the latest provider and production consumer
+---
+title: 6. Ensure backwards compatiblity between the latest provider and production consumer
+---
 
 It's all very well knowing that your consumer/provider are compatible with the head versions of each other, but if you want to be able to deploy your consumer and provider independently, you also need to be sure that the latest version of the provider is compatible with the production version of the consumer. The ability to do this is a major selling point of Pact.
 

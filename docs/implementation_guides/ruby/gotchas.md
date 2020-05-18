@@ -1,4 +1,6 @@
-# Gotchas
+---
+title: Gotchas
+---
 
 ## VCR
 

@@ -1,4 +1,6 @@
-## 4. Automate the contract and verification results exchange
+---
+title: 4. Automate the contract and verification results exchange
+---
 
 Now you have two different sets of tests in two different codebases. The artifacts that tie these tests together are the Pact file, and the verification results. The next step is to automate the exchange of these artifacts.
 

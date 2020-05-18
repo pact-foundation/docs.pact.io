@@ -1,4 +1,6 @@
-# Matching
+---
+title: Matching
+---
 
 This section describes the various request/response matching techniques available in your `Consumer` tests. Note the examples below demonstrate use of the Ruby DSL, please refer to your particular language and framework as implementations differ.
 

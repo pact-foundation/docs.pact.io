@@ -1,4 +1,6 @@
-# Overview
+---
+title: Overview
+---
 
 The Pact Broker is a service that supports contract testing by enabling the exchange of pacts and verification results.
 

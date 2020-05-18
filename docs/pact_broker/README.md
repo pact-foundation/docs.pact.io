@@ -1,4 +1,6 @@
-# Pact Broker
+---
+title: Pact Broker
+---
 
 ## Pact Broker
 

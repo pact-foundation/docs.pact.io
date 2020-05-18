@@ -1,4 +1,6 @@
-# Work In Progress pacts
+---
+title: Work In Progress pacts
+---
 
 A "work in progress" pact is a pact that is the latest for its tag \(eg. `/pacts/provider/Foo/consumer/Bar/latest/feat-x`\) that does not have any successful verification results.
 

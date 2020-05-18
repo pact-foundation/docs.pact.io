@@ -1,4 +1,6 @@
-# How to see what has changed in a pact
+---
+title: How to see what has changed in a pact
+---
 
 To see the most recent change to a pact \(eg. to determine why a provider verification has failed\):
 

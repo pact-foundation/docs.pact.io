@@ -1,4 +1,6 @@
-# Local API stubs
+---
+title: Local API stubs
+---
 
 Pact contracts are easily turned into locally running API stubs. Pact contracts lack advanced features such as predicates that you might find in tools like [mountebank](http://www.mbtest.org/), however they are useful for many situations - such as e2e tests with tools like Protractor and Karma.
 

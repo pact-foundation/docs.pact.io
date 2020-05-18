@@ -1,4 +1,6 @@
-## 7. Use The Pact "Matrix" as a gateway to deployments
+---
+title: 7. Use The Pact "Matrix" as a gateway to deployments
+---
 
 Before you deploy to a production environment, you need to know whether or not your app is compatible with the versions of the other apps that already exist in that environment. The old-fashioned way of managing these dependencies involved deploying sets of pre-tested applications together, creating a bottleneck and meaning that speedy development and testing on one application may be negated by slow development and testing on another.
 
