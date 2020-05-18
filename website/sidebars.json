@@ -1,10 +1,58 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
+    "Introduction": [
+      "README"
+    ],
+    "5 minute guide": [
+      "5-minute-getting-started-guide"
+    ],
+    "Getting Started": [
+      "getting_started/README"
+    ],
+    "Implementation guides": [
+      "implementation_guides/README"
+    ],
+    "Writing Consumer tests": [
+      "consumer/README"
+    ],
+    "Verifying Pacts": [
+      "provider/README"
+    ],
+    "Effective Pact Setup Guide": [
+      "pact_nirvana"
+    ],
+    "Feature support": [
+      "feature_support"
+    ],
+    "Pact Broker": [
+      "pact_broker/README"
+    ],
+    "Docker": [
+      "docker"
+    ],
+    "FAQ": [
+      "faq/README"
+    ],
+    "Getting Help": [
+      "getting_help"
+    ],
+    "Contributing": [
+      "contributing/README"
+    ],
+    "History": [
+      "history"
+    ],
+    "Who": [
+      "testimonials"
+    ],
+    "Community videos and articles": [
+      "blogs_videos_and_articles"
+    ]
   },
   "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "First Category": [
+      "doc4",
+      "doc5"
+    ]
   }
 }
