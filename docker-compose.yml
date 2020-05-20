@@ -15,6 +15,4 @@ services:
       - ./website/static:/app/website/static
       - ./website/sidebars.json:/app/website/sidebars.json
       - ./website/siteConfig.js:/app/website/siteConfig.js
-      - ./scripts/build.sh:/app/scripts/build.sh
-    entrypoint: /bin/sh
-    command: ["-c", "cd /app/website; npm install; npm run build;"]
+    working_dir: /app/website
