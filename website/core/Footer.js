@@ -53,14 +53,16 @@ class Footer extends React.Component {
               User Showcase
             </a>
             <a
-              href="https://stackoverflow.com/questions/tagged/"
+              href="https://stackoverflow.com/questions/tagged/pact"
               target="_blank"
               rel="noreferrer noopener">
               Stack Overflow
             </a>
-            <a href="https://discordapp.com/">Project Chat</a>
+
+            <a href="https://slack.pact.io">Join the Pact Slack workspace</a>
+            <a href="https://pact-foundation.slack.com">Pact Slack Workspace</a>
             <a
-              href="https://twitter.com/"
+              href="https://twitter.com/pact_up"
               target="_blank"
               rel="noreferrer noopener">
               Twitter
@@ -68,18 +70,8 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
-            <a
-              className="github-button"
-              href={this.props.config.repoUrl}
-              data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
-              data-show-count="true"
-              data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star this project on GitHub">
-              Star
-            </a>
+            <a href="https://blog.pact.io">Blog</a>
+            <a href="https://github.com/pact-foundation">GitHub</a>
             {this.props.config.twitterUsername && (
               <div className="social">
                 <a

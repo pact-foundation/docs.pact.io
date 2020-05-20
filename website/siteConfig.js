@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: 'Pact', // Title for your website.
-  tagline: 'Fast and reliable testing for your APIs and microservices during development. Safety during deployment.',
+  tagline: 'Test your integrations quickly. Deploy your apps safely.',
   url: 'https://inspiring-panini-26eb5e.netlify.app', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -105,6 +105,10 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
     repoUrl: 'https://github.com/pact-foundation/docs.pact.io',
+
+  editUrl: 'https://github.com/pact-foundation/docs.pact.io/blob/master/docs/',
+
+  twitterUsername: '@pact_up'
 };
 
 module.exports = siteConfig;

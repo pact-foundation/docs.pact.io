@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/consumer/contract_tests_not_functional_tests"
+  to = "/docs/consumer/contract_tests_not_functional_tests"
+  status = 301
