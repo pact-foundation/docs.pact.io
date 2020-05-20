@@ -104,9 +104,10 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-    repoUrl: 'https://github.com/pact-foundation/docs.pact.io',
+  repoUrl: 'https://github.com/pact-foundation/docs.pact.io',
 
   editUrl: 'https://github.com/pact-foundation/docs.pact.io/blob/master/docs/',
+  docsUrl: '',
 
   twitterUsername: '@pact_up'
 };
