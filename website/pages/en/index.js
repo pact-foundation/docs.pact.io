@@ -64,9 +64,7 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle tagline={siteConfig.tagline} title={siteConfig.title} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href={docUrl('5-minute-getting-started-guide')}>Try It Out</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -96,8 +94,12 @@ class Index extends React.Component {
       <div
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
+        <h2>Features</h2>
+        <ul>
+          <li>Support for most of the common web development languages (Javascript, JVM, .Net, Ruby, Python, Golang and more)</li>
+          <li>Supports HTTP and messaging integrations</li>
+          <li>Integrates into your CI/CD pipeline</li>
+        </ul>
       </div>
     );
 
@@ -149,16 +151,22 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'This is the content of my feature',
+            content: 'Test your integrations without having to deploy',
             image: `${baseUrl}img/undraw_react.svg`,
             imageAlign: 'top',
-            title: 'Feature One',
+            title: 'Get feedback fast',
           },
           {
-            content: 'The content of my second feature',
+            content: 'Reduce the time spent on traditional integration tests',
             image: `${baseUrl}img/undraw_operating_system.svg`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'Ship code more quickly',
+          },
+          {
+            content: 'Know that you\'re compatible before you deploy',
+            image: `${baseUrl}img/undraw_note_list.svg`,
+            imageAlign: 'top',
+            title: 'Deploy with confidence',
           },
         ]}
       </Block>
@@ -185,7 +193,7 @@ class Index extends React.Component {
           <p>This project is used by all these people</p>
           <div className="logos">{showcase}</div>
           <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
+            <a className="button" href={pageUrl('users')}>
               More {siteConfig.title} Users
             </a>
           </div>
@@ -199,7 +207,6 @@ class Index extends React.Component {
         <div className="mainContainer">
           <Features />
           <FeatureCallout />
-          <LearnHow />
           <TryOut />
           <Description />
           <Showcase />
