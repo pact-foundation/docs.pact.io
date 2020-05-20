@@ -27,11 +27,11 @@ function Help(props) {
       title: 'Browse Docs',
     },
     {
-      content: 'Ask questions about the documentation and project',
-      title: 'Join the community',
+      content: 'Ask questions about the documentation and project. You can join [here](https://slack.pact.io).',
+      title: 'Join the Pact Slack community',
     },
     {
-      content: "Find out what's new with this project",
+      content: "Find out what's new with this project by reading our [blog](http://blog.pact.io)",
       title: 'Stay up to date',
     },
   ];
