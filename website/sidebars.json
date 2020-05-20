@@ -24,16 +24,6 @@
     "getting_started/sharing_pacts",
     "getting_started/versioning_in_the_pact_broker",
     "getting_started/stubs",
-    "getting_started/further_reading",
-    "getting_started/how_pact_works",
-    "getting_started/what_is_pact_good_for",
-    "getting_started/terminology",
-    "getting_started/matching/README",
-    "getting_started/verifying_pacts",
-    "getting_started/provider_states",
-    "getting_started/sharing_pacts",
-    "getting_started/versioning_in_the_pact_broker",
-    "getting_started/stubs",
     "getting_started/further_reading"
   ],
   "Implementation guides": [
@@ -56,41 +46,20 @@
     "implementation_guides/python",
     "implementation_guides/swift",
     "implementation_guides/php",
-    "implementation_guides/other_languages",
-    "implementation_guides/ruby/README",
-    "implementation_guides/jvm",
-    "implementation_guides/net",
-    "implementation_guides/javascript",
-    "implementation_guides/go",
-    "implementation_guides/python",
-    "implementation_guides/swift",
-    "implementation_guides/php",
     "implementation_guides/other_languages"
   ],
   "Writing Consumer tests": [
     "consumer/README",
-    "consumer/contract_tests_not_functional_tests",
-    "consumer/using_pact_to_support_ui_testing",
     "consumer/contract_tests_not_functional_tests",
     "consumer/using_pact_to_support_ui_testing"
   ],
   "Verifying Pacts": [
     "provider/README",
     "provider/using_provider_states_effectively",
-    "provider/handling_auth",
-    "provider/using_provider_states_effectively",
     "provider/handling_auth"
   ],
   "Effective Pact Setup Guide": [
     "pact_nirvana",
-    "pact_nirvana/step_1",
-    "pact_nirvana/step_2",
-    "pact_nirvana/step_3",
-    "pact_nirvana/step_4",
-    "pact_nirvana/step_5",
-    "pact_nirvana/step_6",
-    "pact_nirvana/step_7",
-    "pact_nirvana/step_8",
     "pact_nirvana/step_1",
     "pact_nirvana/step_2",
     "pact_nirvana/step_3",
@@ -143,18 +112,6 @@
     "pact_broker/upgrading",
     "pact_broker/breaking_changes",
     "pact_broker/network_graph",
-    "pact_broker/terraform-provider",
-    "pact_broker/overview",
-    "pact_broker/pacticipant_version_numbers",
-    "pact_broker/publishing_and_retrieving_pacts",
-    "pact_broker/can_i_deploy",
-    "pact_broker/set_up_checklist",
-    "pact_broker/advanced_topics/README",
-    "pact_broker/administration/README",
-    "pact_broker/configuration",
-    "pact_broker/upgrading",
-    "pact_broker/breaking_changes",
-    "pact_broker/network_graph",
     "pact_broker/terraform-provider"
   ],
   "Docker": [
@@ -163,8 +120,6 @@
   "FAQ": [
     "faq/README",
     "faq/convinceme",
-    "faq/question_archive",
-    "faq/convinceme",
     "faq/question_archive"
   ],
   "Getting Help": [
@@ -172,7 +127,6 @@
   ],
   "Contributing": [
     "contributing/README",
-    "contributing/contributors",
     "contributing/contributors"
   ],
   "History": [

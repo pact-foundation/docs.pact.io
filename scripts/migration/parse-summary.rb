@@ -78,12 +78,8 @@ structure.each do | key, value |
   sidebars[key.text] = [key.href]
 
   value.each do | link, children |
-
     if children.any?
       child_links = [link.href] + children.keys.collect{ |link| link.href }
-
-
-
       sidebars[key.text] << {
         "type" => "subcategory",
         "label" => link.text,
@@ -92,23 +88,14 @@ structure.each do | key, value |
     else
       sidebars[key.text] << link.href
     end
-
   end
 
-  children_have_children = value.values.any?(&:any?)
-  hrefs = value.keys.collect(&:href)
+  # children_have_children = value.values.any?(&:any?)
+  # hrefs = value.keys.collect(&:href)
 
-  sidebars[key.text].concat(hrefs)
+  # sidebars[key.text].concat(hrefs)
 
-  # if children_have_children
-  #   child_links = value.keys.collect{ |link| link.href }
 
-  #   sidebars[key.text] << {
-  #     "type" => "subcategory",
-  #     "label" => "something",
-  #     "ids" => child_links
-  #   }
-  # end
 end
 
 puts JSON.pretty_generate(sidebars)
