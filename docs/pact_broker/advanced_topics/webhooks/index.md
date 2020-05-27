@@ -1,6 +1,8 @@
-# Webhooks
+---
+title: Webhooks
+---
 
-## Webhooks
+## Introduction
 
 Webhooks allow you to trigger an HTTP request when a pact is changed, a pact is published, or a verification is published. The most common use case for webhooks is to trigger a provider build every time a pact changes, and to trigger a consumer build every time a verification is published.
 

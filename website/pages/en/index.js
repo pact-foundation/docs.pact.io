@@ -180,7 +180,7 @@ class Index extends React.Component {
       const showcase = siteConfig.users
         .filter(user => user.pinned)
         .map(user => (
-          <a href={user.infoLink} key={user.infoLink}>
+          <a href={user.infoLink} key={user.caption}>
             <img src={user.image} alt={user.caption} title={user.caption} />
           </a>
         ));

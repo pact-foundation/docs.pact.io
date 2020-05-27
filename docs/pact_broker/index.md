@@ -1,18 +1,16 @@
 ---
-title: Pact Broker
+title: Introduction
 ---
-
-## Pact Broker
 
 The Pact Broker is an application for sharing for consumer driven contracts and verification results. It is optimised for use with "pacts" \(contracts created by the [Pact](http://docs.pact.io) framework\), but can be used for any type of contract that can be serialized to JSON.
 
-{% hint style="info" %}
-**Quick Start**
 
-The Pact Broker is an open source tool that requires you to deploy, administer and host it yourself. If you would prefer a plug-and-play option, we've created [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=pact_broker), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
+> **Quick Start**
+>
+> The Pact Broker is an open source tool that requires you to deploy, administer and host it yourself. If you would prefer a plug-and-play option, we've created [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=pact_broker), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
+>
+> Get started for free on our [Developer Plan](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=pact_broker_dev_plan).
 
-Get started for free on our [Developer Plan](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=pact_broker_dev_plan).
-{% endhint %}
 
 **Why do I need one?**
 

@@ -20,7 +20,7 @@ Refer to the configuration documentation for your Pact implementation language f
 
 ## Using a language that is not Pact-native?
 
-If you are using a language that doesn't provide native support for verification, you can still verify the Provider API! Check out the [provider verifier](https://github.com/DiUS/pact-provider-verifier-docker) command line tool.
+If you are using a language that doesn't provide native support for verification, you can still verify the Provider API! Check out the [verify](https://hub.docker.com/r/pactfoundation/pact-cli) command line tool.
 
 ### Using Docker?
 

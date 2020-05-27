@@ -1,4 +1,6 @@
-# API documentation
+---
+title: API documentation
+---
 
 This documentation and more can be found in the HAL browser \(`/hal-browser/browser.html`\) of any running pact broker. To view it, in the links section, click on the docs link \(the book icon\) next to the endpoint you wish to know about.
 

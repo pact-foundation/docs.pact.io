@@ -3,24 +3,18 @@ title: Introduction
 description: Fast and reliable testing for your APIs and microservices during development. Safety during deployment.
 ---
 
-
-![](.gitbook/assets/pact-logo.png)
-
-## Introduction
-
 Pact is a code-first tool for testing HTTP and message integrations using `contract tests`. Contract tests assert that inter-application messages conform to a shared understanding that is documented in a contract. Without contract testing, the only way to ensure that applications will work correctly together is by using expensive and brittle integration tests.
 
 Do you [set your house on fire to test your smoke alarm?](https://dius.com.au/2014/05/19/simplifying-micro-service-testing-with-pacts/) No, you test the contract it holds with your ears by using the testing button. Pact provides that testing button for your code, allowing you to safely confirm that your applications will work together without having to deploy the world first.
 
-{% hint style="info" %}
+
 To view an animated step-by-step explanation of how Pact works, check out this page at [pactflow.io](https://pactflow.io/how-pact-works/?utm_source=ossdocs&utm_campaign=intro_animation)
-{% endhint %}
 
-![](.gitbook/assets/how-pact-works-preview.gif)
+![](/img/how-pact-works-preview.gif)
 
-{% hint style="success" %}
-Ready to jump into the code already? Get started with our [5 minute guide](5-minute-getting-started-guide.md).
-{% endhint %}
+
+> Ready to jump into the code already? Get started with our [5 minute guide](5-minute-getting-started-guide.md).
+
 
 ### What is contract testing?
 

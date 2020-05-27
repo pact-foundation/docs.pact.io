@@ -1,5 +1,6 @@
 ---
 title: Effective Pact Setup Guide
+sidebar_label: Introduction
 ---
 
 Or _"The steps for reaching Pact Nirvana"_

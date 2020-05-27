@@ -8,13 +8,13 @@ The [Pact Broker](https://github.com/pact-foundation/pact_broker) is a service t
 
 While you can use Pact without a Pact Broker, using one allows you to get the most out of Pact. Without the Broker, you will have to work out how to create your own feedback loop that lets you know the results of the pact verifications, and your pacts will not enable to you release your services independently and safely using the `can-i-deploy` tool \(more on this later\).
 
-{% hint style="info" %}
-**Quick Start**
 
-The Pact Broker is an open source tool that requires you to deploy, administer and host it yourself. If you would prefer a plug-and-play option, we've created [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=effective_pact_setup), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
+> **Quick Start**
+>
+> The Pact Broker is an open source tool that requires you to deploy, administer and host it yourself. If you would prefer a plug-and-play option, we've created [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=effective_pact_setup), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
+>
+> Get started for free on our Developer Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=effective_pact_setup_dev_plan).
 
-Get started for free on our [Developer Plan](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=effective_pact_setup_dev_plan).
-{% endhint %}
 
 ### A. Set up a Pact Broker
 
@@ -25,9 +25,7 @@ Get started for free on our [Developer Plan](https://pactflow.io/pricing/?utm_so
 
 Before setting up Pact in your own environment, it can help to have an idea of what a working pipeline might look like. Completing the [Pact CI/CD workshop](https://github.com/pactflow/ci-cd-workshop) will give you a good understanding of how the Pact client libaries interact with the Pact Broker and where these interactions fit into your release pipeline.
 
-{% hint style="warning" %}
-Note that if you are using your own instance of the open source Pact Broker, it does not support secrets, and it does not have a user interface for managing webhooks. You'll need to use the API to create the webhook, and your Travis CI token will have to be stored in plain text in the webhook.
-{% endhint %}
+> Note that if you are using your own instance of the open source Pact Broker, it does not support secrets, and it does not have a user interface for managing webhooks. You'll need to use the API to create the webhook, and your Travis CI token will have to be stored in plain text in the webhook.
 
 ### C. Configure pact publication
 

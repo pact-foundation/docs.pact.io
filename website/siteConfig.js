@@ -131,8 +131,10 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'README', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
+    {doc: 'getting_started/index', label: 'Getting started'},
+    { doc: 'consumer/index', label: 'Guides'},
+    { doc: 'implementation_guides/workshops', label: 'Docs'},
+    { doc: 'history', label: 'Resources'},
     {page: 'help', label: 'Help'}
   ],
 
@@ -201,7 +203,8 @@ const siteConfig = {
   editUrl: 'https://github.com/pact-foundation/docs.pact.io/blob/master/docs/',
   docsUrl: '',
 
-  twitterUsername: '@pact_up'
+  twitterUsername: '@pact_up',
+  stylesheets: ['/css/pact.css']
 };
 
 module.exports = siteConfig;

@@ -6,7 +6,8 @@ description: From zero to running Pact tests in 5 mins
 
 This getting started guide runs purely in the browser, with the intention to get you across the key concepts quickly. As we go through, there will be code snippets to demonstrate concepts. These are not runnable, but are there to assist with explanation. When there is code to run, you will be presented with a REPL as per below. Simply hit the green ▶ button, and the output will be displayed in the terminal below. Give it a shot now:
 
-{% embed url="https://repl.it/@mefellows/Getting-Started-Intro" caption="" %}
+<iframe frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/Getting-Started-Intro?lite=true"></iframe>
+
 
 ## An example scenario: Order API
 
@@ -27,7 +28,7 @@ Ideally, the Pact tests should be "unit tests" for your client class, and they s
 
 Usually, your application will be broken down into a number of sub-components, depending on what type of application your consumer is \(e.g. a Web application or another API\). This is how you might visualise the coverage of a consumer Pact test:
 
-![Scope of a consumer Pact test](.gitbook/assets/consumer-test-coverage.png)
+![Scope of a consumer Pact test](/img/consumer-test-coverage.png)
 
 Here, a _Collaborator_ is a component whose job is to communicate with another system. In our case, this is the `OrderApiClient`communicating with the external `Order Api` system. This is what we want our consumer test to inspect.
 
@@ -35,9 +36,10 @@ Here, a _Collaborator_ is a component whose job is to communicate with another s
 
 Imagine a simple model class that looks something like this \(order.js\). The attributes for an Order live on a remote server, and will need to be retrieved by an HTTP call to the Order API.
 
-{% tabs %}
-{% tab title="order.js" %}
-```javascript
+<!--DOCUSAURUS_CODE_TABS-->
+<!--order.js-->
+
+```js
 class Order {
   constructor(id, items) {
     this.id = id
@@ -56,10 +58,10 @@ class Order {
   }
 }
 ```
-{% endtab %}
 
-{% tab title="Sample Order" %}
-```javascript
+<!--Sample Order-->
+
+```js
 module.exports = [
   {
     id: 1,
@@ -78,16 +80,17 @@ module.exports = [
   },
 ]
 ```
-{% endtab %}
-{% endtabs %}
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### 2. Create an Order API client
 
 Here we have our external collaborator client. Its job is to both make the external request to the Order API and convert the response into the internal Order model as per above:
 
-{% tabs %}
-{% tab title="orderClient.js" %}
-```javascript
+
+<!--DOCUSAURUS_CODE_TABS-->
+<!--orderClient.js-->
+
+```js
 const fetchOrders = () => {
   return request.get(`${API_ENDPOINT}/orders`).then(
     res => {
@@ -101,14 +104,14 @@ const fetchOrders = () => {
   )
 }
 ```
-{% endtab %}
-{% endtabs %}
+
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 ### 3. Configure the mock Order API
 
 The following code will create a mock service on `localhost:1234` which will respond to your application's queries over HTTP as if it were the real Order API. It also creates a mock provider object which you will use to set up your expectations.
 
-```javascript
+```js
 // Setup Pact
 const provider = new Pact({
   port: 1234,
@@ -124,9 +127,9 @@ await provider.setup()
 
 ### 4. Write a test
 
-{% tabs %}
-{% tab title="order.spec.js" %}
-```javascript
+<!--DOCUSAURUS_CODE_TABS-->
+<!-- order.spec.js -->
+```js
 describe('Pact with Order API', () => {
   describe('given there are orders', () => {
     describe('when a call to the API is made', () => {
@@ -164,8 +167,7 @@ describe('Pact with Order API', () => {
   })
 })
 ```
-{% endtab %}
-{% endtabs %}
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 Green!
 
@@ -184,25 +186,22 @@ Now, in real life you would rinse and repeat for other likely status codes that 
 
 OK enough talk - let's run the consumer test. If you like, click around the project to see the files from above in context. The most interesting file is the consumer test in `./consumer/consumer.spec.js` .
 
-{% embed url="https://repl.it/@mefellows/docspactio-getting-started" caption="Try it out: Consumer Pact tests" %}
+<iframe frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/docspactio-getting-started?lite=true"></iframe>
 
-## Sharing the Contracts to the Provider Team
+## Sharing the contracts with the provider team
 
 Now that you have created and run your consumer tests, producing a contract \(the pact file\) as an artefact, we need to share it with the team responsible for managing the Order API, so that they can confirm they meet all of the expectations set in it. There are multiple ways to [share pacts](getting_started/sharing_pacts.md), but the recommended approach is to use a [Pact Broker](pact_broker/) as it enables powerful automation workflows.
 
-For this purpose, we are going to use a hosted Pact Broker from pactflow.io:
+For this purpose, we are going to use a hosted Pact Broker from pactflow.io.
 
-{% hint style="info" %}
-**NOTE**
+> The Pact Broker is an open source tool that requires you to deploy, administer and host it yourself. If you would prefer a plug-and-play option, we've created [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=five_minute_guide), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
+>
+> To get started for free, you can sign up to our Developer Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=five_minute_guide_dev_plan).
 
-The Pact Broker is an open source tool that requires you to deploy, administer and host it yourself. If you would prefer a plug-and-play option, we've created [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=five_minute_guide), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
 
-To get started for free, you can sign up to our [Developer Plan](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=five_minute_guide_dev_plan).
-{% endhint %}
+<iframe style="padding-bottom:20px" frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/docspactio-getting-started-publish?lite=true"></iframe>
 
-{% embed url="https://repl.it/@mefellows/docspactio-getting-started-publish" caption="Try it out: Sharing pacts through a Pact Broker \(via pactflow.io\)" %}
-
-We can see the Pact published at [https://test.pact.dius.com.au/pacts/provider/GettingStartedOrderApi/consumer/GettingStartedOrderWeb/latest](https://test.pact.dius.com.au/pacts/provider/GettingStartedOrderApi/consumer/GettingStartedOrderWeb/latest). Use the username `dXfltyFMgNOFZAxr8io9wJ37iUpY42M`, and password `O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1`.
+You can see the published pact [here](https://test.pact.dius.com.au/pacts/provider/GettingStartedOrderApi/consumer/GettingStartedOrderWeb/latest). The Pactflow account is protected using basic auth. Use the username `dXfltyFMgNOFZAxr8io9wJ37iUpY42M`, and password `O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1`.
 
 After publishing the pact, we can now verify that the Provider meets these expectations.
 
@@ -220,13 +219,16 @@ Generally speaking, we test the entire service and mock out external services su
 
 This is how you might visualise the coverage of a provider Pact test:
 
-![Provider side Pact test scope](.gitbook/assets/screenshot%20%281%29.png)
+![Provider side Pact test scope](/img/provider-test-coverage.png)
 
 ### 1. Create the Order API
 
 Below we have created a simple API using [Express JS](https://expressjs.com).
 
-```ruby
+<!--DOCUSAURUS_CODE_TABS-->
+<!-- orderApi.js -->
+
+```js
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
@@ -253,6 +255,8 @@ module.exports = {
 }
 ```
 
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 ### 2. Run provider verification tests
 
 We now need to perform the "provider verification" task, which involves the following:
@@ -261,9 +265,9 @@ We now need to perform the "provider verification" task, which involves the foll
 2. Starting the API \(line 16-18\)
 3. Running the Provider verification task \(line 22\)
 
-{% tabs %}
-{% tab title="provider.spec.js" %}
-```javascript
+<!--DOCUSAURUS_CODE_TABS-->
+<!-- provider.spec.js -->
+```js
 // Verify that the provider meets all consumer expectations
 describe('Pact Verification', () => {
   const port = 1234
@@ -289,12 +293,11 @@ describe('Pact Verification', () => {
   })
 })
 ```
-{% endtab %}
-{% endtabs %}
+<!--END_DOCUSAURUS_CODE_TABS-->
 
 #### Run the Provider tests
 
 Let's run the provider test. If you like, click around the project to see the files from above in context. The most interesting file is the consumer test in `./provider/provider.spec.js` .
 
-{% embed url="https://repl.it/@mefellows/docspactio-getting-started-provider" caption="Try it out: Provider Tests" %}
+<-iframe frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/docspactio-getting-started-provider?lite=true"></iframe>
 

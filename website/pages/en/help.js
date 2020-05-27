@@ -29,6 +29,9 @@ function Help(props) {
     {
       content: 'Ask questions about the documentation and project. You can join [here](https://slack.pact.io).',
       title: 'Join the Pact Slack community',
+    },{
+      content: 'Look for questions tagged with [pact](https://stackoverflow.com/questions/tagged/pact).',
+      title: 'Search on Stack Overflow'
     },
     {
       content: "Find out what's new with this project by reading our [blog](http://blog.pact.io)",
@@ -43,7 +46,7 @@ function Help(props) {
           <header className="postHeader">
             <h1>Need help?</h1>
           </header>
-          <p>This project is maintained by a dedicated group of people.</p>
+          <p>This project is maintained by a dedicated group of people. They are always willing to help, but most of the time you'll find the answer to your question in our existing documentation, so please look there first.</p>
           <GridBlock contents={supportLinks} layout="threeColumn" />
         </div>
       </Container>

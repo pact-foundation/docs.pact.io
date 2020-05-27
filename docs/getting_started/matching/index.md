@@ -1,26 +1,10 @@
 ---
 title: Matching
+sidebar_label: Introduction
 ---
 
 This section describes the various request/response matching techniques available in your `Consumer` tests. Note the examples below demonstrate use of the Ruby DSL, please refer to your particular language and framework as implementations differ.
 
-## Best practice
-
-### Request matching
-
-As a rule of thumb, you generally want to use exact matching when you're setting up the expectations for a request \(`upon_receiving(...).with(...)`\) because you're under control of the data at this stage, and according to Postel's Law, we want to be "strict" with what we send out. Note that the request matching does not allow "unexpected" values to be present in JSON request bodies or query strings. \(It does however allow extra headers, because we found that writing expectations that included the headers added by the various frameworks that might be used resulted in tests that were very fiddly to maintain.\)
-
-### Response matching
-
-You want to be _as loose as possible_ with the matching for the response \(`will_respond_with(...)`\) though. This stops the tests being brittle on the provider side. Generally speaking, it doesn't matter what value the provider actually returns during verification, as long as the types match. When you need certain formats in the values \(eg. URLS\), you can use `terms` \(see docs below\). Really really consider before you start introducing too many matchers however - for example, yes, the provider might be currently returning a GUID, but would anything in your consumer really break if they returned a different format of string ID? \(If it did, that's a nasty code smell!\) Note that during provider verification, following Postel's Law of being "relaxed" with what we accept, "unexpected" values in JSON response bodies are ignored. This is expected and is perfectly OK. Another consumer may have an expectation about that field.
-
-### Random data - avoid it
-
-If you are using a Pact Broker to exchange pacts, then avoid using random data in your pacts. If a new pact is published that is exactly the same as a previous version that has already been verified, the existing verification results will be applied to the new pact publication. This means that you don't have to wait for the provider verification to run before deploying your consumer - you can go straight to prod. Random data makes it look like the contract has changed, and therefore you lose this optimisation.
-
-#### NOTE
-
-_If you are writing tests on the_ `Consumer` _side to a different language on the_ `Provider` _side, you must ensure you use a common Pact Specification between them or you will be unable to validate._
 
 ## Pact matching features
 
@@ -78,7 +62,7 @@ animal_service.given("an alligator named Mary exists").
   upon_receiving("a request for an alligator").
   with(
     method: "get",
-    path: "/alligators/Mary", 
+    path: "/alligators/Mary",
     headers: {"Accept" => "application/json"}).
   will_respond_with(
     status: 200,
@@ -96,7 +80,7 @@ animal_service.given("an alligator named Mary exists").
   upon_receiving("a request for an alligator").
   with(
     method: "get",
-    path: "/alligators/Mary", 
+    path: "/alligators/Mary",
     headers: {"Accept" => "application/json"}).
   will_respond_with(
     status: 200,
@@ -196,3 +180,20 @@ Pact.service_consumer "Zoo App" do
 end
 ```
 
+## Best practice
+
+### Request matching
+
+As a rule of thumb, you generally want to use exact matching when you're setting up the expectations for a request \(`upon_receiving(...).with(...)`\) because you're under control of the data at this stage, and according to Postel's Law, we want to be "strict" with what we send out. Note that the request matching does not allow "unexpected" values to be present in JSON request bodies or query strings. \(It does however allow extra headers, because we found that writing expectations that included the headers added by the various frameworks that might be used resulted in tests that were very fiddly to maintain.\)
+
+### Response matching
+
+You want to be _as loose as possible_ with the matching for the response \(`will_respond_with(...)`\) though. This stops the tests being brittle on the provider side. Generally speaking, it doesn't matter what value the provider actually returns during verification, as long as the types match. When you need certain formats in the values \(eg. URLS\), you can use `terms` \(see docs below\). Really really consider before you start introducing too many matchers however - for example, yes, the provider might be currently returning a GUID, but would anything in your consumer really break if they returned a different format of string ID? \(If it did, that's a nasty code smell!\) Note that during provider verification, following Postel's Law of being "relaxed" with what we accept, "unexpected" values in JSON response bodies are ignored. This is expected and is perfectly OK. Another consumer may have an expectation about that field.
+
+### Random data - avoid it
+
+If you are using a Pact Broker to exchange pacts, then avoid using random data in your pacts. If a new pact is published that is exactly the same as a previous version that has already been verified, the existing verification results will be applied to the new pact publication. This means that you don't have to wait for the provider verification to run before deploying your consumer - you can go straight to prod. Random data makes it look like the contract has changed, and therefore you lose this optimisation.
+
+#### NOTE
+
+_If you are writing tests on the_ `Consumer` _side to a different language on the_ `Provider` _side, you must ensure you use a common Pact Specification between them or you will be unable to validate._

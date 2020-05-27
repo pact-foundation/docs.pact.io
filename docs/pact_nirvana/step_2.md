@@ -1,5 +1,5 @@
 ---
-title: 2. Spike \(Optional\)
+title: 2. Spike
 ---
 
 If you have not used Pact before, consider trying it out on a [spike](https://en.wikipedia.org/wiki/Spike_%28software_development%29) application first.

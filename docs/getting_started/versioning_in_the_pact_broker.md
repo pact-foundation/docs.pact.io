@@ -2,8 +2,6 @@
 title: Versioning in the Pact Broker
 ---
 
-## Versioning in the Pact broker
-
 When using Pact, you have to be careful about how your application version numbers are set. This document describes the versioning concepts used by the Pact Broker, and recommends best practices.
 
 There are conceptually three resources that can have versions in the Pact Broker:
@@ -20,13 +18,13 @@ A related concept is the Pact Matrix, which contains the verification status for
 
 When a pact contract file is published to the broker, it is associated with a particular consumer name, consumer version, and provider name:
 
-![Pact versioning](../.gitbook/assets/version-consumer.png)
+![Pact versioning](/img/version-consumer.png)
 
 The pact contract version is not the same as the consumer version that generated it \(the pact contract version is internal to the framework, and not exposed to users\).
 
 A neat feature of the pact broker is the ability to recognise duplicate contracts, meaning that one specific contract can belong to multiple consumer versions:
 
-![Consumer versions](../.gitbook/assets/version-consumer-initial.png)
+![Consumer versions](/img/version-consumer-initial.png)
 
 This happens when two or more application versions publish the same Pact contract. Duplicate detection is done by hashing the pact file. Note that application versions publishing the same pact contract don’t need to be consecutive.
 
@@ -38,29 +36,29 @@ It also has the smaller advantage that it is always safe to republish the same p
 
 At provider verification time, the application version of the provider is associated with the pact content for that particular provider/consumer pair:
 
-![Provider verification](../.gitbook/assets/version-verification.png)
+![Provider verification](/img/version-verification.png)
 
 This allows the broker to construct verification status for particular consumer/provider version pairs:
 
-![Verification pairs](../.gitbook/assets/version-pair-1.png)
+![Verification pairs](/img/version-pair-1.png)
 
 This illustrates that consumer version 0.1.0 is able to communicate with provider version v2.0.0, but not v1.0.0.
 
 Note the separation between consumer versions and provider versions. Pact verification is done against specific pact contracts, not specific consumer versions. If another consumer version with the same contract is published, then verification does not need to be repeated:
 
-![Verification pairs](../.gitbook/assets/version-pair-2.png)
+![Verification pairs](/img/version-pair-2.png)
 
 \(Here a new version of the consumer has been published, but since the contract hasn’t changed, we know that it is able to communicate with provider version 2.0.0\)
 
 Similarly, if a new consumer version that requests a different contract is published, then verification status is not immediately known:
 
-![Verification pairs](../.gitbook/assets/version-pair-3.png)
+![Verification pairs](/img/version-pair-3.png)
 
 Once a new contract is published, it can be verified with the current provider version.
 
 A provider version can be verified against multiple pact contracts. For example, after another provider version is verified, the picture might then be something like this:
 
-![Verification pairs](../.gitbook/assets/version-pair-4.png)
+![Verification pairs](/img/version-pair-4.png)
 
 This indicates that provider version 2.0.0 is not able to communicate with consumer version v.0.2.0. However, provider version 2.0.1 is able to communicate with both the older versions, and the v.0.2.0 consumer.
 

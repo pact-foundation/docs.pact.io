@@ -30,7 +30,7 @@ Wouldn't it be a better use of your time working on fast, reliable tests that al
 
 When compared to E2E testing approaches, contract testing enables you to create consistent curves in your pipeline speed and complexity that look more like the below chart, whilst maintaining many of the safety guarantees of E2E test approaches:
 
-![From https://blog.pactflow.io/why-contract-testing/](../.gitbook/assets/screenshot-25-1.png)
+![From https://blog.pactflow.io/why-contract-testing/](/img/screenshot-25-1.png)
 
 If you want to understand more on the "why", you can read the full article [here](https://blog.pactflow.io/why-contract-testing/?utm_source=ossdocs&utm_campaign=convince_me_what_is).
 

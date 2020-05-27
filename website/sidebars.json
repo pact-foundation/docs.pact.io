@@ -1,144 +1,143 @@
 {
   "docs": {
-  "Introduction": [
-    "README"
-  ],
-  "5 minute guide": [
-    "5-minute-getting-started-guide"
-  ],
-  "Getting Started": [
-    "getting_started/README",
-    "getting_started/how_pact_works",
-    "getting_started/what_is_pact_good_for",
-    "getting_started/terminology",
-    {
-      "type": "subcategory",
-      "label": "Matching",
-      "ids": [
-        "getting_started/matching/README",
-        "getting_started/matching/gotchas"
-      ]
-    },
-    "getting_started/verifying_pacts",
-    "getting_started/provider_states",
-    "getting_started/sharing_pacts",
-    "getting_started/versioning_in_the_pact_broker",
-    "getting_started/stubs",
-    "getting_started/further_reading"
-  ],
-  "Implementation guides": [
-    "implementation_guides/README",
-    {
-      "type": "subcategory",
-      "label": "Ruby",
-      "ids": [
-        "implementation_guides/ruby/README",
-        "implementation_guides/ruby/verifying_pacts",
-        "implementation_guides/ruby/provider_states",
-        "implementation_guides/ruby/configuration",
-        "implementation_guides/ruby/gotchas"
-      ]
-    },
-    "implementation_guides/jvm",
-    "implementation_guides/net",
-    "implementation_guides/javascript",
-    "implementation_guides/go",
-    "implementation_guides/python",
-    "implementation_guides/swift",
-    "implementation_guides/php",
-    "implementation_guides/other_languages"
-  ],
-  "Writing Consumer tests": [
-    "consumer/README",
-    "consumer/contract_tests_not_functional_tests",
-    "consumer/using_pact_to_support_ui_testing"
-  ],
-  "Verifying Pacts": [
-    "provider/README",
-    "provider/using_provider_states_effectively",
-    "provider/handling_auth"
-  ],
-  "Effective Pact Setup Guide": [
-    "pact_nirvana",
-    "pact_nirvana/step_1",
-    "pact_nirvana/step_2",
-    "pact_nirvana/step_3",
-    "pact_nirvana/step_4",
-    "pact_nirvana/step_5",
-    "pact_nirvana/step_6",
-    "pact_nirvana/step_7",
-    "pact_nirvana/step_8"
-  ],
-  "Feature support": [
-    "feature_support"
-  ],
-  "Pact Broker": [
-    "pact_broker/README",
-    "pact_broker/overview",
-    "pact_broker/pacticipant_version_numbers",
-    "pact_broker/publishing_and_retrieving_pacts",
-    "pact_broker/can_i_deploy",
-    "pact_broker/set_up_checklist",
-    {
-      "type": "subcategory",
-      "label": "Advanced Topics",
-      "ids": [
-        "pact_broker/advanced_topics/README",
-        "pact_broker/advanced_topics/using_tags/README",
-        "pact_broker/advanced_topics/see_changes_pact",
-        "pact_broker/advanced_topics/webhooks/README",
-        "pact_broker/advanced_topics/provider_verification_results",
-        "pact_broker/advanced_topics/provider_verification_badges",
-        "pact_broker/advanced_topics/pacticipant",
-        "pact_broker/advanced_topics/pending_pacts",
-        "pact_broker/advanced_topics/wip_pacts",
-        "pact_broker/advanced_topics/selectors",
-        "pact_broker/advanced_topics/api_docs/README",
-        "pact_broker/advanced_topics/ui_docs",
-        "pact_broker/advanced_topics/troubleshooting",
-        "pact_broker/advanced_topics/how_pact_works"
-      ]
-    },
-    {
-      "type": "subcategory",
-      "label": "Administration",
-      "ids": [
-        "pact_broker/administration/README",
-        "pact_broker/administration/maintenance",
-        "pact_broker/administration/deleting_resources"
-      ]
-    },
-    "pact_broker/configuration",
-    "pact_broker/upgrading",
-    "pact_broker/breaking_changes",
-    "pact_broker/network_graph",
-    "pact_broker/terraform-provider"
-  ],
-  "Docker": [
-    "docker"
-  ],
-  "FAQ": [
-    "faq/README",
-    "faq/convinceme",
-    "faq/question_archive"
-  ],
-  "Getting Help": [
-    "getting_help"
-  ],
-  "Contributing": [
-    "contributing/README",
-    "contributing/contributors"
-  ],
-  "History": [
-    "history"
-  ],
-  "Who": [
-    "testimonials"
-  ],
-  "Community videos and articles": [
-    "blogs_videos_and_articles"
-  ]
-},
+    "Implementation guides": [
+      "implementation_guides/workshops",
+      {
+        "type": "subcategory",
+        "label": "Ruby",
+        "ids": [
+          "implementation_guides/ruby/README",
+          "implementation_guides/ruby/verifying_pacts",
+          "implementation_guides/ruby/provider_states",
+          "implementation_guides/ruby/configuration",
+          "implementation_guides/ruby/gotchas"
+        ]
+      },
+      "implementation_guides/jvm",
+      "implementation_guides/net",
+      "implementation_guides/javascript",
+      "implementation_guides/go",
+      "implementation_guides/python",
+      "implementation_guides/swift",
+      "implementation_guides/php",
+      "implementation_guides/other_languages"
+    ],
+    "Feature support": [
+      "feature_support"
+    ],
+    "Pact Broker": [
+      "pact_broker/index",
+      "pact_broker/overview",
+      "getting_started/versioning_in_the_pact_broker",
+      "pact_broker/publishing_and_retrieving_pacts",
+      "pact_broker/advanced_topics/webhooks/index",
+      "pact_broker/can_i_deploy",
+      "pact_broker/set_up_checklist",
+      {
+        "type": "subcategory",
+        "label": "Advanced Topics",
+        "ids": [
+          "pact_broker/pacticipant_version_numbers",
+          "pact_broker/advanced_topics/using_tags",
+          "pact_broker/advanced_topics/see_changes_pact",
+          "pact_broker/advanced_topics/provider_verification_results",
+          "pact_broker/advanced_topics/provider_verification_badges",
+          "pact_broker/advanced_topics/pacticipant",
+          "pact_broker/advanced_topics/pending_pacts",
+          "pact_broker/advanced_topics/wip_pacts",
+          "pact_broker/advanced_topics/selectors",
+          "pact_broker/advanced_topics/api_docs/index",
+          "pact_broker/advanced_topics/ui_docs",
+          "pact_broker/advanced_topics/troubleshooting"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Administration",
+        "ids": [
+          "pact_broker/administration/README",
+          "pact_broker/administration/maintenance",
+          "pact_broker/administration/deleting_resources"
+        ]
+      },
+      "pact_broker/configuration",
+      "pact_broker/upgrading",
+      "pact_broker/breaking_changes",
+      "pact_broker/network_graph",
+      "pact_broker/terraform-provider"
+    ],
+    "Stubs": [
+      "getting_started/stubs"
+    ],
+    "Docker": [
+      "docker"
+    ]
+  },
+  "getting-started": {
+    "Getting started": [
+      "getting_started/index",
+      "5-minute-getting-started-guide",
+      "getting_started/terminology",
+      "getting_started/how_pact_works",
+      "getting_started/what_is_pact_good_for",
+      {
+        "type": "subcategory",
+        "label": "Matching",
+        "ids": [
+          "getting_started/matching/index",
+          "getting_started/matching/gotchas"
+        ]
+      },
+      "getting_started/verifying_pacts",
+      "getting_started/provider_states",
+      "getting_started/sharing_pacts",
+      "getting_started/further_reading",
+      {
+        "type": "subcategory",
+        "label": "FAQ",
+        "ids": [
+          "faq/index",
+          "faq/convinceme",
+          "faq/question_archive"
+        ]
+      }
+    ]
+  },
+  "guides": {
+    "Writing Consumer tests": [
+      "consumer/index",
+      "consumer/contract_tests_not_functional_tests",
+      "consumer/using_pact_to_support_ui_testing"
+    ],
+    "Verifying Pacts": [
+      "provider/README",
+      "provider/using_provider_states_effectively",
+      "provider/handling_auth"
+    ],
+    "Effective Pact Setup Guide": [
+      "pact_nirvana",
+      "pact_nirvana/step_1",
+      "pact_nirvana/step_2",
+      "pact_nirvana/step_3",
+      "pact_nirvana/step_4",
+      "pact_nirvana/step_5",
+      "pact_nirvana/step_6",
+      "pact_nirvana/step_7",
+      "pact_nirvana/step_8"
+    ]
+  },
+  "resources": {
+    "History": [
+      "history"
+    ],
+    "Community videos &amp; articles": [
+      "blogs_videos_and_articles"
+    ],
+    "Contributing": [
+      "contributing/README",
+      "contributing/contributors"
+    ]
+  },
   "docs-other": {
     "First Category": [
       "doc4",
