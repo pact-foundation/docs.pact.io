@@ -7,11 +7,9 @@ Pact is a code-first tool for testing HTTP and message integrations using `contr
 
 Do you [set your house on fire to test your smoke alarm?](https://dius.com.au/2014/05/19/simplifying-micro-service-testing-with-pacts/) No, you test the contract it holds with your ears by using the testing button. Pact provides that testing button for your code, allowing you to safely confirm that your applications will work together without having to deploy the world first.
 
+To view an animated step-by-step explanation of how Pact works, check out the [How Pact works](/how-pact-works) page.
 
-To view an animated step-by-step explanation of how Pact works, check out this page at [pactflow.io](https://pactflow.io/how-pact-works/?utm_source=ossdocs&utm_campaign=intro_animation)
-
-![](/img/how-pact-works-preview.gif)
-
+[![How Pact works preview](/img/how-pact-works-preview.gif)](/how-pact-works)
 
 > Ready to jump into the code already? Get started with our [5 minute guide](5-minute-getting-started-guide.md).
 

@@ -203,7 +203,9 @@ const siteConfig = {
   editUrl: 'https://github.com/pact-foundation/docs.pact.io/blob/master/docs/',
   docsUrl: '',
 
-  twitterUsername: '@pact_up'
+  twitterUsername: '@pact_up',
+  wrapPagesHTML: true,
+  separateCss: 'static/css/how-pact-works'
 };
 
 module.exports = siteConfig;

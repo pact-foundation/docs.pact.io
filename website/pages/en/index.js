@@ -64,8 +64,8 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle tagline={siteConfig.tagline} title={siteConfig.title} />
           <PromoSection>
+            <Button href="/how-pact-works">How Pact works</Button>
             <Button href={docUrl('5-minute-getting-started-guide')}>Try It Out</Button>
-            <Button href="https://pactflow.io/how-pact-works">How Pact works</Button>
           </PromoSection>
         </div>
       </SplashContainer>

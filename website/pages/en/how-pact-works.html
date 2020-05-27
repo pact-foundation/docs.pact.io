@@ -1,0 +1,191 @@
+
+<link href="/css/how-pact-works/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/how-pact-works/how-pact-works.css" rel="stylesheet" type="text/css" media="all" />
+
+<section class="pt-4">
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 class="pt-2">How Pact works</h1>
+    </div>
+    <div class="row justify-content-center pt-3">
+      <h4 class="slide-title slide-1 current">The problem with integration tests</h4>
+      <h4 class="slide-title slide-2 slide-hidden">Why not use isolated tests?</h4>
+      <h4 class="slide-title slide-3 slide-hidden">How Pact helps - the consumer side</h4>
+      <h4 class="slide-title slide-4 slide-hidden">How Pact helps - the provider side</h3>
+        <h4 class="slide-title slide-5 slide-hidden">How Pact helps</h3>
+    </div>
+    <div class="row slide-row pt-2">
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <div class="slide-image-container slide-1 slide-1-replay current">
+          <img src="/img/how-pact-works/slide_1.gif" class="slide-image" />
+          <p class="slide-description">Testing a request between two deployed applications</p>
+        </div>
+        <div class="slide-image-container slide-2 slide-hidden">
+          <img src="/img/how-pact-works/slide_2.gif" class="slide-image" />
+          <p class="slide-description">Testing a request using simulated applications</p>
+        </div>
+        <div class="slide-image-container slide-2-replay slide-hidden">
+          <img src="/img/how-pact-works/slide_2_replay.gif" class="slide-image pb-2" />
+          <p class="slide-description">Testing a request using simulated applications</p>
+        </div>
+        <div class="slide-image-container slide-3 slide-hidden">
+          <img src="/img/how-pact-works/slide_3.gif" class="slide-image" />
+          <p class="slide-description">Testing a consumer using a Pact mock provider</p>
+        </div>
+        <div class="slide-image-container slide-3-replay slide-hidden">
+          <img src="/img/how-pact-works/slide_3_replay.gif" class="slide-image" />
+          <p class="slide-description">Testing a consumer using a Pact mock provider</p>
+        </div>
+        <div class="slide-image-container slide-4 slide-hidden">
+          <img src="/img/how-pact-works/slide_4.gif" class="slide-image" />
+          <p class="slide-description">Testing a provider using a Pact simulated consumer</p>
+        </div>
+        <div class="slide-image-container slide-4-replay slide-hidden">
+          <img src="/img/how-pact-works/slide_4_replay.gif" class="slide-image" />
+          <p class="slide-description">Testing a provider using a Pact simulated consumer</p>
+        </div>
+        <div class="slide-image-container slide-5 slide-5-replay slide-hidden">
+          <img src="/img/how-pact-works/slide_5.gif" class="slide-image" />
+          <p class="slide-description">Testing a request with Pact</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6 pl-4">
+        <div class="slide-text-container slide-1">
+          <p>Before we deploy an application to production, we need to be sure it works correctly with the other
+            applications with
+            which it integrates. To do this, traditionally we run integration tests using "live", deployed applications.
+          </p>
+
+          <p>Integration tests</p>
+
+          <ul class="list-unstyled">
+            <li>✅ give us confidence to release</li>
+          </ul>
+
+          <p>but</p>
+
+          <p>
+          <ul class="list-unstyled">
+            <li>❌ introduce dependencies</li>
+            <li>❌ give slow feedback</li>
+            <li>❌ break easily</li>
+            <li>❌ require lots of maintenance</li>
+          </ul>
+          </p>
+
+          <div class="replay-button">
+            <img class="icon icon-lg" src="/img/how-pact-works/repeat.svg" title="Replay" alt="Replay"
+              data-inject-svg />
+            <span>Replay animation</span>
+          </div>
+        </div>
+        <div class="slide-text-container slide-2 slide-hidden">
+          <p>By testing each side of an integration point using a simulated version of the other application, we get two
+            sets of
+            tests which</p>
+
+          <ul class="list-unstyled">
+            <li>✅ run independently</li>
+            <li>✅ give fast feedback</li>
+            <li>✅ are stable</li>
+            <li>✅ are easy to maintain</li>
+          </ul>
+
+          <p>but</p>
+
+          <ul class="list-unstyled">
+            <li>❌ do not give us confidence to release.</li>
+          </ul>
+
+          <p>This is because there is nothing to ensure that the simulated applications behave the same way as the real
+            ones.</p>
+
+          <div class="replay-button">
+            <img class="icon icon-lg" src="/img/how-pact-works/repeat.svg" title="Replay" alt="Replay"
+              data-inject-svg />
+            <span>Replay animation</span>
+          </div>
+        </div> <!-- end slide-2 -->
+        <div class="slide-text-container slide-3 slide-hidden">
+          <p>Pact solves the problem of keeping the two sets of tests in sync by use of a "contract", also known as a
+            "pact".</p>
+          <p>During the consumer tests, each request made to a Pact mock provider is recorded into the contract file,
+            along with
+            its expected response.</p>
+          <div class="replay-button">
+            <img class="icon icon-lg" src="/img/how-pact-works/repeat.svg" title="Replay" alt="Replay"
+              data-inject-svg />
+            <span>Replay animation</span>
+          </div>
+        </div> <!-- end slide-3 -->
+        <div class="slide-text-container slide-4 slide-hidden">
+          <p>A Pact simulated consumer then replays each request against the real provider, and compares the actual and
+            expected
+            responses. If they match, we have verified that the simulated applications behave the same way as the real
+            applications. This means the two real applications should communicate correctly when they interact in real
+            life.</p>
+          <div class="replay-button">
+            <img class="icon icon-lg" src="/img/how-pact-works/repeat.svg" title="Replay" alt="Replay"
+              data-inject-svg />
+            <span>Replay animation</span>
+          </div>
+        </div> <!-- end slide-4 -->
+        <div class="slide-text-container slide-5 slide-hidden">
+          <p>Using Pact gives you tests that</p>
+          <ul class="list-unstyled">
+            <li>✅ run independently</li>
+            <li>✅ give fast feedback</li>
+            <li>✅ are stable</li>
+            <li>✅ are easy to maintain</li>
+          </ul>
+
+          <p>and</p>
+
+          <ul class="list-unstyled">
+            <li>✅ give you confidence to release</li>
+          </ul>
+        </div> <!-- end slide-5 -->
+      </div> <!-- end right column -->
+    </div> <!-- end slide-row -->
+
+    <div class="row justify-content-center pb-5">
+      <div>
+        <div style="display:inline-block" class="previous-button">
+          <span><b>Previous</b></span>
+          <img class="icon icon-lg mx-1 slide-back previous-button" src="/img/how-pact-works/play.svg"
+            title="Back" alt="Back" data-inject-svg />
+        </div>
+        <div style="display:inline-block" class="next-button">
+          <img class="icon icon-lg mx-1 " src="/img/how-pact-works/play.svg" title="Forward"
+            alt="Forward" data-inject-svg />
+          <span><b>Next</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/how-pact-works.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    goTo(getInitialSlideNumber())
+    transition(true)
+
+    $(".replay-button").click(function () {
+      replayGif()
+    })
+
+    $(".previous-button").click(function () {
+      previous()
+      transition(true)
+    })
+
+    $(".next-button").click(function () {
+      next()
+      transition()
+    })
+  })
+</script>

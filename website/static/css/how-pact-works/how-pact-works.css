@@ -1,0 +1,40 @@
+img.replay {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 6px;
+}
+
+.replay-label {
+  display: inline-block;
+}
+
+.replay-container {
+  margin-top: 2rem;
+}
+
+.slide-hidden {
+  display: none
+}
+
+.slide-description {
+  font-weight: bold;
+  width: 100%;
+  text-align: right;
+}
+
+.slide-back {
+  transform: scaleX(-1);
+}
+
+.next-button, .previous-button, .replay-button {
+  cursor: pointer;
+}
+
+.slide-image {
+  padding-bottom: 0.75rem;
+}
+
+.slide-row li {
+  margin-left: 2rem;
+}
