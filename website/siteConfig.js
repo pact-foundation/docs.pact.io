@@ -23,7 +23,7 @@ const users = [
     pinned: true
   },
   { caption: 'Accenture Logo',
-    image: '/img/users/accenture (1).png'
+    image: '/img/users/accenture.png'
   },
   { caption: 'The Iconic Logo',
     image: '/img/users/the-iconic.png'
