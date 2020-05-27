@@ -43,13 +43,13 @@ Pact is most valuable for designing and testing integrations where you \(or your
 
 ### Who would typically implement Pact?
 
-Pact is generally implemented by developers, during development. Business analysts and testers can still benefit from the presence of contracts by using them to understand the underlying interactions between the applications.
+Pact is generally implemented by developers, during development. While some testers do write Pact tests, the code-first, white-box nature of Pact testing means that whoever writes the tests needs to have a strong understanding of the code under test, how to write code, how to use the existing testing libraries (eg. Jest, JUnit) and build tools (eg. Maven, npm), how to create and inject stubs, as well as how to use the Pact library itself. Testers who do not have this experience struggle with Pact, and we suggest pairing with a developer in this situation. Business analysts and testers can still benefit from the presence of contracts by using them to understand the underlying interactions between the applications.
 
-The consumer team is responsible for implementing the Pact tests in the consumer codebase that will generate the contract, and for publishing it to a shared location \(usually a [Pact Broker](https://github.com/pact-foundation/pact_broker)\). The provider team is responsible for setting up the Pact verification task in the provider codebase, and for writing the code that sets up the correct data for each `provider state` described in the contract. Both teams are responsible for collaborating and communicating about the API and its usage! Remember that contracts are not a substitute for good communication between teams.
+The consumer team is responsible for implementing the Pact tests in the consumer codebase that will generate the contract, and for publishing it to a shared location \(usually a [Pact Broker](/pact_broker)\). The provider team is responsible for setting up the Pact verification task in the provider codebase, and for writing the code that sets up the correct data for each `provider state` described in the contract. Both teams are responsible for collaborating and communicating about the API and its usage! Remember that contracts are not a substitute for good communication between teams.
 
 ### What is the difference between contract testing and functional testing?
 
-See this [page](../consumer/contract_tests_not_functional_tests.md) under the Consumer best practices section.
+See this [page](/consumer/contract_tests_not_functional_tests) under the Consumer best practices section.
 
 ### Can I generate my pact file from something like Swagger?
 
@@ -59,7 +59,7 @@ Something that could be useful, however, is to generate skeleton Pact test code 
 
 ### How do I use Pact with UI frameworks like React or Angular?
 
-The best way to use Pact on the consumer side is to focus the tests on just the code that makes the HTTP request, and bypass as much of the framework specific code as possible. You can read more about why that is so [here](../consumer/#avoid-using-pact-for-tests-that-involve-the-ui). You can read about how to use Pact to support your UI testing using stub servers [here](https://docs.pact.io/consumer/using_pact_to_support_ui_testing). You can see some examples of using Pact to test consumer code [here](https://github.com/pact-foundation/pact-js/tree/master/examples) and a pact-js workshop [here](https://github.com/pact-foundation/pact-workshop-js).
+The best way to use Pact on the consumer side is to focus the tests on just the code that makes the HTTP request, and bypass as much of the framework specific code as possible. You can read more about why that is so [here](/consumer/#avoid-using-pact-for-tests-that-involve-the-ui). You can read about how to use Pact to support your UI testing using stub servers [here](/consumer/using_pact_to_support_ui_testing). You can see some examples of using Pact to test consumer code [here](https://github.com/pact-foundation/pact-js/tree/master/examples) and a pact-js workshop [here](https://github.com/pact-foundation/pact-workshop-js).
 
 ### Why doesn't Pact use JSON Schema?
 
@@ -71,7 +71,7 @@ Pact was written by a team that was using microservices that had read/write REST
 
 ### Why is there no support for specifying optional attributes?
 
-Firstly, it is assumed that you have control over the provider's data \(and consumer's data\) when doing the verification tests. If you don't, then maybe Pact is [not the best tool for your situation](https://github.com/pact-foundation/pact-ruby#what-is-it-good-for).
+Firstly, it is assumed that you have control over the provider's data \(and consumer's data\) when doing the verification tests. If you don't, then maybe Pact is [not the best tool for your situation](/getting_started/what_is_pact_good_for).
 
 Secondly, if Pact supports making an assertion that element `$.body.name` may be present in a response, then you write consumer code that can handle an optional `$.body.name`, but in fact, the provider gives `$.body.firstname`, no test will ever fail to tell you that you've made an incorrect assumption. Remember that a provider may return extra data without failing the contract, but it must provide at minimum the data you expect.
 
@@ -112,7 +112,7 @@ If this is still a better situation for you than integration testing, or using a
 
 During pact verification, Pact does not test the side effects of a request being executed on a provider, it just checks that the response body matches the expected response body. If your API is merely passing on a message to a downstream system \(eg. a queue\) and does not validate the contents of the body before doing so, you could send anything you like in the request body, and the provider would respond the same way. The “contract” that you really want is between the consumer and the downstream system. Checking that the provider responded with a 200 OK does not give you any confidence that your consumer and the downstream system will work correctly in real life.
 
-What you really need is a “non-HTTP” pact between your consumer and the downstream system. Check out this [gist](https://gist.github.com/bethesque/0ee446a9f93db4dd0697) for an example of how to use the Pact contract generation and matching code to test non-HTTP communications.
+What you really need is a "non-HTTP" pact between your consumer and the downstream system. Check out this [gist](https://gist.github.com/bethesque/0ee446a9f93db4dd0697) for an example of how to use the Pact contract generation and matching code to test non-HTTP communications.
 
 ### Do I still need end-to-end tests?
 
@@ -146,13 +146,13 @@ If you work in a more traditional "Big Bang Release" environment, choose end to 
 
 ### Can I use Pact for UI tests?
 
-Unless you're using our [stub server](../getting_started/stubs.md) to mock out back end calls, we do not recommend using Pact for this purpose. Please read more on the [Consumer Best Practices](https://github.com/pact-foundation/pact.io/tree/ebbe880cce273dfb0d50f67c3a6933b9e4921a86/faq/best_practices/consumer/README.md#avoid-using-pact-for-tests-that-involve-the-ui) page.
+Unless you're using our [stub server](/getting_started/stubs) to mock out back end calls, we do not recommend using Pact for this purpose. Please read more on the [Consumer Best Practices](/consumer/#avoid-using-pact-for-tests-that-involve-the-ui) page.
 
 ### How can I handle versioning?
 
 Consumer driven contracts to some extent allows you to do away with versioning. As long as all your contract tests pass, you should be able to deploy changes without versioning the API. If you need to make a breaking change to a provider, you can do it in a multiple step process - add the new fields/endpoints to the provider and deploy. Update the consumers to use the new fields/endpoints, then deploy. Remove the old fields/endpoints from the provider and deploy. At each step of the process, all the contract tests remain green.
 
-Using a [Pact Broker](https://github.com/pact-foundation/pact_broker), you can tag the production version of a pact when you make a release of a consumer. Then, any changes that you make to the provider can be checked agains the production version of the pact, as well as the latest version, to ensure backward compatiblity.
+Using a [Pact Broker](/pact_broker), you can tag the production version of a pact when you make a release of a consumer. Then, any changes that you make to the provider can be checked agains the production version of the pact, as well as the latest version, to ensure backward compatiblity.
 
 If you need to support multiple versions of the provider API concurrently, then you will probably be specifying which version your consumer uses by setting a header, or using a different URL component. As these are actually different requests, the interactions can be verified in the same pact without any problems.
 
@@ -160,14 +160,15 @@ If you need to support multiple versions of the provider API concurrently, then 
 
 Pact is "consumer driven contracts", not "dictator driven contracts". Just because it's called "consumer driven" doesn't mean that the team writing the consumer gets to write a pact and throw it at the provider team without talking about it. The pact should be the starting point of a collaborative effort.
 
-The way Pact works, it's the pact verification task \(in the provider codebase\) that fails when a consumer expects things that are different from what a provider responds with, even if the consumer itself is "wrong". This is a little unfortunate, but it's the nature of the beast.
+The way Pact works, it's the pact verification task \(in the provider codebase\) that fails when a consumer expects things that are different from what a provider responds with, even if the consumer itself is "wrong". This is a little unfortunate, but it's the nature of the beast. (See this page on [pending pacts](https://pact.io/pending) for how we've fixed this problem.)
 
-Running the pact verification task in a separate CI build from the rest of the tests for the provider is a good idea - if you have it in the same build, someone is going to get cranky about another team being able to break their build.
+Running the pact verification task that gets triggered by the "contract content changed" webhook in a separate CI build from the rest of the tests for the provider is a good idea - if you have it in the same build, someone is going to get cranky about another team being able to break their build.
 
 It's very important for the consumer team to know when pact verification fails, because it means they cannot deploy the consumer. If the consumer team is using a different CI instance from the provider team, consider how you might communicate to the consumer team when pact verification has failed. You should do one of the following:
 
+* Configure a Pact Broker webhook to send a Slack message when a failed verification result is published.
 * Configure the pact verification build to send an email to the consumer team when the build fails.
-* Even better, if you can, have a copy of the provider build run on the consumer CI that just runs the unit tests and pact verification. That way the consumer team has the same red build that the provider team has, and it gives them a vested interest in keeping it green.
+* Have a copy of the provider build run on the consumer CI that just runs the unit tests and pact verification. That way the consumer team has the same red build that the provider team has, and it gives them a vested interest in keeping it green.
 
 Verify a pact by using a URL that you know the latest pact will be made available at. Do not rely on manual intervention \(eg. someone copying a file across to the provider project\) because this process will inevitably break down, and your verification task will give you a false positive. Do not try to "protect" your build from being broken by instigating a manual pact update process. The pact verify task is the canary of your integration - manual updates would be like giving your canary a gas mask.
 
@@ -175,7 +176,7 @@ Verify a pact by using a URL that you know the latest pact will be made availabl
 
 **Use** `can-i-deploy`**:**
 
-Use the [can-i-deploy](../pact_broker/advanced_topics/provider_verification_results.md) feature of the [Pact Broker CLI](https://github.com/pact-foundation/pact_broker). It will give you a definitive answer if the version of your consumer that is being deployed, is compatible with all of its providers.
+Use the [can-i-deploy](/pact_broker/advanced_topics/provider_verification_results) feature of the [Pact Broker CLI](https://github.com/pact-foundation/pact_broker-client). It will give you a definitive answer if the version of your consumer that is being deployed, is compatible with all of its providers.
 
 For this to work you need to...
 
@@ -189,7 +190,7 @@ Some other approaches to consider are:
 
 **Use Pact Broker Webhooks:**
 
-Trigger a build or Slack notification using [webhooks](../pact_broker/advanced_topics/api_docs/webhooks.md) on the Provider as soon as a changed contract is submitted to the server.
+Trigger a build or Slack notification using [webhooks](/pact_broker/advanced_topics/webhooks/) on the Provider as soon as a changed contract is submitted to the server.
 
 **Collaboration**
 
@@ -235,7 +236,7 @@ Another common example is where one system calls out to another system first to 
 
 Where possible, you should try to isolate interactions between two services at any one time. We would generally recommend stubbing out these systems.
 
-See [https://gist.github.com/bethesque/43eef1bf47afea4445c8b8bdebf28df0](https://gist.github.com/bethesque/43eef1bf47afea4445c8b8bdebf28df0) for some more detail on how you might achieve this, and read our advice on [dealing with auth services](../provider/handling_auth.md).
+See [https://gist.github.com/bethesque/43eef1bf47afea4445c8b8bdebf28df0](https://gist.github.com/bethesque/43eef1bf47afea4445c8b8bdebf28df0) for some more detail on how you might achieve this, and read our advice on [dealing with auth services](/provider/handling_auth).
 
 ### How do I test auth cookies?
 
