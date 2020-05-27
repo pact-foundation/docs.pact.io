@@ -299,5 +299,5 @@ describe('Pact Verification', () => {
 
 Let's run the provider test. If you like, click around the project to see the files from above in context. The most interesting file is the consumer test in `./provider/provider.spec.js` .
 
-<-iframe frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/docspactio-getting-started-provider?lite=true"></iframe>
+<iframe frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/docspactio-getting-started-provider?lite=true"></iframe>
 
