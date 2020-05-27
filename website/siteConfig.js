@@ -19,28 +19,28 @@ const users = [
   //   pinned: true,
   // },
   { caption: 'Soundcloud Logo',
-    image: '/img/users/soundcloud%20%281%29.png',
+    image: '/img/users/soundcloud.png',
     pinned: true
   },
   { caption: 'Accenture Logo',
     image: '/img/users/accenture (1).png'
   },
   { caption: 'The Iconic Logo',
-    image: '/img/users/the-iconic%20%281%29.png'
+    image: '/img/users/the-iconic.png'
   },
   { caption: 'Sainsburys Logo',
-    image: '/img/users/sainsburys%20%281%29.png',
+    image: '/img/users/sainsburys.png',
     pinned: true
   },
   { caption: 'Dun and Bradstreet Logo',
-    image: '/img/users/dnb%20%281%29.png'
+    image: '/img/users/dnb.png'
   },
   { caption: 'IBM Logo',
     image: '/img/users/ibm.jpg',
     pinned: true
   },
   { caption: 'Shutterstock Logo',
-    image: '/img/users/shutterstock%20%281%29.png'
+    image: '/img/users/shutterstock.png'
   },
   { caption: 'MessageMedia Logo',
     image: '/img/users/messagemedia.jpg'
@@ -55,11 +55,11 @@ const users = [
     image: '/img/users/portbase.png'
   },
   { caption: 'RedHat Logo',
-    image: '/img/users/redhat%20%281%29.png',
+    image: '/img/users/redhat.png',
     pinned: true
   },
   { caption: 'Ratesetter Logo',
-    image: '/img/users/ratesetter%20%281%29.png'
+    image: '/img/users/ratesetter.png'
   },
   { caption: 'Aqovia Logo',
     image: '/img/users/aqovia.png'
@@ -71,7 +71,7 @@ const users = [
     image: '/img/users/seek.jpg'
   },
   { caption: 'DiUS Logo',
-    image: '/img/users/dius%20%281%29.png'
+    image: '/img/users/dius.png'
   },
   { caption: 'Arquillian Project Logo',
     image: '/img/users/arquillian.png'
@@ -80,16 +80,16 @@ const users = [
     image: '/img/users/lastminute.png'
   },
   { caption: 'Cloudhealth Tech',
-    image: '/img/users/cloudhealth-tech%20%281%29.png'
+    image: '/img/users/cloudhealth-tech.png'
   },
   { caption: 'Repairly',
-    image: '/img/users/repairly%20%281%29.png'
+    image: '/img/users/repairly.png'
   },
   { caption: 'https://www.rapid7.com/',
-    image: '/img/users/rapid7%20%281%29.png'
+    image: '/img/users/rapid7.png'
   },
   { caption: 'ASOS',
-    image: '/img/users/asos%20%281%29.png',
+    image: '/img/users/asos.png',
     pinned: true
   },
   { caption: 'Simple',
