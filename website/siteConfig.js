@@ -114,7 +114,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Pact', // Title for your website.
+  title: 'Pact Docs', // Title for your website.
   tagline: 'Test your integrations quickly. Deploy your apps safely.',
   url: 'https://inspiring-panini-26eb5e.netlify.app', // Your website URL
   baseUrl: '/', // Base URL for your project */
