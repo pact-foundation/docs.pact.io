@@ -167,7 +167,7 @@ class Index extends React.Component {
             title: 'Ship code more quickly',
           },
           {
-            content: 'Know that you\'re compatible before you deploy',
+            content: 'Knowing you are already compatible',
             image: `${baseUrl}img/undraw_note_list.svg`,
             imageAlign: 'top',
             title: 'Deploy with confidence',
