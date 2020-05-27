@@ -8,5 +8,5 @@ You can also get help on Pact from the following channels:
 
 * **Stack Overflow**: [https://stackoverflow.com/questions/tagged/pact](https://stackoverflow.com/questions/tagged/pact)
 * **Twitter:** [@pact\_up](https://twitter.com/pact_up)
-* **Slack:** Join the chat at [slack.pact.io](http://slack.pact.io)
+* **Slack:** Join the chat at [slack.pact.io](https://slack.pact.io)
 
