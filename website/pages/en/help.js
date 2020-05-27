@@ -22,7 +22,7 @@ function Help(props) {
   const supportLinks = [
     {
       content: `Learn more using the [documentation on this site.](${docUrl(
-        'doc1.html',
+        'implementation_guides/workshops',
       )})`,
       title: 'Browse Docs',
     },
@@ -32,11 +32,17 @@ function Help(props) {
     },{
       content: 'Look for questions tagged with [pact](https://stackoverflow.com/questions/tagged/pact).',
       title: 'Search on Stack Overflow'
+    },{
+      content: 'View our roadmap, request a feature, or add your vote to an existing one at [Canny](https://pact.canny.io/)',
+      title: 'Request a feature'
     },
     {
       content: "Find out what's new with this project by reading our [blog](http://blog.pact.io)",
       title: 'Stay up to date',
-    },
+    },{
+      content: 'Please create an executable example and raise an issue in the [repository](https://github.com/pact-foundation) of the appropriate implementation.',
+      title: 'Found a bug?'
+    }
   ];
 
   return (
