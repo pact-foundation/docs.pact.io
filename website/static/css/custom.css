@@ -6,17 +6,17 @@
  */
 
 /* your custom css */
-
 /*
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
+*/
 
 @media only screen and (min-width: 1024px) {
   .separateOnPageNav .docsNavContainer {
     flex: 0 0 260px;
   }
 }
-
+/*
 @media only screen and (max-width: 1023px) {
 }
 
