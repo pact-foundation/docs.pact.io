@@ -75,8 +75,11 @@ class HomeSplash extends React.Component {
 
 class Index extends React.Component {
   render() {
-    const {config: siteConfig, language = ''} = this.props;
+    const { config: siteConfig, language = '', docsUrl} = this.props;
     const {baseUrl} = siteConfig;
+    const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
+    const langPart = `${language ? `${language}/` : ''}`;
+    const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
 
     const Block = props => (
       <Container
@@ -97,7 +100,7 @@ class Index extends React.Component {
         style={{textAlign: 'center'}}>
         <h2>Features</h2>
         <ul>
-          <li>Support for most of the common web development languages (Javascript, JVM, .Net, Ruby, Python, Golang and more)</li>
+          <li>Support for most of the common web development languages (Javascript, JVM, .Net, Ruby, Python, Golang and <a href={docUrl('implementation_guides/workshops')}>more</a>)</li>
           <li>Supports HTTP and messaging integrations</li>
           <li>Integrates into your CI/CD pipeline</li>
         </ul>
