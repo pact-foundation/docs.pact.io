@@ -1,3 +1,8 @@
+span.pro-or-con {
+  display: inline-block;
+  padding-left: 10px;
+}
+
 img.replay {
   cursor: pointer;
   width: 20px;
