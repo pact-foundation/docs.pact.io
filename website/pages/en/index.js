@@ -205,16 +205,28 @@ class Index extends React.Component {
       );
     };
 
+    const Netlify = () => {
+      return (
+        <div className="productShowcaseSection">
+          <p className="netlifyThanks">Thanks to Netlify for supporting OSS and hosting Pact Docs free of charge.</p>
+          <a href="https://www.netlify.com">
+            <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Deploys by Netlify" />
+          </a>
+        </div>
+      );
+    }
+
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
           <Features />
-          <FeatureCallout />
-          <TryOut />
-          <Description />
+          {/* <FeatureCallout /> */}
+          {/*  <TryOut /> */}
+          {/* <Description /> */}
           <Showcase />
-        </div>
+          <Netlify />
+          </div>
       </div>
     );
   }

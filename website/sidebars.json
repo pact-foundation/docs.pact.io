@@ -135,7 +135,8 @@
     ],
     "Contributing": [
       "contributing/README",
-      "contributing/contributors"
+      "contributing/contributors",
+      "contributing/code-of-conduct"
     ]
   },
   "docs-other": {
