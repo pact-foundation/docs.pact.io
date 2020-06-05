@@ -207,10 +207,12 @@ const siteConfig = {
   twitterUsername: '@pact_up',
   wrapPagesHTML: true,
   separateCss: 'static/css/how-pact-works',
+  /*
   algolia: {
     apiKey: '3df07c3398c2831ab28a34c22c443d41',
     indexName: 'pact'
   }
+  */
 };
 
 module.exports = siteConfig;
