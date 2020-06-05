@@ -102,7 +102,8 @@ const users = [
     image: '/img/users/rightmove-logo.png'
   },
   { caption: 'treatwell',
-    image: '/img/users/treatwell-logo.png'
+    image: '/img/users/treatwell-logo.png',
+    pinned: true
   },
   { caption: 'Novatec Consulting Logo',
     image: '/img/users/novatec.jpg'
