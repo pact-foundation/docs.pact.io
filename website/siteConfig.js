@@ -125,6 +125,7 @@ const siteConfig = {
   // Used for publishing and more
   projectName: 'pact-docs',
   organizationName: 'Pact Foundation',
+  gaTrackingId: 'UA-8926693-8',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
