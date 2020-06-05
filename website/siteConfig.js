@@ -116,7 +116,7 @@ const users = [
 const siteConfig = {
   title: 'Pact Docs', // Title for your website.
   tagline: 'Test your integrations quickly. Deploy your apps safely.',
-  url: 'https://inspiring-panini-26eb5e.netlify.app', // Your website URL
+  url: 'https://docs-pact-io.netlify.app', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
