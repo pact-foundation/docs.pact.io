@@ -22,3 +22,6 @@ The introduction of contract testing allows you to reduce your integrated and e2
 
 The mock service \(and stub service\) runs on your local development or CI machine for the duration of the pact tests. The Pact Broker is a permanently running, externally hosted service that allows you exchange the pacts and verification results.
 
+## Should I commit the generated pacts into the consumer's repository?
+
+You can if you want, but it's not necessary unless you have another use for them (like using them for stubs). Most people add them to the .gitignore file to avoid having to re-commit them every time they change.
