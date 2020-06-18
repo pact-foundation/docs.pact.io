@@ -80,6 +80,7 @@
       "getting_started/terminology",
       "getting_started/how_pact_works",
       "getting_started/what_is_pact_good_for",
+      "getting_started/comparisons",
       {
         "type": "subcategory",
         "label": "Matching",
