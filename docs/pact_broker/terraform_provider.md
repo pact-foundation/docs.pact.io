@@ -21,8 +21,3 @@ Here is a list of resources available for configuration:
 Learn more at the official website:
 
 {% embed url="https://github.com/pactflow/terraform" %}
-
-
-
-
-

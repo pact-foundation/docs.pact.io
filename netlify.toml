@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/pact_broker/terraform-provider"
+  to = "/pact_broker/terraform_provider"
+  status = 301

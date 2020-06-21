@@ -61,11 +61,12 @@
           "pact_broker/administration/deleting_resources"
         ]
       },
+      "pact_broker/pact_broker_client_cli",
+      "pact_broker/terraform_provider",
       "pact_broker/configuration",
       "pact_broker/upgrading",
       "pact_broker/breaking_changes",
-      "pact_broker/network_graph",
-      "pact_broker/terraform-provider"
+      "pact_broker/network_graph"
     ],
     "Stubs": [
       "getting_started/stubs"
