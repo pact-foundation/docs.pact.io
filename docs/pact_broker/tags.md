@@ -2,6 +2,13 @@
 title: Tags
 ---
 
+<a name="golden-rule"/>
+> The Golden Rule for tagging is:
+>
+> Tag with the branch name when you publish pacts or verification results, and tag with the environment name when you deploy.
+
+To find out what this means, read below!
+
 Tags are simple String values that that belong to "pacticipant" version \(that is, application version\) resources in the Pact Broker. They are typically used to provide metadata about a version, the most common use cases being to indicate the git branch of a version \(eg. `master`\) or a stage \(eg `test`, `prod`\).
 
 Pacticipant version tags can be used for multiple purposes.
@@ -21,17 +28,17 @@ When you are using tags, you need to ensure that the version numbering scheme yo
 
 ### When publishing pacts
 
-Your Pact consumer library will allow you to set the "consumer version tags" that will be set for the relevant consumer version when you publish your pacts. The recommended tag value to use is the name of your git branch, if applicable, or `dev`, if not.
+Your Pact consumer library will allow you to set the "consumer version tags" that will be set for the relevant consumer version when you publish your pacts. The recommended tag value to use is the name of your git branch, if applicable, or something like `dev`, if not.
 
 ### When publishing verification results
 
-Your Pact provider library will allow you to set the "provider version tags" that will be set for the relevant provider version when you publish your verification results. The recommended tag value to use is the name of your git branch, if applicable, or `dev`, if not.
+Your Pact provider library will allow you to set the "provider version tags" that will be set for the relevant provider version when you publish your verification results. The recommended tag value to use is the name of your git branch, if applicable, or something like `dev`, if not.
 
 ### After deploying to an environment
 
-_Note: making use of this feature is recommended for experienced Pact users, however, if you are just starting with Pact, you can skip it for now._
+_Note: this tag is required for the use of can-i-deploy, however, if you are just starting with Pact, you can skip it for now._
 
-When you deploy an application that uses Pact to a given environment \(eg `test`, `prod`\) then you should tag the relevant pacticipant version with the name of the stage using the [create version tag](https://github.com/pact-foundation/pact_broker-client#create-version-tag) command from the [Pact Broker client](https://github.com/pact-foundation/pact_broker-client). This allows you to use the [can-i-deploy](https://github.com/pact-foundation/pact_broker/wiki/can-i-deploy) tool to ensure that other applications that are deployed to the same environment can check to make sure they're compatible with the version you just deployed.
+When you deploy an application that uses Pact to a given environment \(eg `test`, `prod`\) then you should tag the relevant pacticipant version with the name of the stage using the [create version tag](https://github.com/pact-foundation/pact_broker-client#create-version-tag) command from the [Pact Broker client](/pact_broker/can_i_deploy). This allows you to use the [can-i-deploy](/pact_broker/can_i_deploy) tool to ensure that other applications that are deployed to the same environment can check to make sure they're compatible with the version you just deployed.
 
 ## When are tags used?
 
