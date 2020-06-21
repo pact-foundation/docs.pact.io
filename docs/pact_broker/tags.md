@@ -53,7 +53,7 @@ The `can-i-deploy` tool queries the Pact Broker to determine if the version of t
 
 Most of the Pact libraries will provide configuration options to create tags automatically when publishing pacts or verification results, and when configuring the pacts to verify.
 
-If you need to create a tag manually, then you can use the [Pact Broker Client CLI](/pact_broker/pact_broker_client_cli), or send a `PUT` request to the tag resource path.
+If you need to create a tag manually, then you can use the [Pact Broker Client CLI](https://github.com/pact-foundation/pact_broker-client#create-version-tag), or send a `PUT` request to the tag resource path.
 
 ## Deleting tags
 
