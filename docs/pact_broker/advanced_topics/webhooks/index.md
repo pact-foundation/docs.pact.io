@@ -6,7 +6,8 @@ title: Webhooks
 
 Webhooks allow you to trigger an HTTP request when a pact is changed, a pact is published, or a verification is published. The most common use case for webhooks is to trigger a provider build every time a pact changes, and to trigger a consumer build every time a verification is published.
 
-Webhooks can be used in conjunction with the [can-i-deploy](https://docs.pact.io/pact_broker/can_i_deploy) tool \(a CLI that allows you to easily check the verification status of your pacts\), to allow you to fully automate the CI/CD process for all the applications that use the Pact Broker, ensuring both sides of the contract are fulfilled before deploying.
+Webhooks can be used in conjunction with the [can-i-deploy](/pact_broker/can_i_deploy) tool \(a CLI that allows you to easily check the verification status of your pacts\), to allow you to fully automate the CI/CD process for all the applications that use the Pact Broker, ensuring both sides of the contract are fulfilled before deploying.
+
 
 ## The 'contract content changed' event
 
@@ -41,7 +42,7 @@ Note that if the pact content has not changed, it is "pre verified", and the pro
 
 **What to do if your Pact Broker webhooks can't contact your CI because it is in a private network**
 
-If your consumer and provider builds are both within the same private network, you can achieve a similar result by having your builds trigger each other directly. You'll just end up with a provider build for every consumer build, rather than a provider build for every _pact change_.
+If your consumer and provider builds are both within the same private network, or you share access to each other's repositories, you can achieve a similar result by either embedding the pact verification part of the provider's build into the consumer's pipeline, or having the consumer builds trigger the provider verification build directly. To speed up your builds, you can ensure that you only run this verification step when the pact has _changed_ (rather than on every build), by using [`can-i-deploy`](/pact_broker/can_i_deploy) to determine if the step is necessary. eg `pact-broker can-i-deploy --pacticipant <CONSUMER> --version <CONSUMER_VERSION> --pacticipant <PROVIDER> --latest <TAG_NAME_OF_MAIN_LINE_OF_DEVELOPMENT>`. Note however that duplicate results in the Pact Broker are expected and not an issue - this is simply a speed optimisation.
 
 ### Consumer CI
 
@@ -62,7 +63,7 @@ If your consumer and provider builds are both within the same private network, y
 ## Related resources
 
 * [Debugging webhooks](debugging_webhooks.md)
-* [Webhook API documentation](../api_docs/webhooks.md) - note that there is not yet a UI for creating webhooks. If you're interested in creating one, contact us on the Pact Broker [gitter](https://gitter.im/pact-foundation/pact_broker) channel.
+* [Webhook API documentation](../api_docs/webhooks.md) - note that there is not yet a UI for creating webhooks. If you're interested in creating one, contact us on the Pact Broker [slack](https://slack.pact.io) channel.
 * [can-i-deploy documentation](https://github.com/pact-foundation/pact_broker-client#can-i-deploy) - Documentation for the Pact Broker `can-i-deploy` CLI, which allows you to retrieve the verification results and determine whether your application is safe to deploy.
 * [Webhook template library](template_lib.md) - a library of useful webhook templates
 
