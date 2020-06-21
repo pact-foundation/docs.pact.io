@@ -26,6 +26,7 @@ id: index
 * [Using Pact where the Consumer team is different from the Provider team](./#using-pact-where-the-consumer-team-is-different-from-the-provider-team)
 * [How to prevent a consumer from deploying with an invalid contract](./#how-to-prevent-a-consumer-from-deploying-with-an-invalid-contract)
 * [How do I test OAuth or other security headers?](./#how-do-i-test-oauth-or-other-security-headers)
+* [Should the database or any other part of the provider be stubbed?](#should-the-database-or-any-other-part-of-the-provider-be-stubbed)
 * [How do I deal with a situation where there are multiple systems involved in a scenario?](./#how-do-i-deal-with-a-situation-where-there-are-multiple-systems-involved-in-a-scenario)
 * [How do I test binary files in responses, such as a download?](./#how-do-i-test-binary-files-in-responses-such-as-a-download)
 * [Why is the documentation so ugly?](./#why-is-the-documentation-so-ugly)
@@ -259,6 +260,12 @@ In this instance you have a few options:
 In this case, we suggest you need to weigh up the pros/cons. From a purely theoretical perspective, the answer is “you should include it”. But taking a more balanced view, we say test what gives you value. If the cookie is always going to be implicitly added by the browser \(because that’s how browser’s behave\) and it’s a scenario unlikely to give your team more \(useful\) information about how the system behaves, whilst costing you effort in maintaining it. Then maybe it’s not worth it.
 
 Sorry, life isn't black and white!
+
+### Should the database or any other part of the provider be stubbed?
+
+The pact authors' experience with using pacts to test microservices has been that using the set_up hooks to populate the database, and running the verificatons with all the real provider code has worked very well, and gives us full confidence that the end to end scenario will work in the deployed code.
+
+However, if you have a large and complex provider, you might decide to stub some of your application code. You will definitely need to stub calls to downstream systems or to set up error scenarios. Make sure, if you stub, that you don't stub the code that actually parses the request and pulls the expected data out, because otherwise the consumer could be sending absolute rubbish, and the verification task won't fail because that code won't get executed. If the validation happens when you insert a record into the datasource, either don't stub anything, or rethink your validation code.
 
 ### How do I test binary files in responses, such as a download?
 
