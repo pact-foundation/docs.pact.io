@@ -9,7 +9,7 @@ title: Tags
 
 To find out what this means, read below!
 
-Tags are simple String values that that belong to "pacticipant" version \(that is, application version\) resources in the Pact Broker. They are typically used to provide metadata about a version, the most common use cases being to indicate the git branch of a version \(eg. `master`\) or a stage \(eg `test`, `prod`\).
+Tags are simple String values that that belong to "pacticipant" version \(that is, application version\) resources in the Pact Broker. They are typically used to provide metadata about a version - the most common use cases being to indicate the git branch of a version \(eg. `master`\) or a stage \(eg `test`, `prod`\).
 
 Pacticipant version tags can be used for multiple purposes.
 
@@ -20,9 +20,9 @@ Note that the tag is actually placed on the `pacticipant version` resource, not 
 
 As an example, to tag `Foo` application version `b5236e772` as the production version, do a `PUT` to the resource `/pacticipants/Foo/versions/b5236e772/tags/prod`. All the pacts and verifications associated with `Foo` version `b5236e772` are now considered to be the production pacts/verifications. The pact for provider `Bar` and the latest production version of consumer `Foo` can be retrieved from `/pacts/provider/Bar/consumer/Foo/latest/prod`.
 
-\(You may have noticed that the URL for a pacticipant version tag starts with `/pacticipants`, not `/consumers` or `/providers`. That is because `consumer` and `provider` are roles that a pacticipant takes in a pact, not an identities in themselves. An application may be both a consumer and a provider.\)
+\(You may have noticed that the URL for a pacticipant version tag starts with `/pacticipants`, not `/consumers` or `/providers`. That is because `consumer` and `provider` are roles that a pacticipant takes in a pact, not identities in themselves. An application may be both a consumer and a provider.\)
 
-When you are using tags, you need to ensure that the version numbering scheme you use to identify a "version" cannot give you version that exists on more than one repository branch - don't hard code it. It should either _be_ the git sha \(or equivalent for your repository\), or it should include the git sha as metadata if you are using semantic versioning eg. `1.2.456+405b31ec6`.
+When you are using tags, you need to ensure that the version numbering scheme you use to identify a "version" cannot give you version that exists on more than one repository branch - don't hard code it. It should either _be_ the git sha \(or equivalent for your repository\), or it should include the git sha as metadata if you are using semantic versioning eg. `1.2.456+405b31ec6`. See [Versioning in the Pact Broker](/getting_started/versioning_in_the_pact_broker) for more information.
 
 ## When are tags created?
 
@@ -38,13 +38,17 @@ Your Pact provider library will allow you to set the "provider version tags" tha
 
 _Note: this tag is required for the use of can-i-deploy, however, if you are just starting with Pact, you can skip it for now._
 
-When you deploy an application that uses Pact to a given environment \(eg `test`, `prod`\) then you should tag the relevant pacticipant version with the name of the stage using the [create version tag](https://github.com/pact-foundation/pact_broker-client#create-version-tag) command from the [Pact Broker client](/pact_broker/can_i_deploy). This allows you to use the [can-i-deploy](/pact_broker/can_i_deploy) tool to ensure that other applications that are deployed to the same environment can check to make sure they're compatible with the version you just deployed.
+When you deploy an application that uses Pact to a given environment \(eg `test`, `prod`\) then you should tag the relevant pacticipant version with the name of the stage using the [create version tag](https://github.com/pact-foundation/pact_broker-client#create-version-tag) command from the [Pact Broker client](/pact_broker/can_i_deploy). This allows other applications to use [can-i-deploy](/pact_broker/can_i_deploy) to ensure that they're compatible with the version you just deployed before they deploy their own version.
+
+> Remember the Golden Rule for tagging is:
+>
+> Tag with the branch name when you publish pacts or verification results, and tag with the environment name when you deploy.
 
 ## When are tags used?
 
-### When retrieving pacts
+### When retrieving pacts to verify
 
-Providers can \(and should\) be configured to retrieve pacts by tag name \(usually the "latest pact" for a given tag eg. the latest `master` and latest `prod` pacts\).
+Providers should be configured to retrieve pacts by tag name \(usually the "latest pact" for a given tag eg. the latest `master` and latest `prod` pacts\).
 
 ### Before deploying to an environment
 
@@ -56,37 +60,84 @@ The `can-i-deploy` tool queries the Pact Broker to determine if the version of t
 * `/pacts/provider/PROVIDER/consumer/CONSUMER/latest-untagged` will return the pact for the latest pacticipant version  that doesn't have any tags.
 * `/pacts/provider/PROVIDER/consumer/CONSUMER/latest` will return the pact for the latest pacticipant version, regardless of tags.
 
-## Creating and using tags
+## Creating tags
 
-Most of the Pact libraries will provide configuration options to create tags automatically when publishing pacts or verification results, and when configuring the pacts to verify.
+Most of the Pact libraries will provide configuration options to create tags automatically when publishing pacts or verification results.
 
 If you need to create a tag manually, then you can use the [Pact Broker Client CLI](https://github.com/pact-foundation/pact_broker-client#create-version-tag), or send a `PUT` request to the tag resource path.
 
-## Deleting tags
+### When publishing pacts
 
-At the moment, there is no CLI to delete a tag, but you can delete it via the API by sending a `DELETE` request to the tag resource URL.
+This is a Javascript example, assuming that the build is running on Travis CI. Please consult the documentation for your chosen Pact language for the relevant syntax for your codebase.
 
-## Tagging approaches
+```js
+const opts = {
+  pactFilesOrDirs: ['./pacts'],
+  pactBroker: '...',
+  consumerVersion: process.env.TRAVIS_COMMIT,
+  tags: [process.env.TRAVIS_BRANCH]
+}
 
-### 1. Automatically tag with branch name when pact is published \(recommended\)
-
-With this approach, the consumer version always has a tag, whether it be `master`, `prod` or `feature-x`. This approach works well if you use feature branches for development, and release from a production branch.
-
-An example configuration in a ruby project to achieve this would be:
-
-```ruby
-PactBroker::Client::PublicationTask.new do | task |
-  task.pact_broker_base_url = "..."
-  task.consumer_version = "..."
-  task.tag = `git rev-parse --abbrev-ref HEAD`.strip
-end
+new Publisher(opts).publishPacts()
 ```
 
-The provider CI would then be configured to verify the required branches using the URLs described above - the recommended approach would be to always verify `master` and `prod`.
+Once you have your Pact CI/CD implementation running properly, you would only publish your pacts and verification results from your CI, and not your local development machines. However, if you are in the experimentation stage and wish to publish from your local machine, you can set the version and tags from your local git repository like so:
 
-### 2. Manually tag production or feature pacts
+```js
+const exec = command =>
+  childProcess
+    .execSync(command)
+    .toString()
+    .trim() //must trim to remove the new line on the end!
 
-If you release from master, then the production version of the consumer application should be tagged with `prod` as part of the release process. The provider CI should verify the `latest-untagged` and `latest/prod` endpoints described above. You can also [manually tag](https://github.com/pact-foundation/pact_broker/wiki/How-to-add-new-interactions-without-breaking-everything) pacts with the tag name of your choice to allow you to add in new interactions without breaking the provider CI.
+const opts = {
+  ...,
+  consumerVersion: process.env.TRAVIS_COMMIT || exec('git rev-parse HEAD'),
+  tags: [process.env.TRAVIS_BRANCH || exec('git rev-parse --abbrev-ref HEAD')]
+}
+
+new Publisher(opts).publishPacts()
+```
+
+### When publishing verification results
+
+```js
+const opts = {
+  pactBrokerUrl: '...',
+  providerVersion: process.env.TRAVIS_COMMIT,
+  providerVersionTags: [process.env.TRAVIS_BRANCH],
+  publishVerificationResult: process.env.CI === 'true' // only publish from CI
+}
+
+return new Verifier(opts).verifyProvider()
+```
+
+## Using tags
+
+### When verifying pacts
+
+If you have reached the stage of Pact CI/CD maturity where you are tagging with the environment name and using `can-i-deploy`, then you should verify the pact from each environment to ensure that `can-i-deploy` returns a `yes` result when promoting a version through the environments.
+
+If you are just starting out with Pact, then we recommend you just start by verifying the `master` pact (or whatever you have called the tag for your main line of development.)
+
+```js
+const opts = {
+  ...,
+  consumerVersionTags: ['master', 'test','production'],
+}
+
+return new Verifier(opts).verifyProvider()
+```
+
+### When deploying
+
+See the [can-i-deploy](/pact_broker/can_i_deploy) documentation.
+
+## Deleting tags
+
+At the moment, there is no CLI to delete a tag, but you can delete it via the API by sending a `DELETE` request to the tag resource URL. eg `curl -X DELETE https://broker/pacticipants/PACTICIPANT/versions/VERSION/tags/TAG`.
+
+The most common reason for deleting tags is if you are [rolling back](#handling-rollbacks) to a previously deployed application version.
 
 ## Adding new interactions
 
@@ -100,30 +151,14 @@ If you want to ensure your provider is compatible with both the head version of 
 
 ### Step 1. Tag the production version of the pact
 
-* Determine the production version of your consumer. eg. "1.0.0".
-* Send a request to the Pact Broker's RESTful API to tag the given consumer version with the name of your choice. eg "prod"
-
-  $ curl -v -X PUT -H "Content-Type: application/json" [http://pact-broker/pacticipants/Zoo App/versions/1.0.0/tags/prod](http://pact-broker/pacticipants/Zoo%20App/versions/1.0.0/tags/prod)
+Use the [create-version-tag](https://github.com/pact-foundation/pact_broker-client#create-version-tag) command from the Pact Broker Client CLI.
 
 ### Step 2. Configure the provider to verify the production pact
 
-* Add a new pact URL to the verification configuration of your provider project. The new URL will be the same as the normal "latest" url, with the name of the tag appended.
+Add the `production` tag to the list of tags to verify in your provider's verification configuration.
 
-  eg. `http://pact-broker/pacts/provider/Animal%20Service/consumer/Zoo%20App/latest/prod`
+## Handling rollbacks
 
-If you are using Ruby, the provider configuration will look like this.
+When the Pact Broker is determining "the latest `production` application version" or "the latest `production` pact" the logic it uses is "find all the _pacticipant versions_ that have the `production` tag, and return the most recently created one", NOT "find the most recently created `production` _tag_, and then return the associated pacticipant version".
 
-```ruby
-Pact.service_provider 'Animal Service' do
-
-  honours_pact_with "Zoo App" do
-    pact_uri 'http://pact-broker/pacts/provider/Animal%20Service/consumer/Zoo%20App/latest'
-  end
-
-  honours_pact_with "Zoo App" do
-    pact_uri 'http://pact-broker/pacts/provider/Animal%20Service/consumer/Zoo%20App/latest/prod'
-  end
-
-end
-```
-
+This means that if you are rolling back to a previously deployed (and hence, previously tagged) application version, you need to remove the `production` tag from the version you are undeploying. See the [Deleting tags](#deleting-tags) section.
