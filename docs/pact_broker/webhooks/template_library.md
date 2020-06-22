@@ -162,7 +162,7 @@ N.B - currently need to use a personal API token \(ideally for a machine user\)
 }
 ```
 
-## Bitbucket-pipeline trigger build of a branch
+## Bitbucket - pipeline trigger build of a branch
 
 ```text
 {
