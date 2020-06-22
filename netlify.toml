@@ -8,5 +8,5 @@
   status = 301
 
   from = "/pact_broker/advanced_topics/webhooks"
-  from = "/pact_broker/webhooks"
+  to = "/pact_broker/webhooks"
   status = 301
