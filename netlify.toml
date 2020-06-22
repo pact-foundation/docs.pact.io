@@ -3,10 +3,12 @@
   to = "/pact_broker/terraform_provider"
   status = 301
 
+[[redirects]]
   from = "/pact_broker/advanced_topics/webhooks/template_lib"
   to = "/pact_broker/webhooks/template_library"
   status = 301
 
+[[redirects]]
   from = "/pact_broker/advanced_topics/webhooks"
   to = "/pact_broker/webhooks"
   status = 301
