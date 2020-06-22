@@ -19,12 +19,9 @@ Good examples:
 * `a86579910`
 * `1.2.456+405b31ec6`
 
-Acceptable examples:
-
-* `2.0.<buildnumber>` \(see note below\)
-
 Bad examples:
 
+* `2.0.<buildnumber>` \(see note below\)
 * `2.0.0` where all of the parts are incremented manually \(because pacts from different branches and commits of your application will overwrite each other\)
 * `1` \(see above\)
 * A version is JUST the build number from your CI system \(because when you move CI, your numbers will start over again, see above\)

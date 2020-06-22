@@ -2,3 +2,11 @@
   from = "/pact_broker/terraform-provider"
   to = "/pact_broker/terraform_provider"
   status = 301
+
+  from = "/pact_broker/advanced_topics/webhooks/template_lib"
+  to = "/pact_broker/webhooks/template_library"
+  status = 301
+
+  from = "/pact_broker/advanced_topics/webhooks"
+  from = "/pact_broker/webhooks"
+  status = 301

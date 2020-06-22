@@ -1,4 +1,6 @@
-# Debugging Webhooks
+---
+title: Debugging webhooks
+---
 
 Webhooks are executed when either the pact content changes, or a verification is published.
 

@@ -196,7 +196,7 @@ Some other approaches to consider are:
 
 **Use Pact Broker Webhooks:**
 
-Trigger a build or Slack notification using [webhooks](/pact_broker/advanced_topics/webhooks/) on the Provider as soon as a changed contract is submitted to the server.
+Trigger a build or Slack notification using [webhooks](/pact_broker/webhooks/) on the Provider as soon as a changed contract is submitted to the server.
 
 **Collaboration**
 

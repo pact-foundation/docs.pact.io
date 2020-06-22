@@ -1,6 +1,6 @@
-# Webhooks template library
-
-## Webhook template library
+---
+title: Webhooks template library
+---
 
 Please feel free add any that you think might be useful to others.
 
@@ -47,9 +47,9 @@ Report the pact verification status back to the consumer project in Github.
     "method": "POST",
     "url": "https://hooks.slack.com/services/<webhook id>",
     "body": {
-      "channel": "#<your-channel-here>", 
-      "username": "webhookbot", 
-      "text": "New version of pact created for ${pactbroker.consumerName}/${pactbroker.providerName}: ${pactbroker.pactUrl}", 
+      "channel": "#<your-channel-here>",
+      "username": "webhookbot",
+      "text": "New version of pact created for ${pactbroker.consumerName}/${pactbroker.providerName}: ${pactbroker.pactUrl}",
       "icon_emoji": ":ghost:"
     }
   }
@@ -113,7 +113,7 @@ For more information on triggering Travis builds, see [https://docs.travis-ci.co
       "Authorization": "<authorization>"
     },
     "body": {
-      "definition": { 
+      "definition": {
         "id": <build-definition-id>
       },
       "sourceBranch": "refs/heads/master",

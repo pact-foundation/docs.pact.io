@@ -23,8 +23,8 @@ This will get you to the stage where your consumer and provider have a pact that
 * Add a pact verification test to the provider build.
 * Configure the verification test to verify the pacts with the tag `master` \(or whatever the "main line" of development is called\).
 * Configure the pact verification task to publish verification results only when run on the CI.
-* Create a separate CI job that just does the pact verification/results publishing steps. It should accept the URL of the changed pact as a parameter \(see the [webhooks](/pact_broker/advanced_topics/webhooks/) page for more information on this\).
-* Create a webhook that triggers the pact verification CI job when a pact changes, and use the webhook template parameters to pass the URL of the changed pact into the CI job \(see the [webhooks](/pact_broker/advanced_topics/webhooks/) page for more information on this\).
+* Create a separate CI job that just does the pact verification/results publishing steps. It should accept the URL of the changed pact as a parameter \(see the [webhooks](/pact_broker/webhooks/) page for more information on this\).
+* Create a webhook that triggers the pact verification CI job when a pact changes, and use the webhook template parameters to pass the URL of the changed pact into the CI job \(see the [webhooks](/pact_broker/webhooks/) page for more information on this\).
 
 ## Advanced
 

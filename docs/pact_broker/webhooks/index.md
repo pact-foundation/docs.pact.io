@@ -63,7 +63,7 @@ If your consumer and provider builds are both within the same private network, o
 ## Related resources
 
 * [Debugging webhooks](debugging_webhooks.md)
-* [Webhook API documentation](../api_docs/webhooks.md) - note that there is not yet a UI for creating webhooks. If you're interested in creating one, contact us on the Pact Broker [slack](https://slack.pact.io) channel.
+* [Webhook API documentation](/pact_broker/advanced_topics/api_docs/webhooks) - note that there is not yet a UI for creating webhooks. If you're interested in creating one, contact us on the Pact Broker [slack](https://slack.pact.io) channel.
 * [can-i-deploy documentation](https://github.com/pact-foundation/pact_broker-client#can-i-deploy) - Documentation for the Pact Broker `can-i-deploy` CLI, which allows you to retrieve the verification results and determine whether your application is safe to deploy.
-* [Webhook template library](template_lib.md) - a library of useful webhook templates
+* [Webhook template library](template_library.md) - a library of useful webhook templates
 
