@@ -75,16 +75,27 @@ Report the pact verification status back to the consumer project in Github.
     "body": {
       "request": {
         "message": "Triggered by changed pact for ${pactbroker.consumerName} version ${pactbroker.consumerVersionNumber}",
-        "branch":"master"
+        "branch":"master",
+        "config": {
+          "env": {
+            "global": [
+              "PACT_URL=${pactbroker.pactUrl}"
+            ]
+          }
+        }
       }
     }
   }
 }
 ```
 
-For more information on triggering Travis builds, see [https://docs.travis-ci.com/user/triggering-builds](https://docs.travis-ci.com/user/triggering-builds)
+Ref:
+
+* [Travis triggering builds docs](https://docs.travis-ci.com/user/triggering-builds)
 
 ## Bamboo - trigger build
+
+> If you use Bamboo and have worked out how to pass in parameters to the build, can you please submit a PR to update this example.
 
 ```javascript
 {
@@ -99,6 +110,10 @@ For more information on triggering Travis builds, see [https://docs.travis-ci.co
   }
 }
 ```
+
+Ref:
+
+* [Bamboo Queue documentation](https://docs.atlassian.com/atlassian-bamboo/REST/4.0/?_ga=2.99385502.104409444.1592869883-400989189.1592276231#idp263696)
 
 ## Visual Studio Team Services - trigger build
 
@@ -166,7 +181,7 @@ N.B - currently need to use a personal API token \(ideally for a machine user\)
         "target": {
             "ref_type": "branch",
             "type": "pipeline_ref_target",
-            "ref_name": "your_branchn_name"
+            "ref_name": "your_branch_name"
           }
     }
   }
@@ -178,3 +193,62 @@ Ref:
 * [Bitbucket API page](https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/pipelines/)
 * [Bitbucket App Password](https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html)
 
+
+## Buildkite - trigger build
+
+```
+{
+  "events": [
+    {
+      "name": "contract_content_changed"
+    }
+  ],
+  "request": {
+    "body": {
+      "branch": "master",
+      "commit": "HEAD",
+      "message": "Build all the things! :rocket:",
+      "env": {
+        "PACT_URL": "${pactbroker.pactUrl}"
+      }
+    },
+    "headers": {
+      "Authorization": "Bearer TOKEN",
+      "Content-Type": "application/json"
+    },
+    "method": "POST",
+    "url": "https://api.buildkite.com/v2/organizations/<ORG>/pipelines/<PIPELINE>/builds"
+  }
+}
+```
+
+Ref:
+
+* [Buildkite API](https://buildkite.com/docs/apis/rest-api/builds#create-a-build)
+
+
+## GitLab - trigger build
+
+> If you use Gitlab and have worked out how to pass parameters into the build, can you please submit a PR to update this example.
+
+```json
+{
+  "request": {
+    "method": "POST",
+    "url": "https://gitlab.com/api/v4/projects/:id/ref/:ref/trigger/pipeline?token=:token",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "events": [
+    {
+      "name": "contract_content_changed"
+    }
+  ]
+}
+```
+
+Ref:
+
+* [GitLab - Adding a new trigger](https://docs.gitlab.com/ee/ci/triggers/#adding-a-new-trigger)
+* [GitLab - Pipeline triggers](https://docs.gitlab.com/ee/api/pipeline_triggers.html)
