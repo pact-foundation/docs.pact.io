@@ -2,7 +2,7 @@ name: Sync Pact JS docs
 
 on:
   repository_dispatch:
-    types: [pact-js-updated]
+    types: [pact-js-updated, pact-jvm-updated]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,13 +14,18 @@ jobs:
         ruby-version: '2.6'
     - run: gem install bundler -v 2.0.2
     - run: bundle install
-    - run: ruby scripts/sync/pact_js.rb
+
+    - run: bundle exec ruby scripts/sync/pact_js.rb
+      if: github.event.action == 'pact-js-updated'
+
+    - run: bundle exec ruby scripts/sync/pact_jvm.rb
+      if: github.event.action == 'pact-jvm-updated'
 
     - uses: EndBug/add-and-commit@v4
       with:
-        add: 'docs/implementation_guides/javascript'
+        add: 'docs/implementation_guides'
         author_name: Github Action
         author_email: beth@bethesque.com
-        message: 'chore: updated javascript documentation from pact-js repository'
+        message: 'chore: updated docs from trigger ${{ github.event.action }}"'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
