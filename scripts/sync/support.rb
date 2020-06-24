@@ -1,5 +1,5 @@
 class MarkdownFileContents
-  attr_reader :lines, :fields, :comments
+  attr_accessor :lines, :fields, :comments
 
   def initialize(lines, fields = {}, comments = [])
     @lines = lines

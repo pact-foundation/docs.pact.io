@@ -26,6 +26,7 @@ CUSTOM_ACTIONS = [
     md_file_contents.fields[:title] = "Changelog"
     instructions_index = md_file_contents.lines.find_index { |line| line.include?('To generate the log') }
     md_file_contents.lines.delete_at(instructions_index) if instructions_index
+    md_file_contents.lines = md_file_contents.lines.collect{ |line| line.gsub(/^# /, '## ') }
   }]
 ]
 

@@ -4,7 +4,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the dius/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-# 4.1.4 - bugfixes & enhancements
+## 4.1.4 - bugfixes & enhancements
 
 
 * 7a9733fd4 - Merge pull request #1141 from anto-ac/add-more-backwards-compatibility-with-dates (Antonello Caboni, Fri Jun 19 13:44:54 2020 +0100)
@@ -23,7 +23,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 82034525a - feat: allow matchers to be applied to unknown body formats (Ronald Holshausen, Thu Jun 18 15:42:36 2020 +1000)
 * c1717970d - feat: implemented content type matcher (Ronald Holshausen, Thu Jun 18 14:39:27 2020 +1000)
 
-# 4.1.3 - bugfixes & enhancements
+## 4.1.3 - bugfixes & enhancements
 
 * 9fb20fd22 - fix: JUnit 5 tests should not throw exception if only pending failures (Ronald Holshausen, Thu Jun 18 13:35:25 2020 +1000)
 * 1b3487133 - feat: Add a method for binary data in the Java DSL (Ronald Holshausen, Thu Jun 18 11:51:08 2020 +1000)
@@ -47,7 +47,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 2a16da943 - fix: backward compatible support for Z UTC designator in timestamps (anto, Mon Jun 15 20:21:07 2020 +0100)
 * d87fef54b - bump version to 4.1.3 (anto, Mon Jun 15 11:00:31 2020 +0100)
 
-# 4.1.2 - bugfixes + enhancements
+## 4.1.2 - bugfixes + enhancements
 
 * 551f86d2a - fix: removed extra quote (Ronald Holshausen, Mon Jun 15 18:11:15 2020 +1000)
 * 527f712ca - Merge pull request #1125 from DiUS/docs/workshop (Ronald Holshausen, Mon Jun 15 17:20:43 2020 +1000)
@@ -109,7 +109,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 83cc4c5e8 - fix: update publish pacts task to use latest plugin version (Ronald Holshausen, Tue Jun 9 10:53:42 2020 +1000)
 * 67955905c - bump version to 4.1.2 (Ronald Holshausen, Tue Jun 9 10:09:19 2020 +1000)
 
-# 4.1.1 - Bugfix Release
+## 4.1.1 - Bugfix Release
 
 * 20b36f7c1 - fix: codenarc error (Ronald Holshausen, Tue Jun 9 09:17:50 2020 +1000)
 * a0471fc5c - Merge pull request #1114 from aplsup/fix-tag-name-junit-testdescription (Ronald Holshausen, Sun Jun 7 15:33:20 2020 +1000)
@@ -152,7 +152,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 9b0f56a0e - chore: updated release script for new modules (Ronald Holshausen, Wed May 20 14:50:19 2020 +1000)
 * d4d0036d6 - bump version to 4.1.1 (Ronald Holshausen, Wed May 20 14:49:45 2020 +1000)
 
-# 4.1.0 - Refactored modules + Pending Pacts
+## 4.1.0 - Refactored modules + Pending Pacts
 
 * e7ede9155 - chore: skip cxreating empty artifact (Ronald Holshausen, Wed May 20 14:27:27 2020 +1000)
 * c2e2c5681 - chore: small performance enhancement in JSON parser (Ronald Holshausen, Wed May 20 12:57:51 2020 +1000)
@@ -242,7 +242,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 257ccc900 - bump version to 4.0.10 (Ronald Holshausen, Sun Apr 5 14:05:41 2020 +1000)
 * c88ed5ead - fix: update to latest Gradle publish plugin (Ronald Holshausen, Sun Apr 5 14:04:52 2020 +1000)
 
-# 3.6.15 - Backported fixes from 4.0.x
+## 3.6.15 - Backported fixes from 4.0.x
 
 * d168fe517 - chore: remove inlined kotlin-result in favour of version from Maven Central #1073 (Ronald Holshausen, Sun Apr 19 11:15:16 2020 +1000)
 * 388c45175 - chore: fixes after back-porting commits from master (Ronald Holshausen, Wed Apr 29 13:00:02 2020 +1000)
@@ -306,7 +306,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * f53bd4c5a - fix: call the statechange teardown if the test fails #834 (Ronald Holshausen, Sun Oct 13 13:43:36 2019 +1100)
 * fe54ed838 - bump version to 3.6.15 (Ronald Holshausen, Sat Sep 28 15:42:16 2019 +1000)
 
-# 4.0.10 - add support for MockMvc in JUnit 5 tests, add namespace-aware XML matching
+## 4.0.10 - add support for MockMvc in JUnit 5 tests, add namespace-aware XML matching
 
 * 7d84f60af - chore: add test to try replicate Github issue (Ronald Holshausen, Sat Apr 18 16:49:33 2020 +1000)
 * 053d8969e - fix: datetime expressions where the time modifier rolls the date (Ronald Holshausen, Sat Apr 18 16:06:38 2020 +1000)
@@ -323,7 +323,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 257ccc900 - bump version to 4.0.10 (Ronald Holshausen, Sun Apr 5 14:05:41 2020 +1000)
 * c88ed5ead - fix: update to latest Gradle publish plugin (Ronald Holshausen, Sun Apr 5 14:04:52 2020 +1000)
 
-# 4.0.9 - Bugfix Release
+## 4.0.9 - Bugfix Release
 
 * 76ca345c1 - chore: add example for provider state injection where the value is missing (Ronald Holshausen, Sun Apr 5 13:28:00 2020 +1000)
 * fe33c7526 - feat: fix for failing test #1061 (Ronald Holshausen, Sun Apr 5 11:37:13 2020 +1000)
@@ -338,7 +338,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 438e2f2cd - fix: correct the JUnit 4 readme to use the correct classes #1056 (Ronald Holshausen, Sat Mar 28 12:28:24 2020 +1100)
 * da201320c - bump version to 4.0.9 (Ronald Holshausen, Mon Mar 23 09:54:28 2020 +1100)
 
-# 4.0.8 - Bugfixes + support for provider-pacts-for-verification endpoint
+## 4.0.8 - Bugfixes + support for provider-pacts-for-verification endpoint
 
 * a549ef32e - feat: display verification notices with Gradle and Maven #942 (Ronald Holshausen, Sun Mar 22 19:03:11 2020 +1100)
 * c5d734201 - feat: Updated Gradle plugin to use new hasPactsFromPactBrokerWithSelectors #942 (Ronald Holshausen, Sun Mar 22 17:37:25 2020 +1100)
@@ -364,7 +364,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 528bcb647 - Fix link for pact gradle plugin (Vasilis Charalampakis, Thu Mar 12 13:39:12 2020 +0200)
 * 6fd8adbc3 - bump version to 4.0.8 (Ronald Holshausen, Sun Mar 8 13:26:08 2020 +1100)
 
-# 4.0.7 - Bugfix Release
+## 4.0.7 - Bugfix Release
 
 * 1de706ed2 - chore: update travis build (Ronald Holshausen, Sun Mar 8 13:01:19 2020 +1100)
 * afe807b44 - chore: disable escaping of HTML and XML embedded in JSON #1031 (Ronald Holshausen, Sun Mar 8 12:52:21 2020 +1100)
@@ -400,7 +400,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 5d14f17f7 - Update README.md (Ronald Holshausen, Sat Feb 22 13:50:51 2020 +1100)
 * aa4f97cdf - bump version to 4.0.7 (Ronald Holshausen, Sat Feb 22 13:32:02 2020 +1100)
 
-# 4.0.6 - Bugfix Release + Upgrade to Groovy 3.0
+## 4.0.6 - Bugfix Release + Upgrade to Groovy 3.0
 
 * 66babb0c7 - Merge pull request #1021 from treatwell/defer-junit-runner-initialization (Ronald Holshausen, Tue Feb 18 14:57:55 2020 +1100)
 * e533511ce - Merge branch 'master' into defer-junit-runner-initialization (Antonello Caboni, Mon Feb 17 10:54:32 2020 +0000)
@@ -439,7 +439,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * bdba13252 - Use https://jcenter.bintray.com (=Andrew Steffey, Fri Jan 31 11:24:19 2020 -0500)
 * 3860faa5d - bump version to 4.0.6 (Ronald Holshausen, Sun Jan 26 17:52:57 2020 +1100)
 
-# 4.0.5 - Bugfix Release + Maven and Gradle can-i-deploy task
+## 4.0.5 - Bugfix Release + Maven and Gradle can-i-deploy task
 
 * 2a46954d1 - fix: pacticipant version is optional is latest is specified #994 (Ronald Holshausen, Sun Jan 26 17:25:07 2020 +1100)
 * e23015b77 - chore: implemented can-i-deploy call on the broker client #994 (Ronald Holshausen, Sun Jan 26 16:58:52 2020 +1100)
@@ -477,7 +477,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 8725d4cf3 - feat: allow expressions with @Pact annotation #989 (Ronald Holshausen, Sat Jan 18 14:23:43 2020 +1100)
 * 3bb6c79ee - bump version to 4.0.5 (Ronald Holshausen, Wed Dec 18 10:41:08 2019 +1100)
 
-# 4.0.4 - Bugfix Release
+## 4.0.4 - Bugfix Release
 
 * dc6bf9ed - Merge pull request #988 from ivangsa/pact-jvm-provider-maven (Ronald Holshausen, Sat Dec 7 17:51:05 2019 +1100)
 * 07b19634 - Merge pull request #987 from ivangsa/pact-jvm-consumer-java8 (Ronald Holshausen, Sat Dec 7 17:50:22 2019 +1100)
@@ -494,7 +494,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * a52115f9 - Update README.md (Ronald Holshausen, Sun Nov 10 10:16:57 2019 +1100)
 * 3d0cce96 - bump version to 4.0.4 (Ronald Holshausen, Sun Nov 10 10:07:39 2019 +1100)
 
-# 4.0.3 - Bugfix Release
+## 4.0.3 - Bugfix Release
 
 * e1863113a - fix: link in readme (Ronald Holshausen, Sat Nov 9 14:50:53 2019 +1100)
 * ac276e2e3 - feat: allow JUnit 5 tests to have state change methods on additional classes #943 (Ronald Holshausen, Sat Nov 9 14:47:40 2019 +1100)
@@ -513,7 +513,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 8f7b7a4db - chore: update dependencies (Piotr Kubowicz, Sun Oct 27 09:55:46 2019 +0100)
 * 78b0e54e5 - bump version to 4.0.3 (Ronald Holshausen, Sun Oct 27 17:37:37 2019 +1100)
 
-# 4.0.2 - Bugfix Release
+## 4.0.2 - Bugfix Release
 
 * 343bd92b7 - fix: lookup the provider tag from system properties for JUnit based tests #823 #960 (Ronald Holshausen, Sun Oct 27 17:03:55 2019 +1100)
 * d8fdaa1df - feat: add colons to the allowed path characters #965 (Ronald Holshausen, Sun Oct 27 15:59:43 2019 +1100)
@@ -529,7 +529,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * b37c6d771 - bump version to 4.0.2 (Ronald Holshausen, Wed Oct 16 13:42:57 2019 +1100)
 * 6e87f3d2e - Support bearer token with JUnit annotations - Fixes gh-925 (Kristine Jetzke, Sun Oct 6 00:52:06 2019 +0200)
 
-# 4.0.1 - Bugfix Release
+## 4.0.1 - Bugfix Release
 
 * b9d5c79a2 - fix: Maven plugin should fall back to global broker config (Ronald Holshausen, Wed Oct 16 13:13:18 2019 +1100)
 * 91efee36a - Merge pull request #955 from ryandens/bearer-auth (Ronald Holshausen, Wed Oct 16 10:50:26 2019 +1100)
@@ -596,7 +596,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 28447536a - Issue#929 Added the ability to add a version for the provider in pact-jvm-provider-gradle (yoran.kerbusch, Fri Aug 30 16:06:02 2019 +0200)
 * 87df5116e - chore: switch to openjdk 8 on travis (Ronald Holshausen, Sat Aug 24 10:39:54 2019 +1000)
 
-# 4.0.0 - Bugfix Release
+## 4.0.0 - Bugfix Release
 
 * f2e2f461 - Merge remote-tracking branch 'origin/v3.6.x' (Ronald Holshausen, Fri Sep 27 18:41:49 2019 +1000)
 * f0acf0a7 - fix: use the charset from the content type when converting bodies to bytes #941 (Ronald Holshausen, Fri Sep 27 18:24:48 2019 +1000)
@@ -631,14 +631,14 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 28447536 - Issue#929 Added the ability to add a version for the provider in pact-jvm-provider-gradle (yoran.kerbusch, Fri Aug 30 16:06:02 2019 +0200)
 * 87df5116 - chore: switch to openjdk 8 on travis (Ronald Holshausen, Sat Aug 24 10:39:54 2019 +1000)
 
-# 3.6.14 - Bugfix Release
+## 3.6.14 - Bugfix Release
 
 * f0acf0a7 - fix: use the charset from the content type when converting bodies to bytes #941 (Ronald Holshausen, Fri Sep 27 18:24:48 2019 +1000)
 * 63fed4ca - fix: remove all references to the mockserver on complete #939 (Ronald Holshausen, Fri Sep 27 17:09:27 2019 +1000)
 * c5a9e050 - fix: GET on pact-jvm-server root delivers broken json #938 (Ronald Holshausen, Fri Sep 27 16:29:20 2019 +1000)
 * 72bbfaa1 - bump version to 3.6.14 (Ronald Holshausen, Sun Sep 8 12:44:35 2019 +1000)
 
-# 3.6.13 - Bugfix Release
+## 3.6.13 - Bugfix Release
 
 * 97a076d3 - fix: mark the test result as failed if a state change callback fails #930 (Ronald Holshausen, Sun Sep 8 11:38:54 2019 +1000)
 * 241c7f56 - chore: only run the 200 mock server test on CI (Ronald Holshausen, Sat Sep 7 15:34:45 2019 +1000)
@@ -646,7 +646,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 87df5116 - chore: switch to openjdk 8 on travis (Ronald Holshausen, Sat Aug 24 10:39:54 2019 +1000)
 * e7bdc6e9 - bump version to 3.6.13 (Ronald Holshausen, Sun Jul 21 12:08:36 2019 +1000)
 
-# 4.0.0-beta.6 - Bugfix Release
+## 4.0.0-beta.6 - Bugfix Release
 
 * e373b522 - Merge pull request #927 from Scot3004/mockmvc-multipart (Ronald Holshausen, Wed Aug 28 09:51:10 2019 +1000)
 * cf6da7f8 - Merge pull request #923 from gmariotti/master (Ronald Holshausen, Wed Aug 28 09:49:15 2019 +1000)
@@ -661,7 +661,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * e4b7e9bb - chore: only run on openjdk versions in travis (Ronald Holshausen, Sat Aug 24 10:50:11 2019 +1000)
 * 0194b223 - bump version to 4.0.0-beta.6 (Ronald Holshausen, Thu Aug 15 16:19:12 2019 +1000)
 
-# 4.0.0-beta.5 - Bugfix Release
+## 4.0.0-beta.5 - Bugfix Release
 
 * b370475f - chore: update readme (Ronald Holshausen, Sat Jul 27 12:42:31 2019 +1000)
 * 8e5a6194 - fix: correct a flakey date based test (Ronald Holshausen, Fri Jul 26 09:57:56 2019 +1000)
@@ -672,7 +672,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * f3318bc8 - Fix gson number serialization #912, #908 (Isaac Gordezky, Mon Jul 22 18:39:46 2019 -0400)
 * bd318d9e - bump version to 4.0.0-beta.5 (Ronald Holshausen, Sun Jul 21 15:36:03 2019 +1000)
 
-# 4.0.0-beta.4 - Bugfix Release
+## 4.0.0-beta.4 - Bugfix Release
 
 * 60bb0288 - chore: release script must check for Java 8 (Ronald Holshausen, Sun Jul 21 15:02:23 2019 +1000)
 * 991b6134 - chore: try fix test on travis (Ronald Holshausen, Sun Jul 21 14:25:00 2019 +1000)
@@ -717,14 +717,14 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 1eab4db3 - bump version to 3.6.11 (Ronald Holshausen, Wed Jun 26 10:32:07 2019 +1000)
 * 6d00e041 - update changelog for release 3.6.10 (Ronald Holshausen, Wed Jun 26 09:52:52 2019 +1000)
 
-# 3.6.12 - Bugfix Release
+## 3.6.12 - Bugfix Release
 
 * 63542f36 - fix: preserve the scheme when adding preemptive auth #902 (Ronald Holshausen, Sat Jul 20 17:08:26 2019 +1000)
 * c5cd9362 - fix: allow the pact spec version to be specified at the class level (JUNIT 5) #905 (Ronald Holshausen, Sat Jul 20 16:50:14 2019 +1000)
 * 03544f90 - chore: add readme notes about injecting values from provider states (Ronald Holshausen, Sun Jul 7 18:40:37 2019 +1000)
 * f2115e5d - bump version to 3.6.12 (Ronald Holshausen, Sun Jul 7 18:06:34 2019 +1000)
 
-# 4.0.0-beta.3 - Bugfix Release
+## 4.0.0-beta.3 - Bugfix Release
 
 * aebc720e - fix: Travis is failing to install Oracle JDK 11 (Ronald Holshausen, Sat Jun 29 17:39:08 2019 +1000)
 * 1babf8b4 - Merge remote-tracking branch 'origin/v3.6.x' (Ronald Holshausen, Sat Jun 29 17:00:21 2019 +1000)
@@ -813,7 +813,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 164c7ae2 - fix: pact publishing (Ronald Holshausen, Sun May 12 18:02:42 2019 +1000)
 * 0ff97761 - bump version to 4.0.0-beta.3 (Ronald Holshausen, Sun May 12 18:02:05 2019 +1000)
 
-# 3.6.11 - Implemented Date and Time expressions with generators
+## 3.6.11 - Implemented Date and Time expressions with generators
 
 * 00699133 - feat: updated the readmes about enabling Preemptive Authentication when acessing the pact broker #902 (Ronald Holshausen, Sun Jul 7 17:12:28 2019 +1000)
 * f8fa4242 - feat: implemented Preemptive Authentication when acessing the pact broker #902 (Ronald Holshausen, Sun Jul 7 16:59:53 2019 +1000)
@@ -828,7 +828,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * cf7a3afd - fix: make sure JUnit tests execute the provider states in the correct order #897 (Ronald Holshausen, Sat Jul 6 15:51:25 2019 +1000)
 * 1eab4db3 - bump version to 3.6.11 (Ronald Holshausen, Wed Jun 26 10:32:07 2019 +1000)
 
-# 3.6.10 - Publish failed test results
+## 3.6.10 - Publish failed test results
 
 * ef027f6f - feat: compare XML child elements by tag and not index #899 (Ronald Holshausen, Tue Jun 25 17:42:59 2019 +1000)
 * 06a736a2 - feat: correctly format message response failed verification results (Ronald Holshausen, Tue Jun 25 14:47:11 2019 +1000)
@@ -839,7 +839,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 28b92ae7 - feat: preserve the interaction ids from the broker (Ronald Holshausen, Mon Jun 24 13:08:52 2019 +1000)
 * f3fa0d10 - bump version to 3.6.10 (Ronald Holshausen, Thu Jun 20 15:40:49 2019 +1000)
 
-# 3.6.9 - Bugfix Release
+## 3.6.9 - Bugfix Release
 
 * 2c111f09 - fix: deprecation warning #894 (Ronald Holshausen, Thu Jun 20 14:42:02 2019 +1000)
 * 2832d4df - chore: relocate junit packages in fat jar #888 (Ronald Holshausen, Thu Jun 20 14:30:34 2019 +1000)
@@ -856,7 +856,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 86971b97 - fix: update release script to preserve the terminal IO (Ronald Holshausen, Sat Jun 15 17:37:12 2019 +1000)
 * 7230bf14 - bump version to 3.6.9 (Ronald Holshausen, Sat Jun 15 17:35:13 2019 +1000)
 
-# 3.6.8 - Bugfix Release
+## 3.6.8 - Bugfix Release
 
 * 13dd0e1e - fix: Codenarc errors #893 (Ronald Holshausen, Sat Jun 15 15:16:10 2019 +1000)
 * 136f67c0 - fix: MarkdownReporter should append results not overwrite them #893 (Ronald Holshausen, Sat Jun 15 15:07:24 2019 +1000)
@@ -885,7 +885,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 107afe45 - fix: configure GSon to serialise null values #877 (Ronald Holshausen, Sat Jun 1 13:30:33 2019 +1000)
 * 7ae62585 - bump version to 3.6.8 (Ronald Holshausen, Sun May 12 16:32:32 2019 +1000)
 
-# 4.0.0-beta.2 - Bugfixes + HTTPS mock server support
+## 4.0.0-beta.2 - Bugfixes + HTTPS mock server support
 
 * 71b6b503 - Merge branch 'master' into v4.x (Ronald Holshausen, Sun May 12 16:56:34 2019 +1000)
 * 7ae62585 - bump version to 3.6.8 (Ronald Holshausen, Sun May 12 16:32:32 2019 +1000)
@@ -980,7 +980,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 8b170fac - feat: support arrays of primitives in LambdaDSL #829 (Ronald Holshausen, Sun Feb 3 11:37:32 2019 +1100)
 * 56a530c2 - feat: add support for Instant in the Java DSL #802 (Ronald Holshausen, Sun Feb 3 10:37:12 2019 +1100)
 
-# 3.6.7 - Bugfix Release
+## 3.6.7 - Bugfix Release
 
 * e09e6841 - feat: allow JUnit tests to use multiple pact methods #820 (Ronald Holshausen, Sun May 12 15:43:25 2019 +1000)
 * d0743826 - feat: add query parameter date/time matching to the Java DSL #876 (Ronald Holshausen, Sun May 12 12:50:58 2019 +1000)
@@ -988,7 +988,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * ed9dba4d - chore: updated release script to publish pacts (Ronald Holshausen, Sun May 5 17:23:52 2019 +1000)
 * 07db6ddf - bump version to 3.6.7 (Ronald Holshausen, Sun May 5 17:23:16 2019 +1000)
 
-# 3.6.6 - Bugfix Release
+## 3.6.6 - Bugfix Release
 
 * ad59aa4d - refactor: verification methods now return test results instead of boolean (Ronald Holshausen, Sun May 5 16:07:28 2019 +1000)
 * dcd05213 - feat: update the verification results to be a test result instead of a boolean (Ronald Holshausen, Sun May 5 12:16:56 2019 +1000)
@@ -1009,7 +1009,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 49bf7fc5 - Update README.md (Ronald Holshausen, Mon Apr 22 11:02:29 2019 +1000)
 * 550cf6f7 - bump version to 3.6.6 (Ronald Holshausen, Sun Apr 21 15:38:11 2019 +1000)
 
-# 3.6.5 - Bugfix Release + Matching on message metadata
+## 3.6.5 - Bugfix Release + Matching on message metadata
 
 * c3b8e3ad - fix: exclude clojure test from appveyor build (Ronald Holshausen, Sun Apr 21 14:57:07 2019 +1000)
 * 3240b670 - fix: indentation on the ANSI console output #479 (Ronald Holshausen, Sun Apr 21 14:44:43 2019 +1000)
@@ -1026,7 +1026,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * d41d44a6 - feat: add a system property to force overwriting pact files #804 (Ronald Holshausen, Fri Apr 19 15:19:33 2019 +1000)
 * 56ce9149 - bump version to 3.6.5 (Ronald Holshausen, Sun Apr 14 19:37:11 2019 +1000)
 
-# 3.6.4 - Bugfix Release
+## 3.6.4 - Bugfix Release
 
 * cd9cf826 - Merge branch 'v3.5.x' (Ronald Holshausen, Sun Apr 14 18:55:07 2019 +1000)
 * 09babcae - fix: provider junit5 does not report failed results to pact broker #858 (Ronald Holshausen, Sun Apr 14 18:41:36 2019 +1000)
@@ -1046,7 +1046,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 8b170fac - feat: support arrays of primitives in LambdaDSL #829 (Ronald Holshausen, Sun Feb 3 11:37:32 2019 +1100)
 * 56a530c2 - feat: add support for Instant in the Java DSL #802 (Ronald Holshausen, Sun Feb 3 10:37:12 2019 +1100)
 
-# 3.6.3 - Bugfixes + small enhancements
+## 3.6.3 - Bugfixes + small enhancements
 
 * 2be31356 - fix: fix for failing tests #861 (Ronald Holshausen, Sun Mar 31 19:18:12 2019 +1100)
 * d4784b15 - fix: fix for OverlappingFileLockException with parrallel tests #861 (Ronald Holshausen, Sun Mar 31 18:31:58 2019 +1100)
@@ -1073,7 +1073,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 8e42b878 - Update README.md (Ronald Holshausen, Sun Feb 17 19:03:11 2019 +1100)
 * a5bfbe33 - bump version to 3.6.3 (Ronald Holshausen, Sun Feb 17 18:32:52 2019 +1100)
 
-# 4.0.0-beta.1 - Version 4 main consumer and provider modules
+## 4.0.0-beta.1 - Version 4 main consumer and provider modules
 
 * cc579c35 - refactor: moved the remaining provider modules (Ronald Holshausen, Sun Mar 31 15:51:50 2019 +1100)
 * 01c1372b - refactor: moved the lein module to the provider subproject (Ronald Holshausen, Sun Mar 31 15:49:35 2019 +1100)
@@ -1095,7 +1095,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 4d4c2b5a - fix: correct the release script (Ronald Holshausen, Sat Mar 30 16:09:24 2019 +1100)
 * 2c75f5eb - bump version to 4.0.0-beta.1 (Ronald Holshausen, Sat Mar 30 16:07:30 2019 +1100)
 
-# 4.0.0-beta.0 - Initial 4.0 release of the core libraries
+## 4.0.0-beta.0 - Initial 4.0 release of the core libraries
 
 * fd7d6787 - fix: get build working with JDK 11 (Ronald Holshausen, Sat Mar 30 15:38:05 2019 +1100)
 * 6adfae08 - fix: build (Ronald Holshausen, Sat Mar 30 14:31:31 2019 +1100)
@@ -1170,7 +1170,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 545b29f7 - V4.0 prep: removed note about scala version from readme (Ronald Holshausen, Sun Apr 22 17:36:46 2018 +1000)
 * d5f40d1c - V4.0 prep: removed scala version from all artifacts (Ronald Holshausen, Sun Apr 22 17:34:21 2018 +1000)
 
-# 3.6.2 - Bugfix Release
+## 3.6.2 - Bugfix Release
 
 * 835c1151 - fix: missed one class after OptionalBody refactor #600 (Ronald Holshausen, Sun Feb 17 17:26:15 2019 +1100)
 * b845bf03 - feat: Changes OptionalBody to store byte arrays in prep for supporting binary playloads #600 (Ronald Holshausen, Sun Feb 17 17:07:46 2019 +1100)
@@ -1196,7 +1196,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 7a6f00c7 - Added support for http delete request with body (Erik Möller, Tue Dec 18 10:24:11 2018 +0100)
 * 94217189 - bump version to 3.6.2 (Ronald Holshausen, Sun Dec 16 15:10:00 2018 +1100)
 
-# 3.6.1 - Bugfix Release
+## 3.6.1 - Bugfix Release
 
 * 0f68f9da - Merge pull request #828 from aplsup/trim-snapshot-provider-version (Ronald Holshausen, Sun Dec 16 14:15:29 2018 +1100)
 * b7e84fac - fix: correct the support for the old protocol on @PactBroker (Ronald Holshausen, Sun Dec 16 13:21:55 2018 +1100)
@@ -1210,7 +1210,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * c92f2a69 - Updated versions (Ronald Holshausen, Sun Dec 2 18:12:13 2018 +1100)
 * 152f8bb7 - bump version to 3.6.1 (Ronald Holshausen, Sun Dec 2 17:56:36 2018 +1100)
 
-# 3.6.0 - 3.6.0 Feature Release
+## 3.6.0 - 3.6.0 Feature Release
 
 * 192e880d - chore: bump version to 3.6.0 (Ronald Holshausen, Sun Dec 2 17:18:19 2018 +1100)
 * cfbd9f6b - feat(junit5): Fail the test if there are any @Pact methods that where not called #816 (Ronald Holshausen, Sun Dec 2 17:07:47 2018 +1100)
@@ -1250,7 +1250,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 5bf86a46 - Fix CodeNarc issues introduced in previous commit (trevor.smith, Wed Oct 10 17:05:38 2018 -0500)
 * f450e7cc - Add @DelegatesTo on the groovy dsl pact builders to allow IDE code completion (trevor.smith, Wed Oct 10 16:53:57 2018 -0500)
 
-# 3.6.0-rc.1 - Second RC release
+## 3.6.0-rc.1 - Second RC release
 
 * 363a9480 - Revert "Update Gradle to 4.10.2" (Ronald Holshausen, Sun Oct 21 13:52:51 2018 +1100)
 * 2dedd4e3 - Merge pull request #795 from tinexw/689 (Ronald Holshausen, Sun Oct 21 12:23:19 2018 +1100)
@@ -1289,7 +1289,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 41a6071a - chore: updated versions in readme (Ronald Holshausen, Sat Sep 22 19:37:37 2018 +1000)
 * 3935a93c - bump version to 3.6.0-rc.1 (Ronald Holshausen, Sat Sep 22 17:48:52 2018 +1000)
 
-# 3.6.0-rc.0 - 3.6 Release Candidate
+## 3.6.0-rc.0 - 3.6 Release Candidate
 
 * c1d77a6b - fix: Maven plugin depends on the support library (Ronald Holshausen, Sat Sep 22 17:02:31 2018 +1000)
 * c08abbce - fix: correct version for use in the release script (Ronald Holshausen, Sat Sep 22 16:30:32 2018 +1000)
@@ -1339,7 +1339,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * ef156ff9 - chore: converted StateChange to Kotlin (Ronald Holshausen, Sat Jul 14 18:39:33 2018 +1000)
 * e7f896c1 - Fix compilation warning (tomoya-yokota, Thu Jul 5 13:00:49 2018 +0900)
 
-# 3.5.25 - Bugfix Release
+## 3.5.25 - Bugfix Release
 
 * b69b8142 - fix: backported fixes from 3.6.x (Ronald Holshausen, Sun Apr 14 16:40:38 2019 +1000)
 * 884b9dda - fix: JUnit tests were publishing results when a before step failed #872 (Ronald Holshausen, Sun Apr 14 13:46:23 2019 +1000)
@@ -1351,7 +1351,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * b3f7aa52 - fix: Upgrade Kotlin to 1.2.71 #805 (Ronald Holshausen, Mon Nov 5 09:46:01 2018 +1100)
 * 4a1abe3d - bump version to 3.5.25 (Ronald Holshausen, Sun Nov 4 19:07:53 2018 +1100)
 
-# 3.5.24 - Bugfix Release
+## 3.5.24 - Bugfix Release
 
 * 5a5d3c22 - fix: small fix for a flacky test (Ronald Holshausen, Sun Nov 4 13:49:51 2018 +1100)
 * 10cd1433 - fix: JUnit 5 provider test support code was not honouring pact.verifier.publishResults #799 (Ronald Holshausen, Sun Nov 4 13:42:50 2018 +1100)
@@ -1364,7 +1364,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 914c69dd - feat: add missing eachKeyLike method to the Java 8 DSL #778 (Ronald Holshausen, Sun Oct 7 11:17:13 2018 +1100)
 * d66eac23 - bump version to 3.5.24 (Ronald Holshausen, Sun Sep 23 17:00:26 2018 +1000)
 
-# 3.5.23 - Bugfix Release
+## 3.5.23 - Bugfix Release
 
 * 82d54f25 - fix: correct the example Spock code in the README #774 (Ronald Holshausen, Sun Sep 23 16:08:58 2018 +1000)
 * 12290ae8 - fix: correct the example JUnit code in the README #774 (Ronald Holshausen, Sun Sep 23 15:34:01 2018 +1000)
@@ -1373,7 +1373,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 41773123 - fix: correct the regression introduced in #764 (#771) (Ronald Holshausen, Sun Sep 23 12:24:04 2018 +1000)
 * 7b126a29 - bump version to 3.5.23 (Ronald Holshausen, Sun Sep 9 14:16:36 2018 +1000)
 
-# 3.5.22 - Bugfix Release
+## 3.5.22 - Bugfix Release
 
 * aaaa0719 - fix: only enable wildcard matching logic with an explicit system property #759 (Ronald Holshausen, Sun Sep 9 12:36:55 2018 +1000)
 * 22efe9c4 - feat: implemented state change teardown support in the JUnit 5 extension (Ronald Holshausen, Sun Sep 9 10:25:16 2018 +1000)
@@ -1396,7 +1396,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * df608ed2 - fix: update the uberjar to conform to maven central rules (Ronald Holshausen, Sun Aug 12 17:49:30 2018 +1000)
 * 4361b3b7 - bump version to 3.5.22 (Ronald Holshausen, Sun Aug 12 15:54:24 2018 +1000)
 
-# 3.5.21 - Bugfix Release
+## 3.5.21 - Bugfix Release
 
 * 3fe199a3 - doc: update version in readme (Ronald Holshausen, Sun Aug 12 15:11:05 2018 +1000)
 * 8d16a9c3 - fix: display the tag when verifying a pact fetched with a tag #754 (Ronald Holshausen, Sun Aug 12 14:34:10 2018 +1000)
@@ -1413,7 +1413,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 340bf4c6 - fix: deprecate the global reportVerificationResults function (Ronald Holshausen, Sun Jul 29 13:35:21 2018 +1000)
 * cba1b336 - bump version to 3.5.21 (Ronald Holshausen, Sat Jul 28 18:15:19 2018 +1000)
 
-# 3.5.20 - Bugfix Release
+## 3.5.20 - Bugfix Release
 
 * 5df7b361 - fix: upgrade Kotlin to latest (Ronald Holshausen, Sat Jul 28 17:32:02 2018 +1000)
 * 9441dad3 - feat: add verification reports configuration to the Maven plugin #428 (Ronald Holshausen, Sat Jul 28 17:11:29 2018 +1000)
@@ -1432,7 +1432,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 66db39a0 - Added systemPropertyVariables parameter (Stephen New, Wed Jul 11 12:57:50 2018 -0600)
 * ef8808d5 - bump version to 3.5.20 (Ronald Holshausen, Sun Jul 1 19:31:24 2018 +1000)
 
-# 3.5.19 - Bugfix Release
+## 3.5.19 - Bugfix Release
 
 * 04415736 - fix: Add the standard test context listeners with SpringRestPactRunner #699 (Ronald Holshausen, Sun Jul 1 18:30:08 2018 +1000)
 * 481c4b1c - fix(Java DSL): matchHeader should override the matcher in case it is called after the body is set #716 (Ronald Holshausen, Sun Jul 1 16:31:38 2018 +1000)
@@ -1458,7 +1458,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 315803e1 - Updated version in readme (Ronald Holshausen, Sun Jun 17 17:24:08 2018 +1000)
 * d6b68ae6 - bump version to 3.5.19 (Ronald Holshausen, Sun Jun 17 17:22:48 2018 +1000)
 
-# 3.5.18 - Bugfix Release
+## 3.5.18 - Bugfix Release
 
 * a59d7996 - Implemented support for an array of primitives in the Java 8 DSL #701 (Ronald Holshausen, Sun Jun 17 16:13:32 2018 +1000)
 * 90e97eec - Allow the maven plugin to load pact files from multiple directories #652 (Ronald Holshausen, Sun Jun 17 15:30:44 2018 +1000)
@@ -1484,7 +1484,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 295c5141 - Upgrade Kotlin to the latest (Ronald Holshausen, Sun Jun 3 17:31:39 2018 +1000)
 * 17923002 - bump version to 3.5.18 (Ronald Holshausen, Sun Jun 3 15:51:47 2018 +1000)
 
-# 3.5.17 - Bugfix Release
+## 3.5.17 - Bugfix Release
 
 * 16634edd - JUnit Interaction runner now uses its pact source not the one associated with the pact #667 (Ronald Holshausen, Sun Jun 3 13:58:54 2018 +1000)
 * 2fb44945 - Avoid a port conflict when running build in parallel (Ronald Holshausen, Sun Jun 3 11:36:26 2018 +1000)
@@ -1509,7 +1509,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 09c8e16d - doc: added note about setting the provider version when using the spring runner (Ronald Holshausen, Sun May 13 16:52:21 2018 +1000)
 * f27ed9db - bump version to 3.5.17 (Ronald Holshausen, Sun May 6 19:16:55 2018 +1000)
 
-# 3.5.16 - Bugfixes + JUnit 5 provider test support
+## 3.5.16 - Bugfixes + JUnit 5 provider test support
 
 * 83306b9a - feat: Added link to JUnit 5 verification tests from the README (Ronald Holshausen, Sun May 6 18:12:17 2018 +1000)
 * bfe159c0 - feat: Added link to JUnit 5 verification tests from the README - #576 (Ronald Holshausen, Sun May 6 18:10:49 2018 +1000)
@@ -1536,7 +1536,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * e8f0ffee - Update versions in readme (Ronald Holshausen, Sun Apr 22 16:30:14 2018 +1000)
 * 65c98414 - bump version to 3.5.16 (Ronald Holshausen, Sun Apr 22 16:27:45 2018 +1000)
 
-# 3.5.15 - JUnit 5 Consumer Test implementation
+## 3.5.15 - JUnit 5 Consumer Test implementation
 
 * 6933fc29 - Cleanup of JUnit 5 implementation #576 (Ronald Holshausen, Sun Apr 22 15:37:24 2018 +1000)
 * fb64e863 - Added a nore in the readme for JUnit 5 tests about injecting the mock server #576 (Ronald Holshausen, Sun Apr 22 14:50:58 2018 +1000)
@@ -1557,7 +1557,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 59ce4b92 - Updated versions in readme (Ronald Holshausen, Mon Mar 26 15:37:24 2018 +1100)
 * 18ca9d5b - bump version to 3.5.15 (Ronald Holshausen, Mon Mar 19 12:27:06 2018 +1100)
 
-# 3.5.14 - Spring enhancements + bugfixes
+## 3.5.14 - Spring enhancements + bugfixes
 
 * ccfee394 - Merge branch 'master' into v3.5.x (Ronald Holshausen, Mon Mar 19 10:29:41 2018 +1100)
 * 65dbf925 - Update the readme on the spring properties and application port support #631 #632 (Ronald Holshausen, Mon Mar 12 17:29:01 2018 +1100)
@@ -1587,7 +1587,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 2a9881af - #642 upgrade scala (Brent Barker, Tue Feb 20 16:40:50 2018 -0700)
 * db74479f - bump version to 3.5.14 (Ronald Holshausen, Tue Feb 20 19:24:22 2018 +1100)
 
-# 3.5.13 - Bugfix Release
+## 3.5.13 - Bugfix Release
 
 * 83f7b4db - Missed a test from the last change (Ronald Holshausen, Tue Feb 20 15:53:49 2018 +1100)
 * 38cf3368 - Added logging around publishing verification results (Ronald Holshausen, Tue Feb 20 14:31:29 2018 +1100)
@@ -1626,7 +1626,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 2aae7684 - Add the publishing config to the SBT build (Ronald Holshausen, Sun Jan 21 21:32:09 2018 +1100)
 * 20b8d5b1 - bump version to 3.5.13 (Ronald Holshausen, Sun Jan 21 21:18:15 2018 +1100)
 
-# 3.5.12 - Bugfix Release
+## 3.5.12 - Bugfix Release
 
 * 8afe3385 - Merge pull request #622 from jcreixell/update-plugin-readme (Ronald Holshausen, Fri Jan 19 17:36:33 2018 +1100)
 * f5e4e261 - Document new API for provider SBT plugin (jcreixell, Tue Jan 16 10:45:50 2018 +0100)
@@ -1666,7 +1666,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * cc16619a - chore(docs): links to pact-go and pact-js (Matt Fellows, Tue Dec 19 08:45:35 2017 +1100)
 * d2b5696f - bump version to 3.5.12 (Tim Jones, Mon Dec 18 15:22:26 2017 +1100)
 
-# 3.5.11 - Bugfix Release
+## 3.5.11 - Bugfix Release
 
 * 35e2f52f - Changes to run with Scala 2.11 (Ronald Holshausen, Fri Dec 22 11:00:45 2017 +1100)
 * cb1103de - Merge branch 'v3.5.x' into v3.5.x-2.11 (Ronald Holshausen, Fri Dec 22 10:28:42 2017 +1100)
@@ -1702,7 +1702,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 1a60f816 - bump version to 3.5.11 (Ronald Holshausen, Wed Nov 22 09:07:21 2017 +1100)
 * 5d845b36 - bump version to 3.5.11 (Ronald Holshausen, Mon Nov 20 15:11:42 2017 +1100)
 
-# 3.5.11 - Bugfix Release
+## 3.5.11 - Bugfix Release
 
 * 9e10e667 - Excluded some transitive dependencies to aid people using Maven #182 (Ronald Holshausen, Fri Dec 8 10:07:41 2017 +1100)
 * be4a32b0 - Add a note about disabling the publishing of verification results for the gradle plugin (Ronald Holshausen, Fri Dec 8 09:28:28 2017 +1100)
@@ -1733,7 +1733,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * ef3552f3 - refactored header matching and converted ot to Kotlin (Ronald Holshausen, Mon Nov 27 15:02:28 2017 +1100)
 * 5d845b36 - bump version to 3.5.11 (Ronald Holshausen, Mon Nov 20 15:11:42 2017 +1100)
 
-# 3.5.10 - Junit verification fixes
+## 3.5.10 - Junit verification fixes
 
 * 685438bd - Set the javax.mail dependency to version 1.5.0-b01 (Ronald Holshausen, Mon Nov 20 14:38:45 2017 +1100)
 * d711487a - Correct the precedence on checking if results can be published to avoid class cast exceptions (Ronald Holshausen, Mon Nov 20 10:50:29 2017 +1100)
@@ -1746,7 +1746,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * b8dbff9a - Converted the remaining pact-jvm-provider-spring code to kotlin (Ronald Holshausen, Thu Nov 16 17:33:36 2017 +1100)
 * 0ae7cb8f - bump version to 3.5.10 (Ronald Holshausen, Wed Nov 15 13:52:53 2017 +1100)
 
-# 3.5.9 - Bugfix Release
+## 3.5.9 - Bugfix Release
 
 * 980d1cf5 - Correct version in readme (Ronald Holshausen, Wed Nov 15 13:29:38 2017 +1100)
 * a34eaddf - add readme note about publishing pacts with tags with the Gradle plugin #403 (Ronald Holshausen, Wed Nov 15 12:55:18 2017 +1100)
@@ -1791,7 +1791,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 8a367feb - Updated versions in README (Ronald Holshausen, Fri Oct 13 12:28:17 2017 +1100)
 * b541003f - bump version to 3.5.9 (Ronald Holshausen, Fri Oct 13 12:27:27 2017 +1100)
 
-# 3.5.8 - Scala 2.11 - Bugfix and dependency issues
+## 3.5.8 - Scala 2.11 - Bugfix and dependency issues
 
 * 0536b3c - Updated versions in README (Ronald Holshausen, Fri Oct 13 12:28:17 2017 +1100)
 * 4191e53 - update changelog for release 3.5.8 (Ronald Holshausen, Fri Oct 13 12:12:41 2017 +1100)
@@ -1814,7 +1814,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 4afa55b - update changelog for release 3.5.7-jre7.0 (Ronald Holshausen, Tue Oct 3 16:45:53 2017 +1100)
 * 770bc9d - bump version to 3.5.8 (Ronald Holshausen, Tue Oct 3 11:57:26 2017 +1100)
 
-# 3.5.8 - Bugfix and dependency issues
+## 3.5.8 - Bugfix and dependency issues
 
 * c8adefb - Correct Kotlin lint error (Ronald Holshausen, Fri Oct 13 12:08:31 2017 +1100)
 * 0d82fab - Added a spring context aware target that can look up instances from the spring context (Ronald Holshausen, Fri Oct 13 11:16:08 2017 +1100)
@@ -1837,7 +1837,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 3939d1f - bump version to 3.5.8 (Ronald Holshausen, Tue Oct 3 10:55:19 2017 +1100)
 * dadb719 - Print error when eachLike matcher is used with 0 examples (Peter Törnhult, Thu Sep 28 13:42:08 2017 +0200)
 
-# 3.5.7-jre7.0 - Bugfix Release
+## 3.5.7-jre7.0 - Bugfix Release
 
 * 443925c - fixes after merge in from master (Ronald Holshausen, Tue Oct 3 15:45:11 2017 +1100)
 * 8135c08 - update changelog for release 3.5.7 (Ronald Holshausen, Tue Oct 3 11:39:02 2017 +1100)
@@ -1854,7 +1854,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * b5c064e - Encode the parameters when uploading a pact, incase the tag has a slash #536 (Ronald Holshausen, Wed Sep 27 14:11:35 2017 +1000)
 * be9ee18 - bump version to 3.5.7-jre7.0 (Ronald Holshausen, Thu Sep 28 15:24:09 2017 +1000)
 
-# 3.5.7 - Spring Runner, plus fixes to publishing and tags with slashes
+## 3.5.7 - Spring Runner, plus fixes to publishing and tags with slashes
 
 * f725d40 - Revert "bump version to 3.5.8" (Ronald Holshausen, Tue Oct 3 11:20:52 2017 +1100)
 * b1410ea - Merge branch 'v3.5.x' into v3.5.x-2.11 (Ronald Holshausen, Tue Oct 3 10:56:05 2017 +1100)
@@ -1872,7 +1872,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 94fa706 - Merge branch 'v3.5.x' into v3.5.x-2.11 (Ronald Holshausen, Mon Sep 11 12:43:00 2017 +1000)
 * 42a091b - Merged in build changes from 2.12 branch (Ronald Holshausen, Sun Sep 10 10:48:38 2017 +1000)
 
-# 3.5.7 - Spring Runner, plus fixes to publishing and tags with slashes
+## 3.5.7 - Spring Runner, plus fixes to publishing and tags with slashes
 
 * 412533d - Added a spring message pact runner (Ronald Holshausen, Tue Oct 3 10:23:07 2017 +1100)
 * 2623201 - Update to the latest kotlin version (Ronald Holshausen, Tue Oct 3 10:12:02 2017 +1100)
@@ -1887,7 +1887,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 05f8738 - Correct the release script (Ronald Holshausen, Wed Sep 27 11:00:09 2017 +1000)
 * f5c3ad8 - bump version to 3.5.7 (Ronald Holshausen, Wed Sep 27 10:59:38 2017 +1000)
 
-# 3.5.6-jre7.0 - Bugfix Release
+## 3.5.6-jre7.0 - Bugfix Release
 
 * 5deb784 - can not depend on kotlin compile path when building on jdk 7 (Ronald Holshausen, Thu Sep 28 14:22:30 2017 +1000)
 * 4b65799 - can not depend on kotlin compile path when building on jdk 7 (Ronald Holshausen, Thu Sep 28 14:18:56 2017 +1000)
@@ -1920,7 +1920,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * f2a2602 - bump version to 3.5.6-jre7.0 (Ronald Holshausen, Thu Sep 14 12:44:59 2017 +1000)
 * b2edaa9 - Updated readme (Ronald Holshausen, Tue Sep 12 09:22:52 2017 +1000)
 
-# 3.5.6 - Bugfixes and an enhancement to the maven plugin
+## 3.5.6 - Bugfixes and an enhancement to the maven plugin
 
 * 17ba627 - Revert "update changelog for release 3.5.7" (Ronald Holshausen, Wed Sep 27 11:35:44 2017 +1000)
 * f41810c - Revert "bump version to 3.5.7" (Ronald Holshausen, Wed Sep 27 11:35:12 2017 +1000)
@@ -1935,7 +1935,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 94fa706 - Merge branch 'v3.5.x' into v3.5.x-2.11 (Ronald Holshausen, Mon Sep 11 12:43:00 2017 +1000)
 * 42a091b - Merged in build changes from 2.12 branch (Ronald Holshausen, Sun Sep 10 10:48:38 2017 +1000)
 
-# 3.5.6 - Bugfixes and an enhancement to the maven plugin
+## 3.5.6 - Bugfixes and an enhancement to the maven plugin
 
 * 718498f - docs(pact-jvm-provider-maven readme): Added warning about publishing verifications from local machine (Beth Skurrie, Tue Sep 26 09:21:41 2017 +1000)
 * 4c5dd51 - Guard against other types of matchers being applied to plain text responses #517 (Ronald Holshausen, Sun Sep 24 15:42:51 2017 +1000)
@@ -1954,7 +1954,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * b2edaa9 - Updated readme (Ronald Holshausen, Tue Sep 12 09:22:52 2017 +1000)
 * ea18df6 - bump version to 3.5.6 (Ronald Holshausen, Mon Sep 11 10:23:19 2017 +1000)
 
-# 3.5.5-jre7.0 - Bugfix Release
+## 3.5.5-jre7.0 - Bugfix Release
 
 * 8ff26ba - Remove oraclejdk7 from travis build (Ronald Holshausen, Thu Sep 14 12:04:31 2017 +1000)
 * c0ae2f6 - Update the JDK7 build file for split scala/non-scala builds (Ronald Holshausen, Thu Sep 14 11:55:57 2017 +1000)
@@ -2037,14 +2037,14 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 04efc56 - More jdk 7 fixes (Ronald Holshausen, Sat Oct 22 22:13:42 2016 +1100)
 * ba76baa - changes to get build working with JDK 7 (Ronald Holshausen, Sat Oct 22 21:51:48 2016 +1100)
 
-# 3.5.5 - Bugfix Release
+## 3.5.5 - Bugfix Release
 
 * 21fd4b2 - Converted Scala 2.12 code to support 2.11 (Ronald Holshausen, Mon Sep 11 17:26:11 2017 +1000)
 * 94fa706 - Merge branch 'v3.5.x' into v3.5.x-2.11 (Ronald Holshausen, Mon Sep 11 12:43:00 2017 +1000)
 * ea18df6 - bump version to 3.5.6 (Ronald Holshausen, Mon Sep 11 10:23:19 2017 +1000)
 * 42a091b - Merged in build changes from 2.12 branch (Ronald Holshausen, Sun Sep 10 10:48:38 2017 +1000)
 
-# 3.5.5 - Bugfix Release
+## 3.5.5 - Bugfix Release
 
 * b754b7a - More hack because of Travis (Ronald Holshausen, Mon Sep 11 08:35:30 2017 +1000)
 * 0b50a52 - Add a test for HalClient forAll method #533 (Ronald Holshausen, Sun Sep 10 12:21:42 2017 +1000)
@@ -2069,14 +2069,14 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 427292a - Upgrade Gradle to 4.1 (Ronald Holshausen, Fri Aug 18 16:25:47 2017 +1000)
 * a96a519 - Upgraded Kotlin to 1.1.4 (Ronald Holshausen, Fri Aug 18 16:16:22 2017 +1000)
 
-# 3.5.4-rc.1 - Corrected Dependency Versions
+## 3.5.4-rc.1 - Corrected Dependency Versions
 
 * 36dd3cd - Correct the dependencies on pact-jvm-model (Ronald Holshausen, Wed Sep 6 12:16:01 2017 +1000)
 * 38dc95e - Correct the release script for the 2.12 version (Ronald Holshausen, Thu Aug 31 13:56:45 2017 +1000)
 * 915edd7 - Fix for flacky test on windows (Ronald Holshausen, Wed Aug 30 13:12:46 2017 +1000)
 * afbaf42 - bump version to 3.5.4-rc.1 (Ronald Holshausen, Wed Aug 30 13:01:58 2017 +1000)
 
-# 3.5.4-rc.0 - Scala 2.12 Version
+## 3.5.4-rc.0 - Scala 2.12 Version
 
 * f2c8913 - Setup release prep script for RC release (Ronald Holshausen, Wed Aug 30 11:31:38 2017 +1000)
 * 450af8b - Set the versions to a RC version (Ronald Holshausen, Wed Aug 30 11:29:07 2017 +1000)
@@ -2106,7 +2106,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * a84494d - bump version to 3.5.5 (Ronald Holshausen, Fri Aug 18 15:46:46 2017 +1000)
 * 5d19bd6 - add scala 2.12.0-M4 as a 2.12 build (Ronald Holshausen, Tue Jun 7 16:37:38 2016 +1000)
 
-# 3.5.4 - Implemented publishing of verification results to the pact broker
+## 3.5.4 - Implemented publishing of verification results to the pact broker
 
 * 2df8536 - Updated the readmes on publishing verification results to the broker #417 (Ronald Holshausen, Fri Aug 18 14:31:45 2017 +1000)
 * b8006c8 - Updated the JUnit runner to publish verification results to the broker #417 (Ronald Holshausen, Fri Aug 18 14:31:21 2017 +1000)
@@ -2135,7 +2135,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * c27b814 - Documentation should match implementation (Michael Krauße, Sun Aug 6 19:20:00 2017 +0200)
 * 7c1f6d3 - bump version to 3.5.4 (Ronald Holshausen, Sun Aug 6 19:54:00 2017 +1000)
 
-# 3.5.3-jre7.0 - Enhancement and Bugfixes Release
+## 3.5.3-jre7.0 - Enhancement and Bugfixes Release
 
 * 98346e6 - Correct the build order in pact-jvm-provider-scalasupport (Ronald Holshausen, Thu Aug 10 10:05:51 2017 +1000)
 * b9730c7 - Missed some JDK 8 specific imports (Ronald Holshausen, Wed Aug 9 16:13:55 2017 +1000)
@@ -2197,7 +2197,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 04efc56 - More jdk 7 fixes (Ronald Holshausen, Sat Oct 22 22:13:42 2016 +1100)
 * ba76baa - changes to get build working with JDK 7 (Ronald Holshausen, Sat Oct 22 21:51:48 2016 +1100)
 
-# 3.5.3 - Bugfix Release
+## 3.5.3 - Bugfix Release
 
 * f5425a4 - Moved the pact broker client code to its own module #408 (Ronald Holshausen, Sun Aug 6 17:23:15 2017 +1000)
 * 372045c - Moved the code to load a pact from a URL to a kotlin function (Ronald Holshausen, Sun Aug 6 16:13:43 2017 +1000)
@@ -2253,7 +2253,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * d281bbd - Updated readme (Brent Barker, Thu May 11 17:18:29 2017 -0600)
 * 1575ec1 - #241 Added ability to use trust store in pact-jvm-server (Brent Barker, Thu May 11 16:40:43 2017 -0600)
 
-# 3.5.2 - Bugfix Release
+## 3.5.2 - Bugfix Release
 
 * fdb8fe9 - update changelog for release 3.5.2-jre7.0 (Ronald Holshausen, Wed Jul 12 10:30:26 2017 +1000)
 * b9db93a - Converted Scala test to Groovy (Ronald Holshausen, Tue Jul 11 22:04:39 2017 +1000)
@@ -2270,7 +2270,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 6278563 - update changelog for release 3.5.1-jre7.1 (Ronald Holshausen, Sun Jul 9 16:50:27 2017 +1000)
 * d26b2f9 - bump version to 3.5.2 (Ronald Holshausen, Sun Jul 9 19:11:08 2017 +1000)
 
-# 3.5.2-jre7.0 - Bugfix Release
+## 3.5.2-jre7.0 - Bugfix Release
 
 * 164c906 - Correct a test to pass on both JDK7 and JDK8 (Ronald Holshausen, Wed Jul 12 09:55:20 2017 +1000)
 * 6bdce49 - Merge branch 'v3.5.x' into v3.5.x-jre7 (Ronald Holshausen, Wed Jul 12 09:50:55 2017 +1000)
@@ -2291,7 +2291,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 704acb2 - update changelog for release 3.5.1 (Ronald Holshausen, Sun Jul 9 18:12:23 2017 +1000)
 * 92747f6 - bump version to 3.5.2-jre7.1 (Ronald Holshausen, Sun Jul 9 17:29:40 2017 +1000)
 
-# 3.5.1 - Bugfix Release
+## 3.5.1 - Bugfix Release
 
 * ea6a95b - Update the javadocs for base provider rule getUrl() and getPort() methods (Ronald Holshausen, Sun Jul 9 13:16:40 2017 +1000)
 * 19fb55d - Updated the Gradle plugin to support publishing pacts with tags (Ronald Holshausen, Wed Jul 5 14:48:38 2017 +1000)
@@ -2304,7 +2304,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 64febe9 - bump version to 3.5.1 (Ronald Holshausen, Sat Jun 24 18:39:37 2017 +1000)
 * fceb186 - Correct the release script for 3.5.0 (Ronald Holshausen, Sat Jun 24 18:38:49 2017 +1000)
 
-# 3.5.1-jre7.1 - Bugfix Release
+## 3.5.1-jre7.1 - Bugfix Release
 
 * bec9b39 - Merge branch 'v3.5.x' into v3.5.x-jre7 (Ronald Holshausen, Sun Jul 9 16:32:15 2017 +1000)
 * ea6a95b - Update the javadocs for base provider rule getUrl() and getPort() methods (Ronald Holshausen, Sun Jul 9 13:16:40 2017 +1000)
@@ -2320,7 +2320,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 0a3eab7 - Can't run jdk7 build on jdk8 (Ronald Holshausen, Sat Jun 24 23:29:11 2017 +1000)
 * 96f3d7c - force kotlin to compile to jdk 8 (Ronald Holshausen, Sat Jun 24 21:09:27 2017 +1000)
 
-# 3.5.0-jre7.1 - V3 JDK7 Release
+## 3.5.0-jre7.1 - V3 JDK7 Release
 
 * cb2dac2 - JDK7 fixes (Ronald Holshausen, Sat Jun 24 23:06:43 2017 +1000)
 * 659e9ce - include the jdk7 build file when updating the versions (Ronald Holshausen, Sat Jun 24 22:42:11 2017 +1000)
@@ -2329,7 +2329,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 19adc3a - update travis to run on jdk 7 (Ronald Holshausen, Sat Jun 24 22:02:37 2017 +1000)
 * 80e5b2f - bump version to 3.5.1-jre7 (Ronald Holshausen, Sat Jun 24 21:52:02 2017 +1000)
 
-# 3.5.0-jre7 - V3 JDK7 Release
+## 3.5.0-jre7 - V3 JDK7 Release
 
 * 69d4913 - on Travis need to clean the test classes first after switching jdks (Ronald Holshausen, Sat Jun 24 21:11:41 2017 +1000)
 * 1480bff - Force kotlin to compile for jdk 1.6 (Ronald Holshausen, Sat Jun 24 21:05:34 2017 +1000)
@@ -2360,7 +2360,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 04efc56 - More jdk 7 fixes (Ronald Holshausen, Sat Oct 22 22:13:42 2016 +1100)
 * ba76baa - changes to get build working with JDK 7 (Ronald Holshausen, Sat Oct 22 21:51:48 2016 +1100)
 
-# 3.5.0 - V3 Specification Release
+## 3.5.0 - V3 Specification Release
 
 * 1aa4833 - Update the readme and project versions for the 3.5.x release (Ronald Holshausen, Sat Jun 24 17:52:06 2017 +1000)
 * 9a19c58 - Merge branch 'v3.4.x' into v3-spec (Ronald Holshausen, Sat Jun 24 17:36:06 2017 +1000)
@@ -2404,7 +2404,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 599260c - bump version to 3.5.0-rc.4 (Ronald Holshausen, Wed Jun 21 08:54:13 2017 +1000)
 * 6124987 - use 9 digits for random numbers so they will fit within the dynamic range of 32 bit integers #436 (Ronald Holshausen, Wed Jun 14 15:31:59 2017 +1000)
 
-# 3.5.0-rc.3 - Third V3 Spec release candidate
+## 3.5.0-rc.3 - Third V3 Spec release candidate
 
 * 9902194 - Implemented and and or for Groovy DSL (Ronald Holshausen, Tue Jun 20 21:56:39 2017 +1000)
 * 04d906a - Fix for failing test (Ronald Holshausen, Tue Jun 20 21:20:39 2017 +1000)
@@ -2428,7 +2428,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 062eddf - supression some kotlin warnings (Ronald Holshausen, Sun Jun 11 17:39:34 2017 +1000)
 * 69577f2 - bump version to 3.5.0-rc.3 (Ronald Holshausen, Sun Jun 11 17:36:36 2017 +1000)
 
-# 3.5.0-rc.2 - V3 spec release candidate
+## 3.5.0-rc.2 - V3 spec release candidate
 
 * d226cc3 - Added equalsTo and includesStr matcher methods to the Java DSL (Ronald Holshausen, Sun Jun 11 16:03:08 2017 +1000)
 * c45abe0 - Updated the groovy DSL readme (Ronald Holshausen, Sun Jun 11 15:32:55 2017 +1000)
@@ -2463,7 +2463,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * e7f7bda - Enable publishing gradle plugin for V3 branch (Ronald Holshausen, Thu May 25 13:54:16 2017 +1000)
 * 12b67fc - bump version to 3.5.0-rc.2 (Ronald Holshausen, Thu May 25 13:51:28 2017 +1000)
 
-# 3.4.1 - Bugfix Release
+## 3.4.1 - Bugfix Release
 
 * 6addeb7 - Updated readme (Ronald Holshausen, Sat Jun 10 14:38:05 2017 +1000)
 * 2092423 - Merge pull request #458 from siddhuwarrier/pact-pr (Ronald Holshausen, Sat Jun 10 14:20:42 2017 +1000)
@@ -2499,7 +2499,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 09907b8 - Updated the JUnit readme with examples that use the new mock server support classes (Ronald Holshausen, Tue May 16 15:49:20 2017 +1000)
 * 28a6c2d - Re-apply the enhancements to the HAL Client code (Ronald Holshausen, Tue May 16 09:22:12 2017 +1000)
 
-# 3.5.0-rc.1 - V3 spec release candidate
+## 3.5.0-rc.1 - V3 spec release candidate
 
 * 29971f2 - updated test to use random port (Ronald Holshausen, Thu May 25 13:21:29 2017 +1000)
 * e08598f - bump version to rc (Ronald Holshausen, Thu May 25 13:17:34 2017 +1000)
@@ -2544,7 +2544,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 1ee7314 - Added RestPactRunner and MessagePactRunner (Vijay Vepakomma, Tue May 9 16:09:40 2017 -0400)
 * 542644d - Added method to PactFolderLoader to provide files along with pacts to fix the ConsumerInfo instantiation. (Travis Miller, Tue May 9 15:44:00 2017 -0400)
 
-# 3.4.0 - New Mock Server + Spring MockMVC Support
+## 3.4.0 - New Mock Server + Spring MockMVC Support
 
 * 51028a3 - update versions in readme (Ronald Holshausen, Thu May 18 15:26:27 2017 +1000)
 * 1dab62c - update changelog for release 3.3.10 (Ronald Holshausen, Thu May 18 13:57:37 2017 +1000)
@@ -2606,7 +2606,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 4bdbcd5 - update changelog for release 3.3.8 (Ronald Holshausen, Fri Apr 14 13:50:18 2017 +1000)
 * e4a6a70 - Added Kotlin to project (Ronald Holshausen, Fri Apr 14 13:44:48 2017 +1000)
 
-# 3.3.10 - Fix for matchers with missing "type" entries
+## 3.3.10 - Fix for matchers with missing "type" entries
 
 * a28124f - change port on test (Ronald Holshausen, Thu May 18 13:50:52 2017 +1000)
 * 8c2b05d - Fix some tests and correct the groovy matcher definitions (Ronald Holshausen, Thu May 18 13:35:37 2017 +1000)
@@ -2621,7 +2621,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 13ad5ee - Correctly handle the error messages from the pact broker #421 (Ronald Holshausen, Wed May 10 09:48:37 2017 +1000)
 * 8e3d6c0 - bump version to 3.3.10 (Ronald Holshausen, Mon May 8 21:57:07 2017 +1000)
 
-# 3.5.0-beta.4 - Basic generator implementation + fixes from master
+## 3.5.0-beta.4 - Basic generator implementation + fixes from master
 
 * 9cd563a - Corrected codefresh link (Ronald Holshausen, Sun May 14 21:36:13 2017 +1000)
 * 6613d38 - Implemented deserialisation for pact files with generators (Ronald Holshausen, Sun May 14 21:29:12 2017 +1000)
@@ -2767,7 +2767,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 8efffa5 - updated the V3 test cases from the specification project (Ronald Holshausen, Tue Jul 19 16:02:04 2016 +1000)
 * f9a0ced - bump version for V3 spec changes (Ronald Holshausen, Tue Jul 19 15:58:54 2016 +1000)
 
-# 3.3.9 - Bugfix Release
+## 3.3.9 - Bugfix Release
 
 * 0c3d776 - Add eachlike methods to PactDslJsonArray that take PactDslJsonRootValue matchers #256 (Ronald Holshausen, Mon May 8 21:09:36 2017 +1000)
 * d76ac26 - Only encode JSON values if the PactDslJsonRootValue is used at the body root #385 (Ronald Holshausen, Mon May 8 20:26:11 2017 +1000)
@@ -2784,7 +2784,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 3f32536 - Updated versions in readme (Ronald Holshausen, Fri Apr 14 14:17:07 2017 +1000)
 * c282f99 - bump version to 3.3.9 (Ronald Holshausen, Fri Apr 14 14:16:42 2017 +1000)
 
-# 3.3.8 - Bugfix Release
+## 3.3.8 - Bugfix Release
 
 * cd860af - Upgrade gradle to 3.4.1 (Ronald Holshausen, Fri Apr 14 12:34:05 2017 +1000)
 * b12637a - Correct link in Matching any key in a map to refer to the right issue #402 (Ronald Holshausen, Fri Apr 14 11:41:31 2017 +1000)
@@ -2793,7 +2793,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 2bcfa1e - When writing pacts, do not parse JSON bodies that are strings (Ronald Holshausen, Fri Mar 31 11:53:13 2017 +1100)
 * 19f20c0 - bump version to 3.3.8 (Ronald Holshausen, Mon Mar 27 15:42:57 2017 +1100)
 
-# 3.3.7 - Small PRs and query parameter matching
+## 3.3.7 - Small PRs and query parameter matching
 
 * 70da023 - Allow the instantation of objects for provider methods to be overwridden in the verifier (Ronald Holshausen, Mon Mar 27 14:14:13 2017 +1100)
 * da3b39f - Added query parameter matching support to the Groovy DSL #375 (Ronald Holshausen, Sun Mar 26 15:23:08 2017 +1100)
@@ -2817,7 +2817,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 6453b81 - updated versions in README (Ronald Holshausen, Thu Jan 26 18:52:14 2017 +1100)
 * b358b33 - bump version to 3.3.7 (Ronald Holshausen, Thu Jan 26 18:50:25 2017 +1100)
 
-# 3.5.0-beta.3 - Interim V3 Release
+## 3.5.0-beta.3 - Interim V3 Release
 
 * f1182c1 - Merge branch 'master' into v3-spec (Ronald Holshausen, Sun Feb 5 16:44:30 2017 +1100)
 * ed25bed - Body generator implementations need to be applied based on the content type of the body (Ronald Holshausen, Sun Feb 5 16:41:18 2017 +1100)
@@ -2896,7 +2896,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 8efffa5 - updated the V3 test cases from the specification project (Ronald Holshausen, Tue Jul 19 16:02:04 2016 +1000)
 * f9a0ced - bump version for V3 spec changes (Ronald Holshausen, Tue Jul 19 15:58:54 2016 +1000)
 
-# 3.3.6 - Bugfix Release
+## 3.3.6 - Bugfix Release
 
 * 3f3fbb6 - Display a smaller diff for some of the body mismatches #370 (Ronald Holshausen, Thu Jan 26 17:25:43 2017 +1100)
 * 4cfa287 - Disabling the message conflict check as it does not work with random generated body values (Ronald Holshausen, Thu Jan 26 16:10:08 2017 +1100)
@@ -2906,7 +2906,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 1f9a90e - Fixed issue with message pacts generating invalid JSON for message contents #368 (Ronald Holshausen, Wed Jan 18 15:44:17 2017 +1100)
 * 683b0dc - bump version to 3.3.6 (Ronald Holshausen, Sat Jan 14 18:24:30 2017 +1100)
 
-# 3.3.5 - Improved Pact Broker support in Maven plugin
+## 3.3.5 - Improved Pact Broker support in Maven plugin
 
 * 9d2806d - Enable tag support in the maven plugin #364 (Ronald Holshausen, Sat Jan 14 17:06:52 2017 +1100)
 * 4f01f01 - Fix for HAL client throwing missing method exception when the pact links is empty (Ronald Holshausen, Sat Jan 14 16:40:01 2017 +1100)
@@ -2918,7 +2918,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 095d634 - updated version in readme (Ronald Holshausen, Wed Jan 4 16:29:52 2017 +1100)
 * 7af35d6 - bump version to 3.3.5 (Ronald Holshausen, Wed Jan 4 16:26:14 2017 +1100)
 
-# 3.3.4 - Bugfix + Small Feature Release
+## 3.3.4 - Bugfix + Small Feature Release
 
 * 754be3b - Updated doco on using PactBrokerLoader to work with basic auth #360 (Ronald Holshausen, Wed Jan 4 15:42:44 2017 +1100)
 * 5217b85 - Updated PactBrokerLoader to work with basic auth #360 (Ronald Holshausen, Wed Jan 4 15:33:15 2017 +1100)
@@ -2957,7 +2957,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 890d0c6 - Correct an issue where the message pacts where not being merged correctly (Ronald Holshausen, Wed Nov 9 16:40:12 2016 +1100)
 * 78cda51 - bump version to 3.3.4 (Ronald Holshausen, Sun Nov 6 15:08:45 2016 +1100)
 
-# 2.4.18 - Feature Release
+## 2.4.18 - Feature Release
 
 * 6c25ae5 - Updated versions in README (Ronald Holshausen, Fri Dec 30 12:14:18 2016 +1100)
 * e5b976a - Merge branch 'master' into v2.x (Ronald Holshausen, Fri Dec 30 11:31:49 2016 +1100)
@@ -3006,7 +3006,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 2a0185f - update changelog for release 2.4.17 (Ronald Holshausen, Sat Oct 22 17:51:14 2016 +1100)
 * eb7dfda - bump version to 2.4.18 (Ronald Holshausen, Sat Oct 22 18:50:48 2016 +1100)
 
-# 3.3.3 - Bugfix + small feature release
+## 3.3.3 - Bugfix + small feature release
 
 * 191de47 - JUnit provider tests now fail if there is no state change method #345 (Ronald Holshausen, Sun Nov 6 13:39:37 2016 +1100)
 * 393429e - Validate the number of examnple against the min and max in the Java DSL #344 (Ronald Holshausen, Sun Nov 6 12:26:52 2016 +1100)
@@ -3022,7 +3022,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 1818909 - bump version to 3.3.3 (Ronald Holshausen, Sat Oct 22 20:21:57 2016 +1100)
 * f5c268e - Update README.md (Ronald Holshausen, Sat Oct 22 19:55:21 2016 +1100)
 
-# 2.5.0-beta.0 - JDK 7 baseline branched from v3.5.x
+## 2.5.0-beta.0 - JDK 7 baseline branched from v3.5.x
 
 * 52db03f - removed Java 8 functional interfaces (Ronald Holshausen, Sat Oct 22 23:35:19 2016 +1100)
 * 1d3a399 - downgrade rest-client-driver to run on JDK 7 (Ronald Holshausen, Sat Oct 22 23:21:41 2016 +1100)
@@ -3071,7 +3071,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * a3300a5 - bump version to 3.5.0-beta.3 (Ronald Holshausen, Wed Sep 21 22:59:53 2016 +1000)
 * 98bb0a2 - handle provider method invokation errors more gracefully (Ronald Holshausen, Wed Sep 21 22:14:34 2016 +1000)
 
-# 3.3.2 - Bugfix Release
+## 3.3.2 - Bugfix Release
 
 * 2a0185f - update changelog for release 2.4.17 (Ronald Holshausen, Sat Oct 22 17:51:14 2016 +1100)
 * c17d806 - Updated readme with supported JDK versions (Ronald Holshausen, Sat Oct 22 17:36:05 2016 +1100)
@@ -3092,7 +3092,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 1a828e4 - update changelog for release 2.4.16 (Ronald Holshausen, Sat Oct 1 21:34:18 2016 +1000)
 * 1513b15 - bump version to 3.3.2 (Ronald Holshausen, Sun Oct 2 15:16:03 2016 +1100)
 
-# 2.4.17 - Bugfix Release
+## 2.4.17 - Bugfix Release
 
 * 470d4d6 - Merge branch 'master' into v2.x (Ronald Holshausen, Sat Oct 22 17:38:58 2016 +1100)
 * c17d806 - Updated readme with supported JDK versions (Ronald Holshausen, Sat Oct 22 17:36:05 2016 +1100)
@@ -3116,7 +3116,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 871aa4d - update changelog for release 3.3.1 (Ronald Holshausen, Sun Oct 2 14:45:35 2016 +1100)
 * 98c0961 - bump version to 2.4.17 (Ronald Holshausen, Sun Oct 2 09:58:46 2016 +1100)
 
-# 3.3.1 - Bugfix + Small Feature
+## 3.3.1 - Bugfix + Small Feature
 
 * 37b05f4 - fix codenarc (Ronald Holshausen, Fri Sep 30 13:56:53 2016 +1000)
 * 6d202b3 - Merge branch 'lordofthejars-master' (Ronald Holshausen, Fri Sep 30 13:56:34 2016 +1000)
@@ -3140,7 +3140,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * b483572 - Implemented wildcards for map keys in the Groovy DSL #313 (Ronald Holshausen, Sat Sep 10 12:25:29 2016 +1000)
 * 1fa05bd - bump version to 3.3.1 (Ronald Holshausen, Wed Sep 7 21:12:55 2016 +1000)
 
-# 2.4.16 - Bugfixes + Minor Features
+## 2.4.16 - Bugfixes + Minor Features
 
 * b8e33ff - fix for build in travis CI (Ronald Holshausen, Sat Oct 1 21:20:19 2016 +1000)
 * b84486b - Merge branch 'master' into v2.x (Ronald Holshausen, Sat Oct 1 17:43:55 2016 +1000)
@@ -3190,7 +3190,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * f1590bc - update changelog for release 3.2.12 (Ronald Holshausen, Sun Aug 7 14:34:25 2016 +1000)
 * 71f1d97 - update changelog for release 2.4.14 (Ronald Holshausen, Sun Aug 7 13:27:11 2016 +1000)
 
-# 3.5.0-beta.2 - Bugfix Release
+## 3.5.0-beta.2 - Bugfix Release
 
 * 43f9a82 - fix codenarc error (Ronald Holshausen, Wed Sep 21 22:27:35 2016 +1000)
 * 86621b2 - handle provider method invokation errors more gracefully (Ronald Holshausen, Wed Sep 21 22:14:34 2016 +1000)
@@ -3217,7 +3217,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * e222205 - update changelog for release 2.4.15 (Ronald Holshausen, Tue Aug 23 22:12:30 2016 +1000)
 * 90c886e - bump version to 3.5.0-beta.2 (Ronald Holshausen, Sun Aug 28 21:39:06 2016 +1000)
 
-# 3.3.0 - Unit style specification for specs2
+## 3.3.0 - Unit style specification for specs2
 
 * e91ba6e - Merge pull request #314 from alonpeer/unit-specs (Ronald Holshausen, Fri Sep 2 07:49:58 2016 +1000)
 * 381b043 - handle loading a pact with invalid version metadata (Ronald Holshausen, Wed Aug 31 22:23:43 2016 +1000)
@@ -3234,7 +3234,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * b47d781 - Converted MockProviderConfig to a groovy object (Ronald Holshausen, Sun Aug 14 14:11:50 2016 +1000)
 * 54122ed - bump version to 3.2.14 (Ronald Holshausen, Sun Aug 14 12:34:07 2016 +1000)
 
-# 3.5.0-beta.1 - V3 Matcher Format
+## 3.5.0-beta.1 - V3 Matcher Format
 
 * 70a6885 - build passing with new V3 matcher format (Ronald Holshausen, Sun Aug 28 21:07:03 2016 +1000)
 * fe02666 - matching rules are considered empty if there are no matching rules associated with any category (Ronald Holshausen, Sun Aug 28 19:30:45 2016 +1000)
@@ -3292,14 +3292,14 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 8efffa5 - updated the V3 test cases from the specification project (Ronald Holshausen, Tue Jul 19 16:02:04 2016 +1000)
 * f9a0ced - bump version for V3 spec changes (Ronald Holshausen, Tue Jul 19 15:58:54 2016 +1000)
 
-# 2.4.15 - Bugfix Release
+## 2.4.15 - Bugfix Release
 
 * 8130e84 - update Groovy DSL to allow each like matchers to work with primitives #308 (Ronald Holshausen, Sun Aug 14 11:28:10 2016 +1000)
 * 78d0ef0 - Fix regression in gradle pact publish task #307 (Ronald Holshausen, Thu Aug 11 21:48:08 2016 +1000)
 * ab05763 - show the correct requirements when @Pact is used on a method that doesn't have the right signature (Carwin Zimmermann, Thu Aug 11 10:48:22 2016 +1000)
 * 73a3cb6 - bump version to 2.4.15 (Ronald Holshausen, Sun Aug 7 14:24:31 2016 +1000)
 
-# 3.2.13 - Bugfix Release
+## 3.2.13 - Bugfix Release
 
 * a4c1d8d - update Groovy DSL to allow each like matchers to work with primitives #308 (Ronald Holshausen, Sun Aug 14 11:28:10 2016 +1000)
 * a130280 - Fix regression in gradle pact publish task #307 (Ronald Holshausen, Thu Aug 11 21:48:08 2016 +1000)
@@ -3307,7 +3307,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * a70279e - show the correct requirements when @Pact is used on a method that doesn't have the right signature (Carwin Zimmermann, Thu Aug 11 10:48:22 2016 +1000)
 * 7213bf6 - bump version to 3.2.13 (Ronald Holshausen, Sun Aug 7 15:04:28 2016 +1000)
 
-# 3.2.12 - Bugfix Release
+## 3.2.12 - Bugfix Release
 
 * 71f1d97 - update changelog for release 2.4.14 (Ronald Holshausen, Sun Aug 7 13:27:11 2016 +1000)
 * a8562e1 - correctly handle the content type header from the pact broker #287 (Ronald Holshausen, Sun Aug 7 12:13:14 2016 +1000)
@@ -3335,7 +3335,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 69a55ac - update changelog for release 3.3.0-beta.0 (Ronald Holshausen, Sun Jul 31 18:59:18 2016 +1000)
 * 1b1b81f - bump version to 3.2.12 (Ronald Holshausen, Sun Jul 31 16:50:40 2016 +1000)
 
-# 2.4.14 - Bugfix Release
+## 2.4.14 - Bugfix Release
 
 * 0f496ce - fix codenarc (Ronald Holshausen, Sun Aug 7 12:59:31 2016 +1000)
 * 5f9ddcc - Fix PactDslJsonBodyMatcherSpec when run on JDK 6 (Ronald Holshausen, Sun Aug 7 12:47:54 2016 +1000)
@@ -3375,7 +3375,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 15cb1f6 - update changelog for release 2.4.13 (Ronald Holshausen, Sun Jul 31 14:52:43 2016 +1000)
 * 9ba1e26 - bump version to 2.4.14 (Ronald Holshausen, Sun Jul 31 15:52:50 2016 +1000)
 
-# 3.3.0-beta.0 - First V3 Implementation
+## 3.3.0-beta.0 - First V3 Implementation
 
 * 8288fe3 - update provider junit support to handle provider states with parameters (Ronald Holshausen, Sun Jul 31 17:58:13 2016 +1000)
 * afd4afd - update provider junit support to handle multiple provider states (Ronald Holshausen, Sun Jul 31 17:28:35 2016 +1000)
@@ -3399,7 +3399,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 8efffa5 - updated the V3 test cases from the specification project (Ronald Holshausen, Tue Jul 19 16:02:04 2016 +1000)
 * f9a0ced - bump version for V3 spec changes (Ronald Holshausen, Tue Jul 19 15:58:54 2016 +1000)
 
-# 3.2.11 - Bugfix Release
+## 3.2.11 - Bugfix Release
 
 * a220b69 - add java version check to release script (Ronald Holshausen, Sun Jul 31 16:11:13 2016 +1000)
 * 15cb1f6 - update changelog for release 2.4.13 (Ronald Holshausen, Sun Jul 31 14:52:43 2016 +1000)
@@ -3430,7 +3430,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 611ea5d - updated the specification test cases from the spec project (Ronald Holshausen, Tue Jul 19 11:43:16 2016 +1000)
 * e50f369 - bump version to 3.2.11 (Ronald Holshausen, Fri Jul 15 14:21:40 2016 +1000)
 
-# 2.4.13 - Bugfix Release
+## 2.4.13 - Bugfix Release
 
 * ef12ccf - updated release script to check for java and maven versions (Ronald Holshausen, Sun Jul 31 14:40:59 2016 +1000)
 * 76189e6 - scaladoc 2.10 chokes on package objects with implicits (Ronald Holshausen, Fri Jul 29 15:39:33 2016 +1000)
@@ -3468,7 +3468,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 1dc435b - update changelog for release 3.2.10 (Ronald Holshausen, Fri Jul 15 14:11:22 2016 +1000)
 * f89f6ce - bump version to 2.4.13 (Ronald Holshausen, Fri Jul 15 14:02:45 2016 +1000)
 
-# 3.2.10 - Bugfix + Feature Release
+## 3.2.10 - Bugfix + Feature Release
 
 * f0d93a0 - do not include optional missing attributes in the generated pact files #248 (Ronald Holshausen, Fri Jul 15 11:30:49 2016 +1000)
 * d41d1af - added the XML testcases to the V3 spec tests (Ronald Holshausen, Wed Jul 13 11:46:52 2016 +1000)
@@ -3490,7 +3490,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * dacbb36 - update the tags for the gradle plugin (Ronald Holshausen, Wed Jul 6 15:55:04 2016 +1000)
 * 88583c9 - bump version to 3.2.10 (Ronald Holshausen, Wed Jul 6 15:51:12 2016 +1000)
 
-# 2.4.12 - Bugfix + Feature Release
+## 2.4.12 - Bugfix + Feature Release
 
 * 58c1032 - fixes to run on scala 2.10 (Ronald Holshausen, Fri Jul 15 12:14:13 2016 +1000)
 * e7bf921 - Merge branch 'master' into v2.x (Ronald Holshausen, Fri Jul 15 12:01:41 2016 +1000)
@@ -3517,7 +3517,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 6f884b7 - update changelog for release 2.4.11 (Ronald Holshausen, Wed Jul 6 15:05:06 2016 +1000)
 * 77dcda1 - bump version to 2.4.12 (Ronald Holshausen, Wed Jul 6 15:25:32 2016 +1000)
 
-# 3.2.9 - Bugfix Release
+## 3.2.9 - Bugfix Release
 
 * 6f884b7 - update changelog for release 2.4.11 (Ronald Holshausen, Wed Jul 6 15:05:06 2016 +1000)
 * c0d110d - Merge branch 'DevFactory-release/method-names-should-comply-with-a-naming-convention-fix-1' (Ronald Holshausen, Wed Jul 6 13:51:35 2016 +1000)
@@ -3553,7 +3553,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 01a8e0e - automatically close off any objects that have not been closed in the JUnit DSL #266 (Ronald Holshausen, Mon Jun 20 14:07:11 2016 +1000)
 * 541a5cd - bump version to 3.2.9 (Ronald Holshausen, Sat Jun 18 15:32:47 2016 +1000)
 
-# 2.4.11 - Bugfix Release
+## 2.4.11 - Bugfix Release
 
 * 74e5fc0 - groovy shell plugin needs JDK 1.7+ (Ronald Holshausen, Wed Jul 6 14:48:49 2016 +1000)
 * 12c2b27 - Merge branch 'master' into v2.x (Ronald Holshausen, Wed Jul 6 14:29:42 2016 +1000)
@@ -3596,7 +3596,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 4d27a1e - Merge pull request #265 from olga-vasylchenko/master (Ronald Holshausen, Thu Jun 16 19:44:22 2016 +1000)
 * affa62d - add new line after a message 'Consumer 'x' has a pact with Provider 'x'' (Olga Vasylchenko, Thu Jun 16 10:29:39 2016 +0200)
 
-# 3.2.8 - Bugfix Release
+## 3.2.8 - Bugfix Release
 
 * 893e7c2 - update changelog for release 2.4.10 (Ronald Holshausen, Wed Jun 15 11:38:53 2016 +1000)
 * 1284223 - Correct link in readme #267 (Ronald Holshausen, Sat Jun 18 07:11:16 2016 +1000)
@@ -3624,7 +3624,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * b7f27d1 - update scala to 2.11.8 (Ronald Holshausen, Wed May 4 16:33:17 2016 +1000)
 * dc4ac25 - bump version to 3.2.8 (Ronald Holshausen, Wed May 4 15:10:17 2016 +1000)
 
-# 2.4.10 - Bugfix Release
+## 2.4.10 - Bugfix Release
 
 * 8e331d0 - Merge branch 'master' into v2.x (Ronald Holshausen, Wed Jun 15 11:10:34 2016 +1000)
 * aebef1b - Fix for an odd Groovy error where a string was getting through an instanceof check (Ronald Holshausen, Wed Jun 15 10:29:15 2016 +1000)
@@ -3656,7 +3656,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * b069ddf - comment out the proxy settings (Ronald Holshausen, Wed May 4 14:13:02 2016 +1000)
 * 9008afa - bump version to 2.4.10 (Ronald Holshausen, Wed May 4 13:00:30 2016 +1000)
 
-# 3.2.7 - Bugfix Release
+## 3.2.7 - Bugfix Release
 
 * 73e53ba - fix for a build anamoly (Ronald Holshausen, Wed May 4 14:32:11 2016 +1000)
 * 5ec6579 - update changelog for release 2.4.9 (Ronald Holshausen, Wed May 4 12:30:33 2016 +1000)
@@ -3689,7 +3689,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 4e75f64 - updated mock server docker file for the latest gradle distribution format (Ronald Holshausen, Tue Mar 29 15:13:04 2016 +1100)
 * 00323df - bump version to 3.2.7 (Ronald Holshausen, Tue Mar 29 14:42:32 2016 +1100)
 
-# 2.4.9 - Bugfix Release
+## 2.4.9 - Bugfix Release
 
 * f6a94ee - Merge branch 'master' into v2.x (Ronald Holshausen, Wed May 4 11:49:01 2016 +1000)
 * 69ac23d - updated readme about allowing the pact file/url to be determined with a closure #252 (Ronald Holshausen, Wed May 4 11:41:49 2016 +1000)
@@ -3727,7 +3727,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 4051aab - fix the groovy version in consumer build gradle (Ronald Holshausen, Tue Mar 29 14:05:05 2016 +1100)
 * 3abb480 - bump version to 2.4.9 (Ronald Holshausen, Tue Mar 29 14:03:51 2016 +1100)
 
-# 3.2.6 - Bugfix Release
+## 3.2.6 - Bugfix Release
 
 * 4e8fb31 - update changelog for release 2.4.8 (Ronald Holshausen, Tue Mar 29 13:15:16 2016 +1100)
 * 6143e58 - fix regression in pact mock server after change from using json4s #231 (Ronald Holshausen, Tue Mar 29 11:59:15 2016 +1100)
@@ -3739,7 +3739,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * c0392d8 - Reformat JSON in compareBody method so that it doesn't mismatch if the order is different between the expected and actual body (Jo Cranford, Fri Mar 25 18:03:39 2016 +1100)
 * a1988e7 - bump version to 3.2.6 (Ronald Holshausen, Fri Mar 25 13:17:23 2016 +1100)
 
-# 2.4.8 - Bugfix Release
+## 2.4.8 - Bugfix Release
 
 * ca0a7cd - Merge branch 'master' into v2.x (Ronald Holshausen, Tue Mar 29 12:32:03 2016 +1100)
 * 6143e58 - fix regression in pact mock server after change from using json4s #231 (Ronald Holshausen, Tue Mar 29 11:59:15 2016 +1100)
@@ -3755,7 +3755,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * c674562 - update changelog for release 2.4.7 (Ronald Holshausen, Fri Mar 25 11:39:08 2016 +1100)
 * 9096f3a - bump version to 2.4.8 (Ronald Holshausen, Fri Mar 25 12:28:10 2016 +1100)
 
-# 3.2.5 - Bugfix + small feature release
+## 3.2.5 - Bugfix + small feature release
 
 * 106c083 - correct the groovy dependency (Ronald Holshausen, Fri Mar 25 12:44:23 2016 +1100)
 * c674562 - update changelog for release 2.4.7 (Ronald Holshausen, Fri Mar 25 11:39:08 2016 +1100)
@@ -3787,7 +3787,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * fadc65c - Add consumer annotation and ConsumerPactLoader (Georg Meyer, Thu Feb 25 19:08:23 2016 +0100)
 * 7f9f4da - bump version to 3.2.5 (Ronald Holshausen, Sat Feb 20 13:06:42 2016 +1100)
 
-# 2.4.7 - Bugfix + small feature release
+## 2.4.7 - Bugfix + small feature release
 
 * 42af997 - Merge branch 'master' into v2.x (Ronald Holshausen, Fri Mar 25 10:27:08 2016 +1100)
 * 74511df - Merge pull request #229 from lordofthejars/issue-227 (Ronald Holshausen, Thu Mar 24 08:25:13 2016 +1100)
@@ -3821,7 +3821,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 5fbb5ba - update changelog for release 2.4.6 (Ronald Holshausen, Sat Feb 20 09:58:40 2016 +1100)
 * 7873e9a - bump version to 2.4.7 (Ronald Holshausen, Sat Feb 20 11:28:02 2016 +1100)
 
-# 3.2.4 - Bugfix Release
+## 3.2.4 - Bugfix Release
 
 * 5fbb5ba - update changelog for release 2.4.6 (Ronald Holshausen, Sat Feb 20 09:58:40 2016 +1100)
 * 0bac2ba - when comparing bodies, handle the case where a request returns an empty string for a body #216 (Ronald Holshausen, Thu Feb 18 17:18:51 2016 +1100)
@@ -3835,7 +3835,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 19b42e3 - update to the latest gradle publish plugin (Ronald Holshausen, Fri Feb 12 10:03:03 2016 +1100)
 * a1f5fdc - bump version to 3.2.4 (Ronald Holshausen, Thu Feb 11 17:28:26 2016 +1100)
 
-# 2.4.6 - Bugfix Release
+## 2.4.6 - Bugfix Release
 
 * 68576a9 - Merge branch 'master' into v2.x (Ronald Holshausen, Fri Feb 19 13:39:35 2016 +1100)
 * 0bac2ba - when comparing bodies, handle the case where a request returns an empty string for a body #216 (Ronald Holshausen, Thu Feb 18 17:18:51 2016 +1100)
@@ -3854,7 +3854,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 629e5b4 - update release script to deploy SBT plugins (Ronald Holshausen, Thu Feb 11 15:59:53 2016 +1100)
 * c6e84bb - bump version to 2.4.6 (Ronald Holshausen, Thu Feb 11 15:59:05 2016 +1100)
 
-# 3.2.3 - Bugfix + small feature release
+## 3.2.3 - Bugfix + small feature release
 
 * 5ebe372 - update changelog for release 2.4.5 (Ronald Holshausen, Thu Feb 11 15:19:00 2016 +1100)
 * 6a716aa - added support for apache common collection Closures with request filters (Ronald Holshausen, Thu Feb 11 13:27:46 2016 +1100)
@@ -3900,7 +3900,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * cbac147 - first phase of release prep script (Ronald Holshausen, Sun Jan 17 15:51:47 2016 +1100)
 * 599858c - bump version (Ronald Holshausen, Sun Jan 17 14:52:38 2016 +1100)
 
-# 2.4.5 - Bugfix + small feature release
+## 2.4.5 - Bugfix + small feature release
 
 * f53f278 - more JDK6 fixes (Ronald Holshausen, Thu Feb 11 14:31:16 2016 +1100)
 * 016eb9c - JDK 6 fixes after merge from master (Ronald Holshausen, Thu Feb 11 13:58:54 2016 +1100)
@@ -3944,7 +3944,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 1caf5b4 - updated release prep script (Ronald Holshausen, Thu Jan 21 11:36:53 2016 +1100)
 * a522dc2 - bump version to 2.4.5 (Ronald Holshausen, Thu Jan 21 11:34:21 2016 +1100)
 
-# 2.4.4 - Update SBT provider plugin
+## 2.4.4 - Update SBT provider plugin
 
 * ad0b55f - Merge branch 'master' into v2.x (Ronald Holshausen, Thu Jan 21 09:33:40 2016 +1100)
 * 6d03988 - implemented request filters in the SBT plugin (Ronald Holshausen, Wed Jan 20 15:49:25 2016 +1100)
@@ -3977,7 +3977,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * bf0392e - use groovy script for release prep (Ronald Holshausen, Sun Jan 17 14:13:15 2016 +1100)
 * cd22c3b - use groovy script for release prep (Ronald Holshausen, Sun Jan 17 14:13:15 2016 +1100)
 
-# 3.2.2 - small feature release
+## 3.2.2 - small feature release
 
 * 5234497 - update changelog (Ronald Holshausen, Sun Jan 17 13:39:13 2016 +1100)
 * bf0392e - use groovy script for release prep (Ronald Holshausen, Sun Jan 17 14:13:15 2016 +1100)
@@ -3993,7 +3993,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 7d9ef1c - Added one line description of ConsumerService to README example that would have saved me 20 minutes... (Dave Smith, Wed Dec 23 14:07:46 2015 +0000)
 * 0cdf768 - bump version (Ronald Holshausen, Sun Dec 13 15:55:47 2015 +1100)
 
-# 2.4.3 - small feature release
+## 2.4.3 - small feature release
 
 * caaa3d9 - Revert "Update net.databinder.dispatch version to 0.11.3" as the transitive async-http-client does not support JDK 6. (Ronald Holshausen, Sun Jan 17 12:03:43 2016 +1100)
 * d299f0e - JDK 6 fixes (Ronald Holshausen, Sun Jan 17 11:42:12 2016 +1100)
@@ -4013,7 +4013,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 68c6855 - update changelog (Ronald Holshausen, Sun Dec 13 09:23:51 2015 +1100)
 * 65f3297 - update changelog (Ronald Holshausen, Sun Dec 13 08:49:37 2015 +1100)
 
-# 3.2.1 - bugfix release
+## 3.2.1 - bugfix release
 
 * 65f3297 - update changelog (Ronald Holshausen, Sun Dec 13 08:49:37 2015 +1100)
 * 31133e7 - added some tests around using basic auth with a pact broker #176 (Ronald Holshausen, Sat Dec 12 20:51:49 2015 +1100)
@@ -4031,7 +4031,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * a6e3665 - reduce scala compiler memory for travis build (Ronald Holshausen, Sun Nov 29 07:58:47 2015 +1100)
 * 2835f7a - add travis settings from 2.x build (Ronald Holshausen, Sat Nov 28 21:17:24 2015 +1100)
 
-# 2.4.2 - bugfix release
+## 2.4.2 - bugfix release
 
 * 924ed1d - more jdk 6 fixes (Ronald Holshausen, Sun Dec 13 08:41:57 2015 +1100)
 * 28c8415 - jdk 6 fixes (Ronald Holshausen, Sat Dec 12 21:11:18 2015 +1100)
@@ -4056,7 +4056,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * b960e40 - updated changelog (Ronald Holshausen, Sat Nov 28 17:21:29 2015 +1100)
 * 20b8201 - guard against null headers in the mock server (Ronald Holshausen, Sat Nov 28 17:20:23 2015 +1100)
 
-# 3.2.0 - removed json4s library in favour of groovy JSON parsing, bug fixes + maven pact publish task
+## 3.2.0 - removed json4s library in favour of groovy JSON parsing, bug fixes + maven pact publish task
 
 * b960e40 - updated changelog (Ronald Holshausen, Sat Nov 28 17:21:29 2015 +1100)
 * 20b8201 - guard against null headers in the mock server (Ronald Holshausen, Sat Nov 28 17:20:23 2015 +1100)
@@ -4076,7 +4076,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 99c941f - added nullValue method and updated support for setting string values to null in Java DSL #183 (Ronald Holshausen, Mon Nov 16 12:14:05 2015 +1100)
 * 9330b3c - bump version (Ronald Holshausen, Sat Nov 14 18:49:29 2015 +1100)
 
-# 2.4.1 - bug fixes + maven pact publish task
+## 2.4.1 - bug fixes + maven pact publish task
 
 * 1213287 - guard against null headers in the mock server (Ronald Holshausen, Sat Nov 28 17:20:23 2015 +1100)
 * 6d3c434 - jdk 6 fixes (Ronald Holshausen, Sat Nov 28 17:07:40 2015 +1100)
@@ -4099,7 +4099,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 4b23556 - remove json4s as it was causing issues when run from SBT (Ronald Holshausen, Tue Nov 17 10:38:09 2015 +1100)
 * 128f0ae - bump version (Ronald Holshausen, Sun Nov 22 15:24:09 2015 +1100)
 
-# 2.4.0 - removed json4s library in favour of groovy JSON parsing
+## 2.4.0 - removed json4s library in favour of groovy JSON parsing
 
 * 2f0f9d5 - missed some old scala model access code #152 (Ronald Holshausen, Sun Nov 22 14:38:03 2015 +1100)
 * 25d79d0 - content type check should be case insensitive #152 (Ronald Holshausen, Sun Nov 22 14:06:14 2015 +1100)
@@ -4122,7 +4122,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 0f26261 - bump version (Ronald Holshausen, Sat Nov 14 18:19:58 2015 +1100)
 * d6f4cbf - update changelog (Ronald Holshausen, Sat Nov 14 16:54:33 2015 +1100)
 
-# 3.1.3 - JUnit provider test support + bugfixes
+## 3.1.3 - JUnit provider test support + bugfixes
 
 * d6f4cbf - update changelog (Ronald Holshausen, Sat Nov 14 16:54:33 2015 +1100)
 * 32c095f - update readme with link to pact-jvm-provider-junit (Ronald Holshausen, Wed Nov 11 16:59:14 2015 +1100)
@@ -4139,7 +4139,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * ef4772d - fix link in readme (Ronald Holshausen, Sat Oct 24 12:11:23 2015 +1100)
 * 2cd1c42 - bump version (Ronald Holshausen, Sat Oct 24 12:09:19 2015 +1100)
 
-# 2.3.3 - JUnit provider test support + bugfixes
+## 2.3.3 - JUnit provider test support + bugfixes
 
 * 003d15f - JDK6 compatibility changes (Ronald Holshausen, Sat Nov 14 16:49:28 2015 +1100)
 * 4f38bdf - JDK6 compatibility changes (Ronald Holshausen, Sat Nov 14 16:42:23 2015 +1100)
@@ -4160,7 +4160,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 2cd1c42 - bump version (Ronald Holshausen, Sat Oct 24 12:09:19 2015 +1100)
 * 63ac5f3 - updated changelog (Ronald Holshausen, Sat Oct 24 11:37:39 2015 +1100)
 
-# 3.1.2 - minor update for loading pacts from an input stream
+## 3.1.2 - minor update for loading pacts from an input stream
 
 * c0b243a - Merge pull request #174 from Freaky-namuH/pact-load-from-inputstream (Ronald Holshausen, Thu Oct 22 10:29:49 2015 +1100)
 * e5a7634 - Add support to PactReader to read from an InputStream. #173 (Ashley Cambrell, Thu Oct 22 10:05:17 2015 +1100)
@@ -4171,7 +4171,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 2751d24 - update 2.x changelog (Ronald Holshausen, Tue Oct 6 21:12:32 2015 +1100)
 * ecf6e51 - bump version (Ronald Holshausen, Tue Oct 20 20:17:01 2015 +1100)
 
-# 2.3.2 - minor update for loading pacts from an input stream
+## 2.3.2 - minor update for loading pacts from an input stream
 
 * 5a9310d - Merge branch 'master' into v2.x (Ronald Holshausen, Sat Oct 24 11:31:03 2015 +1100)
 * 73d8c2e - updated changelog (Ronald Holshausen, Sat Oct 24 11:27:44 2015 +1100)
@@ -4185,7 +4185,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 6716719 - bump version (Ronald Holshausen, Tue Oct 20 20:18:14 2015 +1100)
 * ecf6e51 - bump version (Ronald Holshausen, Tue Oct 20 20:17:01 2015 +1100)
 
-# 3.1.1 -  bugfixes and pact broker integration
+## 3.1.1 -  bugfixes and pact broker integration
 
 * a98f461 - let the user configure the consumers from the pact broker with a closure in the Gradle plugin #168 (Ronald Holshausen, Tue Oct 20 09:50:05
 * e8a93ec - add ability to fetch pacts from pact broker in maven plugin #168 (Ronald Holshausen, Tue Oct 20 09:05:38 2015 +1100)
@@ -4200,7 +4200,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * c6ba451 - add version badges against branches (Ronald Holshausen, Tue Oct 6 21:18:44 2015 +1100)
 * 0d09534 - update changelog (Ronald Holshausen, Tue Oct 6 20:30:22 2015 +1100)
 
-# 2.3.1 - bugfixes and pact broker integration
+## 2.3.1 - bugfixes and pact broker integration
 
 * e8b2432 - Merge branch 'master' into v2.x (Ronald Holshausen, Tue Oct 20 19:21:30 2015 +1100)
 * b5ed723 - update change log (Ronald Holshausen, Tue Oct 20 19:05:14 2015 +1100)
@@ -4218,7 +4218,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * a2eab6d - upgrade to the latest version of the gradle publish plugin (Ronald Holshausen, Tue Oct 6 21:44:13 2015 +1100)
 * c6ba451 - add version badges against branches (Ronald Holshausen, Tue Oct 6 21:18:44 2015 +1100)
 
-# 3.1.0 - First implementation of V3 pacts + bugfixes
+## 3.1.0 - First implementation of V3 pacts + bugfixes
 
 * 250becc - updated changelog (Ronald Holshausen, Thu Sep 17 19:56:18 2015 +1000)
 * 21502e3 - fix package name in pact-jvm-consumer-groovy after a previous refactor (Ronald Holshausen, Tue Oct 6 11:06:15 2015 +1100)
@@ -4252,7 +4252,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 7c61bce - bump version (Ronald Holshausen, Thu Sep 17 20:41:52 2015 +1000)
 * 7c6f8a4 - Merge pull request #2 from DiUS/master (venksub, Wed Sep 16 09:27:10 2015 -0700)
 
-# 2.3.0 - First implementation of V3 pacts + bugfixes
+## 2.3.0 - First implementation of V3 pacts + bugfixes
 
 * e706a0d - Merge branch 'master' into v2.x (Ronald Holshausen, Tue Oct 6 21:08:48 2015 +1100)
 * 0d09534 - update changelog (Ronald Holshausen, Tue Oct 6 20:30:22 2015 +1100)
@@ -4305,7 +4305,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 5b3350f - updated changelog (Ronald Holshausen, Thu Sep 17 19:13:40 2015 +1000)
 * 7c6f8a4 - Merge pull request #2 from DiUS/master (venksub, Wed Sep 16 09:27:10 2015 -0700)
 
-# 3.0.4 - bugfix release
+## 3.0.4 - bugfix release
 
 * 58bcc34 - fixed consumer specs2 support updated readmes after upgrade to specs2 3.x #135 (Ronald Holshausen, Thu Sep 17 16:07:28 2015 +1000)
 * 3d37cd3 - Upgrade specs to version 3.6.4 #135 (Ronald Holshausen, Thu Sep 17 13:00:17 2015 +1000)
@@ -4329,7 +4329,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 3cad739 - bump version (Ronald Holshausen, Mon Sep 7 21:02:29 2015 +1000)
 * 7f8dd18 - updated changelog (Ronald Holshausen, Mon Sep 7 20:09:06 2015 +1000)
 
-# 2.2.15 - bugfix release
+## 2.2.15 - bugfix release
 
 * e8562a7 - Merge branch 'master' into v2.x (Ronald Holshausen, Thu Sep 17 17:03:02 2015 +1000)
 * 58bcc34 - fixed consumer specs2 support updated readmes after upgrade to specs2 3.x #135 (Ronald Holshausen, Thu Sep 17 16:07:28 2015 +1000)
@@ -4355,7 +4355,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 7f8dd18 - updated changelog (Ronald Holshausen, Mon Sep 7 20:09:06 2015 +1000)
 * 2b2509b - bump version (Ronald Holshausen, Mon Sep 7 20:58:47 2015 +1000)
 
-# 3.0.3 - leiningen plugin
+## 3.0.3 - leiningen plugin
 
 * 893103c - updated readme about start and terminate provider in lein plugin (Ronald Holshausen, Mon Sep 7 17:21:06 2015 +1000)
 * 00ebc6d - implement start and terminate provider tasks (Ronald Holshausen, Mon Sep 7 17:07:03 2015 +1000)
@@ -4368,7 +4368,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 49143cd - updated changelog (Ronald Holshausen, Sat Aug 29 15:54:04 2015 +1000)
 * 95e0c45 - bump version (Ronald Holshausen, Sat Aug 29 14:26:31 2015 +1000)
 
-# 2.2.14 - leiningen plugin
+## 2.2.14 - leiningen plugin
 
 * 23460cf - Merge branch 'master' into v2.x (Ronald Holshausen, Mon Sep 7 19:51:06 2015 +1000)
 * b515752 - updated changelog (Ronald Holshausen, Mon Sep 7 19:25:28 2015 +1000)
@@ -4384,7 +4384,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 99a1a0d - bump version (Ronald Holshausen, Sat Aug 29 16:27:45 2015 +1000)
 * 95e0c45 - bump version (Ronald Holshausen, Sat Aug 29 14:26:31 2015 +1000)
 
-# 3.0.2 - fixes to XML matching and JUnit rule
+## 3.0.2 - fixes to XML matching and JUnit rule
 
 * 624b1ca - updated the readme about defaulting the provider name #144 (Ronald Holshausen, Sat Aug 29 13:23:23 2015 +1000)
 * 4c51ed9 - allow the pact rule to default the provider name so they do not have to be repeated #148 (Ronald Holshausen, Sat Aug 29 13:07:36 2015 +100
@@ -4411,7 +4411,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 1d4b5aa - bump version (Ronald Holshausen, Sun Aug 9 17:09:48 2015 +1000)
 * 76fb1ca - correct changelog (Ronald Holshausen, Sun Aug 9 16:39:04 2015 +1000)
 
-# 2.2.13 - fixes to XML matching and JUnit rule
+## 2.2.13 - fixes to XML matching and JUnit rule
 
 * 7144cd3 - fix imports for JDK6 & 7 (Ronald Holshausen, Sat Aug 29 14:45:00 2015 +1000)
 * 5e25750 - Clojure Gradle plugin needs JDK7+ (Ronald Holshausen, Sat Aug 29 14:44:14 2015 +1000)
@@ -4447,7 +4447,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 1d4b5aa - bump version (Ronald Holshausen, Sun Aug 9 17:09:48 2015 +1000)
 * 76fb1ca - correct changelog (Ronald Holshausen, Sun Aug 9 16:39:04 2015 +1000)
 
-# 3.0.1 - verification of message pacts; some bugfixes
+## 3.0.1 - verification of message pacts; some bugfixes
 
 * cb0c829 - expose the mock provider config #151 (Ronald Holshausen, Sun Aug 9 13:27:33 2015 +1000)
 * 6d7a5f8 - update the readme for building the sbt plugins (Ronald Holshausen, Sun Aug 9 13:14:05 2015 +1000)
@@ -4466,7 +4466,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * a020b46 - updated changelog (Ronald Holshausen, Sun Aug 2 15:53:03 2015 +1000)
 * a754633 - bump version (Ronald Holshausen, Sun Aug 2 16:16:54 2015 +1000)
 
-# 2.2.12 - verification of message pacts; some bugfixes
+## 2.2.12 - verification of message pacts; some bugfixes
 
 * e8e4994 - Merge remote-tracking branch 'origin/master' into v2.x (Ronald Holshausen, Sun Aug 9 13:48:59 2015 +1000)
 * cb0c829 - expose the mock provider config #151 (Ronald Holshausen, Sun Aug 9 13:27:33 2015 +1000)
@@ -4561,7 +4561,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * f38dafa - Merge branch 'v2.x' into v3.x (Ronald Holshausen, Fri Jul 31 14:43:26 2015 +1000)
 * 287b3ee - Drop JDK6, JDK7 and Scala 2.10 (Ronald Holshausen, Thu Jul 30 20:55:23 2015 +1000)
 
-# 3.0.0 - JDK 8 and Scala 2.11 branch
+## 3.0.0 - JDK 8 and Scala 2.11 branch
 
 * 4c92628 - disable uploading ZIP distribution for the pact-jvm-server (Ronald Holshausen, Sun Aug 2 15:50:48 2015 +1000)
 * 7f98c40 - Merge branch 'v2.x' into v3.x (Ronald Holshausen, Sun Aug 2 15:42:34 2015 +1000)
@@ -4582,7 +4582,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * f38dafa - Merge branch 'v2.x' into v3.x (Ronald Holshausen, Fri Jul 31 14:43:26 2015 +1000)
 * 287b3ee - Drop JDK6, JDK7 and Scala 2.10 (Ronald Holshausen, Thu Jul 30 20:55:23 2015 +1000)
 
-# 2.2.11 - bugfixes, project cleanup and initial WIP V3 message pact
+## 2.2.11 - bugfixes, project cleanup and initial WIP V3 message pact
 
 * d2001a5 - add note about 2.x vs 3.x versions (Ronald Holshausen, Sun Aug 2 14:37:23 2015 +1000)
 * bdb4ebf - remove the unessessary SBT build files (Ronald Holshausen, Sun Aug 2 14:13:48 2015 +1000)
@@ -4620,7 +4620,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 6b061a4 - add note about maven pact broker plugin (Ronald Holshausen, Wed Jul 29 19:42:07 2015 +1000)
 * 23c9097 - bump version (Ronald Holshausen, Sat Jul 25 16:48:52 2015 +1000)
 
-# 2.2.10 - bugfixes, JUnit pact failures now give more meaningful messages
+## 2.2.10 - bugfixes, JUnit pact failures now give more meaningful messages
 
 * 3d62f84 - corrected test for Java 6 & 7 (Ronald Holshausen, Sat Jul 25 15:58:49 2015 +1000)
 * c23c37f - Make JUnit pact test failures more meaningful #40 (Ronald Holshausen, Sat Jul 25 15:26:48 2015 +1000)
@@ -4639,7 +4639,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * d352a0c - implemented handler to allow statechange calls to be a closure or gradle task #86 (Ronald Holshausen, Sat Jul 18 17:27:43 2015 +1000)
 * e098927 - bump version (Ronald Holshausen, Mon Jul 13 19:56:57 2015 +1000)
 
-# 2.2.9 - bugfixes in gradle plugin and `each like` matchers
+## 2.2.9 - bugfixes in gradle plugin and `each like` matchers
 
 * 2ab96e3 - Correct the each like matcher in the Java DSL (Ronald Holshausen, Mon Jul 13 17:28:05 2015 +1000)
 * 3d78301 - fix for each like matchers with empty actual lists (Ronald Holshausen, Mon Jul 13 17:06:04 2015 +1000)
@@ -4647,7 +4647,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 2eeab6a - fix No such property: trustStore error in gradle plugin (Ronald Holshausen, Sun Jul 12 11:56:41 2015 +1000)
 * 26803f0 - bump version (Ronald Holshausen, Wed Jul 8 19:32:18 2015 +1000)
 
-# 2.2.8 - inecure SSL flag for maven and gradle plugins
+## 2.2.8 - inecure SSL flag for maven and gradle plugins
 
 * 5eaac32 - Merge pull request #137 from Freaky-namuH/specify-trust-store (Ronald Holshausen, Wed Jul 8 14:11:10 2015 +1000)
 * 88a6c1d - Add ability to specify a custom SSL trust store without breaking out the Groovy script in a pom file. (Ashley Cambrell, Wed Jul 8 13:26:12 2015 +1000)
@@ -4657,7 +4657,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * a5aaf10 - Add insecure flag to reduce the amount of boiler plate groovy script is needed in the pom.xml file to allow tests to connect to https endpoints. (Ashley Cambrell, Wed Jul 8 11:26:23 2015 +1000
 * a008584 - bump version (Ronald Holshausen, Tue Jul 7 20:34:38 2015 +1000)
 
-# 2.2.7 - Gradle publish task
+## 2.2.7 - Gradle publish task
 
 * 9eda214 - added docs about pactPublish task #120 (Ronald Holshausen, Mon Jul 6 19:37:28 2015 +1000)
 * 5fe1698 - add a gradle task to publish pact files to a pact broker #120 (Ronald Holshausen, Mon Jul 6 17:07:17 2015 +1000)
@@ -4666,7 +4666,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * cc5ef05 - bump version (Ronald Holshausen, Thu Jul 2 22:03:25 2015 +1000)
 * 0ff176f - Update README.md (Ronald Holshausen, Thu Jul 2 21:50:12 2015 +1000)
 
-# 2.2.6 - Bugfixes
+## 2.2.6 - Bugfixes
 
 * 9bcf989 - if no charset is defined, default to UTF-8 #132 (Ronald Holshausen, Thu Jul 2 21:04:16 2015 +1000)
 * feb8d8a - make the mismatch message clearer when the number of keys in a map do not match (Ronald Holshausen, Thu Jul 2 15:49:31 2015 +1000)
@@ -4685,7 +4685,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * c46d702 - bump version (Ronald Holshausen, Thu Jun 25 14:31:29 2015 +1000)
 * 283f0d3 - updated pact-jvm-server to run as a docker container (Ronald Holshausen, Thu Jun 25 14:09:00 2015 +1000)
 
-# 2.2.5 - Bugfixes
+## 2.2.5 - Bugfixes
 
 * 2a57cd9 - added the matcher definition to all regex matcher examples (Ronald Holshausen, Mon Jun 22 20:13:52 2015 +1000)
 * 071ce27 - added a testcase for matching with bracket notation (Ronald Holshausen, Mon Jun 22 19:30:51 2015 +1000)
@@ -4696,7 +4696,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 268adef - upgrade to gradle 2.4 (Ronald Holshausen, Sat Jun 20 11:45:07 2015 +1000)
 * 646c203 - bump version (Ronald Holshausen, Wed Jun 17 20:16:01 2015 +1000)
 
-# 2.2.4 - Bugfix release
+## 2.2.4 - Bugfix release
 
 * 1c493e9 - updated readme on overriding http client (Ronald Holshausen, Wed Jun 17 19:42:54 2015 +1000)
 * 4200ccf - use jsonpath bracket notation for normal fields as well #127 (Ronald Holshausen, Wed Jun 17 15:14:03 2015 +1000)
@@ -4708,7 +4708,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 0d0370d - allow the HTTP client used to verify the provider to be overridden (Ronald Holshausen, Wed Jun 17 13:12:33 2015 +1000)
 * 4ec54ba - bump version (Ronald Holshausen, Sun Jun 14 10:20:49 2015 +1000)
 
-# 2.2.3 - Bugfix release
+## 2.2.3 - Bugfix release
 
 * a7f5df4 - fix converting of bodies with attributes named "body" to strings #119 (Ronald Holshausen, Sat Jun 13 12:58:45 2015 +1000)
 * c128ee8 - missed a required change in commit 0eefc36163ced5f2e37f2f487d12b96a6f2900c3 (Ronald Holshausen, Fri Jun 12 14:04:30 2015 +1000)
@@ -4722,7 +4722,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * fa610f3 - added specification testcase for array at top level (Ronald Holshausen, Thu Jun 11 11:23:12 2015 +1000)
 * 6f35e3a - bump version (Ronald Holshausen, Wed Jun 10 21:02:19 2015 +1000)
 
-# 2.2.2 - Matching on headers, XML body matching
+## 2.2.2 - Matching on headers, XML body matching
 
 * ea4bd36 - added specification tests for header matching (Ronald Holshausen, Wed Jun 10 20:33:22 2015 +1000)
 * 3677c6b - added header matching to the java DSL (Ronald Holshausen, Wed Jun 10 13:38:14 2015 +1000)
@@ -4750,7 +4750,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 770917a - bump version (Ronald Holshausen, Thu May 21 20:13:09 2015 +1000)
 
 
-# 2.2.1 - allowed gradle plugin to resolve hostname at runtime + junit bugfix
+## 2.2.1 - allowed gradle plugin to resolve hostname at runtime + junit bugfix
 
 * 0211bea - #121 fix incorrect keys in fields that are arrays (Ronald Holshausen, Thu May 21 20:05:57 2015 +1000)
 * a576f42 - let the gradle pact plugin resolve provider host names at runtime using closures (Ronald Holshausen, Thu May 21 16:06:17 2015 +1000)
@@ -4758,7 +4758,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * b907eac - added an example form post test (Ronald Holshausen, Thu May 14 09:41:34 2015 +1000)
 * 5f5723f - update changelog and bump version (Ronald Holshausen, Sun May 10 10:02:34 2015 +1000)
 
-# 2.2.0 - array-like matching feature release
+## 2.2.0 - array-like matching feature release
 
 * f96f1eb - #80 update the readmes for array like matching with min/max (Ronald Holshausen, Sat May 9 16:33:05 2015 +1000)
 * 7a6ff83 - #80 add array like matching with min/max to Groovy DSL (Ronald Holshausen, Sat May 9 16:11:43 2015 +1000)
@@ -4777,7 +4777,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 3d8ca1f - Generate correct matcher keys when the root of the body is an array #106 (Ronald Holshausen, Wed Apr 8 11:09:38 2015 +1000)
 * 5704c60 - bump version (Ronald Holshausen, Mon Mar 30 18:56:47 2015 +1100)
 
-# 2.1.13 - bugfix release
+## 2.1.13 - bugfix release
 
 * 55eb028 - fix defect where stateChangeUrl is automatically set by overridden url function #101 (Ronald Holshausen, Sun Mar 29 13:44:16 2015 +1100)
 * 3065910 - do not pretty print the request/response bodies when loading pact files if they are a string #102 (Ronald Holshausen, Fri Mar 27 13:05:06 2015 +1100)
@@ -4800,7 +4800,7 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 * 3dcf510 - remove incorrect maven repo from gradle build (Ronald Holshausen, Mon Mar 2 12:45:15 2015 +1100)
 * 0e4905d - bump version (Ronald Holshausen, Sat Feb 28 16:12:02 2015 +1100)
 
-# 2.1.12 - bugfix release
+## 2.1.12 - bugfix release
 
 **NOTE: This version has a breaking change for matching paths with arrays. To bring it inline with
 the other pact implementations, matcher paths will use [] for array indices. Pact files generated
@@ -4818,7 +4818,7 @@ with previous versions with matchers defined on arrays will not be applied.**
 * d109bcd - update build instructions with note about SBT being unmaintained (Ronald Holshausen, Sun Feb 8 10:59:04 2015 +1100)
 * 924bee4 - bump version (Ronald Holshausen, Thu Feb 5 21:31:45 2015 +1100)
 
-# 2.1.11 - bugfix release
+## 2.1.11 - bugfix release
 
 * 247f5ac - port the state change request filter to the maven plugin (Ronald Holshausen, Thu Feb 5 16:32:04 2015 +1100)
 * 3f59fdb - Allow state change requests from the gradle plugin to be modified (Ronald Holshausen, Thu Feb 5 16:21:20 2015 +1100)
@@ -4829,7 +4829,7 @@ with previous versions with matchers defined on arrays will not be applied.**
 * 886866d - Fixing the problem of evaluating mime type even if no body is specified. In this case "fallback" mime type "text/plain" is used, which makes test failing if provider
 * 92175d7 - bump version (Ronald Holshausen, Thu Jan 29 20:18:49 2015 +1100)
 
-# 2.1.10 - bugfix release
+## 2.1.10 - bugfix release
 
 * 973ef27 - do not compare the actual body if the body is left out of the pact file #85 (Ronald Holshausen, Thu Jan 29 19:29:15 2015 +1100)
 * 4a4aaba - Revert "when serialising a pact to JSON, always include a body attribute #85" (Ronald Holshausen, Thu Jan 29 13:39:53 2015 +1100)
@@ -4851,7 +4851,7 @@ with previous versions with matchers defined on arrays will not be applied.**
 * 2a08dc3 - add ability to maven plugin to verify pact files in a directory #79 (Ronald Holshausen, Sat Jan 10 15:40:05 2015 +1100)
 * 0126eaf - bump version (Ronald Holshausen, Sat Jan 10 13:47:03 2015 +1100)
 
-# 2.1.9 - fixes plus maven plugin
+## 2.1.9 - fixes plus maven plugin
 
 * 5b52f97 - added maven central badge (Ronald Holshausen, Wed Jan 7 16:24:32 2015 +1100)                                                                                                                                                     
 * 5e12a98 - updated the link in the main readme to the maven plugin (Ronald Holshausen, Wed Jan 7 13:55:11 2015 +1100)                                                                                                                       
@@ -4870,7 +4870,7 @@ with previous versions with matchers defined on arrays will not be applied.**
 * db53e6c - memory settings for travis build (Ronald Holshausen, Fri Dec 19 12:40:34 2014 +1100)
 * 852e4ad - bump version (Ronald Holshausen, Mon Dec 15 19:59:13 2014 +1100)
 
-# 2.1.8 - fixes plus pact junit rule
+## 2.1.8 - fixes plus pact junit rule
 
 **NOTE: This version has a breaking change for users of the gradle plugin with request filters.
 See [Modifying The Requests Before They Are Sent](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-gradle#modifying-the-requests-before-they-are-sent)
@@ -4891,7 +4891,7 @@ in the gradle plugin docs for more info.**
 * 823e6c8 - rename the second parameter in MockProviderConfig to be more meaningful (Ronald Holshausen, Wed Dec 3 09:10:53 2014 +1100)
 * 30088d7 - bump version (Ronald Holshausen, Tue Dec 2 20:35:00 2014 +1100)
 
-# 2.1.7 - bugfixes
+## 2.1.7 - bugfixes
 
 * 7112093 - updated the java DSL to include example values fir UUIDs and hex values (Ronald Holshausen, Tue Dec 2 17:35:09 2014 +1100)
 * 02c23a7 - fix issue where matchers on arrays start at index 1 in the client DSLs, but start at 0 in the core matching code (Ronald Holshausen, Tue Dec 2 15:54:26 2014 +1100)
@@ -4900,13 +4900,13 @@ in the gradle plugin docs for more info.**
 * 0d813ad - Made some of the example code more meaningful. (Beth, Wed Nov 26 07:07:05 2014 +1100)
 * baf34ea - bump version (Ronald Holshausen, Tue Nov 25 19:08:36 2014 +1100)
 
-# 2.1.6 - small update to the gradle plugin
+## 2.1.6 - small update to the gradle plugin
 
 * c37f4ee - Merge pull request #72 from georgepapas/provider_gradle_autogenerate_consumers_from_pact_directory (Ronald Holshausen, Mon Nov 24 12:43:20 2014 +1100)
 * 3585813 - Adds support for generating consumers from pact file location (George & Stefan, Mon Nov 24 12:15:45 2014 +1100)
 * ab7c146 - bump version (Ronald Holshausen, Sun Nov 9 09:43:04 2014 +1100)
 
-# 2.1.5 - small bugfixes + matching on paths
+## 2.1.5 - small bugfixes + matching on paths
 
 * 714ddec - #70 - updated groovy DSL docs (Ronald Holshausen, Sat Nov 8 14:40:40 2014 +1100)
 * 1cbc1bd - #70 - added integer and real number type matchers (Ronald Holshausen, Sat Nov 8 14:37:20 2014 +1100)
@@ -4921,7 +4921,7 @@ in the gradle plugin docs for more info.**
 * 3ce5f6b - #69 - add query parameters to request when using the basic provider (Ronald Holshausen, Sun Nov 2 09:14:53 2014 +1100)
 * 25ac70c - bump version (Ronald Holshausen, Wed Oct 29 09:16:37 2014 +1100)
 
-# 2.1.4 - small bugfix
+## 2.1.4 - small bugfix
 
 * dfb225b - more travis ci tweaks (Ronald Holshausen, Tue Oct 28 17:19:39 2014 +1100)
 * 0954a1d - Merge pull request #68 from devacto/master (Ronald Holshausen, Tue Oct 28 15:55:50 2014 +1100)
@@ -4930,7 +4930,7 @@ in the gradle plugin docs for more info.**
 * 985dad4 - Revert "#66 - URL decodes the path before serialising to the pact file" (Ronald Holshausen, Tue Oct 28 09:06:14 2014 +1100)
 * 42dd0e7 - bump version (Ronald Holshausen, Mon Oct 27 19:39:16 2014 +1100)
 
-# 2.1.3 - small bugfix
+## 2.1.3 - small bugfix
 
 * fb33269 - fix the thread stack size for travis (Ronald Holshausen, Mon Oct 27 12:45:10 2014 +1100)
 * f13d1ec - travis java option env var not being populated correctly (Ronald Holshausen, Mon Oct 27 12:42:19 2014 +1100)
@@ -4938,7 +4938,7 @@ in the gradle plugin docs for more info.**
 * 2de9d6f - add instructions to upload to bintray (Ronald Holshausen, Sun Oct 26 14:01:28 2014 +1100)
 * 5a89bf3 - bump version (Ronald Holshausen, Sun Oct 26 13:15:47 2014 +1100)
 
-# 2.1.2 - bugfix release, add gradle pugin to community portal
+## 2.1.2 - bugfix release, add gradle pugin to community portal
 
 * 2100ed4 - try an even smaller stack size with travis (Ronald Holshausen, Sun Oct 26 13:10:16 2014 +1100)
 * 6d9f2be - add support for dates and times in the client DSLs, as well as custom patterns #65 (Ronald Holshausen, Sun Oct 26 12:12:15 2014 +1100)
@@ -4965,7 +4965,7 @@ in the gradle plugin docs for more info.**
 * 1d9b206 - bump version (Ronald Holshausen, Fri Oct 10 10:41:27 2014 +1100)
 * 990b028 - update gradle readme to include gradle 2.1+ plugin useage (Ronald Holshausen, Fri Oct 10 10:39:17 2014 +1100)
 
-# 2.1.1 - 2.1 Hotfix
+## 2.1.1 - 2.1 Hotfix
 
 * ad465ea - #62 - Add filters to the gradle plugin (Ronald Holshausen, Thu Oct 9 17:07:38 2014 +1100)
 * 64896da - make sure ids are numeric and not strings (Ronald Holshausen, Thu Oct 9 13:42:51 2014 +1100)
@@ -4973,7 +4973,7 @@ in the gradle plugin docs for more info.**
 * 086f2d2 - Due to the matcher type on the request and responses, pact matchers where no being loaded from the json file (Ronald Holshausen, Thu Oct 9 13:36:10 2014 +1100)
 * f7d462b - bump version (Ronald Holshausen, Thu Oct 9 13:32:03 2014 +1100)
 
-# 2.1.0 - New matching release, Yay!
+## 2.1.0 - New matching release, Yay!
 
 * 01ccbf0 - Updated the groovy readme (Ronald Holshausen, Wed Oct 8 19:42:56 2014 +1100)
 * e2e7f34 - build with gradle 2.1 (Ronald Holshausen, Wed Oct 8 15:37:24 2014 +1100)
@@ -5009,7 +5009,7 @@ in the gradle plugin docs for more info.**
 * 4d7b822 - Fix the serialisation of request and response matchers (Ronald Holshausen, Wed Oct 1 14:44:06 2014 +1000)
 * e78d5bc - WIP implementing a regex matcher (Ronald Holshausen, Tue Sep 30 21:21:45 2014 +1000)
 
-# 2.0.9 - small bugfixes and added filter mechanism to the gradle provider
+## 2.0.9 - small bugfixes and added filter mechanism to the gradle provider
 
 * fed5caf - pact gradle provider should support multiple query parameters with the same name (Ronald Holshausen, Thu Oct 2 17:06:08 2014 +1000)
 * 59df942 - Allow the gradle plugin to accept a closure to modify the request before sending it (Ronald Holshausen, Thu Oct 2 16:11:57 2014 +1000)
@@ -5022,7 +5022,7 @@ in the gradle plugin docs for more info.**
 * abca29d - use JObject as the type instead of Map for matching (Ronald Holshausen, Mon Sep 29 16:39:29 2014 +1000)
 * cc1ce68 - Start of matching refactor: port the gradle plugin matching code to scala (Ronald Holshausen, Fri Sep 26 12:44:23 2014 +1000)
 
-# 2.0.8 - few bugfixes
+## 2.0.8 - few bugfixes
 
 * 4c12df1 - #58 - replace scala TestRun trait with a java interface (Ronald Holshausen, Mon Sep 29 16:58:06 2014 +1000)
 * 1135516 - Alias the "with" method on the Groovy DSL as it may lead to confusion with the Groovy "with" (Ronald Holshausen, Fri Sep 26 12:35:13 2014 +1000)
@@ -5033,7 +5033,7 @@ in the gradle plugin docs for more info.**
 * f337827 - bump version (Ronald Holshausen, Wed Sep 24 21:33:57 2014 +1000)
 * 99af09e - update unfiltered netty server version in sbt build (Ronald Holshausen, Wed Sep 24 21:32:22 2014 +1000)
 
-# 2.0.7 - few bug fixes
+## 2.0.7 - few bug fixes
 
 * 8fb7b3d - #55 - Fixed stripping of newlines from body (Ronald Holshausen, Wed Sep 24 21:01:32 2014 +1000)
 * 2f72c74 - #58 - pass the mock server config into the groovy closure that gets run to execute the test (Ronald Holshausen, Wed Sep 24 20:52:43 2014 +1000)
@@ -5045,14 +5045,14 @@ in the gradle plugin docs for more info.**
 * c1729ad - Create a None and not a Some('') when no given is set. Issue #56 (Ashley Cambrell, Wed Sep 24 09:31:11 2014 +1000)
 * 96087e3 - bump version (Ronald Holshausen, Tue Sep 23 20:48:24 2014 +1000)
 
-# 2.0.6 - Small fix
+## 2.0.6 - Small fix
 
 * 326c37a - small cleanups (Ronald Holshausen, Tue Sep 23 20:15:09 2014 +1000)
 * 0e0d525 - updated the versions in the readmes (Ronald Holshausen, Tue Sep 23 20:05:19 2014 +1000)
 * a868b97 - #54 - fix use of query string in the gradle plugin (Ronald Holshausen, Tue Sep 23 16:36:15 2014 +1000)
 * 3a445a8 - bump version (Ronald Holshausen, Mon Sep 22 13:45:20 2014 +1000)
 
-# 2.0.5 - Added a matchers module for matching logic, fixed issue with query strings
+## 2.0.5 - Added a matchers module for matching logic, fixed issue with query strings
 
 * c4de8a0 - #54 - When there is no query string, we should set the query string to None on the Request model (Ronald Holshausen, Mon Sep 22 13:23:40 2014 +1000)
 * e399f45 - #54 - fix for query string not being removed from path (Ronald Holshausen, Mon Sep 22 09:38:00 2014 +1000)
@@ -5066,7 +5066,7 @@ in the gradle plugin docs for more info.**
 * 6f6f27e - internally store request and response matchers as maps (Ronald Holshausen, Thu Sep 11 13:43:03 2014 +1000)
 * 898ba09 - add a pact header when a consumer request does not match (Ronald Holshausen, Wed Sep 10 17:03:22 2014 +1000)
 
-# 2.0.4 - Query parameters, body matching on mimetype, sbt publishing fixes
+## 2.0.4 - Query parameters, body matching on mimetype, sbt publishing fixes
 
 * 2445e4e - #49 small typo in the gradle verify task (Ronald Holshausen, Mon Aug 25 13:28:46 2014 +1000)
 * c04d019 - #49 ignore charset when comparing content type header (Ronald Holshausen, Mon Aug 25 12:58:41 2014 +1000)
@@ -5084,7 +5084,7 @@ in the gradle plugin docs for more info.**
 * 3c99db1 - Added query parameters to the pact models, DSLs and serialisation (Ronald Holshausen, Sun Aug 17 13:14:29 2014 +1000)
 * fc98037 - sbt plugins also need the sbt version in the artifact names (Ronald Holshausen, Sat Aug 16 16:58:53 2014 +1000)
 
-# 2.0.3 - pretty diff output for gradle plugin
+## 2.0.3 - pretty diff output for gradle plugin
 
 * 4c7c8db - changelog for 2.0.3 (Ronald Holshausen, Sat Aug 16 11:30:31 2014 +1000)
 * 24c6c93 - bump version in scala build (Ronald Holshausen, Sat Aug 16 10:23:59 2014 +1000)
@@ -5096,7 +5096,7 @@ in the gradle plugin docs for more info.**
 * 63139a9 - updated the gradle body comparison code (Ronald Holshausen, Tue Aug 12 21:06:15 2014 +1000)
 * 53bf5e0 - changelog (Ronald Holshausen, Thu Aug 7 19:47:22 2014 +1000)
 
-# 2.0.2
+## 2.0.2
 
 * 6fbed88 - minor update to readmes (Ronald Holshausen, Thu Aug 7 19:12:44 2014 +1000)
 * c06fde1 - cleanup the verification text so it is more like the ruby version (Ronald Holshausen, Thu Aug 7 16:44:19 2014 +1000)
@@ -5105,7 +5105,7 @@ in the gradle plugin docs for more info.**
 * 177bc99 - fix scala full version of scala library (Ronald Holshausen, Thu Aug 7 13:55:58 2014 +1000)
 * d6e7a60 - bump version (Ronald Holshausen, Wed Aug 6 20:58:16 2014 +1000)
 
-# 2.0.1 - Added gradle plugin
+## 2.0.1 - Added gradle plugin
 
 * 4d850e7 - updated gradle plugin doco to include provider state info (Ronald Holshausen, Wed Aug 6 17:08:56 2014 +1000)
 * 9e9ed5f - implemented provider states for the gradle plugin (Ronald Holshausen, Wed Aug 6 16:59:58 2014 +1000)
@@ -5131,7 +5131,7 @@ in the gradle plugin docs for more info.**
 * c4e479a - Pretty Printing (thetrav, Thu Jun 12 07:38:48 2014 +1000)
 * 0b3f991 - laying the groundwork for pretty printing (thetrav, Sat Jun 7 17:08:39 2014 +1000)
 
-# 2.0.0
+## 2.0.0
 
 * dc7ba34 - updated the readmes (Ronald Holshausen, Sun Jul 20 09:52:34 2014 +1000)
 * 62a9ddd - small tweak to the docs (Ronald Holshausen, Sun Jul 20 09:38:56 2014 +1000)
@@ -5163,7 +5163,7 @@ in the gradle plugin docs for more info.**
 * c605d4c - bump version (Ronald Holshausen, Fri Jul 11 14:23:05 2014 +1000)
 * 409e714 - add gradle setup for deploying to nexus (Ronald Holshausen, Fri Jul 11 13:36:23 2014 +1000)
 
-# 2.0 RC5 - More Java DSL tweaks, started pact specification 2 matcher implementation
+## 2.0 RC5 - More Java DSL tweaks, started pact specification 2 matcher implementation
 
 * 0682fe2 - update changelog (Ronald Holshausen, Fri Jul 11 13:10:38 2014 +1000)
 * faac8eb - make headers and provider state optional in the Java DSL (Ronald Holshausen, Fri Jul 11 09:53:41 2014 +1000)
@@ -5182,7 +5182,7 @@ in the gradle plugin docs for more info.**
 * 893f485 - Forgot to aggregate specification_test project, allowed compile errors to creep in on merging.  Those have been corrected (thetrav, Mon May 19 08:23:33 2014 +1000)
 * 54b223f - all Java DSL to accept JSONObjects for bodies (Ronald Holshausen, Fri Jun 6 14:46:28 2014 +1000)
 
-# 2.0 RC4 - Big refactor of pact internals, added gradle and logging
+## 2.0 RC4 - Big refactor of pact internals, added gradle and logging
 
 * bc764c0 - bumped version (Ronald Holshausen, Fri Jun 6 11:21:30 2014 +1000)
 * 02a11df - fix the qoute in the main readme (Ronald Holshausen, Fri Jun 6 10:50:08 2014 +1000)
@@ -5206,7 +5206,7 @@ in the gradle plugin docs for more info.**
 * 3724498 - Reformed PactGenerator, fixed model and consumer tests (Ken Scambler, Sat May 3 12:02:45 2014 +1000)
 * 12afa73 - WIP commit of massive refactor (Ken Scambler, Fri May 2 11:54:36 2014 +1000)
 
-# 2.0 RC3 - Updated Java DSL and Docs
+## 2.0 RC3 - Updated Java DSL and Docs
 
 * d38e40b - fix the missing path method for additional interactions, updated example test (Ronald Holshausen, Mon May 12 15:47:44 2014 +1000)
 * 8b7cc5a - add a second interaction to the example junit test (Ronald Holshausen, Mon May 12 14:46:03 2014 +1000)
@@ -5220,7 +5220,7 @@ in the gradle plugin docs for more info.**
 * 0a92baf - Updating documentation (thetrav, Sat May 10 15:53:37 2014 +1000)
 * 40071a0 - tighter specs2 integration (thetrav, Sat May 10 15:46:26 2014 +1000)
 
-# 2.0 RC1 - New Java DSL
+## 2.0 RC1 - New Java DSL
 
 * 61aee9f - include signed publishing in github so we stop accidentally publishing the empty aggregation project (thetrav, Tue May 6 09:36:22 2014 +1000)
 * 6981033 - Ok, only build on the scala version it was made for, but support multiple JDKs (thetrav, Tue May 6 09:35:27 2014 +1000)
@@ -5237,12 +5237,12 @@ in the gradle plugin docs for more info.**
 * bb8ca0f - Implement new DSL for java world. (thetrav, Sun Apr 27 17:35:44 2014 +1000)
 * 39d2f82 - re-work the DSL to be more IDE friendly. (thetrav, Sun Apr 27 16:48:14 2014 +1000)
 
-# 1.12
+## 1.12
 
 * 1c18bd5 - allow regex matching on the path (Ronald Holshausen, Mon May 5 10:03:18 2014 +1000)
 * 2690d4e - allow the diff config to be changed for request matching (Ronald Holshausen, Mon May 5 10:04:50 2014 +1000)
 
-# 1.11 - Java 6 compatible
+## 1.11 - Java 6 compatible
 
 * e839faa - bumped version for deploying jars build with Java 6 (Ronald Holshausen, Fri May 2 13:15:55 2014 +1000)
 * 43ab96a - trying to get travis ci working (thetrav, Thu May 1 17:33:47 2014 +1000)
@@ -5254,7 +5254,7 @@ in the gradle plugin docs for more info.**
 * 35caf1f - Default imports for REPL sessions (Ken Scambler, Wed Apr 23 21:53:01 2014 +1000)
 * b17097c - switch from finagle to unfiltered (thetrav, Fri Apr 18 14:57:19 2014 +1000)
 
-# 1.10
+## 1.10
 
 * f86df48 - increment version (thetrav, Mon Apr 14 09:22:39 2014 +1000)
 * 22a1175 - Merge pull request #17 from kenbot/master (Travis Dixon, Mon Apr 14 09:21:13 2014 +1000)
@@ -5267,12 +5267,12 @@ in the gradle plugin docs for more info.**
 * 7dd4e40 - Merge pull request #16 from kenbot/master (Travis Dixon, Sat Apr 12 10:18:35 2014 +1000)
 * 038c205 - Made the Java Interaction DSL public (Ken Scambler, Wed Apr 9 11:29:42 2014 +1000)
 
-# 1.09
+## 1.09
 
 * b01ecbf - release new version (thetrav, Mon Mar 31 13:26:30 2014 +1100)
 * e61efb4 - Merge pull request #15 from johnelf/master (Travis Dixon, Mon Mar 31 13:23:42 2014 +1100)
 
-# 1.08
+## 1.08
 
 * 0b09829 - new release (thetrav, Mon Mar 31 11:02:02 2014 +1100)
 * 0137176 - #14: Allow response supporting crossing site requests. Peng & Jinwen (Zhang Jinwen, Thu Mar 27 18:23:50 2014 +1100)
@@ -5281,20 +5281,20 @@ in the gradle plugin docs for more info.**
 * 428bb9b - update outdated documentation around state (thetrav, Thu Mar 27 07:32:14 2014 +1100)
 * ed1b84b - remove submodules file, project was combined ages ago (thetrav, Thu Mar 27 07:28:16 2014 +1100)
 
-# 1.07
+## 1.07
 
 * b84c764 - update version (thetrav, Thu Feb 20 09:52:52 2014 +1100)
 * ce1e2f2 - Merge pull request #11 from johnelf/master (Travis Dixon, Thu Feb 20 09:49:47 2014 +1100)
 * cb9408b - create headers for cross site request (Zhang Jinwen, Wed Feb 19 23:15:12 2014 +0800)
 
-# 1.06
+## 1.06
 
 * 05c2df6 - update version for release (thetrav, Wed Feb 19 11:16:18 2014 +1100)
 * 280ad70 - Merge pull request #10 from cwmyers/master (Travis Dixon, Wed Feb 19 11:15:28 2014 +1100)
 * cf8aeb5 - Added documentation to the README for the pact server. (Chris Myers, Tue Feb 18 17:02:50 2014 +1100)
 * 6902c14 - Added onFailure to the future chain Reduced the use of Futures to the RequestHandler Fixed bug in the routes function that was matching the query params, instead of base action (Chris Myers, Tue Feb 18 14:26:43 2014 +1100)
 
-# 1.05
+## 1.05
 
 * ba9b20f - get dependencies working, validate create params (thetrav, Sat Feb 15 11:24:41 2014 +1100)
 * f4380a1 - continue migration from spray+akka to finagle (thetrav, Sat Feb 15 10:25:50 2014 +1100)
@@ -5308,7 +5308,7 @@ in the gradle plugin docs for more info.**
 * 4fcbaea - Got the "control" server to start a MockServiceProvider and return the port in JSON.  Smells like win. (thetrav, Thu Feb 13 13:48:58 2014 +1100)
 * 4dd6e17 - starting point (thetrav, Thu Feb 13 12:03:40 2014 +1100)
 
-# 1.0 - 1.04
+## 1.0 - 1.04
 
 * 11f1b78 - automatically select port (thetrav, Wed Jan 22 16:47:48 2014 +1100)
 * 54be103 - REA version of git has a slightly different string :( (thetrav, Wed Jan 22 16:16:06 2014 +1100)
