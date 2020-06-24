@@ -28,7 +28,7 @@ Bad examples:
 
 If you _do_ use a build number in your version number \(eg. `major.minor.<buildnumber>`\) then you can ensure your version number corresponds to a known commit by creating a git tag with the version number for every build. This is good practice anyway, and it means you have a way to check out that particular version of the provider if you want to [test the "matrix"](http://rea.tech/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/).
 
-One of the advantages of using the git sha is that you can report the pact verification status back to your repository as a [commit status](advanced_topics/webhooks/template_lib.md#github---publish-commit-status).
+One of the advantages of using the git sha is that you can report the pact verification status back to your repository as a [commit status](/pact_broker/webhooks/template_library#github---publish-commit-status).
 
 ## Sorting
 
