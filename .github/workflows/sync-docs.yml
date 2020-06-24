@@ -28,6 +28,6 @@ jobs:
         add: 'docs/implementation_guides'
         author_name: Github Action
         author_email: beth@bethesque.com
-        message: 'chore: ${COMMIT_MESSAGE}'
+        message: 'chore: ${{ env.COMMIT_MESSAGE }}'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
