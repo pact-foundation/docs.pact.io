@@ -1,7 +1,8 @@
 name: Update Pact JS docs
 
-on: [repository_dispatch]
-
+on:
+  repository_dispatch:
+    types: [pact-js-updated]
 jobs:
   build:
     runs-on: ubuntu-latest
