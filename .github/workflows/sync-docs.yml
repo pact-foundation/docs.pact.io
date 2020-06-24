@@ -12,22 +12,22 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.6'
-    - run: gem install bundler -v 2.0.2
-    - run: bundle install
+    - run: gem install bundler -v 2.0.2 && bundle install
 
-    - run: bundle exec ruby scripts/sync/pact_js.rb && echo '::set-env name=COMMIT_MESSAGE::updated pact-js docs'
+    - name: Sync Pact JS docs
+      run: bundle exec ruby scripts/sync/pact_js.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-js docs'
       if: github.event.action == 'pact-js-docs-updated'
 
-    - run: bundle exec ruby scripts/sync/pact_jvm.rb && echo '::set-env name=COMMIT_MESSAGE::updated pact-jvm docs'
+    - name: Sync Pact JVM docs
+      run: bundle exec ruby scripts/sync/pact_jvm.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-jvm docs'
       if: github.event.action == 'pact-jvm-docs-updated'
 
-    - run: echo ${BETHTEST}
-
-    - uses: EndBug/add-and-commit@v4
+    - name: Commit and push changes
+      uses: EndBug/add-and-commit@v4
       with:
         add: 'docs/implementation_guides'
         author_name: Github Action
-        author_email: beth@bethesque.com
+        author_email: docs@pact.io
         message: 'chore: ${{ env.COMMIT_MESSAGE }}'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
