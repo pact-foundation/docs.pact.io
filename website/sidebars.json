@@ -4,6 +4,23 @@
       "implementation_guides/workshops",
       {
         "type": "subcategory",
+        "label": "Javascript",
+        "ids": [
+          "implementation_guides/javascript",
+          "implementation_guides/javascript/readme",
+          "implementation_guides/javascript/contributing",
+          "implementation_guides/javascript/changelog",
+          "implementation_guides/javascript/code_of_conduct"
+        ]
+      },
+      "implementation_guides/jvm",
+      "implementation_guides/net",
+      "implementation_guides/go",
+      "implementation_guides/python",
+      "implementation_guides/swift",
+      "implementation_guides/php",
+      {
+        "type": "subcategory",
         "label": "Ruby",
         "ids": [
           "implementation_guides/ruby/README",
@@ -13,13 +30,6 @@
           "implementation_guides/ruby/gotchas"
         ]
       },
-      "implementation_guides/jvm",
-      "implementation_guides/net",
-      "implementation_guides/javascript",
-      "implementation_guides/go",
-      "implementation_guides/python",
-      "implementation_guides/swift",
-      "implementation_guides/php",
       "implementation_guides/other_languages"
     ],
     "Feature support": [

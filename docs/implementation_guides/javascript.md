@@ -1,5 +1,5 @@
 ---
-title: Javascript
+title: Getting started
 description: Getting started with Pact JS
 ---
 
@@ -16,7 +16,7 @@ If you'd like to go a little deeper, we have a [workshop](https://github.com/pac
 
 ## Examples
 
-If you need more information, the [Pact JS readme](https://github.com/pact-foundation/pact-js) has detailed information.
+If you need more information, the [Pact JS readme](/implementation_guides/javascript/readme) has detailed information.
 
 Additionally, these complete examples are useful guides:
 
