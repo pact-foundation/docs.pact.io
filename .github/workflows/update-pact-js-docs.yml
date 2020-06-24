@@ -1,11 +1,9 @@
 name: Update Pact JS docs
 
-
 on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -16,3 +14,12 @@ jobs:
     - run: gem install bundler -v 2.0.2
     - run: bundle install
     - run: ruby scripts/sync/pact_js.rb
+
+    - uses: EndBug/add-and-commit@v4
+      with:
+        add: 'docs/implementation_guides/javascript'
+        author_name: Github Action
+        author_email: beth@bethesque.com
+        message: 'chore: updated javascript documentation from pact-js repository'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
