@@ -30,7 +30,7 @@ public class ContractVerificationTest {
 }
 ```
 
-For details on the provider and pact source annotations, refer to the [Pact junit runner](../junit/README.md) docs.
+For details on the provider and pact source annotations, refer to the [Pact junit runner](../junit/) docs.
 
 ## Test target
 
@@ -67,7 +67,7 @@ For example, configure it by adding the following to your POM:
 
 ## Provider State Methods
 
-Provider State Methods work in the same way as with JUnit 4 tests, refer to the [Pact junit runner](../junit/README.md) docs.
+Provider State Methods work in the same way as with JUnit 4 tests, refer to the [Pact junit runner](../junit/) docs.
 
 ### Using multiple classes for the state change methods
 
