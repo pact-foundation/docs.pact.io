@@ -8,8 +8,7 @@
       "implementation_guides/javascript/readme",
       "implementation_guides/javascript/roadmap",
       "implementation_guides/javascript/contributing",
-      "implementation_guides/javascript/changelog",
-      "implementation_guides/javascript/code_of_conduct"
+      "implementation_guides/javascript/changelog"
     ],
     "Pact JVM": [
       "implementation_guides/jvm"
