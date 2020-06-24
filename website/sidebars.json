@@ -12,7 +12,7 @@
     ],
     "Pact JVM": [
       "implementation_guides/jvm",
-      "implementation_guides/jvm/readme",
+      "implementation_guides/jvm/matching",
       {
         "type": "subcategory",
         "label": "Consumer",
