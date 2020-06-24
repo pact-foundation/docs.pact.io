@@ -25,6 +25,11 @@ CUSTOM_ACTIONS = [
     md_file_contents.add_lines_at_start("", "# #{md_file_contents.fields[:title]}")
     md_file_contents.fields[:title] = "Changelog"
     md_file_contents.remove_lines_including('To generate the log')
+    md_file_contents.remove_lines_including('- chore: ')
+    md_file_contents.remove_lines_including('- docs: ')
+    md_file_contents.remove_lines_including('- doc: ')
+    md_file_contents.remove_lines_including('- refactor: ')
+    md_file_contents.remove_lines_including('- style: ')
     md_file_contents.find_and_replace(/^# /, '## ')
   }]
 ]
