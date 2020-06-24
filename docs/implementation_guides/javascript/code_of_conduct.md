@@ -1,6 +1,8 @@
 ---
 title: Contributor Covenant Code of Conduct
+custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/CODE_OF_CONDUCT.md
 ---
+<!-- This file has been synced from the pact-js repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 ## Our Pledge
 

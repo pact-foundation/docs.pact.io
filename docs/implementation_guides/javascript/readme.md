@@ -1,6 +1,8 @@
 ---
 title: README
+custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/README.md
 ---
+<!-- This file has been synced from the pact-js repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 [![Build Status](https://travis-ci.org/pact-foundation/pact-js.svg?branch=master)](https://travis-ci.org/pact-foundation/pact-js)
 [![npm](https://img.shields.io/npm/v/@pact-foundation/pact.svg)](https://www.npmjs.com/package/@pact-foundation/pact)

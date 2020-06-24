@@ -1,6 +1,8 @@
 ---
 title: Changelog
+custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/CHANGELOG.md
 ---
+<!-- This file has been synced from the pact-js repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
