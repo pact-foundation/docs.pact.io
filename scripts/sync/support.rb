@@ -29,6 +29,18 @@ class MarkdownFileContents
     ["---", header_lines, "---", comments, lines].flatten.join("\n") + "\n"
   end
 
+  def find_and_replace(find, replace)
+    @lines = lines.collect{ |line| line.gsub(find, replace) }
+  end
+
+  def remove_lines_including(substring)
+    @lines = lines.select{ |line| !line.include?(substring) }
+  end
+
+  def add_lines_at_start(*new_lines)
+    @lines = new_lines + lines
+  end
+
   private
 
   def header_lines
@@ -61,7 +73,7 @@ def process_file(path, content, path_transformer, custom_actions, comment)
   fields = { custom_edit_url: "https://github.com/#{SOURCE_REPO}/edit/master/#{path}" }
   md_file_contents = MarkdownFileContents.new(content.split("\n"), fields, [comment])
   md_file_contents.extract_title
-  custom_actions.select{ | source_path , _ | source_path == path }.collect(&:last).each { |action| action.call(md_file_contents) }
+  custom_actions.select{ | source_path , _ | source_path == :all || source_path == path }.collect(&:last).each { |action| action.call(md_file_contents) }
 
   puts "Writing file #{destination}"
   FileUtils.mkdir_p(File.dirname(destination))

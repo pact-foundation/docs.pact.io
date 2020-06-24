@@ -19,14 +19,13 @@ IGNORE = [
 COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
 
 CUSTOM_ACTIONS = [
+  [:all___, ->(md_file_contents) { md_file_contents.find_and_replace(%r{/README.md\)}, '/)') } ],
   ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README" } ],
   ["CHANGELOG.md", -> (md_file_contents) {
-    md_file_contents.lines.unshift("# #{md_file_contents.fields[:title]}")
-    md_file_contents.lines.unshift("")
+    md_file_contents.add_lines_at_start("", "# #{md_file_contents.fields[:title]}")
     md_file_contents.fields[:title] = "Changelog"
-    instructions_index = md_file_contents.lines.find_index { |line| line.include?('To generate the log') }
-    md_file_contents.lines.delete_at(instructions_index) if instructions_index
-    md_file_contents.lines = md_file_contents.lines.collect{ |line| line.gsub(/^# /, '## ') }
+    md_file_contents.remove_lines_including('To generate the log')
+    md_file_contents.find_and_replace(/^# /, '## ')
   }]
 ]
 
