@@ -48,57 +48,6 @@
     "Feature support": [
       "feature_support"
     ],
-    "Pact Broker": [
-      "pact_broker/index",
-      "pact_broker/overview",
-      "getting_started/versioning_in_the_pact_broker",
-      "pact_broker/publishing_and_retrieving_pacts",
-      "pact_broker/tags",
-      {
-        "type": "subcategory",
-        "label": "Webhooks",
-        "ids": [
-          "pact_broker/webhooks/index",
-          "pact_broker/webhooks/template_library",
-          "pact_broker/webhooks/debugging_webhooks"
-        ]
-      },
-      "pact_broker/can_i_deploy",
-      "pact_broker/set_up_checklist",
-      "pact_broker/pact_broker_client_cli",
-      "pact_broker/terraform_provider",
-      "pact_broker/configuration",
-      "pact_broker/upgrading",
-      "pact_broker/breaking_changes",
-      "pact_broker/network_graph",
-      {
-        "type": "subcategory",
-        "label": "Administration",
-        "ids": [
-          "pact_broker/administration/README",
-          "pact_broker/administration/maintenance",
-          "pact_broker/administration/deleting_resources"
-        ]
-      },
-      {
-        "type": "subcategory",
-        "label": "Advanced Topics",
-        "ids": [
-          "pact_broker/pacticipant_version_numbers",
-          "pact_broker/advanced_topics/using_tags",
-          "pact_broker/advanced_topics/see_changes_pact",
-          "pact_broker/advanced_topics/provider_verification_results",
-          "pact_broker/advanced_topics/provider_verification_badges",
-          "pact_broker/advanced_topics/pacticipant",
-          "pact_broker/advanced_topics/pending_pacts",
-          "pact_broker/advanced_topics/wip_pacts",
-          "pact_broker/advanced_topics/selectors",
-          "pact_broker/advanced_topics/api_docs/index",
-          "pact_broker/advanced_topics/ui_docs",
-          "pact_broker/advanced_topics/troubleshooting"
-        ]
-      }
-    ],
     "Stubs": [
       "getting_started/stubs"
     ]
@@ -155,6 +104,59 @@
       "pact_nirvana/step_6",
       "pact_nirvana/step_7",
       "pact_nirvana/step_8"
+    ]
+  },
+  "pact_broker": {
+    "Pact Broker": [
+      "pact_broker/index",
+      "pact_broker/overview",
+      "getting_started/versioning_in_the_pact_broker",
+      "pact_broker/publishing_and_retrieving_pacts",
+      "pact_broker/tags",
+      {
+        "type": "subcategory",
+        "label": "Webhooks",
+        "ids": [
+          "pact_broker/webhooks/index",
+          "pact_broker/webhooks/template_library",
+          "pact_broker/webhooks/debugging_webhooks"
+        ]
+      },
+      "pact_broker/can_i_deploy",
+      "pact_broker/set_up_checklist",
+      "pact_broker/pact_broker_client_cli",
+      "pact_broker/terraform_provider",
+      "pact_broker/configuration",
+      "pact_broker/upgrading",
+      "pact_broker/breaking_changes",
+      "pact_broker/network_graph",
+      {
+        "type": "subcategory",
+        "label": "Administration",
+        "ids": [
+          "pact_broker/administration/README",
+          "pact_broker/administration/maintenance",
+          "pact_broker/administration/deleting_resources"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Advanced Topics",
+        "ids": [
+          "pact_broker/pacticipant_version_numbers",
+          "pact_broker/advanced_topics/using_tags",
+          "pact_broker/advanced_topics/see_changes_pact",
+          "pact_broker/advanced_topics/provider_verification_results",
+          "pact_broker/advanced_topics/provider_verification_badges",
+          "pact_broker/advanced_topics/pacticipant",
+          "pact_broker/advanced_topics/pending_pacts",
+          "pact_broker/advanced_topics/wip_pacts",
+          "pact_broker/advanced_topics/selectors",
+          "pact_broker/advanced_topics/api_docs/index",
+          "pact_broker/advanced_topics/ui_docs",
+          "pact_broker/advanced_topics/troubleshooting"
+        ]
+      }
     ]
   },
   "resources": {

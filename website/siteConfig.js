@@ -135,7 +135,8 @@ const siteConfig = {
   headerLinks: [
     {doc: 'getting_started/index', label: 'Getting started'},
     { doc: 'consumer/index', label: 'Guides'},
-    { doc: 'implementation_guides/workshops', label: 'Docs'},
+    { doc: 'implementation_guides/workshops', label: 'Pact Docs'},
+    { doc: 'pact_broker/index', label: 'Pact Broker Docs'},
     { doc: 'history', label: 'Resources'},
     {page: 'help', label: 'Help'}
   ],
