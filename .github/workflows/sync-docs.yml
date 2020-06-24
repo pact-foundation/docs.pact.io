@@ -16,10 +16,10 @@ jobs:
     - run: bundle install
 
     - run: bundle exec ruby scripts/sync/pact_js.rb
-      if: github.event.action == 'pact-js-updated'
+      if: github.event.action == 'pact-js-docs-updated'
 
     - run: bundle exec ruby scripts/sync/pact_jvm.rb
-      if: github.event.action == 'pact-jvm-updated'
+      if: github.event.action == 'pact-jvm-docs-updated'
 
     - uses: EndBug/add-and-commit@v4
       with:
