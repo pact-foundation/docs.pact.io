@@ -54,7 +54,7 @@ end
 client = Octokit::Client.new(:access_token => ENV['GITHUB_ACCESS_TOKEN'])
 client.auto_paginate = true
 tree = client.tree('pact-foundation/pact-js', 'master',  recursive: true).tree
-markdown_files = tree.select{ | file | file.path.end_with?('.md') && !file.path.start_with?('.github') }[0..3]
+markdown_files = tree.select{ | file | file.path.end_with?('.md') && !file.path.start_with?('.github') }
 
 each_file(markdown_files) do | path, content |
   new_name = path.gsub(/\.markdown$/,  '.md').downcase
