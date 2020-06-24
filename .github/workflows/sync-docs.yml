@@ -15,19 +15,19 @@ jobs:
     - run: gem install bundler -v 2.0.2
     - run: bundle install
 
-    - run: bundle exec ruby scripts/sync/pact_js.rb && export BETHTEST=foo
+    - run: bundle exec ruby scripts/sync/pact_js.rb && echo '::set-env name=COMMIT_MESSAGE::updated pact-js docs'
       if: github.event.action == 'pact-js-docs-updated'
 
-    - run: bundle exec ruby scripts/sync/pact_jvm.rb && export BETHTEST=bar
+    - run: bundle exec ruby scripts/sync/pact_jvm.rb && echo '::set-env name=COMMIT_MESSAGE::updated pact-jvm docs'
       if: github.event.action == 'pact-jvm-docs-updated'
 
-    - run: echo $BETHTEST
+    - run: echo ${BETHTEST}
 
     - uses: EndBug/add-and-commit@v4
       with:
         add: 'docs/implementation_guides'
         author_name: Github Action
         author_email: beth@bethesque.com
-        message: 'chore: updated docs for event ${{ github.event.action }}'
+        message: 'chore: ${COMMIT_MESSAGE}'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
