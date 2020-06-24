@@ -13,5 +13,6 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.6'
+    - run: gem install bundler -v 2.0.2
     - run: bundle install
     - run: ruby scripts/sync/pact_js.rb
