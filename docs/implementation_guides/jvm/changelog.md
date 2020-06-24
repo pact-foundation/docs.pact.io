@@ -1,9 +1,9 @@
 ---
-title: 4.1.4 - bugfixes & enhancements
+title: Changelog
 custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the dius/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
-To generate the log, run `git log --pretty='* %h - %s (%an, %ad)'  TAGNAME..HEAD` replacing TAGNAME and HEAD as appropriate.
+# 4.1.4 - bugfixes & enhancements
 
 
 * 7a9733fd4 - Merge pull request #1141 from anto-ac/add-more-backwards-compatibility-with-dates (Antonello Caboni, Fri Jun 19 13:44:54 2020 +0100)

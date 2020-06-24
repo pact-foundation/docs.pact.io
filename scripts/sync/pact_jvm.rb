@@ -19,7 +19,13 @@ IGNORE = [
 COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
 
 CUSTOM_ACTIONS = [
-  ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README" } ]
+  ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README" } ],
+  ["CHANGELOG.md", -> (md_file_contents) {
+    md_file_contents.lines.unshift("# #{md_file_contents.fields[:title]}")
+    md_file_contents.fields[:title] = "Changelog"
+    instructions_index = md_file_contents.lines.find_index { |line| line.include?('To generate the log') }
+    md_file_contents.lines.delete_at(instructions_index) if instructions_index
+  }]
 ]
 
 TRANSFORM_PATH = -> (path) { File.join(DESTINATION_DIR, path.downcase.gsub('/readme.md', '/index.md')) } # Rename README.md to index.md, but not the top level README
