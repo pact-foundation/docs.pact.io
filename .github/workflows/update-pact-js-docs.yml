@@ -1,5 +1,6 @@
 name: Update Pact JS docs
 
+
 on: [push]
 
 jobs:
@@ -9,3 +10,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6'
+    - run: ruby scripts/sync/pact_js.rb
