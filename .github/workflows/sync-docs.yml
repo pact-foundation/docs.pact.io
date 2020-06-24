@@ -15,11 +15,13 @@ jobs:
     - run: gem install bundler -v 2.0.2
     - run: bundle install
 
-    - run: bundle exec ruby scripts/sync/pact_js.rb
+    - run: bundle exec ruby scripts/sync/pact_js.rb && export BETHTEST=foo
       if: github.event.action == 'pact-js-docs-updated'
 
-    - run: bundle exec ruby scripts/sync/pact_jvm.rb
+    - run: bundle exec ruby scripts/sync/pact_jvm.rb && export BETHTEST=bar
       if: github.event.action == 'pact-jvm-docs-updated'
+
+    - run: echo $BETHTEST
 
     - uses: EndBug/add-and-commit@v4
       with:
