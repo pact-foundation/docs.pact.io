@@ -11,7 +11,37 @@
       "implementation_guides/javascript/contributing"
     ],
     "Pact JVM": [
-      "implementation_guides/jvm"
+      "implementation_guides/jvm",
+      "implementation_guides/jvm/readme",
+      {
+        "type": "subcategory",
+        "label": "Consumer",
+        "ids": [
+          "implementation_guides/jvm/consumer/java8/index",
+          "implementation_guides/jvm/consumer/junit/index",
+          "implementation_guides/jvm/consumer/junit5/index",
+          "implementation_guides/jvm/consumer/index",
+          "implementation_guides/jvm/consumer/specs2/index",
+          "implementation_guides/jvm/consumer/groovy/index"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Provider",
+        "ids": [
+          "implementation_guides/jvm/provider/junit5spring/index",
+          "implementation_guides/jvm/provider/junit/index",
+          "implementation_guides/jvm/provider/maven/index",
+          "implementation_guides/jvm/provider/gradle/index",
+          "implementation_guides/jvm/provider/junit5/index",
+          "implementation_guides/jvm/provider/index",
+          "implementation_guides/jvm/provider/sbt/index",
+          "implementation_guides/jvm/provider/lein/index",
+          "implementation_guides/jvm/provider/spring/index"
+        ]
+      },
+      "implementation_guides/jvm/pact-jvm-server/index",
+      "implementation_guides/jvm/changelog"
     ],
     "Pact Net": [
       "implementation_guides/net"

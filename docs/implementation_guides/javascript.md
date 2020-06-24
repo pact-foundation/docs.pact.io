@@ -1,8 +1,7 @@
 ---
-title: Getting started
+title: Overview
 description: Getting started with Pact JS
 ---
-
 
 [Pact JS](https://github.com/pact-foundation/pact-js) is currently compliant to Pact Specification Version 2.0.
 
@@ -26,4 +25,3 @@ Additionally, these complete examples are useful guides:
 * [Pact with Karma + Jasmine](https://github.com/pact-foundation/pact-js/tree/master/examples/karma/jasmine)
 * [Pact with Karma + Mocha](https://github.com/pact-foundation/pact-js/tree/master/examples/karma/mocha)
 * [Angular 4 + Mocha](https://github.com/stones/pact-angular-4-mocha)
-
