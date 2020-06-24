@@ -3,80 +3,70 @@
 require 'octokit'
 require 'base64'
 require 'fileutils'
+require 'pathname'
 
+SOURCE_REPO = 'pact-foundation/pact-js'
 PROJECT_ROOT = File.expand_path(File.join(__FILE__, '..', '..', '..'))
-SYNCED_CONTENT_DIR = File.join(PROJECT_ROOT, 'docs', 'implementation_guides', 'javascript')
+DESTINATION_DIR = Pathname.new(File.join(PROJECT_ROOT, 'docs', 'implementation_guides', 'javascript')).relative_path_from(Pathname.pwd)
+INCLUDE = [
+  ->(path) { %w{ROADMAP.md CHANGELOG.md README.md CONTRIBUTING.md}.include?(path) }
+]
+IGNORE = []
+COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
 
-FileUtils.mkdir_p SYNCED_CONTENT_DIR
+CUSTOM_ACTIONS = [
+  ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README" } ]
+]
 
-def add_header path
-  lines = File.readlines(path)
-  heading_index = lines.find_index { | line | line.start_with?('#') }
-  if heading_index
-    title = lines.delete_at(heading_index).gsub(/^#+/, '').strip
-    if lines.first.start_with?('---')
-      lines.insert(1, "title: #{title}\n")
-    else
-      lines = ["---\n", "title: #{title}\n", "---\n"] + lines
-    end
+class MarkdownFileContents
+  attr_reader :lines, :fields, :comments
 
-    if ENV['DRY_RUN'] == 'true'
-      # puts lines.join
-      puts "Good: #{path}"
-    else
-      File.open(path, "w") { |file| file << lines.join }
-    end
-  else
-    puts "Could not find a heading for page #{path}"
+  def initialize(lines, fields = {}, comments = [])
+    @lines = lines
+    @fields = fields
+    @comments = comments
   end
-end
 
-def add_please_do_not_edit_directly_comment(path)
-  lines = File.readlines(path)
-  close_header_index = find_close_header_index(lines)
-  lines.insert(close_header_index + 1, "<!-- This file has been synced from the pact-js repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->\n")
-  File.open(path, "w") { |file| file << lines.join }
-end
+  def extract_title
+    heading_underline_index = lines.find_index{ |line| line.start_with?("======") }
 
-def find_close_header_index(lines)
-  open_header_found = false
-  close_header_index = nil
-
-  lines.size.times do | i |
-    line = lines[i]
-    if line.start_with?('---')
-      if open_header_found
-        close_header_index = i
-        break
+    if heading_underline_index && heading_underline_index > 0
+      lines.delete_at(heading_underline_index)
+      title = lines.delete_at(heading_underline_index - 1).strip
+      self.fields[:title] = title
+    else
+      heading_index = lines.find_index { | line | line.start_with?('#') }
+      if heading_index
+        title = lines.delete_at(heading_index).gsub(/^#+/, '').strip
+        self.fields[:title] = title
       else
-        open_header_found = true
+        raise "Could not find a heading for page with head lines #{lines[0..5].join}"
       end
     end
   end
-  close_header_index
-end
 
-def add_fields path, fields
-  lines = File.readlines(path)
-  close_header_index = find_close_header_index(lines)
-
-  fields.each do | key, value |
-    lines.insert(close_header_index, "#{key}: #{value}\n")
+  def to_s
+    ["---", header_lines, "---", comments, lines].flatten.join("\n") + "\n"
   end
-  File.open(path, "w") { |file| file << lines.join }
+
+  private
+
+  def header_lines
+    [:title, :custom_edit_url, :description].collect do | key |
+      if fields[key]
+        "#{key}: #{fields[key]}"
+      end
+    end.compact
+  end
 end
 
-def override_title path, title
-  lines = File.readlines(path)
-  title_index = lines.find_index { | line | line.start_with?('title:') }
-  lines[title_index] = "title: #{title}\n"
-  File.open(path, "w") { |file| file << lines.join }
-end
-
-def sync(destination, content)
-  puts "Writing file #{destination}"
-  FileUtils.mkdir_p(File.dirname(destination))
-  File.open(destination, "w") { |file| file << content }
+def get_file_list
+  client = Octokit::Client.new(:access_token => ENV['GITHUB_ACCESS_TOKEN'])
+  client.auto_paginate = true
+  tree = client.tree(SOURCE_REPO, 'master',  recursive: true).tree
+  markdown_files = tree.select do | file |
+    INCLUDE.any?{ |lambda| lambda.call(file.path) } && !IGNORE.any? { |lambda| lambda.call(file.path) }
+  end
 end
 
 def each_file(files)
@@ -86,22 +76,21 @@ def each_file(files)
   end
 end
 
-client = Octokit::Client.new(:access_token => ENV['GITHUB_ACCESS_TOKEN'])
-client.auto_paginate = true
-tree = client.tree('pact-foundation/pact-js', 'master',  recursive: true).tree
-markdown_files = tree.select do | file |
-  file.path.end_with?('.md') &&
-    !file.path.start_with?('.github/') &&
-    !file.path.start_with?('examples/')
+def process_file(path, content)
+  new_path = path.downcase.gsub('/readme.md', '/index.md') # But not the top level README
+  destination = File.join(DESTINATION_DIR, new_path)
+  fields = { custom_edit_url: "https://github.com/#{SOURCE_REPO}/edit/master/#{path}" }
+  md_file_contents = MarkdownFileContents.new(content.split("\n"), fields, [COMMENT])
+  md_file_contents.extract_title
+
+  CUSTOM_ACTIONS.select{ | source_path , _ | source_path == path }.collect(&:last).each { |action| action.call(md_file_contents) }
+
+  puts "Writing file #{destination}"
+  File.open(destination, "w") { |file| file << md_file_contents.to_s }
 end
 
-each_file(markdown_files) do | path, content |
-  new_name = path.gsub(/\.markdown$/,  '.md').downcase
-  destination = File.join(SYNCED_CONTENT_DIR, new_name)
-  sync(destination, content)
-  add_header(destination)
-  add_fields(destination, { custom_edit_url: "https://github.com/pact-foundation/pact-js/edit/master/#{path}" })
-  add_please_do_not_edit_directly_comment(destination)
-end
+FileUtils.mkdir_p DESTINATION_DIR
 
-override_title "docs/implementation_guides/javascript/readme.md", "README"
+each_file(get_file_list) do | path, content |
+  process_file(path, content)
+end

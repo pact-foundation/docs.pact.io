@@ -2,7 +2,7 @@
 title: Roadmap
 custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/ROADMAP.md
 ---
-<!-- This file has been synced from the pact-js repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+<!-- This file has been synced from the pact-foundation/pact-js repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 There are a couple of things that would make `Pact` even greater.
 
