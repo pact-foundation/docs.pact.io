@@ -1,4 +1,4 @@
-name: Update Pact JS docs
+name: Sync Pact JS docs
 
 on:
   repository_dispatch:
