@@ -22,6 +22,7 @@ CUSTOM_ACTIONS = [
   ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README" } ],
   ["CHANGELOG.md", -> (md_file_contents) {
     md_file_contents.lines.unshift("# #{md_file_contents.fields[:title]}")
+    md_file_contents.lines.unshift("")
     md_file_contents.fields[:title] = "Changelog"
     instructions_index = md_file_contents.lines.find_index { |line| line.include?('To generate the log') }
     md_file_contents.lines.delete_at(instructions_index) if instructions_index
