@@ -1,6 +1,6 @@
 name: Update Pact JS docs
 
-on: [push]
+on: [repository_dispatch]
 
 jobs:
   build:
