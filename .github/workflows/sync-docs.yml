@@ -1,8 +1,8 @@
-name: Sync Pact JS docs
+name: Sync Pact docs
 
 on:
   repository_dispatch:
-    types: [pact-js-updated, pact-jvm-updated]
+    types: [pact-js-docs-updated, pact-jvm-docs-updated]
 jobs:
   build:
     runs-on: ubuntu-latest
