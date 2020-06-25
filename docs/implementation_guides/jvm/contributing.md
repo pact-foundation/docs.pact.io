@@ -1,14 +1,16 @@
 ---
-title: Building the library
+title: Contributing
 custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CONTRIBUTING.md
 ---
 <!-- This file has been synced from the dius/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
+## Building the library
 
 Most of Pact-JVM is written in Scala and is built with Gradle.
 
