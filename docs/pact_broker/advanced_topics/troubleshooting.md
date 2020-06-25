@@ -2,6 +2,28 @@
 title: Troubleshooting
 ---
 
+## error 'relation "schema_migrations" does not exist' on initial startup
+
+```
+pact-broker_1  | 2020-06-25 23:35:35.260038 I [9:46932295825940] pact-broker -- (0.000373s) SELECT NULL
+postgres_1     | 2020-06-25 23:35:35.260 UTC [59] ERROR:  relation "schema_migrations" does not exist at character 27
+postgres_1     | 2020-06-25 23:35:35.260 UTC [59] STATEMENT:  SELECT NULL AS "nil" FROM "schema_migrations" LIMIT 1
+pact-broker_1  | 2020-06-25 23:35:35.261053 E [9:46932295825940 logging.rb:88] pact-broker -- PG::UndefinedTable: ERROR:  relation "schema_migrations" does not exist
+pact-broker_1  | LINE 1: SELECT NULL AS "nil" FROM "schema_migrations" LIMIT 1
+pact-broker_1  |                                   ^: SELECT NULL AS "nil" FROM "schema_migrations" LIMIT 1
+pact-broker_1  | 2020-06-25 23:35:35.264397 I [9:46932295825940] pact-broker -- (0.000323s) SELECT NULL
+pact-broker_1  | 2020-06-25 23:35:35.276711 I [9:46932295825940] pact-broker -- (0.012223s) CREATE TABLE "schema_migrations" ("filename" text PRIMARY KEY)
+pact-broker_1  | 2020-06-25 23:35:35.277418 I [9:46932295825940] pact-broker -- (0.000461s) SELECT NULL
+postgres_1     | 2020-06-25 23:35:35.278 UTC [59] ERROR:  relation "schema_info" does not exist at character 27
+postgres_1     | 2020-06-25 23:35:35.278 UTC [59] STATEMENT:  SELECT NULL AS "nil" FROM "schema_info" LIMIT 1
+pact-broker_1  | 2020-06-25 23:35:35.278912 E [9:46932295825940 logging.rb:88] pact-broker -- PG::UndefinedTable: ERROR:  relation "schema_info" does not exist
+pact-broker_1  | LINE 1: SELECT NULL AS "nil" FROM "schema_info" LIMIT 1
+pact-broker_1  |                                   ^: SELECT NULL AS "nil" FROM "schema_info" LIMIT 1
+pact-broker_1  | 2020-06-25 23:35:35.279876 I [9:46932295825940] pact-broker -- (0.000532s) SELECT NULL
+```
+
+The way the Sequel gem determines if a table exists or not is by attempting to query it. If it doesn't exist, an error is logged. This is normal and expected, as the schema_migrations table and schema_info tables do not exist the very first time the application is started up. Do not panic! As you can see, the tables are then created in the next statements.
+
 ## 409 when publishing a pact
 
 When a pact is published normally \(via a PUT to `/pacts/provider/PROVIDER/consumer/CONSUMER/version/CONSUMER_APP_VERSION`\) the `consumer`, `provider` and `consumer version` resources are automatically created.
