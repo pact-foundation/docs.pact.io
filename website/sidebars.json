@@ -37,7 +37,9 @@
           "implementation_guides/jvm/provider/index",
           "implementation_guides/jvm/provider/sbt/index",
           "implementation_guides/jvm/provider/lein/index",
-          "implementation_guides/jvm/provider/spring/index"
+          "implementation_guides/jvm/provider/spring/index",
+          "implementation_guides/jvm/provider/scalatest/index",
+          "implementation_guides/jvm/provider/specs2/index"
         ]
       },
       "implementation_guides/jvm/pact-jvm-server/index",

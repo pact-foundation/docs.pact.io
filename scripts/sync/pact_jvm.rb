@@ -14,7 +14,7 @@ INCLUDE = [
 ]
 IGNORE = [
   ->(path) { path.include?('tests_suits') },
-  ->(path) { path.start_with?('core/', '.github/', 'pact-publish/', 'pact-specification-test/', 'provider/scalasupport/', 'provider/scalatest/', 'provider/specs2/', 'ReleaseProcess.md') }
+  ->(path) { path.start_with?('core/', '.github/', 'pact-publish/', 'pact-specification-test/', 'provider/scalasupport/', 'ReleaseProcess.md') }
 ]
 COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
 
