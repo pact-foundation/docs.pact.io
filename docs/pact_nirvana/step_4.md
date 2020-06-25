@@ -16,14 +16,26 @@ While you can use Pact without a Pact Broker, using one allows you to get the mo
 > Get started for free on our Developer Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=effective_pact_setup_dev_plan).
 
 
+### Consumer pipeline
+
+The following diagram shows what a fully fledged Pact supported release pipeline might look like for a consumer. During this step of the set up guide, we are going just going to cover publishing the pact, and configuring the webhook. The other parts of this pipeline will be covered in later steps.
+
+![Consumer release pipeline](/img/advanced-pact-workshop-diagrams-consumer-pipeline.png)
+
+### Provider pipeline
+
+The following diagram shows what a fully fledged Pact supported release pipeline might look like for a provider. During this step of the set up guide, we are just going to cover the pact verification and results publication. The other parts of this pipeline will be covered in later steps.
+
+![Provider release pipeline](/img/advanced-pact-workshop-diagrams-provider-pipeline.png)
+
 ### A. Set up a Pact Broker
 
-1. Read the Pact Broker [home page](https://github.com/pact-foundation/pact_broker), \(taking note of the various deployment options available to you\) and the [quick start guide](https://github.com/pact-foundation/pact_broker/wiki#quick-start-guide), or sign up to a hosted Developer plan at [Pactflow](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=effective_pact_setup_step_1).
+1. Read the Pact Broker [home page](https://github.com/pact-foundation/pact_broker), \(taking note of the various deployment options available to you in the Usage section\), or sign up to a hosted Developer plan at [Pactflow](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=effective_pact_setup_step_1).
 2. Deploy a Pact Broker to a network that has access to both consumer and provider CI systems so it can trigger builds.
 
 ### B. Do the CI/CD workshop
 
-Before setting up Pact in your own environment, it can help to have an idea of what a working pipeline might look like. Completing the [Pact CI/CD workshop](https://github.com/pactflow/ci-cd-workshop) will give you a good understanding of how the Pact client libaries interact with the Pact Broker and where these interactions fit into your release pipeline.
+Before setting up Pact in your own environment, it can help to have an idea of what a working pipeline might look like. Completing the [Pact CI/CD workshop](https://docs.pactflow.io/docs/workshops/ci-cd/) will give you a good understanding of how the Pact client libaries interact with the Pact Broker and where these interactions fit into your release pipeline.
 
 > Note that if you are using your own instance of the open source Pact Broker, it does not support secrets, and it does not have a user interface for managing webhooks. You'll need to use the API to create the webhook, and your Travis CI token will have to be stored in plain text in the webhook.
 
