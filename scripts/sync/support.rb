@@ -45,6 +45,18 @@ class MarkdownFileContents
     @lines = new_lines + lines
   end
 
+  def clean_up_changelog
+    @lines = lines.collect do | line |
+      if line.start_with?('#')
+        line
+      elsif line.strip.size.zero?
+        line
+      elsif line.include?('feat:') || line.include?('fix:') || line.include?('Merge pull request')
+        line
+      end
+    end.compact
+  end
+
   private
 
   def header_lines

@@ -49,7 +49,10 @@
       "implementation_guides/net"
     ],
     "Pact Go": [
-      "implementation_guides/go"
+      "implementation_guides/go",
+      "implementation_guides/go/readme",
+      "implementation_guides/go/troubleshooting",
+      "implementation_guides/go/changelog"
     ]
     ,
     "Pact Python": [
