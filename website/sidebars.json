@@ -185,7 +185,8 @@
           "pact_broker/advanced_topics/pacticipant",
           "pact_broker/advanced_topics/pending_pacts",
           "pact_broker/advanced_topics/wip_pacts",
-          "pact_broker/advanced_topics/selectors",
+          "pact_broker/advanced_topics/consumer_version_selectors",
+          "pact_broker/advanced_topics/matrix_selectors",
           "pact_broker/advanced_topics/api_docs/index",
           "pact_broker/advanced_topics/ui_docs",
           "pact_broker/advanced_topics/troubleshooting"
