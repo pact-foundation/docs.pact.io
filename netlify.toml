@@ -12,3 +12,18 @@
   from = "/pact_broker/advanced_topics/webhooks"
   to = "/pact_broker/webhooks"
   status = 301
+
+[[redirects]]
+  from = "/consumer_version_selectors"
+  to = "/pact_broker/advanced_topics/consumer_version_selectors"
+  status = 301
+
+[[redirects]]
+  from = "/pending"
+  to = "/pact_broker/advanced_topics/pending_pacts"
+  status = 301
+
+[[redirects]]
+  from = "/wip"
+  to = "/pact_broker/advanced_topics/wip_pacts"
+  status = 301
