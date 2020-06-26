@@ -42,10 +42,18 @@ When the sync-docs workflow runs, it pulls in the `master` markdown files from t
 
 The Pact docs site is hosted by Netlify. Thanks!
 
+The site will be automatically redeployed after any push to `master`.
+
 <a href="https://www.netlify.com">
   <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Deploys by Netlify" />
 </a>
 
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Contact
+
+* [Pact Foundation Slack workspace](https://slack.pact.io)
+* [Twitter](https://twitter.com/pact_up)
