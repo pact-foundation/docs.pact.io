@@ -26,7 +26,11 @@ class MarkdownFileContents
   end
 
   def to_s
-    ["---", header_lines, "---", comments, lines].flatten.join("\n") + "\n"
+    comments_maybe_newlines = comments.dup
+    if lines.first && lines.first.strip != ''
+      comments_maybe_newlines << ""
+    end
+    ["---", header_lines, "---", comments_maybe_newlines, lines].flatten.join("\n") + "\n"
   end
 
   def find_and_replace(find, replace)
@@ -68,12 +72,17 @@ def each_file(files)
   end
 end
 
+def select_actions(custom_actions, path)
+  custom_actions
+    .select{ | selector , _ | selector == :all || selector == path || (selector.respond_to?(:call) && selector.call(path))  }
+    .collect(&:last)
+end
+
 def process_file(path, content, path_transformer, custom_actions, comment)
   destination = path_transformer.call(path)
   fields = { custom_edit_url: "https://github.com/#{SOURCE_REPO}/edit/master/#{path}" }
   md_file_contents = MarkdownFileContents.new(content.split("\n"), fields, [comment])
-  md_file_contents.extract_title
-  custom_actions.select{ | source_path , _ | source_path == :all || source_path == path }.collect(&:last).each { |action| action.call(md_file_contents) }
+  select_actions(custom_actions, path).each { |action| action.call(md_file_contents) }
 
   puts "Writing file #{destination}"
   FileUtils.mkdir_p(File.dirname(destination))

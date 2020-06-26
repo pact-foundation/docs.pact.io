@@ -6,15 +6,14 @@ require 'fileutils'
 require 'pathname'
 require_relative 'support'
 
-SOURCE_REPO = 'dius/pact-jvm'
+SOURCE_REPO = 'pact-foundation/pact-python'
 PROJECT_ROOT = File.expand_path(File.join(__FILE__, '..', '..', '..'))
-DESTINATION_DIR = Pathname.new(File.join(PROJECT_ROOT, 'docs', 'implementation_guides', 'jvm')).relative_path_from(Pathname.pwd)
+DESTINATION_DIR = Pathname.new(File.join(PROJECT_ROOT, 'docs', 'implementation_guides', 'python')).relative_path_from(Pathname.pwd)
 INCLUDE = [
-  ->(path) { path.end_with?('.md') }
+  ->(path) { %w{README.md CHANGELOG.md}.include?(path) }
 ]
 IGNORE = [
-  ->(path) { path.include?('tests_suits') },
-  ->(path) { path.start_with?('core/', '.github/', 'pact-publish/', 'pact-specification-test/', 'provider/scalasupport/', 'ReleaseProcess.md') }
+  ->(path) { path.start_with?('.github/') }
 ]
 COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
 
@@ -23,13 +22,6 @@ CUSTOM_ACTIONS = [
   ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README" } ],
   ["CHANGELOG.md", -> (md_file_contents) {
     md_file_contents.fields[:title] = "Changelog"
-    md_file_contents.remove_lines_including('To generate the log')
-    md_file_contents.remove_lines_including('- chore: ')
-    md_file_contents.remove_lines_including('- docs: ')
-    md_file_contents.remove_lines_including('- doc: ')
-    md_file_contents.remove_lines_including('- refactor: ')
-    md_file_contents.remove_lines_including('- style: ')
-    md_file_contents.find_and_replace(/^# /, '## ')
   }]
 ]
 

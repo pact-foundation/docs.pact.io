@@ -50,9 +50,12 @@
     ],
     "Pact Go": [
       "implementation_guides/go"
-    ],
+    ]
+    ,
     "Pact Python": [
-      "implementation_guides/python"
+      "implementation_guides/python",
+      "implementation_guides/python/readme",
+      "implementation_guides/python/changelog"
     ],
     "Pact Consumer Swift": [
       "implementation_guides/swift"

@@ -6,7 +6,6 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 
 ## 4.1.4 - bugfixes & enhancements
 
-
 * 7a9733fd4 - Merge pull request #1141 from anto-ac/add-more-backwards-compatibility-with-dates (Antonello Caboni, Fri Jun 19 13:44:54 2020 +0100)
 * 2810b0bb8 - fix: backward compatibily with legacy date formats #1007 (anto, Fri Jun 19 12:55:24 2020 +0100)
 * 755a96834 - fix: only apply valid matchers for binary bodies (Ronald Holshausen, Fri Jun 19 11:03:00 2020 +1000)
