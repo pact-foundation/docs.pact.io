@@ -4,6 +4,27 @@ custom_edit_url: https://github.com/dius/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the dius/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.1.5 - consumerVersionSelectors in JUnit
+
+* ac1865ac6 - Merge pull request #1147 from pendsley/feat/wip-pacts (Ronald Holshausen, Fri Jun 26 11:19:22 2020 +1000)
+* 418c1d39e - feat: Add support for includeWipPactsSince parameter (Phil Endsley, Thu Jun 25 08:03:09 2020 -0500)
+* f3e640446 - Update README.md (Beth Skurrie, Thu Jun 25 10:01:18 2020 +1000)
+* 5050bf3d1 - Update README.md (Beth Skurrie, Thu Jun 25 09:54:56 2020 +1000)
+* 8eb7f1b90 - Revert "Update README.md" (Beth Skurrie, Wed Jun 24 18:50:58 2020 +1000)
+* 9570f5909 - Revert "Update README.md" (Beth Skurrie, Wed Jun 24 18:50:47 2020 +1000)
+* 19004a6a2 - Revert "Update README.md" (Beth Skurrie, Wed Jun 24 18:50:38 2020 +1000)
+* b3b6fc451 - Revert "Update README.md" (Beth Skurrie, Wed Jun 24 18:50:22 2020 +1000)
+* 829dbb0a2 - Update README.md (Beth Skurrie, Wed Jun 24 17:12:18 2020 +1000)
+* 66f9099ee - Update README.md (Beth Skurrie, Wed Jun 24 17:11:37 2020 +1000)
+* 4aa70ddf4 - Update README.md (Beth Skurrie, Wed Jun 24 17:10:27 2020 +1000)
+* e60b9df93 - Update README.md (Beth Skurrie, Wed Jun 24 17:08:26 2020 +1000)
+* 73676f96a - Merge pull request #1143 from pendsley/feat/junit-consumer-version-selectors (Ronald Holshausen, Wed Jun 24 09:15:51 2020 +1000)
+* e4dd8ea02 - Remove default value for VersionSelector tag. Set consumer version selector tag to latest if no tag is specified when fetching pacts. (Phil Endsley, Mon Jun 22 09:42:26 2020 -0500)
+* 03222ad27 - feat: Allow explicitly setting consumerVersionSelectors through PactBroker annotation. (Phil Endsley, Sun Jun 21 21:15:37 2020 -0500)
+* 7a34daeaa - Merge pull request #1135 from ivangsa/pact-jvm-provider-maven (Ronald Holshausen, Sat Jun 20 13:05:59 2020 +1000)
+* 77b9d4bf6 - bump version to 4.1.5 (anto, Fri Jun 19 17:38:34 2020 +0100)
+* c0c3fbbd0 - maven-plugin: adds support to configure pact-publish via command line options (Iván García Sainz-Aja, Thu Jun 18 10:57:37 2020 +0200)
+
 ## 4.1.4 - bugfixes & enhancements
 
 * 7a9733fd4 - Merge pull request #1141 from anto-ac/add-more-backwards-compatibility-with-dates (Antonello Caboni, Fri Jun 19 13:44:54 2020 +0100)
