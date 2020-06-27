@@ -2,7 +2,12 @@ name: Sync Pact docs
 
 on:
   repository_dispatch:
-    types: [pact-js-docs-updated, pact-jvm-docs-updated, pact-python-docs-updated, pact-go-docs-updated]
+    types: 
+      - pact-js-docs-updated
+      - pact-jvm-docs-updated
+      - pact-python-docs-updated
+      - pact-go-docs-updated
+      - pact-rust-docs-updated
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,6 +34,10 @@ jobs:
     - name: Sync Pact Go docs
       run: bundle exec ruby scripts/sync/pact_go.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-go docs'
       if: github.event.action == 'pact-go-docs-updated'
+
+    - name: Sync Pact Rust docs
+      run: bundle exec ruby scripts/sync/pact_rust.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-rust docs'
+      if: github.event.action == 'pact-rust-docs-updated'
 
     - name: Commit and push changes
       uses: EndBug/add-and-commit@v4
