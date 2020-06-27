@@ -86,6 +86,12 @@
       "implementation_guides/rust/pact_verifier/index",
       "implementation_guides/rust/pact_verifier_cli/index"
     ],
+    "Pact C++": [
+      "implementation_guides/cpp/readme",
+      "implementation_guides/cpp/consumer/index",
+      "implementation_guides/cpp/consumer/docs/dsl",
+      "implementation_guides/cpp/consumer/changelog"
+    ],
     "Pact on Docker": [
       "docker"
     ],

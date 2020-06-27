@@ -8,6 +8,7 @@ on:
       - pact-python-docs-updated
       - pact-go-docs-updated
       - pact-rust-docs-updated
+      - pact-cpp-docs-updated
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -38,6 +39,10 @@ jobs:
     - name: Sync Pact Rust docs
       run: bundle exec ruby scripts/sync/pact_rust.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-rust docs'
       if: github.event.action == 'pact-rust-docs-updated'
+
+    - name: Sync Pact C++ docs
+      run: bundle exec ruby scripts/sync/pact_cpp.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-cpp docs'
+      if: github.event.action == 'pact-cpp-docs-updated'
 
     - name: Commit and push changes
       uses: EndBug/add-and-commit@v4
