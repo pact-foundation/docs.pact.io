@@ -102,7 +102,6 @@
     "Pact C++": [
       "implementation_guides/cpp/readme",
       "implementation_guides/cpp/consumer/index",
-      "implementation_guides/cpp/consumer/docs/dsl",
       "implementation_guides/cpp/consumer/changelog"
     ],
     "Pact on Docker": [
