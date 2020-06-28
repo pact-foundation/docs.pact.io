@@ -1,91 +1,76 @@
 ---
-title: 0.6.3 - Updated XML Matching
+title: pact_matching
 custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/rust/pact_matching/CHANGELOG.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
+## 0.6.3 - Updated XML Matching
 
-
-* a15edea - chore: try set the content type on the body if known (Ronald Holshausen, Tue Jun 23 16:53:32 2020 +1000)
 * daeaa0c - feat: update the spec test cases after implementing XML matching MkII (Ronald Holshausen, Tue Jun 23 16:09:23 2020 +1000)
 * 90c175c - feat: re-implement XML matching to support elements with different children (Ronald Holshausen, Tue Jun 23 15:20:36 2020 +1000)
 * 4d18e1b - bump version to 0.6.3 (Ronald Holshausen, Fri Jun 12 12:00:38 2020 +1000)
 * f2c7145 - fix: correct build dependencies (Ronald Holshausen, Fri Jun 12 11:57:48 2020 +1000)
 
-# 0.6.2 - Overhaul date/time matching
+## 0.6.2 - Overhaul date/time matching
 
 * 45fc1a0 - fix: cleanup warnings and fixed test (Ronald Holshausen, Fri Jun 12 10:51:44 2020 +1000)
 * a6cbe4b - feat: support validating datetimes with timezones (Ronald Holshausen, Wed Jun 10 17:03:56 2020 +1000)
-* 875d7a1 - refactor: changed date/time parsing to support Java DateTimeFormatter format (Ronald Holshausen, Tue Jun 9 17:56:30 2020 +1000)
 * c1b657b - feat: make default metadata public so other language impl can access it (Ronald Holshausen, Thu Jun 4 16:02:16 2020 +1000)
 * e699061 - feat: add convience methods to modify headers (Ronald Holshausen, Thu Jun 4 16:01:04 2020 +1000)
-* 0d11998 - chore: switch to Rust TLS so we dont have to link to openssl libs (Ronald Holshausen, Sun May 31 09:49:55 2020 +1000)
 * f94f25a - fix: intermediate date/time matcher JSON should use the format attribute (Ronald Holshausen, Wed May 27 14:19:34 2020 +1000)
 * ae0af17 - bump version to 0.6.2 (Ronald Holshausen, Wed May 27 10:35:40 2020 +1000)
 
-# 0.6.1 - Bugfix Release
+## 0.6.1 - Bugfix Release
 
 * 6c65dab - feat: handle namespaces when matching XML (Ronald Holshausen, Mon May 25 16:23:20 2020 +1000)
 * 67e2147 - fix: was incorrectly selecting the matching rule when weight was equal (Ronald Holshausen, Mon May 25 16:22:36 2020 +1000)
 * 1e3516b - bump version to 0.6.1 (Ronald Holshausen, Sun May 24 11:49:20 2020 +1000)
 
-# 0.6.0 - multi-part form post bodies
+## 0.6.0 - multi-part form post bodies
 
 * ce94df9 - feat: cleaned up the logging of request matches (Ronald Holshausen, Sun May 24 11:17:08 2020 +1000)
-* bea787c - chore: bump matching crate version to 0.6.0 (Ronald Holshausen, Sat May 23 17:56:04 2020 +1000)
 * d0a54f7 - feat: implemented matching multi-part form post bodies (Ronald Holshausen, Sat May 23 17:49:48 2020 +1000)
-* ac2903d - chore: update the specification test cases (Ronald Holshausen, Wed May 20 12:08:08 2020 +1000)
 * b0f3387 - bump version to 0.5.15 (Ronald Holshausen, Fri May 15 16:27:48 2020 +1000)
 
-# 0.5.14 - Bugfix Release
+## 0.5.14 - Bugfix Release
 
 * 61ab50f - fix: date/time matchers fallback to the old key (Ronald Holshausen, Fri May 15 11:27:27 2020 +1000)
 * ddacb5d - fix: FFI datetime matcher was using incorrect field (Ronald Holshausen, Wed May 13 17:58:31 2020 +1000)
 * 6af29ce - fix: improve the error message when a merge conflict occurs (Ronald Holshausen, Wed May 13 10:57:25 2020 +1000)
 * ddd0881 - bump version to 0.5.14 (Ronald Holshausen, Tue May 12 12:33:30 2020 +1000)
 
-# 0.5.13 - matching of binary payloads
+## 0.5.13 - matching of binary payloads
 
 * 708db47 - feat: implement matching of binary payloads (application/octet-stream) (Ronald Holshausen, Fri May 8 15:52:03 2020 +1000)
-* 754a483 - chore: updated itertools to latest (Ronald Holshausen, Wed May 6 15:49:27 2020 +1000)
 * b6b81a3 - bump version to 0.5.13 (Ronald Holshausen, Tue May 5 16:39:23 2020 +1000)
 
-# 0.5.12 - Bugfix Release
+## 0.5.12 - Bugfix Release
 
 * d85f28c - fix: mock server matching requests with headers with multiple values (Ronald Holshausen, Tue May 5 15:23:11 2020 +1000)
 * a45d0c3 - fix: FFI mismatch json should have the actual values as UTF-8 string not bytes #64 (Ronald Holshausen, Thu Apr 30 11:16:25 2020 +1000)
-* 2003d7b - chore: roll back onig crate to 4.3.3 #64 (Ronald Holshausen, Thu Apr 30 09:50:48 2020 +1000)
-* 76250b5 - chore: correct some clippy warnings (Ronald Holshausen, Wed Apr 29 17:53:40 2020 +1000)
-* 47cc589 - chore: added clippy and fixed resulting lint errors (Ronald Holshausen, Wed Apr 29 15:32:55 2020 +1000)
 * 6f24994 - bump version to 0.5.12 (Ronald Holshausen, Fri Apr 24 10:11:33 2020 +1000)
 
-# 0.5.11 - Cleaned up logging and warnings
+## 0.5.11 - Cleaned up logging and warnings
 
-* 3d490ef - chore: implemented Display for Interaction (Ronald Holshausen, Wed Apr 22 13:01:45 2020 +1000)
-* af8d19a - chore: cleanup warning (Ronald Holshausen, Thu Apr 16 14:37:55 2020 +1000)
-* 9ff6f20 - chore: cleaned up some debug logging (Ronald Holshausen, Tue Apr 7 12:10:12 2020 +1000)
 * 1ad8edd - bump version to 0.5.11 (Ronald Holshausen, Tue Apr 7 11:42:14 2020 +1000)
 
-# 0.5.10 - Bugfix Release
+## 0.5.10 - Bugfix Release
 
 * b52f095 - fix: V3 path matcher JSON format was incorrect (Ronald Holshausen, Tue Apr 7 11:14:25 2020 +1000)
-* 9623183 - chore: upgraded the testing crates to latest (Ronald Holshausen, Tue Apr 7 09:40:39 2020 +1000)
 * a9d512f - bump version to 0.5.10 (Ronald Holshausen, Fri Mar 13 09:39:43 2020 +1100)
 
-# 0.5.9 - Bugfixes + Date/Time matchers with JSON
+## 0.5.9 - Bugfixes + Date/Time matchers with JSON
 
 * e0f23a2 - feat: exposes time/date utils for language implementations (Ronald Holshausen, Thu Mar 12 17:01:44 2020 +1100)
 * 2920364 - fix: date and time matchers with JSON (Ronald Holshausen, Thu Mar 12 16:07:05 2020 +1100)
 * db74b68 - Merge pull request #61 from mitre/v3_provider_states (Ronald Holshausen, Mon Mar 9 13:37:03 2020 +1100)
-* 70e6648 - chore: converted verifier to use Reqwest (Ronald Holshausen, Mon Mar 9 12:20:14 2020 +1100)
 * 627c4ad - At least partially correct broken Serialize/Deserialize for Message. (Andrew Lilley Brinker, Tue Mar 3 08:06:52 2020 -0800)
 * 162f52d - Fixed three broken tests. (Andrew Lilley Brinker, Tue Mar 3 07:15:44 2020 -0800)
 * d87a2c3 - Made `Message` understand `providerStates`. (Andrew Lilley Brinker, Mon Mar 2 08:38:56 2020 -0800)
 * d594dbb - Fix broken documentation link for provider_states. (Andrew Lilley Brinker, Mon Mar 2 08:21:40 2020 -0800)
 * 6187cfa - bump version to 0.5.9 (Ronald Holshausen, Sun Jan 19 11:11:09 2020 +1100)
 
-# 0.5.8 - Upgrade reqwest to 0.10
+## 0.5.8 - Upgrade reqwest to 0.10
 
 * 9dec41b - Upgrade reqwest to 0.10 (Audun Halland, Tue Dec 31 07:22:36 2019 +0100)
 * fda11e4 - Merge remote-tracking branch 'upstream/master' into async-await (Audun Halland, Tue Dec 17 02:13:58 2019 +0100)
@@ -93,7 +78,7 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * 298f217 - pact_matching: Upgrade reqwest to current alpha (Audun Halland, Tue Dec 17 00:36:33 2019 +0100)
 * d28d97d - bump version to 0.5.8 (Ronald Holshausen, Sat Dec 14 16:57:02 2019 +1100)
 
-# 0.5.7 - Bugfix Release
+## 0.5.7 - Bugfix Release
 
 * a660b87 - fix: correct pact merging to remove duplicates #54 (Ronald Holshausen, Sat Dec 14 15:06:30 2019 +1100)
 * 51f5a3e - Update READMEs and doc to not require any "extern crate" (Audun Halland, Sun Nov 17 23:28:21 2019 +0100)
@@ -107,19 +92,18 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * 924452f - 2018 edition autofix "cargo fix --edition" (Audun Halland, Sat Nov 16 22:27:42 2019 +0100)
 * 8523e69 - bump version to 0.5.7 (Ronald Holshausen, Sun Nov 10 10:30:20 2019 +1100)
 
-# 0.5.6 - Bugfix Release
+## 0.5.6 - Bugfix Release
 
 * a0dc946 - fix: store matching rules in a set to avoid duplicates (Ronald Holshausen, Sun Nov 10 10:08:34 2019 +1100)
 * 66c328e - feat: add colons to the allowed path characters (Ronald Holshausen, Sun Oct 27 17:13:14 2019 +1100)
 * 869af94 - bump version to 0.5.6 (Ronald Holshausen, Fri Sep 27 14:57:05 2019 +1000)
 
-# 0.5.5 - Oniguruma crate for regex matching
+## 0.5.5 - Oniguruma crate for regex matching
 
 * defe890 - fix: switch to the Oniguruma crate for regex matching #46 (Ronald Holshausen, Fri Sep 27 14:35:16 2019 +1000)
-* d5c0ac8 - chore: re-enabled time and timestamp matching tests (Ronald Holshausen, Fri Sep 27 12:49:32 2019 +1000)
 * 19bf916 - bump version to 0.5.5 (Ronald Holshausen, Sun Sep 22 17:11:00 2019 +1000)
 
-# 0.5.4 - Refactor for publishing verification results
+## 0.5.4 - Refactor for publishing verification results
 
 * eef3d97 - feat: added some tests for publishing verification results to the pact broker #44 (Ronald Holshausen, Sun Sep 22 16:44:52 2019 +1000)
 * 1110b47 - feat: implemented publishing verification results to the pact broker #44 (Ronald Holshausen, Sun Sep 22 13:53:27 2019 +1000)
@@ -127,30 +111,26 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * 8932ef6 - feat: support an integration format for matchers for language integration (Ronald Holshausen, Sun Aug 25 11:36:23 2019 +1000)
 * 6899663 - bump version to 0.5.4 (Ronald Holshausen, Sun Aug 11 14:41:09 2019 +1000)
 
-# 0.5.3 - support bearer tokens
+## 0.5.3 - support bearer tokens
 
-* 152682e - chore: cleanup crates and warnings (Ronald Holshausen, Sun Aug 11 14:28:02 2019 +1000)
 * dac8ae1 - feat: support authentication when fetching pacts from a pact broker (Ronald Holshausen, Sun Aug 11 13:57:29 2019 +1000)
 * e007763 - feat: support bearer tokens when fetching pacts from URLs (Ronald Holshausen, Sun Aug 11 13:21:17 2019 +1000)
 * 8009184 - bump version to 0.5.3 (Ronald Holshausen, Sun Aug 11 09:46:21 2019 +1000)
 
-# 0.5.2 - Support headers with multiple values
+## 0.5.2 - Support headers with multiple values
 
 * 0c5f718 - feat: support matchers on plain text bodies #43 (Ronald Holshausen, Sat Aug 10 17:54:26 2019 +1000)
 * f0c0d07 - feat: support headers with multiple values (Ronald Holshausen, Sat Aug 10 17:01:10 2019 +1000)
 * 699f48f - bump version to 0.5.2 (Ronald Holshausen, Sat Jun 29 19:34:44 2019 +1000)
 * 0fe57d9 - fix: release script (Ronald Holshausen, Sat Jun 29 19:28:46 2019 +1000)
-* 756ac9d - chore: update release script (Ronald Holshausen, Sat Jun 29 19:27:45 2019 +1000)
 
-# 0.5.1 - Bugfix Release
+## 0.5.1 - Bugfix Release
 
-* eab2d86 - chore: removed P macro (Ronald Holshausen, Sat Jun 29 18:45:12 2019 +1000)
 * 91da912 - fix: correct overflow of max value for random int generator #39 (Ronald Holshausen, Sat Jun 29 18:43:56 2019 +1000)
 * 4ccd09d - bump version to 0.5.1 (Ronald Holshausen, Sat Jan 5 19:42:58 2019 +1100)
 
-# 0.5.0 - Regex, Date and Time matching and generators
+## 0.5.0 - Regex, Date and Time matching and generators
 
-* f8fa0d8 - chore: Bump pact matchig version to 0.5.0 (Ronald Holshausen, Sat Jan 5 19:25:53 2019 +1100)
 * 4f471de - feat: implemented generating values from regex (Ronald Holshausen, Sat Jan 5 18:46:48 2019 +1100)
 * 73bc70e - feat: implemented generators for dates and times #33 (Ronald Holshausen, Sat Jan 5 17:10:56 2019 +1100)
 * e72fb9e - feat: cleanup date matching #33 (Ronald Holshausen, Sat Jan 5 14:31:50 2019 +1100)
@@ -163,37 +143,36 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * 433d9c5 - fix: handle path expressions that start with an underscore (Ronald Holshausen, Tue Jan 1 10:51:43 2019 +1100)
 * 009b176 - bump version to 0.4.6 (Ronald Holshausen, Sat Sep 8 14:41:35 2018 +1000)
 
-# 0.4.5 - feat: added convenience header methods to HttpPart
+## 0.4.5 - feat: added convenience header methods to HttpPart
 
 * ead1af2 - feat: added convenience header methods to HttpPart (Ronald Holshausen, Sat Sep 8 14:29:59 2018 +1000)
 * 129333f - bump version to 0.4.5 (Ronald Holshausen, Sat Aug 11 15:21:01 2018 +1000)
 
-# 0.4.4 - Bugfix Release
+## 0.4.4 - Bugfix Release
 
 * 97abce4 - fix: support matching rules affected by Pact-JVM defect 743 (Ronald Holshausen, Sat Aug 11 15:07:41 2018 +1000)
 * f9d091e - bump version to 0.4.4 (Ronald Holshausen, Sat Jun 30 17:14:16 2018 +1000)
 
-# 0.4.3 - Bugfix Release
+## 0.4.3 - Bugfix Release
 
 * 1184203 - fix: Allow dashes in path expressions for headers like Content-Type (Ronald Holshausen, Sat Jun 30 17:03:08 2018 +1000)
 * 995139b - Revert "fix: query and header paths should be escaped" (Ronald Holshausen, Sat Jun 30 16:56:05 2018 +1000)
 * 74e9116 - bump version to 0.4.3 (Ronald Holshausen, Sat Jun 30 16:40:17 2018 +1000)
 
-# 0.4.2 - Bugfix Release
+## 0.4.2 - Bugfix Release
 
 * d6fbed4 - fix: query and header paths should be escaped (Ronald Holshausen, Sat Jun 30 16:22:56 2018 +1000)
 * 948e620 - fix: parse the V3 keys as path expressions for query and header matchers (Ronald Holshausen, Sat Jun 30 15:22:51 2018 +1000)
-* dec17b8 - doc: update readme (Ronald Holshausen, Sun May 13 14:33:20 2018 +1000)
 * c3898b9 - bump version to 0.4.2 (Ronald Holshausen, Sun May 13 14:24:54 2018 +1000)
 
-# 0.4.1 - implemented some missing matchers (include, null, integer, decimal, number)
+## 0.4.1 - implemented some missing matchers (include, null, integer, decimal, number)
 
 * b060bbb - feat: implemented some missing matchers (include, null, integer, decimal, number) (Ronald Holshausen, Sun May 13 13:46:23 2018 +1000)
 * 0aa161d - test: Added a test to confirm that binary bodies are persisted in base64 format #19 (Ronald Holshausen, Sun Apr 8 14:27:19 2018 +1000)
 * b68c893 - fix: pact specification key in the metadata should be camelcase #3 (Ronald Holshausen, Sun Apr 8 12:05:39 2018 +1000)
 * 10eb623 - bump version to 0.4.1 (Ronald Holshausen, Sat Apr 7 14:08:52 2018 +1000)
 
-# 0.4.0 - First V3 specification release
+## 0.4.0 - First V3 specification release
 
 * e5322f1 - code cleanup in prep of release (Ronald Holshausen, Sat Apr 7 13:58:55 2018 +1000)
 * d90af09 - Implemented decimal, hexadecimal and string generators (Ronald Holshausen, Fri Mar 9 16:48:46 2018 +1100)
@@ -237,7 +216,7 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * 7361688 - moved missing files after merge from master (Ronald Holshausen, Sun Oct 23 10:19:31 2016 +1100)
 * 49e45f7 - Merge branch 'master' into v3-spec (Ronald Holshausen, Sun Oct 23 10:10:40 2016 +1100)
 
-# 0.3.1 - Converted OptionalBody::Present to take a Vec<u8>
+## 0.3.1 - Converted OptionalBody::Present to take a Vec<u8>
 
 * 24e3f73 - Converted OptionalBody::Present to take a Vec<u8> #19 (Ronald Holshausen, Sun Oct 22 18:04:46 2017 +1100)
 * cd564ac - Added cargo update after to release script after bumping the version (Ronald Holshausen, Fri Oct 20 09:34:57 2017 +1100)
@@ -245,7 +224,7 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * c507222 - Correct the version in the readme (Ronald Holshausen, Fri Oct 20 09:21:55 2017 +1100)
 * aa5cc66 - bump version to 0.3.1 (Ronald Holshausen, Fri Oct 20 09:11:35 2017 +1100)
 
-# 0.3.0 - Backported matching rules from V3 branch
+## 0.3.0 - Backported matching rules from V3 branch
 
 * ac94388 - Tests are now all passing #20 (Ronald Holshausen, Thu Oct 19 15:14:25 2017 +1100)
 * d990729 - Some code cleanup #20 (Ronald Holshausen, Wed Oct 18 16:32:37 2017 +1100)
@@ -261,7 +240,7 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * 7afd258 - Update all the cargo manifest versions and commit the cargo lock files (Ronald Holshausen, Wed May 17 10:37:44 2017 +1000)
 * bb278d3 - bump version to 0.2.3 (Anthony Damtsis, Tue May 16 17:09:58 2017 +1000)
 
-# 0.2.2 - Bugfix Release
+## 0.2.2 - Bugfix Release
 
 * 3399f7c - Merge pull request #13 from adamtsis/remove-deprecated-json-lib (Ronald Holshausen, Tue May 16 15:56:22 2017 +1000)
 * efe4ca7 - Cleanup unused imports and unreachable pattern warning messages (Anthony Damtsis, Tue May 16 10:31:29 2017 +1000)
@@ -287,7 +266,7 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * 227b61b - correct the doc URL in the cargo manifest (Ronald Holshausen, Sun Oct 9 16:13:27 2016 +1100)
 * 5233cfa - correct updating the documentation URL in the release script (Ronald Holshausen, Sun Oct 9 16:08:33 2016 +1100)
 
-# 0.2.1 - Changes required for verifying V2 pacts
+## 0.2.1 - Changes required for verifying V2 pacts
 
 * 574e072 - upadte versions for V2 branch and fix an issue with loading JSON bodies encoded as a string (Ronald Holshausen, Sun Oct 9 15:31:57 2016 +1100)
 * a21973a - Get the build passing after merge from V1.1 branch (Ronald Holshausen, Sun Oct 9 13:47:09 2016 +1100)
@@ -295,7 +274,7 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * 797c9b9 - correct the URLs to the repos (Ronald Holshausen, Sat Oct 8 17:10:56 2016 +1100)
 * b7e038e - bump version to 0.1.2 (Ronald Holshausen, Sat Oct 8 16:54:52 2016 +1100)
 
-# 0.1.1 - Changes required for verifying V1.1 pacts
+## 0.1.1 - Changes required for verifying V1.1 pacts
 
 * 373f82d - regenerated the specification tests (Ronald Holshausen, Sat Oct 8 16:50:38 2016 +1100)
 * 388a19f - update references (Ronald Holshausen, Sat Oct 8 16:46:11 2016 +1100)
@@ -307,7 +286,7 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * d7c859c - bump version to 0.0.3 (Ronald Holshausen, Mon Sep 26 20:55:12 2016 +1000)
 * 02421d5 - exclude IntelliJ files from packaging (Ronald Holshausen, Mon Sep 26 20:46:47 2016 +1000)
 
-# 0.1.0 - V1.1 Specification Implementation
+## 0.1.0 - V1.1 Specification Implementation
 
 * 140526d - Implement V1.1 matching (Ronald Holshausen, Tue Jun 28 15:58:35 2016 +1000)
 * 4224875 - update readmes and bump versions for V1.1 implementation (Ronald Holshausen, Tue Jun 28 15:05:39 2016 +1000)
@@ -315,7 +294,7 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * 44ec659 - in prep for supporting other spec versions, take the version into account when parsing a pact file (Ronald Holshausen, Tue Jun 28 11:40:07 2016 +1000)
 * 91d6d62 - removed the v1 from the project path, will use a git branch instead (Ronald Holshausen, Mon Jun 27 22:09:32 2016 +1000)
 
-# 0.0.2 - Fixes required for verifying pacts
+## 0.0.2 - Fixes required for verifying pacts
 
 * 429ef78 - Implemented handling state change requests in the pact verifier (Ronald Holshausen, Sun Sep 25 15:55:18 2016 +1000)
 * cc1e359 - implemented rudimentary diff output on json bodies (Ronald Holshausen, Sun Sep 25 13:43:45 2016 +1000)
@@ -324,7 +303,7 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * bc3405c - implemented handling templated HAL URLs (Ronald Holshausen, Sun Sep 18 13:58:54 2016 +1000)
 * c3a8a30 - renamed the pact_matching and pact_mock_server directories (Ronald Holshausen, Sun Sep 18 11:07:32 2016 +1000)
 
-# 0.0.1 - Second Feature Release
+## 0.0.1 - Second Feature Release
 
 * 25bf4d0 - added changelog (Ronald Holshausen, Sun Jun 26 15:20:23 2016 +1000)
 * 4c60f07 - replace rustful with webmachine (Ronald Holshausen, Thu Jun 16 17:31:11 2016 +1000)
@@ -335,4 +314,4 @@ To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD 
 * 937360d - Oops, test generates a pact with the version in the metadata (Ronald Holshausen, Wed Jun 1 17:07:29 2016 +1000)
 * e957983 - bump libpact_matching version (Ronald Holshausen, Wed Jun 1 17:00:41 2016 +1000)
 
-# 0.0.0 - First Release
+## 0.0.0 - First Release

@@ -1,5 +1,5 @@
 ---
-title: Reference implementation in Rust for the Pact Specification
+title: Overview
 custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/rust/README.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
@@ -8,12 +8,8 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 
 This is the project for a reference implementation of Pact in Rust. It implements the [V3 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-3).
 
-For a version of this project that implements the [V1 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-1),
-have a look at the [V1 Branch](https://github.com/pact-foundation/pact-reference/tree/v1-spec). For [V1.1 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-1.1),
-have a look at the [V1.1 Branch](https://github.com/pact-foundation/pact-reference/tree/v1.1-spec). For [V2 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-2),
-have a look at the [V2 Branch](https://github.com/pact-foundation/pact-reference/tree/v2-spec)
 
-There are 5 main modules to this implementation:
+There are 7 main modules to this implementation:
 
 ## [pact_matching](pact_matching)
 

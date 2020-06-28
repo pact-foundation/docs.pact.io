@@ -16,8 +16,18 @@ IGNORE = []
 COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
 
 CUSTOM_ACTIONS = [
-  [->(path) { path != 'CHANGELOG.md'}, ->(md_file_contents) { md_file_contents.extract_title } ],
-  ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README" } ],
+  [->(path) { !path.end_with?('CHANGELOG.md') }, ->(md_file_contents) { md_file_contents.extract_title } ],
+  [->(path) { path.end_with?('CHANGELOG.md') }, ->(md_file_contents) { 
+    md_file_contents.fields[:title] = md_file_contents.fields[:custom_edit_url].split('/')[-2]
+    md_file_contents.remove_lines_including('To generate the log')
+    md_file_contents.remove_lines_including('- chore: ')
+    md_file_contents.remove_lines_including('- docs: ')
+    md_file_contents.remove_lines_including('- doc: ')
+    md_file_contents.remove_lines_including('- refactor: ')
+    md_file_contents.remove_lines_including('- style: ')
+    md_file_contents.find_and_replace(/^# /, '## ')
+  }],
+  ["rust/README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "Overview" } ],
 ]
 
 TRANSFORM_PATH = -> (path) { File.join(DESTINATION_DIR, path.downcase.delete_prefix('rust').gsub('/readme.md', '/index.md')) } # Rename README.md to index.md, but not the top level README

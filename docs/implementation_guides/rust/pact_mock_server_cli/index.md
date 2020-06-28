@@ -6,7 +6,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 
 This project provides both a restful web api and command line interface to run pact mock servers. It is a single
 executable binary and is able to manage multiple mock servers. The lifecycle of each mock server can be controlled by the
-restful web api or through the command line interface. It implements the [V2 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-2).
+restful web api or through the command line interface. It implements the [V3 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-3).
 
 [Online rust docs](https://docs.rs/pact_mock_server_cli/)
 
