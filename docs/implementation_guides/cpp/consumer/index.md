@@ -8,7 +8,7 @@ This is a shared library (pact-cpp-consumer) that you can link into your test bi
 
 ## Using the DSL
 
-Documentation is [here in html](docs/html/index.html). For an example, see [consumer_test.cpp](https://github.com/pact-foundation/pact-cplusplus/blob/master/consumer/test/src/consumer_test.cpp).
+Documentation is [here in html](https://docs.pact.io/cpp_docs/consumer/annotated.html). For an example, see [consumer_test.cpp](https://github.com/pact-foundation/pact-cplusplus/blob/master/consumer/test/src/consumer_test.cpp).
 
 ### Setup the expectations 
 
