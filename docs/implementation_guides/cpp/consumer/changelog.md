@@ -1,5 +1,5 @@
 ---
-title: Changelog
+title: Consumer DSL Changelog
 custom_edit_url: https://github.com/pact-foundation/pact-cplusplus/edit/master/consumer/CHANGELOG.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-cplusplus repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->

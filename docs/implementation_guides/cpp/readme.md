@@ -40,4 +40,4 @@ Read [Getting started with Pact](https://docs.pact.io/5-minute-getting-started-g
 
 The support for consumer tests is documented in [consumer](consumer).
 
-For an example for the consumer test DSL, have a look at [consumer_test.cpp](consumer/test/src/consumer_test.cpp).
+For an example for the consumer test DSL, have a look at [consumer_test.cpp](https://github.com/pact-foundation/pact-cplusplus/blob/master/consumer/test/src/consumer_test.cpp).
