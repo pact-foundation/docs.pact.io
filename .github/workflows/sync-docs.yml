@@ -2,13 +2,16 @@ name: Sync Pact docs
 
 on:
   repository_dispatch:
-    types: 
+    types:
       - pact-js-docs-updated
       - pact-jvm-docs-updated
       - pact-python-docs-updated
       - pact-go-docs-updated
       - pact-rust-docs-updated
       - pact-cpp-docs-updated
+      - pact-broker-docker-pactfoundation-docs-updated
+      - pact-broker-docker-dius-docs-updated
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -43,6 +46,14 @@ jobs:
     - name: Sync Pact C++ docs
       run: bundle exec ruby scripts/sync/pact_cpp.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-cpp docs'
       if: github.event.action == 'pact-cpp-docs-updated'
+
+    - name: Sync pactfoundation/pact-broker Docker image docs
+      run: bundle exec ruby scripts/sync/pact_broker_docker_pactfoundation.rb && echo '::set-env name=COMMIT_MESSAGE::synced pactfoundation/pact-broker docker image docs updated'
+      if: github.event.action == 'pact-broker-docker-pactfoundation-docs-updated'
+
+    - name: Sync dius/pact-broker Docker image docs
+      run: bundle exec ruby scripts/sync/pact_broker_docker_dius.rb && echo '::set-env name=COMMIT_MESSAGE::synced dius/pact-broker docker image docs updated'
+      if: github.event.action == 'pact-broker-docker-dius-docs-updated'
 
     - name: Commit and push changes
       uses: EndBug/add-and-commit@v4
