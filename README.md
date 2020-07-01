@@ -33,6 +33,9 @@ The markdown files in the following directories are synced from their respective
 * `docs/implementation_guides/javascript`
 * `docs/implementation_guides/jvm`
 * `docs/implementation_guides/python`
+* `docs/implementation_guides/cpp`
+* `docs/implementation_guides/rust`
+* `docs/pact_broker/docker_images/`
 
 Each of the above Pact repositories has a Github workflow that triggers the [sync-docs](.github/workflows/sync-docs.yml) workflow when any markdown files are edited on `master`.
 
