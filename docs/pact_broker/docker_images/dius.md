@@ -4,10 +4,12 @@ custom_edit_url: https://github.com/dius/pact_broker-docker/edit/master/README.m
 ---
 <!-- This file has been synced from the dius/pact_broker-docker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-A smaller and sexier Docker image has now been built in the [Pact Foundation](https://github.com/pact-foundation/pact-broker-docker) organization. The new image can be run without root permissions, and is only 98MB compressed! All environment variable configurations are the same, so you should just be able to switch from `dius/pact-broker` to `pactfoundation/pact-broker` and run with it - note that the default port has changed from 80 to 9292 though. Let us know how you go on the #pact-broker channel of our [Pact Foundation Slack](https://slack.pact.io).
 
+[![Build Status](https://travis-ci.org/DiUS/pact_broker-docker.svg)](https://travis-ci.org/DiUS/pact_broker-docker)
 
 This repository contains a Dockerized [Pact Broker](https://github.com/pact-foundation/pact_broker). You can pull the `dius/pact-broker` image from [Dockerhub](https://hub.docker.com/r/dius/pact-broker/).
+
+> A smaller and sexier Docker image has now been built in the [Pact Foundation](https://github.com/pact-foundation/pact-broker-docker) organization. The new image can be run without root permissions, and is only 98MB compressed! All environment variable configurations are the same, so you should just be able to switch from `dius/pact-broker` to `pactfoundation/pact-broker` and run with it - note that the default port has changed from 80 to 9292 though.
 
 > Note: On 12 May 2018, the format of the docker tag changed from `M.m.p-RELEASE` to `M.m.p.RELEASE` (where `M.m.p` is the semantic version of the underlying Pact Broker package) so that Dependabot can recognise when the version has been incremented.
 
@@ -91,7 +93,7 @@ Set the environment variable `PACT_BROKER_LOG_LEVEL` to one of `DEBUG`, `INFO`, 
 
 ## General Pact Broker configuration and usage
 
-Documentation for the Pact Broker application itself can be found in the Pact Broker [wiki][pact-broker-wiki].
+Documentation for the Pact Broker application itself can be found in the Pact Broker [docs][pact-broker-docs].
 
 ## Running with Docker Compose
 
@@ -120,10 +122,10 @@ See [pact-broker-openshift](https://github.com/jaimeniswonger/pact-broker-opensh
 
 See the [Troubleshooting][troubleshooting] page on the wiki.
 
-[badges]: https://github.com/pact-foundation/pact_broker/wiki/Provider-verification-badges
-[troubleshooting]: https://github.com/DiUS/pact_broker-docker/wiki/Troubleshooting
+[badges]: https://docs.pact.io/pact_broker/advanced_topics/provider_verification_badges
+[troubleshooting]: https://github.com/pact-foundation/pact-broker-docker/wiki/Troubleshooting
 [postgres]: https://github.com/DiUS/pact_broker-docker/blob/master/POSTGRESQL.md
 [test-script]: https://github.com/DiUS/pact_broker-docker/blob/master/script/test.sh
 [docker-compose]: https://github.com/DiUS/pact_broker-docker/blob/master/docker-compose.yml
-[pact-broker-wiki]: https://github.com/pact-foundation/pact_broker/wiki
-[reverse-proxy]: https://github.com/pact-foundation/pact_broker/wiki/Configuration#running-the-broker-behind-a-reverse-proxy
+[pact-broker-docs]: https://docs.pact.io/pact_broker/
+[reverse-proxy]: https://docs.pact.io/pact_broker/configuration#running-the-broker-behind-a-reverse-proxy
