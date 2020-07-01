@@ -223,6 +223,10 @@
           "pact_broker/advanced_topics/troubleshooting"
         ]
       }
+    ],
+    "Dockerized Pact Broker": [
+      "pact_broker/docker_images/pactfoundation",
+      "pact_broker/docker_images/dius"
     ]
   },
   "resources": {
