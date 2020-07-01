@@ -1,8 +1,5 @@
 {
   "docs": {
-    "Workshops": [
-      "implementation_guides/workshops"
-    ],
     "Pact JS": [
       "implementation_guides/javascript",
       "implementation_guides/javascript/readme",
@@ -136,6 +133,7 @@
       "getting_started/verifying_pacts",
       "getting_started/provider_states",
       "getting_started/sharing_pacts",
+      "implementation_guides/workshops",
       "getting_started/further_reading",
       {
         "type": "subcategory",

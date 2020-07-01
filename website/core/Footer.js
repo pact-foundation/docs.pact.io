@@ -43,7 +43,7 @@ class Footer extends React.Component {
             <a href={this.pageUrl('consumer')}>
               Guides
             </a>
-            <a href={this.pageUrl('implementation_guides/workshops')}>
+            <a href={this.pageUrl('implementation_guides/javascript')}>
               Pact Docs
             </a>
             <a href={this.pageUrl('pact_broker/index')}>

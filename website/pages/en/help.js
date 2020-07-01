@@ -22,7 +22,7 @@ function Help(props) {
   const supportLinks = [
     {
       content: `Learn more using the [documentation on this site.](${docUrl(
-        'implementation_guides/workshops',
+        'implementation_guides/javascript',
       )})`,
       title: 'Browse Docs',
     },
