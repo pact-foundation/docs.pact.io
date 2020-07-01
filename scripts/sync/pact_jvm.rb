@@ -7,8 +7,8 @@ require 'pathname'
 require_relative 'support'
 
 SOURCE_REPO = 'dius/pact-jvm'
-PROJECT_ROOT = File.expand_path(File.join(__FILE__, '..', '..', '..'))
-DESTINATION_DIR = Pathname.new(File.join(PROJECT_ROOT, 'docs', 'implementation_guides', 'jvm')).relative_path_from(Pathname.pwd)
+DESTINATION_DIR = relative_path_to('docs/implementation_guides/jvm')
+COMMENT = edit_comment_for(SOURCE_REPO)
 INCLUDE = [
   ->(path) { path.end_with?('.md') }
 ]
@@ -16,7 +16,6 @@ IGNORE = [
   ->(path) { path.include?('tests_suits') },
   ->(path) { path.start_with?('core/', '.github/', 'pact-publish/', 'pact-specification-test/', 'provider/scalasupport/', 'ReleaseProcess.md') }
 ]
-COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
 
 CUSTOM_ACTIONS = [
   [->(path) { path != 'CHANGELOG.md'}, ->(md_file_contents) { md_file_contents.extract_title } ],

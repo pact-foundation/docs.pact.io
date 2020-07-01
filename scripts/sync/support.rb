@@ -68,11 +68,29 @@ class MarkdownFileContents
   end
 end
 
+PROJECT_ROOT = File.expand_path(File.join(__FILE__, '..', '..', '..'))
+
+def relative_path_to path
+  Pathname.new(File.join(PROJECT_ROOT, path)).relative_path_from(Pathname.pwd)
+end
+
+def edit_comment_for slug
+  "<!-- This file has been synced from the #{slug} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
+end
+
 def get_file_list(repository_slug, include_conditions, exclude_conditions = [])
   client = Octokit::Client.new(:access_token => ENV['GITHUB_ACCESS_TOKEN'])
   client.auto_paginate = true
   tree = client.tree(repository_slug, 'master',  recursive: true).tree
-  markdown_files = tree.select do | file |
+  if include_conditions.any? || exclude_conditions.any?
+    filter_file_list(tree, include_conditions, exclude_conditions)
+  else
+    tree
+  end
+end
+
+def filter_file_list(file_list, include_conditions, exclude_conditions = [])
+  file_list.select do | file |
     include_conditions.any?{ |lambda| lambda.call(file.path) } && !exclude_conditions.any? { |lambda| lambda.call(file.path) }
   end
 end
@@ -99,4 +117,36 @@ def process_file(path, content, path_transformer, custom_actions, comment)
   puts "Writing file #{destination}"
   FileUtils.mkdir_p(File.dirname(destination))
   File.open(destination, "w") { |file| file << md_file_contents.to_s }
+end
+
+# potential race condition
+
+
+
+module UrlAbsolutizer
+  extend self
+
+  def absolutize_links(contents, repository_file_paths, repository_slug, path_transformer)
+    contents.gsub(/\]\(([^)]+)\)/) { | match |
+      url = match[2..-2]
+      if url.start_with?('http')
+        match
+      elsif url_for_page_synced_to_docs?(url, path_transformer)
+        transformed_path = path_transformer.call(url)
+        "](#{transformed_path})"
+      elsif url_for_page_in_github_repository?(url.gsub(/^\//, ''), repository_file_paths)
+        "](https://github.com/#{repository_slug}/blob/master/#{url.gsub(/^\//, '')})"
+      else
+        match
+      end
+    }
+  end
+
+  def url_for_page_synced_to_docs?(url, path_transformer)
+    File.exist?(path_transformer.call(url))
+  end
+
+  def url_for_page_in_github_repository?(url, repository_file_paths)
+    repository_file_paths.include?(url)
+  end
 end

@@ -7,16 +7,11 @@ require 'pathname'
 require_relative 'support'
 
 SOURCE_REPO = 'pact-foundation/pact-cplusplus'
-PROJECT_ROOT = File.expand_path(File.join(__FILE__, '..', '..', '..'))
-DESTINATION_DIR = Pathname.new(File.join(PROJECT_ROOT, 'docs', 'implementation_guides', 'cpp')).relative_path_from(Pathname.pwd)
+DESTINATION_DIR = relative_path_to('docs/implementation_guides/cpp')
+COMMENT = edit_comment_for(SOURCE_REPO)
 INCLUDE = [
-  ->(path) { path.end_with?('.md') && !path.start_with?('consumer/docs/') },
-  # ->(path) { path.end_with?('.html') && path.start_with?('consumer/docs/') }
+  ->(path) { path.end_with?('.md') && !path.start_with?('consumer/docs/') }
 ]
-IGNORE = [
-  ->(path) { path.start_with?('consumer/docs/') },
-]
-COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
 
 CUSTOM_ACTIONS = [
   [->(path) { path != 'consumer/CHANGELOG.md'}, ->(md_file_contents) { md_file_contents.extract_title } ],

@@ -7,13 +7,11 @@ require 'pathname'
 require_relative 'support'
 
 SOURCE_REPO = 'pact-foundation/pact-broker-docker'
-PROJECT_ROOT = File.expand_path(File.join(__FILE__, '..', '..', '..'))
-DESTINATION_DIR = Pathname.new(File.join(PROJECT_ROOT, 'docs', 'pact_broker', 'docker_images')).relative_path_from(Pathname.pwd)
+DESTINATION_DIR = relative_path_to('docs/pact_broker/docker_images')
+COMMENT = edit_comment_for(SOURCE_REPO)
 INCLUDE = [
   ->(path) { %w{README.md}.include?(path) }
 ]
-IGNORE = []
-COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
 
 CUSTOM_ACTIONS = [
   [:all, ->(md_file_contents) { md_file_contents.extract_title } ],

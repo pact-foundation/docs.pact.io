@@ -13,7 +13,7 @@ INCLUDE = [
   ->(path) { %w{ROADMAP.md CHANGELOG.md README.md CONTRIBUTING.md}.include?(path) }
 ]
 IGNORE = []
-COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
+COMMENT = edit_comment_for(SOURCE_REPO)
 
 CUSTOM_ACTIONS = [
   [:all, ->(md_file_contents) { md_file_contents.extract_title } ],
