@@ -58,7 +58,7 @@ jobs:
     - name: Commit and push changes
       uses: EndBug/add-and-commit@v4
       with:
-        add: 'docs/implementation_guides'
+        add: 'docs'
         author_name: Github Action
         author_email: docs@pact.io
         message: 'chore: ${{ env.COMMIT_MESSAGE }}'
