@@ -21,8 +21,8 @@ COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Pl
 CUSTOM_ACTIONS = [
   [->(path) { path != 'consumer/CHANGELOG.md'}, ->(md_file_contents) { md_file_contents.extract_title } ],
   ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README" } ],
-  ["consumer/CHANGELOG.md", -> (md_file_contents) { 
-    md_file_contents.fields[:title] = "Consumer DSL Changelog" 
+  ["consumer/CHANGELOG.md", -> (md_file_contents) {
+    md_file_contents.fields[:title] = "Consumer DSL Changelog"
     md_file_contents.remove_lines_including('- chore: ')
     md_file_contents.remove_lines_including('- docs: ')
     md_file_contents.remove_lines_including('- doc: ')
