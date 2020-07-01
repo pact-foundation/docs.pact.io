@@ -4,7 +4,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-broker-docker/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact-broker-docker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-[![Build Status](https://travis-ci.org/pact-foundation/pact-broker-docker.svg)](https://travis-ci.org/pact-foundation/pact-broker-docker)
+[![Build Status](https://travis-ci.org/pact-foundation/pact-broker-docker.svg?branch=master)](https://travis-ci.org/pact-foundation/pact-broker-docker)
 
 This repository contains a Dockerized version of the [Pact Broker][pact-broker]. You can pull the `pactfoundation/pact-broker` image from [Dockerhub][pact-broker-docker]. If you're viewing these docs on Dockerhub, here is a link to the [github repository][github].
 
@@ -29,12 +29,11 @@ If you want to run the container as a standalone instance, then the `dius/pact-b
 ## Prerequisites
 
 * A running postgresql database and the ability to connect to it (see [POSTGRESQL.md][postgres]).
-* If on Mac, you will need the `timeout` or `gtimeout` function. You can install `gtimeout` using `brew install coreutils`.
 
 ## Getting Started
 
 1. [Install Docker][docker]
-2. Prepare your environment if you are not running postgresql in a docker container. Setup the pact broker connection to the database through the use of the following environment variables. If you want to use a disposable postgres docker container just do `export DISPOSABLE_PSQL=true` before running the [script/test.sh][test-script].
+2. Prepare your environment if you are not running postgresql in a docker container. Setup the pact broker connection to the database through the use of the following environment variables.
 
 For a postgres or mysql database:
 
@@ -60,11 +59,8 @@ You can additionally set:
     * PACT_BROKER_SQL_LOG_LEVEL (optional, defaults to debug. The level at which to log SQL statements.)
     * PACT_BROKER_SQL_LOG_WARN_DURATION (optional, defaults to 5 seconds. Log the SQL for queries that take longer than this number of seconds)
 
-3. Test the pact broker environment by executing [script/test.sh][test-script]
-
 ## Notes
 
-* On OSX, if you are not using Docker native, use `docker-machine ip $(docker-machine active)` to get the IP of the VirtualBox, and connect on port 9292.
 * The application makes use of the Puma application server.
 * Apart from creating a database no further preparation is required.
 
@@ -160,6 +156,8 @@ Heroku provides the database connection string as the environment variable `DATA
 
 If you are running the Docker image behind an ALB with an idle timeout, you may need to set the Puma persistent timeout using the `PACT_BROKER_PUMA_PERSISTENT_TIMEOUT` environment variable. See [issue 26](https://github.com/pact-foundation/pact-broker-docker/issues/26) for details.
 
+You will also want to make use of the [Heartbeat URL](#heartbeat-url)
+
 ## Using different environment variable names
 
 If you are running your Docker container in a managed environment, you may not be able to control the names of the environment variables that are set by that software.
@@ -213,5 +211,5 @@ See the [Troubleshooting][troubleshooting] page on the docs site.
 [docker-compose]: https://github.com/pact-foundation/pact-broker-docker/blob/master/docker-compose.yml
 [pact-broker-docs]: https://docs.pact.io/pact_broker/
 [reverse-proxy]: https://docs.pact.io/pact_broker/configuration#running-the-broker-behind-a-reverse-proxy
-[webhook-whitelist]: https://github.com/pact-foundation/pact_broker/wiki/Configuration#webhook-whitelists
+[webhook-whitelist]: https://docs.pact.io/pact_broker/configuration#webhook-whitelists
 [github]: https://github.com/pact-foundation/pact-broker-docker
