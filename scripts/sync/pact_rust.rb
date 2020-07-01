@@ -17,7 +17,7 @@ COMMENT = "<!-- This file has been synced from the #{SOURCE_REPO} repository. Pl
 
 CUSTOM_ACTIONS = [
   [->(path) { !path.end_with?('CHANGELOG.md') }, ->(md_file_contents) { md_file_contents.extract_title } ],
-  [->(path) { path.end_with?('CHANGELOG.md') }, ->(md_file_contents) { 
+  [->(path) { path.end_with?('CHANGELOG.md') }, ->(md_file_contents) {
     md_file_contents.fields[:title] = md_file_contents.fields[:custom_edit_url].split('/')[-2]
     md_file_contents.remove_lines_including('To generate the log')
     md_file_contents.remove_lines_including('- chore: ')
@@ -30,7 +30,7 @@ CUSTOM_ACTIONS = [
   ["rust/README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "Overview" } ],
 ]
 
-TRANSFORM_PATH = -> (path) { File.join(DESTINATION_DIR, path.downcase.delete_prefix('rust').gsub('/readme.md', '/index.md')) } # Rename README.md to index.md, but not the top level README
+TRANSFORM_PATH = -> (path) { File.join(DESTINATION_DIR, path.downcase.delete_prefix('rust').gsub('/readme.md', '/index.md')) }
 
 FileUtils.mkdir_p DESTINATION_DIR
 
