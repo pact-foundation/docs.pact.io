@@ -1,3 +1,35 @@
+require 'addressable'
+require 'octokit'
+require 'base64'
+require 'fileutils'
+require 'pathname'
+
+module UrlAbsolutizer
+  extend self
+
+  def absolutize_links(contents, source_repository_slug, path_transformer, contents_source_path, source_paths)
+    contents.gsub(/\]\(([^)]+)\)/) { | match |
+      url = match[2..-2]
+
+      transformed_path = path_transformer.call(url.delete_prefix('/'))
+      if url.start_with?('http', '#')
+        match
+      elsif source_paths.include?(url.delete_prefix('/'))
+        "](#{transformed_path})"
+      else
+        path_from_root = if url.start_with?('.')
+          File.join(File.dirname(contents_source_path), url)
+        else
+          url.delete_prefix('/')
+        end
+
+        absolute_url = (Addressable::URI.parse("https://github.com/#{source_repository_slug}/blob/master/") + path_from_root).to_s
+        "](#{absolute_url})"
+      end
+    }
+  end
+end
+
 class MarkdownFileContents
   attr_accessor :lines, :fields, :comments
 
@@ -57,6 +89,10 @@ class MarkdownFileContents
     end.compact
   end
 
+  def absolutize_links(repository_slug, path_transformer, contents_source_path, source_paths)
+    @lines = lines.collect { | line | UrlAbsolutizer.absolutize_links(line, repository_slug, path_transformer, contents_source_path, source_paths) }
+  end
+
   private
 
   def header_lines
@@ -108,45 +144,24 @@ def select_actions(custom_actions, path)
     .collect(&:last)
 end
 
-def process_file(path, content, path_transformer, custom_actions, comment)
+def process_file(path, content, path_transformer, custom_actions, comment, source_file_paths = nil, source_repository_slug = nil)
   destination = path_transformer.call(path)
-  fields = { custom_edit_url: "https://github.com/#{SOURCE_REPO}/edit/master/#{path}" }
+  fields = { custom_edit_url: "https://github.com/#{source_repository_slug}/edit/master/#{path}" }
   md_file_contents = MarkdownFileContents.new(content.split("\n"), fields, [comment])
   select_actions(custom_actions, path).each { |action| action.call(md_file_contents) }
+  # if source_file_paths && source_repository_slug
+    #md_file_contents.absolutize_links(source_repository_slug, path_transformer, path, source_file_paths)
+  # end
 
   puts "Writing file #{destination}"
   FileUtils.mkdir_p(File.dirname(destination))
   File.open(destination, "w") { |file| file << md_file_contents.to_s }
+  md_file_contents
 end
 
-# potential race condition
-
-
-
-module UrlAbsolutizer
-  extend self
-
-  def absolutize_links(contents, repository_file_paths, repository_slug, path_transformer)
-    contents.gsub(/\]\(([^)]+)\)/) { | match |
-      url = match[2..-2]
-      if url.start_with?('http')
-        match
-      elsif url_for_page_synced_to_docs?(url, path_transformer)
-        transformed_path = path_transformer.call(url)
-        "](#{transformed_path})"
-      elsif url_for_page_in_github_repository?(url.gsub(/^\//, ''), repository_file_paths)
-        "](https://github.com/#{repository_slug}/blob/master/#{url.gsub(/^\//, '')})"
-      else
-        match
-      end
-    }
-  end
-
-  def url_for_page_synced_to_docs?(url, path_transformer)
-    File.exist?(path_transformer.call(url))
-  end
-
-  def url_for_page_in_github_repository?(url, repository_file_paths)
-    repository_file_paths.include?(url)
+def sync source_repository_slug, include_filter, ignore_filter, path_transformer, actions
+  file_list = get_file_list(source_repository_slug, include_filter, ignore_filter)
+  processed_files = each_file(file_list) do | path, content |
+    process_file(path, content, path_transformer, actions, edit_comment_for(source_repository_slug), file_list.collect(&:path), source_repository_slug)
   end
 end
