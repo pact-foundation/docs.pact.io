@@ -1,8 +1,8 @@
 ---
 title: Leiningen plugin to verify a provider
-custom_edit_url: https://github.com/dius/pact-jvm/edit/master/provider/lein/README.md
+custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/provider/lein/README.md
 ---
-<!-- This file has been synced from the dius/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+<!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 Leiningen plugin for verifying pacts against a provider. The plugin provides a `pact-verify` task which will verify all
 configured pacts against your provider.

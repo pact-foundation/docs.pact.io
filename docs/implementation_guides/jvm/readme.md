@@ -1,8 +1,8 @@
 ---
 title: README
-custom_edit_url: https://github.com/dius/pact-jvm/edit/master/README.md
+custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/README.md
 ---
-<!-- This file has been synced from the dius/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+<!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 [![Build Status](https://travis-ci.org/DiUS/pact-jvm.svg?branch=master)](https://travis-ci.org/DiUS/pact-jvm)
 [![Windows Build](https://github.com/DiUS/pact-jvm/workflows/Windows%20Build/badge.svg)](https://github.com/DiUS/pact-jvm/actions?query=workflow%3A%22Windows+Build%22)
