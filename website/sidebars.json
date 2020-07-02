@@ -225,6 +225,11 @@
     "Dockerized Pact Broker": [
       "pact_broker/docker_images/pactfoundation",
       "pact_broker/docker_images/dius"
+    ],
+    "Pact Broker Client CLI": [
+      "pact_broker/client_cli",
+      "pact_broker/client_cli/readme",
+      "pact_broker/client_cli/changelog"
     ]
   },
   "resources": {
