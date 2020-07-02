@@ -54,6 +54,18 @@ In summary:
  * if you're tied to the JVM, and using Spock or JUnit, Accurest might be easier for you to integrate into your tests
  * if you want increased flexibility with your choice of language, and to not be tied to a particular implementation, Pact might suit you better.
 
+### How does Pact differ from Spring Cloud Contracts?
+
+We're looking for someone who has experience with both SCC and Pact to write this section. Please click the `EDIT` button and submit a PR if you can contribute.
+
+### How does Pact differ from Nock?
+
+We're looking for someone who has experience with both Nock and Pact to write this section. Please click the `EDIT` button and submit a PR if you can contribute.
+
+### How does Pact differ from XXX?
+
+If you have experience with another mocking, stubbing or contract testing tool that you would like to write about, please click the `EDIT` button and submit a PR.
+
  [pacto]: https://github.com/thoughtworks/pacto
  [pacto_example]: http://thoughtworks.github.io/pacto/usage/
 
