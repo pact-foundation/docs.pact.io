@@ -73,6 +73,7 @@ The best practices for application versioning while using pact are also good bes
    * For providers, this is when the contract that it supports changes \(eg, when an API endpoint is added or changed\).
 2. _Ensure that application version numbers are unique._ For example, a feature branch that changes the contract should not be able to have the same version number as any other branch - an application version should always identify one specific instance of application code.
 3. _Ensure that your versions can be known during a release._ This is because you will want to be able to use the pact matrix to determine whether or not it is safe to release consumer version X. If you can’t tell the version number until after release, you will not be able to do this
+4. If your appplication is both a consumer and a provider, ensure that the version number used to publish the pact is the same as the version number that is used to publish the verification results. If they differ, the data will not be correct for `can-i-deploy`.
 
 ### Guidelines
 
