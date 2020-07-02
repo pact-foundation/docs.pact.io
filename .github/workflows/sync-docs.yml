@@ -21,7 +21,7 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.6'
-    - run: gem install bundler -v 2.0.2 && bundle install
+    - run: gem install bundler -v 2.0.2 && bundle install --without test development
 
     - name: Sync Pact JS docs
       run: bundle exec ruby scripts/sync/pact_js.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-js docs'
