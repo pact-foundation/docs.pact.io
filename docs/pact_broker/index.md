@@ -12,7 +12,7 @@ The Pact Broker is an application for sharing for consumer driven contracts and 
 > Get started for free on our [Developer Plan](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=pact_broker_dev_plan).
 
 
-**Why do I need one?**
+### Why do I need one?**
 
 Contract testing is an alternative approach to traditional integration testing that gives you tests that are quicker to execute, and that are more maintainable at scale. One down side of the approach is that the important information that would be available all in one place at the end of an integration test suite execution \(that is, the version numbers of all the applications that were tested together, and whether the tests passed or failed\) is now spread out across many different builds. The Pact Broker is a tool that brings all this information back together again, and allows you to deploy with safety.
 
