@@ -57,7 +57,7 @@ jobs:
       if: github.event.action == 'pact-broker-docker-dius-docs-updated'
 
     - name: Sync Pact Broker Client docs
-      run: bundle exec scripts/sync/pact_broker_client.rb && && echo '::set-env name=COMMIT_MESSAGE::synced pact broker client docs'
+      run: bundle exec scripts/sync/pact_broker_client.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact broker client docs'
       if: github.event.action == 'pact-broker-client-docs-updated'
 
     - name: Commit and push changes
