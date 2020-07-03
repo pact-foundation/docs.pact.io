@@ -4,9 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-A client for the Pact Broker. Publishes pacts to, and retrieves pacts from, a Pact Broker. The functionality is available via a CLI, or via Ruby Rake tasks. You can also use the [Pact CLI Docker image](https://hub.docker.com/r/pactfoundation/pact-cli).
+A client for the Pact Broker. Publishes and retrieves pacts, verification results, pacticipants, pacticipant versions and tags. The functionality is available via a CLI, or via Ruby Rake tasks. You can also use the [Pact CLI Docker image](https://hub.docker.com/r/pactfoundation/pact-cli).
 
 [![Build Status](https://travis-ci.org/pact-foundation/pact_broker-client.svg?branch=master)](https://travis-ci.org/pact-foundation/pact_broker-client)
+
+![Trigger update to docs.pact.io](https://github.com/pact-foundation/pact_broker-client/workflows/Trigger%20update%20to%20docs.pact.io/badge.svg)
 
 ## Installation
 
@@ -349,6 +351,5 @@ end
 bundle exec rake pact:publish
 ```
 
-[wiki-tags]: https://github.com/pact-foundation/pact_broker/wiki/Using-tags
 [pact-ruby-standalone]: https://github.com/pact-foundation/pact-ruby-standalone/releases
-[docker]: https://cloud.docker.com/u/pactfoundation/repository/docker/pactfoundation/pact-cli
+[docker]: https://hub.docker.com/r/pactfoundation/pact-cli
