@@ -12,12 +12,13 @@ The Pact Broker is an application for sharing for consumer driven contracts and 
 > Get started for free on our [Developer Plan](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=pact_broker_dev_plan).
 
 
-### Why do I need one?**
+### Why do I need one?
 
 Contract testing is an alternative approach to traditional integration testing that gives you tests that are quicker to execute, and that are more maintainable at scale. One down side of the approach is that the important information that would be available all in one place at the end of an integration test suite execution \(that is, the version numbers of all the applications that were tested together, and whether the tests passed or failed\) is now spread out across many different builds. The Pact Broker is a tool that brings all this information back together again, and allows you to deploy with safety.
 
 It:
 
+* allows you to integrate and automate contract testing in your CI/CD release pipelines
 * allows you to release customer value quickly and confidently by [deploying your services independently](https://www.rea-group.com/blog/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/) and avoiding the bottleneck of integration tests
 * solves the problem of how to share contracts and verification results between consumer and provider projects
 * tells you which versions of your applications can be deployed safely together
@@ -37,10 +38,10 @@ Features:
 * Provides a "matrix" of compatible consumer and provider versions, so you know which versions can be safely deployed together.
 * Provides badges to display pact verification statuses in your READMEs.
 * Enables an application version to be tagged \(ie. "prod", "feat/customer-preferences"\) to allow repository-like workflows.
-* Provides webhooks to trigger actions when pacts change eg. run provider build, notify a Slack channel.
+* Provides webhooks to trigger actions when pacts change or verification results are published eg. run provider build, notify a Slack channel.
 * View diffs between Pact versions so you can tell what expectations have changed.
 * [Docker Pact Broker](https://hub.docker.com/r/pactfoundation/pact-broker)
-* A [CLI](https://github.com/pact-foundation/pact-ruby-standalone/releases) for encorporating the Pact workflow into your continuous integration process.
+* A [CLI](https://docs.pact.io/pact_broker/client_cli) for encorporating the Pact workflow into your continuous integration process.
 
 ### How would I use the Pact Broker?
 
