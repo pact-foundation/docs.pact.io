@@ -35,5 +35,5 @@
 
 [[redirects]]
   from = "/pact_broker/pact_broker_client_cli"
-  to "/pact_broker/client_cli"
+  to = "/pact_broker/client_cli"
   status = 301
