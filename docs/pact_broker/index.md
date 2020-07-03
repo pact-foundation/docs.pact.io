@@ -43,6 +43,15 @@ Features:
 * [Docker Pact Broker](https://hub.docker.com/r/pactfoundation/pact-broker)
 * A [CLI](https://docs.pact.io/pact_broker/client_cli) for encorporating the Pact workflow into your continuous integration process.
 
+### Can I use Pact without a Pact Broker?
+
+Yes, you can, especially if you're just getting started. You can exchange the pacts via any mechanism you like (build artifacts, S3 buckets). However, you're not going to realise the full benefit (which is ultimately, increasing speed to market) of using Pact without a Pact Broker. Pact on its own allows you to create and verify contracts. Pact + Pact Broker allows you to integrate contract testing into your CI/CD pipeline to allow you to release code *faster*. Without a Pact Broker you would need to write your own code to:
+
+* ensure that your contract tests have passed successfully *before* deploying a consumer or provider application ([can-i-deploy](/can_i_deploy))
+* ensure that the provider verification takes place every time a pact changes ([webhooks](/pact_broker/webhooks))
+* ensure backwards compatiblity between services is maintained ([tags](/pact_broker/tags))
+* allow contracts to change without breaking provider builds ([pending pacts](/pending))
+
 ### How would I use the Pact Broker?
 
 #### Step 1. Consumer CI build
