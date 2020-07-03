@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.1.6 - Bugfix Release
+
+* 8807d254c - fix: fix a problem where the provider version trim property is ignored (#1156) (e-ivaldi, Fri Jul 3 07:15:05 2020 +0100)
+* a5765fd76 - fix: Omitting consumer version selectors should fall back to tags (#1158) (pendsley, Fri Jul 3 00:55:59 2020 -0500)
+* bba89eddd - Merge pull request #1155 from JoaoGFarias/patch-2 (Ronald Holshausen, Fri Jul 3 11:28:27 2020 +1000)
+* eb4747d06 - Merge pull request #1152 from anto-ac/show-exception-message-when-falling-back (Ronald Holshausen, Fri Jul 3 11:27:43 2020 +1000)
+* 0406b5521 - Fixing escaping typo that causes table to be misformatted (João Farias, Thu Jul 2 09:44:02 2020 +0200)
+* 5a6022a10 - bump version to 4.1.6 (Ronald Holshausen, Sat Jun 27 11:53:50 2020 +1000)
+
 ## 4.1.5 - consumerVersionSelectors in JUnit
 
 * ac1865ac6 - Merge pull request #1147 from pendsley/feat/wip-pacts (Ronald Holshausen, Fri Jun 26 11:19:22 2020 +1000)
