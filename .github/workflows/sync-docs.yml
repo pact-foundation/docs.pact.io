@@ -11,6 +11,7 @@ on:
       - pact-cpp-docs-updated
       - pact-broker-docker-pactfoundation-docs-updated
       - pact-broker-docker-dius-docs-updated
+      - pact-broker-client-docs-updated
 
 jobs:
   build:
@@ -24,36 +25,40 @@ jobs:
     - run: gem install bundler -v 2.0.2 && bundle install --without test development
 
     - name: Sync Pact JS docs
-      run: bundle exec ruby scripts/sync/pact_js.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-js docs'
+      run: bundle exec scripts/sync/pact_js.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-js docs'
       if: github.event.action == 'pact-js-docs-updated'
 
     - name: Sync Pact JVM docs
-      run: bundle exec ruby scripts/sync/pact_jvm.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-jvm docs'
+      run: bundle exec scripts/sync/pact_jvm.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-jvm docs'
       if: github.event.action == 'pact-jvm-docs-updated'
 
     - name: Sync Pact Python docs
-      run: bundle exec ruby scripts/sync/pact_python.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-python docs'
+      run: bundle exec scripts/sync/pact_python.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-python docs'
       if: github.event.action == 'pact-python-docs-updated'
 
     - name: Sync Pact Go docs
-      run: bundle exec ruby scripts/sync/pact_go.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-go docs'
+      run: bundle exec scripts/sync/pact_go.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-go docs'
       if: github.event.action == 'pact-go-docs-updated'
 
     - name: Sync Pact Rust docs
-      run: bundle exec ruby scripts/sync/pact_rust.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-rust docs'
+      run: bundle exec scripts/sync/pact_rust.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-rust docs'
       if: github.event.action == 'pact-rust-docs-updated'
 
     - name: Sync Pact C++ docs
-      run: bundle exec ruby scripts/sync/pact_cpp.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-cpp docs'
+      run: bundle exec scripts/sync/pact_cpp.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-cpp docs'
       if: github.event.action == 'pact-cpp-docs-updated'
 
     - name: Sync pactfoundation/pact-broker Docker image docs
-      run: bundle exec ruby scripts/sync/pact_broker_docker_pactfoundation.rb && echo '::set-env name=COMMIT_MESSAGE::synced pactfoundation/pact-broker docker image docs updated'
+      run: bundle exec scripts/sync/pact_broker_docker_pactfoundation.rb && echo '::set-env name=COMMIT_MESSAGE::synced pactfoundation/pact-broker docker image docs updated'
       if: github.event.action == 'pact-broker-docker-pactfoundation-docs-updated'
 
     - name: Sync dius/pact-broker Docker image docs
-      run: bundle exec ruby scripts/sync/pact_broker_docker_dius.rb && echo '::set-env name=COMMIT_MESSAGE::synced dius/pact-broker docker image docs updated'
+      run: bundle exec scripts/sync/pact_broker_docker_dius.rb && echo '::set-env name=COMMIT_MESSAGE::synced dius/pact-broker docker image docs'
       if: github.event.action == 'pact-broker-docker-dius-docs-updated'
+
+    - name: Sync Pact Broker Client docs
+      run: bundle exec scripts/sync/pact_broker_client.rb && && echo '::set-env name=COMMIT_MESSAGE::synced pact broker client docs'
+      if: github.event.action == 'pact-broker-client-docs-updated'
 
     - name: Commit and push changes
       uses: EndBug/add-and-commit@v4
