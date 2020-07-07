@@ -42,3 +42,8 @@
   from = "/guides"
   to = "/consumer"
   status = 302
+
+[[redirects]]
+  from = "/workshops"
+  to = "/implementation_guides/workshops"
+  status = 302
