@@ -252,3 +252,31 @@ Ref:
 
 * [GitLab - Adding a new trigger](https://docs.gitlab.com/ee/ci/triggers/#adding-a-new-trigger)
 * [GitLab - Pipeline triggers](https://docs.gitlab.com/ee/api/pipeline_triggers.html)
+
+## TeamCity - trigger build
+
+```json
+{
+  "events": [
+    {
+      "name": "contract_content_changed"
+    }
+  ],
+  "request": {
+    "method": "POST",
+    "url": "https://teamcity.net/app/rest/buildQueue?",
+    "headers": {
+      "Content-Type": "application/xml",
+      "Authorization": "bearer token"
+    },
+    "body": "<build><buildType id='YourJobId'\/><\/build>",
+    "username": "username",
+    "password": "password"
+  }
+}
+```
+
+Ref:
+
+* [TeamCity - REST Authentication](https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-RESTAuthentication)
+* [TeamCity - Triggering Build](https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-TriggeringaBuild)
