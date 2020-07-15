@@ -20,9 +20,12 @@ Note that the tag is actually placed on the `pacticipant version` resource, not 
 
 As an example, to tag `Foo` application version `b5236e772` as the production version, do a `PUT` to the resource `/pacticipants/Foo/versions/b5236e772/tags/prod`. All the pacts and verifications associated with `Foo` version `b5236e772` are now considered to be the production pacts/verifications. The pact for provider `Bar` and the latest production version of consumer `Foo` can be retrieved from `/pacts/provider/Bar/consumer/Foo/latest/prod`.
 
-\(You may have noticed that the URL for a pacticipant version tag starts with `/pacticipants`, not `/consumers` or `/providers`. That is because `consumer` and `provider` are roles that a pacticipant takes in a pact, not identities in themselves. An application may be both a consumer and a provider.\)
+You may have noticed that the URL for a pacticipant version tag starts with `/pacticipants`, not `/consumers` or `/providers`. That is because `consumer` and `provider` are roles that a pacticipant takes in a pact, not identities in themselves. An application may be both a consumer and a provider. 
 
 When you are using tags, you need to ensure that the version numbering scheme you use to identify a "version" cannot give you version that exists on more than one repository branch - don't hard code it. It should either _be_ the git sha \(or equivalent for your repository\), or it should include the git sha as metadata if you are using semantic versioning eg. `1.2.456+405b31ec6`. See [Versioning in the Pact Broker](/getting_started/versioning_in_the_pact_broker) for more information.
+
+<a name="latest">
+Please note that in the Pact Broker (unlike Docker) the term "latest" is not a tag name itself - it's a dynamic reference most recently created resource, like "HEAD" in git. The URL `/pacts/provider/{provider}/consumer/{consumer}/latest` refers to pact for the most recently created pacticipant version, while the same URL with `/{tag}` appended refers to the pact for the most recently created pacticipant version that has the specified tag. Some Pact-JVM implementations require you to put the key word "latest" in the list of tags to verify when you actually want the overall latest pact. This is just an implementation choice of that particular client, and does not actually mean that there is or should be a tag called "latest". Please do not use the tag "latest" or you will get very confused when talking about the "latest latest pact", which would have a URL of `/pacts/provider/Bar/consumer/Foo/latest/latest`!
 
 ## When are tags created?
 
