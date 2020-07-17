@@ -4,6 +4,25 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.28.0"></a>
+### v1.28.0 (2020-07-12)
+
+
+#### Features
+
+* **deps**
+  * this isn't really a feature, but I want to test the release workflow	 ([29a7b72](/../../commit/29a7b72))
+
+
+#### Bug Fixes
+
+* give the release docker image the secrets.GITHUB_TOKEN	 ([c94a435](/../../commit/c94a435))
+* not really a fix, just testing release notes	 ([78a919d](/../../commit/78a919d))
+* not really a fix, just testing release notes	 ([13ddd06](/../../commit/13ddd06))
+* testing release notes	 ([1f38fdd](/../../commit/1f38fdd))
+* not a real fix, just testing release notes	 ([1fabb8b](/../../commit/1fabb8b))
+
+
 <a name="v1.27.0"></a>
 ### v1.27.0 (2020-05-09)
 
