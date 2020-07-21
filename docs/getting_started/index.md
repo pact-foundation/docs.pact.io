@@ -9,7 +9,7 @@ Do you [set your house on fire to test your smoke alarm?](https://dius.com.au/20
 
 To view an animated step-by-step explanation of how Pact works, check out the [How Pact works](/how-pact-works) page.
 
-[![How Pact works preview](/img/how-pact-works-preview.gif)](/how-pact-works)
+[![How Pact works preview](/img/how-pact-works-preview.gif)](https://pactflow.io/how-pact-works?utm_source=ossdocs&utm_campaign=getting_started)
 
 > Ready to jump into the code already? Get started with our [5 minute guide](5-minute-getting-started-guide.md).
 

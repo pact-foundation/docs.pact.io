@@ -117,7 +117,7 @@
   "getting-started": {
     "Getting started": [
       "getting_started/index",
-      "getting_started/how_pact_works",
+      "https://pactflow.io/how-pact-works/?utm_source=ossdocs&utm_campaign=sidebar",
       "5-minute-getting-started-guide",
       "getting_started/terminology",
       "getting_started/testing-scope",
