@@ -63,7 +63,7 @@ For Mac, Windows and Linux. Allows you to integrate the contracts workflow into 
 
 **Pact JVM - Gradle**
 
-* [Publishing](/implementation_guides/jvm/provider/maven/#publishing-to-an-authenticated-pact-broker)
+* [Publishing](/implementation_guides/jvm/provider/gradle/#publishing-pact-files-to-a-pact-broker)
 * [Provider verification](/implementation_guides/jvm/provider/gradle/#verifying-pact-files-from-a-pact-broker)
 
 **Pact JVM - JUnit**
@@ -76,7 +76,7 @@ For Mac, Windows and Linux. Allows you to integrate the contracts workflow into 
 
 **Pact JVM - Maven**
 
-* [Publishing](https://github.com/DiUS/pact-jvm/tree/master/provider/pact-jvm-provider-maven#publishing-pact-files-to-a-pact-broker)
+* [Publishing](/implementation_guides/jvm/provider/maven/#publishing-to-an-authenticated-pact-broker)
 * [Provider verification](/implementation_guides/jvm/provider/maven/#verifying-pact-files-from-a-pact-broker)
 
 **Golang**
