@@ -72,7 +72,7 @@ For Mac, Windows and Linux. Allows you to integrate the contracts workflow into 
 
 **Pact JVM - SBT**
 
-* [Provider verification](https://github.com/DiUS/pact-jvm/tree/master/provider/pact-jvm-provider-sbt#verifying-pact-files-from-a-pact-broker)
+* [Provider verification](/implementation_guides/jvm/provider/sbt/#verifying-pact-files-from-a-pact-broker)
 
 **Pact JVM - Maven**
 
