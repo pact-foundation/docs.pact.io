@@ -51,6 +51,20 @@ const verificationOptions = {
 }
 ```
 
+<!-- Java JUnit -->
+
+```java
+@PactBroker(
+  host="pactbroker.local", 
+  port="8080", 
+  consumerVersionSelectors={
+    @ConsumerVersionSelector(tag = "master"),
+    @ConsumerVersionSelector(tag = "test"),
+    @ConsumerVersionSelector(tag = "production")
+  }
+)
+```
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Using a fallback tag for coordinated branch development
@@ -105,6 +119,21 @@ const verificationOptions = {
   ]
 }
 ```
+
+<!-- Java JUnit -->
+
+```java
+@PactBroker(
+  host="pactbroker.local", 
+  port="8080", 
+  consumerVersionSelectors={
+    @ConsumerVersionSelector(tag = "master"),
+    @ConsumerVersionSelector(tag = "test"),
+    @ConsumerVersionSelector(tag = "production", latest = false)
+  }
+)
+```
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Verifying a pacts where one consumer is a mobile application
