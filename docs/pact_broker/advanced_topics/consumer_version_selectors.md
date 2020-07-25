@@ -65,6 +65,22 @@ const verificationOptions = {
 )
 ```
 
+<!-- Gradle -->
+
+```groovy
+pact {
+  serviceProviders {
+    'Your Service' {
+      providerVersion = { '1.2.3' }
+
+      fromPactBroker {
+        selectors = latestTags('master', 'test', 'production')
+      }
+    }
+  }
+}
+```
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Using a fallback tag for coordinated branch development
