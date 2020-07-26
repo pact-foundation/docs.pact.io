@@ -47,3 +47,8 @@
   from = "/workshops"
   to = "/implementation_guides/workshops"
   status = 302
+
+[[redirects]]
+  from = "/implementation_guides"
+  to = "/implementation_guides/javascript"
+  status = 302

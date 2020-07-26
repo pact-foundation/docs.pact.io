@@ -53,7 +53,7 @@ The site will be automatically redeployed after any push to `master`.
 
 ## Search
 
-The search is provided free by Algolia because Pact is an open source project. It is configured in `website/siteConfig.js` The Algolia analytics page is [here](https://www.algolia.com/apps/BH4D9OD16A/analytics). Currently only Beth has access to it via her Github login. We may be able to add extra people, but she hasn't looked into that yet.
+The search is provided free by Algolia because Pact is an open source project. It is configured in docs.pact.io in `website/siteConfig.js`. It is configured in Algolia in https://github.com/algolia/docsearch-configs/blob/master/configs/pact.json The Algolia analytics page is [here](https://www.algolia.com/apps/BH4D9OD16A/analytics). Currently only Beth has access to it via her Github login. We may be able to add extra people, but she hasn't looked into that yet. Info on how to style the search UI is [here](https://docsearch.algolia.com/docs/styling/).
 
 ## Contributing
 
