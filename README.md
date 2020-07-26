@@ -51,6 +51,9 @@ The site will be automatically redeployed after any push to `master`.
   <img src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Deploys by Netlify" />
 </a>
 
+## Search
+
+The search is provided free by Algolia because Pact is an open source project. It is configured in `website/siteConfig.js` The Algolia analytics page is [here](https://www.algolia.com/apps/BH4D9OD16A/analytics). Currently only Beth has access to it via her Github login. We may be able to add extra people, but she hasn't looked into that yet.
 
 ## Contributing
 
