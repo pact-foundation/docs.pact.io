@@ -49,7 +49,7 @@ jobs:
       if: github.event.action == 'pact-cpp-docs-updated'
 
     - name: Sync pactfoundation/pact-broker Docker image docs
-      run: bundle exec scripts/sync/pact_broker_docker_pactfoundation.rb && echo '::set-env name=COMMIT_MESSAGE::synced pactfoundation/pact-broker docker image docs updated'
+      run: bundle exec scripts/sync/pact_broker_docker_pactfoundation.rb && echo '::set-env name=COMMIT_MESSAGE::synced pactfoundation/pact-broker docker image docs'
       if: github.event.action == 'pact-broker-docker-pactfoundation-docs-updated'
 
     - name: Sync dius/pact-broker Docker image docs
