@@ -19,13 +19,9 @@ The exact method of configuration will depend on the implementation you are usin
 The recommended way to do this so that you only publish verifications from your CI is to detect some environment variable that is only available during CI \(eg. `BUILD_NUMBER`\).
 
 ```ruby
-#assuming BUILD_NUMBER is only available in your CI
-build_number = ENV.fetch('BUILD_NUMBER','dev') 
-publish_flag = !!ENV['BUILD_NUMBER']
-
 Pact.service_provider "My Service Provider" do
-  app_version "1.3.#{build_number}"
-  publish_verification_results publish_flag
+  app_version ENV['GIT_SHA'] 
+  publish_verification_results ENV['CI'] == 'true'
 end
 ```
 
@@ -43,3 +39,6 @@ Something to note is that if the content of your contract has not changed since 
 
 Changes to the contract that may cause the initial provider verification to fail should be introduced using [tags](using_tags/).
 
+## Viewing
+
+There is no UI for viewing the interaction level verification results in the open source Pact Broker \(this UI is available in [Pactflow](https://pactflow.io)\) however, you can view them in the API browser. The easiest way to find them is to click on the "Matrix" icon for the integration (the little grid icon in between the consumer and provider names) and then click on the link in the "Pact Verified" column for the results that you want to see. 
