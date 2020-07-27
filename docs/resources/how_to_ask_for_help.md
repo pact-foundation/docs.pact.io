@@ -39,7 +39,7 @@ Imagine you were one of the people reading your question, and ask yourself if yo
     * understanding how to use CI/CD software and build release pipelines
 
     While we will do our best to point you in the right direction, if you do not have these skills, we cannot teach you over Slack. Please find someone in your own company or the relevant technology community to assist you in these areas.
-* Please do not direct message a maintainer (or anyone else) with a question unless specifically invited to. Asking questions in public channels allows other people to both answer and learn from your questions.
+* Please do not direct message a maintainer (or anyone else) with a question unless specifically invited to. Asking questions in public channels allows more people answer and learn from your questions.
 
 Thank you,
 
