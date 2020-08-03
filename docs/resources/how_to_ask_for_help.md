@@ -23,7 +23,7 @@ If you can't find your answer on the docs site or Slack, _then_ ask your questio
 Imagine you were one of the people reading your question, and ask yourself if you have provided them enough information to give you a helpful answer. For technical issues, have you provided:
 
 * A brief description of what you're trying to achieve, what your expected outcome is, and what the actual behaviour is.
-* The relevant versions of the software you are using.
+* The relevant language and versions of the software you are using.
 * Details of the environment you're using (Mac/Window/Linux, Docker).
 * Example code.
 * Any relevant logs.
