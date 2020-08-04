@@ -10,6 +10,7 @@ Pact is most valuable for designing and testing integrations where:
 
 * You \(or your team/organisation/partner organisation\) control the development of both the consumer and the provider.
 * The consumer and provider are both under active development.
+* The provider team can easily control the data returned in the provider's responses.
 * The requirements of the consumer\(s\) are going to be used to drive the features of the provider.
 * There is a small enough number of consumers for a given provider that the provider team can manage an individual relationship with each consumer team.
 
@@ -25,6 +26,7 @@ Pact is fantastic tool for developing and testing intra-organisation microservic
 * Testing APIs where the team maintaining the other side of the integration will not also being using Pact
 * Testing APIs where the consumers cannot be individually identified \(eg. public APIs\).
 * Situations where you cannot load data into the provider without using the API that you're actually testing \(eg. public APIs\). [Why?](https://github.com/pact-foundation/pact-ruby/wiki/Why-Pact-may-not-be-the-best-tool-for-testing-public-APIs)
+* Situations where you cannot control the data being used to generate the provider's responses.
 * Testing new or existing providers where the functionality is not being driven or altered by the needs of particular consumers \(eg. a public API or an OAuth provider where the API is completely stable\)
 * Testing providers where the consumer and provider teams do not have good communication channels.
 * Performance and load testing.
