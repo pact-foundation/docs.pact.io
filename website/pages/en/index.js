@@ -100,7 +100,7 @@ class Index extends React.Component {
         style={{textAlign: 'center'}}>
         <h2>Features</h2>
         <ul>
-          <li>Support for most of the common web development languages (Javascript, JVM, .Net, Ruby, Python, Golang and <a href={docUrl('implementation_guides/javascript')}>more</a>)</li>
+          <li>Support for most of the common web development languages (Javascript, JVM, .Net, Ruby, Python, Golang and <a href={docUrl('implementation_guides/cli')}>more</a>)</li>
           <li>Supports HTTP and messaging integrations</li>
           <li>Integrates into your CI/CD pipeline</li>
         </ul>

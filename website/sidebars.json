@@ -1,5 +1,8 @@
 {
   "docs": {
+    "Pact CLI": [
+      "implementation_guides/cli"
+    ],
     "Pact JS": [
       "implementation_guides/javascript",
       "implementation_guides/javascript/readme",
@@ -108,7 +111,8 @@
       "implementation_guides/other_languages"
     ],
     "Feature support": [
-      "feature_support"
+      "feature_support",
+      "wrapper_implementations"
     ],
     "Stubs": [
       "getting_started/stubs"
@@ -171,6 +175,16 @@
     ]
   },
   "pact_broker": {
+    "Dockerized Pact Broker": [
+      "pact_broker/docker_images",
+      "pact_broker/docker_images/pactfoundation",
+      "pact_broker/docker_images/dius"
+    ],
+    "Pact Broker Client CLI": [
+      "pact_broker/client_cli",
+      "pact_broker/client_cli/readme",
+      "pact_broker/client_cli/changelog"
+    ],
     "Pact Broker": [
       "pact_broker/index",
       "pact_broker/overview",
@@ -222,15 +236,6 @@
           "pact_broker/advanced_topics/troubleshooting"
         ]
       }
-    ],
-    "Dockerized Pact Broker": [
-      "pact_broker/docker_images/pactfoundation",
-      "pact_broker/docker_images/dius"
-    ],
-    "Pact Broker Client CLI": [
-      "pact_broker/client_cli",
-      "pact_broker/client_cli/readme",
-      "pact_broker/client_cli/changelog"
     ]
   },
   "resources": {

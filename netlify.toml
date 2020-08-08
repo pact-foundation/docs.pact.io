@@ -50,5 +50,5 @@
 
 [[redirects]]
   from = "/implementation_guides"
-  to = "/implementation_guides/javascript"
+  to = "/implementation_guides/cli"
   status = 302
