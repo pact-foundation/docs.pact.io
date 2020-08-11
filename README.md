@@ -27,7 +27,7 @@ You will need Docker and Docker Compose to run the docs application locally.
 
 ## Automatic syncing from the markdown files in each Pact implementation repository
 
-The markdown files in the following directories are synced from their respective source repositories. Do not edit them directly!
+The markdown files in the following directories are synced from their respective source repositories. Do not edit them directly! You'll be able to tell if it's a file that has been synced from another repository because the `custom_edit_url` will be set in the page metadata.
 
 * `docs/implementation_guides/go`
 * `docs/implementation_guides/javascript`
@@ -35,6 +35,7 @@ The markdown files in the following directories are synced from their respective
 * `docs/implementation_guides/python`
 * `docs/implementation_guides/cpp`
 * `docs/implementation_guides/rust`
+* `docs/pact_broker/client_cli`
 * `docs/pact_broker/docker_images/`
 
 Each of the above Pact repositories has a Github workflow that triggers the [sync-docs](.github/workflows/sync-docs.yml) workflow when any markdown files are edited on `master`.
