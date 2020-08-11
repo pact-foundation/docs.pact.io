@@ -21,3 +21,8 @@ Another approach to ensure your stub data is kept in line with the contract is t
 ## 4. Use a Pactflow stub
 
 If you are using [Pactflow](https://pactflow.io?utm_source=ossdocs&utm_campaign=using_pact_to_support_ui_testing) as your Pact Broker, you have access to an hosted stub for every pact that you publish. You can read more about the hosted stubs [here](https://pactflow.io/blog/hosted-stubs/?utm_source=ossdocs&utm_campaign=using_pact_to_support_ui_testing).
+
+## Further Reading
+
+* Combining tools like Cypress, TestCafe, CodeceptJS with Pact: https://pactflow.io/blog/cypress-pact-front-end-testing-with-confidence/
+* A cautionary tale for why you shouldn't use UI tests to generate pacts: https://pactflow.io/blog/a-disastrous-tale-of-ui-testing-with-pact/
