@@ -229,13 +229,11 @@ Ref:
 
 ## GitLab - trigger build
 
-> If you use Gitlab and have worked out how to pass parameters into the build, can you please submit a PR to update this example.
-
 ```json
 {
   "request": {
     "method": "POST",
-    "url": "https://gitlab.com/api/v4/projects/:id/ref/:ref/trigger/pipeline?token=:token",
+    "url": "https://gitlab.com/api/v4/projects/:id/ref/:ref/trigger/pipeline?token=:token&variables[PROVIDER_NAME]=${pactbroker.providerName}",
     "headers": {
       "Accept": "application/json"
     }
