@@ -95,7 +95,7 @@ Ref:
 
 ## Bamboo - trigger build
 
-> If you use Bamboo and have worked out how to pass in parameters to the build, can you please submit a PR to update this example.
+> If you use Bamboo and know how to pass in parameters to the build, can you please submit a PR to update this example.
 
 ```javascript
 {
@@ -163,6 +163,8 @@ N.B - currently need to use a personal API token \(ideally for a machine user\)
 ```
 
 ## Bitbucket - pipeline trigger build of a branch
+
+If you use Bitbucket and have worked out how to pass parameters into the build, can you please submit a PR to update this example.
 
 ```text
 {
@@ -233,7 +235,7 @@ Ref:
 {
   "request": {
     "method": "POST",
-    "url": "https://gitlab.com/api/v4/projects/:id/ref/:ref/trigger/pipeline?token=:token&variables[PROVIDER_NAME]=${pactbroker.providerName}",
+    "url": "https://gitlab.com/api/v4/projects/:id/ref/:ref/trigger/pipeline?token=:token&variables[PACT_URL]=${pactbroker.pactUrl}",
     "headers": {
       "Accept": "application/json"
     }
@@ -252,6 +254,8 @@ Ref:
 * [GitLab - Pipeline triggers](https://docs.gitlab.com/ee/api/pipeline_triggers.html)
 
 ## TeamCity - trigger build
+
+If you use TeamCity and know out how to pass parameters into the build, can you please submit a PR to update this example.
 
 ```json
 {
