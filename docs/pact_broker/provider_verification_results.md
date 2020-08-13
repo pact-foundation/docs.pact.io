@@ -2,8 +2,6 @@
 title: Provider verification results
 ---
 
-## Provider verification results
-
 ## Publishing
 
 When a pact is verified against a provider, the outcome of that verification \(pass or fail\) needs to be made available to the consumer and provider teams, so they know whether or not the code in either project can be safely deployed. The pact verification tool can automatically publish the verification results back to the broker, and they will be displayed on the index page next to the pact details.
