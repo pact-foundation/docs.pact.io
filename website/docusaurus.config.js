@@ -126,94 +126,102 @@ const siteConfig = {
   // Used for publishing and more
   projectName: 'pact-docs',
   organizationName: 'Pact Foundation',
-  gaTrackingId: 'UA-8926693-8',
-  // For top-level user or org sites, the organization is still the same.
-  // e.g., for the https://JoelMarcey.github.io site, it would be set like...
-  //   organizationName: 'JoelMarcey'
 
-  // For no header links in the top nav bar -> headerLinks: [],
-  headerLinks: [
-    {doc: 'getting_started/index', label: 'Getting started'},
-    { doc: 'consumer/index', label: 'Guides'},
-    { doc: 'implementation_guides/cli', label: 'Pact Docs'},
-    { doc: 'pact_broker/docker_images', label: 'Pact Broker Docs'},
-    { doc: 'history', label: 'Resources'},
-    {page: 'help', label: 'Help'}
-  ],
+  themeConfig: {
+    custom: './src/css/how-pact-works',
 
-  // If you have users set above, you add it here:
-  users,
+    algolia: {
+      apiKey: '3df07c3398c2831ab28a34c22c443d41',
+      indexName: 'pact'
+    },
+    googleAnalytics: {
+      trackingID: 'UA-8926693-8',
+    },
 
+    navbar: {
+      title: 'Getting started',
+      logo: {
+        alt: 'Docusaurus Logo',
+        src: 'img/favicon.ico',
+      },
+      items: [
+        {to: 'getting_started/index', label: 'Getting Started', position: 'left'},
+        {to: 'consumer/index', label: 'Guides', position: 'left'},
+        {to: 'implementation_guides/cli', label: 'Pact Docs', position: 'left'},
+        {to: 'pact_broker/docker_images', label: 'Pact Broker Docs', position: 'left'},
+        {to: 'history', label: 'Resources', position: 'left'},
+        {to: 'help', label: 'Help', position: 'left'},
+
+        {
+          href: 'https://github.com/',
+          label: 'GitHub',
+          position: 'right',
+        },
+        {to: 'blog', label: 'Blog', position: 'left'},
+      ],
+    },
+
+    footer: {
+      logo: {
+        alt: 'Pact Foundation logo',
+        src: 'img/favicon.ico',
+        href: 'https://docs.pact.io/',
+      },
+      copyright: `Copyright © ${new Date().getFullYear()} Pact Foundation`,
+
+    },
+    image: 'img/docusaurus.png',
+
+      // Open Graph and Twitter card images.
+    ogImage: 'img/undraw_online.svg',
+    twitterImage: 'img/undraw_tweetstorm.svg',
+
+    // Equivalent to `docsSideNavCollapsible`.
+    sidebarCollapsible: true,
+    // ...
+  },
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
   favicon: 'img/favicon.ico',
 
-  /* Colors for website */
-  colors: {
-    primaryColor: 'grey',
-    secondaryColor: '#040972',
-  },
-
-  /* Custom fonts for website */
-  /*
-  fonts: {
-    myFont: [
-      "Times New Roman",
-      "Serif"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
-    ]
-  },
-  */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Pact Foundation`,
 
-  highlight: {
-    // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'default',
-  },
+  // highlight: {
+  //   // Highlight.js theme to use for syntax highlighting in code blocks.
+  //   theme: 'default',
+  // },
 
   // Add custom scripts here that would be placed in <script> tags.
   scripts: ['https://buttons.github.io/buttons.js'],
 
   // On page navigation for the current documentation page.
-  onPageNav: 'separate',
-  // No .html extensions for paths.
-  cleanUrl: true,
+  // onPageNav: 'separate',
 
-  // Open Graph and Twitter card images.
-  ogImage: 'img/undraw_online.svg',
-  twitterImage: 'img/undraw_tweetstorm.svg',
 
-  // For sites with a sizable amount of content, set collapsible to true.
-  // Expand/collapse the links and subcategories under categories.
-  docsSideNavCollapsible: true,
 
-  // Show documentation's last contributor's name.
-  enableUpdateBy: true,
 
-  // Show documentation's last update time.
-  enableUpdateTime: true,
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          path: './docs',
+          editUrl: 'https://github.com/pact-foundation/docs.pact.io/edit/master/docs/',
 
-  // You may provide arbitrary config keys to be used as needed by your
-  // template. For example, if you need your repo's URL...
-  repoUrl: 'https://github.com/pact-foundation/docs.pact.io',
+          sidebarPath: require.resolve('./sidebars.json'),
+          showLastUpdateAuthor: true,
+          // Equivalent to `enableUpdateTime`.
+          showLastUpdateTime: true,
+          routeBasePath: 'docs',
 
-  editUrl: 'https://github.com/pact-foundation/docs.pact.io/edit/master/docs/',
-  docsUrl: '',
+          // You may provide arbitrary config keys to be used as needed by your
+          // template. For example, if you need your repo's URL...
+          // repoUrl: 'https://github.com/pact-foundation/docs.pact.io',
 
-  twitterUsername: '@pact_up',
-  wrapPagesHTML: true,
-  separateCss: 'static/css/how-pact-works',
-
-  algolia: {
-    apiKey: '3df07c3398c2831ab28a34c22c443d41',
-    indexName: 'pact'
-  }
+        },
+      },
+    ],
+  ],
 
 };
 
