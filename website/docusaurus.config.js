@@ -205,7 +205,7 @@ const siteConfig = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: './docs',
+          path: 'docs/',
           editUrl: 'https://github.com/pact-foundation/docs.pact.io/edit/master/docs/',
 
           sidebarPath: require.resolve('./sidebars.json'),

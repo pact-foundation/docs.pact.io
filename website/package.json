@@ -6,7 +6,11 @@
     "publish-gh-pages": "docusaurus publish",
     "write-translations": "docusaurus write-translations",
     "version": "docusaurus version",
+    "swizzle": "docusaurus swizzle",
     "rename-version": "docusaurus rename-version"
+  },
+  "devDependencies": {
+    "@docusaurus/migrate": "2.0.0-alpha.59"
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.48",

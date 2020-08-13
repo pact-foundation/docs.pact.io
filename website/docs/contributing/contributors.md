@@ -8,7 +8,7 @@ The **Pact Foundation** is an organisation to foster collaboration between the v
 
 **Pact** and the **Pact Foundation** would not be possible without the companies who have graciously provided time and resources to the projects.
 
-| ![SEEK Jobs Logo](/img/seek.jpg) | ![DiUS Logo](/img/dius.png) | ![ITV](/img/itv.png) | ![Aligntech](https://www.aligntech.com/img/align-logo.png) |
+| ![SEEK Jobs Logo](/img/users/seek.jpg) | ![DiUS Logo](/img/users/dius.png) | ![ITV](/img/users/itv.png) | ![Aligntech](https://www.aligntech.com/img/align-logo.png) |
 | :--- | :--- | :--- | :--- |
 
 

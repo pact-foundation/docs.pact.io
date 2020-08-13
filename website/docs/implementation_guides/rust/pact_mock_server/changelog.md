@@ -74,7 +74,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ## 0.5.0 - Upgrade to non-blocking Hyper 0.12
 
 * a7c674a - fix: remove duplicated line (Ronald Holshausen, Sat Jul 27 15:41:00 2019 +1000)
-* ee8a898 - Rewrite server matches sync from mpsc queue to Arc<Mutex<Vec>>. Avoids awkward synchronization (Audun Halland, Tue Jul 23 02:10:55 2019 +0200)
+* ee8a898 - Rewrite server matches sync from mpsc queue to Arc\<Mutex\<Vec\>\>. Avoids awkward synchronization (Audun Halland, Tue Jul 23 02:10:55 2019 +0200)
 * 5ea7815 - Merge remote-tracking branch 'upstream/master' into hyper_upgrade_merge (Audun Halland, Tue Jul 23 01:46:51 2019 +0200)
 * 2826bb0 - Make pact_mock_server_cli use ServerManager (Audun Halland, Tue Jul 23 01:40:46 2019 +0200)
 * 47ab6d0 - Upgrade tokio to 0.1.22 everywhere (Audun Halland, Mon Jul 22 23:47:09 2019 +0200)
@@ -132,7 +132,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 
 * 5606c0c - Refactored the remaining exported functions into an exported rust one and a FFI one (Ronald Holshausen, Wed Nov 1 11:06:48 2017 +1100)
 * dab7fb9 - Renamed the exported functions and refactored what the create_mock_server was doing into a new function (Ronald Holshausen, Wed Nov 1 09:30:07 2017 +1100)
-* 24e3f73 - Converted OptionalBody::Present to take a Vec<u8> #19 (Ronald Holshausen, Sun Oct 22 18:04:46 2017 +1100)
+* 24e3f73 - Converted OptionalBody::Present to take a Vec\<u8\> #19 (Ronald Holshausen, Sun Oct 22 18:04:46 2017 +1100)
 * a56b6a6 - Change the column heading to verification state in the mock server list output #24 (Ronald Holshausen, Sun Oct 22 15:15:30 2017 +1100)
 * 814fe12 - Modify AssafKatz3's implementation to scan for next available port from a base port number #15 (Ronald Holshausen, Sun Oct 22 14:40:13 2017 +1100)
 * 37abe19 - Pulled in changes from https://github.com/AssafKatz3/pact-reference.git #14 (Assaf Katz, Mon Sep 25 12:28:17 2017 +0300)

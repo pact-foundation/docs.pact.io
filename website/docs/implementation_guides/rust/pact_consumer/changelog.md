@@ -64,7 +64,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 
 ## 0.5.0 - Upgrade to non-blocking Hyper 0.12
 
-* ee8a898 - Rewrite server matches sync from mpsc queue to Arc<Mutex<Vec>>. Avoids awkward synchronization (Audun Halland, Tue Jul 23 02:10:55 2019 +0200)
+* ee8a898 - Rewrite server matches sync from mpsc queue to Arc\<Mutex\<Vec\>\>. Avoids awkward synchronization (Audun Halland, Tue Jul 23 02:10:55 2019 +0200)
 * 4df2797 - Rename API function again (Audun Halland, Mon Jul 22 23:38:11 2019 +0200)
 * 7f7dcb0 - Don't expose tokio Runtime inside the libraries (Audun Halland, Mon Jul 22 02:18:52 2019 +0200)
 * 522e7ba - Set runtime::Builder core_threads instead of blocking_threads (Audun Halland, Sun May 12 10:36:54 2019 +0200)
@@ -93,9 +93,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 * 639ac22 - fixes after merge in from master (Ronald Holshausen, Sun Oct 23 10:45:54 2016 +1100)
 * 49e45f7 - Merge branch 'master' into v3-spec (Ronald Holshausen, Sun Oct 23 10:10:40 2016 +1100)
 
-## 0.3.1 - Converted OptionalBody::Present to take a Vec<u8>
+## 0.3.1 - Converted OptionalBody::Present to take a Vec\<u8\>
 
-* 24e3f73 - Converted OptionalBody::Present to take a Vec<u8> #19 (Ronald Holshausen, Sun Oct 22 18:04:46 2017 +1100)
+* 24e3f73 - Converted OptionalBody::Present to take a Vec\<u8\> #19 (Ronald Holshausen, Sun Oct 22 18:04:46 2017 +1100)
 * 1c70982 - bump version to 0.3.1 (Ronald Holshausen, Fri Oct 20 11:46:27 2017 +1100)
 
 ## 0.3.0 - Improved Consumer DSL

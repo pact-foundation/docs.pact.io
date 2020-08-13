@@ -27,7 +27,7 @@ FLAGS:
     -v, --version    Prints version information
 
 OPTIONS:
-    -h, --host <host>            hostname the master mock server runs on (defaults to localhost)
+    -h, --host \<host\>            hostname the master mock server runs on (defaults to localhost)
     -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to info) [values: error, warn,
                                  info, debug, trace, none]
     -p, --port <port>            port the master mock server runs on (defaults to 8080)
@@ -45,16 +45,16 @@ SUBCOMMANDS:
 
 The following options are available for all subcommands:
 
-#### Host: -h, --host <host>
+#### Host: -h, --host \<host\>
 
 This sets the host the master mock server runs on. By default this will be localhost.
 
-#### Port: -p, --port <port>
+#### Port: -p, --port \<port\>
 
 This sets the port that the master mock server runs on. By default this will be 8080. The start command will start the
 master server using this port.
 
-#### Log level: -l, --loglevel <loglevel>
+#### Log level: -l, --loglevel \<loglevel\>
 
 This sets the log level that the CLI and mock servers log at. It defaults to info. Valid values are: error, warn,
 info, debug, trace, none.
@@ -81,17 +81,17 @@ FLAGS:
         --help    Prints help information
 
 OPTIONS:
-        --first-port <first-port>    the port that ports will start allocation from it
-    -h, --host <host>            hostname the master mock server runs on (defaults to localhost)
-    -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to info) [values: error, warn,
+        --first-port \<first-port>    the port that ports will start allocation from it
+    -h, --host \<host>            hostname the master mock server runs on (defaults to localhost)
+    -l, --loglevel \<loglevel>    Log level for mock servers to write to the log file (defaults to info) [values: error, warn,
                                  info, debug, trace, none]
-    -o, --output <output>        the directory where to write files to (defaults to current directory)
-    -p, --port <port>            port the master mock server runs on (defaults to 8080)
+    -o, --output \<output>        the directory where to write files to (defaults to current directory)
+    -p, --port \<port>            port the master mock server runs on (defaults to 8080)
 ```
 
 ##### Options
 
-###### Output directory: -o, --output <output>
+###### Output directory: -o, --output \<output\>
 
 This sets the output directory that log files and pact files are written to. It defaults to the current working directory.
 
@@ -114,22 +114,22 @@ create v0.0.1
 Creates a new mock server from a pact file
 
 USAGE:
-    create [FLAGS] [OPTIONS] --file <file>
+    create [FLAGS] [OPTIONS] --file \<file\>
 
 FLAGS:
         --help    Prints help information
 
 OPTIONS:
-    -f, --file <file>            the pact file to define the mock server
-    -h, --host <host>            hostname the master mock server runs on (defaults to localhost)
-    -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to info) [values: error, warn,
+    -f, --file \<file\>            the pact file to define the mock server
+    -h, --host \<host>            hostname the master mock server runs on (defaults to localhost)
+    -l, --loglevel \<loglevel>    Log level for mock servers to write to the log file (defaults to info) [values: error, warn,
                                  info, debug, trace, none]
-    -p, --port <port>            port the master mock server runs on (defaults to 8080)
+    -p, --port \<port>            port the master mock server runs on (defaults to 8080)
 ```
 
 ##### Options
 
-###### Pact File: -f, --file <file>
+###### Pact File: -f, --file \<file\>
 
 This option specifies the pact file to base the mock server on. It is a mandatory option.
 
@@ -157,10 +157,10 @@ FLAGS:
         --help    Prints help information
 
 OPTIONS:
-    -h, --host <host>            hostname the master mock server runs on (defaults to localhost)
-    -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to info) [values: error, warn,
+    -h, --host \<host>            hostname the master mock server runs on (defaults to localhost)
+    -l, --loglevel \<loglevel>    Log level for mock servers to write to the log file (defaults to info) [values: error, warn,
                                  info, debug, trace, none]
-    -p, --port <port>            port the master mock server runs on (defaults to 8080)
+    -p, --port \<port>            port the master mock server runs on (defaults to 8080)
 ```
 
 ##### Example
@@ -183,7 +183,7 @@ pact_mock_server_cli-verify v0.0.1
 Verify the mock server by id or port number, and generate a pact file if all ok
 
 USAGE:
-    pact_mock_server_cli verify [FLAGS] [OPTIONS] --mock-server-id <mock-server-id> --mock-server-port <mock-server-port>
+    pact_mock_server_cli verify [FLAGS] [OPTIONS] --mock-server-id \<mock-server-id> --mock-server-port \<mock-server-port\>
 
 FLAGS:
         --help    Prints help information
@@ -192,18 +192,18 @@ OPTIONS:
     -h, --host <host>                            hostname the master mock server runs on (defaults to localhost)
     -l, --loglevel <loglevel>                    Log level for mock servers to write to the log file (defaults to info) [values: error,
                                                  warn, info, debug, trace, none]
-    -i, --mock-server-id <mock-server-id>        the ID of the mock server
-    -m, --mock-server-port <mock-server-port>    the port number of the mock server
+    -i, --mock-server-id \<mock-server-id>        the ID of the mock server
+    -m, --mock-server-port \<mock-server-port\>    the port number of the mock server
     -p, --port <port>                            port the master mock server runs on (defaults to 8080)
 ```
 
 ##### Options
 
-###### Mock server ID: -i, --mock-server-id <mock-server-id>
+###### Mock server ID: -i, --mock-server-id /<mock-server-id/>
 
 The ID of the mock server to verify. Either this option or the mock server port option must be provided.
 
-###### Mock server Port: -m, --mock-server-port <mock-server-port>
+###### Mock server Port: -m, --mock-server-port /<mock-server-port/>
 
 The port number of the mock server to verify. Either this option or the mock server ID option must be provided.
 
@@ -235,7 +235,7 @@ shutdown v0.0.1
 Shutdown the mock server by id or port number, releasing all its resources
 
 USAGE:
-    shutdown [FLAGS] [OPTIONS] --mock-server-id <mock-server-id> --mock-server-port <mock-server-port>
+    shutdown [FLAGS] [OPTIONS] --mock-server-id \<mock-server-id> --mock-server-port \<mock-server-port\>
 
 FLAGS:
         --help    Prints help information
@@ -244,18 +244,18 @@ OPTIONS:
     -h, --host <host>                            hostname the master mock server runs on (defaults to localhost)
     -l, --loglevel <loglevel>                    Log level for mock servers to write to the log file (defaults to info) [values: error,
                                                  warn, info, debug, trace, none]
-    -i, --mock-server-id <mock-server-id>        the ID of the mock server
-    -m, --mock-server-port <mock-server-port>    the port number of the mock server
+    -i, --mock-server-id \<mock-server-id>        the ID of the mock server
+    -m, --mock-server-port \<mock-server-port\>    the port number of the mock server
     -p, --port <port>                            port the master mock server runs on (defaults to 8080)
 ```
 
 ##### Options
 
-###### Mock server ID: -i, --mock-server-id <mock-server-id>
+###### Mock server ID: -i, --mock-server-id \<mock-server-id\>
 
 The ID of the mock server to shutdown. Either this option or the mock server port option must be provided.
 
-###### Mock server Port: -m, --mock-server-port <mock-server-port>
+###### Mock server Port: -m, --mock-server-port \<mock-server-port\>
 
 The port number of the mock server to shutdown. Either this option or the mock server ID option must be provided.
 

@@ -203,7 +203,7 @@
       },
       "pact_broker/can_i_deploy",
       "pact_broker/set_up_checklist",
-      "pact_broker/pact_broker_client_cli",
+      "pact_broker/client_cli",
       "pact_broker/terraform_provider",
       "pact_broker/configuration",
       "pact_broker/upgrading",
@@ -223,7 +223,7 @@
         "label": "Advanced Topics",
         "items": [
           "pact_broker/pacticipant_version_numbers",
-          "pact_broker/advanced_topics/using_tags",
+          "pact_broker/tags",
           "pact_broker/advanced_topics/see_changes_pact",
           "pact_broker/advanced_topics/provider_verification_badges",
           "pact_broker/advanced_topics/pacticipant",
