@@ -145,11 +145,11 @@ const siteConfig = {
         src: 'img/favicon.ico',
       },
       items: [
-        {to: 'getting_started/index', label: 'Getting Started', position: 'left'},
-        {to: 'consumer/index', label: 'Guides', position: 'left'},
-        {to: 'implementation_guides/cli', label: 'Pact Docs', position: 'left'},
-        {to: 'pact_broker/docker_images', label: 'Pact Broker Docs', position: 'left'},
-        {to: 'history', label: 'Resources', position: 'left'},
+        {to: 'docs/getting_started/index', label: 'Getting Started', position: 'left'},
+        {to: 'docs/consumer/index', label: 'Guides', position: 'left'},
+        {to: 'docs/implementation_guides/cli', label: 'Pact Docs', position: 'left'},
+        {to: 'docs/pact_broker/docker_images', label: 'Pact Broker Docs', position: 'left'},
+        {to: 'docs/history', label: 'Resources', position: 'left'},
         {to: 'help', label: 'Help', position: 'left'},
 
         {
