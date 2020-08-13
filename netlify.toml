@@ -52,3 +52,9 @@
   from = "/implementation_guides"
   to = "/implementation_guides/cli"
   status = 302
+
+[[redirects]]
+  from = "/pact_broker/advanced_topics/provider_verification_results"
+  to = "/pact_broker/provider_verification_results"
+  status = 302
+
