@@ -62,6 +62,16 @@ A provider version can be verified against multiple pact contracts. For example,
 
 This indicates that provider version 2.0.0 is not able to communicate with consumer version v.0.2.0. However, provider version 2.0.1 is able to communicate with both the older versions, and the v.0.2.0 consumer.
 
+## Version ordering
+
+Application (a.k.a. pacticipant) versions are ordered by the *creation date* of the version resource. Pacts are ordered by creation date of their associated pacticipant version.
+
+When verifying pacts, we often use the term "latest pact". The "latest pact" for an integration is available at the URL `/pacts/provider/{provider}/consumer/{consumer}/latest`, and refers to pact for the most recently created _pacticipant version_. The same URL with `/{tag}` appended refers to the pact for the most recently created pacticipant version that has the specified tag. Neither the "latest pact" nor the "latest tagged pact" use the creation dates of the pact or tag resources for ordering - it is all based on the creation date of the version resource.
+
+The pact for the most recently created pacticipant version is almost always the same as "the most recently published pact", if you follow the pacticipant version number guidelines. If you are noticing strange behaviour with the pacts that are being returned, make sure that you are following the advice in the best practices section below.
+
+If you republish a pact for an existing consumer version, you will not change the ordering of either the versions or the pacts. The latest pact would remain the same as it was before. If you need to republish a pact for an existing consumer version as the latest pact, you need to delete the existing consumer version resource first. This would delete all the pacts associated with that consumer version. If you are following the guidelines for pacticipant version numbers however, this situation would not generally arise.
+
 ## Best practices
 
 The best practices for application versioning while using pact are also good best practices for application versioning generally. However, many teams find that the introduction of pact requires a move to more principled versioning - a necessary step when avoiding version hell during microservice deployment.
