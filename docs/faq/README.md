@@ -162,7 +162,7 @@ If you need to support multiple versions of the provider API concurrently, then 
 
 ### Is there a Jenkins plugin for Pact?
 
-There is no Jenkins plugin for Pact because a plugin is not needed. Pact tests run as part of the application's unit test suite, and should be able to be run on local developer machines *before* pushing to a CI system. Any dependency on a CI plugin would require a difference between how the tests are run locally, and how they run on CI, which would make it harder to reproduce and fix failures.
+There is no Jenkins plugin for running Pact tests because a plugin is not needed. Pact tests run as part of the "isolated" test phase of an application's automated test suite, during (for the consumer side) or immediately after (for the provider side) the application's unit test suite. They should be able to be run on local developer machines *before* pushing to a CI system. Any dependency on a CI plugin would require a difference between how the tests are run locally, and how they run on CI, which would make it harder to reproduce and fix failures.
 
 ### What is the difference between the Pact Broker and the mock service?
 
