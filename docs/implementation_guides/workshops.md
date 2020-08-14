@@ -11,4 +11,5 @@ These workshops walk you through an example problem from start to finish, explor
 * [Golang](https://github.com/pact-foundation/pact-workshop-go)
 * [JVM](https://github.com/DiUS/pact-workshop-jvm)
 * [Android](https://github.com/DiUS/pact-workshop-android)
+* [.NET](https://github.com/pactflow/pact-workshop-dotnet-core-v1)
 * [CI/CD](https://docs.pactflow.io/docs/workshops/ci-cd)
