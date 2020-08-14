@@ -7,6 +7,15 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v1.4.4 (14 August 2020)
+  * [a0227bb](https://github.com/pact-foundation/pact-go/commit/a0227bb) - fix: make tests fail on non-zero status (Matt Fellows, Fri Aug 7 14:37:42 2020 +1000)
+  * [a7d9596](https://github.com/pact-foundation/pact-go/commit/a7d9596) - fix: timeout in integration test (Matt Fellows, Fri Aug 7 14:18:24 2020 +1000)
+  * [4fe810d](https://github.com/pact-foundation/pact-go/commit/4fe810d) - fix: race in v2 client (Matt Fellows, Sun Aug 2 16:51:43 2020 +1000)
+  * [2ea979c](https://github.com/pact-foundation/pact-go/commit/2ea979c) - fix: increase max size of pact output buffer (Cody Tatman, Thu Aug 6 18:11:26 2020 -0700)
+  * [1c18257](https://github.com/pact-foundation/pact-go/commit/1c18257) - fix: address various misspellings (Ben Wells, Fri Jul 17 12:55:33 2020 +0100)
+  * [146de2c](https://github.com/pact-foundation/pact-go/commit/146de2c) - fix: handle JSON tags correctly (Jonathan Nowak, Tue Jun 30 07:28:00 2020 +0200)
+  * [18398ce](https://github.com/pact-foundation/pact-go/commit/18398ce) - feat: update to standalone 1.86.0 and support new verifier options: --log-level and --log-dir (Matt Fellows, Sat Jun 27 14:21:33 2020 +1000)
+
 ### v1.4.3 (09 June 2020)
 
 ### v1.4.2 (09 June 2020)
