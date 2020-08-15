@@ -12,37 +12,38 @@
     ],
     "Pact JVM": [
       "implementation_guides/jvm",
+      "implementation_guides/jvm/readme",
       "implementation_guides/jvm/matching",
       {
         "type": "category",
         "label": "Consumer",
         "items": [
-          "implementation_guides/jvm/consumer/java8/index",
-          "implementation_guides/jvm/consumer/junit/index",
-          "implementation_guides/jvm/consumer/junit5/index",
-          "implementation_guides/jvm/consumer/index",
-          "implementation_guides/jvm/consumer/specs2/index",
-          "implementation_guides/jvm/consumer/groovy/index"
+          "implementation_guides/jvm/consumer/java8",
+          "implementation_guides/jvm/consumer/junit",
+          "implementation_guides/jvm/consumer/junit5",
+          "implementation_guides/jvm/consumer",
+          "implementation_guides/jvm/consumer/specs2",
+          "implementation_guides/jvm/consumer/groovy"
         ]
       },
       {
         "type": "category",
         "label": "Provider",
         "items": [
-          "implementation_guides/jvm/provider/junit5spring/index",
-          "implementation_guides/jvm/provider/junit/index",
-          "implementation_guides/jvm/provider/maven/index",
-          "implementation_guides/jvm/provider/gradle/index",
-          "implementation_guides/jvm/provider/junit5/index",
-          "implementation_guides/jvm/provider/index",
-          "implementation_guides/jvm/provider/sbt/index",
-          "implementation_guides/jvm/provider/lein/index",
-          "implementation_guides/jvm/provider/spring/index",
-          "implementation_guides/jvm/provider/scalatest/index",
-          "implementation_guides/jvm/provider/specs2/index"
+          "implementation_guides/jvm/provider/junit5spring",
+          "implementation_guides/jvm/provider/junit",
+          "implementation_guides/jvm/provider/maven",
+          "implementation_guides/jvm/provider/gradle",
+          "implementation_guides/jvm/provider/junit5",
+          "implementation_guides/jvm/provider",
+          "implementation_guides/jvm/provider/sbt",
+          "implementation_guides/jvm/provider/lein",
+          "implementation_guides/jvm/provider/spring",
+          "implementation_guides/jvm/provider/scalatest",
+          "implementation_guides/jvm/provider/specs2"
         ]
       },
-      "implementation_guides/jvm/pact-jvm-server/index",
+      "implementation_guides/jvm/pact-jvm-server",
       "implementation_guides/jvm/changelog"
     ],
     "Pact Net": [
