@@ -99,21 +99,25 @@ class MarkdownFileContents
       in_code_block = !in_code_block if line.start_with?('```')
 
       if !in_code_block
-        in_backticks = false
-        line.chars.collect do | char |
-          # Doesn't handle escaped backticks within backticks
-          in_backticks = !in_backticks if char == '`'
+        if line =~ /<[A-Za-z0-9\-_\s]+>/
+          in_backticks = false
+          line.chars.collect do | char |
+            # Doesn't handle escaped backticks within backticks
+            in_backticks = !in_backticks if char == '`'
 
-          if !in_backticks
-            case char
-            when '<' then '&lt;'
-            when '>' then '&;gt;'
-            else char
+            if !in_backticks
+              case char
+              when '<' then '&lt;'
+              when '>' then '&;gt;'
+              else char
+              end
+            else
+              char
             end
-          else
-            char
-          end
-        end.join
+          end.join
+        else
+          line
+        end
       else
         line
       end
@@ -176,6 +180,7 @@ def process_file(path, content, path_transformer, custom_actions, comment, sourc
   fields = { custom_edit_url: "https://github.com/#{source_repository_slug}/edit/master/#{path}" }
   md_file_contents = MarkdownFileContents.new(content.split("\n"), fields, [comment])
   select_actions(custom_actions, path).each { |action| action.call(md_file_contents) }
+  md_file_contents.escape_things_that_look_like_jsx_tags
   # if source_file_paths && source_repository_slug
     #md_file_contents.absolutize_links(source_repository_slug, path_transformer, path, source_file_paths)
   # end
