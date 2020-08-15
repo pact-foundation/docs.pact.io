@@ -107,7 +107,7 @@ end
 PROJECT_ROOT = File.expand_path(File.join(__FILE__, '..', '..', '..'))
 
 def relative_path_to path
-  Pathname.new(File.join(PROJECT_ROOT, path)).relative_path_from(Pathname.pwd)
+  Pathname.new(File.join(PROJECT_ROOT, 'website', path)).relative_path_from(Pathname.pwd)
 end
 
 def edit_comment_for slug

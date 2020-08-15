@@ -3,7 +3,10 @@ require_relative 'support'
 
 SOURCE_REPO = 'DiUS/pact-jvm'
 DESTINATION_DIR = relative_path_to('docs/implementation_guides/jvm')
-TRANSFORM_PATH = -> (path) { File.join(DESTINATION_DIR, path.downcase.gsub('/readme.md', '/index.md')) } # Rename README.md to index.md, but not the top level README
+TRANSFORM_PATH = -> (path) {
+  # Rename README.md file, but not the top level README
+  File.join(DESTINATION_DIR, path.downcase.gsub('/readme.md', '.md'))
+}
 INCLUDE = [
   ->(path) { path.end_with?('.md') }
 ]
