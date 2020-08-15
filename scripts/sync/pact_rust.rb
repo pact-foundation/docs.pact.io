@@ -22,7 +22,8 @@ CUSTOM_ACTIONS = [
     md_file_contents.clean_up_changelog
     md_file_contents.find_and_replace(/^# /, '## ')
   }],
-  ["rust/README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "Overview" } ]
+  ["rust/README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "Overview" } ],
+  [:all, ->(md_file_contents) { md_file_contents.escape_things_that_look_like_jsx_tags }]
 ]
 
 
