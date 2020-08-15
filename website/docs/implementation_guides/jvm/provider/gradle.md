@@ -9,7 +9,7 @@ Gradle plugin for verifying pacts against a provider.
 The Gradle plugin creates a task `pactVerify` to your build which will verify all configured pacts against your provider.
 
 __*Important Note: Any properties that need to be set when using the Gradle plugin need to be provided with `-P` and
-not `-D` as with the other Pact-JVM modules!*__
+not `-D` as with the other Pact-JVM modules!*__ 
 
 ## To Use It
 
@@ -102,7 +102,7 @@ The following project properties can be specified with `-Pproperty=value` on the
 |`pact.verifier.disableUrlPathDecoding`|Disables decoding of request paths|
 |`pact.pactbroker.httpclient.usePreemptiveAuthentication`|Enables preemptive authentication with the pact broker when set to `true`|
 |`pact.provider.tag`|Sets the provider tag to push before publishing verification results|
-|`pact.content_type.override.[TYPE].[SUBTYPE]=text|binary`|Overrides the handling of a particular content type [4.1.3+]|
+|`pact.content_type.override.<TYPE>.<SUBTYPE>=<VAL>` where `<VAL>` may be `text` or `binary`|Overrides the handling of a particular content type [4.1.3+]|
 
 ## Specifying the provider hostname at runtime
 
@@ -152,7 +152,7 @@ pact {
 
 ## Starting and shutting down your provider
 
-If you need to start-up or shutdown your provider, define Gradle tasks for each action and set
+If you need to start-up or shutdown your provider, define Gradle tasks for each action and set  
 `startProviderTask` and `terminateProviderTask` properties of each provider.
 You could use the jetty tasks here if you provider is built as a WAR file.
 
@@ -197,7 +197,7 @@ as a string (for the case when they haven't been defined yet).
 
 ## Preventing the chaining of provider verify task to `pactVerify`
 
-Normally a gradle task named `pactVerify_${provider.name}` is created and added as a task dependency for `pactVerify`.  You
+Normally a gradle task named `pactVerify_${provider.name}` is created and added as a task dependency for `pactVerify`.  You 
 can disable this dependency on a provider by setting `isDependencyForPactVerify` to `false` (defaults to `true`).
 
 ```groovy
@@ -220,9 +220,9 @@ pact {
 }
 ```
 
-To run this task, you would then have to explicitly name it as in ```gradle pactVerify_provider1```, a normal ```gradle pactVerify```
-would skip it.  This can be useful when you want to define two providers, one with `startProviderTask`/`terminateProviderTask`
-and as second without, so you can manually start your provider (to debug it from your IDE, for example) but still want a `pactVerify`
+To run this task, you would then have to explicitly name it as in ```gradle pactVerify_provider1```, a normal ```gradle pactVerify``` 
+would skip it.  This can be useful when you want to define two providers, one with `startProviderTask`/`terminateProviderTask` 
+and as second without, so you can manually start your provider (to debug it from your IDE, for example) but still want a `pactVerify` 
  to run normally from your CI build.
 
 
@@ -354,7 +354,7 @@ correctly encoded. The verifier will not be able to make a request with an inval
 
 By default, bodies will be handled based on their content types. For binary contents, the bodies will be base64
 encoded when written to the Pact file and then decoded again when the file is loaded. You can change this with
-an override property: `pact.content_type.override.[TYPE].[SUBTYPE]=text|binary`. For instance, setting
+an override property: `pact.content_type.override.<TYPE>.<SUBTYPE>=text|binary`. For instance, setting 
 `pact.content_type.override.application.pdf=text` will treat PDF bodies as a text type and not encode/decode them.
 
 ## Provider States
@@ -364,7 +364,7 @@ For a description of what provider states are, see the pact documentations: http
 ### Using a state change URL
 
 For each provider you can specify a state change URL to use to switch the state of the provider. This URL will
-receive the providerState description and all the parameters from the pact file before each interaction via a POST.
+receive the providerState description and all the parameters from the pact file before each interaction via a POST. 
 As for normal requests, a request filter (`stateChangeRequestFilter`) can also be set to manipulate the request before it is sent.
 
 ```groovy
@@ -386,7 +386,7 @@ pact {
 
             // or
             hasPactsWith('consumers') {
-                pactFileLocation = file('path/to/pacts')
+                pactFileLocation = file('path/to/pacts')                
                 stateChangeUrl = url('http://localhost:8001/tasks/pactStateChange')
                 stateChangeUsesBody = false // defaults to true
             }
@@ -398,11 +398,11 @@ pact {
 }
 ```
 
-If the `stateChangeUsesBody` is not specified, or is set to true, then the provider state description and parameters
+If the `stateChangeUsesBody` is not specified, or is set to true, then the provider state description and parameters 
 will be sent as JSON in the body of the request :
 ```json
 { "state" : "a provider state description", "params": { "a": "1", "b": "2" } }
-```
+```  
 If it is set to false, they will be passed as query parameters.
 
 #### Teardown calls for state changes
@@ -485,7 +485,7 @@ provider side, so there is no way to know what the ID would be beforehand.
 
 There are methods on the consumer DSLs that can provider an expression that contains variables (like '/api/user/${id}'
 for the path). The provider state callback can then return a map for values, and the `id` attribute from the map will
-be expanded in the expression. For URL callbacks, the values need to be returned as JSON in the response body.
+be expanded in the expression. For URL callbacks, the values need to be returned as JSON in the response body. 
 
 ## Filtering the interactions that are verified
 
@@ -514,11 +514,11 @@ pact {
 
     broker {
         pactBrokerUrl = 'https://your-broker-url/'
-
-        // To use basic auth
+    
+        // To use basic auth    
         pactBrokerUsername = '<USERNAME>'
         pactBrokerPassword = '<PASSWORD>'
-
+    
         // OR to use a bearer token
         pactBrokerToken = '<TOKEN>'
     }
@@ -535,7 +535,7 @@ pact {
     myProvider { // Define the name of your provider here
 
       fromPactBroker {
-        selectors = latestTags('test') // specify your tags here. You can leave this out to just use the latest pacts
+        selectors = latestTags('test') // specify your tags here. You can leave this out to just use the latest pacts  
       }
 
     }
@@ -633,7 +633,7 @@ pact {
             hasPactsFromPactBroker('http://pact-broker:5000/', authentication: ['Bearer', pactBrokerToken])
         }
     }
-
+    
 }
 ```
 
@@ -643,7 +643,7 @@ Preemptive Authentication can be enabled by setting the `pact.pactbroker.httpcli
 
 ### Allowing just the changed pact specified in a webhook to be verified [4.0.6+]
 
-When a consumer publishes a new version of a pact file, the Pact broker can fire off a webhook with the URL of the changed
+When a consumer publishes a new version of a pact file, the Pact broker can fire off a webhook with the URL of the changed 
 pact file. To allow only the changed pact file to be verified, you can override the URL by using the `pact.filter.consumers`
 and `pact.filter.pacturl` project properties.
 
@@ -651,7 +651,7 @@ For example, running:
 
 ```console
 gradle pactVerify -Ppact.filter.consumers='Foo Web Client' -Ppact.filter.pacturl=https://test.pact.dius.com.au/pacts/provider/Activity%20Service/consumer/Foo%20Web%20Client/version/1.0.1
-```
+```  
 
 will only run the verification for Foo Web Client with the given pact file URL.
 
@@ -688,7 +688,7 @@ The pact gradle plugin provides a `pactPublish` task that can publish all pact f
 to a pact broker. To use it, you need to add a publish configuration to the pact configuration that defines the
 directory where the pact files are and the URL to the pact broker.
 
-If you have configured your broker details in a broker configuration block, the task will use that. Otherwise,
+If you have configured your broker details in a broker configuration block, the task will use that. Otherwise, 
 configure the broker details on the publish block.
 
 For example:
@@ -719,7 +719,7 @@ pact {
 ```
 
 _NOTE:_ The pact broker requires a version for all published pacts. The `pactPublish` task will use the version of the
-gradle project by default. You can override this with the `consumerVersion` property. Make sure you have set one
+gradle project by default. You can override this with the `consumerVersion` property. Make sure you have set one 
 otherwise the broker will reject the pact files.
 
 ## Publishing to an authenticated pact broker
@@ -733,11 +733,11 @@ pact {
 
     broker {
         pactBrokerUrl = 'https://your-broker-url/'
-
-        // To use basic auth
+    
+        // To use basic auth    
         pactBrokerUsername = '<USERNAME>'
         pactBrokerPassword = '<PASSWORD>'
-
+    
         // OR to use a bearer token
         pactBrokerToken = '<TOKEN>'
     }
@@ -783,7 +783,7 @@ For example:
 pact {
 
     publish {
-        excludes = [ '.*\\-\\d+$' ] // exclude all pact files that end with a dash followed by a number in the name
+        excludes = [ '.*\\-\\d+$' ] // exclude all pact files that end with a dash followed by a number in the name 
     }
 
 }
@@ -920,7 +920,7 @@ or you can set the `pact.provider.tag` JVM system property. For example:
 
 ```console
 $ ./gradlew -d pactverify -Ppact.verifier.publishResults=true -Dpact.provider.tag=Test2
-```
+``` 
 
 # Pending Pact Support (version 4.1.0 and later)
 
@@ -937,7 +937,7 @@ pact {
       fromPactBroker {
         selectors = latestTags('test') // specify your tags here. You can leave this out to just use the latest pacts
         enablePending = true // enable pending pacts support
-        providerTags = ['master'] // specify the provider main-line tags
+        providerTags = ['master'] // specify the provider main-line tags  
       }
 
     }
