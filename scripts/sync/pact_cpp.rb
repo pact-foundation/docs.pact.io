@@ -7,7 +7,7 @@ TRANSFORM_PATH = -> (path) {
   if path == "README.md"
     "#{DESTINATION_DIR}.md"
   else
-    File.join(DESTINATION_DIR, path.downcase.gsub('/readme.md', '/index.md'))
+    File.join(DESTINATION_DIR, path.downcase.gsub('/readme.md', '.md'))
   end
 }
 
