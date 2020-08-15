@@ -118,10 +118,7 @@ const siteConfig = {
   title: 'Pact Docs', // Title for your website.
   tagline: 'Test your integrations quickly. Deploy your apps safely.',
   url: 'https://docs.pact.io', // Your website URL
-  baseUrl: '/', // Base URL for your project */
-  // For github.io type URLs, you would set the url and baseUrl like:
-  //   url: 'https://facebook.github.io',
-  //   baseUrl: '/test-site/',
+  baseUrl: '/',
 
   // Used for publishing and more
   projectName: 'pact-docs',
@@ -139,25 +136,18 @@ const siteConfig = {
     },
 
     navbar: {
-      title: 'Getting started',
+      title: 'Pact',
       logo: {
         alt: 'Docusaurus Logo',
         src: 'img/favicon.ico',
       },
       items: [
-        {to: 'docs/getting_started/index', label: 'Getting Started', position: 'left'},
-        {to: 'docs/consumer/index', label: 'Guides', position: 'left'},
-        {to: 'docs/implementation_guides/cli', label: 'Pact Docs', position: 'left'},
-        {to: 'docs/pact_broker/docker_images', label: 'Pact Broker Docs', position: 'left'},
-        {to: 'docs/history', label: 'Resources', position: 'left'},
+        {to: 'getting_started/index', label: 'Getting Started', position: 'left'},
+        {to: 'consumer/index', label: 'Guides', position: 'left'},
+        {to: 'implementation_guides/cli', label: 'Pact Docs', position: 'left'},
+        {to: 'pact_broker/docker_images', label: 'Pact Broker Docs', position: 'left'},
+        {to: 'history', label: 'Resources', position: 'left'},
         {to: 'help', label: 'Help', position: 'left'},
-
-        {
-          href: 'https://github.com/',
-          label: 'GitHub',
-          position: 'right',
-        },
-        {to: 'blog', label: 'Blog', position: 'left'},
       ],
     },
 
@@ -212,7 +202,7 @@ const siteConfig = {
           showLastUpdateAuthor: true,
           // Equivalent to `enableUpdateTime`.
           showLastUpdateTime: true,
-          routeBasePath: 'docs',
+          routeBasePath: '',
 
           // You may provide arbitrary config keys to be used as needed by your
           // template. For example, if you need your repo's URL...
