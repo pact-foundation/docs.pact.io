@@ -101,7 +101,7 @@
       }
     ],
     "Pact C++": [
-      "implementation_guides/cpp/readme",
+      "implementation_guides/cpp",
       "implementation_guides/cpp/consumer/index",
       "implementation_guides/cpp/consumer/changelog"
     ],
