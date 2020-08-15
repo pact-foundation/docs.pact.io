@@ -25,6 +25,11 @@ CUSTOM_ACTIONS = [
     md_file_contents.remove_lines_including('- doc: ')
     md_file_contents.remove_lines_including('- refactor: ')
     md_file_contents.remove_lines_including('- style: ')
+    md_file_contents.remove_lines_including(' - Update ')
+    md_file_contents.remove_lines_including(' - Revert "')
+    md_file_contents.remove_lines_including(' - Merge branch ')
+    md_file_contents.remove_lines_including(' - Merge pull request ')
+    md_file_contents.remove_lines_including(' - bump version ')
     md_file_contents.find_and_replace(/^# /, '## ')
   }]
 ]
