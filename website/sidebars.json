@@ -120,7 +120,7 @@
   },
   "getting-started": {
     "Getting started": [
-      "getting_started/index",
+      "getting_started",
       "getting_started/how_pact_works",
       "5-minute-getting-started-guide",
       "getting_started/terminology",
@@ -131,7 +131,7 @@
         "type": "category",
         "label": "Matching",
         "items": [
-          "getting_started/matching/index",
+          "getting_started/matching",
           "getting_started/matching/gotchas"
         ]
       },
@@ -144,7 +144,7 @@
         "type": "category",
         "label": "FAQ",
         "items": [
-          "faq/index",
+          "faq",
           "faq/convinceme",
           "faq/question_archive"
         ]
@@ -153,12 +153,12 @@
   },
   "guides": {
     "Writing Consumer tests": [
-      "consumer/index",
+      "consumer",
       "consumer/contract_tests_not_functional_tests",
       "consumer/using_pact_to_support_ui_testing"
     ],
     "Verifying Pacts": [
-      "provider/README",
+      "provider",
       "provider/using_provider_states_effectively",
       "provider/handling_auth"
     ],
@@ -186,7 +186,7 @@
       "pact_broker/client_cli/changelog"
     ],
     "Pact Broker": [
-      "pact_broker/index",
+      "pact_broker",
       "pact_broker/overview",
       "getting_started/versioning_in_the_pact_broker",
       "pact_broker/publishing_and_retrieving_pacts",
@@ -196,7 +196,7 @@
         "type": "category",
         "label": "Webhooks",
         "items": [
-          "pact_broker/webhooks/index",
+          "pact_broker/webhooks",
           "pact_broker/webhooks/template_library",
           "pact_broker/webhooks/debugging_webhooks"
         ]
@@ -213,7 +213,7 @@
         "type": "category",
         "label": "Administration",
         "items": [
-          "pact_broker/administration/README",
+          "pact_broker/administration",
           "pact_broker/administration/maintenance",
           "pact_broker/administration/deleting_resources"
         ]
@@ -223,7 +223,6 @@
         "label": "Advanced Topics",
         "items": [
           "pact_broker/pacticipant_version_numbers",
-          "pact_broker/tags",
           "pact_broker/advanced_topics/see_changes_pact",
           "pact_broker/advanced_topics/provider_verification_badges",
           "pact_broker/advanced_topics/pacticipant",
@@ -231,7 +230,7 @@
           "pact_broker/advanced_topics/wip_pacts",
           "pact_broker/advanced_topics/consumer_version_selectors",
           "pact_broker/advanced_topics/matrix_selectors",
-          "pact_broker/advanced_topics/api_docs/index",
+          "pact_broker/advanced_topics/api_docs",
           "pact_broker/advanced_topics/ui_docs",
           "pact_broker/advanced_topics/troubleshooting"
         ]
@@ -246,7 +245,7 @@
       "blogs_videos_and_articles"
     ],
     "Contributing": [
-      "contributing/README",
+      "contributing",
       "contributing/docs",
       "contributing/contributors",
       "contributing/code-of-conduct"

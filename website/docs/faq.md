@@ -1,6 +1,5 @@
 ---
 title: FAQ
-id: index
 ---
 
 ## Table of Contents

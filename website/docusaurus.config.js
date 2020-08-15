@@ -142,8 +142,8 @@ const siteConfig = {
         src: 'img/favicon.ico',
       },
       items: [
-        {to: 'getting_started/index', label: 'Getting Started', position: 'left'},
-        {to: 'consumer/index', label: 'Guides', position: 'left'},
+        {to: 'getting_started', label: 'Getting Started', position: 'left'},
+        {to: 'consumer', label: 'Guides', position: 'left'},
         {to: 'implementation_guides/cli', label: 'Pact Docs', position: 'left'},
         {to: 'pact_broker/docker_images', label: 'Pact Broker Docs', position: 'left'},
         {to: 'history', label: 'Resources', position: 'left'},
@@ -158,6 +158,60 @@ const siteConfig = {
         href: 'https://docs.pact.io/',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Pact Foundation`,
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Getting Started',
+              to: 'getting_started',
+            },
+            {
+              label: 'Guides',
+              to: 'consumer',
+            },{
+              label: 'Pact Docs',
+              to: 'implementation_guides/cli',
+            },{
+              label: 'Resources',
+              to: 'history'
+            },{
+              label: 'Help',
+              to: 'help'
+            }
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+            },
+            {
+              label: 'Discord',
+              href: 'https://discordapp.com/invite/docusaurus',
+            },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/docusaurus',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'Blog',
+              to: 'blog',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/facebook/docusaurus',
+            },
+          ],
+        },
+      ],
 
     },
     image: 'img/docusaurus.png',
