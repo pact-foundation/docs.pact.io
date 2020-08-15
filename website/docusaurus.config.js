@@ -119,6 +119,7 @@ const siteConfig = {
   tagline: 'Test your integrations quickly. Deploy your apps safely.',
   url: 'https://docs.pact.io', // Your website URL
   baseUrl: '/',
+  onBrokenLinks: 'warn',
 
   // Used for publishing and more
   projectName: 'pact-docs',
