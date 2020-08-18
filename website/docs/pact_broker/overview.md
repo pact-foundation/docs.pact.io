@@ -51,7 +51,7 @@ In the above table, Foo published a pact for v1, and Bar v3 verified it successf
 
 ## Can I deploy?
 
-The [can-i-deploy](https://docs.pact.io/pact_broker/can_i_deploy) CLI is a tool that uses the Matrix to ensure that you can release your application safely. It checks that the application version you are about to release is compatible with the existing versions of the other applications in that environment. It effectively makes sure there is a row in the Matrix with matching values for the consumer and provider versions, and a `success` value of true.
+The [can-i-deploy](/pact_broker/can_i_deploy) CLI is a tool that uses the Matrix to ensure that you can release your application safely. It checks that the application version you are about to release is compatible with the existing versions of the other applications in that environment. It effectively makes sure there is a row in the Matrix with matching values for the consumer and provider versions, and a `success` value of true.
 
 ## Navigating the API
 

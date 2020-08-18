@@ -18,7 +18,7 @@ The art of writing good consumer Pact tests is mostly about knowing what _not_ t
 * Pact tests should **not** focus on
   * exposing bugs in the provider \(though this might come up as a by product\)
 
-You can read more about the difference between contract and functional tests [here](contract_tests_not_functional_tests.md).
+You can read more about the difference between contract and functional tests [here](consumer/contract_tests_not_functional_tests).
 
 **The rule of thumb for working out what to test or not test is - if I don't include this scenario, what bug in the consumer or what misunderstanding about how the provider responds might be missed. If the answer is none, don't include it.**
 

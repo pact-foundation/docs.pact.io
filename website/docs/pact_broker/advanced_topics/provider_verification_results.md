@@ -35,7 +35,7 @@ The `can-i-deploy` tool should be added to your consumer deployment script, befo
 
 Something to note is that if the content of your contract has not changed since the previous verification, then the contract will be "pre-verified" with the results of the last verification. This means that most of the time, you should be able to go straight from the consumer test/package phase into the deploy phase.
 
-Changes to the contract that may cause the initial provider verification to fail should be introduced using [tags](using_tags/).
+Changes to the contract that may cause the initial provider verification to fail should be introduced using [tags](/pact_broker/tags).
 
 ## Viewing
 

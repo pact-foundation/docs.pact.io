@@ -50,7 +50,7 @@ The following URL will return the latest pact between a specified consumer and p
 http://your-pact-broker/pacts/provider/PROVIDER/consumer/CONSUMER/latest
 ```
 
-The `latest` endpoint returns the latest pact, _regardless of tags_. If you want to [use tagging](advanced_topics/using_tags/) to enable you to effectively make "feature branch pacts" \(RECOMMENDED!\), then you should use one of the following two URLs to retrieve the "latest" pact for verification.
+The `latest` endpoint returns the latest pact, _regardless of tags_. If you want to [use tagging](/pact_broker/tags) to enable you to effectively make "feature branch pacts" \(RECOMMENDED!\), then you should use one of the following two URLs to retrieve the "latest" pact for verification.
 
 To retrieve the latest pact for a given tag \(eg.`master`, `prod` or `feature-x`\), use:
 

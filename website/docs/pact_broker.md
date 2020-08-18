@@ -47,10 +47,10 @@ Features:
 
 Yes, you can, especially if you're just getting started. You can exchange the pacts via any mechanism you like (build artifacts, S3 buckets). However, you're not going to realise the full benefit (which is ultimately, increasing speed to market) of using Pact without a Pact Broker. Pact on its own allows you to create and verify contracts. Pact + Pact Broker allows you to integrate contract testing into your CI/CD pipeline to allow you to release code *faster*. Without a Pact Broker you would need to write your own code to:
 
-* ensure that your contract tests have passed successfully *before* deploying a consumer or provider application ([can-i-deploy](/can_i_deploy))
+* ensure that your contract tests have passed successfully *before* deploying a consumer or provider application ([can-i-deploy](/pact_broker/can_i_deploy))
 * ensure that the provider verification takes place every time a pact changes ([webhooks](/pact_broker/webhooks))
 * ensure backwards compatiblity between services is maintained ([tags](/pact_broker/tags))
-* allow contracts to change without breaking provider builds ([pending pacts](/pending))
+* allow contracts to change without breaking provider builds ([pending pacts](/pact_broker/advanced_topics/pending_pacts))
 
 ### How would I use the Pact Broker?
 
@@ -78,7 +78,7 @@ If you don't have a [Pact Broker CI Nerf Gun](https://github.com/pact-foundation
 1. The Consumer CI determines if the pact has been verified by running `pact-broker can-i-deploy --pacticipant CONSUMER_NAME --version CONSUMER_VERSION ...` \(see documentation [here](https://github.com/pact-foundation/pact_broker-client#can-i-deploy)\)
 2. If the pact has been verified successfully, the deployment can proceed.
 
-Read more about how to use the Pact Broker in the [overview](overview.md) page
+Read more about how to use the Pact Broker in the [overview](/pact_broker/overview.md) page
 
 ### Support
 
@@ -139,7 +139,7 @@ In a hurry? Hate having to run your own infrastructure? Check out the [Hosted Pa
 
 #### Container solutions
 
-You can use the [Pact Broker Docker image](https://hub.docker.com/r/pactfoundation/pact-broker) or [Terraform on AWS](https://github.com/nadnerb/terraform-pact-broker). See the [wiki](configuration.md#running-the-broker-behind-a-reverse-proxy) for instructions on using a reverse proxy with SSL.
+You can use the [Pact Broker Docker image](https://hub.docker.com/r/pactfoundation/pact-broker) or [Terraform on AWS](https://github.com/nadnerb/terraform-pact-broker). See the [wiki](/pact_broker/configuration.md#running-the-broker-behind-a-reverse-proxy) for instructions on using a reverse proxy with SSL.
 
 #### Rolling your own
 
