@@ -1,11 +1,8 @@
-const React = require('react');
-
-
-const classNames = require('classnames');
+import React from 'react';
 
 // const MarkdownBlock = require('./MarkdownBlock.js');
 
-class GridBlock extends React.Component {
+export default class GridBlock extends React.Component {
 
   array_chunk(arr, size){
     var i,
@@ -58,28 +55,24 @@ class GridBlock extends React.Component {
     );
   }
 
-
-
   render() {
     const chuckSize = 3;
     const chunks = this.array_chunk(this.props.contents, chuckSize);
-    // const list = this.props.contents;
-
-    // const chunks = new Array(Math.ceil(list.length / chuckSize)).fill().map(_ => list.splice(0,chuckSize))
 
     return (
       <div className="container">
-
         {chunks.map(this.renderRow, this)}
       </div>
     );
   }
-}
-
-const CompLibrary = {
-  Container: props => <div {...props}></div>,
-  GridBlock,
-  MarkdownBlock: props => <div {...props}></div>
 };
+// const CompLibrary = {
+//   Container: props => <div {...props}></div>,
+//   GridBlock,
+//   MarkdownBlock: props => <div {...props}></div>
+// };
 
-module.exports = CompLibrary;
+// export default GridBlock;
+
+// export default GridBlock;
+// module.exports = GridBlock;

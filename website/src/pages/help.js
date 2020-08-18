@@ -5,12 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const React = require('react');
+import React from 'react';
+import Layout from '@theme/Layout';
 
-const CompLibrary = require('../components/compLibraryV2.js');
+import GridBlock from '../components/compLibraryV2.js';
 
-const Container = CompLibrary.Container;
-const GridBlock = CompLibrary.GridBlock;
+// const Container = CompLibrary.Container;
+// const GridBlock = CompLibrary.GridBlock;
 
 function Help(props) {
   const {config: siteConfig, language = ''} = props;
@@ -45,19 +46,22 @@ function Help(props) {
     }
   ];
 
+
+
   return (
-    <div className="docMainWrapper wrapper">
-      <Container className="mainContainer documentContainer postContainer">
-        <div className="post">
-          <header className="postHeader">
-            <h1>Need help?</h1>
-          </header>
-          <p>This project is maintained by a dedicated group of people. They are always willing to help, but most of the time you'll find the answer to your question in our existing documentation, so please look there first.</p>
-          <GridBlock contents={supportLinks} layout="threeColumn" />
-        </div>
-      </Container>
-    </div>
+    <Layout>
+      <div className="container">
+        <header>
+          <h1>Need help?</h1>
+        </header>
+        <p>This project is maintained by a dedicated group of people. They are always willing to help, but most of the time you'll find the answer to your question in our existing documentation, so please look there first.</p>
+      </div>
+      <GridBlock contents={supportLinks} layout="threeColumn" />
+    </Layout>
   );
 }
 
-module.exports = Help;
+
+export default Help;
+
+// module.exports = Help;
