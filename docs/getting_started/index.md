@@ -22,8 +22,6 @@ For applications that communicate via HTTP, these "messages" would be the HTTP r
 
 In practice, a common way of implementing contract tests \(and the way Pact does it\) is to check that all the calls to your test doubles [return the same results](https://martinfowler.com/bliki/ContractTest.html) as a call to the real application would.
 
-Note that the term "contract testing", or "provider contract testing", is sometimes used in the context of a standalone provider application, rather than in the context of an integration. When used in this context, "contract testing" is a technique for ensuring a provider's actual behaviour conforms to its documented contract (for example, an Open API specification). This type of contract testing helps avoid integration failures by ensuring the provider code and documentation are in sync with each other. On its own, however, it does not provide any test based assurance that the consumers are calling the provider in the correct manner, or that it can meet all its consumers' expectations, and hence, it is not as effective in preventing integration bugs. Whenever the Pact documentation references "contract testing" it is referring to "integration contract testing" as described in the opening paragraph of this section.
-
 ### When would I use contract testing?
 
 Contract testing is immediately applicable anywhere where you have two services that need to communicate - such as an API client and a web front-end. Although a single client and a single service is a common use case, contract testing really shines in an environment with many services \(as is common for a microservice architecture\). Having well-formed contract tests makes it easy for developers to avoid version hell. Contract testing is the killer app for microservice development and deployment.
@@ -37,6 +35,12 @@ In general, a contract is between a _consumer_ \(for example, a client that want
 Pact is a code-first [_consumer-driven_](http://martinfowler.com/articles/consumerDrivenContracts.html) contract testing tool, and is generally used by developers and testers who code. The contract is generated during the execution of the automated consumer tests. A major advantage of this pattern is that only parts of the communication that are actually used by the consumer\(s\) get tested. This in turn means that any provider behaviour not used by current consumers is free to change without breaking tests.
 
 Unlike a schema or specification \(eg. OAS\), which is a static artefact that describes all possible states of a resource, a Pact contract is enforced by executing a collection of test cases, each of which describes a single concrete request/response pair - Pact is, in effect, "contract by example".
+
+### Provider contract testing
+
+The term "contract testing", or "provider contract testing", is sometimes used in other literature and documentation in the context of a standalone provider application (rather than in the context of an integration). When used in this context, "contract testing" means: a technique for ensuring a provider's actual behaviour conforms to its documented contract (for example, an Open API specification). This type of contract testing helps avoid integration failures by ensuring the provider code and documentation are in sync with each other. On its own, however, it does not provide any test based assurance that the consumers are calling the provider in the correct manner, or that the provider can meet all its consumers' expectations, and hence, it is not as effective in preventing integration bugs. 
+
+Whenever the Pact documentation references "contract testing" it is referring to "integration contract testing" as described previously in this page.
 
 ### Next steps
 
