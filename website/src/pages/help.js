@@ -41,13 +41,13 @@ function Help(props) {
 
   return (
     <Layout>
-      <div className="container">
+      <div className="container main">
         <header>
           <h1>Need help?</h1>
         </header>
         <p>This project is maintained by a dedicated group of people. They are always willing to help, but most of the time you'll find the answer to your question in our existing documentation, so please look there first.</p>
+        <GridBlock contents={supportLinks} layout="threeColumn" />
       </div>
-      <GridBlock contents={supportLinks} layout="threeColumn" />
     </Layout>
   );
 }
