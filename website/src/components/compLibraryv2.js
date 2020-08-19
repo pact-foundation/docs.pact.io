@@ -1,8 +1,7 @@
 import React from 'react';
+import { Remarkable } from 'remarkable';
 
-// const MarkdownBlock = require('./MarkdownBlock.js');
-
-export default class GridBlock extends React.Component {
+export class GridBlock extends React.Component {
 
   array_chunk(arr, size){
     var i,
@@ -24,33 +23,31 @@ export default class GridBlock extends React.Component {
     );
   }
 
-  renderBlock(origBlock) {
+  getRawMarkup(markdown) {
+    var md = new Remarkable();
+    return { __html: md.render(markdown) };
+  }
 
-    const block = {
-      ...origBlock,
-    };
+  renderBlock(block) {
+
     return (
         <div className="col col--4">
           {this.renderBlockTitle(block.title)}
-          <p>{block.content}</p>
+          <div
+              className="content"
+              dangerouslySetInnerHTML={this.getRawMarkup(block.content)}
+            />
         </div>
     );
   }
 
-  renderRow(origBlock, index) {
-
-    const block = {
-      ...origBlock,
-    };
-    console.log(block);
+  renderRow(block, index) {
 //  key={block.title}
     return (
       <div className='row'>
           {this.renderBlock(block[0])}
           {this.renderBlock(block[1])}
-
           {this.renderBlock(block[2])}
-
         </div>
     );
   }
@@ -66,13 +63,3 @@ export default class GridBlock extends React.Component {
     );
   }
 };
-// const CompLibrary = {
-//   Container: props => <div {...props}></div>,
-//   GridBlock,
-//   MarkdownBlock: props => <div {...props}></div>
-// };
-
-// export default GridBlock;
-
-// export default GridBlock;
-// module.exports = GridBlock;

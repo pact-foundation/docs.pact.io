@@ -1,14 +1,7 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import React from 'react';
 import Layout from '@theme/Layout';
 
-import GridBlock from '../components/compLibraryV2.js';
+import {GridBlock} from '../components/compLibraryV2.js';
 
 // const Container = CompLibrary.Container;
 // const GridBlock = CompLibrary.GridBlock;
@@ -46,8 +39,6 @@ function Help(props) {
     }
   ];
 
-
-
   return (
     <Layout>
       <div className="container">
@@ -61,7 +52,4 @@ function Help(props) {
   );
 }
 
-
 export default Help;
-
-// module.exports = Help;
