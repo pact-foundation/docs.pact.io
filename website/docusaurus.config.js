@@ -120,7 +120,9 @@ const siteConfig = {
   url: 'https://docs.pact.io', // Your website URL
   baseUrl: '/',
   onBrokenLinks: 'warn',
-
+  customFields: {
+    users: users
+  },
   // Used for publishing and more
   projectName: 'pact-docs',
   organizationName: 'Pact Foundation',

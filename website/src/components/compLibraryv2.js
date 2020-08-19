@@ -1,6 +1,33 @@
 import React from 'react';
 import { Remarkable } from 'remarkable';
 
+
+export class MarkdownBlock extends React.Component {
+
+  getRawMarkup(markdown) {
+    var md = new Remarkable();
+    return { __html: md.render(markdown) };
+  }
+
+  render() {
+    return (
+      <div
+        className="content"
+        dangerouslySetInnerHTML={this.getRawMarkup(this.props.children)}
+      />
+    );
+  }
+}
+
+export class Container extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        empty
+      </div>
+    );
+  }
+}
 export class GridBlock extends React.Component {
 
   array_chunk(arr, size){
@@ -23,26 +50,17 @@ export class GridBlock extends React.Component {
     );
   }
 
-  getRawMarkup(markdown) {
-    var md = new Remarkable();
-    return { __html: md.render(markdown) };
-  }
-
   renderBlock(block) {
 
     return (
-        <div className="col col--4">
+        <div key={block.title} className="col col--4">
           {this.renderBlockTitle(block.title)}
-          <div
-              className="content"
-              dangerouslySetInnerHTML={this.getRawMarkup(block.content)}
-            />
+          <MarkdownBlock>{block.content}</MarkdownBlock>
         </div>
     );
   }
 
-  renderRow(block, index) {
-//  key={block.title}
+  renderRow(block) {
     return (
       <div className='row'>
           {this.renderBlock(block[0])}

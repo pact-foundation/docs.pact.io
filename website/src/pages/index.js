@@ -5,13 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const React = require('react');
+import React from 'react';
+import Layout from '@theme/Layout';
 
-const CompLibrary = require('../components/compLibraryV2.js');
+import {GridBlock} from '../components/compLibraryV2.js';
 
-const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
-const Container = CompLibrary.Container;
-const GridBlock = CompLibrary.GridBlock;
+// const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 
 class HomeSplash extends React.Component {
   render() {
@@ -82,7 +81,7 @@ class Index extends React.Component {
     const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
 
     const Block = props => (
-      <Container
+      <div
         padding={['bottom', 'top']}
         id={props.id}
         background={props.background}>
@@ -91,7 +90,7 @@ class Index extends React.Component {
           contents={props.children}
           layout={props.layout}
         />
-      </Container>
+      </div>
     );
 
     const FeatureCallout = () => (
@@ -217,19 +216,22 @@ class Index extends React.Component {
     }
 
     return (
-      <div>
-        <HomeSplash siteConfig={siteConfig} language={language} />
-        <div className="mainContainer">
-          <Features />
-          {/* <FeatureCallout /> */}
-          {/*  <TryOut /> */}
-          {/* <Description /> */}
-          <Showcase />
-          <Netlify />
+      <Layout>
+        <div className="container main">
+
+          <HomeSplash siteConfig={siteConfig} language={language} />
+          <div className="mainContainer">
+            <Features />
+            {/* <FeatureCallout /> */}
+            {/*  <TryOut /> */}
+            {/* <Description /> */}
+            <Showcase />
+            <Netlify />
           </div>
-      </div>
+        </div>
+      </Layout>
     );
   }
 }
 
-module.exports = Index;
+export default Index;

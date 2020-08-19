@@ -46,7 +46,7 @@ function Help(props) {
           <h1>Need help?</h1>
         </header>
         <p>This project is maintained by a dedicated group of people. They are always willing to help, but most of the time you'll find the answer to your question in our existing documentation, so please look there first.</p>
-        <GridBlock contents={supportLinks} layout="threeColumn" />
+        <GridBlock key='help' contents={supportLinks} layout="threeColumn" />
       </div>
     </Layout>
   );
