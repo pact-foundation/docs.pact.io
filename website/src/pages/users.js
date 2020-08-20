@@ -8,6 +8,8 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
+console.log(module.paths)
+
 import { MarkdownBlock } from '../components/compLibraryV2.js';
 
 class Users extends React.Component {
