@@ -58,3 +58,7 @@
   to = "/pact_broker/provider_verification_results"
   status = 302
 
+[[redirects]]
+  from = "/getting_started"
+  to = "/"
+  status = 302

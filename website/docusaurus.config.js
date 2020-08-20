@@ -145,7 +145,7 @@ const siteConfig = {
         src: 'img/favicon.ico',
       },
       items: [
-        {to: 'getting_started', label: 'Getting Started', position: 'left'},
+        {to: '/', label: 'Getting Started', position: 'left'},
         {to: 'consumer', label: 'Guides', position: 'left'},
         {to: 'implementation_guides/cli', label: 'Pact Docs', position: 'left'},
         {to: 'pact_broker/docker_images', label: 'Pact Broker Docs', position: 'left'},
@@ -167,7 +167,7 @@ const siteConfig = {
           items: [
             {
               label: 'Getting Started',
-              to: 'getting_started',
+              to: '/',
             },
             {
               label: 'Guides',
@@ -257,6 +257,7 @@ const siteConfig = {
           // Equivalent to `enableUpdateTime`.
           showLastUpdateTime: true,
           routeBasePath: '',
+          homePageId: 'getting_started'
 
           // You may provide arbitrary config keys to be used as needed by your
           // template. For example, if you need your repo's URL...
