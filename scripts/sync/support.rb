@@ -93,6 +93,37 @@ class MarkdownFileContents
     @lines = lines.collect { | line | UrlAbsolutizer.absolutize_links(line, repository_slug, path_transformer, contents_source_path, source_paths) }
   end
 
+  def escape_things_that_look_like_jsx_tags
+    in_code_block = false
+    @lines = lines.collect do | line |
+      in_code_block = !in_code_block if line.start_with?('```')
+
+      if !in_code_block
+        if line =~ /<[A-Za-z0-9\-_\s]+>/
+          in_backticks = false
+          line.chars.collect do | char |
+            # Doesn't handle escaped backticks within backticks
+            in_backticks = !in_backticks if char == '`'
+
+            if !in_backticks
+              case char
+              when '<' then '&lt;'
+              when '>' then '&;gt;'
+              else char
+              end
+            else
+              char
+            end
+          end.join
+        else
+          line
+        end
+      else
+        line
+      end
+    end
+  end
+
   private
 
   def header_lines
@@ -107,7 +138,7 @@ end
 PROJECT_ROOT = File.expand_path(File.join(__FILE__, '..', '..', '..'))
 
 def relative_path_to path
-  Pathname.new(File.join(PROJECT_ROOT, path)).relative_path_from(Pathname.pwd)
+  Pathname.new(File.join(PROJECT_ROOT, 'website', path)).relative_path_from(Pathname.pwd)
 end
 
 def edit_comment_for slug

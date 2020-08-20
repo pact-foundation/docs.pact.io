@@ -1,14 +1,35 @@
 {
   "scripts": {
-    "examples": "docusaurus-examples",
-    "start": "docusaurus-start",
-    "build": "docusaurus-build",
-    "publish-gh-pages": "docusaurus-publish",
-    "write-translations": "docusaurus-write-translations",
-    "version": "docusaurus-version",
-    "rename-version": "docusaurus-rename-version"
+    "examples": "docusaurus examples",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "publish-gh-pages": "docusaurus publish",
+    "write-translations": "docusaurus write-translations",
+    "version": "docusaurus version",
+    "swizzle": "docusaurus swizzle",
+    "rename-version": "docusaurus rename-version"
   },
   "devDependencies": {
-    "docusaurus": "^1.14.4"
+    "@docusaurus/migrate": "2.0.0-alpha.59"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^2.0.0-alpha.48",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.48",
+    "clsx": "^1.1.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "remarkable": "^2.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -12,37 +12,38 @@
     ],
     "Pact JVM": [
       "implementation_guides/jvm",
+      "implementation_guides/jvm/readme",
       "implementation_guides/jvm/matching",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Consumer",
-        "ids": [
-          "implementation_guides/jvm/consumer/java8/index",
-          "implementation_guides/jvm/consumer/junit/index",
-          "implementation_guides/jvm/consumer/junit5/index",
-          "implementation_guides/jvm/consumer/index",
-          "implementation_guides/jvm/consumer/specs2/index",
-          "implementation_guides/jvm/consumer/groovy/index"
+        "items": [
+          "implementation_guides/jvm/consumer/java8",
+          "implementation_guides/jvm/consumer/junit",
+          "implementation_guides/jvm/consumer/junit5",
+          "implementation_guides/jvm/consumer",
+          "implementation_guides/jvm/consumer/specs2",
+          "implementation_guides/jvm/consumer/groovy"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Provider",
-        "ids": [
-          "implementation_guides/jvm/provider/junit5spring/index",
-          "implementation_guides/jvm/provider/junit/index",
-          "implementation_guides/jvm/provider/maven/index",
-          "implementation_guides/jvm/provider/gradle/index",
-          "implementation_guides/jvm/provider/junit5/index",
-          "implementation_guides/jvm/provider/index",
-          "implementation_guides/jvm/provider/sbt/index",
-          "implementation_guides/jvm/provider/lein/index",
-          "implementation_guides/jvm/provider/spring/index",
-          "implementation_guides/jvm/provider/scalatest/index",
-          "implementation_guides/jvm/provider/specs2/index"
+        "items": [
+          "implementation_guides/jvm/provider/junit5spring",
+          "implementation_guides/jvm/provider/junit",
+          "implementation_guides/jvm/provider/maven",
+          "implementation_guides/jvm/provider/gradle",
+          "implementation_guides/jvm/provider/junit5",
+          "implementation_guides/jvm/provider",
+          "implementation_guides/jvm/provider/sbt",
+          "implementation_guides/jvm/provider/lein",
+          "implementation_guides/jvm/provider/spring",
+          "implementation_guides/jvm/provider/scalatest",
+          "implementation_guides/jvm/provider/specs2"
         ]
       },
-      "implementation_guides/jvm/pact-jvm-server/index",
+      "implementation_guides/jvm/pact-jvm-server",
       "implementation_guides/jvm/changelog"
     ],
     "Pact Net": [
@@ -77,18 +78,18 @@
       "implementation_guides/ruby/gotchas"
     ],
     "Pact Rust": [
-      "implementation_guides/rust/index",
-      "implementation_guides/rust/pact_consumer/index",
-      "implementation_guides/rust/pact_matching/index",
-      "implementation_guides/rust/pact_mock_server/index",
-      "implementation_guides/rust/pact_mock_server_cli/index",
-      "implementation_guides/rust/pact_mock_server_ffi/index",
-      "implementation_guides/rust/pact_verifier/index",
-      "implementation_guides/rust/pact_verifier_cli/index",
+      "implementation_guides/rust",
+      "implementation_guides/rust/pact_consumer",
+      "implementation_guides/rust/pact_matching",
+      "implementation_guides/rust/pact_mock_server",
+      "implementation_guides/rust/pact_mock_server_cli",
+      "implementation_guides/rust/pact_mock_server_ffi",
+      "implementation_guides/rust/pact_verifier",
+      "implementation_guides/rust/pact_verifier_cli",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Changelogs",
-        "ids": [
+        "items": [
           "implementation_guides/rust/pact_consumer/changelog",
           "implementation_guides/rust/pact_matching/changelog",
           "implementation_guides/rust/pact_mock_server/changelog",
@@ -100,8 +101,8 @@
       }
     ],
     "Pact C++": [
-      "implementation_guides/cpp/readme",
-      "implementation_guides/cpp/consumer/index",
+      "implementation_guides/cpp",
+      "implementation_guides/cpp/consumer",
       "implementation_guides/cpp/consumer/changelog"
     ],
     "Pact on Docker": [
@@ -120,7 +121,7 @@
   },
   "getting-started": {
     "Getting started": [
-      "getting_started/index",
+      "getting_started",
       "getting_started/how_pact_works",
       "5-minute-getting-started-guide",
       "getting_started/terminology",
@@ -128,10 +129,10 @@
       "getting_started/what_is_pact_good_for",
       "getting_started/comparisons",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Matching",
-        "ids": [
-          "getting_started/matching/index",
+        "items": [
+          "getting_started/matching",
           "getting_started/matching/gotchas"
         ]
       },
@@ -141,10 +142,10 @@
       "implementation_guides/workshops",
       "getting_started/further_reading",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "FAQ",
-        "ids": [
-          "faq/index",
+        "items": [
+          "faq",
           "faq/convinceme",
           "faq/question_archive"
         ]
@@ -153,12 +154,12 @@
   },
   "guides": {
     "Writing Consumer tests": [
-      "consumer/index",
+      "consumer",
       "consumer/contract_tests_not_functional_tests",
       "consumer/using_pact_to_support_ui_testing"
     ],
     "Verifying Pacts": [
-      "provider/README",
+      "provider",
       "provider/using_provider_states_effectively",
       "provider/handling_auth"
     ],
@@ -186,44 +187,43 @@
       "pact_broker/client_cli/changelog"
     ],
     "Pact Broker": [
-      "pact_broker/index",
+      "pact_broker",
       "pact_broker/overview",
       "getting_started/versioning_in_the_pact_broker",
       "pact_broker/publishing_and_retrieving_pacts",
-      "pact_broker/provider_verification_results",
+      "pact_broker/advanced_topics/provider_verification_results",
       "pact_broker/tags",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Webhooks",
-        "ids": [
-          "pact_broker/webhooks/index",
+        "items": [
+          "pact_broker/webhooks",
           "pact_broker/webhooks/template_library",
           "pact_broker/webhooks/debugging_webhooks"
         ]
       },
       "pact_broker/can_i_deploy",
       "pact_broker/set_up_checklist",
-      "pact_broker/pact_broker_client_cli",
+      "pact_broker/client_cli",
       "pact_broker/terraform_provider",
       "pact_broker/configuration",
       "pact_broker/upgrading",
       "pact_broker/breaking_changes",
       "pact_broker/network_graph",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Administration",
-        "ids": [
-          "pact_broker/administration/README",
+        "items": [
+          "pact_broker/administration",
           "pact_broker/administration/maintenance",
           "pact_broker/administration/deleting_resources"
         ]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Advanced Topics",
-        "ids": [
+        "items": [
           "pact_broker/pacticipant_version_numbers",
-          "pact_broker/advanced_topics/using_tags",
           "pact_broker/advanced_topics/see_changes_pact",
           "pact_broker/advanced_topics/provider_verification_badges",
           "pact_broker/advanced_topics/pacticipant",
@@ -231,7 +231,7 @@
           "pact_broker/advanced_topics/wip_pacts",
           "pact_broker/advanced_topics/consumer_version_selectors",
           "pact_broker/advanced_topics/matrix_selectors",
-          "pact_broker/advanced_topics/api_docs/index",
+          "pact_broker/advanced_topics/api_docs",
           "pact_broker/advanced_topics/ui_docs",
           "pact_broker/advanced_topics/troubleshooting"
         ]
@@ -246,7 +246,7 @@
       "blogs_videos_and_articles"
     ],
     "Contributing": [
-      "contributing/README",
+      "contributing",
       "contributing/docs",
       "contributing/contributors",
       "contributing/code-of-conduct"

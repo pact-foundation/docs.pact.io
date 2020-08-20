@@ -3,7 +3,14 @@ require_relative 'support'
 
 SOURCE_REPO = 'pact-foundation/pact-cplusplus'
 DESTINATION_DIR = relative_path_to('docs/implementation_guides/cpp')
-TRANSFORM_PATH = -> (path) { File.join(DESTINATION_DIR, path.downcase.gsub('/readme.md', '/index.md')) } # Rename README.md to index.md, but not the top level README
+TRANSFORM_PATH = -> (path) {
+  if path == "README.md"
+    "#{DESTINATION_DIR}.md"
+  else
+    File.join(DESTINATION_DIR, path.downcase.gsub('/readme.md', '.md'))
+  end
+}
+
 INCLUDE = [
   ->(path) { path.end_with?('.md') && !path.start_with?('consumer/docs/') }
 ]

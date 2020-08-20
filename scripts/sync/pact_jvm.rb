@@ -3,7 +3,10 @@ require_relative 'support'
 
 SOURCE_REPO = 'DiUS/pact-jvm'
 DESTINATION_DIR = relative_path_to('docs/implementation_guides/jvm')
-TRANSFORM_PATH = -> (path) { File.join(DESTINATION_DIR, path.downcase.gsub('/readme.md', '/index.md')) } # Rename README.md to index.md, but not the top level README
+TRANSFORM_PATH = -> (path) {
+  # Rename README.md file, but not the top level README
+  File.join(DESTINATION_DIR, path.downcase.gsub('/readme.md', '.md'))
+}
 INCLUDE = [
   ->(path) { path.end_with?('.md') }
 ]
@@ -22,6 +25,11 @@ CUSTOM_ACTIONS = [
     md_file_contents.remove_lines_including('- doc: ')
     md_file_contents.remove_lines_including('- refactor: ')
     md_file_contents.remove_lines_including('- style: ')
+    md_file_contents.remove_lines_including(' - Update ')
+    md_file_contents.remove_lines_including(' - Revert "')
+    md_file_contents.remove_lines_including(' - Merge branch ')
+    md_file_contents.remove_lines_including(' - Merge pull request ')
+    md_file_contents.remove_lines_including(' - bump version ')
     md_file_contents.find_and_replace(/^# /, '## ')
   }]
 ]
