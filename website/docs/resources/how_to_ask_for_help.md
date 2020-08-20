@@ -8,7 +8,7 @@ Please remember that while you might be learning how to use Pact as part of your
 
 ## 1. Search on docs.pact.io first
 
-We have a great (free!) search tool provided by Algolia, and it's quicker than waiting for a human to respond. If you're trying to learn how to use Pact, check out our [Getting started](/getting_started/) section. If you're trying to learn how to use Pact *well*, check out our [Guides](/guides). If you're trying to learn how to use Pact in a particular language, check out our [implementation docs](/implementation_guides).
+We have a great (free!) search tool provided by Algolia, and it's quicker than waiting for a human to respond. If you're trying to learn how to use Pact, check out our [Getting started](/) section. If you're trying to learn how to use Pact *well*, check out our [Guides](/consumer). If you're trying to learn how to use Pact in a particular language, check out our [implementation docs](/implementation_guides/cli).
 
 ## 2. Search on Slack.
 
@@ -30,7 +30,7 @@ Imagine you were one of the people reading your question, and ask yourself if yo
 
 #### Please remember
 
-* The people who might be able to help you are often viewing your questions on their phones. Large slabs of unformatted text are hard to read. Please only supply the relevant text, and add three backticks (eg. ```) at the start and end so that it formats correctly. For large pieces of code please [create a snippet](https://slack.com/intl/en-au/slack-tips/share-code-snippets).  
+* The people who might be able to help you are often viewing your questions on their phones. Large slabs of unformatted text are hard to read. Please only supply the relevant text, and add three backticks (eg. ```) at the start and end so that it formats correctly. For large pieces of code please [create a snippet](https://slack.com/intl/en-au/slack-tips/share-code-snippets).
 * We are not a general purpose help desk! Using Pact requires:
 
     * strong development skills (writing code, using IDEs and text editors, operating command line tools)

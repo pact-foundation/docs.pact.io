@@ -8,9 +8,9 @@ For an up-to-date list of all the API resources, view the actual code [here](htt
 
 _Key resources:_
 
-* [Publishing pacts](publish_pact.md)
-* [Publishing verification results](publish_verification_result.md)
-* [Webhooks](webhooks.md)
-* [Pacticipants]()
-* [Pact diff](pact_diff.md)
+* [Publishing pacts](api_docs/publish_pact)
+* [Publishing verification results](api_docs/publish_verification_result)
+* [Webhooks](api_docs/webhooks)
+* [Pacticipants](api_docs/pacticipant)
+* [Pact diff](api_docs/pact_diff)
 
