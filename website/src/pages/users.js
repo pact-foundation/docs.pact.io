@@ -10,7 +10,7 @@ import Layout from '@theme/Layout';
 
 console.log(module.paths)
 
-import { MarkdownBlock } from '../components/compLibraryV2.js';
+import { MarkdownBlock } from '../components/compLibraryv2.js';
 
 class Users extends React.Component {
   render() {
