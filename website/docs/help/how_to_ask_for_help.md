@@ -6,9 +6,11 @@ The Pact maintainers and our band of experienced community members love helping 
 
 Please remember that while you might be learning how to use Pact as part of your paid job, the maintainers and community are helping you _in their free time_. You can show respect for them and get an answer more quickly by following these steps when you have a question.
 
-## 1. Search on docs.pact.io first
+## 1. Search this docs site first
 
-We have a great (free!) search tool provided by Algolia, and it's quicker than waiting for a human to respond. If you're trying to learn how to use Pact, check out our [Getting started](/) section. If you're trying to learn how to use Pact *well*, check out our [Guides](/consumer). If you're trying to learn how to use Pact in a particular language, check out our [implementation docs](/implementation_guides/cli).
+In the top right of this page, you'll find the search tool (provided free by Algolia!) - it's quicker than waiting for a human to respond. Many of the maintainers live in Australia, and are often asleep when most of the questions get asked.
+
+If you're trying to learn how to use Pact, check out our [Getting started](/) section. If you're trying to learn how to use Pact *well*, check out our [Guides](/consumer). If you're trying to learn how to use Pact in a particular language, check out our [implementation docs](/implementation_guides/cli).
 
 ## 2. Search on Slack.
 

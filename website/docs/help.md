@@ -1,5 +1,5 @@
 ---
-title: Need help?
+title: Where to go for help
 ---
 
 This project is maintained by a dedicated group of people. They are always willing to help, but most of the time you'll find the answer to your question in our existing documentation, so please look there first.
@@ -10,7 +10,7 @@ Learn more using the [documentation on this site.](implementation_guides/cli)
 
 ## Join the Pact Slack community
 
-Ask questions about the documentation and project. You can join [here](https://slack.pact.io).
+Please read the [how to ask for help](/help/how_to_ask_for_help) page first. You can join [here](https://slack.pact.io).
 
 ## Search on Stack Overflow
 

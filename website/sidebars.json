@@ -248,8 +248,11 @@
         "contributing/contributors",
         "contributing/code-of-conduct"
       ]
-    },
-    "resources/how_to_ask_for_help"
+    }
+  ],
+  "help": [
+    "help",
+    "help/how_to_ask_for_help"
   ],
   "docs-other": {
     "First Category": [

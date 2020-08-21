@@ -62,3 +62,8 @@
   from = "/getting_started"
   to = "/"
   status = 302
+
+[[redirects]]
+  from = "/resources/how_to_ask_for_help"
+  to = "/help/how_to_ask_for_help"
+  status = 302
