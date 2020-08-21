@@ -2,6 +2,9 @@
 title: FAQ
 ---
 
+You can find the answers to some more technical and complex questions [here](/faq/question_archive).
+
+<!--
 ## Table of Contents
 
 * [What is Pact good for?](#what-is-pact-good-for)
@@ -32,6 +35,7 @@ title: FAQ
 * [How do I test binary files in responses, such as a download?](#how-do-i-test-binary-files-in-responses-such-as-a-download)
 * [Why is the documentation so ugly?](#why-is-the-documentation-so-ugly)
 
+-->
 ### What is Pact good for?
 
 Pact is most valuable for designing and testing integrations where you \(or your team/organisation/partner organisation\) control the development of both the consumer and the provider, and the requirements of the consumer are going to be used to drive the features of the provider. It is fantastic tool for developing and testing intra-organisation microservices.

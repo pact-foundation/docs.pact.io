@@ -1,5 +1,5 @@
 ---
-title: Workshops
+title: Hands on learning
 ---
 
 ## Video Training

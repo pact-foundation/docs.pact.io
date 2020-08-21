@@ -54,8 +54,7 @@
       "implementation_guides/go/readme",
       "implementation_guides/go/troubleshooting",
       "implementation_guides/go/changelog"
-    ]
-    ,
+    ],
     "Pact Python": [
       "implementation_guides/python",
       "implementation_guides/python/readme",
@@ -119,39 +118,36 @@
       "getting_started/stubs"
     ]
   },
-  "getting-started": {
-    "Getting started": [
-      "getting_started",
-      "getting_started/how_pact_works",
-      "5-minute-getting-started-guide",
-      "getting_started/terminology",
-      "getting_started/testing-scope",
-      "getting_started/what_is_pact_good_for",
-      "getting_started/comparisons",
-      {
-        "type": "category",
-        "label": "Matching",
-        "items": [
-          "getting_started/matching",
-          "getting_started/matching/gotchas"
-        ]
-      },
-      "getting_started/verifying_pacts",
-      "getting_started/provider_states",
-      "getting_started/sharing_pacts",
-      "implementation_guides/workshops",
-      "getting_started/further_reading",
-      {
-        "type": "category",
-        "label": "FAQ",
-        "items": [
-          "faq",
-          "faq/convinceme",
-          "faq/question_archive"
-        ]
-      }
-    ]
-  },
+  "getting-started": [
+    {
+      "type": "category",
+      "label": "Getting started",
+      "items": [
+        "getting_started",
+        "getting_started/how_pact_works",
+        "5-minute-getting-started-guide",
+        "getting_started/terminology",
+        "getting_started/testing-scope",
+        "getting_started/what_is_pact_good_for",
+        "getting_started/comparisons",
+        {
+          "type": "category",
+          "label": "Matching",
+          "items": [
+            "getting_started/matching",
+            "getting_started/matching/gotchas"
+          ]
+        },
+        "getting_started/verifying_pacts",
+        "getting_started/provider_states",
+        "getting_started/sharing_pacts",
+        "getting_started/further_reading"
+      ]
+    },
+    "implementation_guides/workshops",
+    "faq",
+    "faq/convinceme"
+  ],
   "guides": {
     "Writing Consumer tests": [
       "consumer",
