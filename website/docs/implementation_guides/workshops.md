@@ -4,7 +4,7 @@ title: Hands on learning
 
 ## Video Training
 
-A great starting point is this [contract testing With Pact](https://testautomationu.applitools.com/pact-contract-tests/index.html) course published on Test Automation University
+A great starting point is this [Contract Testing With Pact](https://testautomationu.applitools.com/pact-contract-tests/index.html) course published on Test Automation University
 
 ## Pact workshops - from 0 to Pact in ~2 hours
 
