@@ -10,7 +10,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 **Customer Stories**:
 * [Booking.com - Consumer](https://medium.com/better-programming/your-contract-tests-are-not-protecting-you-563a5d6cdfef)
-* [ASOS - Retail](https://www.youtube.com/watch?v=SAtXTT214ro&feature=youtu.be)
+* [ASOS - Retail](https://www.youtube.com/watch?v=SAtXTT214ro&feature=youtu.be) (Video)
 * [John Lewis - Retail](https://medium.com/john-lewis-software-engineering/consumer-driven-contract-testing-a-scalable-testing-strategy-for-microservices-3f2b09f99ed1)
 * [Mastercard](https://developer.mastercard.com/blog/consumer-driven-contracts-to-the-rescue/)
 * [IBM - Cloud Garage Practices](https://www.ibm.com/garage/method/practices/code/contract-driven-testing)
@@ -32,7 +32,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 * [DAZN](https://medium.com/dazn-tech/pact-contract-testing-dealing-with-authentication-on-the-provider-51fd46fdaa78)
 * [Solidstudio](https://solidstudio.io/blog/consumer-driven-contract-introduction.html)
 * [Avisi](https://www.avisi.nl/blog/keep-your-microservices-compatible-with-consumer-driven-contract-testing)
-* [JAX London Video](https://www.youtube.com/watch?v=l5IEMOk4QiM)
+* [JAX London Video](https://www.youtube.com/watch?v=l5IEMOk4QiM) (Video)
 * [Codecentric](https://blog.codecentric.de/en/2019/10/consumer-driven-contract-testing-with-pact/)
 * [Codecentric](https://blog.codecentric.de/en/2019/11/message-pact-contract-testing-in-event-driven-applications/)
 * [Kreuzwerker / Idealo](https://kreuzwerker.de/post/introduction-to-consumer-driven-contract-testing)
@@ -58,6 +58,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 * [Hackernoon](https://hackernoon.com/how-to-test-microservices-with-consumer-driven-contracts-9bf5c2c05349)
 * [Rising Stack](https://blog.risingstack.com/consumer-driven-contract-testing-with-pact/)
 * [Service Evolution with Consumer Driven Contracts and Pact \(.Net\)](http://adamrodger.github.io/blog/2018/07/05/consumer-driven-contracts.html)
+* [Beyond consumer driven contract testing](https://www.youtube.com/watch?v=n5QFe6uwWHI&list=TLPQMjEwODIwMjC3gGz7zy58gQ&index=2) (video)
 
 ## 2017
 
@@ -67,16 +68,16 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 **Articles**:
 * [Codefresh / Anton weiss](https://codefresh.io/docker-tutorial/how-to-test-microservice-integration-with-pact/)
 * [Move Fast and Consumer-Driven-Contract-Testing Things - Soundcloud MicroXchng 2017"](https://speakerdeck.com/alonpeer/move-fast-and-consumer-driven-contract-test-things)
-* [Consumer Driven Contract Testing with Pact and Docker - Harry Winser](https://www.youtube.com/watch?v=pnWVYeDVo2s)
+* [Consumer Driven Contract Testing with Pact and Docker - Harry Winser](https://www.youtube.com/watch?v=pnWVYeDVo2s) (Video)
 * [BBVA](https://www.bbva.com/en/consumer-driven-contract-tests/)
 * [It's not hard to test smart](https://www.youtube.com/watch?v=79GKBYSqMIo) (Video)
 
 ## 2016
 
 * [Consumer driven contract testing - Pact \(.NET\)](https://medium.com/@ericjwhuang/consumer-driven-contract-testing-pact-d791a3eac72a/)
-* [Deploy with Confidence! Video from April Melb JVM Meetup](https://www.youtube.com/watch?v=h-79QmIV824)
+* [Deploy with Confidence! Video from April Melb JVM Meetup](https://www.youtube.com/watch?v=h-79QmIV824) (Video)
 * [Deploy with Confidence! Slides from April Melb JVM Meetup](https://github.com/pact-foundation/pact.io/tree/9da206b230a2f794aab2eb927a70e9c53e693810/media/media/Pact%20-%20Deploy%20with%20Confidence!.pdf).
-* [Verifying Microservice Integrations with Contract Testing - Atlassian at their 2016 summit](https://www.youtube.com/watch?v=-6x6XBDf9sQ&feature=youtu.be)
+* [Verifying Microservice Integrations with Contract Testing - Atlassian at their 2016 summit](https://www.youtube.com/watch?v=-6x6XBDf9sQ&feature=youtu.be) (Video)
 
 ## 2015
 * [Consumer-driven contracts with Pact and PHP](http://www.andykelk.net/tech/consumer-driven-contracts-with-pact-and-php)
@@ -87,8 +88,8 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 * [Enter the Pact Matrix. Or, how to decouple the release cycles of your microservices.](http://techblog.realestate.com.au/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/)
 * [The Odyssey from Monoliths to Microservices](https://yow.eventer.com/yow-2014-1222/the-odyssey-from-monoliths-to-microservices-at-realestate-com-au-by-beth-skurrie-and-evan-bottcher-and-jon-eaves-1751) \(Video\)
-* [Pacts to the rescue!](https://www.youtube.com/watch?v=KwpDu9SuAbI) \(Video\)
-* [Microservices testing with Pact-Net](https://www.youtube.com/watch?v=SMadH_ALLII) \(Video\)
+* [Pacts to the rescue!](https://www.youtube.com/watch?v=KwpDu9SuAbI) \(Video\) (Video)
+* [Microservices testing with Pact-Net](https://www.youtube.com/watch?v=SMadH_ALLII) \(Video\) (Video)
 * [Microservices testing slidedeck](http://martinfowler.com/articles/microservice-testing/)
 * [Thoughtworks Tech Radar](https://github.com/pact-foundation/pact-ruby)
 * [Ruby Rogues](http://rubyrogues.com/176-rr-rails-as-an-soa-client-with-pete-hodgson/)
