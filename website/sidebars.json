@@ -132,8 +132,6 @@
       "Pact concepts": [
         "getting_started/terminology",
         "getting_started/testing-scope",
-        "getting_started/what_is_pact_good_for",
-        "getting_started/comparisons",
         {
           "type": "category",
           "label": "Matching",
@@ -148,9 +146,15 @@
         "getting_started/further_reading"
       ]
     },
+    {
+      "Should you use Pact?": [
+        "getting_started/what_is_pact_good_for",
+        "getting_started/comparisons",
+        "faq/convinceme"
+      ]
+    },
     "implementation_guides/workshops",
-    "faq",
-    "faq/convinceme"
+    "faq"
   ],
   "guides": {
     "Writing Consumer tests": [
