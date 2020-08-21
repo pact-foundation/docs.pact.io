@@ -238,23 +238,19 @@
       }
     ]
   },
-  "resources": {
-    "History": [
-      "history"
-    ],
-    "Community videos & articles": [
-      "blogs_videos_and_articles"
-    ],
-    "Contributing": [
-      "contributing",
-      "contributing/docs",
-      "contributing/contributors",
-      "contributing/code-of-conduct"
-    ],
-    "Help": [
-      "resources/how_to_ask_for_help"
-    ]
-  },
+  "resources": [
+    "history",
+    "blogs_videos_and_articles",
+    {
+      "Contributing": [
+        "contributing",
+        "contributing/docs",
+        "contributing/contributors",
+        "contributing/code-of-conduct"
+      ]
+    },
+    "resources/how_to_ask_for_help"
+  ],
   "docs-other": {
     "First Category": [
       "doc4",

@@ -1,5 +1,6 @@
 ---
 title: Contributing
+sidebar_label: Contributing to the code
 ---
 
 We encourage contribution to any of our libraries, if you see something that should be fixed, simply do the following:
