@@ -129,6 +129,13 @@
       ]
     },
     {
+      "Should you use Pact?": [
+        "getting_started/what_is_pact_good_for",
+        "getting_started/comparisons",
+        "faq/convinceme"
+      ]
+    },
+    {
       "Pact concepts": [
         "getting_started/terminology",
         "getting_started/testing-scope",
@@ -144,13 +151,6 @@
         "getting_started/provider_states",
         "getting_started/sharing_pacts",
         "getting_started/further_reading"
-      ]
-    },
-    {
-      "Should you use Pact?": [
-        "getting_started/what_is_pact_good_for",
-        "getting_started/comparisons",
-        "faq/convinceme"
       ]
     },
     "implementation_guides/workshops",
