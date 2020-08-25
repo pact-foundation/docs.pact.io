@@ -10,7 +10,7 @@ Note that the pending feature is only applicable to the [provider changed workfl
 
 ## How the "pending" property works
 
-The "pending" status of a pact is a _dynamically calculated_ property, determined at the time of running the provider verifications. It is based on:
+The "pending" status of a pact is a _dynamically calculated_ property, determined by the Pact Broker at the time of running the provider verifications. It is based on:
 
 * The distinct content of the contract (also known as the "pact version")
 * The branch of the provider, as specified by the provider tags in the verification configuration
@@ -20,6 +20,10 @@ It is calculated for each pact version when the "pacts for verification" API is 
 When a pact version is considered "pending", then any mismatches during verification _will not_ cause the overall verification task to fail. When a pact is _not_ considered "pending" then mismatches _will_ cause the overall verification task to fail (until the introduction of this feature, this was the default behaviour).
 
 The purpose of the pending flag is to ensure that provider builds are not broken by changes that were introduced by the consumer, but to also ensure that backwards compatiblity is maintained when a change is introduced by a provider. It achieves this by treating the first successful verification of a pact version by a particular branch of the provider as an implicit acceptance of the contract. Thereafter, if verification of that pact version fails, it can only be because the provider has made a backwards incompatible change.
+
+The provider tags are used to determine the pending status because it is common to implement new features of a provider on a feature branch. If the provider tags were not taken in to consideration, a newly passing verification on `feat-x` of the provider could suddenly cause the verification on branch `main` of the provider to fail.
+
+TODO: document provider tag creation date considerations.
 
 ## To start using the Pending pacts feature
 
