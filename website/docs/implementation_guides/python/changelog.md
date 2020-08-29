@@ -4,6 +4,23 @@ custom_edit_url: https://github.com/pact-foundation/pact-python/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact-python repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+### 1.2.4
+  * a594e22 - Merge pull request #170 from alecgerona/feat/consumer-version-selector (Elliott Murray, Thu Aug 27 15:21:45 2020 +0100)
+  * 05c5e41 - docs(cli): improve cli help grammar (Alexandre Gerona, Thu Aug 27 06:28:56 2020 +0800)
+  * 49d5f7c - docs: update README.md with relevant option documentation (Alexandre Gerona, Thu Aug 27 06:22:37 2020 +0800)
+  * 5a99528 - feat(cli): add consumer-version-selector option (Alexandre Gerona, Thu Aug 27 06:22:07 2020 +0800)
+### 1.2.3
+  * 8188d88 - chore: fix release script (Elliott Murray, Wed Aug 26 12:46:10 2020 +0100)
+  * e0e5106 - Merge pull request #169 from pact-foundation/chore/update_pr_scripts (Elliott Murray, Wed Aug 26 10:24:47 2020 +0100)
+  * 81fd653 - chore: release script updates version automaitcally now (Elliott Murray, Wed Aug 26 10:16:14 2020 +0100)
+  * 773d3f9 - chore: script now uses gh over hub (Elliott Murray, Wed Aug 26 10:03:06 2020 +0100)
+  * 468e4ad - Merge pull request #168 from pact-foundation/chore/upgrade-to-pact-ruby-standalone-1-88-3 (Elliott Murray, Wed Aug 26 09:49:33 2020 +0100)
+  * ce944fe - feat: update standalone to 1.88.3 (Elliott Murray, Wed Aug 26 09:08:27 2020 +0100)
+### 1.2.2
+  * 2c52053 - Merge pull request #167 from pact-foundation/feat/add_env_vars_verify (Elliott Murray, Mon Aug 24 16:08:04 2020 +0100)
+  * ce62588 - feat: added env vars for broker verify (Elliott Murray, Mon Aug 24 16:03:44 2020 +0100)
+  * 880fff2 - Merge pull request #165 from pact-foundation/docs/https_fix (Elliott Murray, Thu Aug 20 12:43:12 2020 +0100)
+  * 1a3605e - docs: https svg (Elliott Murray, Thu Aug 20 12:37:01 2020 +0100)
 ### 1.2.1
   * 69a4a9a - Merge pull request #163 from elliottmurray/fix/custom_header (Elliott Murray, Sat Aug 8 10:17:20 2020 +0100)
   * 88b7d9f - fix: custom headers had a typo (Elliott Murray, Sat Aug 1 11:08:54 2020 +0100)

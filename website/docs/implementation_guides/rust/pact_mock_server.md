@@ -11,7 +11,7 @@ It implements the [V3 Pact specification](https://github.com/pact-foundation/pac
 
 For an example of calling these functions, have a [look at the JavaScript reference](https://github.com/pact-foundation/pact-reference/blob/master/javascript/README.md).
 
-All the exported functions using C bindings for controlling the mock server are now found in the [pact_mock_server_ffi module](../pact_mock_server_ffi).
+All the exported functions using C bindings for controlling the mock server are now found in the [pact_mock_server_ffi module](https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_mock_server_ffi).
 
 ## [create_mock_server](http://www.pact.io/reference/rust/libpact_mock_server-docs-latest/pact_mock_server/fn.create_mock_server.html)
 
