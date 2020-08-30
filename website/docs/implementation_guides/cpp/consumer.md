@@ -17,7 +17,7 @@ and provider as parameters, and can then be used to define the expectations.
 
 For instance:
 
-```c++
+```cpp
   auto provider = Pact("TodoAppCpp", "TodoServiceCpp");
   provider
     .given("i have a list of projects")
@@ -261,7 +261,7 @@ Matches a URL composed of a base path and a list of path fragments. The path fra
 
 for example:
 
-```c++
+```cpp
 Object({ "url", Url("http://localhost/tasks", { EqualTo("1001"), Matching("\\d+", "200") }) })
 ```
 
@@ -281,7 +281,7 @@ The actual test is then run with the `run_test` method. This takes a clsoure to 
 
 For example:
 
-```c++
+```cpp
 auto result = provider.run_test([] (auto mock_server) {
     // setup any client code you have. The mock_server parameter has the base address of the mock server started for the test
     TodoClient todo;
