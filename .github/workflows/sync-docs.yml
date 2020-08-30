@@ -12,6 +12,7 @@ on:
       - pact-broker-docker-pactfoundation-docs-updated
       - pact-broker-docker-dius-docs-updated
       - pact-broker-client-docs-updated
+      - pact-net-docs-updated
 
 jobs:
   build:
@@ -59,6 +60,10 @@ jobs:
     - name: Sync Pact Broker Client docs
       run: bundle exec scripts/sync/pact_broker_client.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact broker client docs'
       if: github.event.action == 'pact-broker-client-docs-updated'
+
+    - name: Sync Pact Net docs
+      run: bundle exec scripts/sync/pact_net.rb && echo '::set-env name=COMMIT_MESSAGE::synced pact-net docs'
+      if: github.event.action == 'pact-net-docs-updated'
 
     - uses: actions/setup-node@v2-beta
       with:

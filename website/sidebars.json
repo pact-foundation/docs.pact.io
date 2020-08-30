@@ -47,7 +47,8 @@
       "implementation_guides/jvm/changelog"
     ],
     "Pact Net": [
-      "implementation_guides/net"
+      "implementation_guides/net",
+      "implementation_guides/net/readme"
     ],
     "Pact Go": [
       "implementation_guides/go",

@@ -226,7 +226,7 @@ const siteConfig = {
     // Equivalent to `docsSideNavCollapsible`.
     sidebarCollapsible: true,
     prism: {
-      additionalLanguages: ['ruby']
+      additionalLanguages: ['ruby', 'csharp']
     }
     // ...
   },
