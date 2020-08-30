@@ -259,8 +259,7 @@ const siteConfig = {
           showLastUpdateAuthor: true,
           // Equivalent to `enableUpdateTime`.
           showLastUpdateTime: true,
-          routeBasePath: '',
-          homePageId: 'getting_started'
+          routeBasePath: ''
 
           // You may provide arbitrary config keys to be used as needed by your
           // template. For example, if you need your repo's URL...

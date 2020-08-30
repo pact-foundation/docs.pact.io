@@ -1,6 +1,7 @@
 ---
 title: Introduction
 description: Fast and reliable testing for your APIs and microservices during development. Safety during deployment.
+slug: /
 ---
 
 Pact is a code-first tool for testing HTTP and message integrations using `contract tests`. Contract tests assert that inter-application messages conform to a shared understanding that is documented in a contract. Without contract testing, the only way to ensure that applications will work correctly together is by using expensive and brittle integration tests.
