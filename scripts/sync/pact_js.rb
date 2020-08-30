@@ -1,9 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'octokit'
-require 'base64'
-require 'fileutils'
-require 'pathname'
 require_relative 'support'
 
 SOURCE_REPO = 'pact-foundation/pact-js'
