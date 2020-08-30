@@ -4,13 +4,15 @@ title: Provider States
 
 See [Provider States](../../provider/using_provider_states_effectively.md) for an introduction into this advanced topic.
 
-The text in the provider state should make sense when you read it as follows \(this is how the auto-generated documentation reads\):
+```
+Given "an alligator with the name Mary exists" <-- This is the provider state
+Upon receiving "a request to retrieve an alligator by name"  <-- This is the request description
+from Some Consumer
+With {"method" : "get", "path" : "/alligators/Mary" }
+Some Provider will respond with { "status" : 200, ...}
+```
 
-Given **an alligator with the name Mary exists** \* Upon receiving **a request to retrieve an alligator by name** \*\* from Some Consumer With {"method" : "get", "path" : "/alligators/Mary" } Some Provider will respond with { "status" : 200, ...}
-
-\* This is the provider state \*\* This is the request description
-
-## Consumer code base
+## Consumer codebase
 
 For example, some code that creates a pact in a consumer project might look like this:
 
@@ -22,25 +24,26 @@ describe MyServiceProviderClient do
   describe "get_something" do
     context "when a thing exists" do
       before do
-        my_service.given('a thing exists').
-          upon_receiving('a request for a thing').
-          with(method: 'GET', path: '/thing').
-          will_respond_with(
-            status: 200,
-            headers: { 'Content-Type' => 'application/json' },
-            body: { name: 'A small something'})
+        my_service.
+          given("a thing exists").
+          upon_receiving("a request for a thing").
+          with(method: "get", path: "/thing").
+          will_respond_with(status: 200,
+            headers: { "Content-Type" => "application/json" },
+            body: { name: "A small something"} )
       end
 
       it "returns a thing" do
-        expect(subject.get_something).to eq(SomethingModel.new('A small something'))
+        expect(subject.get_something).to eq(SomethingModel.new("A small something"))
       end
     end
 
     context "when a thing does not exist" do
       before do
-        my_service.given("a thing does not exist").
+        my_service.
+          given("a thing does not exist").
           upon_receiving("a request for a thing").
-          with(method: 'get', path: '/thing').
+          with(method: "get", path: "/thing").
           will_respond_with(status: 404)
       end
 
@@ -89,7 +92,6 @@ Pact.provider_states_for 'My Service Consumer' do
 
 end
 ```
-
 Require your provider states file in the `pact_helper.rb`
 
 ```ruby
@@ -98,9 +100,9 @@ Require your provider states file in the `pact_helper.rb`
 require './spec/service_consumers/provider_states_for_my_service_consumer.rb'
 ```
 
-## Base state
+### Base state
 
-To define code that should run before/after each interaction for a given consumer, regardless of whether a provider state is specified or not, define set\_up/tear\_down blocks with no wrapping provider\_state.
+To define code that should run before/after each interaction for a given consumer, regardless of whether a provider state is specified or not, define set_up/tear_down blocks with no wrapping provider_state.
 
 ```ruby
 Pact.provider_states_for 'My Service Consumer' do
@@ -117,7 +119,7 @@ Pact.provider_states_for 'My Service Consumer' do
 end
 ```
 
-## Global state
+### Global state
 
 Global state will be set up before consumer specific base state. Avoid using the global set up for creating data as it will make your tests brittle when more than one consumer exists.
 
@@ -131,7 +133,17 @@ Pact.tear_down do
 end
 ```
 
-## Testing error responses
+### Provider state params
+
+In Pact specification v3 and later, multiple provider states may be defined for an interaction, and each provider state has params, as well as a name. If you are verifying a v3 pact, and you are using version 1.36.0 or later of the pact gem, you can access the provider state params via the block arguments in the set up or tear down code.
+
+```ruby
+  set_up do | params |
+    Alligator.new(name: params.fetch("name")).save!
+  end
+```
+
+### Testing error responses
 
 It is important to test how your client will handle error responses.
 
@@ -176,13 +188,12 @@ Pact.provider_states_for 'My Service Consumer' do
 end
 ```
 
-## Including modules for use in set\_up and tear\_down
+### Including modules for use in set_up and tear_down
 
-Any modules included this way will be available in the set\_up and tear\_down blocks. One common use of this to include factory methods for setting up data so that the provider states file doesn't get too bloated.
+Any modules included this way will be available in the set_up and tear_down blocks. One common use of this to include factory methods for setting up data so that the provider states file doesn't get too bloated.
 
 ```ruby
 Pact.configure do | config |
   config.include MyTestHelperMethods
 end
 ```
-

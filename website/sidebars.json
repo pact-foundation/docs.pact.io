@@ -72,6 +72,7 @@
     "Pact Ruby": [
       "implementation_guides/ruby/README",
       "implementation_guides/ruby/creating_pacts",
+      "implementation_guides/ruby/matching",
       "implementation_guides/ruby/verifying_pacts",
       "implementation_guides/ruby/provider_states",
       "implementation_guides/ruby/configuration",

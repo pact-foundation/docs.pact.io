@@ -4,7 +4,7 @@ title: Creating pacts
 
 ## With RSpec
 
-Follow the instructions in the [README](https://github.com/pact-foundation/pact-ruby), this is the default behaviour.
+Follow the instructions in the [README](README.md), this is the default behaviour.
 
 ### Configuration of the pact creation
 
