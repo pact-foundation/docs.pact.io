@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/provider/junit5/RE
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## Dependency
+
+The library is available on maven central using:
+
+* group-id = `au.com.dius.pact.provider`
+* artifact-id = `junit5`
+* version-id = `4.1.x`
+
 ## Overview
 
 For writing Pact verification tests with JUnit 5, there is an JUnit 5 Invocation Context Provider that you can use with 
