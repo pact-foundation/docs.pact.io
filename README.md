@@ -35,6 +35,7 @@ The markdown files in the following directories are synced from their respective
 * `docs/implementation_guides/python`
 * `docs/implementation_guides/cpp`
 * `docs/implementation_guides/rust`
+* `docs/implementation_guides/net`
 * `docs/pact_broker/client_cli`
 * `docs/pact_broker/docker_images/`
 

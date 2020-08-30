@@ -26,5 +26,4 @@ For more significant changes, like adding pages or changing URLs, you will need 
 1. Update [/website/sidebars.json](/website/sidebars.json) to include the new section and pages.
 1. Update [.github/workflows/sync-docs.yml](.github/workflows/sync-docs.yml) with an event for the new repository.
 1. In the source repository, copy [this workflow]((https://github.com/pact-foundation/pact-js/blob/master/.github/workflows/trigger_pact_docs_update.yml)) into the corresponding location.
-    * Note that this script does not fail if the auth fails because I couldn't work out a way to safely fail the script while also logging out the response body, while also not logging out the Authorization token. If the auth fails, you'll get a 404.
 1. If the source repository is in the `pact-foundation` organisation and you have permissions, modify the scope of the `GHTOKENFORTRIGGERINGPACTDOCSUPDATE` secret so that it can be used by the repo. Otherwise, ask @bethesque to do it.
