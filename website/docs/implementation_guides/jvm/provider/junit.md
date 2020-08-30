@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/provider/junit/REA
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## Dependency
+
+The library is available on maven central using:
+
+* group-id = `au.com.dius.pact.provider`
+* artifact-id = `junit`
+* version-id = `4.1.x`
+
+
 ## Overview
 Library provides ability to play contract tests against a provider service in JUnit fashionable way.
 
