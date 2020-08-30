@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/provider/junit5/RE
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## Dependency
+
+The library is available on maven central using:
+
+* group-id = `au.com.dius.pact.provider`
+* artifact-id = `junit5`
+* version-id = `4.1.x`
+
 ## Overview
 
 For writing Pact verification tests with JUnit 5, there is an JUnit 5 Invocation Context Provider that you can use with 
@@ -30,7 +38,7 @@ public class ContractVerificationTest {
 }
 ```
 
-For details on the provider and pact source annotations, refer to the [Pact junit runner](https://github.com/DiUS/pact-jvm/tree/master/provider/junit) docs.
+For details on the provider and pact source annotations, refer to the [Pact junit runner](/implementation_guides/jvm/provider/junit) docs.
 
 ## Test target
 
@@ -67,7 +75,7 @@ For example, configure it by adding the following to your POM:
 
 ## Provider State Methods
 
-Provider State Methods work in the same way as with JUnit 4 tests, refer to the [Pact junit runner](https://github.com/DiUS/pact-jvm/tree/master/provider/junit) docs.
+Provider State Methods work in the same way as with JUnit 4 tests, refer to the [Pact junit runner](/implementation_guides/jvm/provider/junit) docs.
 
 ### Using multiple classes for the state change methods
 
@@ -148,4 +156,4 @@ Then any pending pacts will not cause a build failure.
 
 # Work In Progress (WIP) Pact Support (version 4.1.5 and later)
 
-WIP pacts work in the same way as with JUnit 4 tests, refer to the [Pact junit runner](../junit/) docs.
+WIP pacts work in the same way as with JUnit 4 tests, refer to the [Pact junit runner](/implementation_guides/jvm/provider/junit) docs.

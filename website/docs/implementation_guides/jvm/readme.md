@@ -65,26 +65,26 @@ Pact-JVM has a number of ways you can write your service consumer tests.
 
 ### I Use Scala
 
-You want to look at: [scala-pact](https://github.com/ITV/scala-pact) or [specs2](consumer/specs2)
+You want to look at: [scala-pact](https://github.com/ITV/scala-pact) or [specs2](/implementation_guides/jvm/consumer/specs2)
 
 ### I Use Java
 
-You want to look at: [junit](consumer/junit) for JUnit 4 tests and
-[junit5](consumer/junit5) for JUnit 5 tests. Also, if you are using Java 8, there is [an
-updated DSL for consumer tests](consumer/java8).
+You want to look at: [junit](/implementation_guides/jvm/consumer/junit) for JUnit 4 tests and
+[junit5](/implementation_guides/jvm/consumer/junit5) for JUnit 5 tests. Also, if you are using Java 8, there is [an
+updated DSL for consumer tests](/implementation_guides/jvm/consumer/java8).
 
 ### I Use Groovy or Grails
 
-You want to look at: [groovy](consumer/groovy) or [junit](consumer/junit)
+You want to look at: [groovy](/implementation_guides/jvm/consumer/groovy) or [junit](/implementation_guides/jvm/consumer/junit)
 
 ### (Use Clojure I)
 
-Clojure can call out to Java, so have a look at [junit](consumer/junit). For an example
+Clojure can call out to Java, so have a look at [junit](/implementation_guides/jvm/consumer/junit). For an example
 look at [example_clojure_consumer_pact_test.clj](https://github.com/DiUS/pact-jvm/blob/master/consumer/junit/src/test/clojure/au/com/dius/pact/consumer/junit/example_clojure_consumer_pact_test.clj).
 
 ### I Use some other jvm language or test framework
 
-You want to look at: [Consumer](consumer)
+You want to look at: [Consumer](/implementation_guides/jvm/consumer)
 
 ### My Consumer interacts with a Message Queue
 
@@ -104,38 +104,38 @@ You want to look at: [scala-pact](https://github.com/ITV/scala-pact)
 
 #### verify pacts with Gradle
 
-You want to look at: [pact gradle plugin](provider/gradle)
+You want to look at: [pact gradle plugin](/implementation_guides/jvm/provider/gradle)
 
 #### verify pacts with Maven
 
-You want to look at: [pact maven plugin](provider/maven)
+You want to look at: [pact maven plugin](/implementation_guides/jvm/provider/maven)
 
 #### verify pacts with JUnit tests
 
-You want to look at: [junit provider support](provider/junit) for JUnit 4 tests and 
- [junit5](provider/junit5) for JUnit 5 tests
+You want to look at: [junit provider support](/implementation_guides/jvm/provider/junit) for JUnit 4 tests and 
+ [junit5](/implementation_guides/jvm/provider/junit5) for JUnit 5 tests
 
 #### verify pacts with Leiningen
 
-You want to look at: [pact leiningen plugin](provider/lein)
+You want to look at: [pact leiningen plugin](/implementation_guides/jvm/provider/lein)
 
 #### verify pacts with Specs2
 
-Have a look at [specs2](provider/specs2)
+Have a look at [specs2](/implementation_guides/jvm/provider/specs2)
 
 #### verify pacts with a Spring MVC project
 
-Have a look at [spring](provider/spring) or [Spring MVC Pact Test Runner](https://github.com/realestate-com-au/pact-jvm-provider-spring-mvc) (Not maintained).
+Have a look at [spring](/implementation_guides/jvm/provider/spring) or [Spring MVC Pact Test Runner](https://github.com/realestate-com-au/pact-jvm-provider-spring-mvc) (Not maintained).
 
 #### I want to verify pacts but don't want to use sbt or gradle or leiningen
 
-You want to look at: [provider](provider)
+You want to look at: [provider](/implementation_guides/jvm/provider)
 
 #### verify interactions with a message queue
 
 As part of the V3 pact specification, we have defined a new pact file for interactions with message queues. The Gradle
-pact plugin supports a mechanism where you can verify V3 message pacts, have a look at [pact gradle plugin](provider/gradle#verifying-a-message-provider).
-The JUnit pact library also supports verification of V3 message pacts, have a look at [junit](provider/junit#verifying-a-message-provider).
+pact plugin supports a mechanism where you can verify V3 message pacts, have a look at [pact gradle plugin](/implementation_guides/jvm/provider/gradle#verifying-a-message-provider).
+The JUnit pact library also supports verification of V3 message pacts, have a look at [junit](/implementation_guides/jvm/provider/junit#verifying-a-message-provider).
 
 ### I Use Ruby or Go or something else
 The pact-jvm libraries are pure jvm technologies and do not have any native dependencies.
@@ -153,7 +153,7 @@ Have a look at [implementations in other languages](https://github.com/realestat
 
 ### I Use something completely different
 
-There's a limit to how much we can help, however check out [pact-jvm-server](pact-jvm-server)
+There's a limit to how much we can help, however check out [pact-jvm-server](/implementation_guides/jvm/pact-jvm-server)
 
 ## How do I transport my pacts from consumers to providers?
 

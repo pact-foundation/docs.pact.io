@@ -988,7 +988,7 @@ To install it:
 npm i @pact-foundation/pact@beta
 ```
 
-For examples on how to use it, see [examples/v3/e2e](examples/v3/e2e) and [examples/v3/todo-consumer](examples/v3/todo-consumer).
+For examples on how to use it, see [examples/v3/e2e](https://github.com/pact-foundation/pact-js/blob/master/examples/v3/e2e) and [examples/v3/todo-consumer](https://github.com/pact-foundation/pact-js/blob/master/examples/v3/todo-consumer).
 
 **NOTE: This implementation is not ready for production use yet, as it DOES NOT yet support the following features:**
 
@@ -1062,7 +1062,7 @@ const animalBodyExpectation = {
 
 ### Using Pact with XML
 
-You can write both consumer and provider verification tests with XML requests or responses. For an example, see [examples/v3/todo-consumer/test/consumer.spec.js](examples/v3/todo-consumer/test/consumer.spec.js).
+You can write both consumer and provider verification tests with XML requests or responses. For an example, see [examples/v3/todo-consumer/test/consumer.spec.js](https://github.com/pact-foundation/pact-js/blob/master/examples/v3/todo-consumer/test/consumer.spec.js).
 There is an `XmlBuilder` class that provides a DSL to help construct XML bodies with matching rules and generators (NOTE that generators are not supported for XML at this time).
 
 for example:
@@ -1353,7 +1353,7 @@ Try starting the mock service manually and seeing if it comes up. When submittin
 
 ## Contact
 
-Join us in [Slack](slack.pact.io)
+Join us on [Slack](https://slack.pact.io)
 
 <a href="https://slack.pact.io"><img src="https://slack.pact.io/badge.svg"></img></a>
 

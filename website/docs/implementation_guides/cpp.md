@@ -33,11 +33,11 @@ Read [Getting started with Pact](https://docs.pact.io/5-minute-getting-started-g
 ## Documentation
 
 * [Main Pact documentation](https://docs.pact.io)
-* Consumer DSL docs [consumer/](consumer/)
+* Consumer DSL docs [consumer/](/implementation_guides/cpp/consumer/)
 * Consumer DSL HTML docs [consumer/docs/html/](https://docs.pact.io/cpp_docs/consumer/annotated.html)
 
 ## Consumer Tests
 
-The support for consumer tests is documented in [consumer](consumer).
+The support for consumer tests is documented in [consumer](/implementation_guides/cpp/consumer).
 
 For an example for the consumer test DSL, have a look at [consumer_test.cpp](https://github.com/pact-foundation/pact-cplusplus/blob/master/consumer/test/src/consumer_test.cpp).

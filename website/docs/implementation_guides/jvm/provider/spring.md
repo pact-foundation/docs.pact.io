@@ -6,7 +6,7 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/provider/spring/RE
 
 ## Overview
 Library provides ability to play contract tests against a provider using Spring & JUnit.
-This library is based on and references the JUnit package, so see the [Pact JUnit 4](https://github.com/DiUS/pact-jvm/tree/master/provider/junit) or [Pact JUnit 5](https://github.com/DiUS/pact-jvm/tree/master/provider/junit5) providers for more details regarding configuration using JUnit.
+This library is based on and references the JUnit package, so see the [Pact JUnit 4](/implementation_guides/jvm/provider/junit) or [Pact JUnit 5](/implementation_guides/jvm/provider/junit5) providers for more details regarding configuration using JUnit.
 
 Supports:
 

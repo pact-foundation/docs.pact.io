@@ -7,24 +7,32 @@ require 'pathname'
 module UrlAbsolutizer
   extend self
 
-  def absolutize_links(contents, source_repository_slug, path_transformer, contents_source_path, source_paths)
+  def absolutize_links(contents, source_repository_slug, link_transformer, contents_source_path, synced_source_paths)
     contents.gsub(/\]\(([^)]+)\)/) { | match |
       url = match[2..-2]
 
-      transformed_path = path_transformer.call(url.delete_prefix('/'))
       if url.start_with?('http', '#')
         match
-      elsif source_paths.include?(url.delete_prefix('/'))
-        "](#{transformed_path})"
       else
+        url_without_anchor, anchor = url.split('#', 2)
+        optional_anchor = anchor ? "##{anchor}" : ""
+        # the path of the file in the docs.pact.io site
         path_from_root = if url.start_with?('.')
-          File.join(File.dirname(contents_source_path), url)
+          Addressable::URI.parse(File.join(File.dirname(contents_source_path), url_without_anchor)).normalize.to_s.chomp('/')
         else
-          url.delete_prefix('/')
+          url_without_anchor.delete_prefix('/')
         end
 
-        absolute_url = (Addressable::URI.parse("https://github.com/#{source_repository_slug}/blob/master/") + path_from_root).to_s
-        "](#{absolute_url})"
+        transformed_link = link_transformer.call(path_from_root) + optional_anchor
+
+        if synced_source_paths.include?(path_from_root)
+          "](#{transformed_link})"
+        elsif synced_source_paths.include?(File.join(path_from_root, 'README.md'))
+          "](#{transformed_link})"
+        else
+          absolute_url = (Addressable::URI.parse("https://github.com/#{source_repository_slug}/blob/master/") + path_from_root).to_s + optional_anchor
+          "](#{absolute_url})"
+        end
       end
     }
   end
@@ -89,8 +97,8 @@ class MarkdownFileContents
     end.compact
   end
 
-  def absolutize_links(repository_slug, path_transformer, contents_source_path, source_paths)
-    @lines = lines.collect { | line | UrlAbsolutizer.absolutize_links(line, repository_slug, path_transformer, contents_source_path, source_paths) }
+  def absolutize_links(repository_slug, link_transformer, contents_source_path, source_paths)
+    @lines = lines.collect { | line | UrlAbsolutizer.absolutize_links(line, repository_slug, link_transformer, contents_source_path, source_paths) }
   end
 
   def escape_things_that_look_like_jsx_tags
@@ -145,7 +153,7 @@ def edit_comment_for slug
   "<!-- This file has been synced from the #{slug} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
 end
 
-def get_file_list(repository_slug, include_conditions, exclude_conditions = [])
+def get_file_list(repository_slug, include_conditions = [], exclude_conditions = [])
   client = Octokit::Client.new(:access_token => ENV['GITHUB_ACCESS_TOKEN'])
   client.auto_paginate = true
   tree = client.tree(repository_slug, 'master',  recursive: true).tree
@@ -175,14 +183,17 @@ def select_actions(custom_actions, path)
     .collect(&:last)
 end
 
-def process_file(path, content, path_transformer, custom_actions, comment, source_file_paths = nil, source_repository_slug = nil)
+def process_file(path, content, path_transformer, custom_actions, comment, source_file_paths, source_repository_slug)
   destination = path_transformer.call(path)
   fields = { custom_edit_url: "https://github.com/#{source_repository_slug}/edit/master/#{path}" }
   md_file_contents = MarkdownFileContents.new(content.split("\n"), fields, [comment])
   select_actions(custom_actions, path).each { |action| action.call(md_file_contents) }
-  # if source_file_paths && source_repository_slug
-    #md_file_contents.absolutize_links(source_repository_slug, path_transformer, path, source_file_paths)
-  # end
+  if source_file_paths && source_repository_slug
+    link_transformer = -> (path){
+      path_transformer.call(path).delete_prefix('website/docs').chomp('.md')
+    }
+    md_file_contents.absolutize_links(source_repository_slug, link_transformer, path, source_file_paths)
+  end
 
   puts "Writing file #{destination}"
   FileUtils.mkdir_p(File.dirname(destination))
@@ -191,8 +202,9 @@ def process_file(path, content, path_transformer, custom_actions, comment, sourc
 end
 
 def sync source_repository_slug, include_filter, ignore_filter, path_transformer, actions
-  file_list = get_file_list(source_repository_slug, include_filter, ignore_filter)
-  processed_files = each_file(file_list) do | path, content |
-    process_file(path, content, path_transformer, actions, edit_comment_for(source_repository_slug), file_list.collect(&:path), source_repository_slug)
+  file_list = get_file_list(source_repository_slug)
+  sync_file_list = filter_file_list(file_list, include_filter, ignore_filter)
+  processed_files = each_file(sync_file_list) do | path, content |
+    process_file(path, content, path_transformer, actions, edit_comment_for(source_repository_slug), sync_file_list.collect(&:path), source_repository_slug)
   end
 end
