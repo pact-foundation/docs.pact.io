@@ -253,7 +253,7 @@ const siteConfig = {
       {
         docs: {
           path: 'docs/',
-          editUrl: 'https://github.com/pact-foundation/docs.pact.io/edit/master/docs/',
+          editUrl: 'https://github.com/pact-foundation/docs.pact.io/edit/master/website/',
 
           sidebarPath: require.resolve('./sidebars.json'),
           showLastUpdateAuthor: true,
