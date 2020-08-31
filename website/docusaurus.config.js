@@ -259,7 +259,7 @@ const siteConfig = {
           showLastUpdateAuthor: true,
           // Equivalent to `enableUpdateTime`.
           showLastUpdateTime: true,
-          routeBasePath: '',
+          routeBasePath: '/',
           homePageId: 'getting_started'
 
           // You may provide arbitrary config keys to be used as needed by your
