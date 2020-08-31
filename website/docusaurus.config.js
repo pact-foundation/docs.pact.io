@@ -158,7 +158,7 @@ const siteConfig = {
       logo: {
         alt: 'Pact Foundation logo',
         src: 'img/favicon.ico',
-        href: 'https://docs.pact.io/',
+        href: 'https://pact.io/',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Pact Foundation`,
       links: [
