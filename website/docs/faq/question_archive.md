@@ -21,3 +21,8 @@ The introduction of contract testing allows you to reduce your integrated and e2
 ## Should I commit the generated pacts into the consumer's repository?
 
 You can if you want, but it's not necessary unless you have another use for them (like using them for stubs). Most people add them to the .gitignore file to avoid having to re-commit them every time they change.
+
+## How can I tell if I have good contract test coverage of my API?
+
+This is actually the wrong question to be asking. Contract tests aren't intended to provide any particular percentage coverage of the _provider_ (that's what the provider's own functional tests are for). Contract tests are meant to provide (as close to) 100% coverage of the _consumer_ code that makes the calls to the provider (you can think of this as the "provider client code"). If you execute your consumer Pact tests in a separate step in your test suite, you can use standard code coverage tools to determine whether or not your Pact tests have covered a sufficient percentage of your provider client code.
+
