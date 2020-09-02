@@ -189,15 +189,15 @@ const siteConfig = {
           items: [
             {
               label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              href: 'https://stackoverflow.com/questions/tagged/pact',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Join Slack',
+              href: 'https://slack.pact.io',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/pact_up',
             },
           ],
         },
@@ -206,11 +206,11 @@ const siteConfig = {
           items: [
             {
               label: 'Blog',
-              to: 'blog',
+              href: 'http://blog.pact.io',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/pact-foundation',
             },
           ],
         },
