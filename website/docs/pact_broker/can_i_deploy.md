@@ -29,7 +29,7 @@ In the deployment script for each application that uses Pact, we need to add a s
 
 Here is how we would check to see if we were safe to deploy Foo version 23 to production, given that we know version 56 of Bar is in production. \(The Pact Broker URL and credentials have been skipped for clarity.\) Note that "pacticipant" is not a typo - it's the Pact term for "an application that participates in a pact".
 
-`$ pact-broker can-i-deploy --pacticipant Foo --version 24 --pacticipant Bar --version 56` \(exit code 0 means yes!\)
+`$ pact-broker can-i-deploy --pacticipant Foo --version 23 --pacticipant Bar --version 56` \(exit code 0 means yes!\)
 
 This works, but there's one problem - how do we get the production version of Bar in that line?
 
