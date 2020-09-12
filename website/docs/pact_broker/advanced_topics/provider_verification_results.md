@@ -25,6 +25,27 @@ end
 
 If your pact URL includes basic auth configurations for the pact broker, these will be used to publish the verification.
 
+#### Pacts for Verification
+
+Earlier versions of the Pact libraries accepted a list of consumer version tags, and fetched each pact directly by tag. The more recent versions of the Pact libraries use a "pacts for verification" endpoint in the Pact Broker. It supports:
+
+* the [pending pacts](/pending) feature.
+* the [work in progress pacts](/wip) feature.
+* specifying the pacts to verify using [consumer version selectors](/consumer_version_selectors) rather than just a list of tags.
+* de-duplication of pact contents for faster verifications.
+
+To use these features:
+
+* You need to either be using [pactflow.io](https://pactflow.io?utm_source=ossdocs&utm_campaign=provider_verification_results), or have version 2.60.0+ of the OSS Pact Broker.
+* You need to be use at least the following version of your Pact library:
+    * JVM: 4.1.7
+    * For the following libraries that wrap the [pact-ruby-standalone](https://docs.pact.io/wrapper_implementations), at least version 1.49.3 of the standalone is required.
+        * JS: 9.11.1 (not supported by the v3 implementation that uses Rust)
+        * Ruby: 1.52.0
+        * Go: latest as of September 2020 (version TBC)
+        * .Net: latest as of September 2020 (version TBC)
+        * Python: latest as of September 2020 (version TBC)
+
 ## Querying
 
 Once your verification is published, your consumer build will need some way of determining the verification results before releasing to production.
