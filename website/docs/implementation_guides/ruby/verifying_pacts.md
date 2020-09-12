@@ -81,9 +81,7 @@ To verify a pact from a URL that requires a bearer token, add the token paramete
 To verify pacts with the specific tag(s):
 
 ```ruby
-  app_version "..."
-  app_version_tags ["..."]
-
+Pact.service_provider "My Service Provider" do
   honours_pacts_from_pact_broker do
     # Base URL of pact broker is mandatory
     # basic auth username/password and token are optional parameters
@@ -107,6 +105,7 @@ To verify pacts with the specific tag(s):
     enable_pending true # See https://docs.pact.io/pending
     include_wip_pacts_since "2020-01-01" # See https://docs.pact.io/wip
   end
+ end
 ```
 
 ## Publishing verification results to a pact broker
