@@ -81,6 +81,9 @@ To verify a pact from a URL that requires a bearer token, add the token paramete
 To verify pacts with the specific tag(s):
 
 ```ruby
+  app_version "..."
+  app_version_tags ["..."]
+
   honours_pacts_from_pact_broker do
     # Base URL of pact broker is mandatory
     # basic auth username/password and token are optional parameters
@@ -99,6 +102,10 @@ To verify pacts with the specific tag(s):
     # fallback: In case, the tag does not exist, it will fetch pacts for the fallback-tag. This is an optional
     #           parameter.
     consumer_version_tags [{name: 'tag-name', all: false, fallback: 'fallback-tag-name'}]
+    
+    # Requires version 1.53.0 or later
+    enable_pending true # See https://docs.pact.io/pending
+    include_wip_pacts_since "2020-01-01" # See https://docs.pact.io/wip
   end
 ```
 
@@ -109,14 +116,13 @@ If you are using version 1.11.0 or later of the pact gem and 2.0.0 or later of t
 You should only publish verification results from your CI server, not from your local development machine. The recommended way to do this is to detect an environment variable that will only be present on your CI server, like `BUILD_NUMBER` or `TRAVIS`, or to set an explicit variable like `PUBLISH_VERIFICATION_RESULTS`.
 
 ```ruby
-# Ensure your provider application version enables you to trace back to an exact
-# state of your provider codebase.
-# The easiest way to do this is to include the build number (or a SHA) in your version.
 provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`
-publish_flag = ENV['PUBLISH_VERIFICATION_RESULTS'] == "true"
+provider_branch = ENV['GIT_BRANCH'] || `git name-rev --name-only HEAD`
+publish_flag = ENV['PUBLISH_VERIFICATION_RESULTS'] == 'true' # or some way of detecting you're running on CI like ENV['CI'] == 'true'
 
 Pact.service_provider "My Service Provider" do
   app_version provider_version
+  app_version_tags [provider_branch]
   publish_verification_results publish_flag
 end
 
@@ -157,9 +163,13 @@ With bearer token auth, set the environment variable `PACT_BROKER_TOKEN`.
 
 ## Verifying one interaction at a time
 
-At some stage, you'll want to be able to run your specs one at a time while you implement each feature. At the bottom of the failed pact:verify output you will see the commands to rerun each failed interaction individually. A command to run just one interaction will look like this:
+At some stage, you'll want to be able to run your specs one at a time while you implement each feature. To do this, set the `PACT_BROKER_INTERACTION_ID` environment variable (if the pact came from a Pact Broker, and is using a recent version of the gem) or the `PACT_DESCRIPTION` and/or `PACT_PROVIDER_STATE` environment variables otherwise. At the bottom of the failed pact:verify output you will see the commands to rerun each failed interaction individually. A command to run just one interaction will look like this if it has come from a Pact Broker:
 
-    $ rake pact:verify PACT_DESCRIPTION="a request for something" PACT_PROVIDER_STATE="something exists"
+    $ bundle exec rake pact:verify PACT_BROKER_INTERACTION_ID="6c8857bd2983448096184c82151a1fc0"
+    
+If it has come from a local file, then you can set the provider state and/or description environment variables.
+
+    $ bundle exec rake pact:verify PACT_DESCRIPTION="a request for something" PACT_PROVIDER_STATE="something exists"
 
 ## Modifying the request with live data
 
@@ -190,19 +200,6 @@ end
 ```
 
 Be very careful here that you are only _changing_ existing data in the request - if you _add_ something that the consumer did not actually send in the request, then the request may fail in real life because the consumer does not know it needs to be sent.
-
-## Verifying pacts for non-Rack apps
-
-### Ruby apps
-If your app is a non-Rack Ruby app, you may be able to find a Rack adapter for it. If you can do this, then configure the `app` in the `Pact.service_provider` block to point to an instance of your adapter. Otherwise, use the [pact-provider-verifier](https://github.com/pact-foundation/pact-provider-verifier) gem.
-
-### JVM apps
-
-Use [pact-jvm](https://github.com/DiUS/pact-jvm).
-
-### Other apps
-Use the [pact-provider-verifier](https://github.com/pact-foundation/pact-provider-verifier) gem
-
 
 ## Configuring RSpec
 
