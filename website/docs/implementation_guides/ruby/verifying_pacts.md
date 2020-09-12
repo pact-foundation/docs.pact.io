@@ -101,9 +101,34 @@ Pact.service_provider "My Service Provider" do
     #           parameter.
     consumer_version_tags [{name: 'tag-name', all: false, fallback: 'fallback-tag-name'}]
     
-    # Requires version 1.53.0 or later
-    enable_pending true # See https://docs.pact.io/pending
-    include_wip_pacts_since "2020-01-01" # See https://docs.pact.io/wip
+    enable_pending true # See docs below
+    include_wip_pacts_since "2020-01-01" # See docs below
+  end
+ end
+```
+
+#### Enabling pending pacts
+
+The "Pending Pacts" feature allows pacts that have been changed by the consumer to be verified by the provider without breaking the provider's build. Read more [here](https://docs.pact.io/pending). Requires version 1.53.0 or later of the pact gem, and version 2.60.1 or later of the Pact Broker.
+
+```ruby
+Pact.service_provider "My Service Provider" do
+  honours_pacts_from_pact_broker do
+    ...
+    enable_pending true # See 
+  end
+ end
+```
+
+#### Enabling WIP pacts
+
+The "Work In Progress Pacts" feature automatically includes new pacts in the list of pacts to be verified, allowing the consumer to get feedback on a pact without anyone in the provider team having to change the verification configuration. Read more [here](https://docs.pact.io/wip). Requires version 1.53.0 or later of the pact gem, and version 2.60.1 or later of the Pact Broker.
+
+```ruby
+Pact.service_provider "My Service Provider" do
+  honours_pacts_from_pact_broker do
+    ...
+    include_wip_pacts_since "2020-01-01"
   end
  end
 ```
