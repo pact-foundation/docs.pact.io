@@ -30,7 +30,13 @@ The properties section will tell you how many of the webhooks succeeded for the 
 
 The Embedded Resources section will give you links to the execution logs.
 
-If you see no evidence of any attempted executions, look in the application logs.
+By default, for security purposes, the execution logs will be hidden. You will need to configure the whitelist to see the logs. If you are using one of the [Docker images](/pact_broker/docker_images) you can configure the whitelist via environment variables, documented [here](/pact_broker/docker_images/dius#webhook-whitelists). The documentation that explains how the whitelists work is [here](/pact_broker/configuration#webhook-whitelists) (note that the example code shows how to configure the underlying Ruby application, however, if you are using a Docker image, you need to use the environment variables in the first link).
 
-If you see no logs related to a webhook, it means that the json content was the same as the previous version, so the webhook will not be triggered. If you see "No webhook found for consumer ..." then the json had changed, but there are no webhooks found. If you see "Scheduling job for ..." then the content has changed, a webhook has been found, and a background job has been created to execute it.
+If you see no evidence of any attempted executions, look in the application logs. For every pact publication, there are detailed logs that explain why a webhook is/isn't fired for a particular publication.
 
+eg.
+
+* "Pact content has not changed since previous version, not triggering webhooks for changed content"
+* "No enabled webhooks found for consumer "x" and provider "y" and event contract_published"
+* "Webhook triggered for the following reasons: first time pact published with consumer version tagged feat/y"
+* "Scheduling job for webhook with uuid ap7c1tk-AdEYyphWBVieIg"
