@@ -15,32 +15,53 @@ The Pact Verifier works by taking all the interactions (requests and responses) 
 The pact verifier is bundled as a single binary executable `pact_verifier_cli`. Running this with out any options displays the standard help.
 
 ```console
-pact_verifier_cli v0.2.0
+pact_verifier_cli v0.8.0
 Standalone Pact verifier
 
 USAGE:
-    pact_verifier_cli [FLAGS] [OPTIONS] --file <file> --dir <dir> --url <url> --broker-url <broker-url> --provider-name <provider-name>
+    pact_verifier_cli [FLAGS] [OPTIONS] --broker-url <broker-url>... --dir <dir>... --file <file>... --provider-name <provider-name> --url <url>...
 
 FLAGS:
         --filter-no-state          Only validate interactions that have no defined provider state
         --help                     Prints help information
-        --state-change-as-query    State change request data will be sent as query parameters instead of in the request body
+        --publish                  Enables publishing of verification results back to the Pact Broker. Requires the
+                                   broker-url and provider-version parameters.
+        --state-change-as-query    State change request data will be sent as query parameters instead of in the request
+                                   body
         --state-change-teardown    State change teardown requests are to be made after each interaction
     -v, --version                  Prints version information
 
 OPTIONS:
-    -b, --broker-url <broker-url>                    URL of the pact broker to fetch pacts from to verify (requires the provider name parameter)
-    -d, --dir <dir>                                  Directory of pact files to verify (can be repeated)
-    -f, --file <file>                                Pact file to verify (can be repeated)
-    -c, --filter-consumer <filter-consumer>       Consumer name to filter the pacts to be verified (can be repeated)
+        --base-path <base-path>                      Base path to add to all requests
+    -b, --broker-url <broker-url>...
+            URL of the pact broker to fetch pacts from to verify (requires the provider name parameter)
+
+        --build-url <build-url>
+            URL of the build to associate with the published verification results.
+
+    -d, --dir <dir>...                               Directory of pact files to verify (can be repeated)
+    -f, --file <file>...                             Pact file to verify (can be repeated)
+    -c, --filter-consumer <filter-consumer>...       Consumer name to filter the pacts to be verified (can be repeated)
         --filter-description <filter-description>    Only validate interactions whose descriptions match this filter
         --filter-state <filter-state>                Only validate interactions whose provider states match this filter
     -h, --hostname <hostname>                        Provider hostname (defaults to localhost)
-    -l, --loglevel <loglevel>                        Log level (defaults to warn) [values: error, warn, info, debug, trace, none]
-    -p, --port <port>                                Provider port (defaults to 8080)
+    -l, --loglevel <loglevel>
+            Log level (defaults to warn) [possible values: error, warn, info, debug,
+            trace, none]
+        --password <password>                        Password to use when fetching pacts from URLS
+    -p, --port <port>                                Provider port (defaults to protocol default 80/443)
     -n, --provider-name <provider-name>              Provider name (defaults to provider)
+        --provider-tags <provider-tags>
+            Provider tags to use when publishing results. Accepts comma-separated values.
+
+        --provider-version <provider-version>
+            Provider version that is being verified. This is required when publishing results.
+
     -s, --state-change-url <state-change-url>        URL to post state change requests to
-    -u, --url <url>                                  URL of pact file to verify (can be repeated)
+    -t, --token <token>                              Bearer token to use when fetching pacts from URLS
+    -u, --url <url>...                               URL of pact file to verify (can be repeated)
+        --user <user>                                Username to use when fetching pacts from URLS
+
 ```
 
 ## Options
@@ -67,8 +88,9 @@ The running provider can be specified with the following options:
 | Option | Description |
 |--------|-------------|
 | `-h, --hostname <hostname>` | The provider hostname, defaults to `localhost` |
-| `-p, --port <port>` | The provider port (defaults to 8080) |
+| `-p, --port <port>` | The provider port (defaults to protocol default 80/443) |
 | `-n, --provider-name <provider-name>` | The name of the provider. Required if you are loading pacts from a pact broker |
+| `--base-path <base-path>` | If the provider is mounted on a sub-path, you can use this option to set the base path to add to all requests |
 
 ### Filtering the interactions
 
@@ -76,23 +98,32 @@ The interactions that are verified can be filtered by the following options:
 
 #### `-c, --filter-consumer <filter-consumer>`
 
-This will only verify the interactions of matching consumers. You can specify multiple consumers by either seperating the names with a comma, or repeating the option.
+This will only verify the interactions of matching consumers. You can specify multiple consumers by either separating 
+the names with a comma, or repeating the option.
 
 #### `--filter-description <filter-description>`
 
-This option will filter the interactions that are verified that match by desciption. You can use a regular expression to match.
+This option will filter the interactions that are verified that match by description. You can use a regular expression 
+to match.
 
 #### `--filter-state <filter-state>`
 
-This option will filter the interactions that are verified that match by provider state. You can use a regular expression to match. Can't be used with the `--filter-no-state` option.
+This option will filter the interactions that are verified that match by provider state. You can use a regular 
+expression to match. Can't be used with the `--filter-no-state` option.
 
 #### `--filter-no-state`
 
-This option will filter the interactions that are verified that don't have a defined provider state. Can't be used with the `--filter-state` option.
+This option will filter the interactions that are verified that don't have a defined provider state. Can't be used 
+with the `--filter-state` option.
 
 ### State change requests
 
-Provider states are a mechanism to define the state that the provider needs to be in to be able to verify a particular request. This is achieved by setting a state change URL that will receive a POST request with the provider state before the actual request is made.
+Provider states are a mechanism to define the state that the provider needs to be in to be able to verify a particular 
+request. This is achieved by setting a state change URL that will receive a POST request with the provider state before 
+the actual request is made.
+
+*NOTE:* For verifying messages fetched via HTTP, the provider state is also passed in the request to fetch the message,
+so the state change URL is not required. 
 
 #### `-s, --state-change-url <state-change-url>`
 
@@ -194,4 +225,19 @@ Failures:
 
 There were 8 pact failures
 
+```
+
+## Verifying message pacts
+
+Message pacts can be verified, the messages just need to be fetched from an HTTP endpoint. The veryfier will send a 
+POST request to the configured provider and expect the message payload in the response. The POST request will include
+the description and any provider states configured in the Pact file for the message, formatted as JSON.
+
+Example POST request:
+
+```json
+{
+    "description": "Test Message",
+    "providerStates":[ {"name": "message exists"} ]
+}
 ```
