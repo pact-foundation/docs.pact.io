@@ -63,4 +63,4 @@ and add the following line after deploying:
 
 ## Further reading
 
-Please see the [Pact Broker Client CLI documentation](https://github.com/pact-foundation/pact_broker-client#can-i-deploy) for an explanation of all the parameters for can-i-deploy.
+Please see the [Pact Broker Client CLI documentation](/pact_broker/client_cli/readme#can-i-deploy) for an explanation of all the parameters for can-i-deploy.
