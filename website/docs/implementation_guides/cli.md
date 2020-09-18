@@ -7,13 +7,17 @@ There are Pact implementations written in more than 10 languages (see the sideba
 
 ## Provider verifier
 
-You can run Pact verifications against any provider, regardless of its implementation language, by using the [Pact Provider Verifier][verifier]. It is packaged as a [Docker image][docker] and a [standalone][standalone] executable. If your Pact verification tests are going to be running on Docker anyway, and you are using one of the Pact implementations that ["wrap"][wrapper] the Pact Ruby Standalone (PactJS v2, PactNet, PactPython, PactPHP, Pact Swift, Pact Go) then you will have better performance running the Pact verification Docker image, rather than installing the standalone into a Docker image.
+You can run Pact verifications against any provider, regardless of its implementation language, by using the [Pact Provider Verifier][verifier]. It is packaged as a [Docker image][docker] and a [standalone][standalone] executable (see the [Distributions](#distributions) section below). If your Pact verification tests are going to be running on Docker anyway, and you are using one of the Pact implementations that ["wrap"][wrapper] the Pact Ruby Standalone (PactJS v2, PactNet, PactPython, PactPHP, Pact Swift, Pact Go) then you will have better performance running the Pact verification Docker image, rather than installing the standalone into a Docker image.
 
 Having a standard method of executing your Pact provider verifications can be very useful if you want to build Pact into your CI/CD pipeline in a standard way across all your languages.
 
 ## Pact Broker CLI
 
 The Pact command line tools include a command line interface to the Pact Broker. You can read more about it [here](/pact_broker/client_cli).
+
+## Stub Service
+
+The pact files that are generated from your tests can be used to support other tests by using one of the stub service implementations. There is a Ruby implementation that is available in the [distributions](#distributions) listed below, and a [Rust implementation](/getting_started/stubs).
 
 ## Distributions
 
