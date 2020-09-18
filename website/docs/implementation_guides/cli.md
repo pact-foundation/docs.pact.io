@@ -1,5 +1,5 @@
 ---
-title: Pact CLI
+title: Pact command line tools
 sidebar_label: Overview
 ---
 
@@ -13,8 +13,23 @@ Having a standard method of executing your Pact provider verifications can be ve
 
 ## Pact Broker CLI
 
-The Pact CLI includes a command line interface to the Pact Broker. You can read more about it [here](/pact_broker/client_cli).
+The Pact command line tools include a command line interface to the Pact Broker. You can read more about it [here](/pact_broker/client_cli).
 
+## Distributions
+
+### Pact CLI
+
+The Pact CLI is packaged as a [Docker image](https://hub.docker.com/r/pactfoundation/pact-cli). It contains the Ruby implementations of the provider verifier, Pact Broker CLI, mock service and stub service.
+
+### Pact Ruby Standalone
+
+The `pact-ruby-standalone` is an earlier packaging of the same tools that are now made available in the pact-cli Docker image. This is a good option if your builds cannot use Docker. It can be installed as a standalone executable for Linux, Mac and Windows. As it has its own version of Ruby contained within the package, you do not need to install Ruby on the machine. If you are using Mac or Linux, you do need to have bash installed however.
+
+The package and is available [here](https://github.com/pact-foundation/pact-ruby-standalone/releases) (scroll down to the Installation section of the release notes for installation instructions).
+
+#### Brew
+
+You can install the pact-ruby-standalone using this [Homebrew custom repository](https://github.com/pact-foundation/homebrew-pact-ruby-standalone).
 
 [verifier]: https://github.com/pact-foundation/pact-provider-verifier
 [standalone]: https://github.com/pact-foundation/pact-ruby-standalone/releases
