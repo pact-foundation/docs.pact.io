@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Pact CLI": [
+    "Pact command line tools": [
       "implementation_guides/cli"
     ],
     "Pact JS": [
