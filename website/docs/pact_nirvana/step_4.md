@@ -61,3 +61,7 @@ Useful links:
 * [Configuring webhooks in the Pact Broker](/pact_broker/webhooks)
 * [Adding verification badges to your READMEs](/pact_broker/advanced_topics/provider_verification_badges)
 * [Versioning in the Pact Broker](/getting_started/versioning_in_the_pact_broker)
+
+## Alternative "webhookless" workflow
+
+If you can't use webhooks because of networking issues, then you can see an example of an alternative consumer pipeline design in this [example repository](https://github.com/pactflow/example-consumer-webhookless).
