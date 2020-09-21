@@ -115,13 +115,13 @@ Ref:
 
 * [Bamboo Queue documentation](https://docs.atlassian.com/atlassian-bamboo/REST/4.0/?_ga=2.99385502.104409444.1592869883-400989189.1592276231#idp263696)
 
-## Visual Studio Team Services - trigger build
+## Azure DevOps - trigger build
 
-```text
+```json
 {
   "request": {
     "method": "POST",
-    "url": "https://<instance>/DefaultCollection/<project>/_apis/build/builds?api-version=2.0",
+    "url": "https://<instance>/<organization>/<project>/_apis/build/builds?api-version=6.0",
     "headers": {
       "Content-Type": "application/json",
       "Accept": "application/json",
@@ -131,12 +131,15 @@ Ref:
       "definition": {
         "id": <build-definition-id>
       },
-      "sourceBranch": "refs/heads/master",
-      "parameters": "{\"pactUrl\":\"${pactbroker.pactUrl}\"}"
+      "sourceBranch": "refs/heads/master"
     }
   }
 }
 ```
+
+Ref:
+
+* [Azure DevOps Builds API page](https://docs.microsoft.com/en-us/rest/api/azure/devops/build/builds/queue?view=azure-devops-rest-6.0)
 
 ## CircleCI - trigger workflow build
 
