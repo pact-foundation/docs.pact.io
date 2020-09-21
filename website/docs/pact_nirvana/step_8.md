@@ -6,8 +6,8 @@ Step 7 means that you can now know that the production provider has successfully
 
 To reach Pact Nirvana, the final step is to have a CI build that checks out the code for the _production_ version of your provider, and have it verify the same pacts that the head version does. If you have followed the recommended strategy of tagging provider versions in the broker on deployment to production, you can use the Pact Broker CLI to determine which version of the provider is currently in production:
 
-```text
-pact-broker describe-version --pacticipant PACTICIPANT --latest prod
+```bash
+pact-broker describe-version --pacticipant pactflow-example-provider --latest prod --output json | jq '.number' -r
 ```
 
 Make sure that the provider application version used when publishing the verification can be reverse engineered to a reference to a point in your source control \(eg a Git commit hash\).
