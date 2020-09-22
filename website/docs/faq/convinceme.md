@@ -100,7 +100,7 @@ OpenAPI can be used as a contract testing framework in a similar way to Pact if 
 
 If you are using OpenAPI, consider using [Swagger Mock Validator](https://bitbucket.org/atlassian/swagger-mock-validator), a plugin developed at Atlassian that aims to unify these worlds.
 
-Using in combination with Pact gives you confidence your API meets any published specification \(for external clients\), whilst giving you the confidence that any _known_ consumer requirements \(internal\) are satisfied.
+Using OpenAPI in combination with Pact gives you confidence your API meets any published specification \(for external clients\), whilst giving you the confidence that any _known_ consumer requirements \(internal\) are satisfied.
 
 See [https://github.com/pact-foundation/pact-specification/issues/28](https://github.com/pact-foundation/pact-specification/issues/28) for more.
 
