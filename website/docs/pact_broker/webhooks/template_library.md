@@ -41,11 +41,22 @@ Report the pact verification status back to the consumer project in Github.
 
 ## Slack - post notification
 
-```text
+```javascript
 {
+  "events": [
+    {
+      "name": "contract_published"
+    },
+    {
+      "name": "provider_verification_published"
+    }
+  ],
   "request": {
     "method": "POST",
     "url": "https://hooks.slack.com/services/<webhook id>",
+    "headers": {
+      "Content-Type": "application/json"
+    },
     "body": {
       "channel": "#<your-channel-here>",
       "username": "webhookbot",
