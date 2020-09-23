@@ -32,6 +32,7 @@ Imagine you were one of the people reading your question, and ask yourself if yo
 
 #### Please remember
 
+* Please do not direct message a maintainer (or anyone else) with a question unless specifically invited to. Asking questions in public channels allows more people answer and learn from your questions.
 * The people who might be able to help you are often viewing your questions on their phones. Large slabs of unformatted text are hard to read. Please only supply the relevant text, and add three backticks (eg. ```) at the start and end so that it formats correctly. For large pieces of code please [create a snippet](https://slack.com/intl/en-au/slack-tips/share-code-snippets).
 * We are not a general purpose help desk! Using Pact requires:
 
@@ -41,7 +42,7 @@ Imagine you were one of the people reading your question, and ask yourself if yo
     * understanding how to use CI/CD software and build release pipelines
 
     While we will do our best to point you in the right direction, if you do not have these skills, we cannot teach you over Slack. Please find someone in your own company or the relevant technology community to assist you in these areas.
-* Please do not direct message a maintainer (or anyone else) with a question unless specifically invited to. Asking questions in public channels allows more people answer and learn from your questions.
+
 
 Thank you,
 
