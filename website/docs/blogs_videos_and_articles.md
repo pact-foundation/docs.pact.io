@@ -54,6 +54,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 * [Ithaka](https://medium.com/build-smarter/consumer-driven-contracts-with-pact-eddb234278dd)
 
 **Articles**:
+* [Testing in Production, the safe way](https://medium.com/@copyconstruct/testing-in-production-the-safe-way-18ca102d0ef1)
 * [Cucumber](https://www.slideshare.net/sebrose/contract-testing-and-pact)
 * [Hackernoon](https://hackernoon.com/how-to-test-microservices-with-consumer-driven-contracts-9bf5c2c05349)
 * [Rising Stack](https://blog.risingstack.com/consumer-driven-contract-testing-with-pact/)
