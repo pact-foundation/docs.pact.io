@@ -34,7 +34,7 @@ Pact is fantastic tool for developing and testing intra-organisation microservic
 * Performance and load testing.
 * [Functional testing](../consumer/contract_tests_not_functional_tests.md) of the provider - that is what the provider's own tests should do. Pact is about checking the contents and format of requests and responses.
 * Testing "pass through" APIs, where the provider merely passes on the request contents to a downstream service without validating them. [Why?](https://github.com/pact-foundation/pact-ruby/wiki/Why-Pact-may-not-be-the-best-tool-for-testing-pass-through-APIs)
-* Use as a general purpose mocking or stubbing tool for browser driven tests. [Why?](../consumer/)
+* Use as a general purpose mocking or stubbing tool for browser driven tests. [Why?](/consumer#avoid-using-pact-for-tests-that-involve-the-ui)
 
 ## If you are unsure
 
