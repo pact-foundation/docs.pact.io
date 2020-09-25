@@ -8,13 +8,27 @@ If you are publishing [Provider verification results](provider_verification_resu
 
 [![Pact Status](https://cdn.rawgit.com/wiki/pact-foundation/pact_broker/images/foo-bar-badge-verified.svg)](https://test.pact.dius.com.au)
 
-## Quick start
+## Can I Deploy badge?
+
+Requires version 2.62+ of the Pact Broker.
+
+Returns a status badge that can be displayed in a README file that indicates whether the specified version of a pacticipant can be deployed to the specified environment.
+
+```text
+[![Can I deploy Foo status](/pacticipants/PACTICIPANT/latest-version/TAG/can-i-deploy/to/ENVIRIONMENT_TAG/badge)](https://your-broker)
+```
+
+To set a custom label for the badge, set the `label` query parameter. eg `?label=my+custom+label+here`.
+
+## Specific consumer/provider badge
+
+### Quick start
 
 To get your badge, open the HTML version of your `/latest`, `/latest/TAG` or `/latest-untagged` pact in the Pact Broker by copy/pasting its URL into your browser location bar. Your badge will be shown in the top right of the page. When you click on it, a text box will appear with the markdown to include in your README.
 
-## Advanced usage
+### Advanced usage
 
-### Without tags, or with only Consumer tags.
+#### Without tags, or with only Consumer tags.
 
 The URL of the badge is the URL of the latest pact with `/badge.svg` appended, and it works for the `/latest/TAG` and `/latest-untagged` pact URLs as well
 
@@ -34,7 +48,7 @@ For example:
 [![Foo/Bar Pact Status](https://test.pact.dius.com.au/pacts/provider/Bar/consumer/Foo/latest/badge.svg)](https://test.pact.dius.com.au)
 ```
 
-### With consumer and provider tags
+#### With consumer and provider tags
 
 _Available in version v2.13.0+ of the Pact Broker gem._
 
@@ -42,7 +56,7 @@ If you are using tags for both the consumer and provider versions \(this is reco
 
 `/matrix/provider/PROVIDER/latest/PROVIDER_TAG/consumer/CONSUMER/latest/CONSUMER_TAG/badge`
 
-## Options
+### Options
 
 [![Pact Status](https://cdn.rawgit.com/wiki/pact-foundation/pact_broker/images/long-badge.svg)](https://test.pact.dius.com.au)
 
