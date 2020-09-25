@@ -18,7 +18,7 @@ Requires version 2.62+ of the Pact Broker.
 Returns a status badge that can be displayed in a README file that indicates whether the specified version of a pacticipant can be deployed to the specified environment.
 
 ```text
-[![Can I deploy Foo status](/pacticipants/PACTICIPANT/latest-version/TAG/can-i-deploy/to/ENVIRIONMENT_TAG/badge)](https://your-broker)
+[![Can I deploy Foo status](https://your-broker/pacticipants/PACTICIPANT/latest-version/TAG/can-i-deploy/to/ENVIRIONMENT_TAG/badge)](https://your-broker/pacticipants/PACTICIPANT/latest-version/TAG/can-i-deploy/to/ENVIRIONMENT_TAG)
 ```
 
 To set a custom label for the badge, set the `label` query parameter. eg `?label=my+custom+label+here`.
