@@ -8,7 +8,7 @@ If you are publishing [Provider verification results](provider_verification_resu
 
 [![Pact Status](https://cdn.rawgit.com/wiki/pact-foundation/pact_broker/images/foo-bar-badge-verified.svg)](https://test.pact.dius.com.au)
 
-## Can I Deploy badge?
+## Can I Deploy badge
 
 Requires version 2.62+ of the Pact Broker.
 
