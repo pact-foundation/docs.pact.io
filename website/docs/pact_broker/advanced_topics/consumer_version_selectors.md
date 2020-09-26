@@ -81,6 +81,21 @@ pact {
 }
 ```
 
+<!-- Ruby -->
+
+```ruby
+Pact.service_provider "Your provider" do
+  honours_pacts_from_pact_broker do
+    pact_broker_base_url "..."
+    consumer_version_selectors [
+          { tag: "main", latest: true }, 
+          { tag: "test", latest: true }, 
+          { tag: "production", latest: true }
+        ]
+  end
+end
+```
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Using a fallback tag for coordinated branch development
@@ -109,9 +124,24 @@ const verificationOptions = {
   ]
 }
 ```
+
+<!-- Ruby -->
+
+```ruby
+Pact.service_provider "Your provider" do
+  honours_pacts_from_pact_broker do
+    pact_broker_base_url "..."
+    consumer_version_selectors [
+          { tag: ENV["GIT_BRANCH"], fallback_tag: "main", latest: true }, 
+          { tag: "test", latest: true }, 
+          { tag: "production", latest: true }
+        ]
+  end
+end
+```
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-### Verifying a pacts where the consumer is a mobile application
+### Verifying pacts where the consumer is a mobile application
 
 Verify the pacts for the latest `master` and `test` versions, and all `production` versions of "my-mobile-consumer".
 
@@ -150,6 +180,21 @@ const verificationOptions = {
 )
 ```
 
+<!-- Ruby -->
+
+```ruby
+Pact.service_provider "Your provider" do
+  honours_pacts_from_pact_broker do
+    pact_broker_base_url "..."
+    consumer_version_selectors [
+          { tag: "main", latest: true }, 
+          { tag: "test", latest: true }, 
+          { tag: "production" }
+        ]
+  end
+end
+```
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Verifying a pacts where one consumer is a mobile application
@@ -183,6 +228,23 @@ const verificationOptions = {
 }
 
 ```
+
+<!-- Ruby -->
+
+```ruby
+Pact.service_provider "Your provider" do
+  honours_pacts_from_pact_broker do
+    pact_broker_base_url "..."
+    consumer_version_selectors [
+          { tag: "main", latest: true }, 
+          { tag: "test", latest: true }, 
+          { tag: "production", latest: true },
+          { tag: "production", consumer: "my-mobile-consumer" }          
+        ]
+  end
+end
+```
+
 <!--END_DOCUSAURUS_CODE_TABS-->
 
 ### Verifying the overall latest pact for each consumer
@@ -201,5 +263,18 @@ const verificationOptions = {
     }
   ]
 }
+```
+
+<!-- Ruby -->
+
+```ruby
+Pact.service_provider "Your provider" do
+  honours_pacts_from_pact_broker do
+    pact_broker_base_url "..."
+    consumer_version_selectors [
+          { latest: true }
+        ]
+  end
+end
 ```
 <!--END_DOCUSAURUS_CODE_TABS-->
