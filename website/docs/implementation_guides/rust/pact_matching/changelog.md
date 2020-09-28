@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.7.1 - CORS pre-flight + fixes
+
+* 2e662a6 - feat: handle CORS pre-flight requests in the mock server (Ronald Holshausen, Wed Sep 23 17:59:32 2020 +1000)
+* d8ceb74 - fix: don't clone a double reference (clippy error) (Ronald Holshausen, Sun Sep 20 15:12:11 2020 +1000)
+* 042bed0 - fix: random decimal generator now includes a decimal point in the generated values (Ronald Holshausen, Sun Sep 20 11:18:28 2020 +1000)
+* cd9d41c - fix: strip off anchors before generating a value from a regex (Ronald Holshausen, Fri Sep 18 15:38:38 2020 +1000)
+* 9389c0a - fix: don't unwrap a result when generating random string from regex (Ronald Holshausen, Fri Sep 18 15:24:42 2020 +1000)
+* a5f17a5 - fix: UUID generator should return hyphenated values (Ronald Holshausen, Thu Sep 17 10:06:52 2020 +1000)
+
 ## 0.7.0 - Message pacts and matching messages
 
 * 865327d - feat: handle comparing content types correctly (Ronald Holshausen, Mon Sep 14 16:37:11 2020 +1000)
