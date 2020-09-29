@@ -22,259 +22,327 @@ A consumer version selector has the following properties:
 
 The Pact Broker API for retriving pacts by selectors deduplicates the pacts based on their *content*. This means that if the same content was published in multiple selected pacts, the verification for that content will only need to run once. This is quite common when there hasn't been a change to a pact for a while, and the same pact content is present in development, test and production pacts.
 
+
+
 ## Examples
 
 ### Verifing the latest development, test and master pacts
 
 This is the most common use case.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!-- Javascript -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-```javascript
-const verificationOptions = {
-  ...,
-  consumerVersionSelectors: [
-    {
-      tag: "master",
-      latest: true
-    },
-    {
-      tag: "test",
-      latest: true
-    },
-    {
-      tag: "production",
-      latest: true
-    }
+<Tabs
+  groupId="sdk-choice"
+  defaultValue="javascript"
+  values={[
+    { label: 'Javascript', value: 'javascript', },
+    {label: 'Java', value: 'java', },
+    {label: 'Gradle', value: 'gradle', },
+    {label: 'Ruby', value: 'ruby', },
   ]
-}
-```
+}>
+  <TabItem value="javascript">
 
-<!-- Java JUnit -->
-
-```java
-@PactBroker(
-  host="pactbroker.local", 
-  port="8080", 
-  consumerVersionSelectors={
-    @ConsumerVersionSelector(tag = "master"),
-    @ConsumerVersionSelector(tag = "test"),
-    @ConsumerVersionSelector(tag = "production")
+  ```js
+  const verificationOptions = {
+    // ....
+    consumerVersionSelectors: [
+      {
+        tag: "master",
+        latest: true
+      },
+      {
+        tag: "test",
+        latest: true
+      },
+      {
+        tag: "production",
+        latest: true
+      }
+    ]
   }
-)
-```
+  ```
+  </TabItem>
 
-<!-- Gradle -->
+  <TabItem value="java">
 
-```groovy
-pact {
-  serviceProviders {
-    'Your Service' {
-      providerVersion = { '1.2.3' }
+  ```java
+  @PactBroker(
+    host="pactbroker.local",
+    port="8080",
+    consumerVersionSelectors={
+      @ConsumerVersionSelector(tag = "master"),
+      @ConsumerVersionSelector(tag = "test"),
+      @ConsumerVersionSelector(tag = "production")
+    }
+  )
 
-      fromPactBroker {
-        selectors = latestTags('master', 'test', 'production')
+  ```
+
+  </TabItem>
+
+  <TabItem value="gradle">
+
+  ```groovy
+
+  pact {
+    serviceProviders {
+      'Your Service' {
+        providerVersion = { '1.2.3' }
+
+        fromPactBroker {
+          selectors = latestTags('master', 'test', 'production')
+        }
       }
     }
   }
-}
-```
+  ```
 
-<!-- Ruby -->
+  </TabItem>
 
-```ruby
-Pact.service_provider "Your provider" do
-  honours_pacts_from_pact_broker do
-    pact_broker_base_url "..."
-    consumer_version_selectors [
-          { tag: "main", latest: true }, 
-          { tag: "test", latest: true }, 
-          { tag: "production", latest: true }
-        ]
+  <TabItem value="ruby">
+
+  ```ruby
+  Pact.service_provider "Your provider" do
+    honours_pacts_from_pact_broker do
+      pact_broker_base_url "..."
+      consumer_version_selectors [
+            { tag: "main", latest: true },
+            { tag: "test", latest: true },
+            { tag: "production", latest: true }
+          ]
+    end
   end
-end
-```
+  ```
 
-<!--END_DOCUSAURUS_CODE_TABS-->
+  </TabItem>
+
+</Tabs>
 
 ### Using a fallback tag for coordinated branch development
 
 Dynamically determine the current branch of the provider, see if there is a matching pact for that branch, fallback to the `master` pact if none exists.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!-- Javascript -->
-```javascript
-const verificationOptions = {
-  ...,
-  consumerVersionSelectors: [
-    {
-      tag: process.env.GIT_BRANCH,
-      fallbackTag: "master",
-      latest: true
-    },
-    {
-      tag: "test",
-      latest: true
-    },
-    {
-      tag: "production",
-      latest: true
-    }
+<Tabs
+  groupId="sdk-choice"
+  defaultValue="javascript"
+  values={[
+    { label: 'Javascript', value: 'javascript', },
+    {label: 'Ruby', value: 'ruby', },
   ]
-}
-```
+}>
+  <TabItem value="javascript">
 
-<!-- Ruby -->
+  ```js
+  const verificationOptions = {
+    //...
+    consumerVersionSelectors: [
+      {
+        tag: process.env.GIT_BRANCH,
+        fallbackTag: "master",
+        latest: true
+      },
+      {
+        tag: "test",
+        latest: true
+      },
+      {
+        tag: "production",
+        latest: true
+      }
+    ]
+  }
+  ```
 
-```ruby
-Pact.service_provider "Your provider" do
+  </TabItem>
+
+  <TabItem value="ruby">
+
+  ```ruby
+  Pact.service_provider "Your provider" do
   honours_pacts_from_pact_broker do
     pact_broker_base_url "..."
     consumer_version_selectors [
-          { tag: ENV["GIT_BRANCH"], fallback_tag: "main", latest: true }, 
-          { tag: "test", latest: true }, 
+          { tag: ENV["GIT_BRANCH"], fallback_tag: "main", latest: true },
+          { tag: "test", latest: true },
           { tag: "production", latest: true }
         ]
   end
 end
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+  ```
+
+  </TabItem>
+</Tabs>
 
 ### Verifying pacts where the consumer is a mobile application
 
 Verify the pacts for the latest `master` and `test` versions, and all `production` versions of "my-mobile-consumer".
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!-- Javascript -->
-```javascript
-const verificationOptions = {
-  ...,
-  consumerVersionSelectors: [
-    {
-      tag: "master",
-      latest: true
-    },
-    {
-      tag: "test",
-      latest: true
-    },
-    {
-      tag: "production"
-    }
+<Tabs
+  groupId="sdk-choice"
+  defaultValue="javascript"
+  values={[
+    { label: 'Javascript', value: 'javascript', },
+    {label: 'Java', value: 'java', },
+    {label: 'Ruby', value: 'ruby', },
   ]
-}
-```
+}>
+  <TabItem value="javascript">
 
-<!-- Java JUnit -->
+  ```js
+    const verificationOptions = {
+    // ...
+    consumerVersionSelectors: [
+      {
+        tag: "master",
+        latest: true
+      },
+      {
+        tag: "test",
+        latest: true
+      },
+      {
+        tag: "production"
+      }
+    ]}
+  ```
+  </TabItem>
 
-```java
-@PactBroker(
-  host="pactbroker.local", 
-  port="8080", 
+  <TabItem value="java">
+
+  ```java
+  @PactBroker(
+  host="pactbroker.local",
+  port="8080",
   consumerVersionSelectors={
     @ConsumerVersionSelector(tag = "master"),
     @ConsumerVersionSelector(tag = "test"),
     @ConsumerVersionSelector(tag = "production", latest = false)
-  }
-)
-```
+  })
 
-<!-- Ruby -->
+  ```
 
-```ruby
-Pact.service_provider "Your provider" do
+  </TabItem>
+
+  <TabItem value="ruby">
+
+  ```ruby
+  Pact.service_provider "Your provider" do
   honours_pacts_from_pact_broker do
     pact_broker_base_url "..."
     consumer_version_selectors [
-          { tag: "main", latest: true }, 
-          { tag: "test", latest: true }, 
+          { tag: "main", latest: true },
+          { tag: "test", latest: true },
           { tag: "production" }
         ]
   end
 end
-```
+  ```
 
-<!--END_DOCUSAURUS_CODE_TABS-->
+  </TabItem>
+
+</Tabs>
 
 ### Verifying a pacts where one consumer is a mobile application
 
 Verify the latest `production` version of all consumers, and all `production` versions of "my-mobile-consumer". Note that the pacts are [deduplicated](#deduplication), so despite being included by 2 selectors, the verification of the latest production pact for "my-mobile-consumer" will only run once.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!-- Javascript -->
-
-```javascript
-const verificationOptions = {
-  ...,
-  consumerVersionSelectors: [
-    {
-      tag: "master",
-      latest: true
-    },
-    {
-      tag: "test",
-      latest: true
-    },
-    {
-      tag: "production",
-      latest: true
-    },
-    {
-      tag: "production",
-      consumer: "my-mobile-consumer"
-    }
+<Tabs
+  groupId="sdk-choice"
+  defaultValue="javascript"
+  values={[
+    { label: 'Javascript', value: 'javascript', },
+    {label: 'Ruby', value: 'ruby', },
   ]
-}
+}>
+  <TabItem value="javascript">
 
-```
+  ```js
+  const verificationOptions = {
+    // ...
+    consumerVersionSelectors: [
+      {
+        tag: "master",
+        latest: true
+      },
+      {
+        tag: "test",
+        latest: true
+      },
+      {
+        tag: "production",
+        latest: true
+      },
+      {
+        tag: "production",
+        consumer: "my-mobile-consumer"
+      }
+    ]
+  }
+  ```
 
-<!-- Ruby -->
+  </TabItem>
 
-```ruby
-Pact.service_provider "Your provider" do
+  <TabItem value="ruby">
+
+  ```ruby
+  Pact.service_provider "Your provider" do
   honours_pacts_from_pact_broker do
     pact_broker_base_url "..."
     consumer_version_selectors [
-          { tag: "main", latest: true }, 
-          { tag: "test", latest: true }, 
+          { tag: "main", latest: true },
+          { tag: "test", latest: true },
           { tag: "production", latest: true },
-          { tag: "production", consumer: "my-mobile-consumer" }          
+          { tag: "production", consumer: "my-mobile-consumer" }
         ]
+    end
   end
-end
-```
+  ```
 
-<!--END_DOCUSAURUS_CODE_TABS-->
+  </TabItem>
+</Tabs>
 
 ### Verifying the overall latest pact for each consumer
 
 This is syntatically possible, but not recommended, as pacts for different branches of the consumer may overwrite each other as the current latest.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!-- Javascript -->
-
-```javascript
-const verificationOptions = {
-  ...,
-  consumerVersionSelectors: [
-    {
-      latest: true
-    }
+<Tabs
+  groupId="sdk-choice"
+  defaultValue="javascript"
+  values={[
+    { label: 'Javascript', value: 'javascript', },
+    {label: 'Ruby', value: 'ruby', },
   ]
-}
-```
+}>
+  <TabItem value="javascript">
 
-<!-- Ruby -->
+  ```js
+  const verificationOptions = {
+  // ...
+    consumerVersionSelectors: [
+      {
+        latest: true
+      }
+    ]
+  }
+  ```
 
-```ruby
-Pact.service_provider "Your provider" do
+  </TabItem>
+
+  <TabItem value="ruby">
+
+  ```ruby
+  Pact.service_provider "Your provider" do
   honours_pacts_from_pact_broker do
     pact_broker_base_url "..."
     consumer_version_selectors [
           { latest: true }
         ]
+    end
   end
-end
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+  ```
+
+  </TabItem>
+</Tabs>
