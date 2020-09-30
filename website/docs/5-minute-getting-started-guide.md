@@ -225,37 +225,47 @@ This is how you might visualise the coverage of a provider Pact test:
 
 Below we have created a simple API using [Express JS](https://expressjs.com).
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!-- orderApi.js -->
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-```js
-const express = require('express')
-const cors = require('cors')
-const bodyParser = require('body-parser')
-const server = express()
+<Tabs
+  groupId="sdk-choice"
+  defaultValue="javascript"
+  values={[
+    { label: 'Javascript', value: 'javascript', },
+  ]
+}>
+  <TabItem value="javascript">
 
-server.use(cors())
-server.use(bodyParser.json())
-server.use(bodyParser.urlencoded({ extended: true }))
-server.use((_, res, next) => {
-  res.header('Content-Type', 'application/json; charset=utf-8')
-  next()
-})
+  ```js
+  const express = require('express')
+  const cors = require('cors')
+  const bodyParser = require('body-parser')
+  const server = express()
 
-// "In memory" data store
-let dataStore = require('./data/orders.js')
+  server.use(cors())
+  server.use(bodyParser.json())
+  server.use(bodyParser.urlencoded({ extended: true }))
+  server.use((_, res, next) => {
+    res.header('Content-Type', 'application/json; charset=utf-8')
+    next()
+  })
 
-server.get('/orders', (_, res) => {
-  res.json(dataStore)
-})
+  // "In memory" data store
+  let dataStore = require('./data/orders.js')
 
-module.exports = {
-  server,
-  dataStore,
-}
-```
+  server.get('/orders', (_, res) => {
+    res.json(dataStore)
+  })
 
-<!--END_DOCUSAURUS_CODE_TABS-->
+  module.exports = {
+    server,
+    dataStore,
+  }
+  ```
+
+  </TabItem>
+</Tabs>
 
 ### 2. Run provider verification tests
 
@@ -265,35 +275,46 @@ We now need to perform the "provider verification" task, which involves the foll
 2. Starting the API \(line 16-18\)
 3. Running the Provider verification task \(line 22\)
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!-- provider.spec.js -->
-```js
-// Verify that the provider meets all consumer expectations
-describe('Pact Verification', () => {
-  const port = 1234
-  const opts = {
-    provider: providerName,
-    providerBaseUrl: `http://localhost:${port}`,
-    pactBrokerUrl: 'https://test.pact.dius.com.au/',
-    pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
-    pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1',
-    publishVerificationResult: true,
-    tags: ['prod'],
-    providerVersion: '1.0.' + process.env.HOSTNAME,
-  }
 
-  before(async () => {
-    server.listen(port, () => {
-      console.log(`Provider service listening on http://localhost:${port}`)
+<Tabs
+  groupId="sdk-choice"
+  defaultValue="javascript"
+  values={[
+    { label: 'Javascript', value: 'javascript', },
+  ]
+}>
+  <TabItem value="javascript">
+
+  ```js
+// Verify that the provider meets all consumer expectations
+  describe('Pact Verification', () => {
+    const port = 1234
+    const opts = {
+      provider: providerName,
+      providerBaseUrl: `http://localhost:${port}`,
+      pactBrokerUrl: 'https://test.pact.dius.com.au/',
+      pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
+      pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1',
+      publishVerificationResult: true,
+      tags: ['prod'],
+      providerVersion: '1.0.' + process.env.HOSTNAME,
+    }
+
+    before(async () => {
+      server.listen(port, () => {
+        console.log(`Provider service listening on http://localhost:${port}`)
+      })
+    })
+
+    it('should validate the expectations of Order Web', () => {
+      return new Verifier().verifyProvider(opts)
     })
   })
+  ```
 
-  it('should validate the expectations of Order Web', () => {
-    return new Verifier().verifyProvider(opts)
-  })
-})
-```
-<!--END_DOCUSAURUS_CODE_TABS-->
+  </TabItem>
+</Tabs>
+
 
 #### Run the Provider tests
 
