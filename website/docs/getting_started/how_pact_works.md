@@ -54,7 +54,7 @@ end
 
 Although there is conceptually a lot going on in a pact interaction test, the actual test code is very straightforward. This is a major selling point of Pact.
 
-In Pact, each interaction is considered to be independent. This means that each test only tests one interaction. If you need to describe interactions that depend on each other, you can use _provider states_ to do it. Provider states allow you describe the preconditions on the provider required to generate the expected response - for example, the existence of specific user data. This is explained further in the provider verification section below.
+In Pact, each interaction is considered to be independent. This means that each test only tests one interaction. If you need to describe interactions that depend on pre-existing state, you can use _provider states_ to do it. Provider states allow you describe the preconditions on the provider required to generate the expected response - for example, the existence of specific user data. This is explained further in the provider verification section below.
 
 ![Pact interaction with provider state](/img/pact-base-extended.png)
 
@@ -64,7 +64,7 @@ Once all of the interactions have been tested on the consumer side, the Pact fra
 
 ![Pact file](/img/pact-file.png)
 
-This pact file can be used to verify the provider.
+This pact file can be used to verify that the provider meets the consumer's expectations.
 
 ## Provider verification
 
@@ -76,7 +76,7 @@ In provider verification, each request is sent to the provider, and the actual r
 
 Provider verification passes if each request generates a response that contains at least the data described in the minimal expected response.
 
-In many cases, your provider will need to be in a particular state \(such as “user 123 is logged in”, or “customer 456 has an invoice \#678”\). The Pact framework supports this by letting you set up the data described by the provider state before the interaction is replayed:
+In many cases, your provider will need to be in a particular state \(such as "user 123 is logged in", or "customer 456 has an invoice \#678"\). The Pact framework supports this by letting you set up the data described by the provider state before the interaction is replayed:
 
 ![Provider verification with state](/img/pact-verification-states.png)
 
@@ -86,13 +86,13 @@ Here’s a repeat of the two diagrams above:
 
 ![Pact test and verify](/img/pact-test-and-verify.png)
 
-If we pair the test and verification process for each interaction, the contract between the consumer and provider is fully tested without having to spin up the services together.
+If we pair the consumer test and provider verification process for each interaction, the contract between the consumer and provider is fully tested without having to spin up the services together.
 
 ## Next steps
 
-_Contract tests should focus on the messages \(requests and responses\) rather than the behaviour_. It can be tempting to use contract tests to write general functional tests for the provider. Experience shows this to leads to painful experiences with brittle tests. See [this guide for contract testing best practices](https://github.com/pact-foundation/pact.io/blob/06c43f405a523d09d103a420c9580c7b8b670df6/best_practices/consumer/contract_tests_not_functional_tests.md).
+_Contract tests should focus on the messages \(requests and responses\) rather than the behaviour_. It can be tempting to use contract tests to write general functional tests for the provider. Experience shows this to leads to painful experiences with brittle tests. See [this guide for contract testing best practices](/consumer/contract_tests_not_functional_tests).
 
-_Pact tests should be data independent_. Pact tests are best when successful verification doesn’t depend on the specific data that the provider returns. See this guide for best practices when describing interactions.
+_Pact tests should be data independent_. Pact tests are best when successful verification doesn’t depend on the specific data that the provider returns. See [this guide](/consumer) for best practices when describing interactions.
 
-_Use the broker to integrate Pact with your CI infrastructure._ Integrating Pact with your continuous integration infrastructure is a major win for safe and successful deployment. [See this guide for Pact integration best practices](../pact_nirvana.md)
+_Use the broker to integrate Pact with your CI infrastructure._ Integrating Pact with your continuous integration infrastructure is a major win for safe and successful deployment. [See this guide for Pact integration best practices](/pact_nirvana)
 
