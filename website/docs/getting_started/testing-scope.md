@@ -16,15 +16,17 @@ Here, a _Collaborator_ is a component whose job is to communicate with another s
 
 On the Provider side, Pact needs to replay all of the interactions \(usually HTTP requests\) against your service. There are a number of choices that can be made here, but usually these are the choices:
 
-* Invoke just the controller layer \(in an MVC app, or the "Adapter" in our diagram\) and stub out layers beneath
+* Invoke just the controller layer \(in an MVC app, or the "Adapter" in our diagram\) and stub out layers beneath.
+* Execute the code up to the service/business logic layer, but mock out the data persistence layer
 * Choosing a real vs mocked out database
 * Choosing to hit mock HTTP servers or mocks for external services
 
-Generally speaking, we test the entire service and mock out external services such as downstream APIs \(which would need their own set of Pact tests\) and databases. This gives you some of the benefits of an integration test without the high costs of maintenance.
+Generally speaking, it's easiest to test the entire service and mock out external services such as downstream APIs \(which would need their own set of Pact tests\). This gives you some of the benefits of an integration test without the high costs of maintenance. 
+
+If you have a database that you can easily create a local instance of and set up/tear down data on, then it's probably easiest to use the real database (even better if you can use something like SQLite). If it is a legacy database that you can't create a local instance of then you might want to stub out your data persistence layer (or which ever layer has the best cost/benefit ratio for your situation).
+
+Invoking just the controller/adapter layer can lead to meaningless verification results, as the response often depends on business logic that gets executed in lower layers.
 
 This is how you might visualise the coverage of a provider Pact test:
 
 ![Provider side Pact test scope](/img/provider-test-coverage.png)
-
-###
-
