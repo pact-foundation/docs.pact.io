@@ -2,11 +2,15 @@
 title: Work In Progress pacts
 ---
 
+The purpose of the "work in progress" (WIP) pacts feature is to automatically bring in newly published pending pacts for verification without the provider team having to change their verification configuration each time. This allows the consumer team to get feedback on their changed pacts without having to wait on the provider team.
+
+Before reading any further, please read the page on [pending pacts](/pact_broker/advanced_topics/pending_pacts), as the concept of a pact being in "pending" state is required for understanding WIP pacts.
+
 A "work in progress" pact is a pact that is the latest for its tag \(eg. `/pacts/provider/Foo/consumer/Bar/latest/feat-x`\) that does not have any successful verification results.
 
 When verifying pacts, the verification task can be configured to include all "work in progress" pacts \(as well as the pacts that you specify by tag, like `master` or `prod`\). This allows any new pacts to be automatically verified without the provider team having to make configuration changes. When using this feature, it is best to also turn on the `pending pacts` feature, so that any failures caused by the WIP pacts do not cause the build to fail.
 
-This feature is in beta release and may not yet be implemented in your language. You can read about how it works here: [http://blog.pact.io/2020/02/24/introducing-wip-pacts/](http://blog.pact.io/2020/02/24/introducing-wip-pacts/)
+You can read more about the backstory on this feature [here](http://blog.pact.io/2020/02/24/introducing-wip-pacts/).
 
 ## To start using the WIP pacts feature
 
