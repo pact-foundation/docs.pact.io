@@ -2,7 +2,7 @@
 title: Work In Progress pacts
 ---
 
-The purpose of the "work in progress" (WIP) pacts feature is to automatically bring in newly published pending pacts for verification without the provider team having to change their verification configuration each time. This allows the consumer team to get feedback on their changed pacts without having to wait on the provider team.
+The purpose of the "work in progress" (WIP) pacts feature is to automatically bring in "outstanding" (newly published, pending) pacts for verification without the provider team having to change their verification configuration each time. This allows the consumer team to get feedback on their changed pacts without having to wait on the provider team.
 
 Before reading any further, please read the page on [pending pacts](/pact_broker/advanced_topics/pending_pacts), as the concept of a pact being in "pending" state is required for understanding WIP pacts.
 
