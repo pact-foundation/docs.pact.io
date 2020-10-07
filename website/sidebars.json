@@ -163,12 +163,14 @@
     "Writing Consumer tests": [
       "consumer",
       "consumer/contract_tests_not_functional_tests",
-      "consumer/using_pact_to_support_ui_testing"
+      "consumer/using_pact_to_support_ui_testing",
+      "consumer/recommended_configuration"
     ],
     "Verifying Pacts": [
       "provider",
       "provider/using_provider_states_effectively",
-      "provider/handling_auth"
+      "provider/handling_auth",
+      "provider/recommended_configuration"
     ],
     "Effective Pact Setup Guide": [
       "pact_nirvana",
