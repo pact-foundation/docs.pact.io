@@ -106,13 +106,11 @@ Ref:
 
 ## Bamboo - trigger build
 
-> If you use Bamboo and know how to pass in parameters to the build, can you please submit a PR to update this example.
-
 ```javascript
 {
   "request": {
     "method": "POST",
-    "url": "http://master.ci.my.domain:8085/rest/api/latest/queue/SOME-PROJECT?os_authType=basic",
+    "url": "http://master.ci.my.domain:8085/rest/api/latest/queue/SOME-PROJECT?os_authType=basic?bamboo.variable.pact-url=${pactbroker.pactUrl}",
     "username": "username",
     "password": "password",
     "headers": {
