@@ -160,13 +160,13 @@
     "faq"
   ],
   "guides": {
-    "Writing Consumer tests": [
+    "Consumer": [
       "consumer",
       "consumer/contract_tests_not_functional_tests",
       "consumer/using_pact_to_support_ui_testing",
       "consumer/recommended_configuration"
     ],
-    "Verifying Pacts": [
+    "Provider": [
       "provider",
       "provider/using_provider_states_effectively",
       "provider/handling_auth",
