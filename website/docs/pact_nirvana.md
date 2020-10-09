@@ -1,5 +1,5 @@
 ---
-title: Effective Pact Setup Guide
+title: CI/CD Setup Guide
 sidebar_label: Introduction
 ---
 

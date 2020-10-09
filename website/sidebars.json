@@ -172,7 +172,7 @@
       "provider/handling_auth",
       "provider/recommended_configuration"
     ],
-    "Effective Pact Setup Guide": [
+    "CI/CD Setup Guide": [
       "pact_nirvana",
       "pact_nirvana/step_1",
       "pact_nirvana/step_2",
