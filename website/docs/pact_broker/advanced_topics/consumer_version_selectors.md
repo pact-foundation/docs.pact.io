@@ -73,9 +73,9 @@ import TabItem from '@theme/TabItem';
     host="pactbroker.local",
     port="8080",
     consumerVersionSelectors={
-      @ConsumerVersionSelector(tag = "master"),
-      @ConsumerVersionSelector(tag = "test"),
-      @ConsumerVersionSelector(tag = "production")
+      @VersionSelector(tag = "master"),
+      @VersionSelector(tag = "test"),
+      @VersionSelector(tag = "production")
     }
   )
 
@@ -217,9 +217,9 @@ Verify the pacts for the latest `master` and `test` versions, and all `productio
   host="pactbroker.local",
   port="8080",
   consumerVersionSelectors={
-    @ConsumerVersionSelector(tag = "master"),
-    @ConsumerVersionSelector(tag = "test"),
-    @ConsumerVersionSelector(tag = "production", latest = false)
+    @VersionSelector(tag = "master"),
+    @VersionSelector(tag = "test"),
+    @VersionSelector(tag = "production", latest = false)
   })
 
   ```
