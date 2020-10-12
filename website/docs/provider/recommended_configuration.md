@@ -19,8 +19,8 @@ The following examples require support for the "pacts for verification" API in y
 
 * Pending pacts
 
-    Enabling the [pending pacts](/pact_broker/advanced_topics/pending_pacts) feature stops changed pacts breaking the provider
-    build.
+    Enabling the [pending pacts](/pact_broker/advanced_topics/pending_pacts) feature stops changed pacts breaking the main provider
+    build. You will most likely want to disable this feature on your feature branches, so that a feature pact correctly fails the branch build until it is fully implemented, and then passes to let you know you can merge.
 
 * Work in progress pacts
 
@@ -56,7 +56,7 @@ The following examples require support for the "pacts for verification" API in y
         latest: true
       }
     ],
-    enablePending: true,
+    enablePending: process.env.GIT_BRANCH === "main",
     includeWipPactsSince: process.env.GIT_BRANCH === "main" ? "2020-01-01" : undefined
   }
   ```
