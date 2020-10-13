@@ -26,6 +26,18 @@ Navigate to the webhook you want to test by clicking on the `GET` button for the
 
 Click on the `NON-GET` button for the `pb:execute` relation, and then click `Make Request`. The execution logs will be returned on the next page.
 
+## Identifying why a webhook did or did not get triggered
+
+Search in the application logs for the consumer version number for which your pact was published. You'll find the line where it indicates that a pact is being published for that consumer version number. The next few lines in the logs will explain why a webhook did or did not get fired.
+
+eg.
+
+* "Pact content has not changed since previous version, not triggering webhooks for changed content"
+* "No enabled webhooks found for consumer "x" and provider "y" and event contract_published"
+* "Webhook triggered for the following reasons: first time pact published with consumer version tagged feat/y"
+* "Scheduling job for webhook with uuid ap7c1tk-AdEYyphWBVieIg"
+
+
 ## Viewing logs for past webhook executions
 
 The second column from the right on the index page shows the webhook status for each pact. The colour indicates the status, and the text indicates the last run time.
@@ -38,11 +50,4 @@ The Embedded Resources section will give you links to the execution logs.
 
 By default, for security purposes, the execution logs will be hidden. You will need to configure the whitelist to see the logs. If you are using one of the [Docker images](/pact_broker/docker_images) you can configure the whitelist via environment variables, documented [here](/pact_broker/docker_images/dius#webhook-whitelists). The documentation that explains how the whitelists work is [here](/pact_broker/configuration#webhook-whitelists) (note that the example code shows how to configure the underlying Ruby application, however, if you are using a Docker image, you need to use the environment variables in the first link).
 
-If you see no evidence of any attempted executions, look in the application logs. For every pact publication, there are detailed logs that explain why a webhook is/isn't fired for a particular publication.
-
-eg.
-
-* "Pact content has not changed since previous version, not triggering webhooks for changed content"
-* "No enabled webhooks found for consumer "x" and provider "y" and event contract_published"
-* "Webhook triggered for the following reasons: first time pact published with consumer version tagged feat/y"
-* "Scheduling job for webhook with uuid ap7c1tk-AdEYyphWBVieIg"
+If you see no evidence of any attempted executions, look in the application logs. For every pact publication, there are detailed logs that explain why a webhook is/isn't fired for a particular publication. See [Identifying why a webhook did or did not get triggered](#identifying-why-a-webhook-did-or-did-not-get-triggered)
