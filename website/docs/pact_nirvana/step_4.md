@@ -15,15 +15,6 @@ While you can use Pact without a Pact Broker, using one allows you to get the mo
 >
 > Get started for free on our Developer Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=effective_pact_setup_dev_plan).
 
-### How to identify a good integration point to start with
-
-A good candidate for starting with Pact will:
-
-* be under active development or be actively causing problems due to integration bugs
-* have two teams that are committed to trying out contract testing
-* have some metric for measuring the impact of the introduction of contract testing (eg. number of bugs per release, lead time for changes, length of the build pipeline)
-* have a provider that is being developed *for* the given consumer (rather than being a general purpose interface that is used by an unknown number of consumers)
-
 ### Consumer pipeline
 
 The following diagram shows what a fully fledged Pact supported release pipeline might look like for a consumer. During this step of the set up guide, we are going just going to cover publishing the pact, and configuring the webhook. The other parts of this pipeline will be covered in later steps.
