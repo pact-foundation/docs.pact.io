@@ -158,6 +158,13 @@ Dynamically determine the current branch of the provider, see if there is a matc
 
   </TabItem>
 
+  <TabItem value="java">
+
+  Currently not supported, s. [GitHub issue](https://github.com/DiUS/pact-jvm/issues/946)
+
+  </TabItem>
+  
+
   <TabItem value="ruby">
 
   ```ruby
@@ -285,6 +292,26 @@ Verify the latest `production` version of all consumers, and all `production` ve
 
   </TabItem>
 
+  <TabItem value="java">
+
+  Supported since version `4.1.8`.
+
+  ```java
+  @PactBroker(
+    host="pactbroker.local",
+    port="8080",
+    consumerVersionSelectors={
+      @VersionSelector(tag = "master"),
+      @VersionSelector(tag = "test"),
+      @VersionSelector(tag = "production"),
+      @VersionSelector(tag = "production", consumer = "my-mobile-consumer")
+    }
+  )
+
+  ```
+
+  </TabItem>
+
   <TabItem value="ruby">
 
   ```ruby
@@ -327,6 +354,22 @@ This is syntatically possible, but not recommended, as pacts for different branc
       }
     ]
   }
+  ```
+
+  </TabItem>
+
+  <TabItem value="java">
+
+  Supported since version `4.1.8`.
+
+  ```java
+  @PactBroker(
+    host="pactbroker.local",
+    port="8080",
+    consumerVersionSelectors=@VersionSelector(latest = "true")
+    }
+  )
+
   ```
 
   </TabItem>
