@@ -41,6 +41,7 @@ import TabItem from '@theme/TabItem';
     {label: 'Java', value: 'java', },
     {label: 'Gradle', value: 'gradle', },
     {label: 'Ruby', value: 'ruby', },
+    {label: 'Python', value: 'python', },
   ]
 }>
   <TabItem value="javascript">
@@ -118,6 +119,23 @@ import TabItem from '@theme/TabItem';
   ```
 
   </TabItem>
+  
+  <TabItem value="python">
+
+  ```python
+  verifier = Verifier(
+      provider="Your provider",
+      broker_url="...",
+      consumer_version_selectors=[
+          {"tag": "main", "latest": True},
+          {"tag": "test", "latest": True},
+          {"tag": "production", "latest": True},
+      ],
+      # ...
+  )
+  ```
+
+  </TabItem>
 
 </Tabs>
 
@@ -131,6 +149,7 @@ Dynamically determine the current branch of the provider, see if there is a matc
   values={[
     { label: 'Javascript', value: 'javascript', },
     {label: 'Ruby', value: 'ruby', },
+    {label: 'Python', value: 'python', },
   ]
 }>
   <TabItem value="javascript">
@@ -169,15 +188,32 @@ Dynamically determine the current branch of the provider, see if there is a matc
 
   ```ruby
   Pact.service_provider "Your provider" do
-  honours_pacts_from_pact_broker do
-    pact_broker_base_url "..."
-    consumer_version_selectors [
+    honours_pacts_from_pact_broker do
+      pact_broker_base_url "..."
+      consumer_version_selectors [
           { tag: ENV["GIT_BRANCH"], fallback_tag: "main", latest: true },
           { tag: "test", latest: true },
           { tag: "production", latest: true }
         ]
+    end
   end
-end
+  ```
+
+  </TabItem>
+  
+  <TabItem value="python">
+
+  ```python
+  verifier = Verifier(
+      provider="Your provider",
+      broker_url="...",
+      consumer_version_selectors=[
+          {"tag": os.environ.get("GIT_BRANCH"), "fallback_tag": "main", "latest": True},
+          {"tag": "test", "latest": True},
+          {"tag": "production", "latest": True},
+      ],
+      # ...
+  )
   ```
 
   </TabItem>
@@ -194,6 +230,7 @@ Verify the pacts for the latest `master` and `test` versions, and all `productio
     { label: 'Javascript', value: 'javascript', },
     {label: 'Java', value: 'java', },
     {label: 'Ruby', value: 'ruby', },
+    {label: 'Python', value: 'python', },
   ]
 }>
   <TabItem value="javascript">
@@ -237,15 +274,32 @@ Verify the pacts for the latest `master` and `test` versions, and all `productio
 
   ```ruby
   Pact.service_provider "Your provider" do
-  honours_pacts_from_pact_broker do
-    pact_broker_base_url "..."
-    consumer_version_selectors [
+    honours_pacts_from_pact_broker do
+      pact_broker_base_url "..."
+      consumer_version_selectors [
           { tag: "main", latest: true },
           { tag: "test", latest: true },
           { tag: "production" }
         ]
+    end
   end
-end
+  ```
+
+  </TabItem>
+  
+  <TabItem value="python">
+
+  ```python
+  verifier = Verifier(
+      provider="Your provider",
+      broker_url="...",
+      consumer_version_selectors=[
+          {"tag": "main", "latest": True},
+          {"tag": "test", "latest": True},
+          {"tag": "production"},
+      ],
+      # ...
+  )
   ```
 
   </TabItem>
@@ -262,6 +316,7 @@ Verify the latest `production` version of all consumers, and all `production` ve
   values={[
     { label: 'Javascript', value: 'javascript', },
     {label: 'Ruby', value: 'ruby', },
+    {label: 'Python', value: 'python', },
   ]
 }>
   <TabItem value="javascript">
@@ -316,9 +371,9 @@ Verify the latest `production` version of all consumers, and all `production` ve
 
   ```ruby
   Pact.service_provider "Your provider" do
-  honours_pacts_from_pact_broker do
-    pact_broker_base_url "..."
-    consumer_version_selectors [
+    honours_pacts_from_pact_broker do
+      pact_broker_base_url "..."
+      consumer_version_selectors [
           { tag: "main", latest: true },
           { tag: "test", latest: true },
           { tag: "production", latest: true },
@@ -326,6 +381,24 @@ Verify the latest `production` version of all consumers, and all `production` ve
         ]
     end
   end
+  ```
+
+  </TabItem>
+  
+  <TabItem value="python">
+
+  ```python
+  verifier = Verifier(
+      provider="Your provider",
+      broker_url="...",
+      consumer_version_selectors=[
+          {"tag": "main", "latest": True},
+          {"tag": "test", "latest": True},
+          {"tag": "production", "latest": True},
+          {"tag": "production", "consumer": "my-mobile-consumer"},
+      ],
+      # ...
+  )
   ```
 
   </TabItem>
@@ -341,6 +414,7 @@ This is syntatically possible, but not recommended, as pacts for different branc
   values={[
     { label: 'Javascript', value: 'javascript', },
     {label: 'Ruby', value: 'ruby', },
+    {label: 'Python', value: 'python', },
   ]
 }>
   <TabItem value="javascript">
@@ -378,13 +452,28 @@ This is syntatically possible, but not recommended, as pacts for different branc
 
   ```ruby
   Pact.service_provider "Your provider" do
-  honours_pacts_from_pact_broker do
-    pact_broker_base_url "..."
-    consumer_version_selectors [
+    honours_pacts_from_pact_broker do
+      pact_broker_base_url "..."
+      consumer_version_selectors [
           { latest: true }
         ]
     end
   end
+  ```
+
+  </TabItem>
+  
+  <TabItem value="python">
+
+  ```python
+  verifier = Verifier(
+      provider="Your provider",
+      broker_url="...",
+      consumer_version_selectors=[
+          {"latest": True},
+      ],
+      # ...
+  )
   ```
 
   </TabItem>
