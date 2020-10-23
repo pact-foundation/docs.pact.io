@@ -25,7 +25,8 @@ Report the pact verification status back to the consumer project in Github.
     "method": "POST",
     "url": "https://api.github.com/repos/<organization>/<project>/statuses/${pactbroker.consumerVersionNumber}",
     "headers": {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "User-Agent": "Awesome-Webhook"
     },
     "body": {
       "state": "${pactbroker.githubVerificationStatus}",
