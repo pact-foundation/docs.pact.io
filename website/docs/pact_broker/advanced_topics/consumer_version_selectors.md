@@ -150,6 +150,8 @@ Dynamically determine the current branch of the provider, see if there is a matc
     { label: 'Javascript', value: 'javascript', },
     {label: 'Ruby', value: 'ruby', },
     {label: 'Python', value: 'python', },
+    {label: 'Java', value: 'java', },
+    {label: 'Gradle', value: 'gradle', },
   ]
 }>
   <TabItem value="javascript">
@@ -179,7 +181,38 @@ Dynamically determine the current branch of the provider, see if there is a matc
 
   <TabItem value="java">
 
-  Currently not supported, s. [GitHub issue](https://github.com/DiUS/pact-jvm/issues/946)
+  ```java
+  // Requires Pact-JVM 4.1.10 or later
+  @PactBroker(
+    host="pactbroker.local",
+    port="8080",
+    consumerVersionSelectors={
+      @VersionSelector(tag = "${GIT_BRANCH}", fallbackTag = "master"),
+      @VersionSelector(tag = "test"),
+      @VersionSelector(tag = "production")
+    }
+  )
+
+  ```
+
+  </TabItem>
+
+  <TabItem value="gradle">
+
+  ```groovy
+  // Requires Pact-JVM 4.1.10 or later
+  pact {
+    serviceProviders {
+      'Your Service' {
+        providerVersion = { '1.2.3' }
+
+        fromPactBroker {
+          selectors = latestTags(fallbackTag: 'master', System.getenv('GIT_BRANCH'))
+        }
+      }
+    }
+  }
+  ```
 
   </TabItem>
   
@@ -317,6 +350,7 @@ Verify the latest `production` version of all consumers, and all `production` ve
     { label: 'Javascript', value: 'javascript', },
     {label: 'Ruby', value: 'ruby', },
     {label: 'Python', value: 'python', },
+    {label: 'Java', value: 'java', }
   ]
 }>
   <TabItem value="javascript">
@@ -349,9 +383,8 @@ Verify the latest `production` version of all consumers, and all `production` ve
 
   <TabItem value="java">
 
-  Supported since version `4.1.8`.
-
   ```java
+  // Requires Pact-JVM 4.1.8 or later
   @PactBroker(
     host="pactbroker.local",
     port="8080",
@@ -415,6 +448,7 @@ This is syntatically possible, but not recommended, as pacts for different branc
     { label: 'Javascript', value: 'javascript', },
     {label: 'Ruby', value: 'ruby', },
     {label: 'Python', value: 'python', },
+    {label: 'Java', value: 'java', },
   ]
 }>
   <TabItem value="javascript">
@@ -434,9 +468,8 @@ This is syntatically possible, but not recommended, as pacts for different branc
 
   <TabItem value="java">
 
-  Supported since version `4.1.8`.
-
   ```java
+  // Requires Pact-JVM 4.1.8 or later
   @PactBroker(
     host="pactbroker.local",
     port="8080",
