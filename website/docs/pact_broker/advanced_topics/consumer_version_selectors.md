@@ -473,8 +473,7 @@ This is syntatically possible, but not recommended, as pacts for different branc
   @PactBroker(
     host="pactbroker.local",
     port="8080",
-    consumerVersionSelectors=@VersionSelector(latest = "true")
-    }
+    consumerVersionSelectors={ @VersionSelector(latest = "true") }
   )
 
   ```
