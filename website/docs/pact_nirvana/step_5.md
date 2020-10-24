@@ -11,7 +11,7 @@ You now have a workflow where:
 
 One of the complications introduced by the "consumer driven" nature of the workflow is that new interactions are usually added to the contract before the functionality has been implemented in the provider. Using the workflow described above, a provider build will be kicked off when you publish a contract with new interactions in it. This build will \(correctly\) fail during the verification task. This is not ideal, as the failure is expected. To solve this, we need to allow contracts to change without breaking the builds.
 
-"Tagging" application versions in the broker allows you to separate your "stable" pacts from your "feature pacts", and to introduce new expectations to a pact without breaking your provider builds. Tags are simple text labels that are applied to application versions, and you can think of the time ordered series of pacts that belong to each tag as forming a "pseudo branch". These psuedo branches can be used in a similar way to git feature branches, where you can keep an unbreaking stable line of development, while adding new, breaking interactions on the side.
+"Tagging" application versions in the broker allows you to separate your "stable" pacts from your "feature pacts", and to introduce new expectations to a pact without breaking your provider builds. Tags are simple text labels that are applied to application versions, and you can think of the time ordered series of pacts that belong to each tag as forming a "pseudo branch". These pseudo branches can be used in a similar way to git feature branches, where you can keep an unbreaking stable line of development, while adding new, breaking interactions on the side.
 
 ![Tags over time](/img/tags_over_time.png)
 
@@ -26,7 +26,7 @@ If you use feature branches for your consumer development, it is recommended to 
 3. Now, when you want to add new expectations to a pact, do it on a feature branch of your consumer codebase \(or with a feature toggle\). If you are dynamically using the branch name as the broker tag, you don’t need to do anything further. However, if you have hardcoded your tag name or are using a feature toggle, you’ll need to manually set the tag to an appropriate value.
 4. Use the new "feature pact" as a starting point to discuss the desired new features with the provider team. Remember section 1 on "Talking"!
 5. Once the interface has been agreed on, implement the new functionality in the provider using the feature pact and verify it locally rather than in the CI until the new expectations are passing. Your provider should still be verifying against the stable tag on the CI, so any new changes will not cause the build to break.
-6. Once the feature pact has been locally verified and you have committed the new provider code to master only then can the consumer  merge in their own changes to master. To reiterate:
+6. Once the feature pact has been locally verified and you have committed the new provider code to master only then can the consumer merge in their own changes to master. To reiterate:
 
     * verify feature pact locally in the provider
     * add the new code to the provider
