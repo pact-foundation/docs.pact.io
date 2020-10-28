@@ -66,6 +66,35 @@ Report the pact verification status back to the consumer project in Github.
   }
 }
 ```
+## GitHub - trigger build
+
+Trigger a build in GitHub using the repository_dispatch event.
+
+```javascript
+{
+  "events": [{
+    "name": "contract_content_changed"
+  }],
+  "request": {
+    "method": "POST",
+    "url": "https://api.github.com/repos/<organisation>/<repository>/dispatches",
+    "headers": {
+      "Content-Type": "application/json",
+      "Accept": "application/vnd.github.everest-preview+json",
+      "Authorization": "Bearer ${user.GithubToken}"
+    },
+    "body": {
+      "event_type": "pact_changed",
+      "client_payload": {
+        "pact_url": "${pactbroker.pactUrl}"
+      }
+    }
+  }
+}
+```
+Ref:
+
+* [Github repository_dispatch docs](https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#create-a-repository-dispatch-event)
 
 ## Travis - trigger build
 
