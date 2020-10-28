@@ -68,6 +68,8 @@ Report the pact verification status back to the consumer project in Github.
 ```
 ## GitHub - trigger build
 
+Trigger a build in GitHub using the repository_dispatch event.
+
 ```javascript
 {
   "events": [{
