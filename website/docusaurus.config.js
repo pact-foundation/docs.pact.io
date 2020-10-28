@@ -151,6 +151,7 @@ const siteConfig = {
         {to: 'pact_broker/docker_images', label: 'Pact Broker Docs', position: 'left'},
         {to: 'history', label: 'Resources', position: 'left'},
         {to: 'help', label: 'Help', position: 'left'},
+        {to: "https://go.pactflow.io/nov20meetup", label: 'Nov 19th global virtual meetup', position: 'left'},
       ],
     },
 
