@@ -17,7 +17,7 @@ You can read more about the backstory on this feature [here](http://blog.pact.io
 
 ## Technical details
 
-To enable the WIP pacts feature, you need to set the `includeWipPactsSince` field to the date from which you want to start using this feature. eg `"2020-10-31"`. The date is required so that you don't suddenly start verifying 100 past feature pacts in your build all of a sudden.
+To enable the WIP pacts feature, you need to set the `includeWipPactsSince` field to the date from which you want to start using this feature. eg `"2020-10-31"`. The date is required so that you don't suddenly start verifying 100 past feature pacts in your build all of a sudden. You also need to set a `provider version tag`  as this is used in the pending calculations. The provider version tag is recommended to be the name of the git branch for this to work correctly.
 
 The logic for what constitutes a WIP pact is actually quite complex! To make it work as a human would intuitively expect involves many rules. It might be easiest to explain how the pacts are selected by stepping through it procedurally as the code does.
 
