@@ -18,7 +18,7 @@ We're on a free plan, so we don't have unlimited history, however, you may be ab
 
 ## 3. Find the appropriate Slack channel for your question
 
-If you can't find your answer on the docs site or Slack, _then_ ask your question on [Slack](https://slack.pact.io). If it's a general question about Pact theory or best practice, then feel free to ask it in the `#general` channel. For questions related to a particular language, please ask in the channel that relates to that language (eg. `#pact-jvm`, `#pact-js`). If you're new to the Slack workspace, you can browse the available channels by clicking on the `+` icon next to the `Channels` heading on the sidebar.
+If you can't find your answer on the docs site or Slack, _then_ ask your question on Slack ([signup](https://slack.pact.io)|[login](https://pact-foundation.slack.com)). If it's a general question about Pact theory or best practice, then feel free to ask it in the `#general` channel. For questions related to a particular language, please ask in the channel that relates to that language (eg. `#pact-jvm`, `#pact-js`). If you're new to the Slack workspace, you can browse the available channels by clicking on the `+` icon next to the `Channels` heading on the sidebar.
 
 ## 4. Ask a good question!
 

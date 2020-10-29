@@ -11,7 +11,7 @@ We encourage contribution to any of our libraries, if you see something that sho
 4. Push to the branch \(`git push origin my-new-feature`\)
 5. Create new Pull Request
 
-If you would like to see a bigger feature, or see `Pact` implemented in another language, please check out the [Pact specification](https://github.com/pact-foundation/pact-specification) and have a chat to one of us on the [Pact slack team](http://slack.pact.io).
+If you would like to see a bigger feature, or see `Pact` implemented in another language, please check out the [Pact specification](https://github.com/pact-foundation/pact-specification) and have a chat to one of us on the Pact Slack workspace ([signup](https://slack.pact.io)|[login](https://pact-foundation.slack.com)).
 
 The vision is to have a compatible `Pact` implementation in all the commonly used languages, your help would be greatly appreciated!
 

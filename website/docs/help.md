@@ -10,7 +10,7 @@ Learn more using the [documentation on this site.](implementation_guides/cli)
 
 ## Join the Pact Slack community
 
-Please read the [how to ask for help](/help/how_to_ask_for_help) page first. You can join [here](https://slack.pact.io).
+Please read the [how to ask for help](/help/how_to_ask_for_help) page first, and chat with us in Slack ([signup](https://slack.pact.io)|[login](https://pact-foundation.slack.com))
 
 ## Search on Stack Overflow
 

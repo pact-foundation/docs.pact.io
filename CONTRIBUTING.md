@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions are very welcome, from beginners and experienced Pact users alike. Please chat to us in the `#documentation` channel of the [Pact Foundation Slack workspace](https://slack.pact.io) if you have any questions or suggestions, or raise an issue in the Github repository for bugs that you can't submit a PR for yourself.
+Contributions are very welcome, from beginners and experienced Pact users alike. Please chat to us in the `#documentation` channel of the Pact Foundation Slack workspace ([signup](https://slack.pact.io)|[login](https://pact-foundation.slack.com)) if you have any questions or suggestions, or raise an issue in the Github repository for bugs that you can't submit a PR for yourself.
 
 ## Content updates
 

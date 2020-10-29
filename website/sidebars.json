@@ -114,7 +114,8 @@
       "implementation_guides/other_languages"
     ],
     "Feature support": [
-      "feature_support",
+      "roadmap/feature_support",
+      "roadmap/roadmap",
       "wrapper_implementations"
     ],
     "Stubs": [
