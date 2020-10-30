@@ -275,6 +275,19 @@ This will generate
 
 and configure a regex matcher to match `.*\/1001\/\d+$`
 
+##### `ArrayContaining(std::vector<IMatcher::Ptr> variants)`
+
+Matches the items in an array against a number of variants. Matching is successful if each variant 
+ occurs once in the array. Variants may be objects containing matching rules.
+
+for example:
+
+```cpp
+ArrayContaining({ Object({ { "id", Integer(3) } }), Matching("\\d+", "100") })
+```
+
+This will generate two variants, one to match an object with a integer `id` attribute and one to match a string against the regular expression.
+
 ### Execute the test
 
 The actual test is then run with the `run_test` method. This takes a clsoure to execute and will startup a mock server before and the validate the result afterwards.
@@ -306,10 +319,10 @@ $ conan remote add pact-foundation https://api.bintray.com/conan/pact-foundation
 $ conan search pact_cpp_consumer -r=pact-foundation
 Existing package recipes:
 
-pact_cpp_consumer/0.0.1@pact/beta
+pact_cpp_consumer/0.0.4@pact/beta
 ```
 
-You can then use the library by adding `pact_cpp_consumer/0.0.1@pact/beta` to the dependencies to your project conan file.
+You can then use the library by adding `pact_cpp_consumer/0.0.4@pact/beta` to the dependencies to your project conan file.
 
 ## Building the library
 
