@@ -11,6 +11,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-cplusplus/edit/master/c
 * b1df88c - fix: ConstrainedArrayLike should set the examples to the minimum (Ronald Holshausen, Mon Jun 29 13:30:09 2020 +1000)
 * aa2ed2c - fix: missing const on Like function (Ronald Holshausen, Mon Jun 29 13:20:35 2020 +1000)
 * e94a36b - bump version to 0.0.3 (Ronald Holshausen, Sun May 24 12:41:59 2020 +1000)
+
 ## 0.0.2 - Code cleanup + support multipart form posts with binary files
 
 * 9bfdf17 - feat: support multipart form posts with binary files (Ronald Holshausen, Sun May 24 12:33:04 2020 +1000)
