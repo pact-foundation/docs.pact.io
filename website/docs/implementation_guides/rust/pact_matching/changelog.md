@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.8.2 - Bugfix Release
+
+* 3acf437 - fix: when merging pacts, it helps to use the new interations in the merged pact, not the old ones #77 (Ronald Holshausen, Sat Oct 17 18:17:57 2020 +1100)
+
 ## 0.8.1 - Bugfix Release
 
 * d24cfe3 - fix: matching binary data was broken after refactor (Ronald Holshausen, Fri Oct 16 16:05:26 2020 +1100)
