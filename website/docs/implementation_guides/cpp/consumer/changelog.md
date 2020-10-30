@@ -5,6 +5,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-cplusplus/edit/master/c
 <!-- This file has been synced from the pact-foundation/pact-cplusplus repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 
+## 0.0.4 - Array contains matcher
+
+* 6840446 - feat: add support for array contains matcher (Ronald Holshausen, Fri Oct 30 15:35:33 2020 +1100)
+* f68942c - bump version to 0.0.4 (Ronald Holshausen, Mon Sep 28 13:37:18 2020 +1000)
+
 ## 0.0.3 - Fixes from upstream pact_mock_server_ffi lib
 
 * d140320 - fix: made min and max for type matcher optionals (Ronald Holshausen, Mon Jun 29 14:14:51 2020 +1000)
