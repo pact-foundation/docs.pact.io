@@ -6,7 +6,7 @@ The consumer CI generates pact files during the execution of its isolated tests.
 
 > **Quick Start**
 >
-> The Pact Broker is an open source tool that requires you to deploy, administer and host it yourself. If you would prefer a plug-and-play option, we've created [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=sharing_pacts), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
+> The Pact Broker is an open source tool that requires you to deploy, administer and host yourself. If you would prefer a plug-and-play option, we've created [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=sharing_pacts), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
 >
 > Get started for free on our Developer Plan [here](https://pactflow.io/pricing/?utm_source=&utm_campaign=sharing_pacts_dev_plan).
 
@@ -38,7 +38,7 @@ Features:
 * Provides webhooks to trigger actions when pacts change eg. run provider build, notify a Slack channel.
 * View diffs between Pact versions so you can tell what expectations have changed.
 * [Docker Pact Broker](https://hub.docker.com/r/pactfoundation/pact-broker)
-* A [CLI](https://github.com/pact-foundation/pact-ruby-standalone/releases) for encorporating the Pact workflow into your continuous integration process.
+* A [CLI](https://github.com/pact-foundation/pact-ruby-standalone/releases) for incorporating the Pact workflow into your continuous integration process.
 
 Most importantly, the `Pact Broker` allows you to easily decouple the release cycle of your `Consumer` and `Provider`, which is one of the goals of writing microservices in the first place.
 
@@ -118,7 +118,7 @@ For more information head over to the Pact Broker [website](https://github.com/p
 
 Pretty self explanatory.
 
-#### 2. Publish pacts as CI build artefacts
+#### 2. Publish pacts as CI build artifacts
 
 Work out the URL to the pact created by the most recent successful build, and configure the pact:verify task to point to this URL.
 
