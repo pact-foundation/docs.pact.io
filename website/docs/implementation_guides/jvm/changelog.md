@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.1.10 - Bugfix Release
+
+* 940fc83c5 - fix: default headers were being added twice to requests to the pact broker #1242 (Ronald Holshausen, Fri Nov 6 11:25:06 2020 +1100)
+* a648c7a9a - feat: Support loading PactSource from annotations on the test class (JUnit 5) #1237 (Ronald Holshausen, Tue Nov 3 16:12:50 2020 +1100)
+* 94275ae38 - feat: Support loading PactSource from annotations on the test class (JUnit 4) #1237 (Ronald Holshausen, Tue Nov 3 15:10:12 2020 +1100)
+* f05d904dc - feat: support any objects for provider state parameters #1234 (Ronald Holshausen, Sat Oct 31 18:08:14 2020 +1100)
+* 5c694ae70 - fix: markdown summary was not updated correctly when multiple consumers #1128 (Ronald Holshausen, Sat Oct 31 16:49:57 2020 +1100)
+* abd55de24 - feat: support for fallback tag with version selectors #946 (Ronald Holshausen, Fri Oct 23 11:44:58 2020 +1100)
+* be2f0024f - :bug: use ConcurrentHashMap rather than just a mutable map (Ryan Dens, Mon Oct 19 09:06:01 2020 -0400)
+* 0c4ea773e - :bug: improve thread-safety of JUnit 5 extension (Ryan Dens, Mon Oct 19 09:01:55 2020 -0400)
+
 ## 4.1.9 - Bugfix Release
 
 * 1b36668b4 - fix: handle null tag values in selectors #1227 (Ronald Holshausen, Sun Oct 18 14:47:16 2020 +1100)
