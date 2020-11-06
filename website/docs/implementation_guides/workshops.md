@@ -4,7 +4,7 @@ title: Hands on learning
 
 ## Video Training
 
-A great starting point is this [Contract Testing With Pact](https://testautomationu.applitools.com/pact-contract-tests/index.html) course published on Test Automation University  
+A great starting point is this [Contract Testing With Pact](https://testautomationu.applitools.com/pact-contract-tests/index.html) course published on Test Automation University
 A step by step guide using pact-js & PactNet [Introduction to Contract Testing](https://www.udemy.com/course/introduction-to-contract-testing-with-pact/learn) course published on Udemy
 
 ## Pact workshops - from 0 to Pact in ~2 hours
@@ -18,3 +18,32 @@ These hands-on labs walk you through an example problem from start to finish, ex
 * [Android](https://github.com/DiUS/pact-workshop-android)
 * [.NET](https://github.com/pactflow/pact-workshop-dotnet-core-v1)
 * [CI/CD](https://docs.pactflow.io/docs/workshops/ci-cd)
+
+## Examples
+
+We have created a number of example projects that you can use as references for your rolling out your contract-testing initiatives.
+
+All examples can be found over at https://docs.pactflow.io/docs/examples/
+
+### Consumers
+
+| Language | Use Case | Framework/Tech | Description |
+| --------- | ------- | ----------- | -------------- |
+| JS/NodeJS | Web | React | React JS website relying on a Products API |
+| JS/NodeJS | Web | Cypress | Example demonstrating how Cypress could be used to generate consumer pacts |
+| JS/NodeJS | AWS/SNS/Messages | SNS Lambda | AWS Lambda SNS Consumer |
+| Java | Messages |  Kafka | Java Kafka consumer |
+| NodeJS | Messages | Kafka | NodeJS  Kafka consumer |
+| Java | SOAP Java | Java | SOAP API consumer (_note: only compatible with the SOAP provider_) |
+| .NET | API .NET | .NET Products API consumer |
+
+### Providers
+
+| Language | Use Case | Framework/Tech | Description |
+| --------- | ------- | ----------- | -------------- |
+| JS/NodeJS | API | Express JS | ExpressJS API provider |
+| JS/NodeJS | AWS/SNS/Messages | ExpressJS / AWS SNSreadme) | AWS Lambda SNS Provider |
+| Java | API | Spring Boot | Java Spring Boot API provider |
+| Java | Messages | Kafka | Java Kafka message provider |
+| Java | SOAP | Java  | Java SOAP API provider (_note: only compatible with the SOAP consumer_) |
+| .NET | API | .NET | .NET API provider |
