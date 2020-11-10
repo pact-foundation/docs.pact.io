@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.33.0"></a>
+### v1.33.0 (2020-11-10)
+
+#### Features
+
+* **publish**
+  * allow pacts to be merged on the server side	 ([bd80f10](https://github.com/pact-foundation/pact_broker-client/commit/bd80f10))
+
 <a name="v1.32.0"></a>
 ### v1.32.0 (2020-10-26)
 
