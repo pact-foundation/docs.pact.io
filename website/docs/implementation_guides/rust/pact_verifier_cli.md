@@ -22,6 +22,7 @@ USAGE:
     pact_verifier_cli [FLAGS] [OPTIONS] --broker-url <broker-url>... --dir <dir>... --file <file>... --provider-name <provider-name> --url <url>...
 
 FLAGS:
+        --enable-pending           Enables Pending Pacts
         --filter-no-state          Only validate interactions that have no defined provider state
         --help                     Prints help information
         --publish                  Enables publishing of verification results back to the Pact Broker. Requires the
@@ -32,35 +33,52 @@ FLAGS:
     -v, --version                  Prints version information
 
 OPTIONS:
-        --base-path <base-path>                      Base path to add to all requests
+        --base-path <base-path>                                Base path to add to all requests
     -b, --broker-url <broker-url>...
-            URL of the pact broker to fetch pacts from to verify (requires the provider name parameter)
-
+            URL of the pact broker to fetch pacts from to verify (requires the provider name parameter) [env:
+            PACT_BROKER_BASE_URL=https://testdemo.pactflow.io]
         --build-url <build-url>
             URL of the build to associate with the published verification results.
 
-    -d, --dir <dir>...                               Directory of pact files to verify (can be repeated)
-    -f, --file <file>...                             Pact file to verify (can be repeated)
-    -c, --filter-consumer <filter-consumer>...       Consumer name to filter the pacts to be verified (can be repeated)
-        --filter-description <filter-description>    Only validate interactions whose descriptions match this filter
-        --filter-state <filter-state>                Only validate interactions whose provider states match this filter
-    -h, --hostname <hostname>                        Provider hostname (defaults to localhost)
+        --consumer-version-tags <consumer-version-tags>
+            Consumer tags to use when fetching pacts from the Broker. Accepts comma-separated values.
+
+    -d, --dir <dir>...                                         Directory of pact files to verify (can be repeated)
+    -f, --file <file>...                                       Pact file to verify (can be repeated)
+    -c, --filter-consumer <filter-consumer>...
+            Consumer name to filter the pacts to be verified (can be repeated)
+
+        --filter-description <filter-description>
+            Only validate interactions whose descriptions match this filter
+
+        --filter-state <filter-state>
+            Only validate interactions whose provider states match this filter
+
+    -h, --hostname <hostname>                                  Provider hostname (defaults to localhost)
+        --include-wip-pacts-since <include-wip-pacts-since>
+            Allow pacts that don't match given consumer selectors (or tags) to  be verified, without causing the overall
+            task to fail. For more information, see https://pact.io/wip
     -l, --loglevel <loglevel>
             Log level (defaults to warn) [possible values: error, warn, info, debug,
             trace, none]
-        --password <password>                        Password to use when fetching pacts from URLS
-    -p, --port <port>                                Provider port (defaults to protocol default 80/443)
-    -n, --provider-name <provider-name>              Provider name (defaults to provider)
+        --password <password>
+            Password to use when fetching pacts from URLS [env: PACT_BROKER_PASSWORD=]
+
+    -p, --port <port>                                          Provider port (defaults to protocol default 80/443)
+    -n, --provider-name <provider-name>                        Provider name (defaults to provider)
         --provider-tags <provider-tags>
             Provider tags to use when publishing results. Accepts comma-separated values.
 
         --provider-version <provider-version>
             Provider version that is being verified. This is required when publishing results.
 
-    -s, --state-change-url <state-change-url>        URL to post state change requests to
-    -t, --token <token>                              Bearer token to use when fetching pacts from URLS
-    -u, --url <url>...                               URL of pact file to verify (can be repeated)
-        --user <user>                                Username to use when fetching pacts from URLS
+    -s, --state-change-url <state-change-url>                  URL to post state change requests to
+    -t, --token <token>
+            Bearer token to use when fetching pacts from URLS [env: PACT_BROKER_TOKEN=Dk8qO3_ZOqau8EeMaagK5w]
+
+    -u, --url <url>...                                         URL of pact file to verify (can be repeated)
+        --user <user>
+            Username to use when fetching pacts from URLS [env: PACT_BROKER_USERNAME=]
 
 ```
 
@@ -98,32 +116,32 @@ The interactions that are verified can be filtered by the following options:
 
 #### `-c, --filter-consumer <filter-consumer>`
 
-This will only verify the interactions of matching consumers. You can specify multiple consumers by either separating 
+This will only verify the interactions of matching consumers. You can specify multiple consumers by either separating
 the names with a comma, or repeating the option.
 
 #### `--filter-description <filter-description>`
 
-This option will filter the interactions that are verified that match by description. You can use a regular expression 
+This option will filter the interactions that are verified that match by description. You can use a regular expression
 to match.
 
 #### `--filter-state <filter-state>`
 
-This option will filter the interactions that are verified that match by provider state. You can use a regular 
+This option will filter the interactions that are verified that match by provider state. You can use a regular
 expression to match. Can't be used with the `--filter-no-state` option.
 
 #### `--filter-no-state`
 
-This option will filter the interactions that are verified that don't have a defined provider state. Can't be used 
+This option will filter the interactions that are verified that don't have a defined provider state. Can't be used
 with the `--filter-state` option.
 
 ### State change requests
 
-Provider states are a mechanism to define the state that the provider needs to be in to be able to verify a particular 
-request. This is achieved by setting a state change URL that will receive a POST request with the provider state before 
+Provider states are a mechanism to define the state that the provider needs to be in to be able to verify a particular
+request. This is achieved by setting a state change URL that will receive a POST request with the provider state before
 the actual request is made.
 
 *NOTE:* For verifying messages fetched via HTTP, the provider state is also passed in the request to fetch the message,
-so the state change URL is not required. 
+so the state change URL is not required.
 
 #### `-s, --state-change-url <state-change-url>`
 
@@ -229,7 +247,7 @@ There were 8 pact failures
 
 ## Verifying message pacts
 
-Message pacts can be verified, the messages just need to be fetched from an HTTP endpoint. The veryfier will send a 
+Message pacts can be verified, the messages just need to be fetched from an HTTP endpoint. The veryfier will send a
 POST request to the configured provider and expect the message payload in the response. The POST request will include
 the description and any provider states configured in the Pact file for the message, formatted as JSON.
 
