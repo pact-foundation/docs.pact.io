@@ -10,7 +10,6 @@ A "work in progress" pact is a pact that is the latest for its tag \(eg. the pac
 
 The term "pending" is a status that is applied to a single pact. The "work in progress pacts" is a collection of pacts that are pending.
 
-
 When verifying pacts, the verification task can be configured to include all "work in progress" pacts \(as well as the pacts that you specify explicitly, like `master` or `prod`\). This allows any new pacts to be automatically verified without the provider team having to make configuration changes. When using this feature, it is best to also turn on the `pending pacts` feature, so that any failures caused by the WIP pacts do not cause the build to fail.
 
 You can read more about the backstory on this feature [here](http://blog.pact.io/2020/02/24/introducing-wip-pacts/).
@@ -24,7 +23,8 @@ The logic for what constitutes a WIP pact is actually quite complex! To make it 
 1. Find all the pacts that are the latest for their tag (the "head" pacts). (eg. The latest pact for a version with tag `main` + the latest pact for a version with tag `feat-x` + the latest pact for a version with tag `feat-y` ...)
 1. Discard the pacts that have been explictly selected in the consumerVersionSelectors. (eg. usually you'd configure the consumer version selectors with `{"tag": "main", "latest": "true"}`, so discard the latest `main` pact).
 1. Discard all the pacts created before the `includeWipPactsSince` date (we don't want to verify every head pact since the dawn of time).
-1. Discard all the pacts that already have a successful verification by for the configured provider version tag (ie. branch) already.
+1. Discard all the pacts that have a successful verification by a provider version with the same configured tag (ie. branch) *where the pact content was explicitly specified in the selectors*.
+    * The implication of this is that if a WIP pact is verified successfully when it was included in the list of pacts to verify because it was WIP, this successful verification does not stop it being a WIP pact. It only stops being a WIP pact when the content has been "approved" by having one of the tags that the provider team has chosen to support.
 1. Discard all the pacts that were published before the first instance of this provider tag (this is so that if you create a brand new provider branch, you don't  get EVERY head pact included in the WIP pacts list).
 
 What is left are the outstanding head pacts - the ones that you're still working on.
