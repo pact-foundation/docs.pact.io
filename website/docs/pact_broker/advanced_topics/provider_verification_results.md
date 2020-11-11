@@ -29,9 +29,9 @@ If your pact URL includes basic auth configurations for the pact broker, these w
 
 Earlier versions of the Pact libraries accepted a list of consumer version tags, and fetched each pact directly by tag. The more recent versions of the Pact libraries use a "pacts for verification" endpoint in the Pact Broker. It supports:
 
-* the [pending pacts](/pending) feature.
-* the [work in progress pacts](/wip) feature.
-* specifying the pacts to verify using [consumer version selectors](/consumer_version_selectors) rather than just a list of tags.
+* the [pending pacts](./pending_pacts) feature.
+* the [work in progress pacts](./wip_pacts) feature.
+* specifying the pacts to verify using [consumer version selectors](./consumer_version_selectors) rather than just a list of tags.
 * de-duplication of pact contents for faster verifications.
 
 To use these features:
