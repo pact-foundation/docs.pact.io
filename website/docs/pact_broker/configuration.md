@@ -112,9 +112,11 @@ en:
 I18n.config.load_path << "./path/to/your/custom/messages/file.yml"
 ```
 
-## Ordering versions by date
+## Ordering versions
 
-By default, pacticipant versions \(and hence their related pacts\) are sorted by date published. If you would like to use semantic versioning, you will need to set `config.order_versions_by_date = false`. After you have restarted, you will need to publish a new pact to trigger a resort, as the ordering is done on insertion.
+By default, pacticipant versions \(and hence their related pacts\) are sorted by date published. In earlier versions of the Pact Broker, the versions were sorted semantically. Semantic ordering is now not recommended, as the best practice is to publish pacts using the git sha as the consumer version.
+
+You are on a very old version of the Broker, and wish to use date ordering, you will need to set `config.order_versions_by_date = true`. After you have restarted, you will need to publish a new pact to trigger a resort, as the ordering is done on insertion.
 
 ## Checking for potential duplicate pacticipant names
 
