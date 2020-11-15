@@ -1,5 +1,5 @@
 ---
-title: Recommended configuration for publishing
+title: Recommended configuration for publishing pacts
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,4 +13,3 @@ The recommended configuration for the consumer Pact publication configuration is
 * `consumer version tag`: the git branch
 
 Making changes to pacts should happen on a branch of the consumer, and the branch should not be merged until there is a successful verification from the main branch of the provider.
-
