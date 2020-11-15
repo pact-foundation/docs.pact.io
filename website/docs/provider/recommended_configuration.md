@@ -93,17 +93,17 @@ When the pact URL is known, the `pactBrokerUrl`, `providerName`, `consumerVersio
   ]
 }>
   <TabItem value="javascript">
-   ```js
-      const verificationOptions = {
-        pactUrls: [process.env.PACT_URL],
 
-       // used when publishing verification results
+  ```js
+  const verificationOptions = {
+    pactUrls: [process.env.PACT_URL],
 
-       publishVerificationResult: process.env.CI === "true", //only publish from CI
-       providerVersion: process.env.GIT_COMMIT, //use the appropriate env var from your CI system
-       providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [],
+    // used when publishing verification results
 
-      }
+    publishVerificationResult: process.env.CI === "true", //only publish from CI
+    providerVersion: process.env.GIT_COMMIT, //use the appropriate env var from your CI system
+    providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [],
+  }
    ```
   </TabItem>
 </Tabs>
