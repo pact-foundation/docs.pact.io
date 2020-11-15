@@ -2,6 +2,15 @@
 title: Recommended configuration
 ---
 
+There are typically two different reasons why a pact verification task will need to be run. 
+
+1. When the provider makes a change
+   * In this situation, a full "regression suite" pact verification needs to be made for all the consumers and all the supported stages (eg. `test`, `production`) to ensure that backwards compatibility is maintained.
+2. When a pact changes
+   * In this situation, only the changed pact needs to be verified.
+
+## Verification triggered by provider change
+
 The following examples require support for the "pacts for verification" API in your Pact library which you can read about [here](/pact_broker/advanced_topics/provider_verification_results#pacts-for-verification).
 
 
@@ -38,6 +47,8 @@ The following examples require support for the "pacts for verification" API in y
   ```js
   const verificationOptions = {
     // ....
+    provider: "example-provider",
+    pactBrokerUrl: "http://test.pactflow.io",
     consumerVersionSelectors: [
       {
         tag: "main",
@@ -57,8 +68,42 @@ The following examples require support for the "pacts for verification" API in y
       }
     ],
     enablePending: process.env.GIT_BRANCH === "main",
-    includeWipPactsSince: process.env.GIT_BRANCH === "main" ? "2020-01-01" : undefined
+    includeWipPactsSince: process.env.GIT_BRANCH === "main" ? "2020-01-01" : undefined,
+
+    // used when publishing verification results
+    publishVerificationResult: process.env.CI === "true", //only publish from CI
+    providerVersion: process.env.GIT_COMMIT, //use the appropriate env var from your CI system
+    providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [],
   }
   ```
+  </TabItem>
+</Tabs>
+
+## Verification triggered by pact change
+
+When a pact has changed, a webhook in the Pact Broker will kick off a build of the provider, passing through the URL of the pact that has changed. See [this](/pact_nirvana/step_4#e-configure-pact-to-be-verified-when-contract-changes) section of the CI/CD set up guide for more information on this.
+
+When the pact URL is known, the `pactBrokerUrl`, `providerName`, `consumerVersionSelectors/consumerVersionTags`, `enablePending`, `includeWipPactsSince` fields should not be set. You can see an example of switching between the two verification modes (all vs changed) in [this Node example](https://github.com/pactflow/example-provider/blob/f1c91ec9f6ab428f95e03cce27c9bd525ee37107/src/product/product.pact.test.js#L23-L75) 
+
+<Tabs
+  groupId="sdk-choice"
+  defaultValue="javascript"
+  values={[
+    { label: 'Javascript', value: 'javascript' }
+  ]
+}>
+  <TabItem value="javascript">
+   ```js
+      const verificationOptions = {
+        pactUrls: [process.env.PACT_URL],
+       
+       // used when publishing verification results
+       
+       publishVerificationResult: process.env.CI === "true", //only publish from CI
+       providerVersion: process.env.GIT_COMMIT, //use the appropriate env var from your CI system
+       providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [],
+
+      }
+   ```
   </TabItem>
 </Tabs>
