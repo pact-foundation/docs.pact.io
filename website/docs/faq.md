@@ -129,6 +129,8 @@ Contract tests replace a certain class of system integration test \(the ones you
 
 The value of contract tests is that they allow you to shift effort from high maintance, slow feedback tests to low maintenance, fast feedback tests, reducing the overall effort required to release.
 
+We often see end-to-end integration tests used as a catch all across integration, functional and acceptance testing (in the pyramid below, this would be represented as a bigger portion of the "E2E" part of the triangle). Specifically, we see them used as a proxy for [_provider functional tests_](/consumer/contract_tests_not_functional_tests). Separating the integration from the functional aspects often relieves end-to-end tests of a lot of their duties, and in some cases they can be replaced altogether. Read on to see how.
+
 #### Before contract tests
 
 ![Before contract tests](https://image.slidesharecdn.com/voxxeddays2019-190520032930/95/microservices-test-smarter-not-harder-voxxed-days-2019-27-638.jpg?cb=1558323091)
@@ -139,10 +141,11 @@ The value of contract tests is that they allow you to shift effort from high mai
 
 The real question is: how many end-to-end tests do you really need once you have contract tests, and in which environment - test or production? The answer to _this_ question depends on your organisation's risk profile.
 
-There is generally a trade off between the amount of confidence you have that your system is bug free, and the speed with which you can respond to any bugs you find. A 10 hour test suite may make you feel secure that all the functionality of your system is working, but it will decrease your ability to put out a new release quickly when a bug is inevitably found.
+There is generally a trade off between the amount of confidence you have that your system is bug free, and the speed with which you can respond to any bugs you find. A 10 hour test suite may make you feel secure that all the functionality of your system is working, but it will decrease your ability to put out a new release quickly when a bug is inevitably found. This is related to the concept of MTTR and change lead time (see "The Four Key Metrics" below).
 
 If you work in an environment where you prioritise "agility" over "stability", then maybe you would be better off investing the time that you would have spent maintaining end-to-end tests in improving your ability to _find_ and _fix_ bugs more quickly. For example:
 
+* increasing the proportion of functional tests in your provider code base
 * using semanitic monitoring techniques like synthetic transactions to let you know if any important functions are not working in production
 * adding correlation IDs to your code
 * setting up aggregated logging
@@ -150,6 +153,23 @@ If you work in an environment where you prioritise "agility" over "stability", t
 * optimising your builds so that they run faster
 
 If you work in a more traditional "Big Bang Release" environment, choose end to end tests that focus on the core business value provided by your system, rather than on tests that try to check that the HTTP requests are being done correctly.
+
+#### The Four Key Metrics
+
+Lastly, we find that the [four key metrics](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance) from DORA that correlate to high performing organisations are great ways to measure and report on your contract testing initiative. These metrics are:
+
+* Deployment frequency: how often do you release?
+* Lead time for change: how long does it take to get a release from from commit to production?
+* Change failure rates: how often does a change result in a failure as a percentage of all changes?
+* MTTR: how long does it take to recover from a failure (e.g. fix/rollback)
+
+#### Summary
+
+1. Measure your current performance against the four key metrics
+1. Review your current test strategy and portfolio - are you using end-to-end integration tests as a catch all and can you start to re-invest effort in other areas of testing?
+1. Set targets for the four key metrics based on what is a reasonable starting point for your team and communicate this goal
+1. Move tests designed to check the provider is behaving as expected into the provider's code base
+1. Replace the integration testing aspects of your end-to-end tests with contract tests
 
 ### Can I use Pact for UI tests?
 
