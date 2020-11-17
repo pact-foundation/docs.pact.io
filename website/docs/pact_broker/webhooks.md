@@ -8,29 +8,34 @@ Webhooks allow you to trigger an HTTP request when a pact is changed, a pact is 
 
 Webhooks can be used in conjunction with the [can-i-deploy](/pact_broker/can_i_deploy) tool \(a CLI that allows you to easily check the verification status of your pacts\), to allow you to fully automate the CI/CD process for all the applications that use the Pact Broker, ensuring both sides of the contract are fulfilled before deploying.
 
+## Events
 
-## The 'contract content changed' event
+### The 'contract content changed' event
 
 The broker uses the following logic to determine if a pact has changed:
 
 * If the relevant consumer version has any tags, then for each tag, check if the content is different from the previous latest version for that tag. It is 'changed' if any of the checks are true. One side effect of this is that brand new tags will trigger a pact changed event, even if the content is the same as a previous version.
 * If the relevant consumer version has no tags, then check if the content has changed since the previous latest version.
 
-## The 'contract published' event
+### The 'contract published' event
 
 This is triggered every time a pact is published, regardless of whether it has changed or not.
 
-## The 'provider verification published' event.
+### The 'provider verification published' event.
 
 This is triggered every time a verification is published.
 
-## The 'provider verification succeeded' event.
+### The 'provider verification succeeded' event.
 
 This is triggered every time a verification is published with a successful status.
 
-## The 'provider verification failed' event.
+### The 'provider verification failed' event.
 
 This is triggered every time a verification is published with a failed status.
+
+## Template parameters
+
+You can use template parameters in the request URL, body and headers to pass through metadata about the event. The most common use of this feature is to pass though the URL of the pact that has changed to the provider verification build. See [this list](pact_broker/advanced_topics/api_docs/webhooks#dynamic-variable-substitution) of available parameters.
 
 ## Example CI/CD and webhook configuration
 
