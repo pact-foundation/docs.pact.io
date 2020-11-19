@@ -252,6 +252,7 @@
     "history",
     "blogs_videos_and_articles",
     "books",
+    "events",
     {
       "Contributing": [
         "contributing",

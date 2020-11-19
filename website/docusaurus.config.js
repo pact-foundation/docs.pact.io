@@ -151,7 +151,6 @@ const siteConfig = {
         {to: 'pact_broker/docker_images', label: 'Pact Broker Docs', position: 'left'},
         {to: 'history', label: 'Resources', position: 'left'},
         {to: 'help', label: 'Help', position: 'left'},
-        {to: "https://go.pactflow.io/nov20meetup?utm_source=docs.pact.io&utm_medium=web&utm_campaign=meetup-nov-2020&utm_content=banner", label: ' 👋 Join our global community event on Nov 19', position: 'right'},
       ],
     },
 

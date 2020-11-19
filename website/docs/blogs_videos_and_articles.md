@@ -8,6 +8,8 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 ## 2020
 
+**[Pact Community Event](events)**
+
 **Customer Stories**:
 * [Booking.com - Consumer](https://medium.com/better-programming/your-contract-tests-are-not-protecting-you-563a5d6cdfef)
 * [ASOS - Retail](https://www.youtube.com/watch?v=SAtXTT214ro&feature=youtu.be) (Video)
