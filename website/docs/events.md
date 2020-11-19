@@ -47,7 +47,7 @@ title: Events
 
 #### Can I use Pact to support UI testing?
 
-### If Pact might be used to replace some unit tests, would that mean that we'd be using multiple states and scenarios where the ui may not care too much about it?
+#### If Pact might be used to replace some unit tests, would that mean that we'd be using multiple states and scenarios where the ui may not care too much about it?
 
 #### When is pact-reference stable? I mean releasing 1.0.0 and other projects e.g. pact-php start using it.
 
