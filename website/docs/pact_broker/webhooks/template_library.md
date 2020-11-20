@@ -323,3 +323,35 @@ Ref:
 
 * [TeamCity - REST Authentication](https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-RESTAuthentication)
 * [TeamCity - Triggering Build](https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-TriggeringaBuild)
+
+## Jenkins - Trigger Build
+
+The following example shows how to trigger a Jenkins build with parameters.
+
+```json
+{
+  "description": "Trigger GraphQL Acceptance Test Job on contract_content_changed event from Pegasus",
+  "provider": {
+    "name": "graphql"
+  },
+  "consumer": {
+  	"name": "pegasus"
+  },
+  "events": [{
+    "name": "contract_content_changed"
+  }],
+  "request": {
+    "method": "POST",
+    "url": "https://listeners.jenkins-sb.savagebeast.com/job/listeners-acceptance/job/graphql/job/DEVTOOLS-610-test-pact-broker-webhooks/buildWithParameters?os_authType=basic&environment=shared&graphqlHost=shared.graphql.docker.savagebeast.com",
+    "username": "<USERNAME>",
+    "password": "<TOKEN>",
+    "headers": {
+      "Accept": "application/json"
+    }
+  }
+}
+```
+
+Ref:
+
+* [Jenkins Remote API](https://www.jenkins.io/doc/book/using/remote-access-api/).
