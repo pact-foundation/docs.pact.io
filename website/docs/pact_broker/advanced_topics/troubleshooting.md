@@ -28,19 +28,40 @@ The way the Sequel gem determines if a table exists or not is by attempting to q
 
 When a pact is published normally \(via a PUT to `/pacts/provider/PROVIDER/consumer/CONSUMER/version/CONSUMER_APP_VERSION`\) the `consumer`, `provider` and `consumer version` resources are automatically created.
 
-To prevent a pacticipant \(consumer or provider\) being created multiple times with slightly different name variants \(eg. FooBar/foo-bar/foo bar/Foo Bar Service\), if a new pacticipant name is deemed similar enough to an existing name, a 409 will be returned. The response body will contain instructions indicating that the pacticipant name should be corrected if it was intended to be an existing one, or that the pacticipant should be created manually if it was intended to be a new one.
+To prevent a pacticipant \(consumer or provider\) being created multiple times with slightly different name variants \(eg. FooBar/foo-bar/foo bar/Foo Bar Service\), if a new pacticipant name is deemed similar enough to an existing name, a 409 will be returned.
 
-Some Pact Broker clients unfortunately do not show the full error text when this happens. The full text is as follows:
+If you get a 409, you have two options.
 
-```text
-This is the first time a pact has been published for "%{new_name}".
-The name "%{new_name}" is very similar to the following existing consumers/providers:
-%{existing_names}
-If you meant to specify one of the above names, please correct the pact configuration, and re-publish the pact.
-If the pact is intended to be for a new consumer or provider, please manually create "%{new_name}" using the following command, and then re-publish the pact:
-$ curl -v -XPOST -H "Content-Type: application/json" -d '{"name": "%{new_name}"}' http://broker/pacticipants
-If the pact broker requires authentication, include '-u <username>:<password>' in the command.
+  * Manually create the pacticipant with the desired name (recommended)
+  * Disable the potential duplicate checking (not recommended).
+
+### Manually creating the pacticipant via curl
+
+If the pact broker requires authentication, include '-u yourusername:yourpassword' in the command.
+
+```
+curl -v -XPOST -H "Content-Type: application/json" \
+      -d '{"name": "YourNewPacticipantName"}' \
+      http://broker/pacticipants
 ```
 
-If you wish to turn this name checking feature off, see the [configuration](../configuration.md#checking-for-potential-duplicate-pacticipant-names) page.
+### Manually creating the pacticipant via the API Browser
 
+You can create the pacticipant manually through the API browser of the Pact Broker.
+
+  * Click on the API Browser link at the top right of the index page
+  * Find the `pb:pacticipants` relation in the `Links` section.
+  * Click on the yellow `NON-GET` button that has a `!` on it.
+  * Enter the following in the `Body:` section.
+
+      ```
+      {
+        "name": "YourNewPacticipantName"
+      }
+      ```
+  * Click `Make Request`.
+  * You should see `201 Created` in the `Response Headers` section, and the full JSON document for the newly created pacticipant in the `Response Body` section.
+
+### Disabling the potential duplication checking
+
+If you wish to turn this name checking feature off, see the [configuration](../configuration.md#checking-for-potential-duplicate-pacticipant-names) page.
