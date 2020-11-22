@@ -2,4 +2,4 @@
 title: Events
 ---
 
-[19th Nov  - Online Pact Community Event](20201119)
+[19th Nov  - Online Pact Community Event](events/20201119)
