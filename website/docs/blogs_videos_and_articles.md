@@ -8,7 +8,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 ## 2020
 
-**[Pact Community Event](events)**
+**[Pact Community Event](/events/20201119)**
 
 **Customer Stories**:
 * [Booking.com - Consumer](https://medium.com/better-programming/your-contract-tests-are-not-protecting-you-563a5d6cdfef)
