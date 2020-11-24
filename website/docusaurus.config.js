@@ -151,6 +151,7 @@ const siteConfig = {
         {to: 'pact_broker/docker_images', label: 'Pact Broker Docs', position: 'left'},
         {to: 'history', label: 'Resources', position: 'left'},
         {to: 'help', label: 'Help', position: 'left'},
+        {to: "https://www.eventbrite.com.au/e/reduce-the-cost-of-migrating-to-a-microservices-architecture-tickets-127414990667?utm_source=docs.pact.io&utm_medium=web&utm_campaign=webinar-nov-2020&utm_content=menu", label: ' 📹 Join upcoming webinar', position: 'right'},
       ],
     },
 
