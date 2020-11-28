@@ -16,15 +16,6 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 * e671f952f - fix: obfuscate the password for PactPublish (Ronald Holshausen, Sun Nov 15 09:44:11 2020 +1100)
 * 8ec6d2a05 - feat: add retry when there are unknown results for canIDeploy #1241 (Ronald Holshausen, Sun Nov 15 09:41:19 2020 +1100)
 * 199cd8d5d - fix: pact-jvm-server was not including the dependencies in the published pom #1239 (Ronald Holshausen, Sat Nov 14 14:40:50 2020 +1100)
-* 4525ae5d2 - update changelog for release 4.1.10 (Ronald Holshausen, Fri Nov 6 11:47:23 2020 +1100)
-* 940fc83c5 - fix: default headers were being added twice to requests to the pact broker #1242 (Ronald Holshausen, Fri Nov 6 11:25:06 2020 +1100)
-* a648c7a9a - feat: Support loading PactSource from annotations on the test class (JUnit 5) #1237 (Ronald Holshausen, Tue Nov 3 16:12:50 2020 +1100)
-* 94275ae38 - feat: Support loading PactSource from annotations on the test class (JUnit 4) #1237 (Ronald Holshausen, Tue Nov 3 15:10:12 2020 +1100)
-* f05d904dc - feat: support any objects for provider state parameters #1234 (Ronald Holshausen, Sat Oct 31 18:08:14 2020 +1100)
-* 5c694ae70 - fix: markdown summary was not updated correctly when multiple consumers #1128 (Ronald Holshausen, Sat Oct 31 16:49:57 2020 +1100)
-* abd55de24 - feat: support for fallback tag with version selectors #946 (Ronald Holshausen, Fri Oct 23 11:44:58 2020 +1100)
-* be2f0024f - :bug: use ConcurrentHashMap rather than just a mutable map (Ryan Dens, Mon Oct 19 09:06:01 2020 -0400)
-* 0c4ea773e - :bug: improve thread-safety of JUnit 5 extension (Ryan Dens, Mon Oct 19 09:01:55 2020 -0400)
 
 ## 4.1.10 - Bugfix Release
 
