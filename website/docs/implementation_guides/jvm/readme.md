@@ -4,7 +4,7 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/README.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-![Pact-JVM Build](https://github.com/pact-foundation/pact-jvm/workflows/Pact-JVM%20Build/badge.svg)
+[![Pact-JVM Build](https://github.com/pact-foundation/pact-jvm/workflows/Pact-JVM%20Build/badge.svg)](https://github.com/pact-foundation/pact-jvm/actions?query=workflow%3A%22Pact-JVM+Build%22)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/au.com.dius.pact.core/model/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/au.com.dius.pact.core/model)
 
 JVM implementation of the consumer driven contract library [pact](https://github.com/pact-foundation/pact-specification).
