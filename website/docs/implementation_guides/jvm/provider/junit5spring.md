@@ -6,6 +6,14 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/provider/junit5spr
 
 This module extends the base [Pact JUnit5 module](/implementation_guides/jvm/provider/junit5). See that for more details.
 
+## Dependency
+The combined library (JUnit5 + Spring) is available on maven central using:
+
+group-id = au.com.dius.pact.provider
+artifact-id = junit5spring
+version-id = 4.1.x
+
+## Usage
 For writing Spring Pact verification tests with JUnit 5, there is an JUnit 5 Invocation Context Provider that you can use with 
 the `@TestTemplate` annotation. This will generate a test for each interaction found for the pact files for the provider.
 
