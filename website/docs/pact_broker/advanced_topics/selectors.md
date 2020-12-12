@@ -4,7 +4,7 @@ title: Selectors
 
 ## Consumer version selectors
 
-Please see the documentation for consumer version selectors [here](./consumer_version_selectors).
+Please see the documentation for consumer version selectors [here](/pact_broker/advanced_topics/consumer_version_selectors/).
 
 ## Matrix selectors
 
