@@ -4,6 +4,48 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.1.12 - Bugfix Release
+
+* f4fabba71 - feat: add the implementation version to the verification results (Ronald Holshausen, Sun Dec 13 14:57:53 2020 +1100)
+* 88897b9eb - fix: successful verification results were being filtered out #1266 (Ronald Holshausen, Sun Dec 13 14:21:23 2020 +1100)
+* 7427a2c95 - fix: record successful verification results by interaction ID #1266 (Ronald Holshausen, Sun Dec 13 13:29:37 2020 +1100)
+* 59ef8ec8c - fix: when merging verification results, include the interaction ID from the success results #1266 (Ronald Holshausen, Sat Dec 12 17:24:11 2020 +1100)
+* 5330f7587 - feat: add @IgnoreMissingStateChange annotation to ignore missing state change methods #1260 (Ronald Holshausen, Sat Dec 12 13:29:48 2020 +1100)
+* e16322c2f - fix: trim whitespace off list expressions #1262 (Ronald Holshausen, Sat Dec 12 12:38:06 2020 +1100)
+* c6969171e - add hint about specific junit5spring dependency (Michel, Wed Dec 9 13:57:50 2020 +0100)
+* 7a17b5a1f - fix: correct the Maven documentation #1203 (Ronald Holshausen, Sat Nov 28 13:48:18 2020 +1100)
+* 99c2cf0fa - fix: Fixing lint errors (JoaoGFarias, Wed Nov 25 16:19:49 2020 +0100)
+* 4ae2fb2b4 - chore(HttpTarget): Configurable HttpClientFactory (Sabartius, Wed Nov 25 14:21:51 2020 +0100)
+* b277677ab - Merge remote-tracking branch 'origin/message_with_xml_content' into message_with_xml_content (Wil, Wed Nov 18 19:22:07 2020 +0100)
+* 9573fd2e1 - feat: XML message content (Wil, Tue Nov 17 22:24:51 2020 +0100)
+* f214e1e25 - fix: PactCreateVersionTagMojoSpec - Fixing issues indicated by CodeNarc (JoaoGFarias, Wed Nov 18 16:37:06 2020 +0100)
+* af5ed9996 - feat: Increasing coverage on PactBrokerClientPactSpec - Failure to upload tag test (JoaoGFarias, Wed Nov 18 15:55:42 2020 +0100)
+* 583a1763a - feat: PackBrokerClient support for tag creation (JoaoGFarias, Fri Oct 23 16:58:29 2020 +0200)
+* 1809cebf4 - feat: create-version-tag: Calling Broker Client with collected arguments (JoaoGFarias, Mon Jul 20 06:59:08 2020 +0200)
+* 906945abb - feat: create-version-tag: Checking mandatory arguments (JoaoGFarias, Sun Jul 5 18:54:09 2020 +0200)
+* bea660cd6 - feat: Creating PactCreateVersionTagMojo (JoaoGFarias, Sun Jul 5 17:57:13 2020 +0200)
+* 5239b5739 - XML message content (Wil, Tue Nov 17 22:24:51 2020 +0100)
+* 2a5bcf1b7 - update changelog for release 4.1.11 (Ronald Holshausen, Sun Nov 15 13:57:34 2020 +1100)
+* 0190004d8 - fix: if Tika fails to initialise, catch the exception and disable content type detection #1245 (Ronald Holshausen, Sun Nov 15 13:30:42 2020 +1100)
+* 4c86cd062 - fix: support consumerVersionSelectors with only a consumer name and no tag #1244 (Ronald Holshausen, Sun Nov 15 13:15:16 2020 +1100)
+* b7e4b589b - fix: do not log out pact source annotations, as they may have passwords (Ronald Holshausen, Sun Nov 15 12:27:42 2020 +1100)
+* 1b3f123ee - fix: consumer name from consumerVersionSelectors was being ignored #1244 (Ronald Holshausen, Sun Nov 15 12:19:36 2020 +1100)
+* 7506cc78b - fix: was retrying one less than the retry count #1241 (Ronald Holshausen, Sun Nov 15 11:15:47 2020 +1100)
+* 55d43ab6b - feat: correct canIDeploy in Gradle readme #1241 (Ronald Holshausen, Sun Nov 15 10:52:17 2020 +1100)
+* 2c1fae615 - feat: add canIDeploy section to the Gradle readme #1241 (Ronald Holshausen, Sun Nov 15 10:04:38 2020 +1100)
+* e671f952f - fix: obfuscate the password for PactPublish (Ronald Holshausen, Sun Nov 15 09:44:11 2020 +1100)
+* 8ec6d2a05 - feat: add retry when there are unknown results for canIDeploy #1241 (Ronald Holshausen, Sun Nov 15 09:41:19 2020 +1100)
+* 199cd8d5d - fix: pact-jvm-server was not including the dependencies in the published pom #1239 (Ronald Holshausen, Sat Nov 14 14:40:50 2020 +1100)
+* 4525ae5d2 - update changelog for release 4.1.10 (Ronald Holshausen, Fri Nov 6 11:47:23 2020 +1100)
+* 940fc83c5 - fix: default headers were being added twice to requests to the pact broker #1242 (Ronald Holshausen, Fri Nov 6 11:25:06 2020 +1100)
+* a648c7a9a - feat: Support loading PactSource from annotations on the test class (JUnit 5) #1237 (Ronald Holshausen, Tue Nov 3 16:12:50 2020 +1100)
+* 94275ae38 - feat: Support loading PactSource from annotations on the test class (JUnit 4) #1237 (Ronald Holshausen, Tue Nov 3 15:10:12 2020 +1100)
+* f05d904dc - feat: support any objects for provider state parameters #1234 (Ronald Holshausen, Sat Oct 31 18:08:14 2020 +1100)
+* 5c694ae70 - fix: markdown summary was not updated correctly when multiple consumers #1128 (Ronald Holshausen, Sat Oct 31 16:49:57 2020 +1100)
+* abd55de24 - feat: support for fallback tag with version selectors #946 (Ronald Holshausen, Fri Oct 23 11:44:58 2020 +1100)
+* be2f0024f - :bug: use ConcurrentHashMap rather than just a mutable map (Ryan Dens, Mon Oct 19 09:06:01 2020 -0400)
+* 0c4ea773e - :bug: improve thread-safety of JUnit 5 extension (Ryan Dens, Mon Oct 19 09:01:55 2020 -0400)
+
 ## 4.1.11 - Bugfix Release
 
 * 0190004d8 - fix: if Tika fails to initialise, catch the exception and disable content type detection #1245 (Ronald Holshausen, Sun Nov 15 13:30:42 2020 +1100)
