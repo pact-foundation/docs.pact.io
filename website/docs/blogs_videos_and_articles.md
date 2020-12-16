@@ -27,6 +27,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 ## 2019
 **Customer Stories**:
+* [Pact tests: how we split up the monolithic deploy (Mettle UK)](https://www.youtube.com/watch?v=0sSy8ZTsW64) (Video)
 * [Microservices. Test smarter, not harder](https://youtu.be/mFnKHcqSJ3I) (Video)
 * [Atlassian - Spec First API Development](https://www.atlassian.com/blog/technology/spec-first-api-development)
 * [Portbase - Monolith to microservices](https://www.infoq.com/news/2019/02/contract-testing-microservices/)
