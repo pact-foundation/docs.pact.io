@@ -2,7 +2,7 @@
 title: Maintenance
 ---
 
-## Automatic removal of unreachable data
+## Automatic data clean up
 
 Performance can degrade when too much data accumulates in the Pact Broker. Luckily, a lot of the data in a broker instance is "unreachable" and can be removed without affecting the way it operates functionally, as generally speaking, the application (pacticipant) versions that are referenced in the verification and can-i-deploy tasks are either the latest for their tag (eg. verifying the latest pact for a version with tag `feat/some-new-feature`, `main` or `production`) or a fairly recent version of the main line of development (eg. when deploying commit `193d71a4` of the `main` branch to `production`).
 
