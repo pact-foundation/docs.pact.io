@@ -5,8 +5,8 @@ custom_edit_url: https://github.com/pact-foundation/pact-python/edit/master/READ
 <!-- This file has been synced from the pact-foundation/pact-python repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 [![slack](https://slack.pact.io/badge.svg)](https://slack.pact.io)
-[![Build Status](https://travis-ci.org/pact-foundation/pact-python.svg?branch=master)](https://travis-ci.org/pact-foundation/pact-python)
 [![License](https://img.shields.io/github/license/pact-foundation/pact-python.svg?maxAge=2592000)](https://github.com/pact-foundation/pact-python/blob/master/LICENSE)
+![Build and Test](https://github.com/pact-foundation/pact-python/workflows/Build%20and%20Test/badge.svg)
 
 Python version of Pact. Enables consumer driven contract testing,
 providing a mock service and DSL for the consumer project, and
