@@ -32,7 +32,7 @@ Imagine you were one of the people reading your question, and ask yourself if yo
 
 #### Please remember
 
-* Please do not direct message a maintainer (or anyone else) with a question unless specifically invited to. Asking questions in public channels allows more people answer and learn from your questions.
+* Please do not direct message a maintainer (or anyone else) with a question unless specifically invited to. Asking questions in public channels allows more people answer and learn from your questions and grow our community. Helping people takes a lot of time and effort - often during personal hours - and contributors should have the autonomy to choose when they contribute to a discussion. As a policy, most maintainers will simply ignore an unsolicited DM for these reasons.
 * The people who might be able to help you are often viewing your questions on their phones. Large slabs of unformatted text are hard to read. Please only supply the relevant text, and add three backticks (eg. ```) at the start and end so that it formats correctly. For large pieces of code please [create a snippet](https://slack.com/intl/en-au/slack-tips/share-code-snippets).
 * We are not a general purpose help desk! Using Pact requires:
 

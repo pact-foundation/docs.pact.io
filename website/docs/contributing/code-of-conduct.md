@@ -67,6 +67,9 @@ Project maintainers who do not follow or enforce the Code of Conduct in good
 faith may face temporary or permanent repercussions as determined by other
 members of the project's leadership.
 
+## Slack
+
+Our Slack workspace is our most active community forum, pleasesee the additional [considerations](/help/how_to_ask_for_help/) for that communication channel.
 ## Attribution
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
