@@ -4,6 +4,18 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.1.13 - Bugfix Release
+
+* 78d98738b - feat: add a DSL builder for x-www-form-urlencoded bodies #1277 (Ronald Holshausen, Mon Dec 28 11:46:35 2020 +1100)
+* bc73a74e3 - fix: MessagePactBuilder was not including the generators #1278 (Ronald Holshausen, Sun Dec 27 16:18:09 2020 +1100)
+* b33264590 - fix: Update readme [JUnit + Spring + Maven] #1265 (Ronald Holshausen, Sun Dec 27 15:54:19 2020 +1100)
+* 47d2fd09e - fix: previous change was failing on JDK 9+ [JUnit + Spring + Maven] #1265 (Ronald Holshausen, Sun Dec 27 15:27:29 2020 +1100)
+* b923375c1 - fix: use the same classloader that the JUnit test class was loaded with [JUnit + Spring + Maven] #1265 (Ronald Holshausen, Sun Dec 27 14:54:45 2020 +1100)
+* 30293bf4b - fix: include the JUnit description in the test exception [JUNIT5] #1267 (Ronald Holshausen, Sun Dec 27 12:53:33 2020 +1100)
+* 0a19e9b11 - fix: include the JUnit description in the test exception [JUNIT4] #1267 (Ronald Holshausen, Sun Dec 27 11:53:02 2020 +1100)
+* badcfd459 - fix: missing failures when merging verification results (phil.hardwick, Wed Dec 16 17:09:04 2020 +0000)
+* 102ecb93c - Fixed vulnerability issue (gayatreemishra, Mon Dec 14 16:13:43 2020 +0530)
+
 ## 4.1.12 - Bugfix Release
 
 * f4fabba71 - feat: add the implementation version to the verification results (Ronald Holshausen, Sun Dec 13 14:57:53 2020 +1100)
