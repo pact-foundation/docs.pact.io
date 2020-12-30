@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.8.6 - support generators associated with array contains matcher variants
+
+* 5556b32 - feat: added test for array contains as a generator (Ronald Holshausen, Wed Dec 30 13:47:31 2020 +1100)
+* 1ed95ae - feat: implemented using ArrayContains as a generator for JSON (Ronald Holshausen, Tue Dec 29 17:52:25 2020 +1100)
+* 42f0a39 - fix: use Vec instead of HashSet to maintain order of matching rules on OSX (Ronald Holshausen, Tue Dec 29 13:22:57 2020 +1100)
+* c8ad6d4 - fix: matchers in Pact file can have a different order on OSX (Ronald Holshausen, Tue Dec 29 12:49:19 2020 +1100)
+* 09513de - feat: add verifiedBy to the verified results (Ronald Holshausen, Tue Dec 29 12:05:07 2020 +1100)
+
 ## 0.8.5 - Bugfix Release
 
 * 5058a2d - feat: include the mockserver URL and port in the verification context (Ronald Holshausen, Fri Nov 20 16:43:10 2020 +1100)
