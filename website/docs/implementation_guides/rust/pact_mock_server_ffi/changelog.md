@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.0.12 - Supports generators associated with array contains matcher variants
+
+* 51eef86 - fix: return version of the mock server via FFI without heap allocation #80 (Ronald Holshausen, Wed Dec 30 14:55:08 2020 +1100)
+* 638059d - feat: return version of the mock server via FFI (Matt Fellows, Mon Nov 30 18:06:55 2020 +1100)
+
 ## 0.0.11 - Bugfix Release
 
 
