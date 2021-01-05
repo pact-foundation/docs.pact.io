@@ -6,5 +6,3 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 
 ## 0.0.0 - Initial release
 
-
-## 0.0.0 - First Release
