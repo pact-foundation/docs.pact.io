@@ -164,8 +164,8 @@ You should only publish verification results from your CI server, not from your 
 See [Versioning in the Pact Broker](/getting_started/versioning_in_the_pact_broker) for more information on what the value of the version field should contain. If you're in a hurry, the summary is: use the git sha for the app version, and the git branch for the app version tag.
 
 ```ruby
-provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`
-provider_branch = ENV['GIT_BRANCH'] || `git name-rev --name-only HEAD`
+provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`.strip
+provider_branch = ENV['GIT_BRANCH'] || `git name-rev --name-only HEAD`.strip
 publish_flag = ENV['PUBLISH_VERIFICATION_RESULTS'] == 'true' # or some way of detecting you're running on CI like ENV['CI'] == 'true'
 
 Pact.service_provider "My Service Provider" do
