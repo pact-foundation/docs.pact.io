@@ -42,6 +42,7 @@ import TabItem from '@theme/TabItem';
     {label: 'Gradle', value: 'gradle', },
     {label: 'Ruby', value: 'ruby', },
     {label: 'Python', value: 'python', },
+    {label: 'C#', value: 'c#', }
   ]
 }>
   <TabItem value="javascript">
@@ -136,6 +137,25 @@ import TabItem from '@theme/TabItem';
   ```
 
   </TabItem>
+  
+  <TabItem value="c#">
+
+  ```csharp
+      var pactVerifier = new PactVerifier(new PactVerifierConfig())
+        .ProviderState($"providerServiceBaseUri/provider-states")
+        .ServiceProvider("ProviderPacticipantName", "providerServiceBaseUri")
+        .HonoursPactWith("ConsumerPacticipantName")
+        .PactBroker(
+          "http://pact-broker",
+          consumerVersionSelectors: new List<VersionTagSelector>
+          {
+            new VersionTagSelector("master", latest: true),
+            new VersionTagSelector("test", latest: true),
+            new VersionTagSelector("production", latest: true)
+          });
+  ```
+
+  </TabItem>
 
 </Tabs>
 
@@ -152,6 +172,7 @@ Dynamically determine the current branch of the provider, see if there is a matc
     {label: 'Python', value: 'python', },
     {label: 'Java', value: 'java', },
     {label: 'Gradle', value: 'gradle', },
+    {label: 'C#', value: 'c#', }
   ]
 }>
   <TabItem value="javascript">
@@ -250,6 +271,25 @@ Dynamically determine the current branch of the provider, see if there is a matc
   ```
 
   </TabItem>
+  
+  <TabItem value="c#">
+
+  ```csharp
+       var pactVerifier = new PactVerifier(new PactVerifierConfig())
+        .ProviderState($"providerServiceBaseUri/provider-states")
+        .ServiceProvider("ProviderPacticipantName", "providerServiceBaseUri")
+        .HonoursPactWith("ConsumerPacticipantName")
+        .PactBroker(
+          "http://pact-broker",
+          consumerVersionSelectors: new List<VersionTagSelector>
+          {
+            new VersionTagSelector(Environment.GetEnvironmentVariable("GIT_BRANCH"), fallbackTag: "master", latest: true),
+            new VersionTagSelector("test", latest: true),
+            new VersionTagSelector("production", latest: true)
+          });
+  ```
+
+  </TabItem>
 </Tabs>
 
 ### Verifying pacts where the consumer is a mobile application
@@ -264,6 +304,7 @@ Verify the pacts for the latest `master` and `test` versions, and all `productio
     {label: 'Java', value: 'java', },
     {label: 'Ruby', value: 'ruby', },
     {label: 'Python', value: 'python', },
+    {label: 'C#', value: 'c#', }
   ]
 }>
   <TabItem value="javascript">
@@ -337,6 +378,25 @@ Verify the pacts for the latest `master` and `test` versions, and all `productio
 
   </TabItem>
 
+<TabItem value="c#">
+
+  ```csharp
+        IPactVerifier pactVerifier = new PactVerifier(new PactVerifierConfig())
+        .ProviderState($"providerServiceBaseUri/provider-states")
+        .ServiceProvider("ProviderPacticipantName", "providerServiceBaseUri")
+        .HonoursPactWith("ConsumerPacticipantName")
+        .PactBroker(
+          "http://pact-broker",
+          consumerVersionSelectors: new List<VersionTagSelector>
+          {
+            new VersionTagSelector("master", latest: true),
+            new VersionTagSelector("test", latest: true),
+            new VersionTagSelector("production")
+          });
+  ```
+
+  </TabItem>
+
 </Tabs>
 
 ### Verifying a pacts where one consumer is a mobile application
@@ -350,7 +410,8 @@ Verify the latest `production` version of all consumers, and all `production` ve
     { label: 'Javascript', value: 'javascript', },
     {label: 'Ruby', value: 'ruby', },
     {label: 'Python', value: 'python', },
-    {label: 'Java', value: 'java', }
+    {label: 'Java', value: 'java', },
+    {label: 'C#', value: 'c#', }
   ]
 }>
   <TabItem value="javascript">
@@ -435,6 +496,27 @@ Verify the latest `production` version of all consumers, and all `production` ve
   ```
 
   </TabItem>
+  
+  <TabItem value="c#">
+
+  ```csharp
+        IPactVerifier pactVerifier = new PactVerifier(new PactVerifierConfig())
+        .ProviderState($"providerServiceBaseUri/provider-states")
+        .ServiceProvider("ProviderPacticipantName", "providerServiceBaseUri")
+        .HonoursPactWith("ConsumerPacticipantName")
+        .PactBroker(
+          "http://pact-broker",
+          consumerVersionSelectors: new List<VersionTagSelector>
+          {
+            new VersionTagSelector("master", latest: true),
+            new VersionTagSelector("test", latest: true),
+            new VersionTagSelector("production", latest: true),
+            new VersionTagSelector("production", "my-mobile-consumer")
+          });
+  ```
+
+  </TabItem>
+  
 </Tabs>
 
 ### Verifying the overall latest pact for each consumer
@@ -449,6 +531,7 @@ This is syntatically possible, but not recommended, as pacts for different branc
     {label: 'Ruby', value: 'ruby', },
     {label: 'Python', value: 'python', },
     {label: 'Java', value: 'java', },
+    {label: 'C#', value: 'c#', }
   ]
 }>
   <TabItem value="javascript">
@@ -509,4 +592,22 @@ This is syntatically possible, but not recommended, as pacts for different branc
   ```
 
   </TabItem>
+  
+   <TabItem value="c#">
+
+  ```csharp
+        IPactVerifier pactVerifier = new PactVerifier(new PactVerifierConfig())
+        .ProviderState($"providerServiceBaseUri/provider-states")
+        .ServiceProvider("ProviderPacticipantName", "providerServiceBaseUri")
+        .HonoursPactWith("ConsumerPacticipantName")
+        .PactBroker(
+          "http://pact-broker",
+          consumerVersionSelectors: new List<VersionTagSelector>
+          {
+            new VersionTagSelector("", latest: true)
+          });
+  ```
+
+  </TabItem>
+  
 </Tabs>
