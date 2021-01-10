@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.8.8 - Bugfixes + updated dependencies
+
+* 56ce20a - fix: MockServerURL generator was using the incorrect field (Ronald Holshausen, Sun Jan 10 15:54:18 2021 +1100)
+* 2bcf8fa - Merge pull request #88 from audunhalland/upgrade-http (Ronald Holshausen, Sun Jan 10 10:33:50 2021 +1100)
+
 ## 0.8.7 - Updated dependencies
 
 
