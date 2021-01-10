@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.1.14 - Bugfix Release
+
+* 1c7af0efb - fix(regression): previous change fails on JDK 8 #1281 (Ronald Holshausen, Sun Jan 10 12:28:41 2021 +1100)
+* a2472c7a7 - fix(regression): aupport null example values with OR matcher #1281 (Ronald Holshausen, Sun Jan 10 12:10:57 2021 +1100)
+* c64739185 - feat: when using old pact broker endpoints, take fall back tag value into consideration #1264 (Ronald Holshausen, Sun Jan 10 11:36:46 2021 +1100)
+* d11e17428 - fix: readme not rendering with docosaurus (Ronald Holshausen, Mon Dec 28 14:40:32 2020 +1100)
+
 ## 4.1.13 - Bugfix Release
 
 * 78d98738b - feat: add a DSL builder for x-www-form-urlencoded bodies #1277 (Ronald Holshausen, Mon Dec 28 11:46:35 2020 +1100)
