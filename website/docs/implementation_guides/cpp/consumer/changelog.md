@@ -5,6 +5,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-cplusplus/edit/master/c
 <!-- This file has been synced from the pact-foundation/pact-cplusplus repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 
+## 0.0.6 - Fix release pipeline
+
+* 08d45ce - bump version to 0.0.6 (Ronald Holshausen, Tue Jan 12 15:28:03 2021 +1100)
+
 ## 0.0.5 - support for MockServerURL generator in consumer DSL
 
 * b66a905 - fix: try link test binary to ntdll on windows (Ronald Holshausen, Tue Jan 12 14:53:23 2021 +1100)
