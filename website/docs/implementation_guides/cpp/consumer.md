@@ -273,7 +273,12 @@ This will generate
 }
 ```
 
-and configure a regex matcher to match `.*\/1001\/\d+$`
+and configure a regex matcher to match `.*\/(1001\/\d+)$`
+
+##### `Url(std::vector<IMatcher::Ptr> pathFragments)`
+
+Matches a URL composed of a base path and a list of path fragments. The path fragments can be matched using the either `EqualTo` or `Matching` matchers. The base path from the running mock server will be used for example
+URL values.
 
 ##### `ArrayContaining(std::vector<IMatcher::Ptr> variants)`
 
