@@ -24,7 +24,7 @@ As stated above, Pact also has the [Pact Broker](/pact_broker) which provides au
 In summary:
 
  * if you're tied to the JVM, and especially Spring, Spring Cloud Contract might be easier for you to integrate into your tests
- * if your workflow is inherently more provider driven, then Spring Cloud Contrats might suite you better (however, do read [this blog post](https://pactflow.io/blog/tag/contract-testing/?utm_source=ossdocs&utm_campaign=comparisons) on the potential for Pact to support provider driven flows)
+ * if your workflow is inherently more provider driven, then Spring Cloud Contracts might suite you better (however, do read [this blog post](https://pactflow.io/blog/tag/contract-testing/?utm_source=ossdocs&utm_campaign=comparisons) on the potential for Pact to support provider driven flows)
  * if you want increased flexibility with your choice of language, and to not be tied to a particular implementation, Pact might suit you better
  * if you want to make use of the Pact Broker, Pact might be the more natural choice
 

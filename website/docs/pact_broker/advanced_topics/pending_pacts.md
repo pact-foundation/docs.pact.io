@@ -19,7 +19,7 @@ It is calculated for each pact version when the "pacts for verification" API is 
 
 When a pact version is considered "pending", then any mismatches during verification _will not_ cause the overall verification task to fail. When a pact is _not_ considered "pending" then mismatches _will_ cause the overall verification task to fail (until the introduction of this feature, this was the default behaviour).
 
-The purpose of the pending flag is to ensure that provider builds are not broken by changes that were introduced by the consumer, but to also ensure that backwards compatiblity is maintained when a change is introduced by a provider. It achieves this by treating the first successful verification of a pact version by a particular branch of the provider as an implicit acceptance of the contract. Thereafter, if verification of that pact version fails, it can only be because the provider has made a backwards incompatible change.
+The purpose of the pending flag is to ensure that provider builds are not broken by changes that were introduced by the consumer, but to also ensure that backwards compatibility is maintained when a change is introduced by a provider. It achieves this by treating the first successful verification of a pact version by a particular branch of the provider as an implicit acceptance of the contract. Thereafter, if verification of that pact version fails, it can only be because the provider has made a backwards incompatible change.
 
 The provider tags are used to determine the pending status because it is common to implement new features of a provider on a feature branch. If the provider tags were not taken in to consideration, a newly passing verification on `feat-x` of the provider could suddenly cause the verification on branch `main` of the provider to fail.
 
@@ -36,7 +36,7 @@ While the provider build may pass, the verification results are still reported (
         * Go: latest as of September 2020 (v1.4.1)
         * .Net: latest as of September 2020 (version TBC)
         * Python: latest as of September 2020 (version TBC)
-* You need to find the verification documentation for your langage, and set the "enablePending" flag to true.
+* You need to find the verification documentation for your language, and set the "enablePending" flag to true.
 
 ## FAQ
 

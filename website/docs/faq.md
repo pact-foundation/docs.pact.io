@@ -60,7 +60,7 @@ See this [page](/consumer/contract_tests_not_functional_tests) under the Consume
 
 ### Can I generate my pact file from something like Swagger?
 
-Contract testing allows you to take an integration test that gives you slow feedback and replace it with two sets of "unit" tests that give you fast feedback - one set for the consumer, using a mock provider, and one set for the provider, using a "mock consumer". The pact file is the artifact that keeps these two sets of tests in sync. To generate the pact file from anything other than the consumer tests \(or to hand code it\) would be to defeat the purpose of this type of contract testing. The reason the pact file exists is to ensure the tests in both projects are kept in sync - it is not an end in itself. Manually writing or generating a pact file from something like a Swagger document would be like marking your own exam, and would do nothing to ensure that the code in the consumer and provider are compatibile with each other.
+Contract testing allows you to take an integration test that gives you slow feedback and replace it with two sets of "unit" tests that give you fast feedback - one set for the consumer, using a mock provider, and one set for the provider, using a "mock consumer". The pact file is the artifact that keeps these two sets of tests in sync. To generate the pact file from anything other than the consumer tests \(or to hand code it\) would be to defeat the purpose of this type of contract testing. The reason the pact file exists is to ensure the tests in both projects are kept in sync - it is not an end in itself. Manually writing or generating a pact file from something like a Swagger document would be like marking your own exam, and would do nothing to ensure that the code in the consumer and provider are compatible with each other.
 
 Something that could be useful, however, is to generate skeleton Pact test code from a Swagger document. If you're interested in working on this, have a chat to the maintainers on the Pact Slack.
 
@@ -127,7 +127,7 @@ What you really need is a "non-HTTP" pact between your consumer and the downstre
 
 Contract tests replace a certain class of system integration test \(the ones you do to make sure that you're using the API correctly and that the API responds the way you expect\). They don't replace the tests that ensure that the core business logic of your services is working.
 
-The value of contract tests is that they allow you to shift effort from high maintance, slow feedback tests to low maintenance, fast feedback tests, reducing the overall effort required to release.
+The value of contract tests is that they allow you to shift effort from high maintenance, slow feedback tests to low maintenance, fast feedback tests, reducing the overall effort required to release.
 
 We often see end-to-end integration tests used as a catch all across integration, functional and acceptance testing (in the pyramid below, this would be represented as a bigger portion of the "E2E" part of the triangle). Specifically, we see them used as a proxy for [_provider functional tests_](/consumer/contract_tests_not_functional_tests). Separating the integration from the functional aspects often relieves end-to-end tests of a lot of their duties, and in some cases they can be replaced altogether. Read on to see how.
 
@@ -146,7 +146,7 @@ There is generally a trade off between the amount of confidence you have that yo
 If you work in an environment where you prioritise "agility" over "stability", then maybe you would be better off investing the time that you would have spent maintaining end-to-end tests in improving your ability to _find_ and _fix_ bugs more quickly. For example:
 
 * increasing the proportion of functional tests in your provider code base
-* using semanitic monitoring techniques like synthetic transactions to let you know if any important functions are not working in production
+* using semantic monitoring techniques like synthetic transactions to let you know if any important functions are not working in production
 * adding correlation IDs to your code
 * setting up aggregated logging
 * improving your alerting
@@ -179,7 +179,7 @@ Unless you're using our [stub server](/getting_started/stubs) to mock out back e
 
 Consumer driven contracts to some extent allows you to do away with versioning. As long as all your contract tests pass, you should be able to deploy changes without versioning the API. If you need to make a breaking change to a provider, you can do it in a multiple step process - add the new fields/endpoints to the provider and deploy. Update the consumers to use the new fields/endpoints, then deploy. Remove the old fields/endpoints from the provider and deploy. At each step of the process, all the contract tests remain green.
 
-Using a [Pact Broker](/pact_broker), you can tag the production version of a pact when you make a release of a consumer. Then, any changes that you make to the provider can be checked agains the production version of the pact, as well as the latest version, to ensure backward compatiblity.
+Using a [Pact Broker](/pact_broker), you can tag the production version of a pact when you make a release of a consumer. Then, any changes that you make to the provider can be checked against the production version of the pact, as well as the latest version, to ensure backward compatibility.
 
 If you need to support multiple versions of the provider API concurrently, then you will probably be specifying which version your consumer uses by setting a header, or using a different URL component. As these are actually different requests, the interactions can be verified in the same pact without any problems.
 
@@ -300,7 +300,7 @@ Sorry, life isn't black and white!
 
 ### Should the database or any other part of the provider be stubbed?
 
-The pact authors' experience with using pacts to test microservices has been that using the set_up hooks to populate the database, and running the verificatons with all the real provider code has worked very well, and gives us full confidence that the end to end scenario will work in the deployed code.
+The pact authors' experience with using pacts to test microservices has been that using the set_up hooks to populate the database, and running the verifications with all the real provider code has worked very well, and gives us full confidence that the end to end scenario will work in the deployed code.
 
 However, if you have a large and complex provider, you might decide to stub some of your application code. You will definitely need to stub calls to downstream systems or to set up error scenarios. Make sure, if you stub, that you don't stub the code that actually parses the request and pulls the expected data out, because otherwise the consumer could be sending absolute rubbish, and the verification task won't fail because that code won't get executed. If the validation happens when you insert a record into the datasource, either don't stub anything, or rethink your validation code.
 

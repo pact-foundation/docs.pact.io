@@ -49,7 +49,7 @@ Yes, you can, especially if you're just getting started. You can exchange the pa
 
 * ensure that your contract tests have passed successfully *before* deploying a consumer or provider application ([can-i-deploy](/pact_broker/can_i_deploy))
 * ensure that the provider verification takes place every time a pact changes ([webhooks](/pact_broker/webhooks))
-* ensure backwards compatiblity between services is maintained ([tags](/pact_broker/tags))
+* ensure backwards compatibility between services is maintained ([tags](/pact_broker/tags))
 * allow contracts to change without breaking provider builds ([pending pacts](/pact_broker/advanced_topics/pending_pacts))
 
 ### How would I use the Pact Broker?
