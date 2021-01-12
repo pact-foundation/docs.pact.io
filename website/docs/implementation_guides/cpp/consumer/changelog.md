@@ -5,6 +5,13 @@ custom_edit_url: https://github.com/pact-foundation/pact-cplusplus/edit/master/c
 <!-- This file has been synced from the pact-foundation/pact-cplusplus repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 
+## 0.0.5 - support for MockServerURL generator in consumer DSL
+
+* b66a905 - fix: try link test binary to ntdll on windows (Ronald Holshausen, Tue Jan 12 14:53:23 2021 +1100)
+* e665719 - feat: add support for MockServerURL generator in consumer DSL (Ronald Holshausen, Tue Jan 12 14:36:13 2021 +1100)
+* 1e4547d - feat: update to the latest pact_mock_server_ffi lib (Ronald Holshausen, Tue Jan 12 14:35:38 2021 +1100)
+* e5004f9 - bump version to 0.0.5 (Ronald Holshausen, Fri Oct 30 15:49:26 2020 +1100)
+
 ## 0.0.4 - Array contains matcher
 
 * 6840446 - feat: add support for array contains matcher (Ronald Holshausen, Fri Oct 30 15:35:33 2020 +1100)
