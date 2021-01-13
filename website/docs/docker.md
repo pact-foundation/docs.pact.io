@@ -2,7 +2,7 @@
 title: Docker
 ---
 
-Often times, you'll want to use Docker to run Pact. For example, a common approach is to run all CI builds within a docker container. This guide offers some assistance in those wanting to persue this path.
+Often times, you'll want to use Docker to run Pact. For example, a common approach is to run all CI builds within a docker container. This guide offers some assistance in those wanting to pursue this path.
 
 ## Docker Images
 

@@ -2,7 +2,7 @@
 title: Contract Tests vs Functional Tests
 ---
 
-Contract tests focus on the messages that flow between a consumer and provider, while functional tests also ensure that the correct side effects have occured. For example, imagine an endpoint for a collection of `/orders` that accepts a `POST` request to create a new order. A contract test would ensure that the consumer and provider had a shared and accurate understanding of the request and response required to create an order, while a functional test for the provider would ensure that when a given request was made, that an `Order` with the correct attributes was actually persisted to the underlying datastore. A contract test _does not check for side effects_.
+Contract tests focus on the messages that flow between a consumer and provider, while functional tests also ensure that the correct side effects have occurred. For example, imagine an endpoint for a collection of `/orders` that accepts a `POST` request to create a new order. A contract test would ensure that the consumer and provider had a shared and accurate understanding of the request and response required to create an order, while a functional test for the provider would ensure that when a given request was made, that an `Order` with the correct attributes was actually persisted to the underlying datastore. A contract test _does not check for side effects_.
 
 A more subtle distinction is required when it comes to contract testing interactions that don't have side effects, like validation error responses.
 
@@ -30,7 +30,7 @@ Then
 
 So far so good, we're covering a new behaviour, with a different response code.
 
-Now we've been talking to the Team managing the _User Service_ and they tell us that username have a maximum length of 20 characters, also they only allow letters in the username and a blank username is obviously not valid. Maybe that's something we should add in our contract?
+Now we've been talking to the Team managing the _User Service_ and they tell us that username has a maximum length of 20 characters, also they only allow letters in the username and a blank username is obviously not valid. Maybe that's something we should add in our contract?
 
 This is where we get on the slippery slope... it's very tempting to now add 3 scenarios to our contract, something like:
 
