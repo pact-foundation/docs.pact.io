@@ -67,3 +67,8 @@
   from = "/resources/how_to_ask_for_help"
   to = "/help/how_to_ask_for_help"
   status = 302
+
+[[redirects]]
+  from = "/best_practices/consumer"
+  to = "/consumer"
+  status = 301
