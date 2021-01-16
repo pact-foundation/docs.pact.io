@@ -20,6 +20,10 @@ Download the latest [pact-ruby-standalone][pact-ruby-standalone] package. You do
 
 Add `gem 'pact_broker-client'` to your Gemfile and run `bundle install`, or install the gem directly by running `gem install pact_broker-client`.
 
+## Connecting to a Pact Broker with a self signed certificate
+
+To connect to a Pact Broker that uses custom SSL cerificates, set the environment variable `$SSL_CERT_FILE` or `$SSL_CERT_DIR` to a path that contains the appropriate certificate. Read more at https://docs.pact.io/pact_broker/advanced_topics/using-tls#for-non-jvm
+
 ## Usage - CLI
 
 The Pact Broker base URL can be specified either using the environment variable `$PACT_BROKER_BASE_URL` or the `-b` or `--broker-base-url` parameters.
@@ -29,8 +33,6 @@ Pact Broker authentication can be performed either using basic auth or a bearer 
 Basic auth parameters can be specified using the `$PACT_BROKER_USERNAME` and `$PACT_BROKER_PASSWORD` environment variables, or the `-u` or `--broker-username` and `-p` or `--broker-password` parameters.
 
 Authentication using a bearer token can be specified using the environment variable `$PACT_BROKER_TOKEN` or the `-k` or `--broker-token` parameters. This authentication system is used by [Pactflow](https://github.com/pact-foundation/pact_broker-client/blob/master/pactflow.io).
-
-To connect to a Pact Broker that uses custom SSL certificates, set the environment variable `$SSL_CERT_FILE` or `$SSL_CERT_DIR` to a path that contains the appropriate certificate.
 
 ### publish
 
@@ -117,7 +119,7 @@ To specify an application (pacticipant) version you need to provide:
     * `--version VERSION` to specify a known application version (recommended)
     * `--latest` to specify the latest version
     * `--latest TAG` to specify the latest version that has a particular tag
-    * `--all TAG` to specify all the versions that have a particular tag (eg. "all prod" versions). This would be used when ensuring you have backwards compatibility with all production mobile clients for a provider. Note, when using this option, you need to specify dependency explicitly (see the second usage option).
+    * `--all TAG` to specify all the versions that have a particular tag (eg. "all prod" versions). This would be used when ensuring you have backwards compatiblity with all production mobile clients for a provider. Note, when using this option, you need to specify dependency explicitly (see the second usage option).
 
 Using a specific version is the easiest way to ensure you get an accurate response that won't be affected by race conditions.
 
@@ -133,7 +135,7 @@ This allows you to use the following simple command to find out if you are safe 
                                --to ENVIRONMENT \
                                --broker-base-url BROKER_BASE_URL
 
-If the `--to` tag is omitted, then the query will return the compatibility with the overall latest version of each of the other applications.
+If the `--to` tag is omitted, then the query will return the compatiblity with the overall latest version of each of the other applications.
 
 Examples:
 
@@ -163,11 +165,11 @@ Can I deploy the latest version of the application Foo that has the tag "test" t
 
 #### Alternate usage - specifying dependencies explicitly
 
-If you are unable to use tags, or there is some other limitation that stops you from using the recommended approach, you can specify one or more of the dependencies explicitly. You must also do this if you want to use the `--all TAG` option for any of the pacticipants.
+If you are unable to use tags, or there is some other limitation that stops you from using the recommended approach, you can specify one or more of the dependencies explictly. You must also do this if you want to use the `--all TAG` option for any of the pacticipants.
 
 You can specify as many application versions as you like, and you can even specify multiple versions of the same application (repeat the `--pacticipant` name and supply a different version). If you have a monorepo and you deploy a group of applications together, you can either call `can-i-deploy` once for each application, or you can group them all together by specifying a `--pacticipant` and `--version` for each sub-application.
 
-You can use explicitly declared dependencies with or without the `--to ENVIRONMENT`. For example, if you declare two (or more) application versions with no `--to ENVIRONMENT`, then only the applications you specify will be taken into account when determining if it is safe to deploy. If you declare two (or more) application versions _as well as_ a `--to ENVIRONMENT`, then the Pact Broker will work out what integrations your declared applications will have in that environment when determining if it safe to deploy. When using this script for a production release, and you are using tags, it is always the most future-proof option to use the `--to` if possible, as it will catch any newly added consumers or providers.
+You can use explictly declared dependencies with or without the `--to ENVIRONMENT`. For example, if you declare two (or more) application versions with no `--to ENVIRONMENT`, then only the applications you specify will be taken into account when determining if it is safe to deploy. If you declare two (or more) application versions _as well as_ a `--to ENVIRONMENT`, then the Pact Broker will work out what integrations your declared applications will have in that environment when determining if it safe to deploy. When using this script for a production release, and you are using tags, it is always the most future-proof option to use the `--to` if possible, as it will catch any newly added consumers or providers.
 
 If you are finding that your dependencies are not being automatically included when you supply multiple pacticipant versions, please upgrade to the latest version of the Pact Broker, as this is a more recently added feature.
 
