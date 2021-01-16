@@ -215,10 +215,17 @@
       "pact_broker/set_up_checklist",
       "pact_broker/client_cli",
       "pact_broker/terraform_provider",
-      "pact_broker/configuration",
       "pact_broker/upgrading",
       "pact_broker/breaking_changes",
       "pact_broker/network_graph",
+      {
+        "type": "category",
+        "label": "Configuration",
+        "items": [
+          "pact_broker/configuration",
+          "pact_broker/advanced_topics/using-tls"
+        ]
+      },
       {
         "type": "category",
         "label": "Administration",
