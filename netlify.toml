@@ -56,7 +56,7 @@
 [[redirects]]
   from = "/pact_broker/advanced_topics/provider_verification_results"
   to = "/pact_broker/provider_verification_results"
-  status = 302
+  status = 301
 
 [[redirects]]
   from = "/getting_started"
@@ -66,9 +66,14 @@
 [[redirects]]
   from = "/resources/how_to_ask_for_help"
   to = "/help/how_to_ask_for_help"
-  status = 302
+  status = 301
 
 [[redirects]]
   from = "/best_practices/consumer"
   to = "/consumer"
   status = 301
+
+[[redirects]]
+  from = "/best_practices/pact_nirvana"
+  to = "/pact_nirvana"
+  status = 302
