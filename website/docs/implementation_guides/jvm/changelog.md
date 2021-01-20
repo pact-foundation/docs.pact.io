@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.1.15 - Consumer DSL update
+
+* 57a8541e0 - feat: add PactDslJsonArray eachLike/minArrayLike/maxArrayLike methods that can take a DSLPart #1286 (Ronald Holshausen, Wed Jan 20 15:40:30 2021 +1100)
+* cf4d9fd68 - fix: large body test failing on CI  #1286 (Ronald Holshausen, Wed Jan 20 15:05:07 2021 +1100)
+* da795d148 - feat: add PactDslJsonBody eachLike/minArrayLike/maxArrayLike methods that can take a DSLPart #1286 (Ronald Holshausen, Wed Jan 20 14:46:24 2021 +1100)
+
 ## 4.1.14 - Bugfix Release
 
 * 1c7af0efb - fix(regression): previous change fails on JDK 8 #1281 (Ronald Holshausen, Sun Jan 10 12:28:41 2021 +1100)
