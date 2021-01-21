@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.35.0"></a>
+### v1.35.0 (2021-01-21)
+
+#### Features
+
+* **can-i-deploy**
+  * display links to verification results in the output of can-i-deploy when using text format	 ([976950d](https://github.com/pact-foundation/pact_broker-client/commit/976950d))
+
 <a name="v1.34.0"></a>
 ### v1.34.0 (2020-11-20)
 
