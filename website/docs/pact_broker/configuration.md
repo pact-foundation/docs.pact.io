@@ -128,6 +128,14 @@ To turn this feature off, set `check_for_potential_duplicate_pacticipant_names =
 
 ## Running the broker behind a reverse proxy
 
+### When the base URL configuration is supported (v2.46.0 and later)
+
+Please set the base URL of the Pact Broker application (eg. `https://pact-broker.mycompany.com`) via the supported configuration mechanism for the deployment artifact (the environment variable `PACT_BROKER_BASE_URL` for the Docker images, or `PactBroker.configuration.base_url = "..."` for native Ruby). Setting the base URL is recommended as it prevents some security vulnerabilities associated with dynamically inferring the base URL from the request headers.
+
+### When the base URL configuration is not supported (versions prior to 2.46.0)
+
+*It is preferrable to upgrade to the latest version of the Pact Broker, as 2.46 is old and may contain vulerabilities. Also, determining the base URL dynamically using the X-Forwarded headers leaves the application open to [DNS cache poisoning](https://www.cloudflare.com/learning/dns/dns-cache-poisoning/).* The following documentation applies if you have no other option however.
+
 If the pact broker is setup behind a reverse proxy then there are a few headers that must be forwarded on for the HAL browser to work properly. The required headers to be sent depend on the proxy configuration. For example if the reverse proxy is configured to forward from [https://broker.example.com](https://broker.example.com) -&gt; [http://internal.broker](http://internal.broker) then X-Forwarded-Host, X-Forwarded-Port and X-Forwarded-Ssl or X-Forwarded-Scheme would need to set in the nginx configuration.
 
 * **X-Forwarded-Scheme**
