@@ -27,6 +27,16 @@ You can read more about the difference between contract and functional tests [he
 
 Avoid the temptation to make assertions about general business rules that you know about the provider \(eg. the customer ID is expected to be in the format `[A-Z][A-Z][A-Z]\-\d\d\d`\). Only make assertions about things that would affect your consumer if they changed \(eg. a link must start with `http` because your app is expecting absolute URLs, and would error if it received a relative one\). This allows the provider to evolve without getting false alerts from unncessarily strict pact verification tests.
 
+## Choose the right type of matching for the situation
+
+Typically, exact matching is most appropriate for Pact tests on the consumer side that are running at the unit test level. The same person is responsible for both the expectation and the actual request, so making sure that they match should be straightforward.
+
+If you are using Pact for tests that cover more than just the "client" code, then you might want to use a looser matching (eg. type based matching and regular expressions). Remember that the more of the consumer code you cover with your Pact tests, the less maintainable it is, so do this with caution, and make sure you understand the trade-offs.
+
+For the response, loose matching is generally the recommended option, however, the exact/loose matching decision should be made on a field by field basis. Most of the time, the consumer should not really care about the contents of a response field, and should just care about the type. However, there will be times when the contents do matter, so use exact matching when this is the case. The question to ask yourself when writing the response expectations is "if I made this looser/tighter what bugs would I miss/prevent?"
+
+If you find you are putting in strict matchers on the contents of a field because you need to extract a particular piece of data out of it (eg. parsing a street number out of an address, or an ID out of a URL) or you are trying to infer a fact about it (e.g codes that start with `VIC-` are from the state of Victoria) then that tends to mean that the API should be providing that field for you separately itself, rather than pushing that work into the consumer side. Your tests are sending you message! Creating explicit separate fields for things like this will make the API more usable and the consumer code much less brittle. Highlighting issues like this is exactly what the "consumer driven" part of "consumer driven contracts" is about.
+
 ## Use `Pact` for isolated \(unit\) tests
 
 * as a mock \(calls to mocks are verified after a test\) not a stub \(calls to stubs are not verified\). Using `Pact` as a stub defeats the purpose of using `Pacts`.
