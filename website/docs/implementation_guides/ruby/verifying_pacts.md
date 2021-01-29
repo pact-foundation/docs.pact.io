@@ -86,6 +86,7 @@ Pact.service_provider "My Service Provider" do
     # Base URL of pact broker is mandatory
     # basic auth username/password and token are optional parameters
     pact_broker_base_url 'http://...', {username: '...', password: '...', token: '...'}
+    verbose false # Set this to true to see the HTTP requests and responses logged
 
     # Specify the consumer version tags for the pacts you want to verify
     # Simple config - a list of tag names
