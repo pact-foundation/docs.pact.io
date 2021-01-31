@@ -29,8 +29,8 @@ Report the pact verification status back to the consumer project in Github.
     },
     "body": {
       "state": "${pactbroker.githubVerificationStatus}",
-      "description": "Pact Verification Tests",
-      "context": "${pactbroker.providerName} ${pactbroker.providerVersionTags}",
+      "description": "Pact Verification Tests ${pactbroker.providerVersionTags}",
+      "context": "${pactbroker.providerName}",
       "target_url": "${pactbroker.verificationResultUrl}"
     },
     "username": "USERNAME",
