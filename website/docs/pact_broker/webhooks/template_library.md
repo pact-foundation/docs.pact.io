@@ -330,19 +330,19 @@ The following example shows how to trigger a Jenkins build with parameters.
 
 ```json
 {
-  "description": "Trigger GraphQL Acceptance Test Job on contract_content_changed event from Pegasus",
+  "description": "Trigger ${pactbroker.provider} build on Jenkins",
   "provider": {
-    "name": "graphql"
+    "name": "<PROVIDER>"
   },
   "consumer": {
-  	"name": "pegasus"
+  	"name": "<CONSUMER>"
   },
   "events": [{
     "name": "contract_content_changed"
   }],
   "request": {
     "method": "POST",
-    "url": "https://listeners.jenkins-sb.savagebeast.com/job/listeners-acceptance/job/graphql/job/DEVTOOLS-610-test-pact-broker-webhooks/buildWithParameters?os_authType=basic&environment=shared&graphqlHost=shared.graphql.docker.savagebeast.com",
+    "url": "https://<JENKINS_HOST>/job/listeners-acceptance/job/graphql/job/<JOB_NAME>/buildWithParameters?os_authType=basic",
     "username": "<USERNAME>",
     "password": "<TOKEN>",
     "headers": {
