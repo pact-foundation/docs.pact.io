@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.1.16 - Bugfix Release
+
+* 73c9053dc - fix: Don't split header values when loading from a pact file #1288 (Ronald Holshausen, Sun Jan 31 13:23:48 2021 +1100)
+* 071f5ee11 - fix(Groovy DSL): allow provider states to be specified before and after the request #1287 (Ronald Holshausen, Sun Jan 31 12:15:50 2021 +1100)
+
 ## 4.1.15 - Consumer DSL update
 
 * 57a8541e0 - feat: add PactDslJsonArray eachLike/minArrayLike/maxArrayLike methods that can take a DSLPart #1286 (Ronald Holshausen, Wed Jan 20 15:40:30 2021 +1100)
