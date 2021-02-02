@@ -25,6 +25,7 @@ Additionally, these complete examples are useful guides:
 * [Pact with Karma + Jasmine](https://github.com/pact-foundation/pact-js/tree/master/examples/karma/jasmine)
 * [Pact with Karma + Mocha](https://github.com/pact-foundation/pact-js/tree/master/examples/karma/mocha)
 * [Angular 4 + Mocha](https://github.com/stones/pact-angular-4-mocha)
+* NestJS + Jest: [Provider](https://github.com/pact-foundation/pact-js/tree/master/examples/nestjs-provider) | [Consumer](https://github.com/pact-foundation/pact-js/tree/master/examples/nestjs-consumer)
 
 ## Verifications
 
