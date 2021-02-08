@@ -54,3 +54,8 @@ fn a_service_consumer_side_of_a_pact_goes_a_little_something_like_this() {
 ### Changing the output directory
 
 By default, the pact files will be written to `target/pacts`. To change this, set the environment variable `PACT_OUTPUT_DIR`.
+
+### Forcing pact files to be overwritten
+
+Pacts are merged with existing pact files when written. To change this behaviour so that the files
+are always overwritten, set the environment variable `PACT_OVERWRITE` to `true`.
