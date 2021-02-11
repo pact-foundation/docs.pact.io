@@ -17,6 +17,7 @@ The library is available on maven central using:
 
 * group-id = `au.com.dius.pact`
 * artifact-id = `consumer`
+* version-id = `4.2.x`
 
 ## DSL Usage
 
@@ -147,11 +148,11 @@ one will be generated.
 | uuid | Will match strings containing UUIDs |
 | includesStr | Will match strings containing the provided string |
 | equalsTo | Will match using equals |
-| matchUrl | Defines a matcher for URLs, given the base URL path and a sequence of path fragments. The path fragments could be
-             strings or regular expression matchers |
+| matchUrl | Defines a matcher for URLs, given the base URL path and a sequence of path fragments. The path fragments could be strings or regular expression matchers |
+| nullValue | Matches the JSON Null value |
 
 _\* Note:_ JSON only supports double precision floating point values. Depending on the language implementation, they
-may parsed as integer, floating point or decimal numbers.
+may be parsed as integer, floating point or decimal numbers.
 
 #### Ensuring all items in a list match an example
 
@@ -178,6 +179,45 @@ For example:
 
 This will ensure that the users list is never empty and that each user has an identifier that is a number and a name that is a string.
 
+#### Ignoring the list order (V4 specification)
+
+If the order of the list items is not known, you can use the `unorderedArray` matcher functions. These will match the 
+actual list against the expected one, except will match the items in any order.
+
+| function | description |
+|----------|-------------|
+| `unorderedArray` | Ensure that the list matches the provided example, ignoring the order |
+| `unorderedMinArray` | Ensure that the list matches the provided example and the list is not smaller than the provided min |
+| `unorderedMaxArray` | Ensure that the list matches the provided example and the list is no bigger than the provided max |
+| `unorderedMinMaxArray` | Ensure that the list matches the provided example and the list is constrained to the provided min and max |
+
+#### Array contains matcher (V4 specification)
+
+The array contains matcher functions allow you to match the actual list against a list of required variants. These work
+by matching each item against the variants, and the matching succeeds if each variant matches at least one item. Order of
+items in the list is not important.
+
+The variants can have a totally different structure, and can have their own matching rules to apply. For an example of how
+these can be used to match a hypermedia format like Siren, see [Example Pact + Siren project](https://github.com/pactflow/example-siren).
+
+| function | description |
+|----------|-------------|
+| `arrayContaining` | Matches the items in an array against a number of variants. Matching is successful if each variant occurs once in the array. Variants may be objects containing matching rules. |
+
+```java
+.arrayContaining("actions")
+  .object()
+    .stringValue("name", "update")
+    .stringValue("method", "PUT")
+    .matchUrl("href", "http://localhost:9000", "orders", regex("\\d+", "1234"))
+  .closeObject()
+  .object()
+    .stringValue("name", "delete")
+    .stringValue("method", "DELETE")
+    .matchUrl("href", "http://localhost:9000", "orders", regex("\\d+", "1234"))
+  .closeObject()
+.closeArray()
+```
 
 #### Matching JSON values at the root
 
@@ -416,4 +456,200 @@ You can also just use the key instead of an expression:
 
 ```java
     .valueFromProviderState('userId', 'userId', 100) // will look value using userId as the key
+```
+
+# A Lambda DSL for Pact
+
+This is an extension for the pact DSL. The difference between
+the default pact DSL and this lambda DSL is, as the name suggests, the usage of lambdas. The use of lambdas makes the code much cleaner.
+
+## Why a new DSL implementation?
+
+The lambda DSL solves the following two main issues. Both are visible in the following code sample:
+ 
+```java
+new PactDslJsonArray()
+    .array()                            # open an array
+    .stringValue("a1")                  # choose the method that is valid for arrays
+    .stringValue("a2")                  # choose the method that is valid for arrays
+    .closeArray()                       # close the array
+    .array()                            # open an array
+    .numberValue(1)                     # choose the method that is valid for arrays
+    .numberValue(2)                     # choose the method that is valid for arrays
+    .closeArray()                       # close the array
+    .array()                            # open an array
+    .object()                           # now we work with an object
+    .stringValue("foo", "Foo")          # choose the method that is valid for objects
+    .closeObject()                      # close the object and we're back in the array
+    .closeArray()                       # close the array
+```
+
+### The existing DSL is quite error-prone
+
+Methods may only be called in certain states. For example `object()` may only be called when you're currently working on an array whereas `object(name)`
+is only allowed to be called when working on an object. But both of the methods are available. You'll find out at runtime if you're using the correct method.
+
+Finally, the need for opening and closing objects and arrays makes usage cumbersome.
+
+The lambda DSL has no ambiguous methods and there's no need to close objects and arrays as all the work on such an object is wrapped in a lamda call.
+
+### The existing DSL is hard to read
+
+When formatting your source code with an IDE the code becomes hard to read as there's no indentation possible. Of course, you could do it by hand but we want auto formatting!
+Auto formatting works great for the new DSL!
+
+```java
+array.object((o) -> {
+  o.stringValue("foo", "Foo");          # an attribute
+  o.stringValue("bar", "Bar");          # an attribute
+  o.object("tar", (tarObject) -> {      # an attribute with a nested object
+    tarObject.stringValue("a", "A");    # attribute of the nested object
+    tarObject.stringValue("b", "B");    # attribute of the nested object
+  })
+});
+```
+
+## Usage
+
+Start with a static import of `LambdaDsl`. This class contains factory methods for the lambda dsl extension. 
+When you come accross the `body()` method of `PactDslWithProvider` builder start using the new extensions. 
+The call to `LambdaDsl` replaces the call to instance `new PactDslJsonArray()` and `new PactDslJsonBody()` of the pact library.
+
+```java
+io.pactfoundation.consumer.dsl.LambdaDsl.*
+```
+
+### Response body as json array
+
+```java
+
+import static io.pactfoundation.consumer.dsl.LambdaDsl.newJsonArray;
+
+...
+
+PactDslWithProvider builder = ...
+builder.given("some state")
+        .uponReceiving("a request")
+        .path("/my-app/my-service")
+        .method("GET")
+        .willRespondWith()
+        .status(200)
+        .body(newJsonArray((a) -> {
+            a.stringValue("a1");
+            a.stringValue("a2");
+        }).build());
+```
+
+### Response body as json object
+
+```java
+
+import static io.pactfoundation.consumer.dsl.LambdaDsl.newJsonBody;
+
+...
+
+PactDslWithProvider builder = ...
+builder.given("some state")
+        .uponReceiving("a request")
+        .path("/my-app/my-service")
+        .method("GET")
+        .willRespondWith()
+        .status(200)
+        .body(newJsonBody((o) -> {
+            o.stringValue("foo", "Foo");
+            o.stringValue("bar", "Bar");
+        }).build());
+```
+
+### Examples
+
+#### Simple Json object
+
+When creating simple json structures the difference between the two approaches isn't big.
+
+##### JSON
+
+```json
+{
+    "bar": "Bar",
+    "foo": "Foo"
+}
+```
+
+##### Pact DSL
+
+```java
+new PactDslJsonBody()
+    .stringValue("foo", "Foo")
+    .stringValue("bar", "Bar")
+```
+
+##### Lambda DSL
+
+```java
+newJsonBody((o) -> {
+    o.stringValue("foo", "Foo");
+    o.stringValue("bar", "Bar");
+}).build();
+```
+
+#### An array of arrays
+
+When we come to more complex constructs with arrays and nested objects the beauty of lambdas become visible! 
+
+##### JSON
+
+```json
+[
+    ["a1", "a2"],
+    [1, 2],
+    [{"foo": "Foo"}]
+]
+```
+
+##### Pact DSL
+
+```java
+new PactDslJsonArray()
+    .array()
+    .stringValue("a1")
+    .stringValue("a2")
+    .closeArray()
+    .array()
+    .numberValue(1)
+    .numberValue(2)
+    .closeArray()
+    .array()
+    .object()
+    .stringValue("foo", "Foo")
+    .closeObject()
+    .closeArray();
+```
+
+##### Lambda DSL
+
+```java
+newJsonArray((rootArray) -> {
+    rootArray.array((a) -> a.stringValue("a1").stringValue("a2"));
+    rootArray.array((a) -> a.numberValue(1).numberValue(2));
+    rootArray.array((a) -> a.object((o) -> o.stringValue("foo", "Foo")));
+}).build();
+```
+
+##### Kotlin Lambda DSL
+
+```kotlin
+newJsonArray {
+    newArray {
+      stringValue("a1")
+      stringValue("a2")
+    }
+    newArray {
+      numberValue(1)
+      numberValue(2)
+    }
+    newArray {
+      newObject { stringValue("foo", "Foo") }
+    }
+ }
 ```

@@ -22,6 +22,21 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 * 73c9053dc - fix: Don't split header values when loading from a pact file #1288 (Ronald Holshausen, Sun Jan 31 13:23:48 2021 +1100)
 * 071f5ee11 - fix(Groovy DSL): allow provider states to be specified before and after the request #1287 (Ronald Holshausen, Sun Jan 31 12:15:50 2021 +1100)
 
+## 4.2.0-beta.3 - support for using generators with array contains matcher + Fixes
+
+* 96cdbef85 - update changelog for release 4.1.15 (Ronald Holshausen, Wed Jan 20 16:13:53 2021 +1100)
+* 57a8541e0 - feat: add PactDslJsonArray eachLike/minArrayLike/maxArrayLike methods that can take a DSLPart #1286 (Ronald Holshausen, Wed Jan 20 15:40:30 2021 +1100)
+* cf4d9fd68 - fix: large body test failing on CI  #1286 (Ronald Holshausen, Wed Jan 20 15:05:07 2021 +1100)
+* da795d148 - feat: add PactDslJsonBody eachLike/minArrayLike/maxArrayLike methods that can take a DSLPart #1286 (Ronald Holshausen, Wed Jan 20 14:46:24 2021 +1100)
+* 1e148c4d5 - feat: implemented support for using generators with array contains matcher (Ronald Holshausen, Tue Jan 19 17:06:42 2021 +1100)
+* 2978f60a1 - feat: Hyper media test working with array contains matcher + generators (Ronald Holshausen, Tue Jan 19 15:28:58 2021 +1100)
+* 50688d778 - feat: added MockServerURL generator (Ronald Holshausen, Sun Jan 10 16:21:16 2021 +1100)
+* 0d3901123 - update changelog for release 4.1.14 (Ronald Holshausen, Sun Jan 10 13:08:22 2021 +1100)
+* 1c7af0efb - fix(regression): previous change fails on JDK 8 #1281 (Ronald Holshausen, Sun Jan 10 12:28:41 2021 +1100)
+* a2472c7a7 - fix(regression): aupport null example values with OR matcher #1281 (Ronald Holshausen, Sun Jan 10 12:10:57 2021 +1100)
+* c64739185 - feat: when using old pact broker endpoints, take fall back tag value into consideration #1264 (Ronald Holshausen, Sun Jan 10 11:36:46 2021 +1100)
+* 6d0521c68 - fix: correct release script (Ronald Holshausen, Mon Dec 28 18:37:27 2020 +1100)
+
 ## 4.1.15 - Consumer DSL update
 
 * 57a8541e0 - feat: add PactDslJsonArray eachLike/minArrayLike/maxArrayLike methods that can take a DSLPart #1286 (Ronald Holshausen, Wed Jan 20 15:40:30 2021 +1100)
@@ -34,6 +49,53 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 * a2472c7a7 - fix(regression): aupport null example values with OR matcher #1281 (Ronald Holshausen, Sun Jan 10 12:10:57 2021 +1100)
 * c64739185 - feat: when using old pact broker endpoints, take fall back tag value into consideration #1264 (Ronald Holshausen, Sun Jan 10 11:36:46 2021 +1100)
 * d11e17428 - fix: readme not rendering with docosaurus (Ronald Holshausen, Mon Dec 28 14:40:32 2020 +1100)
+
+## 4.2.0-beta.2 - Bugfix Release
+
+* c48338381 - update changelog for release 4.2.0-beta.2 (Ronald Holshausen, Mon Dec 28 18:02:32 2020 +1100)
+* 871271b3b - fix: after merge from master (Ronald Holshausen, Mon Dec 28 16:31:22 2020 +1100)
+* d11e17428 - fix: readme not rendering with docosaurus (Ronald Holshausen, Mon Dec 28 14:40:32 2020 +1100)
+* 1b5570636 - update changelog for release 4.1.13 (Ronald Holshausen, Mon Dec 28 13:58:27 2020 +1100)
+* 78d98738b - feat: add a DSL builder for x-www-form-urlencoded bodies #1277 (Ronald Holshausen, Mon Dec 28 11:46:35 2020 +1100)
+* bc73a74e3 - fix: MessagePactBuilder was not including the generators #1278 (Ronald Holshausen, Sun Dec 27 16:18:09 2020 +1100)
+* b33264590 - fix: Update readme [JUnit + Spring + Maven] #1265 (Ronald Holshausen, Sun Dec 27 15:54:19 2020 +1100)
+* 47d2fd09e - fix: previous change was failing on JDK 9+ [JUnit + Spring + Maven] #1265 (Ronald Holshausen, Sun Dec 27 15:27:29 2020 +1100)
+* b923375c1 - fix: use the same classloader that the JUnit test class was loaded with [JUnit + Spring + Maven] #1265 (Ronald Holshausen, Sun Dec 27 14:54:45 2020 +1100)
+* 30293bf4b - fix: include the JUnit description in the test exception [JUNIT5] #1267 (Ronald Holshausen, Sun Dec 27 12:53:33 2020 +1100)
+* 0a19e9b11 - fix: include the JUnit description in the test exception [JUNIT4] #1267 (Ronald Holshausen, Sun Dec 27 11:53:02 2020 +1100)
+* badcfd459 - fix: missing failures when merging verification results (phil.hardwick, Wed Dec 16 17:09:04 2020 +0000)
+* 102ecb93c - Fixed vulnerability issue (gayatreemishra, Mon Dec 14 16:13:43 2020 +0530)
+* a47330def - update changelog for release 4.1.12 (Ronald Holshausen, Sun Dec 13 15:05:56 2020 +1100)
+* f4fabba71 - feat: add the implementation version to the verification results (Ronald Holshausen, Sun Dec 13 14:57:53 2020 +1100)
+* 88897b9eb - fix: successful verification results were being filtered out #1266 (Ronald Holshausen, Sun Dec 13 14:21:23 2020 +1100)
+* 7427a2c95 - fix: record successful verification results by interaction ID #1266 (Ronald Holshausen, Sun Dec 13 13:29:37 2020 +1100)
+* 59ef8ec8c - fix: when merging verification results, include the interaction ID from the success results #1266 (Ronald Holshausen, Sat Dec 12 17:24:11 2020 +1100)
+* 5330f7587 - feat: add @IgnoreMissingStateChange annotation to ignore missing state change methods #1260 (Ronald Holshausen, Sat Dec 12 13:29:48 2020 +1100)
+* e16322c2f - fix: trim whitespace off list expressions #1262 (Ronald Holshausen, Sat Dec 12 12:38:06 2020 +1100)
+* c6969171e - add hint about specific junit5spring dependency (Michel, Wed Dec 9 13:57:50 2020 +0100)
+* 7a17b5a1f - fix: correct the Maven documentation #1203 (Ronald Holshausen, Sat Nov 28 13:48:18 2020 +1100)
+* 99c2cf0fa - fix: Fixing lint errors (JoaoGFarias, Wed Nov 25 16:19:49 2020 +0100)
+* 4ae2fb2b4 - chore(HttpTarget): Configurable HttpClientFactory (Sabartius, Wed Nov 25 14:21:51 2020 +0100)
+* b277677ab - Merge remote-tracking branch 'origin/message_with_xml_content' into message_with_xml_content (Wil, Wed Nov 18 19:22:07 2020 +0100)
+* 9573fd2e1 - feat: XML message content (Wil, Tue Nov 17 22:24:51 2020 +0100)
+* f214e1e25 - fix: PactCreateVersionTagMojoSpec - Fixing issues indicated by CodeNarc (JoaoGFarias, Wed Nov 18 16:37:06 2020 +0100)
+* af5ed9996 - feat: Increasing coverage on PactBrokerClientPactSpec - Failure to upload tag test (JoaoGFarias, Wed Nov 18 15:55:42 2020 +0100)
+* 583a1763a - feat: PackBrokerClient support for tag creation (JoaoGFarias, Fri Oct 23 16:58:29 2020 +0200)
+* 1809cebf4 - feat: create-version-tag: Calling Broker Client with collected arguments (JoaoGFarias, Mon Jul 20 06:59:08 2020 +0200)
+* 906945abb - feat: create-version-tag: Checking mandatory arguments (JoaoGFarias, Sun Jul 5 18:54:09 2020 +0200)
+* bea660cd6 - feat: Creating PactCreateVersionTagMojo (JoaoGFarias, Sun Jul 5 17:57:13 2020 +0200)
+* 5239b5739 - XML message content (Wil, Tue Nov 17 22:24:51 2020 +0100)
+* 2a5bcf1b7 - update changelog for release 4.1.11 (Ronald Holshausen, Sun Nov 15 13:57:34 2020 +1100)
+* 0190004d8 - fix: if Tika fails to initialise, catch the exception and disable content type detection #1245 (Ronald Holshausen, Sun Nov 15 13:30:42 2020 +1100)
+* 4c86cd062 - fix: support consumerVersionSelectors with only a consumer name and no tag #1244 (Ronald Holshausen, Sun Nov 15 13:15:16 2020 +1100)
+* b7e4b589b - fix: do not log out pact source annotations, as they may have passwords (Ronald Holshausen, Sun Nov 15 12:27:42 2020 +1100)
+* 1b3f123ee - fix: consumer name from consumerVersionSelectors was being ignored #1244 (Ronald Holshausen, Sun Nov 15 12:19:36 2020 +1100)
+* 7506cc78b - fix: was retrying one less than the retry count #1241 (Ronald Holshausen, Sun Nov 15 11:15:47 2020 +1100)
+* 55d43ab6b - feat: correct canIDeploy in Gradle readme #1241 (Ronald Holshausen, Sun Nov 15 10:52:17 2020 +1100)
+* 2c1fae615 - feat: add canIDeploy section to the Gradle readme #1241 (Ronald Holshausen, Sun Nov 15 10:04:38 2020 +1100)
+* e671f952f - fix: obfuscate the password for PactPublish (Ronald Holshausen, Sun Nov 15 09:44:11 2020 +1100)
+* 8ec6d2a05 - feat: add retry when there are unknown results for canIDeploy #1241 (Ronald Holshausen, Sun Nov 15 09:41:19 2020 +1100)
+* 199cd8d5d - fix: pact-jvm-server was not including the dependencies in the published pom #1239 (Ronald Holshausen, Sat Nov 14 14:40:50 2020 +1100)
 
 ## 4.1.13 - Bugfix Release
 
@@ -82,6 +144,29 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 * 8ec6d2a05 - feat: add retry when there are unknown results for canIDeploy #1241 (Ronald Holshausen, Sun Nov 15 09:41:19 2020 +1100)
 * 199cd8d5d - fix: pact-jvm-server was not including the dependencies in the published pom #1239 (Ronald Holshausen, Sat Nov 14 14:40:50 2020 +1100)
 
+## 4.2.0-beta.1 - implemented array contains matcher
+
+* 6ab75d017 - feat: implemented array contains matcher (Ronald Holshausen, Mon Nov 9 11:13:13 2020 +1100)
+* 4525ae5d2 - update changelog for release 4.1.10 (Ronald Holshausen, Fri Nov 6 11:47:23 2020 +1100)
+* 940fc83c5 - fix: default headers were being added twice to requests to the pact broker #1242 (Ronald Holshausen, Fri Nov 6 11:25:06 2020 +1100)
+* 0b79ec077 - feat: let array contains be used wih V3 pacts (Ronald Holshausen, Thu Nov 5 17:00:48 2020 +1100)
+* f95440768 - feat: Added array containers matcher to JUnit 4 Java DSL (Ronald Holshausen, Thu Nov 5 16:47:51 2020 +1100)
+* a930b3319 - fix: when merging V4 pact files, the new interactions should be kept, not the old (Ronald Holshausen, Thu Nov 5 12:12:47 2020 +1100)
+* 83ca52a4f - fix: Interaction unique keys should only be based on descriptions and provider states (Ronald Holshausen, Thu Nov 5 12:11:46 2020 +1100)
+* 73558ba07 - fix: V4 format body was writing JSON bodies in string form (Ronald Holshausen, Thu Nov 5 12:10:25 2020 +1100)
+* 2d09adacd - feat: Added array containers matcher to Groovy DSL (Ronald Holshausen, Thu Nov 5 12:08:49 2020 +1100)
+* 69c656e33 - feat: corrected loading array contains matcher from JSON (Ronald Holshausen, Wed Nov 4 12:55:47 2020 +1100)
+* f4503005e - feat: added array contains matcher model class (Ronald Holshausen, Wed Nov 4 11:57:18 2020 +1100)
+* a648c7a9a - feat: Support loading PactSource from annotations on the test class (JUnit 5) #1237 (Ronald Holshausen, Tue Nov 3 16:12:50 2020 +1100)
+* 94275ae38 - feat: Support loading PactSource from annotations on the test class (JUnit 4) #1237 (Ronald Holshausen, Tue Nov 3 15:10:12 2020 +1100)
+* 8a6f03654 - feat: implemented reading and writing V4 async message pacts (Ronald Holshausen, Sun Nov 1 12:54:36 2020 +1100)
+* f05d904dc - feat: support any objects for provider state parameters #1234 (Ronald Holshausen, Sat Oct 31 18:08:14 2020 +1100)
+* 5c694ae70 - fix: markdown summary was not updated correctly when multiple consumers #1128 (Ronald Holshausen, Sat Oct 31 16:49:57 2020 +1100)
+* abd55de24 - feat: support for fallback tag with version selectors #946 (Ronald Holshausen, Fri Oct 23 11:44:58 2020 +1100)
+* be2f0024f - :bug: use ConcurrentHashMap rather than just a mutable map (Ryan Dens, Mon Oct 19 09:06:01 2020 -0400)
+* 0c4ea773e - :bug: improve thread-safety of JUnit 5 extension (Ryan Dens, Mon Oct 19 09:01:55 2020 -0400)
+* 50de87ae8 - update changelog for release 4.1.9 (Ronald Holshausen, Sun Oct 18 15:44:55 2020 +1100)
+
 ## 4.1.10 - Bugfix Release
 
 * 940fc83c5 - fix: default headers were being added twice to requests to the pact broker #1242 (Ronald Holshausen, Fri Nov 6 11:25:06 2020 +1100)
@@ -92,6 +177,28 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 * abd55de24 - feat: support for fallback tag with version selectors #946 (Ronald Holshausen, Fri Oct 23 11:44:58 2020 +1100)
 * be2f0024f - :bug: use ConcurrentHashMap rather than just a mutable map (Ryan Dens, Mon Oct 19 09:06:01 2020 -0400)
 * 0c4ea773e - :bug: improve thread-safety of JUnit 5 extension (Ryan Dens, Mon Oct 19 09:01:55 2020 -0400)
+
+## 4.2.0-beta.0 - First 4.2 beta release
+
+* 7f5dc5402 - fix: correct compiler errors after merge from master (Ronald Holshausen, Sun Oct 18 15:22:06 2020 +1100)
+* a10781a0c - core: upgrade kotlin-logging lib to latest (Ronald Holshausen, Sun Oct 18 15:09:27 2020 +1100)
+* 1b36668b4 - fix: handle null tag values in selectors #1227 (Ronald Holshausen, Sun Oct 18 14:47:16 2020 +1100)
+* d27d690e1 - fix: when loading pacts, only swallow exceptions if annotation ignoreIoErrors == "true" #1225 (Ronald Holshausen, Sun Oct 18 14:28:41 2020 +1100)
+* 473bf1ce2 - fix: when request to the broker fails with an exception, propogate the original exception #1225 (Ronald Holshausen, Sun Oct 18 14:06:56 2020 +1100)
+* 4f231f680 - fix: suport versions that are not string values #1228 (Ronald Holshausen, Sun Oct 18 13:33:57 2020 +1100)
+* 12348efb2 - feat: Update documentation on PactUrl authentication #1224 (Ronald Holshausen, Sun Oct 18 12:51:22 2020 +1100)
+* 63d19cfb0 - feat: support system properties with PactUrl authentication #1224 (Ronald Holshausen, Sun Oct 18 12:40:04 2020 +1100)
+* be912c995 - feat: add authentication to PactUrl annotation #1224 (Ronald Holshausen, Sun Oct 18 12:23:35 2020 +1100)
+* 8621b7f15 - fix: Java DSL must not generate invalid matcher paths #1220 (Ronald Holshausen, Sat Oct 17 17:21:55 2020 +1100)
+* 8c64f6dd8 - fix(MarkdownReporter): correctly align body mismatches when there are multiple per path #1219 (Ronald Holshausen, Sat Oct 17 16:33:54 2020 +1100)
+* 7f34c22b8 - fix: merge in results so we don't lose results with multiple interactions #1128 (Ronald Holshausen, Sat Oct 17 15:55:45 2020 +1100)
+* 7a775976b - feat: add summary to markdown report #1128 (Ronald Holshausen, Sat Oct 17 15:34:59 2020 +1100)
+* d4488d55f - fix: don't default the content type to JSON when the content-type header is missing #1218 (Ronald Holshausen, Sat Oct 17 13:49:56 2020 +1100)
+* 06c5b50f0 - fix: handle version as string (sneufeind, Thu Oct 15 16:31:16 2020 +0200)
+* 390526585 - feat: implemented check for when V4 features are used (Ronald Holshausen, Sun Aug 9 13:48:24 2020 +1000)
+* 371b55e61 - feat: use * for unordered wildcard mismatches (Andrew Steffey, Wed Jul 29 15:50:33 2020 -0400)
+* 7e96e1f60 - feat: add unordered JSON arrays to consumer DSL (John Standard, Tue Jun 2 11:27:02 2020 -0400)
+* a7375e51f - feat: Added ignore-order matching for JSON array elements (John Standard, Tue Jun 2 14:07:12 2020 -0400)
 
 ## 4.1.9 - Bugfix Release
 
