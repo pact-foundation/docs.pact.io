@@ -4,6 +4,19 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.1.17 - Bugfix Release
+
+* 612f99200 - feat: fix codenarc errors (Ronald Holshausen, Thu Feb 11 14:30:49 2021 +1100)
+* cc7b6a145 - feat: add ests for the like method in Java DSL (Ronald Holshausen, Thu Feb 11 14:24:30 2021 +1100)
+* 94f0312f6 - feat: add like method to Java DSL (Ronald Holshausen, Thu Feb 11 14:09:13 2021 +1100)
+* dd5a23585 - feat: support setting pact.verifier.publishResults in the Spring context #1294 (Ronald Holshausen, Thu Feb 11 14:04:35 2021 +1100)
+* a19b38a10 - feat: Update MockMvcTarget to handle non-file parts in a multipart form post #1290 (Ronald Holshausen, Thu Feb 11 11:25:27 2021 +1100)
+* 39804f97b - fix: make the Java DSL consistant with the Groovy DSL #1289 (Ronald Holshausen, Thu Feb 11 09:18:09 2021 +1100)
+* e91725516 - fix: Support setting consumer and provider pacticipant names from environment variables in consumer contract tests (Christopher Roberts, Fri Feb 5 22:02:00 2021 -0500)
+* 254f8162c - fix: codenarc violations (TM, Sun Feb 7 22:03:51 2021 +0100)
+* 432807d64 - fix: consumer name formatting in Ansi console reporting (TM, Sun Feb 7 21:42:12 2021 +0100)
+* 2ecff5b46 - fix: consumer name formatting in SL4J reporting (TM, Sun Feb 7 21:40:05 2021 +0100)
+
 ## 4.1.16 - Bugfix Release
 
 * 73c9053dc - fix: Don't split header values when loading from a pact file #1288 (Ronald Holshausen, Sun Jan 31 13:23:48 2021 +1100)
