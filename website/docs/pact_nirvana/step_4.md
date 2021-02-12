@@ -15,6 +15,16 @@ While you can use Pact without a Pact Broker, using one allows you to get the mo
 >
 > Get started for free on our Developer Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=effective_pact_setup_dev_plan).
 
+### Verifying pacts
+
+There are two reasons that a verification task will need to be run: 
+
+1. When the provider code changes
+  * The verification task will run as part of the normal CI/CD pipeline for the provider
+  * The verification task will fetch and verify all the relevant pacts from all consumers from the Pact Broker to ensure no regressions have occurred.
+2. When the pact changes
+  * We recommend that a separate pipeline is set up to verify just the changed pact (more details on this below).
+
 ### Consumer pipeline
 
 The following diagram shows what a fully fledged Pact supported release pipeline might look like for a consumer. During this step of the set up guide, we are going just going to cover publishing the pact, and configuring the webhook. The other parts of this pipeline will be covered in later steps.
