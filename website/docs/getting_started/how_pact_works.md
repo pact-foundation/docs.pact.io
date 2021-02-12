@@ -88,6 +88,29 @@ Here’s a repeat of the two diagrams above:
 
 If we pair the consumer test and provider verification process for each interaction, the contract between the consumer and provider is fully tested without having to spin up the services together.
 
+## Non-HTTP testing (Message Pacts)
+
+Modern distributed architectures are increasingly integrated in a decoupled, asynchronous fashion. Message queues such as ActiveMQ, RabbitMQ, SNS, SQS, Kafka and Kinesis are common, often integrated via small and frequent numbers of microservices (e.g. lambda). These sorts of interactions are referred to as "message pacts".
+
+There are some minor differences between how Pact works in these cases when compared to the HTTP use case. Pact supports messages by abstracting away the protocol and specific queuing technology (such as Kafka) and focusses on the messages passing between them.
+
+Check our [feature support](/roadmap/feature_support) to ensure your language has this capability.
+
+:::info
+To reiterate: Pact does not know about the various message queueing technologies - there are simply too many! And more importantly, Pact is really about testing the messages that pass between them, you can still write your standard functional tests using other frameworks designed for such things.
+:::
+
+When writing tests, Pact takes the place of the intermediary (MQ/broker etc.) and confirms whether or not the consumer is able to _handle_ a given event, or that the provider will be able to _produce_ the correct message.
+
+### How to "write message pact" tests?
+We recommend that you split the code that is responsible for handling the protocol specific things - for example an AWS lambda handler and the AWS SNS input body - and the piece of code that actually handles the payload.
+
+You're probably familiar with layered architectures such as Ports and Adaptors (also referred to as a Hexagonal architecture). Following a modular architecture will allow you to do this much more easily:
+
+![Ports and Adapters architecture](/img/ports-and-adapters.png)
+
+See an [example](https://docs.pactflow.io/docs/examples/aws/sns/consumer/readme) of this in action.
+
 ## Next steps
 
 _Contract tests should focus on the messages \(requests and responses\) rather than the behaviour_. It can be tempting to use contract tests to write general functional tests for the provider. Experience shows this to leads to painful experiences with brittle tests. See [this guide for contract testing best practices](/consumer/contract_tests_not_functional_tests).
