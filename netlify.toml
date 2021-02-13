@@ -77,3 +77,8 @@
   from = "/best_practices/pact_nirvana"
   to = "/pact_nirvana"
   status = 302
+
+[[redirects]]
+  from = "/versioning"
+  to = "/getting_started/versioning_in_the_pact_broker"
+  status = 301
