@@ -112,7 +112,7 @@ You're probably familiar with layered architectures such as Ports and Adaptors (
 
 Let's walk through an example using a `product event` published through AWS SNS as an example.
 
-#### Consumer Side
+#### Consumer side
 
 The consumer expects to receive a message of the following shape:
 
