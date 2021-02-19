@@ -160,12 +160,12 @@ On the other side, we need to find the "Port" that is responsible for _producing
 class ProductEventService {
   async create(event) {
     const product = productFromJson(event);
-    await this.publish(createEvent(product, "CREATED"));
+    return this.publish(createEvent(product, "CREATED"));
   }
 
   async update(event) {
     const product = productFromJson(event);
-    await this.publish(createEvent(product, "UPDATED"));
+    return this.publish(createEvent(product, "UPDATED"));
   }
 
   ...
