@@ -190,7 +190,7 @@ The `publish` is the bit ("Adapter") that knows how to talk to AWS SNS, the `upd
 
 #### Further Reading
 
-See an [example consumer project](https://docs.pactflow.io/docs/examples/aws/sns/consumer/readme) and [example provider project](https://docs.pactflow.io/docs/examples/aws/sns/provider/readme) to see this in action.
+Take a look at an [example consumer project](https://docs.pactflow.io/docs/examples/aws/sns/consumer/readme) and its [example provider project](https://docs.pactflow.io/docs/examples/aws/sns/provider/readme) to see this in action.
 
 ## Next steps
 
