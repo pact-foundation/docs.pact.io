@@ -88,7 +88,7 @@ Here’s a repeat of the two diagrams above:
 
 If we pair the consumer test and provider verification process for each interaction, the contract between the consumer and provider is fully tested without having to spin up the services together.
 
-## Non-HTTP testing (Message Pacts)
+## Non-HTTP testing (Message Pact)
 
 Modern distributed architectures are increasingly integrated in a decoupled, asynchronous fashion. Message queues such as ActiveMQ, RabbitMQ, SNS, SQS, Kafka and Kinesis are common, often integrated via small and frequent numbers of microservices (e.g. lambda). These sorts of interactions are referred to as "message pacts".
 
@@ -110,7 +110,7 @@ You're probably familiar with layered architectures such as Ports and Adaptors (
 
 ![Ports and Adapters architecture](/img/ports-and-adapters.png)
 
-Let's walk through an example using `product event` published through AWS SNS as an example.
+Let's walk through an example using a `product event` published through AWS SNS as an example.
 
 #### Consumer Side
 
