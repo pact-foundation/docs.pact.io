@@ -132,6 +132,8 @@ To turn this feature off, set `check_for_potential_duplicate_pacticipant_names =
 
 Please set the base URL of the Pact Broker application (eg. `https://pact-broker.mycompany.com`) via the supported configuration mechanism for the deployment artifact (the environment variable `PACT_BROKER_BASE_URL` for the Docker images, or `PactBroker.configuration.base_url = "..."` for native Ruby). Setting the base URL is recommended as it prevents some security vulnerabilities associated with dynamically inferring the base URL from the request headers.
 
+From version `2.79.0`, multiple base URLs can be configured for architectures that use gateways or proxies that allow the same Pact Broker instance to be addressed with different base URLs. To use this feature, list all the base URLs in the base URL string, separated by a space. eg. `"http://my-internal-pact-broker:9292 https://my-external-pact-broker"`
+
 ### When the base URL configuration is not supported (versions prior to 2.46.0)
 
 *It is preferrable to upgrade to the latest version of the Pact Broker, as 2.46 is old and may contain vulerabilities. Also, determining the base URL dynamically using the X-Forwarded headers leaves the application open to [DNS cache poisoning](https://www.cloudflare.com/learning/dns/dns-cache-poisoning/).* The following documentation applies if you have no other option however.
