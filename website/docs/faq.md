@@ -334,7 +334,7 @@ Pact is an open source project and the majority of contributions to Pact are don
 
 Yes.
 
-See below, or the [Pact JS example](https://github.com/pact-foundation/pact-js/tree/feat/message-pact/examples/graphql).
+See below, or the [Pact JS example](https://github.com/pact-foundation/pact-js/tree/master/examples/graphql).
 
 ### I use GraphQL, SOAP, Protobufs ... do I need contract tests?
 
