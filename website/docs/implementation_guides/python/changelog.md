@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-python/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact-python repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+### 1.3.1
+  * 4440022 - Merge pull request #203 from pact-foundation/fix/version_confusion (Elliott Murray, Sat Feb 27 09:15:08 2021 +0000)
+  * 9cac2d7 - fix: introduced and renamed specification version (Elliott Murray, Tue Feb 23 21:22:36 2021 +0000)
 ### 1.3.0
   * eaa90e1 - Merge pull request #194 from williaminfante/feat/pact-message-2 (Elliott Murray, Mon Jan 25 08:48:00 2021 +0000)
   * 5ed73db - test: consider publish to broker with no pact_dir argument (William Infante, Mon Jan 25 17:19:08 2021 +1100)
