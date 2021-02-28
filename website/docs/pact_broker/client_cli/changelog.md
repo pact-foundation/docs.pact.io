@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.37.0"></a>
+### v1.37.0 (2021-03-01)
+
+#### Features
+
+* add record-deployment	 ([6e5e208](https://github.com/pact-foundation/pact_broker-client/commit/6e5e208))
+
+#### Bug Fixes
+
+* use refinement to add compact to Hash	 ([c2c1cab](https://github.com/pact-foundation/pact_broker-client/commit/c2c1cab))
+
 <a name="v1.36.0"></a>
 ### v1.36.0 (2021-02-21)
 
