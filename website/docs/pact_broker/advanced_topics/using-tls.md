@@ -51,6 +51,8 @@ bTk5fOGqTBqgzp1BgJKIKhI9CIUeAUYwggCWOeZnq4dpMkXH1xbsk4MMSOTimWbe
 
 You'll need to configure the certificate both your development environment and your CI. It's a bit of a hassle, so again, do consider a CA signed certificate from [Let's Encrypt](https://letsencrypt.org) instead.
 
+You can use this [Docker Compose](https://github.com/DiUS/pact_broker-docker/blob/master/docker-compose.yml) file to spike and troubleshoot connecting to a broker with a self signed certificate. Once you have run `docker-compose up` once and seen it work with the built in files, replace the certificate and key files with your own and run `docker-compose down` and `docker-compose up`.
+
 ##### Extracting a copy of the certificate from a running Pact Broker
 
 If you do not already have a copy of the certificate, you can extract it from Firefox.
