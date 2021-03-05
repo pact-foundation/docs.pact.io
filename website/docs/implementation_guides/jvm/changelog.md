@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.2.1 - Bugfix Release
+
+* 20f53c684 - included literal 'null' check for regex as it has similar issue as JsonValue.Null (Ryan Levell, Sat Feb 27 19:27:56 2021 -0600)
+* e3bd289a1 - fixed regex typo. added happy path json regex (Ryan Levell, Sat Feb 27 08:00:43 2021 -0600)
+* 672e85384 - added check for Null JsonValue for regex matcher (Ryan Levell, Fri Feb 26 21:24:09 2021 -0600)
+* e954d801a - fix(JUnit 4): do not fire the test finished event for pending pacts #1310 (Ronald Holshausen, Sat Feb 20 15:25:09 2021 +1100)
+* b782ccca0 - feat: deprecate pact broker host, port and scheme in favour of a url #1300 (Ronald Holshausen, Sat Feb 20 14:03:25 2021 +1100)
+
 ## 4.2.0 - First non-beta release
 
 * 7c1f48282 - update changelog for release 4.1.17 (Ronald Holshausen, Thu Feb 11 14:46:11 2021 +1100)
