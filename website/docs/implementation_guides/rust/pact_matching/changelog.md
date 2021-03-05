@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.8.12 - Values matcher - match values, ignoring keys
+
+* bc84a4d - feat: implemented matching values ignoring keys (Ronald Holshausen, Fri Mar 5 10:52:01 2021 +1100)
+
 ## 0.8.11 - file locking with exp backoff
 
 * 6f13f49 - feat: implemented non-blocking write file locking with exp backoff (Ronald Holshausen, Wed Feb 10 14:50:38 2021 +1100)
