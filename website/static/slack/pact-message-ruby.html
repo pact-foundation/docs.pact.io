@@ -1,0 +1,654 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-28 22:01</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-28 22:01</div><div class="msg">@bethskurrie set the channel purpose: Discuss the implementation of Pact Message in the "wrapper" languages using the pact-ruby-standalone</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-03-28 22:01</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-28 22:01</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/74d5a236cb57611d4669c8b1cd09a946.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0024-72.png" /><div class="message"><div class="username">neil</div><div class="time">2018-03-28 22:01</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-28 22:12</div><div class="msg">Though I guess this really may as well be in the standalone group</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-28 22:38</div><div class="msg">Just an update on where this is at. The code required in the standalone to generate and verify a message pact is out - however, the v3 pact spec is only partially supported. You won't be able to verify any jvm message pacts yet.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-28 22:38</div><div class="msg">At the moment, the parser is expecting one provider state string instead of an array of objects.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-29 10:23</div><div class="msg">:the_horns:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-29 10:25</div><div class="msg">I'm not far off having beta's of both JS and Go to test the waters. I have a few questions about the implementation that we can discuss at that point here</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 03:36</div><div class="msg">Does it properly support matching yet Beth?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 03:36</div><div class="msg">I noticed this when trying matchers:
+
+```
+{
+  "consumer": {
+    "name": "MyConsumer"
+  },
+  "provider": {
+    "name": "MyProvider"
+  },
+  "messages": [
+    {
+      "description": "a dog",
+      "providerState": "some state",
+      "content": {
+        "id": {
+          "contents": 1,
+          "json_class": "Pact::SomethingLike"
+        },
+        "name": {
+          "contents": "rover",
+          "json_class": "Pact::SomethingLike"
+        },
+        "type": {
+          "data": {
+            "generate": "bulldog",
+            "matcher": {
+              "json_class": "Regexp",
+              "o": 0,
+              "s": "bulldog|sheepdog"
+            }
+          },
+          "json_class": "Pact::Term"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
+```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 03:36</div><div class="msg">But, the verifier properly caught the matcher</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-30 03:36</div><div class="msg">Should, but just the v 2 ones.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-30 03:37</div><div class="msg">Hm. The spec version isn't right</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 03:37</div><div class="msg">I figured at least that, but was expecting to see the matching rules in there</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 03:37</div><div class="msg">ah</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-30 03:37</div><div class="msg">Are you passing it in to the command line?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 03:37</div><div class="msg">that?s from Pact node. Pretty sure that?s in other stuff too :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-30 03:38</div><div class="msg">There's a bug then.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-30 03:38</div><div class="msg">It must be missing a connection.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 03:38</div><div class="msg">ok will take a look</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 03:38</div><div class="msg">bug in JS/Node or Ruby?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 03:38</div><div class="msg">ah, be back soon?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-30 03:39</div><div class="msg">Ruby I think, because the specification version is 2.0.0 in the file</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 03:50</div><div class="msg">Ah</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-30 03:56</div><div class="msg">Confirmed. I can see where it is.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-30 03:56</div><div class="msg">Will fix when I get a chance</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 04:02</div><div class="msg">Cool, thanks</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 04:02</div><div class="msg">No hurries.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-30 04:19</div><div class="msg">It should still verify, yes?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-30 04:19</div><div class="msg">Also, we'll need to pass in 3.0.0 when writing the message pacts.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 04:21</div><div class="msg">It does, albeit o need to test the regex matcher as it wasn't quite behaving is I expected. That could he me so I need to confirm a few thibgs</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 04:21</div><div class="msg">Will do re 3.0.0</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 04:43</div><div class="msg">Hmm, I was just looking - there is currently no option to pass in a spec version to `pact-message` - where should it be passed in?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-03-30 04:54</div><div class="msg">There is a command line option</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 04:55</div><div class="msg">ah, so there is</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-03-30 04:55</div><div class="msg">I was invoking the help command incorrectly</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-03 22:35</div><div class="msg">Thanks for that `reify` command Beth, works a charm</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-03 22:36</div><div class="msg">Cool</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-03 22:37</div><div class="msg">I?ll update Pact JS/Node when I get a moment, but that?s working so won?t prioritise it</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-03 22:37</div><div class="msg">There are a couple of things we should discuss, which I?ll summarise in here shortly for the other implementations</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-03 22:39</div><div class="msg">For some reason though, the `--pact-dir` argument doesn?t like certain paths. e.g. this fails:
+```
+pact-message update '{"content":{"access":{"contents":{"role":{"data":{"generate":"admin","matcher":{"json_class":"Regexp","o":0,"s":"admin|controller|user"}},"json_class":"Pact::Term"}},"json_class":"Pact::ArrayLike","min":3},"id":{"contents":127,"json_class":"Pact::SomethingLike"},"name":"Baz"},"providerState":"some state","metadata":{"Content-Type":"application/json; charset=utf-8"},"description":"some test case"}' --consumer billy --provider bobby --pact-dir /Users/mfellows/go/src/github.com/pact-foundation/pact-go/examples/pacts/
+
+/opt/pact/lib/vendor/ruby/2.2.0/gems/pact-message-0.4.0/lib/pact/message/consumer/interaction_decorator.rb:36:in `extract_content': undefined method `content' for #&lt;Pact::Interaction:0x007ff211a27000&gt; (NoMethodError)
+	from /opt/pact/lib/vendor/ruby/2.2.0/gems/pact-message-0.4.0/lib/pact/message/consumer/interaction_decorator.rb:18:in `as_json'
+	from /opt/pact/lib/vendor/ruby/2.2.0/gems/pact-message-0.4.0/lib/pact/message/consumer/consumer_contract_decorator.rb:14:in `block in as_json'
+	from /opt/pact/lib/vendor/ruby/2.2.0/gems/pact-message-0.4.0/lib/pact/message/consumer/consumer_contract_decorator.rb:14:in `collect'
+	from /opt/pact/lib/vendor/ruby/2.2.0/gems/pact-message-0.4.0/lib/pact/message/consumer/consumer_contract_decorator.rb:14:in `as_json'
+	from /opt/pact/lib/vendor/ruby/2.2.0/gems/pact-mock_service-2.6.4/lib/pact/consumer_contract/consumer_contract_decorator.rb:28:in `to_json'
+	from /opt/pact/lib/vendor/ruby/2.2.0/gems/json-2.1.0/lib/json/common.rb:286:in `generate'
+	from /opt/pact/lib/vendor/ruby/2.2.0/gems/json-2.1.0/lib/json/common.rb:286:in `pretty_generate'
+```
+
+but this is totes fine:
+
+```
+pact-message update '{"content":{"access":{"contents":{"role":{"data":{"generate":"admin","matcher":{"json_class":"Regexp","o":0,"s":"admin|controller|user"}},"json_class":"Pact::Term"}},"json_class":"Pact::ArrayLike","min":3},"id":{"contents":127,"json_class":"Pact::SomethingLike"},"name":"Baz"},"providerState":"some state","metadata":{"Content-Type":"application/json; charset=utf-8"},"description":"some test case"}' --consumer billy --provider bobby --pact-dir /tmp/pacts
+```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-03 22:39</div><div class="msg">ahh</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-03 22:39</div><div class="msg">Was there an existing doc there?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-03 22:39</div><div class="msg">ya</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-03 22:40</div><div class="msg">It may have been trying to merge</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-03 22:40</div><div class="msg">I think it must have been an old format?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-03 23:02</div><div class="msg">Yes, not compatible.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-04 22:50</div><div class="msg">@bethskurrie OK, so my pact-message is failing after the last update:
+
+```
+Diff
+--------------------------------------
+Key: - is expected
++ is actual
+Matching keys and values are not shown
+
+{
+- "id": 1,
+- "name": "rover"
++ "id": 27,
++ "name": "fido"
+}
+
+Description of differences
+--------------------------------------
+* Expected 1 but got 27 at $.id
+* Expected "rover" but got "fido" at $.name
+```
+
+My pact file seems to have the correct v3 matchers, however:
+```
+{
+  "consumer": {
+    "name": "MyJSMessageConsumer"
+  },
+  "provider": {
+    "name": "MyJSMessageProvider"
+  },
+  "messages": [
+    {
+      "description": "a request for a dog",
+      "providerStates": [
+        {
+          "name": "some state"
+        }
+      ],
+      "content": {
+        "id": 1,
+        "name": "rover",
+        "type": "bulldog"
+      },
+      "matchingRules": {
+        "body": {
+          "$.id": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.name": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.type": {
+            "matchers": [
+              {
+                "match": "regex",
+                "regex": "^(bulldog|sheepdog)$"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  }
+}
+```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-04 22:51</div><div class="msg">Will have a look now</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-04 22:51</div><div class="msg">ah, I know. I?m probably not specifying the version to the verifier, perhaps?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-04 22:51</div><div class="msg">You definitely need that</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-04 22:52</div><div class="msg">But it may or may not be the cause</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-04 22:52</div><div class="msg">No, the verifier should read the version from the pact</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-04 22:52</div><div class="msg">ah nah that doesn?t make sense - there isn?t an option for it. exactly</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-04 22:52</div><div class="msg">Let me look. It's probably me.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-04 22:52</div><div class="msg">thanks</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-04 23:01</div><div class="msg">I've got the same problem. It's not recognising the matching rules. Will investigate.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-04 23:01</div><div class="msg">kk</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-04 23:01</div><div class="msg">good to know not just me!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-04 23:09</div><div class="msg">I was also going to ask Beth, given the format looks very v3 speccy, does this mean we have interoperability with Pact JVM generated messages or do we need to do more work on that front?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-05 00:19</div><div class="msg">The missing part (once I've implemented the metadata) will be the multiple provider states, and the provider state params. It will *read* a v3 file from pact jvm and not blow up, but it will ignore the bits it can't understand.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-05 06:40</div><div class="msg">cool, that?s a great compromise and starting point. Probably worth a `WARN` in the logs so people can see, and we can update client side docu about v3 compatibility</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-05 06:40</div><div class="msg">Yup, it's prefixed with WARN</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-05 06:43</div><div class="msg">`WARN: Using only the first provider state, "an alligator named Mary exists", as support for multiple provider states is not yet implemented. Ignoring provider states: "another state", "yet another state"`</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-05 06:43</div><div class="msg">`WARN: Ignoring params for the following provider states as params support is not yet implemented: "yet another state"`</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-05 06:44</div><div class="msg">To the error stream, so it won't screw up JSON parsing.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-05 06:52</div><div class="msg">:thumbsup:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-05 06:52</div><div class="msg">amaze</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-05 06:53</div><div class="msg">Hopefully it won't be in there for long, but as you say, all code that is released to production, stays in production!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-05 06:53</div><div class="msg">Rust is dead, long live Ruby :wink:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-05 06:53</div><div class="msg">Ha</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-04-05 06:54</div><div class="msg">The rust impl seems to have lost momentum</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-04-05 06:55</div><div class="msg">I think Ron almost has full v3 spec implemented, but we?ll be fighting inertia and all of the other niceties we have with Ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-05-10 04:08</div><div class="msg">@bethskurrie how far off are we for making the Message Stuff _real_ for Ruby devs? Is it good to go? Does it just need docs? Or does the DSL etc. need a facelift?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-05-10 04:09</div><div class="msg">It just needs a DSL.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-05-10 04:09</div><div class="msg">ok cool</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-05-10 04:09</div><div class="msg">I've done the underlying logic, obviously, but there isn't a nice interface for it, esp on the producer side.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-05-10 04:09</div><div class="msg">got it</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-05-10 04:09</div><div class="msg">Someone was asking about it weren't they?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-05-10 04:10</div><div class="msg">someone else did too (can?t remember) but the team at Stichfix are mostly Ruby, and they?re _keen as mustard_</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-05-10 04:10</div><div class="msg">Ok, I'll get on to it.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-05-10 04:10</div><div class="msg">I was mostly not bothering because I didn't think anybody cared</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-05-10 04:10</div><div class="msg">:cry:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-05-10 04:11</div><div class="msg">People care - have you not seen the almost 2k stars on the repo :smile:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-05-10 04:11</div><div class="msg">Mm.. mostly for historical purposes though.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-05-10 04:11</div><div class="msg">It was the original <a href="http://docs.pact.io">http://docs.pact.io</a> really.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-05-10 04:11</div><div class="msg">true</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-05-10 04:11</div><div class="msg">The knee high dictators have arisen. I must hearken to their commands.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-05-10 04:12</div><div class="msg">(there doesn?t appear to be a :salute? but salute)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-10-24/462692095777_bc56437be7338babaf6a_72.jpg" /><div class="message"><div class="username">shekharsp27</div><div class="time">2018-05-23 05:20</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/5cdad1e44fedd93627ee671d1a3c6e33.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0020-72.png" /><div class="message"><div class="username">matt</div><div class="time">2018-06-11 01:40</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-06-29 14:12</div><div class="msg">@matt.fellows, I am spending sometime catching up to the JS implementation and the spikes with @bethskurrie on message support.  What is the thought on adding properties to the pact message objects like Message.ProviderStates  when those are not in the original pact-specification v3 (<a href="https://github.com/pact-foundation/pact-specification/blob/version-3/testcases/message/body/matches.json">https://github.com/pact-foundation/pact-specification/blob/version-3/testcases/message/body/matches.json</a>).</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-06-29 15:03</div><div class="msg">@bethskurrie, is there a /message endpoint on the ruby standalone?   When the framework registers the interaction with the ruby standalone, how will it know to turn a pact-v3 with a message node, rather than an interactions node?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-06-29 15:50</div><div class="msg">As another thing I am working through, I am on Windows ( :violin: ) with Pact Ruby Standalone for 1.47.1 and submitting the JSON from the demo: <a href="https://github.com/pact-foundation/pact-message-demo/blob/master/message-pact.json">https://github.com/pact-foundation/pact-message-demo/blob/master/message-pact.json</a> ... and I get an error:`{
+
+   "message": "Error ocurred in mock service: NoMethodError - undefined method `[]' for nil:NilClass",
+
+   "backtrace": [
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/pact-support-1.6.2/lib/pact/consumer_contract/interaction.rb:32:in `parse_v2_interaction'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/pact-support-1.6.2/lib/pact/consumer_contract/interaction.rb:26:in `from_hash'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/pact-mock_service-2.9.0/lib/pact/mock_service/request_handlers/interaction_post.rb:24:in `respond'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/pact-mock_service-2.9.0/lib/pact/mock_service/request_handlers/base_request_handler.rb:17:in `call'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/rack-2.0.5/lib/rack/cascade.rb:33:in `block in call'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/rack-2.0.5/lib/rack/cascade.rb:24:in `each'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/rack-2.0.5/lib/rack/cascade.rb:24:in `call'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/pact-mock_service-2.9.0/lib/pact/consumer/mock_service/cors_origin_header_middleware.rb:11:in `call'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/pact-mock_service-2.9.0/lib/pact/consumer/mock_service/error_handler.rb:13:in `call'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/pact-mock_service-2.9.0/lib/pact/mock_service/app.rb:33:in `call'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/pact-mock_service-2.9.0/lib/pact/consumer/mock_service/set_location.rb:14:in `call'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/rack-2.0.5/lib/rack/handler/webrick.rb:86:in `service'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/webrick-1.3.1/lib/webrick/httpserver.rb:138:in `service'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/webrick-1.3.1/lib/webrick/httpserver.rb:94:in `run'",
+
+       "C:/Users/me/Downloads/pact-1.47.1-win32/pact/lib/vendor/ruby/2.2.0/gems/webrick-1.3.1/lib/webrick/server.rb:191:in `block in start_thread'"
+
+   ]
+
+}</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-06-30 06:24</div><div class="msg">There is no mock for message pact. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-06-30 06:28</div><div class="msg">The developer defines the message (and matchers) then calls a language appropriate thing (eg "yield_message") to tell the pact code to give it the concrete message, and then the test makes sure that the prod code does the right thing with the message.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-07 03:07</div><div class="msg">Sorry I didn?t see this. I think perhaps that just means it?s missing from the spec tests (cc @uglyog) because they are definitely in the implementation</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-07 03:07</div><div class="msg">e.g. <a href="https://github.com/pact-foundation/pact-specification/tree/version-3#allow-multiple-provider-states-with-parameters">https://github.com/pact-foundation/pact-specification/tree/version-3#allow-multiple-provider-states-with-parameters</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2018-07-07 04:23</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2018-07-07 04:24</div><div class="msg">The current test cases only test the matching rules</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-07 04:26</div><div class="msg">any reason?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2018-07-07 04:28</div><div class="msg">because that is all we wrote :smile:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-07 04:31</div><div class="msg">I assumed as much</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-11 20:05</div><div class="msg">Thanks, y'all</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-11 20:56</div><div class="msg">I am attempting at understanding the Message Pact Validation on <a href="https://github.com/pact-foundation/pact-message-demo">https://github.com/pact-foundation/pact-message-demo</a> and implement in Pact-PHP.
+
+Let me see if I can understand the control flow and character
+
+Pact Provider Verifier.  This is pact-provider-verifier(.bat on Windows) in the ruby stand alone.   Correct?   This will be called by Pact-JS, <a href="http://Pact.Net">http://Pact.Net</a>, and Pact-PHP through a message specific implementation.
+
+Producer Proxy HTTP Server.    This is created by the writer of the test using the Pact libraries (i.e. Pact-JS, <a href="http://Pact.Net">http://Pact.Net</a>, and Pact-PHP).   
+
+Message Invoker.  This is a call to the part of the Producer functions Pact libraries (i.e. Pact-JS, <a href="http://Pact.Net">http://Pact.Net</a>, and Pact-PHP) that is likely a call back or reference to the Producer class and function that produces appropriate message.
+
+Producer class is the function under test.
+
+
+
+My question is ... is the Producer Proxy HTTP Server written by the implementer of the test or the Pact-(PHP|JS|Net) creator?   It would seem really odd for a implementer of the test to be forced to write an HTTP server if their app.   Thus, I assume Producer Proxy HTTP Server is actually built into Pact-PHP (in this case).   Am I understanding the ownership correctly?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-11 21:00</div><div class="msg">It's written by the framework authors (i.e. us)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-11 21:04</div><div class="msg">We tell the provider verifier to read a given message pact, and to send the message object to the proxy. All we really use from this is the description field (the provider state flow is similar). The proxy then takes that message name and invokes the specific message producer that inplements that message. The response is extracted and sent back to the verifier who then checks it matches whats in the pact spec.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-11 21:04</div><div class="msg">Sorry @cfmack the proxy http server is written by you </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-11 21:18</div><div class="msg">I thought so (and actually hoped so) as that would be _terrible_ for the library users.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-11 21:19</div><div class="msg">:smile:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-11 21:19</div><div class="msg">yeah, pretty harsh!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-11 21:20</div><div class="msg">We thought of a number of ways we could do this. If you have better ideas we?re open to it</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-11 21:20</div><div class="msg">One of the main benefits of this approach is it isn?t message specific, so it means other protocols and transport even can be introduced this way</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-11 21:23</div><div class="msg">The http proxy is there to enable a cross language process interop call - it's not ideal, and will be much more elegant when we can do it with the rust bindings.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-11 21:23</div><div class="msg">but, like the whole ruby standalone thing, it will get the job done!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-11 21:25</div><div class="msg">The message invoker is the part that the test writer will need to implement (either via a DSL or just a plain old &lt;insert language here&gt; class)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-11 21:28</div><div class="msg">I'm there!  Thanks, y'all.   Got any ideas on the rest of the v3 spec?   Are we implementing that soon or should we just call this spec "2.1"?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-11 21:39</div><div class="msg">It's a good point. I've left it at beta for now but if we foresee a long delay perhaps that's best</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-11 22:34</div><div class="msg">To end my day, the implementation of creating the proxy server in a scripting language blows my mind.  What does the url and payload look like?   We are spinning up a server in a library to dynamically load classes with a dynamic function to accept a dynamic payload that is likely complicated by directory locations of the thing calling the library, which likely has dynamic includes.   :exploding_head:.   No way simple way to make this secure other than putting a big ol' asterisk on it.   I'm going to have to noodle on this one</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-11 22:46</div><div class="msg">What's the security angle I'm missing?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-12 00:16</div><div class="msg">&gt; What does the url and payload look like?
+
+The URL can be whatever you like, as you're going to be configuring both that and the call to the provider verifier. The payload is 
+
+```
+{
+  description: "description",
+  providerStates: [{
+    name: "name",
+    params: {}
+  }]
+}
+```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-13 19:48</div><div class="msg">Hey @matt.fellows, I have a POC complete where I have a listener setup, spins up a proxy provider server in the background, kicks off the unit test, runs pact-provider-verifier.bat, calls the proxy provider server with a POST per message.    I am exploring how to tell the proxy server what class to call (i.e. the call back).   It looks like in Pact-JS, we set this up as configuration vs a per request.  Do you spin up proxy provider per test?   I would love to spin up one proxy server then reuse it based on the call back.  However, it does not look like I could get the callback information in there via the pact-provider-verifier.bat call</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-13 19:50</div><div class="msg">NVM, l am going to explore using a customer-provider-header</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-13 20:06</div><div class="msg">That works.  Ignore that question.  Now for my next reflection ...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-13 20:13</div><div class="msg">pact-provider-verifier.bat returns the description and providerState of each message.   A common simple case across message queues would be:
+Consumer: I need a message that looks like {id : 1} on the queue/routing_key/message_key called "my_key"
+Producer: I publish "my_key" 
+
+Hey, let's write a pact and agree on that!   
+
+It would seem natural for the Consumer and Producer to put the information about "my_key" in the metadata and {id: N} in the contents.   Right?
+
+If my throught process plays out, pact-provider-verifier.bat would need to somehow pass over the metadata, not just description and providerState.   Neither description or providerState seem natural to put "my_key".   I suppose you would argue in some cases that is a providerState but a queue seems to be pretty straightforward.   Would a description be "A queue with my_key exists" and providerState is "my_key"?
+
+If that holds true, what is metadata for?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-13 20:36</div><div class="msg">... and the customer-provider-header does not work if a pact has more than one message with different call back functions</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-14 11:20</div><div class="msg">What is the customer provider header? </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-14 11:20</div><div class="msg">Tbh, I never understood the metadata. I think @uglyog uses it for a content type. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-14 11:21</div><div class="msg">Whats the deal with the queue names Ron? </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-14 11:21</div><div class="msg">Is that a part of the contract? </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2018-07-14 11:21</div><div class="msg">Some message queues allow for metadata to be applied to the message (ie. routing info)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2018-07-14 11:22</div><div class="msg">and the content type comes from there</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2018-07-14 11:23</div><div class="msg">I have people asking for the metadata to be verified as well</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-14 11:23</div><div class="msg">I'll have to add that then. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-14 11:24</div><div class="msg">Currently, I'm only verifying the content. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-14 11:24</div><div class="msg">Should queue names be included somewhere? </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2018-07-14 11:24</div><div class="msg">it could go into the metadata</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2018-07-14 11:25</div><div class="msg">But I don't see the value</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-14 11:26</div><div class="msg">@cfmack I tend to see the http proxy as something that lasts the entire length of the pact verification process. Starting and stopping it would slow things unnecessarily I think. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-15 00:56</div><div class="msg">I think _customer_ -&gt; _custom_</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-15 00:58</div><div class="msg">The Golang proxy tends to spin up in &lt; 10ms, so it?s not something I?m super concerned with. That being said, I use the same proxy instance throughout the process.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-16 11:46</div><div class="msg">Oh, right. What problem are you trying to solve with the custom provider header @cfmack? Is it something we can provide proper support for? </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-16 17:25</div><div class="msg">Stepping back, queue name parallels the same concept at a URI path.   
+
+"I expect your API to have an end point at /foo"
+
+"I expect to listen to your messages on queue 'foo'"</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-16 17:27</div><div class="msg">I have to find away to pass a call back process to an outside process.   I was going to pass in that information via the custom provider header.  That falls apart when the callback needs to change.   I'll try to establish a better use case.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-16 21:12</div><div class="msg">So if we add matching to the metadata, you can put it there. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-16 21:13</div><div class="msg">If you get a repo that demonstrates the problem, I can probably find a way to support you. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-16 21:14</div><div class="msg">The fact that matt's done the js and go impls without a callback suggests to me that there is a way without it, however. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-16 21:37</div><div class="msg">That works.  My next question is ... how does the provider validate when it is only passed the data description &amp; providerState?   Should it need to know about the metadata?
+
+Maybe not.  Let me think about that one.  Should that just be in the description and validated on the metadata?  (I like to work these things out as I type)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-16 21:54</div><div class="msg">The only external process should be the verifer itself</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-16 21:54</div><div class="msg">The proxy should wrap any test code in process, so no need for dynamic callbacks etc</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-16 22:17</div><div class="msg">:smile:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-16 22:18</div><div class="msg">The description and state should tell you what message to return I think. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-16 22:18</div><div class="msg">Right now I took the decision _not_ to validate the metadata, if only because I don?t think it?s well defined in the spec just yet and I couldn?t see a nice way to pass it to the function</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-16 22:18</div><div class="msg">The matching is performed by the provider verifier process. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-16 22:19</div><div class="msg">Sorry, on the consumer side this is</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-16 22:19</div><div class="msg">Oh, right. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-16 22:19</div><div class="msg">IFF i created protocol specific handlers (e.g. AMQP, gRPC or something) that needed it, I would have to ensure it did the right thing.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-16 22:20</div><div class="msg">Presumably the verifier _would_ match it?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-16 22:22</div><div class="msg">It could, but currently does not. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-16 22:22</div><div class="msg">I didn't really understand it. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-16 22:23</div><div class="msg">I can easily add verification for it. But we'd want it to be in line with @uglyog code </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2018-07-17 08:01</div><div class="msg">I have an outstanding feature request to add it to the jvm</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-21 00:50</div><div class="msg">I think I got it y'all.   I have a functioning Provider with limitations.    I'll say that Go and Js are not the same for async programming as PHP, especially on Windows.   That said, I got  an initial stab on it and have passing tests.   Thanks for your help.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-21 00:51</div><div class="msg">I wonder if we have a maintainers hangout and do a demo of each language so we can all see how each works. This will help us get consistency across experiences for our users. Thoughts?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-21 00:53</div><div class="msg">Probably easier somehow</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-21 00:54</div><div class="msg">If you want to torture your eyes, here's the crux of the implementation on the provider side:
+<a href="https://github.com/pact-foundation/pact-php/blob/feat/message-pact/example/tests/MessageProvider/MessageProviderTest.php">https://github.com/pact-foundation/pact-php/blob/feat/message-pact/example/tests/MessageProvider/MessageProviderTest.php</a>
+<a href="https://github.com/pact-foundation/pact-php/blob/feat/message-pact/src/PhpPact/Provider/MessageVerifier.php">https://github.com/pact-foundation/pact-php/blob/feat/message-pact/src/PhpPact/Provider/MessageVerifier.php</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-29/338362239890_804a33f50574d0099158_72.jpg" /><div class="message"><div class="username">cfmack</div><div class="time">2018-07-21 00:56</div><div class="msg">After getting this slowly up to snuff (lots to do still), I was thinking about getting a v2 implementation in R.   Why?  Because it would be fun.  Anyone interested?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-21 03:20</div><div class="msg">Really good idea @matt.fellows </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-21 03:21</div><div class="msg">@cfmack imo porting one of the current wrapper impls to the rust impl is a more productive use of time, but if you're doing it for fun, then who am I to object! </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2018-07-21 03:22</div><div class="msg">I pick fun things over necessary things more then I care to admit. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-07-21 04:04</div><div class="msg">We all do. What's life without whimsy</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8953f87dda4ff920d5391ac497a53393.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /><div class="message"><div class="username">mbudde</div><div class="time">2018-08-09 08:47</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-09-27 05:18</div><div class="msg">@neil if you want to do some Pact Message stuff, check out the following two links:
+
+* <a href="https://gist.github.com/bethesque/c858e5c15649ae525ef0cc5264b8477c">https://gist.github.com/bethesque/c858e5c15649ae525ef0cc5264b8477c</a>
+* <a href="https://github.com/pact-foundation/pact-message-demo">https://github.com/pact-foundation/pact-message-demo</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2018-09-27 05:19</div><div class="msg">There should be enough context to get an idea of how it works, albeit potentially @cfmack has feedback on the use-fullness of them (as he was the most recent beneficiary of this)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-10-06/450900815125_55cdf2cb3f413e82151d_72.jpg" /><div class="message"><div class="username">heymega</div><div class="time">2018-10-06 13:00</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-02-27/563061823653_df91edb2081076e4fc30_72.jpg" /><div class="message"><div class="username">kurst03</div><div class="time">2018-11-18 00:42</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/10b81a01696004e0b79a0ab74cb5eb12.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0023-72.png" /><div class="message"><div class="username">mcon</div><div class="time">2018-12-13 15:19</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2019-02-03 06:02</div><div class="msg">@bethskurrie @matt.fellows I have a request to have the message metadata to be able to be verified along with the contents. I have picked this issue up now (<a href="https://github.com/DiUS/pact-jvm/issues/479">https://github.com/DiUS/pact-jvm/issues/479</a>). This will need to be implemented in the Ruby implementation.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-02-03 08:47</div><div class="msg">Sounds good. Is it just the ability to pass the metadata along to the provider or does the verification do some extra processing?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2019-02-03 20:38</div><div class="msg">Can do @uglyog </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2019-02-03 20:57</div><div class="msg">Matchers and generators can also be applied to the metadata</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-02-03 21:43</div><div class="msg">How does the verification of the metadata work, though? Can you show some pseudocode of what you?re thinking/doing?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2019-02-04 08:37</div><div class="msg">Umm, yeah, about that. When I get to that part I'll let you know :grin: </div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/69770b9a7e2961d4b22e9815b093a3fd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0004-72.png" /><div class="message"><div class="username">bart.schotten</div><div class="time">2019-03-25 13:21</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2019-04-21 04:33</div><div class="msg">@matt.fellows just finished the verification of message metadata</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2019-04-21 04:36</div><div class="msg">Example consumer test: <a href="https://github.com/DiUS/pact-jvm/blob/master/pact-jvm-consumer-junit5/src/test/java/au/com/dius/pact/consumer/junit5/AsyncMessageTest.java#L31">https://github.com/DiUS/pact-jvm/blob/master/pact-jvm-consumer-junit5/src/test/java/au/com/dius/pact/consumer/junit5/AsyncMessageTest.java#L31</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2019-04-21 04:38</div><div class="msg">Corresponding pact file JSON</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2019-04-21 04:38</div><div class="msg">```
+{
+      "description": "a test message",
+      "metaData": {
+        "destination": "X001",
+        "Content-Type": "application/json; charset\u003dUTF-8"
+      },
+      "contents": {
+        "testParam1": "value1",
+        "testParam2": "value2"
+      },
+      "providerStates": [
+        {
+          "name": "SomeProviderState"
+        }
+      ],
+      "matchingRules": {
+        "metadata": {
+          "destination": {
+            "matchers": [
+              {
+                "match": "regex",
+                "regex": "\\w+\\d+"
+              }
+            ],
+            "combine": "AND"
+          }
+        }
+      }
+    }
+```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2019-04-21 04:40</div><div class="msg">The invoked test methods need to now return both the message contents and actual metadata</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2019-04-21 04:40</div><div class="msg">For backwards compatibility, if only the contents are returned, the metadata is ignored and not verified</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2019-04-21 04:47</div><div class="msg">Example test code <a href="https://github.com/uglyog/pact-gradle-test/blob/master/src/test/groovy/com/github/uglyog/pactgradletest/GroovyMessageTest.groovy#L15">https://github.com/uglyog/pact-gradle-test/blob/master/src/test/groovy/com/github/uglyog/pactgradletest/GroovyMessageTest.groovy#L15</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /><div class="message"><div class="username">uglyog</div><div class="time">2019-04-21 04:48</div><div class="msg"><a href="https://github.com/uglyog/pact-gradle-test/blob/master/src/test/groovy/com/github/uglyog/pactgradletest/GroovyMessageTest.groovy#L26">https://github.com/uglyog/pact-gradle-test/blob/master/src/test/groovy/com/github/uglyog/pactgradletest/GroovyMessageTest.groovy#L26</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2019-04-21 05:26</div><div class="msg">@uglyog noted</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3068f5fa9b54ee393170515e9534685b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">murphy.meng</div><div class="time">2019-04-23 11:01</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 11:01</div><div class="msg">On the pact message stuff, I was just talking to @murphy.meng who was asking about the request/response async pattern</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 11:02</div><div class="msg">My understanding is that to achieve this currently, you need to write two separate tests - one for the request flow and another for the response flow (where the consumer and provider take turns initiating the request)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 11:03</div><div class="msg">See recent comments <a href="https://gist.github.com/bethesque/c858e5c15649ae525ef0cc5264b8477c">https://gist.github.com/bethesque/c858e5c15649ae525ef0cc5264b8477c</a> for others sharing this sentiment</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3068f5fa9b54ee393170515e9534685b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">murphy.meng</div><div class="time">2019-04-23 11:08</div><div class="msg">yes I did read what Alex commented there, ?it will require two message pacts and four time-separated commits for each request-response pair.? It means what you just said about two separate tests? I don?t quite understand how this work around work at the moment.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3068f5fa9b54ee393170515e9534685b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">murphy.meng</div><div class="time">2019-04-23 11:08</div><div class="msg">I mean, I might want to try out pact and two sepaate tests are fine. Could you explain a bit in detail?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 11:08</div><div class="msg">I?m not sure about the ?time-separated commits? bit</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 11:10</div><div class="msg">you would need to create one test for `message from A` -&gt; `[ queue ] ` -&gt; `received by B`, and then write a separate test for the response pathway
+`B sends response` -&gt; `[queue]` -&gt; `received by A`</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 11:10</div><div class="msg">If we had the concept of a request/response message here, you would just need to write one test for this scenario</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3068f5fa9b54ee393170515e9534685b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">murphy.meng</div><div class="time">2019-04-23 11:19</div><div class="msg">I am going to ask another dumb question, you said pact-mock_service is not used in message api testing, then for example in `message from A` -&gt; `[ queue ]`  -&gt; `received by B` scenario, where is the mocked receiver (to replace real B) and generate the pact for A?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 11:20</div><div class="msg">The framework will still perform this action, it just may not use the mock service - does that matter to you?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3068f5fa9b54ee393170515e9534685b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">murphy.meng</div><div class="time">2019-04-23 11:23</div><div class="msg">It does not matter your are right it is just impl detail. I simply want to understand better:wink:, sorry. when you say framework, you mean ruby impl, go, javascript and jms impl? Do they share the same impl and they do their own impl?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 11:31</div><div class="msg">haha np</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 11:31</div><div class="msg">In this case, I mean whatever language bindings you are using. So in the case of Pact JS, the JS library will actually invoke your consumer and then invoke another Ruby process asking it to serialise the Pact file. The mock service is not involved</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 11:32</div><div class="msg">(`pact-message` binary does the serialisation here)</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3068f5fa9b54ee393170515e9534685b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">murphy.meng</div><div class="time">2019-04-23 12:06</div><div class="msg">Cool. I believe if I add message impl to Python I will need know how to invoke pact-message binary but let?s put it aside for now.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3068f5fa9b54ee393170515e9534685b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">murphy.meng</div><div class="time">2019-04-23 12:09</div><div class="msg">My next dumb question is, which ruby binary will be used to verify the pact with messaging api scenario?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 12:11</div><div class="msg">right, so are you wanting to contribute? This would have been helpful information!!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 12:11</div><div class="msg">@murphy.meng start here</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3068f5fa9b54ee393170515e9534685b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">murphy.meng</div><div class="time">2019-04-23 12:14</div><div class="msg">I am very keen to allow Python to support messaging api, I managed to get some bandwidth to do this for testing the messaging api in my company.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 12:42</div><div class="msg">that?s great</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 12:42</div><div class="msg">I didn?t realise that was your intention</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-04-23 12:43</div><div class="msg">See the sequence  diagrams at  <a href="https://github.com/pact-foundation/pact-message-demo">https://github.com/pact-foundation/pact-message-demo</a> for background</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3068f5fa9b54ee393170515e9534685b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">murphy.meng</div><div class="time">2019-04-23 12:57</div><div class="msg">Sure will do.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2019-05-15/635960252949_821e5514e9866653c8ce_72.jpg" /><div class="message"><div class="username">davidmolinero.com</div><div class="time">2019-05-15 08:09</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/69770b9a7e2961d4b22e9815b093a3fd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0004-72.png" /><div class="message"><div class="username">bart.schotten</div><div class="time">2019-05-16 05:49</div><div class="msg">I'm running into a problem when testing messages with pact-net, and the output seems to suggest the problem originates in the ruby core.
+
+I've got a test that succeeds when running from Windows but fails when running from Linux because it can't parse json. This is a consumer test so I guess the json is generated during the test and not input *for* the test.
+
+Does this sound familiar at all? I don't really know Ruby myself so I'm kind of stuck here.
+
+```/mnt/c/Repos/Pact-Net/Samples/MessageZooEvents/ZooEventsConsumer.Tests/bin/Debug/netcoreapp2.2/pact-linux-x86_64/lib/vendor/ruby/2.2.0/gems/json-2.1.0/lib/json/common.rb:156:in 'parse': 757: unexpected token at ''{id:{json_class:Pact::SomethingLike,contents:2},name:{json_class:Pact::SomethingLike,contents:Terence},type:{json_class:Pact::SomethingLike,contents:Giraffe}}'' (JSON::ParserError)
+        from /mnt/c/Repos/Pact-Net/Samples/MessageZooEvents/ZooEventsConsumer.Tests/bin/Debug/netcoreapp2.2/pact-linux-x86_64/lib/vendor/ruby/2.2.0/gems/json-2.1.0/lib/json/common.rb:156:in 'parse'
+        from /mnt/c/Repos/Pact-Net/Samples/MessageZooEvents/ZooEventsConsumer.Tests/bin/Debug/netcoreapp2.2/pact-linux-x86_64/lib/vendor/ruby/2.2.0/gems/json-2.1.0/lib/json/common.rb:335:in 'load'
+        from /mnt/c/Repos/Pact-Net/Samples/MessageZooEvents/ZooEventsConsumer.Tests/bin/Debug/netcoreapp2.2/pact-linux-x86_64/lib/vendor/ruby/2.2.0/gems/pact-message-0.5.0/lib/pact/message/cli.rb:24:in 'reify'```
+
+<a href="https://github.com/pact-foundation/pact-net/pull/175">https://github.com/pact-foundation/pact-net/pull/175</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2019-05-16 05:53</div><div class="msg">It looks like it's trying to parse an object that is already parsed.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2019-05-16 05:53</div><div class="msg">Why this should happen on Linux and not Windows I don't know!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2019-05-16 05:55</div><div class="msg">@bart.schotten can you raise this in the pact-ruby-standalone repo with the full backtrace, and I'll have a look at it.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/69770b9a7e2961d4b22e9815b093a3fd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0004-72.png" /><div class="message"><div class="username">bart.schotten</div><div class="time">2019-05-16 06:22</div><div class="msg">Thanks for the quick response! Here it is: <a href="https://github.com/pact-foundation/pact-ruby-standalone/issues/32">https://github.com/pact-foundation/pact-ruby-standalone/issues/32</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2019-05-16 06:23</div><div class="msg">I'll try and get to it as soon as I can. Things are a bit busy here with the launch of <a href="http://pactflow.io">http://pactflow.io</a> so forgive me if it's not immediately.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/69770b9a7e2961d4b22e9815b093a3fd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0004-72.png" /><div class="message"><div class="username">bart.schotten</div><div class="time">2019-05-16 06:25</div><div class="msg">No problem, I appreciate the work you do :+1:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2019-05-16 06:30</div><div class="msg">You're welcome.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-05-16 06:51</div><div class="msg">I recall having an issue with reify early on in the implementation - i?ll check my notes tonight to see if anything turns up</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-05-16 06:52</div><div class="msg">From memory, I got it when I gave it an invalid JSON payload (I think maybe we were iterating on the property keys)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2019-05-16 07:11</div><div class="msg">It looks like it's lost its quotes</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2019-05-16 07:14</div><div class="msg">yeah, looks to have double</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/45c080489725d8ab036422b672da1302.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0025-72.png" /><div class="message"><div class="username">bartek.bulat</div><div class="time">2019-07-22 13:38</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/6280b8bba9ba59d7a83fa217fd36ddf3.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png" /><div class="message"><div class="username">kashikar.harsh</div><div class="time">2019-08-02 06:59</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/bb42171e04c0810420506bbd5f68254e.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0008-72.png" /><div class="message"><div class="username">mmonson</div><div class="time">2019-08-09 18:53</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/219812ea529d3bf9b4e9ab0d7b0843d5.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0020-72.png" /><div class="message"><div class="username">tkimia</div><div class="time">2019-09-23 18:45</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3aa329fb82f11e0ef15b04b6b62c1d62.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0021-72.png" /><div class="message"><div class="username">khoatran</div><div class="time">2019-12-06 00:33</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3aa329fb82f11e0ef15b04b6b62c1d62.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0021-72.png" /><div class="message"><div class="username">khoatran</div><div class="time">2019-12-06 00:34</div><div class="msg">Hi guys/gals, are there examples on how to integrate pact for messages for ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2019-12-06 02:51</div><div class="msg">@khoatran now I've refreshed my memory, I've remembered the DSL for message pact is not done in Ruby yet. The underlying logic is done though, because it's being used by pact-js.
+Which side would you be interested in using? Consumer or provider, or both?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3aa329fb82f11e0ef15b04b6b62c1d62.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0021-72.png" /><div class="message"><div class="username">khoatran</div><div class="time">2019-12-06 05:27</div><div class="msg">hi Beth, I'm interested in using the provider side</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3aa329fb82f11e0ef15b04b6b62c1d62.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0021-72.png" /><div class="message"><div class="username">khoatran</div><div class="time">2019-12-06 05:28</div><div class="msg">we have some ruby code that pushes messages to a queue, and some node.js code consuming the messages on the other end</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2019-12-06 06:43</div><div class="msg">It shouldn't be too much work to hook up the verification code.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2019-12-06 06:43</div><div class="msg">I'll try to get on to it in the next week or so.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3aa329fb82f11e0ef15b04b6b62c1d62.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0021-72.png" /><div class="message"><div class="username">khoatran</div><div class="time">2019-12-06 12:12</div><div class="msg">Thank you Beth</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-01-14 19:43</div><div class="msg">@khoatran sorry, I've been caught up with other things. I'll have a look at it tomorrow.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-01-16 09:55</div><div class="msg">@khoatran If you update to the latest pact gem you'll have pact message verification support</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3aa329fb82f11e0ef15b04b6b62c1d62.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0021-72.png" /><div class="message"><div class="username">khoatran</div><div class="time">2020-01-18 01:52</div><div class="msg">Thanks @bethskurrie</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-01-18 02:03</div><div class="msg">@khoatran you'll find the docs here <a href="https://github.com/pact-foundation/pact-message-ruby#provider">https://github.com/pact-foundation/pact-message-ruby#provider</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-01-18 02:04</div><div class="msg">And here's a running example: <a href="https://github.com/pact-foundation/pact-ruby/blob/master/spec/support/message_spec_helper.rb">https://github.com/pact-foundation/pact-ruby/blob/master/spec/support/message_spec_helper.rb</a></div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/3aa329fb82f11e0ef15b04b6b62c1d62.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0021-72.png" /><div class="message"><div class="username">khoatran</div><div class="time">2020-02-04 01:06</div><div class="msg">Sorry @bethskurrie I've been away. Thank you for your help :thumbsup:</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/c18b5f1e6419dafdc3e11b511b54a659.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0019-72.png" /><div class="message"><div class="username">me1015</div><div class="time">2020-02-10 14:29</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/c18b5f1e6419dafdc3e11b511b54a659.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0019-72.png" /><div class="message"><div class="username">me1015</div><div class="time">2020-02-10 14:49</div><div class="msg">Hey guys, added a small PR to pass through message metadata: <a href="https://github.com/pact-foundation/pact-message-ruby/pull/12">https://github.com/pact-foundation/pact-message-ruby/pull/12</a> - let me know if you have any concerns.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/9eeb419d5b6758626562188d958afd13.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png" /><div class="message"><div class="username">dan.garland</div><div class="time">2020-02-25 10:24</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/57a528d75066ebc29fbeb9f8e6118199.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0002-72.png" /><div class="message"><div class="username">angelos</div><div class="time">2020-02-25 13:47</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 06:25</div><div class="msg">Hi @dan.garland the code for the consumer side of the message pact is actually done, but not released as I got into naming conundrums.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 06:26</div><div class="msg">There ended up being a "message builder" on both consumer and provider sides, but they did different things and I couldn't work out what to call them, so I didn't release the code :joy:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 06:26</div><div class="msg">Srsly, naming things is the hardest.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 06:27</div><div class="msg">What you can do to help it get out is work with me on the naming!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 06:27</div><div class="msg">I'll send you the code when I have a moment.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 06:40</div><div class="msg">@dan.garland <a href="https://github.com/pact-foundation/pact-message-ruby/blob/master/spec/features/create_message_pact_spec.rb">https://github.com/pact-foundation/pact-message-ruby/blob/master/spec/features/create_message_pact_spec.rb</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 06:41</div><div class="msg">I'm trying to think of another name for the `builder` here <a href="https://github.com/pact-foundation/pact-message-ruby/blob/master/spec/features/create_message_pact_spec.rb#L11">https://github.com/pact-foundation/pact-message-ruby/blob/master/spec/features/create_message_pact_spec.rb#L11</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 06:42</div><div class="msg">And I'm really not sure about the syntax for supplying the message pact to the test</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 06:42</div><div class="msg">This blog outlines how the groovy DSL works for pact-jvm <a href="https://dius.com.au/2017/09/22/contract-testing-serverless-and-asynchronous-applications/">https://dius.com.au/2017/09/22/contract-testing-serverless-and-asynchronous-applications/</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 06:43</div><div class="msg">And this is how it's done in JS <a href="https://github.com/pact-foundation/pact-js/blob/master/examples/messages/consumer/message-consumer.spec.ts">https://github.com/pact-foundation/pact-js/blob/master/examples/messages/consumer/message-consumer.spec.ts</a></div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/9eeb419d5b6758626562188d958afd13.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png" /><div class="message"><div class="username">dan.garland</div><div class="time">2020-02-26 08:09</div><div class="msg">Thanks I tried making a consumer test that followed this and I'll have a think about the points :point_up: . When I looked at the resulting Pact I noticed that the `providerStates` and `matchingRules` were empty- is this the WIP part?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 09:32</div><div class="msg">Hm. It might just be unfinished.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 09:32</div><div class="msg">I know the underlying impl works because pact-js uses it - it's just been the ruby DSL that was missing.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-02-26 09:34</div><div class="msg">Yup, there's a TODO in there! <a href="https://github.com/pact-foundation/pact-message-ruby/blob/master/lib/pact/message/consumer/interaction_builder.rb#L26">https://github.com/pact-foundation/pact-message-ruby/blob/master/lib/pact/message/consumer/interaction_builder.rb#L26</a></div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/9eeb419d5b6758626562188d958afd13.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png" /><div class="message"><div class="username">dan.garland</div><div class="time">2020-02-27 09:02</div><div class="msg">Interesting I'll take a look</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/9eeb419d5b6758626562188d958afd13.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0005-72.png" /><div class="message"><div class="username">dan.garland</div><div class="time">2020-02-27 09:20</div><div class="msg">In the meantime, I've been thinking more about how Pact would fit in with messaging. It seems that the Pact approach of knowing who your producer/provider and consumers are and naming them in the Pact makes total sense with REST, but perhaps a lesser extent with messages. If you buy into the eventing model, part of the sell is that you can throw messages onto the event bus and not care about other services and how they respond. In this situation the contract is a data contract based on the message content, rather than being between specific providers/consumers. I wondered whether anyone using this feature on other languages had a view on this and whether the Pact approach maps well to messaging in their experience</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2020-02-27 09:30</div><div class="msg">You raise a good point. The current eventing model misses two key interaction types: req/res style and also the "stream" style you've just described.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /><div class="message"><div class="username">matt.fellows</div><div class="time">2020-02-27 09:31</div><div class="msg">I think it's worth revisiting both, but we need to initially get parity with current libraries.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/7e89597069ba417560198833429e890b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0004-72.png" /><div class="message"><div class="username">eleftherios</div><div class="time">2020-04-29 07:03</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/489e637df8eb00212f7a2122ce94f234.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0016-72.png" /><div class="message"><div class="username">akkoubak</div><div class="time">2020-05-13 17:16</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/57a528d75066ebc29fbeb9f8e6118199.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0002-72.png" /><div class="message"><div class="username">angelos</div><div class="time">2020-05-28 11:55</div><div class="msg">Hello, I am trying to use the `pact-message` gem but it seems I'm hitting a wall, due to a weird `method_missing` error. Any tip would be appreciated. I have created a POC repo to reproduce the issue: <a href="https://github.com/ang3lkar/poc-kafka-message-contracts/">https://github.com/ang3lkar/poc-kafka-message-contracts/</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-05-28 20:42</div><div class="msg">Hi @angelos if you read the docs, you'll see that the consumer dsl is not finished</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-05-28 20:43</div><div class="msg"><a href="https://github.com/pact-foundation/pact-message-ruby/blob/master/README.md#consumer">https://github.com/pact-foundation/pact-message-ruby/blob/master/README.md#consumer</a></div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/57a528d75066ebc29fbeb9f8e6118199.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0002-72.png" /><div class="message"><div class="username">angelos</div><div class="time">2020-06-01 13:43</div><div class="msg">hi @bethskurrie! Thanks for answering! However, I'm a bit confused, there is no consumer-side code in my poc, it's just the provider verification of a static contract file. Essentially, it's the simplest manifestation of the provider example in the pact-message README. (<a href="https://github.com/pact-foundation/pact-message-ruby/blob/master/README.md#provider">https://github.com/pact-foundation/pact-message-ruby/blob/master/README.md#provider</a>)</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/57a528d75066ebc29fbeb9f8e6118199.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0002-72.png" /><div class="message"><div class="username">angelos</div><div class="time">2020-06-01 13:44</div><div class="msg">Is there something I am missing?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/169198cef1417556d778cef9c3f51a3e.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0024-72.png" /><div class="message"><div class="username">manos</div><div class="time">2020-06-02 08:06</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/a15fe4cf8384116b24b40b39d88e0e3a.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0006-72.png" /><div class="message"><div class="username">max.forasteiro</div><div class="time">2020-06-11 20:49</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/a15fe4cf8384116b24b40b39d88e0e3a.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0006-72.png" /><div class="message"><div class="username">max.forasteiro</div><div class="time">2020-06-11 20:59</div><div class="msg">any news about that?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/a15fe4cf8384116b24b40b39d88e0e3a.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0006-72.png" /><div class="message"><div class="username">max.forasteiro</div><div class="time">2020-06-11 21:23</div><div class="msg">Hey guys! Awesome job that you guys are doing here! is the idea to move this gem inside `pact-ruby`  after finishing it? also: I'm receiving an error while trying to use the message provider:
+```undefined method `honours_pact_with' for main:Object```</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/a15fe4cf8384116b24b40b39d88e0e3a.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0006-72.png" /><div class="message"><div class="username">max.forasteiro</div><div class="time">2020-06-12 14:15</div><div class="msg">work around: define a `service_provider` block with your `honours_pact_with`  method and then define a `message_provider` block with the `builder` method. Traced the error back to <a href="https://github.com/pact-foundation/pact-ruby/blob/master/lib/pact/provider/configuration/message_provider_dsl.rb#L24">https://github.com/pact-foundation/pact-ruby/blob/master/lib/pact/provider/configuration/message_provider_dsl.rb#L24</a></div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/a15fe4cf8384116b24b40b39d88e0e3a.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0006-72.png" /><div class="message"><div class="username">max.forasteiro</div><div class="time">2020-06-12 14:19</div><div class="msg"><a href="https://github.com/pact-foundation/pact-ruby/issues/215">https://github.com/pact-foundation/pact-ruby/issues/215</a> issue opened :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-06-18 10:40</div><div class="msg">@max.forasteiro I was planning on keeping them separate</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-06-18 10:40</div><div class="msg">Thanks again for your help on the DSL btw.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/383cacc131f66542413924fb4e5d1f8d.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0004-72.png" /><div class="message"><div class="username">jlammers</div><div class="time">2020-07-08 17:28</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/1fb4e9cae8ad344bf20ba9d864a8d3fa.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0000-72.png" /><div class="message"><div class="username">nirupma.rim</div><div class="time">2020-07-08 17:30</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/1fb4e9cae8ad344bf20ba9d864a8d3fa.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0000-72.png" /><div class="message"><div class="username">nirupma.rim</div><div class="time">2020-07-09 07:52</div><div class="msg">Hi All, I m trying to do consumer message contract testing but it failing with below error:
+MessageHandler
+  get_message
+    allows a consumer to test that it can handle a message example correctly (FAILED - 1)
+
+Failures:
+
+  1) MessageHandler get_message allows a consumer to test that it can handle a message example correctly
+     Failure/Error:
+       message_provider_kafka
+         .given("Encrypted Msg")
+         .is_expected_to_send("payload for file download")
+         .with_metadata("retry_count": 0)
+         .with_content(message: {:headers=&gt;{:message_class=&gt;"notification-newfile", :message_type=&gt;"notifications", :account=&gt;{:id=&gt;"dhgdjhgf"}, :object_id=&gt;"a05f3b28-9056-493d-9ae6-eb67d04ed511", :transaction_id=&gt;"a61d0c8f-ee3f-49fd-9371-ba7d9e86c419", :encryption_key=&gt;"HpHNuKx0GFRSLH6i7NGxHbSqKAOCX-sBtP3pmG1eWHE22WhYeEb9HSlc8RpgTvvJkvmjpsad9AHcd6M9BjI_jHsDv3zmTPL807O99S4PodMRBcxxXlh_LQLKzaXCMCZiZ-nmw-dH5BlY8nmtnAE4VqmOHKMnwU_lQhyXBLb4R4aMqBhjrFZchw9YPDvoO1x8wQIGCXhMp0dnZRWnqHoXR1Pzv9OfEwKIMispJ-wblNAUOEq6UYWbhtr-81jvBBlIjIqiLZUWaOns3fK6xIKLXUQ-TqtfALH7zvUrbXqjeAsfXZZs49Swzthg2yyU8cQvXVMj_NJ6i8mVnCkZ62AmT5dkz9bMOEPWVrnENgxc-4cJjgmfRb2-Bf7vVNqLPis5bSNLtwOTehKbJA-UPjm23wI5pWiuNaHVnbG97S46I0eVt3h4m12a5-3BsAsWT9-YB3X57jh5lCkPz8Z8GsvXGCqrIenw0_W0qJFaiAxjUtmiNJi_Y2kjxyLAejL8YesWWY8wLm24FRUC00Vu0sC8DC-PgQEJmHjyNVeIiAVFh2IOq5fTtbr0k_mAnE_BdzMBoYvDIrXLdu1Hq_FDAcbkoQAxRECRWPemi3wFRhry7Cm75pDolKZcv18n210TVfjrlhCXIvySlQv1FqP3PygQ3FHReX58pTMvXrhEyM9p-jI=", :key_version=&gt;1}, :metrics=&gt;{:created=&gt;"2020-07-03T09:47:28.427570739Z", :encoded=&gt;"0001-01-01T00:00:00Z", :decoded=&gt;"0001-01-01T00:00:00Z", :entry=&gt;"2020-07-03T09:47:28.468636405Z", :exit=&gt;"0001-01-01T00:00:00Z"}, :payload=&gt;"NGB4LZ9A76SEeXEPwv--jwtM6421UeR29JZwbTGW9juYSZYsrRkyyxVxzuumZvFpWnSLNLvfMF9ZWhf8ZyOIT2ksc0muPi1AnicJpDez9WM5qvaua2HAs0FRnrGP1ZxmVJq2j7v9NWgtfG9MnaiebTCH7O6CubJSmYnr0y-kO9V1--DVI64tVDIZgrRax8CE-up5CAlOS4yvkX6CKVQPd6BaDdCynFRFbdyO9F6-tiQfJFOakztTLkh_FQQhL-25egtPf9TdByEY"})
+
+     NoMethodError:
+       undefined method `contents' for #&lt;Pact::Interaction:0x005640992bfe28&gt;
+     # /home/vitthal/.rvm/gems/ruby-2.4.0/gems/pact-message-0.7.0/lib/pact/message/consumer/interaction_decorator.rb:37:in `extract_contents'
+     # /home/vitthal/.rvm/gems/ruby-2.4.0/gems/pact-message-0.7.0/lib/pact/message/consumer/interaction_decorator.rb:18:in `as_json'
+     # /home/vitthal/.rvm/gems/ruby-2.4.0/gems/pact-message-0.7.0/lib/pact/message/consumer/consumer_contract_decorator.rb:14:in `block in as_json'
+     # /home/vitthal/.rvm/gems/ruby-2.4.0/gems/pact-message-0.7.0/lib/pact/message/consumer/consumer_contract_decorator.rb:14:in `collect'
+     # /home/vitthal/.rvm/gems/ruby-2.4.0/gems/pact-message-0.7.0/lib/pact/message/consumer/consumer_contract_decorator.rb:14:in `as_json'
+     # /home/vitthal/.rvm/gems/ruby-2.4.0/gems/pact-mock_service-3.6.1/lib/pact/consumer_contract/consumer_contract_decorator.rb:28:in `to_json'
+     # /home/vitthal/.rvm/gems/ruby-2.4.0/gems/json-2.3.1/lib/json/common.rb:521:in `generate'
+     # /home/vitthal/.rvm/gems/ruby-2.4.0/gems/json-2.3.1/lib/json/common.rb:521:in `pretty_generate'
+     # /home/vitthal/.rvm/gems/ruby-2.4.0/gems/pact-mock_service-3.6.1/lib/pact/consumer_contract/consumer_contract_writer.rb:76:in `pact_json'
+     # /home/vitthal/.rvm/gems/ruby-2.4.0/gems/pact-mock_service-3.6.1/lib/pact/consumer_contract/consumer_contract_writer.rb:66:in `block in update_pactfile'</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-07-09 08:03</div><div class="msg">Consumer is not implemented yet @nirupma.rim</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-07-09 08:04</div><div class="msg"><a href="https://github.com/pact-foundation/pact-message-ruby#consumer">https://github.com/pact-foundation/pact-message-ruby#consumer</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-07-09 08:05</div><div class="msg">I had hoped to get it out recently, but this whole virus thing has taken away the dedicated oss day in my usual schedule.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/1fb4e9cae8ad344bf20ba9d864a8d3fa.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0000-72.png" /><div class="message"><div class="username">nirupma.rim</div><div class="time">2020-07-09 08:05</div><div class="msg">okay Thank you</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-07-09 08:05</div><div class="msg">How did you get the syntax if you didn't see the notice in the docs?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/1fb4e9cae8ad344bf20ba9d864a8d3fa.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0000-72.png" /><div class="message"><div class="username">nirupma.rim</div><div class="time">2020-07-09 08:10</div><div class="msg">I checked the inner implementation</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-07-09 08:11</div><div class="msg">Gosh, not many people ever think to do that!</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/1fb4e9cae8ad344bf20ba9d864a8d3fa.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0000-72.png" /><div class="message"><div class="username">nirupma.rim</div><div class="time">2020-07-09 14:27</div><div class="msg">@bethskurrie: any ETA on completion or what work needs to be done to finish it</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-07-10 11:18</div><div class="msg">If you poke through the consumer code, you'll find a particular dsl/builder class that has mostly empty methods.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-07-10 11:19</div><div class="msg">I'm sorry, I had hoped to get it out weeks ago. My OSS contribution time used to be on my train trips to and from work, and now I don't have that time.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-07-10 11:19</div><div class="msg">The coronavirus has no respect for my productivity!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2020-08-24/1313872565766_cae8cfb71dacd99ad2b1_72.png" /><div class="message"><div class="username">heytaco</div><div class="time">2020-08-25 03:57</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2020-08-24/1313872565766_cae8cfb71dacd99ad2b1_72.png" /><div class="message"><div class="username">heytaco</div><div class="time">2020-08-25 03:57</div><div class="msg">Hi there! My name is HeyTaco!, and you can use me to give people tacos to show your appreciation. My tacos will spread joy through Slack!</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/94c60454380849acb098f6a72ad7f6fd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0023-72.png" /><div class="message"><div class="username">armorsmith42</div><div class="time">2020-09-08 21:37</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/94c60454380849acb098f6a72ad7f6fd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0023-72.png" /><div class="message"><div class="username">armorsmith42</div><div class="time">2020-09-08 21:41</div><div class="msg">@bethskurrie@bethskurrie@bethskurrie 
+
+If an intrepid pair of coworkers wanted to pick up working on the ruby kafka consumer what are some links you might suggest reading first?
+
+In particular: anything we should do to ensure we follow your lead stylistically?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-09-14 21:19</div><div class="msg">Hi @armorsmith42, sorry, I only just saw your message.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-09-14 21:21</div><div class="msg">I'm trying to remember what's outstanding on this. I was going to rename the builder object on the consumer side to avoid confusion with the builder on the provider side.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-09-14 21:21</div><div class="msg">I'm sure there was some functionality missing too. But not much. I'd have to look through the code again.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/94c60454380849acb098f6a72ad7f6fd.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0023-72.png" /><div class="message"><div class="username">armorsmith42</div><div class="time">2020-09-14 21:26</div><div class="msg">If you were able to sketch that out, I would be grateful.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-09-14 21:34</div><div class="msg">I'll have a look today</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-09-14 21:35</div><div class="msg">I picked it up recently, but my oss time is 0 at the moment, with the kids at home due to lockdown.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /><div class="message"><div class="username">bethskurrie</div><div class="time">2020-09-15 07:27</div><div class="msg">Have not forgotten, but didn't get to it today. On the list for tomorrow</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2020-09-29/1394095674339_c5bef6d44e93c3042f94_72.jpg" /><div class="message"><div class="username">mark.doppelfeld</div><div class="time">2021-02-17 19:01</div><div class="msg">has joined #pact-message-ruby</div></div></div><br/>
+</div></body></html>
