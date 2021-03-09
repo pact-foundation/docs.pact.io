@@ -43,6 +43,20 @@ Each of the above Pact repositories has a Github workflow that triggers the [syn
 
 When the sync-docs workflow runs, it pulls in the `master` markdown files from the changed repository, syncs and processes them, and then commits and pushes them. On push, Netlify automatically deploys.
 
+## Slack history
+
+Because the free version of slack only lets you read the last 10k of messages, and at the time of writing this (March 2021) that means about 97k messages are gone, it's helpful to have access to the history.
+
+You can docs.pact.io/slack/
+
+To update the export:
+
+1. Download the latest extract from https://pact-foundation.slack.com/services/export
+1. Extract into a directory
+1. Download this php file (to e.g. `slack.php`) into the same directory as the export: https://gist.github.com/mefellows/1b825c86b2ff1063afbb2e5cb6b8cb3e
+1. Run this script `php slack.php`
+1. Sync the HTML files from `slack2html/html/*` into the `website/static/slack` directory
+
 ## Hosting
 
 The Pact docs site is hosted by Netlify. Thanks!
