@@ -171,7 +171,8 @@
       "provider",
       "provider/using_provider_states_effectively",
       "provider/handling_auth",
-      "provider/recommended_configuration"
+      "provider/recommended_configuration",
+      "provider/how_to_fix_failing_verification_tests"
     ],
     "CI/CD Setup Guide": [
       "pact_nirvana",
