@@ -43,4 +43,8 @@ title: Help! My pact verification tests are failing. What do I do?
 
 ## For JVM
 
-What to make a contribution? If you know how to do this, please click the `Edit this page` link at the bottom and submit a PR. You can find more info on contributing to the docs [here](https://docs.pact.io/contributing/docs).
+What to make a contribution? If you know how to do the above flow in Pact JVM, please click the `Edit this page` link at the bottom and submit a PR. You can find more info on contributing to the docs [here](https://docs.pact.io/contributing/docs).
+
+## For Rust
+
+What to make a contribution? If you know how to do the above flow in Pact Rust, please click the `Edit this page` link at the bottom and submit a PR. You can find more info on contributing to the docs [here](https://docs.pact.io/contributing/docs).
