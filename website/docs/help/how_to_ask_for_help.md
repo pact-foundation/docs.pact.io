@@ -14,7 +14,7 @@ If you're trying to learn how to use Pact, check out our [Getting started](/) se
 
 ## 2. Search on Slack.
 
-We're on a free plan, so we don't have unlimited history, however, you may be able to find the answer to your question in the archives.
+We're on a free plan, so we don't have unlimited history, however, you may be able to find the answer to your question in our archive at https://docs.pact.io/slack.
 
 ## 3. Find the appropriate Slack channel for your question
 
@@ -42,7 +42,7 @@ Imagine you were one of the people reading your question, and ask yourself if yo
     * understanding how to use CI/CD software and build release pipelines
 
     While we will do our best to point you in the right direction, if you do not have these skills, we cannot teach you over Slack. Please find someone in your own company or the relevant technology community to assist you in these areas.
-
+* Please consider slack a public forum and be careful with what you post (e.g. API tokens).
 
 Thank you,
 

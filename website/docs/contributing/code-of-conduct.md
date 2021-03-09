@@ -70,6 +70,9 @@ members of the project's leadership.
 ## Slack
 
 Our Slack workspace is our most active community forum, pleasesee the additional [considerations](/help/how_to_ask_for_help/) for that communication channel.
+
+Note that our slack workspace is also available as an HTML digest online at https://docs.pact.io/slack. Please consider this a public forum, and be careful with what you post (e.g. API tokens).
+
 ## Attribution
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
