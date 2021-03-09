@@ -5,7 +5,7 @@ title: Help! My pact verification tests are failing. What do I do?
 ## For Ruby, JS, Python, Go and Swift
 
 1. If your tests are failing on your CI, identify the branch that they are failing on, and check out that branch on your local development machine.
-2. Run the pact tests locally with read only credentials from your console.
+2. Run the pact tests locally with read only credentials.
 3. Run just the first failing interaction.
     * Locate the first failure message. In the output, you should see the interaction ID. In Ruby it looks like:
       ```
@@ -15,7 +15,7 @@ title: Help! My pact verification tests are failing. What do I do?
         PACT_BROKER_INTERACTION_ID="3c82fcae84594130d4d118d0d790440f41e630db" 
         # Load webhooks request given triggered webhooks exist for consumer supply and provider product
       ```
-    * In your console, export the PACT_BROKER_INTERACTION_ID environment variable. (TODO windows example)
+    * In your console, export the PACT_BROKER_INTERACTION_ID environment variable, or set the environment variable in your IDE. (TODO windows example)
 
       ```
         export PACT_BROKER_INTERACTION_ID="3c82fcae84594130d4d118d0d790440f41e630db"
