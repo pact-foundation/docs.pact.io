@@ -14,7 +14,8 @@ These hands-on labs walk you through an example problem from start to finish, ex
 * [Ruby](https://github.com/DiUS/pact-workshop-ruby-v2)
 * [JS](https://github.com/pact-foundation/pact-workshop-js)
 * [Golang](https://github.com/pact-foundation/pact-workshop-go)
-* [JVM](https://github.com/DiUS/pact-workshop-jvm)
+* [JVM - Gradle/Junit4/Springboot](https://github.com/DiUS/pact-workshop-jvm)
+* [JVM - Maven/Junit5/Springboot](https://github.com/pact-foundation/pact-workshop-Maven-Springboot-JUnit5)
 * [Android](https://github.com/DiUS/pact-workshop-android)
 * [.NET](https://github.com/pactflow/pact-workshop-dotnet-core-v1)
 * [CI/CD](https://docs.pactflow.io/docs/workshops/ci-cd)
@@ -36,6 +37,8 @@ All examples can be found over at https://docs.pactflow.io/docs/examples/
 | NodeJS | Messages | Kafka | NodeJS  Kafka consumer |
 | Java | SOAP Java | Java | SOAP API consumer (_note: only compatible with the SOAP provider_) |
 | .NET | API .NET | .NET Products API consumer |
+| Golang | API | Golang | Go API Client |
+
 
 ### Providers
 
@@ -47,3 +50,4 @@ All examples can be found over at https://docs.pactflow.io/docs/examples/
 | Java | Messages | Kafka | Java Kafka message provider |
 | Java | SOAP | Java  | Java SOAP API provider (_note: only compatible with the SOAP consumer_) |
 | .NET | API | .NET | .NET API provider |
+| Golang | API | Golang | Gin API Provider |
