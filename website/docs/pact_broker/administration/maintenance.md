@@ -55,12 +55,7 @@ The selectors combine by AND, so `[{"max_age": 30}, { "latest": true, tag: true 
 
 #### pactfoundation/pact-broker Docker image
 
-* `PACT_BROKER_DATABASE_CLEAN_ENABLED`: set to `true` to enable the clean. Default is `false`.
-* `PACT_BROKER_DATABASE_CLEAN_CRON_SCHEDULE`: set to a cron schedule that will run when your Broker is under the least operational load. Default is 2:15am - `15 2 * * *`
-* `PACT_BROKER_DATABASE_CLEAN_DELETION_LIMIT`: The maximum number of records to delete at a time for each of the categories listed in the [Categories of removable data](#categories-of-removable-data). Defaults to `500`.
-* `PACT_BROKER_DATABASE_CLEAN_OVERWRITTEN_DATA_MAX_AGE`: The maximum number of days to keep "overwritten" data as described in the [Categories of removable data](#categories-of-removable-data)
-* `PACT_BROKER_DATABASE_CLEAN_KEEP_VERSION_SELECTORS`:  a JSON string containing a list of the "keep" selectors described in [Configuring the keep selectors](#configuring-the-keep-selectors) e.g `[{"latest": true, "tag": true}, {"max_age": 90}]` (remember to escape the quotes if necessary in your configuration files/console).
-* `PACT_BROKER_DATABASE_CLEAN_DRY_RUN`: defaults to `false`. Set to `true` to see the output of what *would* have been deleted if the task had run. This is helpful when experimenting with or fine tuning the clean feature. As nothing is deleted when in dry-run mode, the same output will be printed in the logs each time the task runs.
+See the [environment variable documentation here](/pact_broker/docker_images/pactfoundation#automatic-data-clean-up)
 
 #### dius/pact-broker Docker image
 
