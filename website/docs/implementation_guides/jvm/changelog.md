@@ -4,6 +4,23 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.2.2 - Bugfix Release
+
+* 9b5c57915 - feat: add a system property to enable redirect handling #1323 (Ronald Holshausen, Sat Mar 13 15:37:55 2021 +1100)
+* 2a5914b90 - feat(V4): implemented V4 specification tests (Ronald Holshausen, Mon Mar 8 15:40:46 2021 +1100)
+* 73837d3fa - feat(V4): Update matching code to use matchingRules.content for V4 messages (Ronald Holshausen, Sun Mar 7 18:36:37 2021 +1100)
+* 6719b9788 - feat(V4): Move message pact content matching rules from matchingRules.body to matchingRules.content (Ronald Holshausen, Sun Mar 7 12:46:18 2021 +1100)
+* 805d23a5c - fix: tests with dates failing on jdk 13+ (Ronald Holshausen, Sun Mar 7 10:14:00 2021 +1100)
+* d826cb619 - fix: disable test failing on jdk 13+ #1318 (Ronald Holshausen, Sat Mar 6 17:49:28 2021 +1100)
+* 6d853763a - fix: disable test failing on jdk 13+ #1318 (Ronald Holshausen, Sat Mar 6 17:43:19 2021 +1100)
+* efcc32f9a - fix: test failing on jdk 13+ #1318 (Ronald Holshausen, Sat Mar 6 17:31:11 2021 +1100)
+* fa49f23fd - fix: code narc violations #1318 (Ronald Holshausen, Sat Mar 6 17:17:08 2021 +1100)
+* 48acb7aa0 - fix: add tests for array contains with simple values in Groovy DSL #1318 (Ronald Holshausen, Sat Mar 6 17:14:33 2021 +1100)
+* 2c90ff169 - fix: array contains was not allocating generators to the correct variant #1318 (Ronald Holshausen, Sat Mar 6 16:39:48 2021 +1100)
+* 7f7e387ba - fix: array contains matcher was not dealing with simple values #1318 (Ronald Holshausen, Sat Mar 6 15:43:00 2021 +1100)
+* 9f32ddbf0 - fix: codenarc errors (Ronald Holshausen, Sat Mar 6 14:06:58 2021 +1100)
+* 14c0c2f34 - feat: update content type overrides to allow setting the content type to json #1314 (Ronald Holshausen, Sat Mar 6 12:59:06 2021 +1100)
+
 ## 4.2.1 - Bugfix Release
 
 * 20f53c684 - included literal 'null' check for regex as it has similar issue as JsonValue.Null (Ryan Levell, Sat Feb 27 19:27:56 2021 -0600)
