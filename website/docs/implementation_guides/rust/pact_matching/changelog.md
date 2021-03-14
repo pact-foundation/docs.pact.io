@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.8.13 - V4 features (message refactor)
+
+* 86f8140 - fix: missing $ in macro (Ronald Holshausen, Sun Mar 7 18:48:09 2021 +1100)
+
 ## 0.8.12 - Values matcher - match values, ignoring keys
 
 * bc84a4d - feat: implemented matching values ignoring keys (Ronald Holshausen, Fri Mar 5 10:52:01 2021 +1100)
