@@ -35,7 +35,7 @@ This is triggered every time a verification is published with a failed status.
 
 ## Template parameters
 
-You can use template parameters in the request URL, body and headers to pass through metadata about the event. The most common use of this feature is to pass though the URL of the pact that has changed to the provider verification build. See [this list](advanced_topics/api_docs/webhooks#dynamic-variable-substitution) of available parameters.
+You can use template parameters in the request URL, body and headers to pass through metadata about the event. The most common use of this feature is to pass though the URL of the pact that has changed to the provider verification build. See [this list](https://github.com/pact-foundation/pact_broker/blob/master/lib/pact_broker/doc/views/webhooks.markdown#dynamic-variable-substitution) of available parameters.
 
 ## Example CI/CD and webhook configuration
 
