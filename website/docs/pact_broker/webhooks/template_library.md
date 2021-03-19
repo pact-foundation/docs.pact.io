@@ -39,14 +39,35 @@ Report the pact verification status back to the consumer project in Github.
 }
 ```
 
-## Slack - post notification
+## Slack - post notification - contract_published
 
 ```javascript
 {
   "events": [
     {
       "name": "contract_published"
+    }
+  ],
+  "request": {
+    "method": "POST",
+    "url": "https://hooks.slack.com/services/<webhook id>",
+    "headers": {
+      "Content-Type": "application/json"
     },
+    "body": {
+      "channel": "#<your-channel-here>",
+      "username": "webhookbot",
+      "text": "New version of pact created for ${pactbroker.consumerName}/${pactbroker.providerName}: <${pactbroker.pactUrl}|contract-details>",
+      "icon_emoji": ":ghost:"
+    }
+  }
+}
+```
+## Slack - post notification - provider_verification_published
+
+```javascript
+{
+  "events": [
     {
       "name": "provider_verification_published"
     }
@@ -60,12 +81,12 @@ Report the pact verification status back to the consumer project in Github.
     "body": {
       "channel": "#<your-channel-here>",
       "username": "webhookbot",
-      "text": "New version of pact created for ${pactbroker.consumerName}/${pactbroker.providerName}: ${pactbroker.pactUrl}",
+      "text": "Pact Verification published for $${pactbroker.consumerName}/$${pactbroker.providerName}<$${pactbroker.verificationResultUrl}|$${pactbroker.githubVerificationStatus}>",
       "icon_emoji": ":ghost:"
     }
   }
 }
-```
+
 ## GitHub - trigger build
 
 Trigger a build in GitHub using the repository_dispatch event.
