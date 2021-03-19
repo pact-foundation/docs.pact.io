@@ -7,9 +7,21 @@ There are Pact implementations written in more than 10 languages (see the sideba
 
 ## Provider verifier
 
-You can run Pact verifications against any provider, regardless of its implementation language, by using the [Pact Provider Verifier][verifier]. It is packaged as a [Docker image][docker] and a [standalone][standalone] executable (see the [Distributions](#distributions) section below). If your Pact verification tests are going to be running on Docker anyway, and you are using one of the Pact implementations that ["wrap"][wrapper] the Pact Ruby Standalone (PactJS v2, PactNet, PactPython, PactPHP, Pact Swift, Pact Go) then you will have better performance running the Pact verification Docker image, rather than installing the standalone into a Docker image.
+You can run Pact verifications against any provider, regardless of its implementation language, using one of the following tools.
 
 Having a standard method of executing your Pact provider verifications can be very useful if you want to build Pact into your CI/CD pipeline in a standard way across all your languages.
+
+We have two command line verification tools to choose from, but in most cases, you should stick with the newer native binary.
+
+### Native binary (new)
+
+Our [Pact Provider Verifier][verifier-rust] is distributed as a native binary, that can test both HTTP and Message Based interactions.
+
+### Ruby based (legacy)
+
+Our Ruby based [Pact Provider Verifier][verifier] is packaged as a [Docker image][docker] and a [standalone][standalone] executable (see the [Distributions](#distributions) section below). If your Pact verification tests are going to be running on Docker anyway, and you are using one of the Pact implementations that ["wrap"][wrapper] the Pact Ruby Standalone (PactJS v2, PactNet, PactPython, PactPHP, Pact Swift, Pact Go) then you will have better performance running the Pact verification Docker image, rather than installing the standalone into a Docker image.
+
+You should use this version only if the native binary doesn't work for you.
 
 ## Pact Broker CLI
 
@@ -17,7 +29,9 @@ The Pact command line tools include a command line interface to the Pact Broker.
 
 ## Stub Service
 
-The pact files that are generated from your tests can be used to support other tests by using one of the stub service implementations. There is a Ruby implementation that is available in the [distributions](#distributions) listed below, and a [Rust implementation](/getting_started/stubs).
+The pact files that are generated from your tests can be used to support other tests by using one of the stub service implementations. There is a Ruby implementation that is available in the [distributions](#distributions) listed below, and a [native binary implementation](/getting_started/stubs).
+
+In most cases, you should stick with the native binary.
 
 ## Distributions
 
@@ -39,3 +53,4 @@ You can install the pact-ruby-standalone using this [Homebrew custom repository]
 [standalone]: https://github.com/pact-foundation/pact-ruby-standalone/releases
 [docker]: https://hub.docker.com/r/pactfoundation/pact-cli
 [wrapper]: /wrapper_implementations
+[verifier-rust]: https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier_cli
