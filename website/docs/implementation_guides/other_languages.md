@@ -2,117 +2,58 @@
 title: Other Languages
 ---
 
-For `Providers` written in languages that don't have native Pact support, you can still verify that they satisfy their Pacts, using the generic [Pact Provider Verification tool](https://github.com/pact-foundation/pact-provider-verifier).
+This section describes strategies you can use to test a consumer or provider where a Pact client language doesn't exist.
+
+## Generic Consumer Testing
+
+You will need to build your own DSL to capture the consumer interactions and serialise it into a pact file.
+
+There are two options:
+
+1. Using an HTTP interface (simplest)
+1. Integrating to the native pact libraries via a C interface
+
+The HTTP interface is the easiest to do, albeit it does not have support for message pact, XML and later specification versions.
+The C interface is more feature complete, but is a little more complicated to integrate.
+
+### Using HTTP and the pact-mock-service tool (v2)
+
+We'll be using the `pact-mock-service` binary, which can be obtained by downloading the [Pact CLI tools](./cli).
+
+You interact with the tool via HTTP calls and passing a customer `X-Pact-Mock-Service=true` header.
+
+Because of the HTTP interaction, you can very quickly create a wrapper interface to generate pact files and ensure your consumer is compliant.
+
+Here is an example bash script, that shows how to interact with the mock service to produce a contract: https://github.com/pact-foundation/pact-mock_service/blob/master/script/example.sh.
+
+#### Reference code
+
+A number of languages currently wrap the pact mock service to create user facing libraries such as [Pact JS](https://github.com/pact-foundation/pact-js/blob/master/src/httpPact.ts) and [Pact Go](https://github.com/pact-foundation/pact-go/blob/master/dsl/mock_service.go).
+
+### Native c interface integration (v2,v3,v4 specification support)
+
+We have exposed a fully functional [C interface](https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_mock_server_ffi) that can be integrated into most modern languages, OS and architectures. Follow the documentation there for further guidance.
+
+#### Reference code
+
+Newer languages wrap the interface, such as [Pact C++](https://github.com/pact-foundation/pact-cplusplus) and [Pact Go](https://github.com/pact-foundation/pact-go/blob/feat/v3-ffi-verifier/v3/internal/native/mockserver/mock_server.go) (beta).
 
 ## Generic Pact Provider Verification
 
+For `Providers` written in languages that don't have native Pact support, you can still verify that they satisfy their Pacts, using the generic [Pact Provider CLI Verification tool](https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier_cli).
+
 This setup simplifies Pact Provider verification process in any language.
-
-**Features**:
-
-* Verify Pacts published to a [Pact Broker](https://github.com/pact-foundation/pact_broker)
-* Verify local `*.json` Pacts for testing in a development environment
-* Pre-configured Docker image with Ruby installed and a sane, default `src/Rakefile` keeping things DRY
-* Works with Pact [provider states](https://github.com/pact-foundation/pact-ruby/wiki/Provider-states) should you need them
-
-The two solutions below use the [Docker](https://github.com/DiUS/pact-provider-verifier-docker) image and the [Pact Provider Verifier](https://github.com/pact-foundation/pact-provider-verifier) Gem. For advanced usage, you can use [Pact Provider Proxy](https://github.com/pact-foundation/pact-provider-proxy) Gem directly, however in most cases the Pact Provider Verifier should cover your needs.
 
 ### How it works
 
 _Steps_:
 
-1. Create an API and a corresponding Docker image for it
-2. Publish Pacts to the Pact broker \(or create local ones\)
+2. Publish consumer Pacts to the Pact broker \(or create local ones\)
+1. Create an API
 3. Start your API
-4. Run the Pact Provider Verifier
+4. Run the Pact Provider Verifier, configuring it to discover the pacts and verify the locally running provider
 5. Stop your API
 
 The verifier will then replay all of the Pact files against your running API, and will fail \(`exit 1`\) if they are not satisfied.
 
 There is no testing DSL available so you will need to be sensitive to process exit codes when running this in a CI/CD pipeline.
-
-If you are using Docker and Docker compose, steps 3-5 above are automatically taken care of for you.
-
-### Docker Example
-
-The example below uses Docker image from the [Pact Provider Verifier](https://github.com/DiUS/pact-provider-verifier-docker) project.
-
-_Steps_:
-
-1. Create an API and a corresponding Docker image for it
-2. Publish Pacts to the Pact broker \(or create local ones\)
-3. Create a `docker-compose.yml` file connecting your API to the Pact Verifier
-4. Set the following required environment variables:
-   * `pact_urls` - a comma delimited list of pact file urls
-   * `provider_base_url` - the base url of the pact provider \(i.e. your API\)
-5. Run `docker-compose build` and then `docker-compose up`
-
-**Sample docker-compose.yml file for a Node API exposed on port 4000:**
-
-```text
-api:
-  build: .
-  command: npm start
-  expose:
-  - "4000:4000"
-
-pactverifier:
-  image: dius/pact-provider-verifier-docker
-  links:
-  - api:api
-  volumes:
-  - ./pact/pacts:/tmp/pacts                 # If you have local Pacts
-  environment:
-  - pact_urls=http://pact-host:9292/pacts/provider/MyAPI/consumer/MyConsumer/latest
-  #- pact_urls=/tmp/pacts/foo-consumer.json # If you have local Pacts
-  - provider_base_url=http://api:4000
-```
-
-#### API with Provider States
-
-Execute pact provider verification against a provider which implements the following:
-
-* an http post endpoint which sets the active pact consumer and provider state
-
-  ```text
-    consumer=web&state=customer%20is%20logged%20in
-  ```
-
-The following environment variables required:
-
-* `pact_urls` - a comma delimited list of pact file URL
-* `provider_base_url` - the base URL of the pact `Provider`
-* `provider_states_active_url` - the full URL of the endpoint which sets the active pact `Consumer` and `Provider` state\`
-
-_Updated Sample docker-compose.yml file:_
-
-```text
-api:
-    build: .
-    command: npm start
-    expose:
-    - "4000"
-
-pactverifier:
-    image: dius/pact-provider-verifier-docker
-    links:
-    - api
-    environment:
-    - pact_urls=http://pact-host:9292/pacts/provider/MyProvider/consumer/myConsumer/latest
-    - provider_base_url=http://api:4000
-    - provider_states_active_url=http://api:4000/provider-states/active
-```
-
-### Ruby Example
-
-If you're not using Docker, you will need to:
-
-* Install a Ruby runtime
-* Fork/clone the [repository](https://github.com/DiUS/pact-provider-verifier-docker) or copy the scripts into your project
-* Run the following commands:
-
-```text
-bundle install
-bundle exec rake verify_pacts
-```
-
