@@ -2,6 +2,8 @@
 title: Configuration
 ---
 
+> NOTE: This page describes how to configure the *native Ruby Pact Broker* application. The Pact Broker Ruby application is distributed in 2 different Docker images, one based on [Puma](/pact_broker/docker_images/pactfoundation) (this is our default recommendation) and one based on [Passenger](pact_broker/docker_images/dius) (older, but still supported). Each of the Docker images is configurable using environment variables that map to the Ruby Pact Broker application configuration options. Please see the documentation for your Docker image for the names and formats of the environment variables.
+
 ## Configuration
 
 The Pact Broker configuration settings are applied in the `config.ru` file. See the Pact Broker [example](https://github.com/pact-foundation/pact_broker/tree/master/example) application if you are unfamiliar with Ruby applications.
