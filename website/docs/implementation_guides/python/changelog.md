@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-python/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact-python repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+### 1.3.5
+  * 5864e47 - Merge pull request #213 from pact-foundation/fix/revert_some_publish (Elliott Murray, Sun Mar 28 15:27:50 2021 +0100)
+  * 94e597a - fix(publish): fixing the fix. Pact Python api uses only publish_version and ensures it follows that (Elliott Murray, Sun Mar 28 15:20:04 2021 +0100)
 ### 1.3.4
   * c778c71 - Merge pull request #212 from pact-foundation/fix/verify_in_provider (Elliott Murray, Sat Mar 27 18:59:25 2021 +0000)
   * ea0b64a - fix: verifier should now publish (Elliott Murray, Sat Mar 27 16:21:25 2021 +0000)
