@@ -86,6 +86,7 @@ Report the pact verification status back to the consumer project in Github.
     }
   }
 }
+```
 
 ## GitHub - trigger build
 
