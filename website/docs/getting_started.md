@@ -8,18 +8,22 @@ Pact is a code-first tool for testing HTTP and message integrations using `contr
 
 Do you [set your house on fire to test your smoke alarm?](https://dius.com.au/2014/05/19/simplifying-micro-service-testing-with-pacts/) No, you test the contract it holds with your ears by using the testing button. Pact provides that testing button for your code, allowing you to safely confirm that your applications will work together without having to deploy the world first.
 
-To view an animated step-by-step explanation of how Pact works, check out this [How Pact works](https://pactflow.io/how-pact-works?utm_source=ossdocs&utm_campaign=getting_started) page.
+To view an animated step-by-step explanation of how Pact works, check out this [How Pact works](https://pactflow.io/how-pact-works?utm_source=ossdocs&utm_campaign=getting_started) (external↗️) page.
 
 <div align="center">
   <a href="https://pactflow.io/how-pact-works?utm_source=ossdocs&utm_campaign=getting_started">
-    <img src="/img/how-pact-works-preview.gif" alt="How Pact works preview"></img>
+    <img src="/img/how-pact-works/summary.png" alt="How Pact works preview"></img>
   </a>
 </div>
 
+## Watch a video
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/IetyhDr48RI" frameBorder="0" allow="autoplay; encrypted-media" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player"  allowFullScreen></iframe>
+
+Or, watch the [full series on contract testing](https://www.youtube.com/embed/videoseries?list=PLwy9Bnco-IpfZ72VQ7hce8GicVZs7nm0i).
 ## Ready to jump into the code already?
 
 Get started with our [5 minute guide](5-minute-getting-started-guide.md).
-
 
 ## What is contract testing?
 
@@ -41,7 +45,7 @@ In general, a contract is between a _consumer_ \(for example, a client that want
 
 Pact is a code-first [_consumer-driven_](http://martinfowler.com/articles/consumerDrivenContracts.html) contract testing tool, and is generally used by developers and testers who code. The contract is generated during the execution of the automated consumer tests. A major advantage of this pattern is that only parts of the communication that are actually used by the consumer\(s\) get tested. This in turn means that any provider behaviour not used by current consumers is free to change without breaking tests.
 
-Unlike a schema or specification \(eg. OAS\), which is a static artefact that describes all possible states of a resource, a Pact contract is enforced by executing a collection of test cases, each of which describes a single concrete request/response pair - Pact is, in effect, "contract by example".
+Unlike a schema or specification \(eg. OAS\), which is a static artefact that describes all possible states of a resource, a Pact contract is enforced by executing a collection of test cases, each of which describes a single concrete request/response pair - Pact is, in effect, "contract by example". Read more on the [difference between schema testing and contract testing](https://pactflow.io/blog/contract-testing-using-json-schemas-and-open-api-part-1/).
 
 ## Provider contract testing
 

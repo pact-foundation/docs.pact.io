@@ -4,8 +4,20 @@ title: Hands on learning
 
 ## Video Training
 
+**Introduction to Pact (via Pactflow)**
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/videoseries?list=PLwy9Bnco-IpfZ72VQ7hce8GicVZs7nm0i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Watch the [introduction to contract testing with Pact](https://www.youtube.com/embed/videoseries?list=PLwy9Bnco-IpfZ72VQ7hce8GicVZs7nm0i) series on Youtube.
+
+### Courses
+#### Test Automation University
+
 A great starting point is this [Contract Testing With Pact](https://testautomationu.applitools.com/pact-contract-tests/index.html) course published on Test Automation University
-A step by step guide using pact-js & PactNet [Introduction to Contract Testing](https://www.udemy.com/course/introduction-to-contract-testing-with-pact/learn) course published on Udemy
+
+#### Udemy
+
+A step by step guide using Pact JS & Pact .NET [Introduction to Contract Testing](https://www.udemy.com/course/introduction-to-contract-testing-with-pact/learn) course published on Udemy
 
 ## Pact workshops - from 0 to Pact in ~2 hours
 
