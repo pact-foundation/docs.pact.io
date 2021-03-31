@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.38.2"></a>
+### v1.38.2 (2021-04-01)
+
+#### Features
+
+* allow SSL verification to be disabled	 ([eb2125b](https://github.com/pact-foundation/pact_broker-client/commit/eb2125b))
+* automatically retry at the http client level for 50x responses	 ([a7343f8](https://github.com/pact-foundation/pact_broker-client/commit/a7343f8))
+
 <a name="v1.38.1"></a>
 ### v1.38.1 (2021-03-22)
 
