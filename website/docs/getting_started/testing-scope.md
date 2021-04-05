@@ -2,6 +2,12 @@
 title: Testing scope
 ---
 
+## Watch a video
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/3T8J8Pwu3I4" frameBorder="0" allow="autoplay; encrypted-media" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player"  allowFullScreen></iframe>
+
+Or, watch the [full series on contract testing](https://www.youtube.com/embed/videoseries?list=PLwy9Bnco-IpfZ72VQ7hce8GicVZs7nm0i).
+
 ## Scope of a Consumer Pact Test
 
 Ideally, the Pact tests should be "unit tests" for your client class, and they should just focus on ensuring that the request creation and response handling are correct. If you use pact for your UI tests, you'll end up with an explosion of redundant interactions that will make the verification process tedious. Remember that pact is for testing the contract used for communication, and not for testing particular UI behaviour or business logic.
@@ -21,7 +27,7 @@ On the Provider side, Pact needs to replay all of the interactions \(usually HTT
 * Choosing a real vs mocked out database
 * Choosing to hit mock HTTP servers or mocks for external services
 
-Generally speaking, it's easiest to test the entire service and mock out external services such as downstream APIs \(which would need their own set of Pact tests\). This gives you some of the benefits of an integration test without the high costs of maintenance. 
+Generally speaking, it's easiest to test the entire service and mock out external services such as downstream APIs \(which would need their own set of Pact tests\). This gives you some of the benefits of an integration test without the high costs of maintenance.
 
 If you have a database that you can easily create a local instance of and set up/tear down data on, then it's probably easiest to use the real database (even better if you can use something like SQLite). If it is a legacy database that you can't create a local instance of then you might want to stub out your data persistence layer (or which ever layer has the best cost/benefit ratio for your situation).
 
