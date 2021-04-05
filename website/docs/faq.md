@@ -131,6 +131,14 @@ The value of contract tests is that they allow you to shift effort from high mai
 
 We often see end-to-end integration tests used as a catch all across integration, functional and acceptance testing (in the pyramid below, this would be represented as a bigger portion of the "E2E" part of the triangle). Specifically, we see them used as a proxy for [_provider functional tests_](/consumer/contract_tests_not_functional_tests). Separating the integration from the functional aspects often relieves end-to-end tests of a lot of their duties, and in some cases they can be replaced altogether. Read on to see how.
 
+**Watch a video**
+
+The following video goes into a little more depth about how to replace your end-to-end tests using a combination contract testing and other strategies:
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/3T8J8Pwu3I4" frameBorder="0" allow="autoplay; encrypted-media" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player"  allowFullScreen></iframe>
+
+Or, watch the [full series on contract testing](https://www.youtube.com/embed/videoseries?list=PLwy9Bnco-IpfZ72VQ7hce8GicVZs7nm0i).
+
 #### Before contract tests
 
 ![Before contract tests](https://image.slidesharecdn.com/voxxeddays2019-190520032930/95/microservices-test-smarter-not-harder-voxxed-days-2019-27-638.jpg?cb=1558323091)
