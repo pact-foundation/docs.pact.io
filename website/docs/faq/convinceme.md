@@ -30,9 +30,9 @@ Wouldn't it be a better use of your time working on fast, reliable tests that al
 
 When compared to E2E testing approaches, contract testing enables you to create consistent curves in your pipeline speed and complexity that look more like the below chart, whilst maintaining many of the safety guarantees of E2E test approaches:
 
-![From https://blog.pactflow.io/why-contract-testing/](/img/time-effort-contract-testing-vs-e2e.svg)
+![From https://pactflow.io/blog/what-is-contract-testing/?utm_source=ossdocs&utm_campaign=convince_me_what_is](/img/time-effort-contract-testing-vs-e2e.svg)
 
-If you want to understand more on the "why", you can read the full article [here](https://blog.pactflow.io/why-contract-testing/?utm_source=ossdocs&utm_campaign=convince_me_what_is).
+If you want to understand more on the "why", you can read the full article [here](https://pactflow.io/blog/what-is-contract-testing/?utm_source=ossdocs&utm_campaign=convince_me_what_is).
 
 ## How to get started contract testing?
 
@@ -42,12 +42,18 @@ Once you have a grasp of what contract testing is and how it might solve some of
 
 Read the following to un-convince yourself:
 
+* [https://pactflow.io/blog/proving-e2e-tests-are-a-scam/](https://pactflow.io/blog/proving-e2e-tests-are-a-scam/?utm_source=ossdocs&utm_campaign=convince_me)
 * [http://googletesting.blogspot.com.au/2015/04/just-say-no-to-more-end-to-end-tests.html](http://googletesting.blogspot.com.au/2015/04/just-say-no-to-more-end-to-end-tests.html)
 * [http://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam](http://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam)
 * and if you're really keen, [Defect Analysis and Prevention for Software Process Quality Improvement](http://www.ijcaonline.org/volume8/number7/pxc3871759.pdf)
 
 Research tells us that integration tests are more costly in terms of time, effort and maintenance without giving us any more guarantees.
 
+**Watch a video**
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/U05q0zJsKsU" frameBorder="0" allow="autoplay; encrypted-media" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player"  allowFullScreen></iframe>
+
+Or, watch the [full series on contract testing](https://www.youtube.com/embed/videoseries?list=PLwy9Bnco-IpfZ72VQ7hce8GicVZs7nm0i).
 ## Common Excuses
 
 ### ...but we're all on the same team, we don't need to use contracts

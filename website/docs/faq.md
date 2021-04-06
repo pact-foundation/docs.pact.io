@@ -131,7 +131,7 @@ The value of contract tests is that they allow you to shift effort from high mai
 
 We often see end-to-end integration tests used as a catch all across integration, functional and acceptance testing (in the pyramid below, this would be represented as a bigger portion of the "E2E" part of the triangle). Specifically, we see them used as a proxy for [_provider functional tests_](/consumer/contract_tests_not_functional_tests). Separating the integration from the functional aspects often relieves end-to-end tests of a lot of their duties, and in some cases they can be replaced altogether. Read on to see how.
 
-**Watch a video**
+**Watch a video: replacing end-to-end integration tests**
 
 The following video goes into a little more depth about how to replace your end-to-end tests using a combination contract testing and other strategies:
 
