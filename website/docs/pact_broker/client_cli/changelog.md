@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.38.3"></a>
+### v1.38.3 (2021-04-08)
+
+#### Bug Fixes
+
+* URL encode parameters for HAL templated URLs	 ([764a0fa](https://github.com/pact-foundation/pact_broker-client/commit/764a0fa))
+
 <a name="v1.38.2"></a>
 ### v1.38.2 (2021-04-01)
 
