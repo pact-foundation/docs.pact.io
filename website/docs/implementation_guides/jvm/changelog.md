@@ -64,6 +64,13 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 * 73c9053dc - fix: Don't split header values when loading from a pact file #1288 (Ronald Holshausen, Sun Jan 31 13:23:48 2021 +1100)
 * 071f5ee11 - fix(Groovy DSL): allow provider states to be specified before and after the request #1287 (Ronald Holshausen, Sun Jan 31 12:15:50 2021 +1100)
 
+## 4.1.19 - Bugfix Release
+
+* 3622c25ef - feat(Junit5+Spring): support injecting MockHttpServletRequestBuilder when using MockMvc tests #1334 (Ronald Holshausen, Sun Mar 28 14:42:19 2021 +1100)
+* bed5ba584 - feat: support @CookieValue with MockMvc tests #1333 (Ronald Holshausen, Sun Mar 28 14:07:26 2021 +1100)
+* d698515d0 - fix(Gradle): do not fail when the pacts from the broker are not available and a non-pact verify task is run #1331 (Ronald Holshausen, Sun Mar 28 12:51:53 2021 +1100)
+* 8239e4ca3 - fix: use the Pact URL to disambiguate Pacts when accumilating results #1266 (Ronald Holshausen, Sat Mar 27 14:51:36 2021 +1100)
+
 ## 4.1.18 - Bugfix Release
 
 * 273b9164d - feat: add a system property to enable redirect handling #1323 (Ronald Holshausen, Sat Mar 13 15:37:55 2021 +1100)
