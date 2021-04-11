@@ -4,6 +4,19 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.2.4 - V4 features + Bugfixes
+
+* a73015a6e - feat(V4): add the JUnit 5 test description to comments (Ronald Holshausen, Sun Apr 11 15:21:34 2021 +1000)
+* ea66d68d1 - feat(V4): display comments when verifying V4 pact files (Ronald Holshausen, Sun Apr 11 14:42:09 2021 +1000)
+* 5a91dd7ee - fix: merge from v4.1.x (Ronald Holshausen, Sun Apr 11 11:22:57 2021 +1000)
+* 30083b062 - fix(regression): IO Exceptions are now wrapped #1337 (Ronald Holshausen, Sun Apr 11 11:10:03 2021 +1000)
+* 6b7bc101b - feat(V4): enable comment support with JUnit 5 (Ronald Holshausen, Sun Apr 11 10:38:15 2021 +1000)
+* 1374973ca - feat(V4): support user provided comments with interactions in Junit 4 consumer tests (Ronald Holshausen, Sat Apr 10 18:14:15 2021 +1000)
+* 65b5b9ee5 - feat(V4): support user provided comments with interactions (Ronald Holshausen, Sat Apr 10 15:40:27 2021 +1000)
+* 2e6ae47b1 - fix: JUnit 5 Spring extension classes need to be open #1338 (Ronald Holshausen, Sat Apr 10 12:43:09 2021 +1000)
+* 5614d0387 - fix: compare decimal values using compareTo instead of equals #1335 (Ronald Holshausen, Fri Apr 9 16:05:30 2021 +1000)
+* 799a8e8f0 - update changelog for release 4.1.19 (Ronald Holshausen, Sun Mar 28 15:27:29 2021 +1100)
+
 ## 4.2.3 - Bugfix Release
 
 * 3622c25ef - feat(Junit5+Spring): support injecting MockHttpServletRequestBuilder when using MockMvc tests #1334 (Ronald Holshausen, Sun Mar 28 14:42:19 2021 +1100)
