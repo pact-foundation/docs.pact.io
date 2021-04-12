@@ -25,6 +25,8 @@ The provider tags are used to determine the pending status because it is common 
 
 While the provider build may pass, the verification results are still reported (if results publishing is enabled) to the Pact Broker as "failed", as the consumer should not be able to deploy the code that generated this contract.
 
+[Work in progress pacts](/pact_broker/advanced_topics/wip_pacts) always have the pending flag set to true.
+
 ## To start using the Pending pacts feature
 
 * You need to either be using [pactflow.io](https://pactflow.io?utm_source=ossdocs&utm_campaign=pending_pacts), or have version 2.60.0+ of the OSS Pact Broker.
