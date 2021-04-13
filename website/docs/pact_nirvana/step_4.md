@@ -54,7 +54,7 @@ Before setting up Pact in your own environment, it can help to have an idea of w
 
 ### D. Configure pact to be verified when provider changes
 
-1. Configure your provider build to fetch the pact(s) from the broker and publish the verification results as part of its main build \(consult the documentation for your chosen language\). This would typically happen after the unit tests, and before deploying to a test environment. You can find the recommended configuration [here](provider/recommended_configuration#verification-triggered-by-provider-change).
+1. Configure your provider build to fetch the pact(s) from the broker and publish the verification results as part of its main build \(consult the documentation for your chosen language\). This would typically happen after the unit tests, and before deploying to a test environment. You can find the recommended configuration [here](/provider/recommended_configuration#verification-triggered-by-provider-change).
 
 ### E. Configure pact to be verified when contract changes
 
