@@ -2,7 +2,7 @@
 title: Introduction
 ---
 
-The Pact Broker is an application for sharing for consumer driven contracts and verification results. It is optimised for use with "pacts" \(contracts created by the [Pact](http://docs.pact.io) framework\), but can be used for any type of contract that can be serialized to JSON.
+The Pact Broker is an application for sharing consumer driven contracts and verification results. It is optimised for use with "pacts" \(contracts created by the [Pact](http://docs.pact.io) framework\), but can be used for any type of contract that can be serialized to JSON.
 
 
 > **Quick Start**
