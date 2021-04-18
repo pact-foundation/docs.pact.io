@@ -42,3 +42,13 @@ eg.
 ```
 pact-broker create-version-tag --pacticipant ${APPLICATION_NAME} --version ${GIT_SHA} --tag ${GIT_BRANCH} --auto-create-version
 ```
+
+If you want to pre-create the "pact changed" webhook for providers so that the first time a consumer publishes a pact, the webhook is immediately triggered, you can use the following commands in your pipeline.
+
+```
+# ensure the pacticipant exists before creating a webhook for it
+pact-broker create-or-update-pacticipant --name PACTICIPANT_NAME
+pact-broker create-or-update-webhook --uuid UUID ...
+```
+
+See docs for create-or-update-webhook [here](https://docs.pact.io/pact_broker/client_cli/readme/#create-or-update-webhook).
