@@ -51,4 +51,4 @@ pact-broker create-or-update-pacticipant --name PACTICIPANT_NAME
 pact-broker create-or-update-webhook --uuid UUID ...
 ```
 
-See docs for create-or-update-webhook [here](https://docs.pact.io/pact_broker/client_cli/readme/#create-or-update-webhook).
+See docs for `create-or-update-webhook` [here](https://docs.pact.io/pact_broker/client_cli/readme/#create-or-update-webhook).
