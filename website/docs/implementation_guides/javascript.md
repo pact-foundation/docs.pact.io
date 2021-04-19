@@ -26,7 +26,3 @@ Additionally, these complete examples are useful guides:
 * [Pact with Karma + Mocha](https://github.com/pact-foundation/pact-js/tree/master/examples/karma/mocha)
 * [Angular 4 + Mocha](https://github.com/stones/pact-angular-4-mocha)
 * NestJS + Jest: [Provider](https://github.com/pact-foundation/pact-js/tree/master/examples/nestjs-provider) | [Consumer](https://github.com/pact-foundation/pact-js/tree/master/examples/nestjs-consumer)
-
-## Verifications
-
-The Pact Javascript API provides a native Javascript interface for performing verifications, however, you can also use the
