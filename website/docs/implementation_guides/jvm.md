@@ -10,5 +10,5 @@ For a Scala specific implementation, there is [Scala-Pact](scala) from the folks
 
 ## Getting Started Guide
 
-This [workshop](https://github.com/DiUS/pact-workshop-jvm) walks you through an example problem from start to finish, exploring most concepts that Pact supports. It takes approximately 2 hours to complete.
+This [workshop](https://github.com/pact-foundation/pact-workshop-jvm-spring) walks you through an example problem from start to finish, exploring most concepts that Pact supports. It takes approximately 2 hours to complete.
 

@@ -13,8 +13,8 @@ From the [Ruby Pact website](https://github.com/pact-foundation/pact-ruby):
 
 > Define a pact between service consumers and providers, enabling "consumer driven contract" testing.
 >
->Pact provides an RSpec DSL for service consumers to define the HTTP requests they will make to a service provider and the HTTP responses they expect back. 
->These expectations are used in the consumers specs to provide a mock service provider. The interactions are recorded, and played back in the service provider 
+>Pact provides an RSpec DSL for service consumers to define the HTTP requests they will make to a service provider and the HTTP responses they expect back.
+>These expectations are used in the consumers specs to provide a mock service provider. The interactions are recorded, and played back in the service provider
 >specs to ensure the service provider actually does provide the response the consumer expects.
 >
 >This allows testing of both sides of an integration point using fast unit tests.
@@ -38,7 +38,7 @@ how to get going.
 
 ## Tutorial (60 minutes)
 
-Learn everything in Pact in 60 minutes: https://github.com/DiUS/pact-workshop-jvm.
+Learn everything in Pact in 60 minutes: https://github.com/pact-foundation/pact-workshop-jvm-spring.
 
 The workshop takes you through all of the key concepts of consumer and provider testing using a Spring boot application.
 
@@ -147,7 +147,7 @@ You want to look at: [pact maven plugin](/implementation_guides/jvm/provider/mav
 
 #### verify pacts with JUnit tests
 
-You want to look at: [junit provider support](/implementation_guides/jvm/provider/junit) for JUnit 4 tests and 
+You want to look at: [junit provider support](/implementation_guides/jvm/provider/junit) for JUnit 4 tests and
  [junit5](/implementation_guides/jvm/provider/junit5) for JUnit 5 tests
 
 #### verify pacts with Leiningen
