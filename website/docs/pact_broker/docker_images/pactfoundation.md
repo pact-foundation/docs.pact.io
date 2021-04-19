@@ -12,7 +12,7 @@ This repository contains a Dockerized version of the [Pact Broker][pact-broker].
 
 ## In a hurry?
 
-If you want to try out a Pact Broker that can be accessed by all your teams, without having to fill in requisition forms and wait for 3 months, you can get a free trial at <a href="https://pactflow.io/?utm_source=github&utm_campaign=pact_foundation_pact_broker_docker">pactflow.io</a>. Built by a group of core Pact maintainers, Pactflow is a fork of the OSS Pact Broker with extra goodies like an improved UI, field level verification results and federated login. It's also fully supported, and that means when something goes wrong, *someone else* gets woken up in the middle of the afternoon to fix it...
+If you want to try out a Pact Broker that can be accessed by all your teams, without having to fill in requisition forms and wait for 3 months, you can get a free trial at <a href="https://pactflow.io/?utm_source=github&utm_campaign=pact_foundation_pact_broker_docker">pactflow.io</a>. Built by a group of core Pact maintainers, Pactflow is a fork of the OSS Pact Broker with extra goodies like an improved UI, user and team management, secrets, field level verification results and federated login. It's also fully supported, and that means when something goes wrong, *someone else* gets woken up in the middle of the afternoon to fix it...
 
 ## Migrating from the dius/pact-broker image
 
@@ -135,7 +135,9 @@ Documentation for the Pact Broker application itself can be found in the Pact Br
 
 ## Automatic data clean up
 
-Performance can degrade when too much data accumulates in the Pact Broker. To read about the automatic data clean up feature, please see the [Maintenance](https://docs.pact.io/pact_broker/administration/maintenance) page of the Pact Broker documentation.
+Performance can degrade when too much data accumulates in the Pact Broker. To read about the automatic data clean up feature, please see the [Maintenance](https://docs.pact.io/pact_broker/administration/maintenance) page of the Pact Broker documentation. 
+
+You will need version `2.79.1.1` or later of the pactfoundation/pact-broker Docker image for this feature.
 
 ### Running the clean task on a cron schedule within the application container
 
