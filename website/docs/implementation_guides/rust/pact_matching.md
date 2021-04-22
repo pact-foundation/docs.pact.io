@@ -15,19 +15,19 @@ To use it, add it to your dependencies in your cargo manifest:
 
 ```toml
 [dependencies]
-pact_matching = "0.6.3"
+pact_matching = "0.8.14"
 ```
 
 This crate provides two functions: `match_request` and `match_response`. These functions take an expected and actual request or response
-model from the `models` module, and return a vector of mismatches.
+model from the `pact_models` crate, and return a vector of mismatches.
 
-To compare any incoming request, it first needs to be converted to a `models::Request` and then can be compared. Same for
+To compare any incoming request, it first needs to be converted to a `pact_models::Request` and then can be compared. Same for
 any response.
 
 ## Reading and writing Pact files
 
-The `Pact` struct in the `models` module has methods to read and write pact JSON files. It supports all the specification
-versions up to V3, but will converted a V1, V1.1 and V2 spec file to a V3 format.
+The `Pact` struct in the `pact_models` crate has methods to read and write pact JSON files. It supports all the specification
+versions up to V3, but will be converted a V1, V1.1 and V2 spec file to a V3 format.
 
 ## Matching request and response parts
 
