@@ -6,6 +6,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 
 ## 0.10.6 - Bugfix Release
 
+* 63fcf49 - feat: enable consumer code to use the new Value matcher (Matt Fellows, Wed Apr 7 14:01:00 +1000)
 
 ## 0.10.5 - Bugfix Release
 
