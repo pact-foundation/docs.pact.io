@@ -8,6 +8,10 @@ Webhooks allow you to trigger an HTTP request when a pact is changed, a pact is 
 
 Webhooks can be used in conjunction with the [can-i-deploy](/pact_broker/can_i_deploy) tool \(a CLI that allows you to easily check the verification status of your pacts\), to allow you to fully automate the CI/CD process for all the applications that use the Pact Broker, ensuring both sides of the contract are fulfilled before deploying.
 
+## New to Pact?
+
+If you're reading this page and you're not sure what you're doing, what you probably need to do is to create a webhook that triggers a provider verification build when a pact is published with new content. How this works is described below in the [When the consumer makes a change](#when-the-consumer-makes-a-change) section. If you are using Pactflow, you can create a webhook through the UI. If you are using the OSS Pact Broker, using the [create-webhook](https://docs.pact.io/pact_broker/client_cli/readme#create-webhook) command from the Pact Broker CLI is the easiest approach. You'll find a library of commonly used webhook templates for many of the popular CI systems [here](/pact_broker/webhooks/template_library).
+
 ## Events
 
 ### The 'contract content changed' event
@@ -57,11 +61,11 @@ If your consumer and provider builds are both within the same private network, o
 
 ### Provider CI
 
-* When the provider makes a change
+#### When the provider makes a change
     * `Provider test job` - your normal provider pipeline. Runs unit tests, runs pact verification tests, publishes verification results. Typically, the pacts with `master`/`dev`/`test` and the `prod` tags would be verified during this job.
     * `Provider pact check job` - this is the point where you decide if you can deploy the application. It checks the status of the pacts using `can-i-deploy`. If `can-i-deploy` is successful, this job triggers `Provider deploy`. If it is unsuccessful, it should fail the job to provide visibility of the status of your pacts in the build pipeline. Having this as a separate job rather than bundling it in with the test or deploy jobs means that the reason for a "failure" is obvious at a glance.
     * `Provider deploy job` - deploys provider
-* When the consumer makes a change
+#### When the consumer makes a change
     * `Changed pact verification job` - triggered by the 'contract\_content\_changed' webhook, this job verifies only the changed pact, and publishes the verification results back to the broker. This pact verification job configuration will be different to the one configured as part of the main provider pipeline, and should accept the URL of the changed pact as a configurable parameter. To do this, you must use webhook [template parameters](https://github.com/pact-foundation/pact_broker/blob/master/lib/pact_broker/doc/views/webhooks.markdown#dynamic-variable-substitution) to pass the URL of the changed pact through to the CI, which can then pass it in to the verification task. See the pact verification configuration documentation for your language.
 
 ### Pact Broker
