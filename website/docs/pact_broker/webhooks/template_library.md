@@ -8,6 +8,23 @@ Please feel free add any that you think might be useful to others.
 
 Report the pact verification status back to the consumer project in Github.
 
+### CLI
+
+```
+pact-broker create-webhook \
+  'https://api.github.com/repos/<organization>/<project>/statuses/${pactbroker.consumerVersionNumber}' \
+  --request POST \
+  -H "Content-Type: application/json" \
+  -d '{ "state": "${pactbroker.githubVerificationStatus}", "description": "Pact Verification Tests ${pactbroker.providerVersionTags}", "context": "${pactbroker.providerName}", "target_url": "${pactbroker.verificationResultUrl}" }' \
+  --user username:password \
+  --description "Publish pact verification status to Github" \
+  --contract-published \
+  --provider-verification-published \
+  --broker-base-url <your-broker>
+```
+
+### JSON
+
 ```javascript
 {
   "consumer": {
