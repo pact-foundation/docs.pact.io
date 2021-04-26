@@ -62,11 +62,18 @@ If your consumer and provider builds are both within the same private network, o
 ### Provider CI
 
 #### When the provider makes a change
-    * `Provider test job` - your normal provider pipeline. Runs unit tests, runs pact verification tests, publishes verification results. Typically, the pacts with `master`/`dev`/`test` and the `prod` tags would be verified during this job.
-    * `Provider pact check job` - this is the point where you decide if you can deploy the application. It checks the status of the pacts using `can-i-deploy`. If `can-i-deploy` is successful, this job triggers `Provider deploy`. If it is unsuccessful, it should fail the job to provide visibility of the status of your pacts in the build pipeline. Having this as a separate job rather than bundling it in with the test or deploy jobs means that the reason for a "failure" is obvious at a glance.
-    * `Provider deploy job` - deploys provider
+
+* `Provider test job` - your normal provider pipeline. Runs unit tests, runs pact verification tests, publishes verification results. Typically, the pacts with `master`/`dev`/`test` and the `prod` tags would be verified during this job.
+* `Provider pact check job` - this is the point where you decide if you can deploy the application. It checks the status of the pacts using `can-i-deploy`. If `can-i-deploy` is successful, this job triggers `Provider deploy`. If it is unsuccessful, it should fail the job to provide visibility of the status of your pacts in the build pipeline. Having this as a separate job rather than bundling it in with the test or deploy jobs means that the reason for a "failure" is obvious at a glance.
+* `Provider deploy job` - deploys provider
+
+You can see an example project with a Github Workflow set up as described [here](https://github.com/pactflow/example-provider/blob/master/.github/workflows/build.yml).
+
 #### When the consumer makes a change
-    * `Changed pact verification job` - triggered by the 'contract\_content\_changed' webhook, this job verifies only the changed pact, and publishes the verification results back to the broker. This pact verification job configuration will be different to the one configured as part of the main provider pipeline, and should accept the URL of the changed pact as a configurable parameter. To do this, you must use webhook [template parameters](https://github.com/pact-foundation/pact_broker/blob/master/lib/pact_broker/doc/views/webhooks.markdown#dynamic-variable-substitution) to pass the URL of the changed pact through to the CI, which can then pass it in to the verification task. See the pact verification configuration documentation for your language.
+
+* `Changed pact verification job` - triggered by the 'contract\_content\_changed' webhook, this job verifies only the changed pact, and publishes the verification results back to the broker. This pact verification job configuration will be different to the one configured as part of the main provider pipeline, and should accept the URL of the changed pact as a configurable parameter. To do this, you must use webhook [template parameters](/pact_broker/advanced_topics/api_docs/webhooks#dynamic-variable-substitution) to pass the URL of the changed pact through to the CI, which can then pass it in to the verification task. See the pact verification configuration documentation for your language.
+
+You can see an example project with a "changed pact verification" Github Workflow set up as described [here](https://github.com/pactflow/example-provider/blob/master/.github/workflows/verify_changed_pact.yml).
 
 ### Pact Broker
 
@@ -77,6 +84,7 @@ If your consumer and provider builds are both within the same private network, o
 
 * [Debugging webhooks](/pact_broker/webhooks/debugging_webhooks)
 * [Webhook API documentation](/pact_broker/advanced_topics/api_docs/webhooks) - note that there is not yet a UI for creating webhooks. If you're interested in creating one, contact us on the Pact Broker [slack](https://slack.pact.io) channel.
+* [Webhook template parameters](/pact_broker/advanced_topics/api_docs/webhooks#dynamic-variable-substitution)
 * [can-i-deploy documentation](https://github.com/pact-foundation/pact_broker-client#can-i-deploy) - Documentation for the Pact Broker `can-i-deploy` CLI, which allows you to retrieve the verification results and determine whether your application is safe to deploy.
 * [Webhook template library](/pact_broker/webhooks/template_library) - a library of useful webhook templates
 
