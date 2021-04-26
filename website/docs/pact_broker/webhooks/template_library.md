@@ -13,7 +13,7 @@ Report the pact verification status back to the consumer project in Github.
 ```
 pact-broker create-webhook \
   'https://api.github.com/repos/<organization>/<project>/statuses/${pactbroker.consumerVersionNumber}' \
-  --request POST \
+  -X POST \
   -H "Content-Type: application/json" \
   -d '{ "state": "${pactbroker.githubVerificationStatus}", "description": "Pact Verification Tests ${pactbroker.providerVersionTags}", "context": "${pactbroker.providerName}", "target_url": "${pactbroker.verificationResultUrl}" }' \
   --user username:password \
