@@ -82,3 +82,13 @@
   from = "/versioning"
   to = "/getting_started/versioning_in_the_pact_broker"
   status = 301
+
+[[redirects]]
+  from = "/webhooks"
+  to = "/pact_broker/webhooks/"
+  status = 301
+
+[[redirects]]
+  from = "/webhook-events"
+  to = "/pact_broker/webhooks/#events"
+  status = 301
