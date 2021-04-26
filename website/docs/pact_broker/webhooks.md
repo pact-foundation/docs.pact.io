@@ -75,6 +75,8 @@ You can see an example project with a Github Workflow set up as described [here]
 
 You can see an example project with a "changed pact verification" Github Workflow set up as described [here](https://github.com/pactflow/example-provider/blob/master/.github/workflows/verify_changed_pact.yml).
 
+You can see an example `create-webhook` command for triggering the "changed pact verification" [here](https://github.com/pactflow/example-provider/blob/master/Makefile#L83)
+
 ### Pact Broker
 
 * `contract_content_changed` webhook - triggers `Pact verification job`. Note that this webhook will only be triggered if the content of the pact has changed. If it hasn't changed, then the new publication of the pact will inherit the verification from the previous publication and be "pre-verified" \(or "pre-failed"\).
