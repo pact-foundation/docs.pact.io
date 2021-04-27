@@ -18,11 +18,13 @@
   to = "/pact_broker/advanced_topics/consumer_version_selectors"
   status = 301
 
+# Used in pact verification output
 [[redirects]]
   from = "/pending"
   to = "/pact_broker/advanced_topics/pending_pacts"
   status = 301
 
+# Used in pact verification output
 [[redirects]]
   from = "/wip"
   to = "/pact_broker/advanced_topics/wip_pacts"
@@ -78,11 +80,13 @@
   to = "/pact_nirvana"
   status = 302
 
+# Used in publish contracts response
 [[redirects]]
   from = "/versioning"
   to = "/getting_started/versioning_in_the_pact_broker"
   status = 301
 
+# Used in publish contracts response
 [[redirects]]
   from = "/webhooks"
   to = "/pact_broker/webhooks/"
@@ -93,6 +97,7 @@
   to = "/pact_broker/webhooks/#events"
   status = 301
 
+# Used in publish contracts response
 [[redirects]]
   from = "/provider_verification"
   to = "/getting_started/provider_verification"
