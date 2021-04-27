@@ -12,7 +12,7 @@ Need to know what Pact provider verification is? Check out the provider verifica
 
 Already know what provider verification is, but need help coding it up? Here are the links to the relevant provider documentation for our most popular languages.
 
-* [Pact JVM](/implementation_guides/jvm/provider_menu) (select your JVM testing tool from the menu)
+* [Pact JVM](/implementation_guides/jvm/provider_menu) (select your JVM testing library from the menu)
 * [Pact JS](/implementation_guides/javascript/readme#provider-api-testing)
 * [Pact Net](/implementation_guides/net/readme#service-provider)
 * [Pact Go](/implementation_guides/go/readme#provider-api-testing)
@@ -25,4 +25,4 @@ Can't see your language listed above? Go to the [Pact Docs](/implementation_guid
 
 ## What do I do next?
 
-When you've got your provider verification tests working and publishing results back to the Pact Broker, read about how to integrate it into your build pipeline [here](/pact_nirvana/step_4).
+When you've got your provider verification tests working and publishing results back to the Pact Broker, read about how to integrate them into your build pipeline [here](/pact_nirvana/step_4).
