@@ -18,7 +18,6 @@
   to = "/pact_broker/advanced_topics/consumer_version_selectors"
   status = 301
 
-# Used in pact verification output
 [[redirects]]
   from = "/pending"
   to = "/pact_broker/advanced_topics/pending_pacts"
@@ -80,13 +79,11 @@
   to = "/pact_nirvana"
   status = 302
 
-# Used in publish contracts response
 [[redirects]]
   from = "/versioning"
   to = "/getting_started/versioning_in_the_pact_broker"
   status = 301
 
-# Used in publish contracts response
 [[redirects]]
   from = "/webhooks"
   to = "/pact_broker/webhooks/"
@@ -97,13 +94,40 @@
   to = "/pact_broker/webhooks/#events"
   status = 301
 
-# Used in publish contracts response
-[[redirects]]
-  from = "/provider_verification"
-  to = "/getting_started/provider_verification"
-  status = 301
-
 [[redirects]]
   from = "/implementation_guides/jvm/provider_menu"
   to = "/implementation_guides/jvm/provider/junit5spring"
+  status = 301
+
+# Links below are used in the output of Pact APIs that get shown in the terminal
+
+# Used in publish contracts response
+[[redirects]]
+  from = "/go/provider_verification"
+  to = "/getting_started/provider_verification?utm_source=pact&utm_medium=client_library"
+  status = 301
+  # Used in publish contracts response
+
+# Used in publish contracts response
+[[redirects]]
+  from = "/go/versioning"
+  to = "/getting_started/versioning_in_the_pact_broker?utm_source=pact&utm_medium=client_library"
+  status = 301
+
+# Used in publish contracts response
+[[redirects]]
+  from = "/go/webhooks"
+  to = "/pact_broker/webhooks/?utm_source=pact&utm_medium=client_library"
+  status = 301
+
+# Used in pact verification output
+[[redirects]]
+  from = "/go/pending"
+  to = "/pact_broker/advanced_topics/pending_pacts?utm_source=pact&utm_medium=client_library"
+  status = 301
+
+# Used in pact verification output
+[[redirects]]
+  from = "/go/wip"
+  to = "/pact_broker/advanced_topics/wip_pacts?utm_source=pact&utm_medium=client_library"
   status = 301
