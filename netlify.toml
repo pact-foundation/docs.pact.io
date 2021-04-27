@@ -89,6 +89,16 @@
   status = 301
 
 [[redirects]]
-  from = "/webhook-events"
+  from = "/webhook_events"
   to = "/pact_broker/webhooks/#events"
+  status = 301
+
+[[redirects]]
+  from = "/provider_verification"
+  to = "/getting_started/provider_verification"
+  status = 301
+
+[[redirects]]
+  from = "/implementation_guides/jvm/provider_menu"
+  to = "/implementation_guides/jvm/provider/junit5spring"
   status = 301
