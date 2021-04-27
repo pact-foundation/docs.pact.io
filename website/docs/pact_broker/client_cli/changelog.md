@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.39.0"></a>
+### v1.39.0 (2021-04-27)
+
+#### Features
+
+* publish pacts using the "all in one" endpoint (#86)	 ([3a1ea22](https://github.com/pact-foundation/pact_broker-client/commit/3a1ea22))
+* provide a more helpful error message when the specified pact file does not exist	 ([29a7962](https://github.com/pact-foundation/pact_broker-client/commit/29a7962))
+
 <a name="v1.38.3"></a>
 ### v1.38.3 (2021-04-08)
 
