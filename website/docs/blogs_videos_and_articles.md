@@ -8,6 +8,10 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 ## 2021
 
+**Articles**:
+
+* [How to establish quality gates in a Microservices architecture](https://www.cigniti.com/blog/microservices-testing-quality-gates-model/)
+* [Microservice architecture testing strategies](https://www.cigniti.com/blog/microservices-architecture-testing-strategies/)
 * [Reduce the Cost of Migrating to a Microservice Architecture. A kreuzwerker / Pactflow webinar with Q&A](https://vimeo.com/526231279?utm_source=pact-oss-docs&amp;utm_campaign=m2m)
 * [Deploy with Speed and Confidence Using Contract Testing and Pact – TestJS Summit (Matt Fellows)](https://www.youtube.com/watch?v=W20AmP0XgkU?utm_source=pact-oss-docs&amp;utm_campaign=m2m)
 
