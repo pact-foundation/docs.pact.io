@@ -53,6 +53,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 * [n26 - Bank](https://confengine.com/inedocon-2019/proposal/9293/confidently-releasing-microservices-with-consumer-driven-contracts-testing)
 
 **Articles**:
+* [Testing your contracts](https://www.testersfindaway.com/2019/01/21/testing-your-contracts-1-5/) (introductory tutorial: 5 part series)
 * [Indrek - what is contract testing](https://blog.indrek.io/articles/consumer-driven-contract-testing/)
 * [Indrek - contract testing workflows](https://blog.indrek.io/articles/pact-workflow/)
 * [Benext](https://youtu.be/8XMUtBKmeCE?t=2107) (Video)
