@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-python/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact-python repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+### 1.3.8
+  * 3c909f1 - docs: example uses date matcher (#231) (Elliott Murray, Sat May 1 11:51:28 2021 +0100)
+  * 6390144 - fix: fix datetime serialization issues in Format (#230) (Syed Muhammad Dawoud Sheraz Ali, Thu Apr 29 01:49:53 2021 +0500)
 ### 1.3.7
   * 20f828f - fix(broker): token added to verify steps (#226) (Elliott Murray, Sat Apr 24 13:47:22 2021 +0100)
   * c4fe422 - chore: Releasing version 1.3.6 (Elliott Murray, Tue Apr 20 20:58:50 2021 +0100)
