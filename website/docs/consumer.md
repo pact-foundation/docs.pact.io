@@ -2,12 +2,32 @@
 title: Writing Consumer tests
 ---
 
+**The Golden rule**
+
 <a name="golden-rule"/>
-When thinking about authoring consumer pact tests: start with the goal of writing a good set of unit tests for your API client. An important side-effect of doing this with Pact is that you also produce an API contract you can use for contract testing.
+
+> When thinking about authoring consumer pact tests: start with the goal of writing a good set of unit tests for your API client. An important side-effect of doing this with Pact is that you also produce an API contract you can use for contract testing.
 
 The art of writing good consumer Pact tests is mostly about knowing what _not_ to test. Getting this right will make the difference between Pact tests that are lightweight and helpful, and Pact tests that make you wish you'd stuck with integration testing. Your Pact tests should be as loose as they possibly can be, while still ensuring that the provider can't make changes that will break compatibility with the consumer.
 
 It is easy to write brittle, unnecessarily strict, burdensome Pact tests if you don't know what you're doing. It's worth taking the time to make sure you understand what to focus on before starting to write Pact tests for real.
+
+## Watch a video: writing good consumer tests
+
+The following video from Pact maintainer Beth Skurrie explains how to write good consumer tests, covering:
+
+1. What does a good Pact test look like
+1. Scope of a good consumer test
+1. Provider API client responsibilities, and why you shouldn't include UI/business logic layers
+1. Options for "top to bottom" consumer tests
+1. Using matchers effectively
+1. Key things to remember (Postel's Law, extra keys)
+1. Functional tests vs contract tests
+1. How to avoid writing brittle or hard to maintain tests
+1. Human readable scenarios (BDD)
+1. What a good contract test aims to do
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/oPuHb9Rl8Zo" frameBorder="0" allow="autoplay; encrypted-media" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player"  allowFullScreen></iframe>
 
 ## Use `Pact` for contract testing, not functional testing of the provider
 
