@@ -18,6 +18,8 @@ This crates requires:
 
 It will additionally attempt to find and use `Doxygen` to generate C-friendly documentation (you can of course alternatively use `cargo doc` to get Rustdoc documentation).
 
+**Note:** Linking to the generated static library on Linux requires you to also link to `pthread`, `dl` and `m`.
+
 ## Building
 
 For convenience, this tool integrates with CMake, which is setup to:
