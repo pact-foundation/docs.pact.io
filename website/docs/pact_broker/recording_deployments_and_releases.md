@@ -23,8 +23,12 @@ The `pact-broker record-deployment` command should be called at the very end of 
 
 ```
 record-deployment --pacticipant foo --version 6897aa95e --environment production
-record-deployment --pacticipant foo --version 6897aa95e --environment production --target customer-1
-record-deployment --pacticipant foo --version 6897aa95e --environment test --target mobile-2
+
+record-deployment --pacticipant foo --version 6897aa95e --environment production \
+                  --target customer-1
+
+record-deployment --pacticipant foo --version 6897aa95e --environment test \ 
+                  --target mobile-2
 ```
 
 ### Target
@@ -54,12 +58,13 @@ Once a version is marked as undeployed, the pacts for that version are no longer
 ### Examples
 
 ```
-record-undeployment --pacticipant foo --version 6897aa95e --environment test --target mobile-2
+record-undeployment --pacticipant foo --version 6897aa95e --environment test \
+                    --target mobile-2
 ```
 
 ## Recording releases
 
-The `pact-broker record-release` command should be called once an application version has been successfully made available in an production environment (eg. via a Github release, made available on an app store, or released to a Maven repository). Unlike recording a deployment, recording a release does not change the status of any previously released application versions.
+The `pact-broker record-release` command should be called once an application version has been successfully made available in an production environment (eg. via a Github release, made available on an app store, or released to a Maven repository). Unlike recording a deployment, recording a release does not change the status of any previously released application versions, and there is no concept of a release "target".
 
 `record-release` is generally only used for production environments. If you do use it for pre-prod environments, you will need to manually call `record-support-ended` when a version is either promoted to production or it is decided that the version will not be released, otherwise you will end up verifying pacts for unnecessary versions. If you have a pre-prod repository that you are sharing a library to, and you only care about verifying the pacts for the latest version in that repository, then `record-deployment` would be more appropriate for pre-prod releases.
 
@@ -78,4 +83,3 @@ When a released application is deemed to be no longer supported, call `pact-brok
 ```
 record-support-ended --pacticipant foo-mobile-app --version 6897aa95e --environment production
 ```
-
