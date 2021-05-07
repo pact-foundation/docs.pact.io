@@ -78,7 +78,9 @@ The following examples require support for the "pacts for verification" API in y
   }
   ```
   </TabItem>
-  <TabItem>
+  <TabItem value="ruby">
+  
+  ```ruby
   Pact.service_provider "My Service Provider" do
     honours_pacts_from_pact_broker do
       # choose the appropriate credentials for your broker
@@ -98,6 +100,8 @@ The following examples require support for the "pacts for verification" API in y
       include_wip_pacts_since ENV['GIT_BRANCH'] == "main" ? "2020-01-01" : nil
     end
   end
+  ```
+
   </TabItem>
 </Tabs>
 
