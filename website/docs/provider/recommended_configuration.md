@@ -87,10 +87,10 @@ The following examples require support for the "pacts for verification" API in y
   <TabItem value="ruby">
 
   ```ruby
-    # The git commands are just for local testing, not needed on actually CI
+    # The git commands are just for local testing, not needed for real CI
     provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`.strip
     provider_branch = ENV['GIT_BRANCH'] || `git name-rev --name-only HEAD`.strip
-    publish_results = ENV['CI'] == 'true'
+    publish_results = ENV['CI'] == 'true' # results should only be published from CI
     # choose the appropriate credentials for your broker
     credentials = {
       username: ENV['PACT_BROKER_USERNAME'],
