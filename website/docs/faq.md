@@ -24,7 +24,7 @@ You can find the answers to some more technical and complex questions [here](/fa
 * [Do I still need end-to-end tests?](#do-i-still-need-end-to-end-tests)
 * [Can I use Pact for UI tests?](#can-i-use-pact-for-ui-tests)
 * [How can I handle versioning?](#how-can-i-handle-versioning)
-* [How can I make a breaking change to a provider?](#how-can-i-make-a-breaking change-to-a-provider)
+* [How can I make a breaking change to a provider?](#how-can-i-make-a-breaking-change-to-a-provider)
 * [Is there a Jenkins plugin for Pact?](#is-there-a-jenkins-plugin-for-pact)
 * [What is the difference between the Pact Broker and the mock service?](#what-is-the-difference-between-the-pact-broker-and-the-mock-service)
 * [What is the difference between Pact, the Pact Broker and Pactflow?](#what-is-the-difference-between-pact-the-pact-broker-and-pactflow)
@@ -186,7 +186,7 @@ Unless you're using our [stub server](/getting_started/stubs) to mock out back e
 
 ### How can I handle versioning?
 
-Consumer driven contracts to some extent allows you to do away with versioning. As long as all your contract tests pass, you should be able to deploy changes without versioning the API. If you need to make a breaking change to a provider, you can do it using the [expand and contract pattern](#how-can-i-make-a-breaking change-to-a-provider).
+Consumer driven contracts to some extent allows you to do away with versioning. As long as all your contract tests pass, you should be able to deploy changes without versioning the API. If you need to make a breaking change to a provider, you can do it using the [expand and contract pattern](#how-can-i-make-a-breaking-change-to-a-provider).
 
 Using a [Pact Broker](/pact_broker), you can tag the production version of a pact when you make a release of a consumer. Then, any changes that you make to the provider can be checked against the production version of the pact, as well as the latest version, to ensure backward compatibility.
 
