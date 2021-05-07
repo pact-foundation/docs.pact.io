@@ -1,4 +1,5 @@
 ---
+id: 5-minute-getting-started-guide
 title: 5 minute guide
 description: From zero to running Pact tests in 5 mins
 ---
