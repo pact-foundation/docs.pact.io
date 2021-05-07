@@ -24,6 +24,7 @@ You can find the answers to some more technical and complex questions [here](/fa
 * [Do I still need end-to-end tests?](#do-i-still-need-end-to-end-tests)
 * [Can I use Pact for UI tests?](#can-i-use-pact-for-ui-tests)
 * [How can I handle versioning?](#how-can-i-handle-versioning)
+* [How can I make a breaking change to a provider?](#how-can-i-make-a-breaking change-to-a-provider)
 * [Is there a Jenkins plugin for Pact?](#is-there-a-jenkins-plugin-for-pact)
 * [What is the difference between the Pact Broker and the mock service?](#what-is-the-difference-between-the-pact-broker-and-the-mock-service)
 * [What is the difference between Pact, the Pact Broker and Pactflow?](#what-is-the-difference-between-pact-the-pact-broker-and-pactflow)
@@ -33,9 +34,9 @@ You can find the answers to some more technical and complex questions [here](/fa
 * [Should the database or any other part of the provider be stubbed?](#should-the-database-or-any-other-part-of-the-provider-be-stubbed)
 * [How do I deal with a situation where there are multiple systems involved in a scenario?](#how-do-i-deal-with-a-situation-where-there-are-multiple-systems-involved-in-a-scenario)
 * [How do I test binary files in responses, such as a download?](#how-do-i-test-binary-files-in-responses-such-as-a-download)
-* [Why is the documentation so ugly?](#why-is-the-documentation-so-ugly)
 
 -->
+
 ### What is Pact good for?
 
 Pact is most valuable for designing and testing integrations where you \(or your team/organisation/partner organisation\) control the development of both the consumer and the provider, and the requirements of the consumer are going to be used to drive the features of the provider. It is fantastic tool for developing and testing intra-organisation microservices.
@@ -185,11 +186,21 @@ Unless you're using our [stub server](/getting_started/stubs) to mock out back e
 
 ### How can I handle versioning?
 
-Consumer driven contracts to some extent allows you to do away with versioning. As long as all your contract tests pass, you should be able to deploy changes without versioning the API. If you need to make a breaking change to a provider, you can do it in a multiple step process - add the new fields/endpoints to the provider and deploy. Update the consumers to use the new fields/endpoints, then deploy. Remove the old fields/endpoints from the provider and deploy. At each step of the process, all the contract tests remain green.
+Consumer driven contracts to some extent allows you to do away with versioning. As long as all your contract tests pass, you should be able to deploy changes without versioning the API. If you need to make a breaking change to a provider, you can do it using the [expand and contract pattern](#how-can-i-make-a-breaking change-to-a-provider).
 
 Using a [Pact Broker](/pact_broker), you can tag the production version of a pact when you make a release of a consumer. Then, any changes that you make to the provider can be checked against the production version of the pact, as well as the latest version, to ensure backward compatibility.
 
 If you need to support multiple versions of the provider API concurrently, then you will probably be specifying which version your consumer uses by setting a header, or using a different URL component. As these are actually different requests, the interactions can be verified in the same pact without any problems.
+
+### How can I make a breaking change to a provider?
+
+If you need to make a breaking change to a provider, you can do it in a multiple step process using the [expand and contract pattern](https://www.martinfowler.com/bliki/ParallelChange.html).
+
+1. Add the new fields/endpoints to the provider and deploy. 
+2. Update the consumers to use the new fields/endpoints, then deploy. 
+3. Remove the old fields/endpoints from the provider and deploy. 
+ 
+At each step of the process, all the contract tests remain green. This pattern is supported well by consumer driven contracts because it is easy for a provider to determine if/when all the consumers have dropped use of the old field by removing it in a local development environment and running the pact verification tests.
 
 ### Is there a Jenkins plugin for Pact?
 
@@ -333,10 +344,6 @@ We suggest matching on the core aspects of the interaction - the request itself,
    }
 }
 ```
-
-### Why is the documentation so ugly?
-
-Pact is an open source project and the majority of contributions to Pact are done in people's free time. Our number 1 priority is getting new features out, so the aesthetic aspects of our documentation have been somewhat neglected. If you have some skills in website design and implementation and you'd like to give back to the Pact community, please have a chat to us on the Pact [slack](http://slack.pact.io) channel.
 
 ### Can I test GraphQL?
 
