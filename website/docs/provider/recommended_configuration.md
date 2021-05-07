@@ -81,7 +81,16 @@ The following examples require support for the "pacts for verification" API in y
   <TabItem value="ruby">
   
   ```ruby
+  # The git commands are just for local testing, not needed on actualy CI
+  provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`.strip
+  provider_branch = ENV['GIT_BRANCH'] || `git name-rev --name-only HEAD`.strip
+  publish_results = ENV['CI'] == 'true'
+
   Pact.service_provider "My Service Provider" do
+    app_version provider_version
+    app_version_tags [provider_branch]
+    publish_verification_results publish_results
+    
     honours_pacts_from_pact_broker do
       # choose the appropriate credentials for your broker
       pact_broker_base_url 'http://test.pactflow.io', { 
