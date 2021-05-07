@@ -122,7 +122,7 @@ There are a few key problems with end-to-end \(E2E\) testing:
 * E2E complexity is non-linear - it gets harder and messier over time.
 * Why should you care about how other systems behave?
 
-The litmus test is this: if you can look someone straight in the eyes, and say that you don't spend a lot of time maintaining E2E environments or have constant challenges managing the tests, then it's time for another approach. If you have one or more people dedicated to managing release processes, this is probably a good sign you are heading in the wrong direction.
+The litmus test is this: if you can look someone straight in the eye and say you get a lot of value out of your E2E tests without significant time investment, you can carry on, but otherwise it's time for another approach. If you have one or more people dedicated to managing release processes, this is probably a good sign you are heading in the wrong direction.
 
 If you really want to hang onto these, consider pushing a subset of your E2E scenarios further down your pipeline as a type of "Smoke Test", running just a few key scenarios prior to releasing to customers.
 
