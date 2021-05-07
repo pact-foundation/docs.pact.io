@@ -85,6 +85,8 @@ The following examples require support for the "pacts for verification" API in y
   provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`.strip
   provider_branch = ENV['GIT_BRANCH'] || `git name-rev --name-only HEAD`.strip
   publish_results = ENV['CI'] == 'true'
+  # choose the appropriate credentials for your broker
+  credentials = { username: ENV['PACT_BROKER_USERNAME'], password: ENV['PACT_BROKER_PASSWORD'], token: ENV['PACT_BROKER_TOKEN'] }
 
   Pact.service_provider "My Service Provider" do
     app_version provider_version
@@ -92,12 +94,7 @@ The following examples require support for the "pacts for verification" API in y
     publish_verification_results publish_results
     
     honours_pacts_from_pact_broker do
-      # choose the appropriate credentials for your broker
-      pact_broker_base_url 'http://test.pactflow.io', { 
-          username: ENV['PACT_BROKER_USERNAME'], 
-          password: ENV['PACT_BROKER_PASSWORD'], 
-          token: ENV['PACT_BROKER_TOKEN']
-        }
+      pact_broker_base_url 'http://test.pactflow.io', credentials
 
       consumer_version_selectors [
           { tag: 'main', latest: true }, 
