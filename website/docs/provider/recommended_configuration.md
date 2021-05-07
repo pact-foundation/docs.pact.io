@@ -2,6 +2,10 @@
 title: Recommended configuration for verifying pacts
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
 There are typically two different reasons why a pact verification task will need to be run.
 
 1. When the provider makes a change
@@ -79,37 +83,41 @@ The following examples require support for the "pacts for verification" API in y
   ```
   </TabItem>
   <TabItem value="ruby">
-  
-  ```ruby
-  # The git commands are just for local testing, not needed on actualy CI
-  provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`.strip
-  provider_branch = ENV['GIT_BRANCH'] || `git name-rev --name-only HEAD`.strip
-  publish_results = ENV['CI'] == 'true'
-  # choose the appropriate credentials for your broker
-  credentials = { username: ENV['PACT_BROKER_USERNAME'], password: ENV['PACT_BROKER_PASSWORD'], token: ENV['PACT_BROKER_TOKEN'] }
 
-  Pact.service_provider "My Service Provider" do
-    app_version provider_version
-    app_version_tags [provider_branch]
-    publish_verification_results publish_results
-    
-    honours_pacts_from_pact_broker do
-      pact_broker_base_url 'http://test.pactflow.io', credentials
+    ```ruby
+      # The git commands are just for local testing, not needed on actually CI
+      provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`.strip
+      provider_branch = ENV['GIT_BRANCH'] || `git name-rev --name-only HEAD`.strip
+      publish_results = ENV['CI'] == 'true'
+      # choose the appropriate credentials for your broker
+      credentials = {
+        username: ENV['PACT_BROKER_USERNAME'],
+        password: ENV['PACT_BROKER_PASSWORD'],
+        token: ENV['PACT_BROKER_TOKEN']
+      }
 
-      consumer_version_selectors [
-          { tag: 'main', latest: true }, 
-          { tag: ENV['GIT_BRANCH'], latest: true }, 
-          { tag: 'test', latest: true }          
-          { tag: 'production', latest: true }
-      ]    
-      enable_pending true
-      include_wip_pacts_since ENV['GIT_BRANCH'] == "main" ? "2020-01-01" : nil
-    end
-  end
-  ```
+      Pact.service_provider "example-provider" do
+        app_version provider_version
+        app_version_tags [provider_branch]
+        publish_verification_results publish_results
+        
+        honours_pacts_from_pact_broker do
+          pact_broker_base_url 'http://test.pactflow.io', credentials
 
+          consumer_version_selectors [
+              { tag: 'main', latest: true },
+              { tag: ENV['GIT_BRANCH'], latest: true },
+              { tag: 'test', latest: true }
+              { tag: 'production', latest: true }
+          ]
+          enable_pending true
+          include_wip_pacts_since ENV['GIT_BRANCH'] == "main" ? "2020-01-01" : nil
+        end
+      end
+    ```
   </TabItem>
 </Tabs>
+
 
 ## Verification triggered by pact change
 
