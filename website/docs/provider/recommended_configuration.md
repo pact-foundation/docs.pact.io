@@ -128,11 +128,14 @@ When the pact URL is known, the `pactBrokerUrl`, `providerName`, `consumerVersio
     providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [],
   }
    ```
+
   </TabItem>
   <TabItem value="ruby">
+
   ```shell
   PACT_BROKER_BASE_URL="..." # also set PACT_BROKER_USERNAME/PACT_BROKER_PASSWORD or PACT_BROKER_TOKEN
   bundle exec rake pact:verify:at[${PACT_URL}]
    ```
+
   </TabItem>
 </Tabs>
