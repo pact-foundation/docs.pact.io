@@ -3,7 +3,6 @@ title: Can I Deploy
 description: How to use Pact + the can-i-deploy tool to ensure that you are safe to deploy your application.
 ---
 
-
 Before you deploy a new version of an application to a production environment, you need to know whether or not the version you're about to deploy is compatible with the versions of the other apps that already exist in that environment. The old-fashioned way of managing these dependencies involved deploying sets of pre-tested applications together, creating a bottleneck, and meaning that speedy development and testing on one application may be negated by slow development and testing on another.
 
 The Pact way of managing these dependencies is to use the Pact Matrix - this is the matrix created when you create a table of all the consumer and provider versions that have been tested against each other using Pact. \(When a pact is published, the version of the consumer that generated the pact is recorded. When a pact is verified against a provider, the verification results are published to the Pact Broker, along with the version of the provider that verified the pact. When you put all of the consumer versions and provider versions that have been tested against each other into a table, you end up with the "Pact Matrix".\)
