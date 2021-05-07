@@ -39,7 +39,8 @@ The following examples require support for the "pacts for verification" API in y
   groupId="sdk-choice"
   defaultValue="javascript"
   values={[
-    { label: 'Javascript', value: 'javascript' }
+    { label: 'Javascript', value: 'javascript' },
+    { label: 'Ruby', value: 'ruby' }
   ]
 }>
   <TabItem value="javascript">
@@ -77,6 +78,27 @@ The following examples require support for the "pacts for verification" API in y
   }
   ```
   </TabItem>
+  <TabItem>
+  Pact.service_provider "My Service Provider" do
+    honours_pacts_from_pact_broker do
+      # choose the appropriate credentials for your broker
+      pact_broker_base_url 'http://test.pactflow.io', { 
+          username: ENV['PACT_BROKER_USERNAME'], 
+          password: ENV['PACT_BROKER_PASSWORD'], 
+          token: ENV['PACT_BROKER_TOKEN']
+        }
+
+      consumer_version_selectors [
+          { tag: 'main', latest: true }, 
+          { tag: ENV['GIT_BRANCH'], latest: true }, 
+          { tag: 'test', latest: true }          
+          { tag: 'production', latest: true }
+      ]    
+      enable_pending true
+      include_wip_pacts_since ENV['GIT_BRANCH'] == "main" ? "2020-01-01" : nil
+    end
+  end
+  </TabItem>
 </Tabs>
 
 ## Verification triggered by pact change
@@ -89,7 +111,8 @@ When the pact URL is known, the `pactBrokerUrl`, `providerName`, `consumerVersio
   groupId="sdk-choice"
   defaultValue="javascript"
   values={[
-    { label: 'Javascript', value: 'javascript' }
+    { label: 'Javascript', value: 'javascript' },
+    { label: 'Ruby', value: 'ruby' }
   ]
 }>
   <TabItem value="javascript">
@@ -104,6 +127,12 @@ When the pact URL is known, the `pactBrokerUrl`, `providerName`, `consumerVersio
     providerVersion: process.env.GIT_COMMIT, //use the appropriate env var from your CI system
     providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [],
   }
+   ```
+  </TabItem>
+  <TabItem value="ruby">
+  ```shell
+  PACT_BROKER_BASE_URL="..." # also set PACT_BROKER_USERNAME/PACT_BROKER_PASSWORD or PACT_BROKER_TOKEN
+  bundle exec rake pact:verify:at[${PACT_URL}]
    ```
   </TabItem>
 </Tabs>
