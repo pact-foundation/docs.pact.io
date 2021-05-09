@@ -4,6 +4,20 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.2.5 - Bugfix + small enhancements
+
+* bd7625857 - feat: support multiple providers in a JUnit 5 consumer test #1342 (Ronald Holshausen, Sat May 8 16:41:53 2021 +1000)
+* 5f76a3e20 - README updates (humbled, Fri May 7 15:02:56 2021 +1200)
+* 7d62150cb - fix: use source by loadV4Pact (Fei Xie, Thu May 6 16:56:03 2021 +0200)
+* 20da4aa46 - fix: values matcher must not cascade #1347 (Ronald Holshausen, Sat May 1 17:47:41 2021 +1000)
+* bbd09423a - feat(V4): added a boolean matcher #1346 (Ronald Holshausen, Sat May 1 16:34:20 2021 +1000)
+* 3a7edfd6d - fix typo in provider/junit/README.md (JapuDCret, Wed Apr 21 17:29:30 2021 +0200)
+* 99dedba72 - fix: codenarc voilation after merging PR (Ronald Holshausen, Wed Apr 21 14:51:27 2021 +1000)
+* a228c8992 - feat: add support for java LocalDate matching method in pact dsl (Radek Koubsky, Thu Apr 15 11:10:36 2021 +0200)
+* 8e6d16130 - wildcard import removed #1330 (ankur, Tue Apr 13 14:49:02 2021 +0100)
+* 0cae13687 - fixed content type for request body when content type is application/xthrift #1330 (ankur, Tue Apr 13 14:34:07 2021 +0100)
+* 399bce86c - test case added with expression in body #1330 (ankur, Mon Apr 12 11:24:43 2021 +0100)
+
 ## 4.2.4 - V4 features + Bugfixes
 
 * a73015a6e - feat(V4): add the JUnit 5 test description to comments (Ronald Holshausen, Sun Apr 11 15:21:34 2021 +1000)
