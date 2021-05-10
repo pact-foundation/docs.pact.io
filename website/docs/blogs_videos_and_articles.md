@@ -31,7 +31,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 **Articles**:
 * [API Conference NL](https://apiconference.net/microservices/testing-microservices-with-consumer-driven-contracts/)
 * [Oracle](https://blogs.oracle.com/javamagazine/how-to-test-java-microservices-with-pact?source=:em:nw:mt::RC_WWMK190726P00001:NSL400044496&elq_mid=159020&sh=112606151426090819312817243332&cmid=WWMK190726P00001C0008)
-* [Kruezwerker](https://kreuzwerker.de/post/migrating-pact-contract-tests-from-junit4-to-junit5)
+* [kreuzwerker](https://kreuzwerker.de/post/migrating-pact-contract-tests-from-junit4-to-junit5)
 * [Solid studio](https://solidstudio.io/blog/consumer-driven-contract-ci-cd.html)
 
 ## 2019
