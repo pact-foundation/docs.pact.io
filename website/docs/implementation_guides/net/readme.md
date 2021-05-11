@@ -4,7 +4,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-net/edit/master/README.
 ---
 <!-- This file has been synced from the pact-foundation/pact-net repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-[![Build status](https://ci.appveyor.com/api/projects/status/5h4t9oerlhqcnwm8/branch/master?svg=true)](https://ci.appveyor.com/project/SEEKJobs/pact-net/branch/master)  
+[![Build status](https://ci.appveyor.com/api/projects/status/5h4t9oerlhqcnwm8/branch/master?svg=true)](https://ci.appveyor.com/project/PactFoundation/pact-net/branch/master)  
 A .NET implementation of the Ruby consumer driven contract library, [Pact](https://github.com/realestate-com-au/pact).  
 Pact is based on the specification found at https://github.com/pact-foundation/pact-specification.  
 
