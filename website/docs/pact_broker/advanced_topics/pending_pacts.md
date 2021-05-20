@@ -12,8 +12,10 @@ Note that the pending feature is only applicable to the [provider changed workfl
 
 The "pending" status of a pact is a _dynamically calculated_ property, determined by the Pact Broker at the time of running the provider verifications. It is based on:
 
-* The distinct content of the contract (also known as the "pact version")
+* The content of the contract (also known as the "pact version")
 * The branch of the provider, as specified by the provider tags in the verification configuration
+
+_A pact content is considered pending if there has not been a successful published verification by the specified branch of the provider._
 
 It is calculated for each pact version when the "pacts for verification" API is called by the provider test harness. 
 
