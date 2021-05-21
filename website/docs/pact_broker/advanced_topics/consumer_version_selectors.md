@@ -37,7 +37,7 @@ import TabItem from '@theme/TabItem';
   groupId="sdk-choice"
   defaultValue="javascript"
   values={[
-    { label: 'Javascript', value: 'javascript', },
+    {label: 'Javascript', value: 'javascript', },
     {label: 'Java', value: 'java', },
     {label: 'Gradle', value: 'gradle', },
     {label: 'Ruby', value: 'ruby', },
@@ -167,11 +167,11 @@ Dynamically determine the current branch of the provider, see if there is a matc
   groupId="sdk-choice"
   defaultValue="javascript"
   values={[
-    { label: 'Javascript', value: 'javascript', },
-    {label: 'Ruby', value: 'ruby', },
-    {label: 'Python', value: 'python', },
+    {label: 'Javascript', value: 'javascript', },
     {label: 'Java', value: 'java', },
     {label: 'Gradle', value: 'gradle', },
+    {label: 'Ruby', value: 'ruby', },
+    {label: 'Python', value: 'python', },
     {label: 'C#', value: 'c#', }
   ]
 }>
@@ -300,7 +300,7 @@ Verify the pacts for the latest `master` and `test` versions, and all `productio
   groupId="sdk-choice"
   defaultValue="javascript"
   values={[
-    { label: 'Javascript', value: 'javascript', },
+    {label: 'Javascript', value: 'javascript', },
     {label: 'Java', value: 'java', },
     {label: 'Ruby', value: 'ruby', },
     {label: 'Python', value: 'python', },
@@ -407,10 +407,10 @@ Verify the latest `production` version of all consumers, and all `production` ve
   groupId="sdk-choice"
   defaultValue="javascript"
   values={[
-    { label: 'Javascript', value: 'javascript', },
+    {label: 'Javascript', value: 'javascript', },
+    {label: 'Java', value: 'java', },
     {label: 'Ruby', value: 'ruby', },
     {label: 'Python', value: 'python', },
-    {label: 'Java', value: 'java', },
     {label: 'C#', value: 'c#', }
   ]
 }>
@@ -527,10 +527,10 @@ This is syntactically possible, but not recommended, as pacts for different bran
   groupId="sdk-choice"
   defaultValue="javascript"
   values={[
-    { label: 'Javascript', value: 'javascript', },
+    {label: 'Javascript', value: 'javascript', },
+    {label: 'Java', value: 'java', },
     {label: 'Ruby', value: 'ruby', },
     {label: 'Python', value: 'python', },
-    {label: 'Java', value: 'java', },
     {label: 'C#', value: 'c#', }
   ]
 }>
