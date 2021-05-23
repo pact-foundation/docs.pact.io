@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.1.20 - Bugfix Release
+
+* 30083b062 - fix(regression): IO Exceptions are now wrapped #1337 (Ronald Holshausen, Sun Apr 11 11:10:03 2021 +1000)
+* 2e6ae47b1 - fix: JUnit 5 Spring extension classes need to be open #1338 (Ronald Holshausen, Sat Apr 10 12:43:09 2021 +1000)
+* 5614d0387 - fix: compare decimal values using compareTo instead of equals #1335 (Ronald Holshausen, Fri Apr 9 16:05:30 2021 +1000)
+
 ## 4.2.5 - Bugfix + small enhancements
 
 * bd7625857 - feat: support multiple providers in a JUnit 5 consumer test #1342 (Ronald Holshausen, Sat May 8 16:41:53 2021 +1000)
