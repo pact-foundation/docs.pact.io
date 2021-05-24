@@ -313,7 +313,7 @@ auto result = provider.run_test([] (auto mock_server) {
 
 The `run_test` method will return a `PactTestResult`. Your test should check that this value is ok.
 
-## Using the Conan package
+## Using the Conan package (No longer works as Bintray has been shutdown)
 
 The library has been released to Bintray as a Conan package. To use it in your project, you need to add https://api.bintray.com/conan/pact-foundation/conan as a remote.
 
@@ -329,7 +329,7 @@ pact_cpp_consumer/0.0.4@pact/beta
 
 You can then use the library by adding `pact_cpp_consumer/0.0.4@pact/beta` to the dependencies to your project conan file.
 
-## Building the library
+## Building the library (No longer works as Bintray has been shutdown)
 
 To build the library, you need to do the following:
 
