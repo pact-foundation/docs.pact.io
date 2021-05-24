@@ -34,3 +34,15 @@ What is left are the outstanding head pacts - the ones that you're still working
 * You need to either be using [pactflow.io](https://pactflow.io?utm_source=ossdocs&utm_campaign=wip_pacts), or have version 2.60.0+ of the OSS Pact Broker.
 * You need to be on the latest version of the Pact client library for JVM, Javascript, Go, Ruby, .Net or Python (pact-python, not pactman)
 * You need to find the verification documentation for your language, and set the "includeWipPactsSince" date to your chosen date (eg. try a week ago). The reason this date is required is that if you included all the pacts that were considered work in progress, you may include many years of outstanding pacts!
+
+## FAQ
+
+### What is the difference betweeen WIP and pending?
+
+"WIP" (work in progress) refers to the reason the pact is being verified. Either a pact is being verified because you specified a selector for it, or it is being verified because it has been determined to be a "work in progress" pact. "WIP" and "explicitly selected" are mutually exclusive reasons for a pact to be verified.
+
+"Pending" is a property of a pact that is being verified, and it exists on both WIP and explicitly selected pacts.
+
+For the explicitly selected pacts, the pending flag is calculated dynamically, based on the provider branch (which is represented as a tag). If there are no successful verifications from this branch, then it is pending. Once there is a successful verification from that branch, it is no longer pending.
+
+For the WIP pacts, the pending flag is hardcoded to true.
