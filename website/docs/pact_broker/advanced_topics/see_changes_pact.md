@@ -2,6 +2,8 @@
 title: How to see what has changed in a pact
 ---
 
+## Most recent change
+
 To see the most recent change to a pact \(eg. to determine why a provider verification has failed\):
 
 1. Paste the pact url into your browser. This will bring up a HTML view of the pact.
@@ -14,3 +16,9 @@ To see the most recent change to a pact \(eg. to determine why a provider verifi
 
    ![](https://raw.githubusercontent.com/wiki/pact-foundation/pact_broker/images/diff-previous-distinct.png)
 
+## Two arbitrary pacts
+
+1. Open both of the pacts in the API browser (open them in the Pact Broker/Pactflow, then click on the "API" button/link). 
+2. On one of them, scroll down to the `pb:diff` relation. Click on the green `?` button for that relation.
+3. Go to the other pact, and copy the SHA that you'll see next to the `pb:pact-version` relation.
+4. Enter that in the `pactVersion` value in the form. Click `Follow URI`.
