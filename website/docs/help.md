@@ -14,6 +14,12 @@ Please read the [how to ask for help](/help/how_to_ask_for_help) page first, and
 
 We're on a free plan, so we don't have unlimited history, however, you may be able to find the answer to your question in our archive at https://docs.pact.io/slack.
 
+## Join an upcoming Ask Me Anything (AMA) session
+
+Pactflow runs regular monthly AMA's where you can ask a question and one of the team will answer it. [Register](https://www.linkedin.com/company/pactflow/events/?viewAsMember=true) for an upcoming AMA in your timezone.
+
+You can also [watch](https://www.youtube.com/playlist?list=PLwy9Bnco-IpdgdZce-rXeR7EF2_6T8z7S) all of our previouss AMA's in case your questions have already been answered.
+
 ## Search on Stack Overflow
 
 Look for questions tagged with [pact](https://stackoverflow.com/questions/tagged/pact)
