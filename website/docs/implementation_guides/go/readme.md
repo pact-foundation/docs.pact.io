@@ -51,6 +51,7 @@ Read [Getting started with Pact] for more information for beginners.
   - [Installation](#installation)
     - [Go get](#go-get)
     - [Installation on \*nix](#installation-on-\nix)
+  - [V3 Beta](#v3-beta)
   - [Using Pact](#using-pact)
   - [HTTP API Testing](#http-api-testing)
     - [Consumer Side Testing](#consumer-side-testing)
@@ -104,6 +105,7 @@ Read [Getting started with Pact] for more information for beginners.
 
 | Version | Stable | [Spec] Compatibility | Install            |
 |---------|--------|----------------------|--------------------|
+| 2.x.x   | Beta   | 2, 3                 | See [v2.x.x] |
 | 1.0.x   | Yes    | 2, 3\*               | See [installation] |
 | 0.x.x   | Yes    | Up to v2             | 0.x.x [stable]     |
 
@@ -141,6 +143,10 @@ Test the installation:
 ```sh
 pact help
 ```
+
+## V3 Beta
+
+If you are interested in testing out the new new beta package that supports all of the V3 [spec], and moves to a rust shared core, please head to [v2.x.x] and also let us know on [slack].
 
 ## Using Pact
 
@@ -935,7 +941,7 @@ See [CONTRIBUTING](https://github.com/pact-foundation/pact-go/edit/master/CONTRI
 [troubleshooting]: https://github.com/pact-foundation/pact-go/wiki/Troubleshooting
 [getting started with pact]: http://dius.com.au/2016/02/03/microservices-pact/
 [pact website]: https://docs.pact.io/
-[slack channel]: https://gophers.slack.com/messages/pact/
+[slack channel]: https://pact-foundation.slack.com
 [@pact_up]: https://twitter.com/pact_up
 [pact specification v2]: https://github.com/pact-foundation/pact-specification/tree/version-2
 [pact specification v3]: https://github.com/pact-foundation/pact-specification/tree/version-3
@@ -947,3 +953,5 @@ See [CONTRIBUTING](https://github.com/pact-foundation/pact-go/edit/master/CONTRI
 [hosted broker]: https://pact.dius.com.au
 [can-i-deploy tool]: https://docs.pact.io/can_i_deploy
 [Pactflow]: https://pactflow.io
+[v2.x.x]: https://github.com/pact-foundation/pact-go/tree/2.x.x
+[slack]: https://slack.pact.io
