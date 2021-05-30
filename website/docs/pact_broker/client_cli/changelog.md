@@ -4,6 +4,23 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.42.0"></a>
+### v1.42.0 (2021-05-31)
+
+#### Features
+
+* add list-pacticipants	 ([fc8ce3b](https://github.com/pact-foundation/pact_broker-client/commit/fc8ce3b))
+* add --display-name to create-or-update-pacticipant	 ([76f323b](https://github.com/pact-foundation/pact_broker-client/commit/76f323b))
+* add backtrace to error output when verbose is true	 ([abf1ef0](https://github.com/pact-foundation/pact_broker-client/commit/abf1ef0))
+* add list-environments and describe-environment	 ([4472d48](https://github.com/pact-foundation/pact_broker-client/commit/4472d48))
+* add delete-environment	 ([361eed1](https://github.com/pact-foundation/pact_broker-client/commit/361eed1))
+* add update-environment command	 ([95276cd](https://github.com/pact-foundation/pact_broker-client/commit/95276cd))
+* add create-environment command	 ([a9fab50](https://github.com/pact-foundation/pact_broker-client/commit/a9fab50))
+
+#### Bug Fixes
+
+* stop long values in columns from being truncated	 ([18063fd](https://github.com/pact-foundation/pact_broker-client/commit/18063fd))
+
 <a name="v1.41.0"></a>
 ### v1.41.0 (2021-05-25)
 
