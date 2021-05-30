@@ -4,6 +4,27 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.0.17 - V4 features + bugfixes/enhancements
+
+* eb19188 - feat: allow FFI mockserver to log to a memory buffer (Ronald Holshausen, Sun May 30 15:31:01 2021 +1000)
+* 64adcdc - feat: add a boolean return value for all FFI interaction functions #108 (Ronald Holshausen, Sat May 29 16:16:36 2021 +1000)
+* 59e23f4 - fix: message pact needed matchingrules + generators (Matt Fellows, Sat May 29 15:16:32 2021 +1000)
+* ad0a72e - fix: message_reify was returning a pointer to a Rust string (Ronald Holshausen, Fri May 28 11:11:35 2021 +1000)
+* eb4b328 - fix: ok so maybe let's see if this works on linux 🤷 (Matt Fellows, Thu May 27 23:41:09 2021 +1000)
+* 52768a3 - fix: http_consumer_feature_test on linux (Matt Fellows, Thu May 27 23:09:45 2021 +1000)
+* cf679bd - fix: message pact feature test (Matt Fellows, Thu May 27 21:33:24 2021 +1000)
+* 0c9391d - Merge pull request #101 from pact-foundation/feat/ffi-consumer-message-pact (Matt Fellows, Thu May 27 12:57:58 2021 +1000)
+* 810106d - Merge pull request #100 from pact-foundation/feat/more-consumer-ffi-matchers (Ronald Holshausen, Thu May 27 11:17:53 2021 +1000)
+* 0dc59d0 - feat: allow callers to add metadata into resulting pact file (Matt Fellows, Sun May 23 14:40:23 2021 +1000)
+* 7d50453 - fix: update flakey ffi feature test (Matt Fellows, Sun May 23 13:56:45 2021 +1000)
+* 5024e17 - feat: allow messages to have binary payloads (Matt Fellows, Sat May 22 21:50:57 2021 +1000)
+* 34c8701 - feat: return full message from the reify function (Matt Fellows, Fri May 21 11:06:10 2021 +1000)
+* 10e54b8 - feat: add metadata to consumer message ffi interface (Matt Fellows, Wed May 19 11:43:36 2021 +1000)
+* 413e9a5 - feat: initial consumer FFI based message pact (Matt Fellows, Tue May 18 23:37:49 2021 +1000)
+* 784a023 - feat: support path, query and header matching in FFI (Matt Fellows, Sun May 16 14:17:59 2021 +1000)
+* 6af4d3f - feat: allow ffi bindings to set spec version (Matt Fellows, Sun May 2 22:41:41 2021 +1000)
+* 63fcf49 - feat: enable consumer code to use the new Value matcher (Matt Fellows, Wed Apr 7 14:01:44 2021 +1000)
+
 ## 0.0.16 - Bugfix Release
 
 * f4881db - feat: set non-hard coded install name on Mac dylib (Matt Fellows, Wed Feb 24 14:29:52 2021 +1100)
