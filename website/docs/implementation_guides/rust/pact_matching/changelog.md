@@ -4,6 +4,23 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.9.2 - Bugfixes + V4 changes (Status code matcher + Pending flag)
+
+* 59e23f4 - fix: message pact needed matchingrules + generators (Matt Fellows, Sat May 29 15:16:32 2021 +1000)
+* 81eed06 - fix: add zip file for binary test (Matt Fellows, Thu May 27 22:55:40 2021 +1000)
+* cf679bd - fix: message pact feature test (Matt Fellows, Thu May 27 21:33:24 2021 +1000)
+* 84d79a1 - fix: message pact feature test (Matt Fellows, Thu May 27 21:05:38 2021 +1000)
+* a7e5778 - fix: broken message test (Matt Fellows, Thu May 27 15:36:31 2021 +1000)
+* 0c9391d - Merge pull request #101 from pact-foundation/feat/ffi-consumer-message-pact (Matt Fellows, Thu May 27 12:57:58 2021 +1000)
+* 810106d - Merge pull request #100 from pact-foundation/feat/more-consumer-ffi-matchers (Ronald Holshausen, Thu May 27 11:17:53 2021 +1000)
+* ffbcaf5 - feat: Added header_from_provider_state and path_from_provider_state (Rob Caiger, Mon May 24 13:54:16 2021 +0100)
+* 5024e17 - feat: allow messages to have binary payloads (Matt Fellows, Sat May 22 21:50:57 2021 +1000)
+* 413e9a5 - feat: initial consumer FFI based message pact (Matt Fellows, Tue May 18 23:37:49 2021 +1000)
+* 066d7a9 - Revert "feat: support a dummy matcher" (Matt Fellows, Mon May 17 10:47:40 2021 +1000)
+* 5167cfb - fix: broken test for v2 path matcher (Matt Fellows, Sun May 16 14:29:50 2021 +1000)
+* a33718a - fix: serialise v2 path matcher correctly for FFI (Matt Fellows, Sun May 16 14:10:14 2021 +1000)
+* f56ae24 - feat: support a dummy matcher (Matt Fellows, Sun May 16 14:05:08 2021 +1000)
+
 ## 0.9.1 - V4 features
 
 
