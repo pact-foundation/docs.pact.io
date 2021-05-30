@@ -11,7 +11,9 @@ matching HTTP requests and generating responses from a pact file.
 
 ## Functions
 
-### [init](https://docs.rs/pact_mock_server_ffi/0.0.1/pact_mock_server_ffi/fn.init.html)
+Includes all the FFI functions from the `pact_matching_ffi` crate.
+
+### [init](https://docs.rs/pact_mock_server_ffi/0.0.7/pact_mock_server_ffi/fn.init.html)
 
 Initialise the mock server library, can provide an environment variable name to use to set the log levels.
 
@@ -47,7 +49,7 @@ This function will try terminate the mock server with the given port number and 
 the `mock_server_mismatches` function. Returns `true`, unless a mock server with the given port number does not exist,
 or the function fails in some way.
 
-**NOTE:** Although `close()` on the listerner for the mock server is called, this does not currently work and the
+**NOTE:** Although `close()` on the listener for the mock server is called, this does not currently work and the
 listerner will continue handling requests. In this case, it will always return a 501 once the mock server has been
 cleaned up.
 
