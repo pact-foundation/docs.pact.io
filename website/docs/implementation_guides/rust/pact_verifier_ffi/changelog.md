@@ -4,7 +4,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-## 0.0.3 - FFI enhancements
+## 0.0.4 - FFI enhancements
 
 * a3f272b - Merge pull request #104 from pact-foundation/feat/consumer-version-selectors (Matt Fellows, Thu May 27 13:16:46 2021 +1000)
 * f4a7d52 - fix: consumer version selectors (Matt Fellows, Thu May 27 09:04:20 2021 +1000)
