@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.43.0"></a>
+### v1.43.0 (2021-06-03)
+
+#### Features
+
+* enable --ignore option for can-i-deploy without a feature toggle	 ([bcc9dfe](https://github.com/pact-foundation/pact_broker-client/commit/bcc9dfe))
+
 <a name="v1.42.0"></a>
 ### v1.42.0 (2021-05-31)
 
