@@ -184,7 +184,7 @@ Lastly, we find that the [four key metrics](https://cloud.google.com/blog/produc
 
 ### Can I use Pact for UI tests?
 
-Unless you're using our [stub server](/getting_started/stubs) to mock out back end calls, we do not recommend using Pact for this purpose. Please read more on the [Consumer Best Practices](/consumer/#avoid-using-pact-for-tests-that-involve-the-ui) page.
+See [Using Pact to support UI testing](/consumer/using_pact_to_support_ui_testing).
 
 ### How can I handle versioning?
 
