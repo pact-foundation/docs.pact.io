@@ -4,6 +4,19 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.44.0"></a>
+### v1.44.0 (2021-06-09)
+
+#### Features
+
+* add record-undeployment (feature toggled off)	 ([951d334](https://github.com/pact-foundation/pact_broker-client/commit/951d334))
+* add describe-environment command	 ([cd11ebb](https://github.com/pact-foundation/pact_broker-client/commit/cd11ebb))
+* add record-release (feature toggled off)	 ([e32e4e5](https://github.com/pact-foundation/pact_broker-client/commit/e32e4e5))
+
+#### Bug Fixes
+
+* hardcode file requires Fixes: https://github.com/pact-foundation/pact_broker-client/issues/88	 ([581f2fd](https://github.com/pact-foundation/pact_broker-client/commit/581f2fd))
+
 <a name="v1.43.0"></a>
 ### v1.43.0 (2021-06-03)
 
