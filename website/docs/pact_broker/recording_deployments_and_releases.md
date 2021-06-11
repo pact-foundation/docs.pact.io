@@ -15,6 +15,8 @@ The difference between `record-deployment` and `record-release` is that
 * `record-deployment` automatically marks the previously deployed version as undeployed, and is used for APIs and consumer applications that are deployed to known instances.
 * `record-release` does NOT change the status of any previously released version, and is used for mobile applications and libraries that are made publicly available via an application store or repository.
 
+# Deployments
+
 ## Recording deployments
 
 The `pact-broker record-deployment` command should be called at the very end of the deployment process, when there is no chance that the deployment might fail, and there are no more instances of the previous version running. 
@@ -65,6 +67,8 @@ record-undeployment --pacticipant my-retired-service --environment test
 record-undeployment --pacticipant foo --environment test \
                     --target mobile-2
 ```
+
+# Releases
 
 ## Recording releases
 

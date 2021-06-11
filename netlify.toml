@@ -131,3 +131,25 @@
   from = "/go/wip"
   to = "/pact_broker/advanced_topics/wip_pacts?utm_source=pact&utm_medium=client_library"
   status = 301
+
+# Used in record-release help output
+
+[[redirects]]
+  from = "/go/record-deployment"
+  to = "/pact_broker/recording_deployments_and_releases?utm_source=pact&utm_medium=client_library"
+  status = 301
+
+[[redirects]]
+  from = "/go/record-undeployment"
+  to = "/pact_broker/recording_deployments_and_releases?utm_source=pact&utm_medium=client_library"
+  status = 301
+
+[[redirects]]
+  from = "/go/record-release"
+  to = "/pact_broker/recording_deployments_and_releases?utm_source=pact&utm_medium=client_library"
+  status = 301
+
+[[redirects]]
+  from = "/go/record-support-ended"
+  to = "/pact_broker/recording_deployments_and_releases?utm_source=pact&utm_medium=client_library"
+  status = 301
