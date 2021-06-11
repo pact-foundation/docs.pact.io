@@ -10,7 +10,7 @@ The Pact Broker needs to know which versions of each application are deployed or
 
 To notify the Broker that an application version has been deployed or released, the `pact-broker record-deployment` and `pact-broker record-release` commands are provided by the Pact Broker CLI.
 
-The difference between `record-deployment` and `record-release` is that 
+"Deployed versions" and "released versions" are very similar, but are modelled slightly differently in the Pact Broker. The difference between `record-deployment` and `record-release` is that 
 
 * `record-deployment` automatically marks the previously deployed version as undeployed, and is used for APIs and consumer applications that are deployed to known instances.
 * `record-release` does NOT change the status of any previously released version, and is used for mobile applications and libraries that are made publicly available via an application store or repository.
@@ -19,7 +19,7 @@ The difference between `record-deployment` and `record-release` is that
 
 ### Recording deployments
 
-The `pact-broker record-deployment` command should be called at the very end of the deployment process, when there is no chance that the deployment might fail, and there are no more instances of the previous version running. 
+The `pact-broker record-deployment` command should be called at the very end of the deployment process, when there is no chance that the deployment might fail, and there are no more instances of the previous version running. When `record-deployment` is called, the previously deployed version for that application/environment is automatically marked as no longer deployed, so there is no need to make a separate call for this.
 
 #### Examples
 
@@ -84,7 +84,7 @@ record-release --pacticipant foo-mobile-app --version 6897aa95e --environment pr
 
 ### Recording support ended for a release
 
-When a released application is deemed to be no longer supported, call `pact-broker record-support-ended`. This will stop the pacts for this version being returned for verification by its providers, and remove it from consideration when checking if an integrated application is [safe to deploy](/pact_broker/can_i_deploy).
+When a released application is deemed to be no longer supported, call `pact-broker record-support-ended`. This will stop all pacts for this version being returned for verification by its providers, and remove it from consideration when checking if an integrated application is [safe to deploy](/pact_broker/can_i_deploy).
 
 #### Examples
 
