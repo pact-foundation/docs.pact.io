@@ -15,6 +15,8 @@ To notify the Broker that an application version has been deployed or released, 
 * `record-deployment` automatically marks the previously deployed version as undeployed, and is used for APIs and consumer applications that are deployed to known instances.
 * `record-release` does NOT change the status of any previously released version, and is used for mobile applications and libraries that are made publicly available via an application store or repository.
 
+"Deployed versions" and "released versions" are different resources in the Pact Broker, and an application version may be both deployed and released. For example, a mobile phone application version may be recorded as deployed to a mobile device for automated testing in a test environment, and then recorded as released to an app store in a production environment.
+
 ## Deployments
 
 ### Recording deployments
