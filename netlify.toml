@@ -14,6 +14,11 @@
   status = 301
 
 [[redirects]]
+  from = "/selectors"
+  to = "/pact_broker/advanced_topics/consumer_version_selectors"
+  status = 301
+
+[[redirects]]
   from = "/consumer_version_selectors"
   to = "/pact_broker/advanced_topics/consumer_version_selectors"
   status = 301
