@@ -41,7 +41,7 @@ Setting the "target" field is only necessary when there are multiple instances o
 
 The "target" field is used to distinguish between deployed versions of an application within the same environment, and most importantly, to identify which previously deployed version has been replaced by the current deployment. The Pact Broker only allows one unique combination of pacticipant/environment/target to be considered the "currently deployed" one, and any call to record a deployment will cause the previously deployed version with the same pacticipant/environment/target to be automatically marked as undeployed (mimicking the real world process of "deploying over" a previous version). Note that a "null" target is considered to be a distinct target value, so if you record a deployment with no target set, then record a deployment with a target set, you will have two different deployed versions in that environment.
 
-The target should *not* be used for blue/green or other forms of no-downtime deployments where there are two different application versions deployed at once during the deployment phase. See the next section for more information.
+The target should *not* be used to model blue/green or other forms of no-downtime deployments where there are two different application versions deployed at once during the deployment phase. See the next section for more information.
 
 ##### Why the target should not be used for long running deployments
 
@@ -49,9 +49,9 @@ When executing a rolling deployment (an approach for deploying with no downtime 
 
 Why is this so?
 
-Imagine an application, X, which depends on application Y. Each of them has version 1 deployed to production. X version 2 is waiting for a new feature to be supported in Y version 2.
+Imagine an application, Consumer, which depends on application, Provider. Each of them has version 1 deployed to production. Consumer version 2 is waiting for a new feature to be supported in Provider version 2.
 
-Y takes a long time to deploy, during which time X's response might come from version 1 or it might come from version 2. Technically, both versions of Y could be said to be in production at this point in time. However, Xv2 cannot be deployed safely to production until Yv1 is no longer in production. This is why there is no advantage to recording Yv2 as being in production during the time period of the deployment. It's not just that Xv2 requires Yv2 to be in production, it also requires Yv1 to NOT be in production, and that can't be guaranteed until the deployment is complete.
+Provider deploys version 2 using a rolling deployment, during which time the response to Consumer's request might come from Provider version 1 or it might come from version 2. Technically, both versions of Provider could be said to be in production at this point in time. However, Consumer v2 cannot be deployed safely to production _until Provider v1 is no longer in production_. This is why there is no advantage to recording Provider v2 as being in production during the time period of the deployment. It's not just that Consumer v2 requires Provider v2 to be in production, it also requires Provider v1 to NOT be in production, and that can't be guaranteed until the deployment is complete.
 
 ### Recording undeployments
 
