@@ -22,8 +22,9 @@ Another reason that an extra "safe to deploy?" check is required (as well as the
 
 The `can-i-deploy` tool is a CLI that has been written to query the Matrix to ensure that you are safe to deploy. You can read a detailed description of how it works [here](/pact_broker/can_i_deploy/).
 
-1. Add a step to your deployment process that uses the `can-i-deploy` tool to ensure that the version that you are about to deploy is compatible with the production versions of its integration partners.
-2. Add a step to your deployment process so that when the application is deployed to production, the relevant pacticipant version in the broker is tagged as the “production” version. This functionality is provided by the [pact-broker client CLI](/pact_broker/client_cli/readme#create-version-tag)
+1. Add a step to your deployment process that uses the `can-i-deploy` tool to ensure that the version that you are about to deploy is compatible with the production versions of its integration partners. 
+  * You may wish to start off using the `--dry-run` flag for `can-i-deploy`, which will allow you to see the results, but won't fail your build if there are missing or failed verifications. Once you are confident that your pipeline is working as desired, you can remove the flag, and be confident that you won't be allowed to deploy any incompatible changes to an environment.
+3. Add a step to your deployment process so that when the application is deployed to production, the relevant pacticipant version in the broker is tagged as the “production” version. This functionality is provided by the [pact-broker client CLI](/pact_broker/client_cli/readme#create-version-tag)
 
 Useful links:
 
