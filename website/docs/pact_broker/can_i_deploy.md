@@ -62,4 +62,12 @@ and add the following line after deploying:
 
 ## Further reading
 
+Other features of `can-i-deploy` include:
+
+* Polling for verification results to be returned (useful when waiting for results to be returned from a provider build that is triggered by a webhook)
+* Ignoring specific integrations (useful when a new provider is added that has not had its pact verification tests set up)
+* "Dry run" mode, where the results can be viewed, but the exit code is always successful, so that you can check that your pipeline working as expected before enabling the `can-i-deploy` check fully.
+
 Please see the [Pact Broker Client CLI documentation](/pact_broker/client_cli/readme#can-i-deploy) for an explanation of all the parameters for can-i-deploy.
+
+
