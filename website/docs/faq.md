@@ -365,3 +365,7 @@ SOAP is the same. Yes, there is a strongly defined schema, however if the provid
 
 Protobufs is something we are still thinking about, and we've yet to test it with Pact in the wild. It does appear unnecessary as it has mechanisms to deal with backwards compatibility - but if you're willing to investigate, please chat to us and tell us how you go :\)
 
+
+### How can I tell if I have good contract test coverage of my provider API?
+
+This is actually not the right question to be asking. Contract tests aren't intended to provide any particular percentage coverage of the provider code. That's what the provider's own functional tests are for. The important question to be asking is "what proportion of the consumer code _that makes the calls to the provider_ is covered?". If you execute your consumer Pact tests in a separate step in your test suite, you can use standard code coverage tools to determine whether or not your Pact tests have covered a sufficient percentage of your provider client code.
