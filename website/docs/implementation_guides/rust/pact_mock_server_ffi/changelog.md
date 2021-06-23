@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.1.0 - Accumulating mock server log entries + bugfixes
+
+* b4e26844 - fix: reqwest is dyn linked to openssl by default, which causes a SIGSEGV on alpine linux (Ronald Holshausen, Tue Jun 1 14:21:31 2021 +1000)
+* 17beef62 - feat: support accumulating log entries per running mock server (Ronald Holshausen, Mon May 31 15:09:20 2021 +1000)
+
 ## 0.0.17 - V4 features + bugfixes/enhancements
 
 * eb19188 - feat: allow FFI mockserver to log to a memory buffer (Ronald Holshausen, Sun May 30 15:31:01 2021 +1000)

@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.0.5 - Bugfix Release
+
+* 12e51704 - fix: linux verifier ffi shasum path was incorrect. Fixes #114 (Matt Fellows, Mon Jun 7 09:25:14 2021 +1000)
+* e8d6d844 - fix: pact_verifier_cli was printing the version from the FFI crate (Ronald Holshausen, Sat Jun 5 14:43:38 2021 +1000)
+
 ## 0.0.4 - FFI enhancements
 
 * a3f272b - Merge pull request #104 from pact-foundation/feat/consumer-version-selectors (Matt Fellows, Thu May 27 13:16:46 2021 +1000)
