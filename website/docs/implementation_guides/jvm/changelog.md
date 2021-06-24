@@ -4,6 +4,26 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.1.23 - Bugfix Release
+
+* b46a5274f - fix: When using url in PactBroker annotation, the default value is broken if it contains a colon (Mahendar Selvakumar, Mon Jun 21 15:52:09 2021 +1000)
+* 829ebdefb - fix: using :pact-file source with Leiningen was broken #1372 (Ronald Holshausen, Sat Jun 12 12:26:49 2021 +1000)
+
+## 4.1.22 - Backported Fix
+
+* c7895cc0b - fix(backport): handle exceptions correctly when @IgnoreNoPactsToVerify is present #1324 (Ronald Holshausen, Sat Mar 27 16:32:38 2021 +1100)
+
+## 4.1.21 - Bugfix Release
+
+* 49d975b2d - fix: Fallbck to env vars for pact.provider.version property #1365 (Ronald Holshausen, Sun May 23 13:38:27 2021 +1000)
+* a5c455275 - fix: Format the error correctly when publishing results fail [Gradle/Maven] #1364 (Ronald Holshausen, Sun May 23 11:52:11 2021 +1000)
+* f92fcb66e - fix: HAL client must return an error if the post request fails #1364 (Ronald Holshausen, Sun May 23 10:58:43 2021 +1000)
+* 0fd9c6b1f - fix: codenarc violations (Ronald Holshausen, Sun May 23 10:05:39 2021 +1000)
+* b54305351 - fix: fail the verification if publishing verification results fails [Maven/Gradle] #1364 (Ronald Holshausen, Sat May 22 17:51:34 2021 +1000)
+* ea9c49de7 - fix: fail the test if publishing verification results fails [JUNIT5] #1364 (Ronald Holshausen, Sat May 22 17:19:18 2021 +1000)
+* 76f91643f - fix: fail the test if publishing verification results fails #1364 (Ronald Holshausen, Sat May 22 17:04:26 2021 +1000)
+* e3f52dc53 - fix: backported fix from v4.2.x #1345 (Ronald Holshausen, Wed Apr 21 16:19:39 2021 +1000)
+
 ## 4.2.6 - Bugfix Release
 
 * 1745eec1c - fix: codenarc violation #1367 (Ronald Holshausen, Sun May 23 15:00:47 2021 +1000)
