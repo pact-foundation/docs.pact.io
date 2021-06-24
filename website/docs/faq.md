@@ -368,4 +368,6 @@ Protobufs is something we are still thinking about, and we've yet to test it wit
 
 ### How can I tell if I have good contract test coverage of my provider API?
 
-This is actually not the right question to be asking. Contract tests aren't intended to provide any particular percentage coverage of the provider code. That's what the provider's own functional tests are for. The important question to be asking is "what proportion of the consumer code _that makes the calls to the provider_ is covered?". If you execute your consumer Pact tests in a separate step in your test suite, you can use standard code coverage tools to determine whether or not your Pact tests have covered a sufficient percentage of your provider client code.
+Contract tests aren't intended to provide any particular percentage coverage of the _provider_ code - that's what the provider's own functional tests are for. The important question to be asking is "what proportion of the consumer code _that makes the calls to the provider_ is covered?". If you execute your consumer Pact tests in a separate step in your test suite, you can use standard code coverage tools to determine whether or not your Pact tests have covered a sufficient percentage of your consumer client code.
+
+While the coverage metric can be helpful, it unfortunately won't be able to tell you whether or not you've covered every semantic variation of an endpoint. Determining that is currently beyond the scope of Pact, but is something that we would love to be able to solve in the future.
