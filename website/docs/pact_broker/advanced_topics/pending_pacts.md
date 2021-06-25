@@ -10,14 +10,14 @@ Without the pending pacts feature turned on, changes made to pacts by the consum
 
 To demonstrate how it works, let's compare an example workflow with and without the "pending" feature enabled. Note that the pending feature is only applicable to the main provider release pipeline, not the provider build that gets triggered by the `contract_content_changed` webhook.
 
-### Without pending pacts
+### Without the pending pacts feature enabled
 
 1. Provider is configured to verify the pacts with tags `main` and `production`. Both pacts are currently passing verification from the `main` branch of the provider.
 2. Consumer publishes a new pact with tag `main` that has a new, unsupported interaction in it (ideally, this should have been done in a feature branch, but for the sake of this example, we'll assume best practice advice was not followed).
 3. Next time the provider build runs, the verification of the `main` pact fails, and the verification task exits with an error. The broken build stops the provider from deploying, even though the verification for the `production` pact passed.
 4. The provider team is very annoyed!
 
-### With pending pacts
+### With the pending pacts feature enabled
 
 1. Provider is configured to verify the pacts with tags `main` and `production`, AND the `enablePending` option is set to true. 
 2. Consumer publishes a new pact with tag `main` that has a new unsupported interaction in it (as above).
