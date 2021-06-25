@@ -44,9 +44,9 @@ _Note: this tag is required for the use of can-i-deploy, however, if you are jus
 
 When you deploy an application that uses Pact to a given environment \(eg `test`, `prod`\) then you should tag the relevant pacticipant version with the name of the stage using the [create version tag](https://github.com/pact-foundation/pact_broker-client#create-version-tag) command from the [Pact Broker client](/pact_broker/can_i_deploy). This allows other applications to use [can-i-deploy](/pact_broker/can_i_deploy) to ensure that they're compatible with the version you just deployed before they deploy their own version.
 
-> Remember the Golden Rule for tagging is:
->
-> Tag with the branch name when you publish pacts or verification results, and tag with the environment name when you deploy.
+:::info Remember the Golden Rule for tagging is:
+Tag with the branch name when you publish pacts or verification results, and tag with the environment name when you deploy.
+:::
 
 ## When are tags used?
 
