@@ -13,7 +13,7 @@ To demonstrate how it works, let's compare an example workflow with and without 
 ### Without the pending pacts feature enabled
 
 1. Provider is configured to verify the pacts with tags `main` and `production`. Both pacts are currently passing verification from the `main` branch of the provider.
-2. Consumer publishes a new pact with tag `main` that has a new, unsupported interaction in it (ideally, this should have been done in a feature branch, but for the sake of this example, we'll assume best practice advice was not followed).
+2. Consumer publishes a pact with tag `main` that has a new, unsupported interaction in it (ideally, this should have been done in a feature branch, but for the sake of this example, we'll assume best practice advice was not followed).
 3. Next time the provider build runs, the verification of the `main` pact fails, and the verification task exits with an error. The broken build stops the provider from deploying, even though the verification for the `production` pact passed.
 4. The provider team is very annoyed!
 
@@ -36,13 +36,13 @@ The pact verification task determines whether or not to exit with an error statu
   * Note that the verification results belong to the pact _content_ itself, irrespective of which consumer version published it.
 * The branch of the provider, as specified by the provider tags in the verification configuration
 
-**A pact content is considered pending if there has not been a successful published verification by the specified branch of the provider.**
+**A pact content is considered pending if there has not been a successful verification published by the specified branch of the provider.**
 
 When a pact version is considered "pending", then any mismatches during verification _will not_ cause the overall verification task to fail. When a pact is _not_ considered "pending" then mismatches _will_ cause the overall verification task to fail (until the introduction of this feature, this was the default behaviour).
 
-The purpose of the pending flag is to ensure that provider builds are not broken by changes that were introduced by the consumer, but to also ensure that backwards compatibility is maintained when a change is introduced by a provider. It achieves this by treating the first successful verification of a pact version by a particular branch of the provider as an implicit acceptance of the contract. Thereafter, if verification of that pact version fails, it can only be because the provider has made a backwards incompatible change.
+The purpose of the pending flag is to ensure that provider builds are not broken by changes that were introduced by the consumer, but to also ensure that backwards compatibility is maintained when a change is introduced by a provider. It achieves this by treating the first successful verification of a pact version by a particular branch of the provider as an implicit acceptance of the contract. Thereafter, if a verification of that pact version fails, it can only be because the provider has made a backwards incompatible change.
 
-The provider tags are used to determine the pending status because it is common to implement new features of a provider on a feature branch. If the provider tags were not taken in to consideration, a newly passing verification on `feat-x` of the provider could suddenly cause the verification on branch `main` of the provider to fail.
+The provider tags are used to determine the pending status because it is common to implement new features of a provider on a feature branch. If the provider tags were not taken in to consideration, a newly passing verification on `feat-x` of the provider would suddenly cause the verification of that content by branch `main` of the provider to fail.
 
 While the provider build may pass, the verification results are still reported (if results publishing is enabled) to the Pact Broker as "failed", as the consumer should not be able to deploy the code that generated this contract.
 
@@ -52,26 +52,36 @@ While the provider build may pass, the verification results are still reported (
 
 ## Examples
 
-Let's walk through the "pending" lifecycle of a particular pact content version.
+Let's walk through the "pending" lifecycle of a particular pact content version with an interaction that is implemented directly on the `main` branch of a provider.
 
 1. Provider is configured to verify the pacts with tags `main` and `production`, AND the `enablePending` option is set to true. The `main` branch of the provider is currently verifying both of those pacts successfully.
 1. Consumer publishes a new pact with tag `main` that has a new unsupported interaction in it.
 1. Next time the provider build runs, the `main` pact is returned for verification with `pending: true`. The verification fails. The status is reported back to the Pact Broker as failed, but the verification task does not exit with an error. Provider is able to deploy to production because the `production` pact passed.
-1. Provider implements the new feature, and when the pipeline runs, the `main` pact passes, and a successful verification from the `main` branch of the provider is published. This successful verification means this pact content will now be `pending: false` for all future verifications by the `main` branch.
+1. Provider implements the new feature on the `main` branch, and when the pipeline runs, the `main` pact passes, and a successful verification from the `main` branch of the provider is published. This successful verification means this pact content will now be `pending: false` for all future verifications by the `main` branch.
 1. Next time the provider pipeline runs, the `main` pact is returned for verification with `pending: false`. The verification for the `main` pact still passes, so everything is still green.
 1. A regression is made in the provider, and when the pipeline runs, the `main` pact is again returned for verification with `pending: false`. This time, when the verification fails, the verification task exits with an error, and the provider cannot deploy, as they have introduced a bug that breaks a previously supported pact.
+
+This time, let's walk through the lifecycle of a pact content version with an interaction that is implemented on the branch of a provider.
+
+1. (As above) Provider is configured to verify the pacts with tags `main` and `production`, AND the `enablePending` option is set to true. The `main` branch of the provider is currently verifying both of those pacts successfully.
+1. (As above) Consumer publishes a new pact with tag `main` that has a new unsupported interaction in it.
+1. (As above) Next time the provider build runs, the `main` pact is returned for verification with `pending: true`. The verification fails. The status is reported back to the Pact Broker as failed, but the verification task does not exit with an error. Provider is able to deploy to production because the `production` pact passed.
+1. Provider implements the new feature _on a feature branch_, `feat-x`, and when the pipeline runs, the `main` pact passes, and a successful verification from the `feat-x` branch of the provider is published. This successful verification means this pact content will now be `pending: false` for all future verifications by the `feat-x` branch.
+1. Next time the `feat-x` provider pipeline runs, the `main` pact is returned for verification with `pending: false`. Any verification failures for that content from now on will cause the `feat-x` build to fail.
+1. Next time the `main` provider pipeline runs, the `main` pact is still returned for verification with `pending: true`, because the `main` branch of the provider has still not verified the `main` pact yet.
+1. The `feat-x` branch is merged into `main`, and a successful verification for the `main` pact is published. This successful verification means this pact content will now be `pending: false` for all future verifications by the `main` branch.
 
 ## To start using the Pending pacts feature
 
 * You need to either be using [pactflow.io](https://pactflow.io?utm_source=ossdocs&utm_campaign=pending_pacts), or have version 2.60.0+ of the OSS Pact Broker.
 * You need to be use at least the following version of your Pact library:
-    * JVM: 4.1.7
-    * For the following libraries that wrap the [pact-ruby-standalone](https://docs.pact.io/wrapper_implementations), at least version 1.49.3 of the standalone is required.
-        * JS: 9.11.1 (not supported by the v3 implementation that uses Rust)
-        * Ruby: 1.52.0
-        * Go: latest as of September 2020 (v1.4.1)
-        * .Net: latest as of September 2020 (version TBC)
-        * Python: latest as of September 2020 (version TBC)
+  * JVM: 4.1.7
+  * For the following libraries that wrap the [pact-ruby-standalone](https://docs.pact.io/wrapper_implementations), at least version 1.49.3 of the standalone is required.
+    * JS: 9.11.1 (not supported by the v3 implementation that uses Rust)
+    * Ruby: 1.52.0
+    * Go: latest as of September 2020 (v1.4.1)
+    * .Net: latest as of September 2020 (version TBC)
+    * Python: latest as of September 2020 (version TBC)
 * You need to find the verification documentation for your language, and set the "enablePending" flag to true.
 
 ## FAQ
