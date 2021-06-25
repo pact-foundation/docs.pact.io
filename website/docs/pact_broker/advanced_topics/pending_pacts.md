@@ -69,7 +69,7 @@ This time, let's walk through the lifecycle of a pact content version with an in
 1. Provider implements the new feature _on a feature branch_, `feat-x`, and when the pipeline runs, the `main` pact passes, and a successful verification from the `feat-x` branch of the provider is published. This successful verification means this pact content will now be `pending: false` for all future verifications by the `feat-x` branch.
 1. Next time the `feat-x` provider pipeline runs, the `main` pact is returned for verification with `pending: false`. Any verification failures for that content from now on will cause the `feat-x` build to fail.
 1. Next time the `main` provider pipeline runs, the `main` pact is still returned for verification with `pending: true`, because the `main` branch of the provider has still not verified the `main` pact yet.
-1. The `feat-x` branch is merged into `main`, and a successful verification for the `main` pact is published. This successful verification means this pact content will now be `pending: false` for all future verifications by the `main` branch.
+1. The `feat-x` branch is merged into `main`, and a successful verification for the `main` pact is published. This successful verification means this pact content will now be `pending: false` for all future verifications by the `main` branch, and any verification failures will break the build.
 
 ## To start using the Pending pacts feature
 
