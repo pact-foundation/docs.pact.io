@@ -2,11 +2,11 @@
 title: Writing Consumer tests
 ---
 
-**The Golden rule**
-
 <a name="golden-rule"/>
 
-> When thinking about authoring consumer pact tests: start with the goal of writing a good set of unit tests for your API client. An important side-effect of doing this with Pact is that you also produce an API contract you can use for contract testing.
+:::info The Golden rule
+When thinking about authoring consumer pact tests: start with the goal of writing a good set of unit tests for your API client. An important side-effect of doing this with Pact is that you also produce an API contract you can use for contract testing.
+:::
 
 The art of writing good consumer Pact tests is mostly about knowing what _not_ to test. Getting this right will make the difference between Pact tests that are lightweight and helpful, and Pact tests that make you wish you'd stuck with integration testing. Your Pact tests should be as loose as they possibly can be, while still ensuring that the provider can't make changes that will break compatibility with the consumer.
 
