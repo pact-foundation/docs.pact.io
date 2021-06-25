@@ -6,7 +6,9 @@ The "pending pacts" feature allows changed contracts to be verified without fail
 
 ## Why is this feature required?
 
-Let's compare an example workflow with and without the "pending" feature enabled. Note that the pending feature is only applicable to the main provider release pipeline, not the provider build that gets triggered by the `contract_content_changed` webhook.
+Without the pending pacts feature turned on, changes made to pacts by the consumer team can block the provider team from being able to deploy, even when the provider is compatible with the deployed version of the consumer.
+
+To demonstrate how it works, let's compare an example workflow with and without the "pending" feature enabled. Note that the pending feature is only applicable to the main provider release pipeline, not the provider build that gets triggered by the `contract_content_changed` webhook.
 
 ### Without pending pacts
 
@@ -19,14 +21,14 @@ Let's compare an example workflow with and without the "pending" feature enabled
 
 1. Provider is configured to verify the pacts with tags `main` and `production`, AND the `enablePending` option is set to true. 
 2. Consumer publishes a new pact with tag `main` that has a new unsupported interaction in it (as above).
-3. Next time the provider build runs, the verification of the `main` pact fails **BUT** because `enablePending` is turned on, the verification task does not exit with an error. This means the pipeline continues and the provider can still deploy to production, because the verification for the `production` pact passed.
+3. Next time the provider build runs, the verification of the `main` pact fails **BUT** _because `enablePending` is turned on, the verification task does not exit with an error_. This means the pipeline continues and the provider can still deploy to production, because the verification for the `production` pact passed.
 4. Provider team is happy!
 
 Note that in both of these examples, the verification result sent back to the Pact Broker for the `main` pact is still a failure, and the consumer cannot be deployed in either example, as the features it requires are not yet supported (this is why a feature branch should have been used, as the consumer's own pipeline will be blocked by `can-i-deploy` reporting that the provider does not yet support the new interaction).
 
 ## How the "pending" property works
 
-The "pending" status of a pact is a _dynamically calculated_ property, determined by the Pact Broker at the time of running the provider verifications. It is based on:
+The pact verification task determines whether or not to exit with an error status for a failed pact based on the value of the "pending" property for the pact content that is being verified. The "pending" status of a pact is a _dynamically calculated_ property, determined by the Pact Broker at the time of running the provider verifications. It is based on:
 
 * The content of the contract (also known as the "pact version")
 * The branch of the provider, as specified by the provider tags in the verification configuration
@@ -46,6 +48,17 @@ While the provider build may pass, the verification results are still reported (
 ### WIP pacts
 
 [Work in progress pacts](/pact_broker/advanced_topics/wip_pacts) always have the pending flag set to true.
+
+## Examples
+
+Let's walk through the "pending" lifecycle of a particular pact content version.
+
+1. Provider is configured to verify the pacts with tags `main` and `production`, AND the `enablePending` option is set to true. The `main` branch of the provider is currently verifying both of those pacts successfully.
+1. Consumer publishes a new pact with tag `main` that has a new unsupported interaction in it.
+1. Next time the provider build runs, the `main` pact is returned for verification with `pending: true`. The verification fails. The status is reported back to the Pact Broker as failed, but the verification task does not exit with an error. Provider is able to deploy to production because the `production` pact passed.
+1. Provider implements the new feature, and when the pipeline runs, the `main` pact passes, and a successful verification from the `main` branch of the provider is published. This successful verification means this pact content will now be `pending: false` for all future verifications by the `main` branch.
+1. Next time the provider pipeline runs, the `main` pact is returned for verification with `pending: false`. The verification for the `main` pact still passes, so everything is still green.
+1. A regression is made in the provider, and when the pipeline runs, the `main` pact is again returned for verification with `pending: false`. This time, when the verification fails, the verification task exits with an error, and the provider cannot deploy, as they have introduced a bug that breaks a previously supported pact.
 
 ## To start using the Pending pacts feature
 
