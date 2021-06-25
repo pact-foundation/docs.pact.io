@@ -171,16 +171,16 @@ This means that if you are rolling back to a previously deployed (and hence, pre
 
 ### For feature toggles in the consumer
 
-The Pact Broker workflow was developed to support a feature branch workflow because it is the workflow that the Pact Broker author was most familiar with. Though it is not as elegant, if you use a trunk based workflow with feature toggles, you can also use tags to effectively test all your code paths. This example assumes that the feature toggle is built into the code base, but is configurable on/off at runtime.
+Pact Broker tags were designed to support a feature branch workflow because it is the workflow that the Pact Broker author was most familiar with. Though it is not as well supported, you can also use tags to effectively test all your code paths if you use a trunk based workflow with feature toggles. These instructions assume that the feature toggle is built into the code base, but is configurable on/off at runtime.
 
 #### Publishing pacts
 
 To do this, you will need to generate a "matrix" of pacts (for once, we're not talking about the Pact Broker Matrix here). 
 
-* The base pact
+* **The base pact**
   * One pact should be generated for the base code, with no feature toggles enabled. If you have a feature toggle that changes the behaviour of existing interaction, execute the pact test for that interaction in the test run. If you have a feature toggle that adds a new interaction, then make sure it is *not* included in the test run. You only want interactions in this pact that are required for the "all toggles off" consumer code.
   * This pact should be published with the consumer version in the format `${GIT_SHA}`, and the tag `${GIT_BRANCH}` (even if you only ever use one branch).
-* The feature pacts
+* **The feature pacts**
   * For each feature, run another set of pact tests, turning on only one toggle at a time. The tests that relate to that toggle should be run, so that the interactions that relate to the toggle are included in that pact. It doesn't really matter if the interactions for the unchanged parts of the code run or not.
   * For each feature toggle, publish the pact with the consumer version in the format `${GIT_SHA}+${FEATURE_NAME}` and the tag `${GIT_BRANCH}+${FEATURE_NAME}`.
 
