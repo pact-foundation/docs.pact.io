@@ -3,10 +3,9 @@ title: Tags
 ---
 
 <a name="golden-rule"/>
-
-> The Golden Rule for tagging is:
->
-> Tag with the branch name when you publish pacts or verification results, and tag with the environment name when you deploy.
+:::info The Golden Rule for tagging
+Tag with the branch name when you publish pacts or verification results, and tag with the environment name when you deploy.
+:::
 
 To find out what this means, read below!
 
