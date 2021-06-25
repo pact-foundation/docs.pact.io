@@ -172,7 +172,7 @@ This means that if you are rolling back to a previously deployed (and hence, pre
 
 ### For feature toggles in the consumer
 
-The Pact Broker workflow was developed to support a feature branch workflow because it is the workflow that the Pact Broker author was most familiar with. Though it is not as elegant, if you use a trunk based workflow with feature toggles, you can also use tags to effectively test all your code paths.
+The Pact Broker workflow was developed to support a feature branch workflow because it is the workflow that the Pact Broker author was most familiar with. Though it is not as elegant, if you use a trunk based workflow with feature toggles, you can also use tags to effectively test all your code paths. This example assumes that the feature toggle is built into the code base, but is configurable on/off at runtime.
 
 #### Publishing pacts
 
@@ -197,4 +197,11 @@ The consumer versions must be different for each pact because only one pact vers
 
 #### Verifying pacts
 
-To ensure each of the feature pacts are verified by the provider, the [Work In Progress Pacts](/pact_broker/advanced_topics/wip_pacts/) feature must be enabled on the provider side.
+To ensure each of the feature pacts are verified by the provider, the [Work In Progress Pacts](/pact_broker/advanced_topics/wip_pacts/) feature must be enabled on the provider side. This will ensure the latest pact for each feature is verified by the provider, without the provider needing to know the names of each feature.
+
+#### Deploying
+
+Before deploying the consumer, run `can-i-deploy --pacticipant ${PACTICIPANT_NAME} --version ${GIT_SHA} --to ${ENVIRONMENT}` as normal. 
+
+The difference comes when enabling a feature toggle. Before a feature toggle can be enabled in a runtime system, you need to be sure that the consumer code with the feature toggle ON has been tested successfully with the version of the provider that is currently deployed to that environment. To check this, run `can-i-deploy --pacticipant ${PACTICIPANT_NAME} --version ${GIT_SHA}+${FEATURE_NAME} --to ${ENVIRONMENT}`. This will make sure that the pact for the deployed code with the feature enabled has a successful verification from the deployed version of the provider.
+
