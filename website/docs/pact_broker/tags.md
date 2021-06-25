@@ -33,7 +33,7 @@ Please note that in the Pact Broker (unlike Docker) the term "latest" is not a t
 
 ### When publishing pacts
 
-Your Pact consumer library will allow you to set the "consumer version tags" that will be set for the relevant consumer version when you publish your pacts. The recommended tag value to use is the name of your git branch, if applicable, or something like `dev`, if not.
+Your Pact consumer library will allow you to set the "consumer version tags" that will be set for the relevant consumer version when you publish your pacts. The recommended tag value to use is the name of your git branch. See the section below on [feature toggles](#using-tags-with-feature-toggles-instead-of-feature-branches) if you use feature toggles instead of feature branches.
 
 ### When publishing verification results
 
