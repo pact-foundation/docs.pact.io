@@ -86,7 +86,7 @@ This time, let's walk through the lifecycle of a pact content version with an in
 
 ## FAQ
 
-## How can I try this out?
+### How can I try this out?
 
 There is a CI/CD workshop [here](https://docs.pactflow.io/docs/workshops/ci-cd/) that walks you through the steps of setting up a CI/CD pipeline, using Travis CI and a pair of Node applications. The step entitled [Protecting the provider](https://docs.pactflow.io/docs/workshops/ci-cd/workshop/protecting-the-provider/) walks you through an example that you can try out yourself.
 
