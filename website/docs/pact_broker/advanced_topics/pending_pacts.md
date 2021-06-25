@@ -4,9 +4,25 @@ title: Pending pacts
 
 The "pending pacts" feature allows changed contracts to be verified without failing the provider's build.
 
-You can read about the feature here. [http://blog.pact.io/2020/02/24/how-we-have-fixed-the-biggest-problem-with-the-pact-workflow/](http://blog.pact.io/2020/02/24/how-we-have-fixed-the-biggest-problem-with-the-pact-workflow/)
+## Why is this feature required?
 
-Note that the pending feature is only applicable to the [provider changed workflow](/pact_nirvana/step_4#d-configure-pact-to-be-verified-when-provider-changes), where the list of pacts to be verified are fetched from the Pact Broker. It does not apply to the [contract changed](/pact_nirvana/step_4#e-configure-pact-to-be-verified-when-contract-changes) workflow where the pact URL is passed to the job via the webhook. This is because the pending status of the pact content is calculated based on the tags that the provider will use to publish the verification results, and the 'contract content changed' webhook cannot know this information.
+Let's compare an example workflow with and without the "pending" feature enabled. Note that the pending feature is only applicable to the main provider release pipeline, not the provider build that gets triggered by the `contract_content_changed` webhook.
+
+### Without pending pacts
+
+1. Provider is configured to verify the pacts with tags `main` and `production`. Both pacts are currently passing verification from the `main` branch of the provider.
+2. Consumer publishes a new pact with tag `main` that has a new, unsupported interaction in it (ideally, this should have been done in a feature branch, but for the sake of this example, we'll assume best practice advice was not followed).
+3. Next time the provider build runs, the verification of the `main` pact fails, and the verification task exits with an error. The broken build stops the provider from deploying, even though the verification for the `production` pact passed.
+4. The provider team is very annoyed!
+
+### With pending pacts
+
+1. Provider is configured to verify the pacts with tags `main` and `production`, AND the `enablePending` option is set to true. 
+2. Consumer publishes a new pact with tag `main` that has a new unsupported interaction in it (as above).
+3. Next time the provider build runs, the verification of the `main` pact fails **BUT** because `enablePending` is turned on, the verification task does not exit with an error. This means the pipeline continues and the provider can still deploy to production, because the verification for the `production` pact passed.
+4. Provider team is happy!
+
+Note that in both of these examples, the verification result sent back to the Pact Broker for the `main` pact is still a failure, and the consumer cannot be deployed in either example, as the features it requires are not yet supported (this is why a feature branch should have been used, as the consumer's own pipeline will be blocked by `can-i-deploy` reporting that the provider does not yet support the new interaction).
 
 ## How the "pending" property works
 
@@ -17,7 +33,7 @@ The "pending" status of a pact is a _dynamically calculated_ property, determine
 
 _A pact content is considered pending if there has not been a successful published verification by the specified branch of the provider._
 
-It is calculated for each pact version when the "pacts for verification" API is called by the provider test harness. 
+It is calculated for each pact version when the "pacts for verification" API is called by the provider verification task. 
 
 When a pact version is considered "pending", then any mismatches during verification _will not_ cause the overall verification task to fail. When a pact is _not_ considered "pending" then mismatches _will_ cause the overall verification task to fail (until the introduction of this feature, this was the default behaviour).
 
@@ -26,6 +42,8 @@ The purpose of the pending flag is to ensure that provider builds are not broken
 The provider tags are used to determine the pending status because it is common to implement new features of a provider on a feature branch. If the provider tags were not taken in to consideration, a newly passing verification on `feat-x` of the provider could suddenly cause the verification on branch `main` of the provider to fail.
 
 While the provider build may pass, the verification results are still reported (if results publishing is enabled) to the Pact Broker as "failed", as the consumer should not be able to deploy the code that generated this contract.
+
+### WIP pacts
 
 [Work in progress pacts](/pact_broker/advanced_topics/wip_pacts) always have the pending flag set to true.
 
@@ -55,6 +73,10 @@ This is the way it's meant to work. The pending flag doesn't make the failing ve
 ### Why has my master build suddenly failed when a successful verification was published from a branch?
 
 The pending flag is calculated based on the provider tags supplied. You probably haven't configured a provider tag, so the results from the branch and master can't be differentiated.
+
+### Why is the pending configuration not working for my `contract_content_changed` webhook triggered build?
+
+The pending feature is only applicable to the [provider changed workflow](/pact_nirvana/step_4#d-configure-pact-to-be-verified-when-provider-changes), where the list of pacts to be verified are fetched from the Pact Broker. It does not apply to the [contract changed](/pact_nirvana/step_4#e-configure-pact-to-be-verified-when-contract-changes) workflow where the pact URL is passed to the job via the webhook. This is because the pending status of the pact content is calculated based on the tags that the provider will use to publish the verification results, and the `contract_content_changed` webhook cannot know this information. The webhook triggered build is meant to be an "out of bound" build that does not have any dependencies on it, and it is expected to fail when pacts change.
 
 ### I'm so confused by the whole thing!
 
