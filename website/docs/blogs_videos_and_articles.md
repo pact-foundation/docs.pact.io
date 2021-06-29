@@ -12,12 +12,13 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 - [How to establish quality gates in a Microservices architecture](https://www.cigniti.com/blog/microservices-testing-quality-gates-model/)
 - [Microservice architecture testing strategies](https://www.cigniti.com/blog/microservices-architecture-testing-strategies/)
-- [Reduce the Cost of Migrating to a Microservice Architecture. A kreuzwerker / Pactflow webinar with Q&A](https://vimeo.com/526231279?utm_source=pact-oss-docs&utm_campaign=m2m)
-- [Deploy with Speed and Confidence Using Contract Testing and Pact – TestJS Summit (Matt Fellows)](https://www.youtube.com/watch?v=W20AmP0XgkU?utm_source=pact-oss-docs&utm_campaign=m2m)
+- [Reduce the Cost of Migrating to a Microservice Architecture. A kreuzwerker / Pactflow webinar with Q&A](https://vimeo.com/526231279?utm_source=pact-oss-docs&utm_campaign=m2m) (Video)
+- [Deploy with Speed and Confidence Using Contract Testing and Pact – TestJS Summit (Matt Fellows)](https://www.youtube.com/watch?v=W20AmP0XgkU?utm_source=pact-oss-docs&utm_campaign=m2m) (Video)
 
 **Customer Stories**
 
-- [Consumer-Driven Contract Testing - A path to test in isolation with confidence (Raquel Bautista Garrido / Fanduel)](https://www.ministryoftesting.com/dojo/lessons/consumer-driven-contract-testing-raquel-bautista-garrido)
+- [Consumer-Driven Contract Testing - A path to test in isolation with confidence (Raquel Bautista Garrido / Fanduel)](https://www.ministryoftesting.com/dojo/lessons/consumer-driven-contract-testing-raquel-bautista-garrido) (Video)
+- [Test Automation Talks - Why? What? How? (Bas Dijkstra)](https://www.youtube.com/watch?v=qKKDivgXI8M) (Video)
 
 ## 2020
 
