@@ -198,10 +198,10 @@ If you need to support multiple versions of the provider API concurrently, then 
 
 If you need to make a breaking change to a provider, you can do it in a multiple step process using the [expand and contract pattern](https://www.martinfowler.com/bliki/ParallelChange.html).
 
-1. Add the new fields/endpoints to the provider and deploy. 
-2. Update the consumers to use the new fields/endpoints, then deploy. 
-3. Remove the old fields/endpoints from the provider and deploy. 
- 
+1. Add the new fields/endpoints to the provider and deploy.
+2. Update the consumers to use the new fields/endpoints, then deploy.
+3. Remove the old fields/endpoints from the provider and deploy.
+
 At each step of the process, all the contract tests remain green. This pattern is supported well by consumer driven contracts because it is easy for a provider to determine if/when all the consumers have dropped use of the old field by removing it in a local development environment and running the pact verification tests.
 
 ### Is there a Jenkins plugin for Pact?

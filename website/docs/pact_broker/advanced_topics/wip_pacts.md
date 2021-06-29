@@ -14,26 +14,28 @@ When verifying pacts, the verification task can be configured to include all "wo
 
 You can read more about the backstory on this feature [here](http://blog.pact.io/2020/02/24/introducing-wip-pacts/).
 
+[Watch a video that explains this concept](https://youtu.be/VnOy9Sv9Opo).
+
 ## Technical details
 
-To enable the WIP pacts feature, you need to set the `includeWipPactsSince` field to the date from which you want to start using this feature. eg `"2020-10-31"`. The date is required so that you don't suddenly start verifying 100 past feature pacts in your build all of a sudden. You also need to set a `provider version tag`  as this is used in the pending calculations. The provider version tag is recommended to be the name of the git branch for this to work correctly.
+To enable the WIP pacts feature, you need to set the `includeWipPactsSince` field to the date from which you want to start using this feature. eg `"2020-10-31"`. The date is required so that you don't suddenly start verifying 100 past feature pacts in your build all of a sudden. You also need to set a `provider version tag` as this is used in the pending calculations. The provider version tag is recommended to be the name of the git branch for this to work correctly.
 
 The logic for what constitutes a WIP pact is actually quite complex! To make it work as a human would intuitively expect involves many rules. It might be easiest to explain how the pacts are selected by stepping through it procedurally as the code does.
 
 1. Find all the pacts that are the latest for their tag (the "head" pacts). (eg. The latest pact for a version with tag `main` + the latest pact for a version with tag `feat-x` + the latest pact for a version with tag `feat-y` ...)
 1. Discard the pacts that have been explicitly selected in the consumerVersionSelectors. (eg. usually you'd configure the consumer version selectors with `{"tag": "main", "latest": "true"}`, so discard the latest `main` pact).
 1. Discard all the pacts created before the `includeWipPactsSince` date (we don't want to verify every head pact since the dawn of time).
-1. Discard all the pacts that have a successful verification by a provider version with the same configured tag (ie. branch) *where the pact content was explicitly specified in the selectors*.
-    * The implication of this is that if a WIP pact is verified successfully when it was included in the list of pacts to verify because it was WIP, this successful verification does not stop it being a WIP pact. It only stops being a WIP pact when the content has been "approved" by having one of the tags that the provider team has chosen to support. If you are using git feature branches with the branch name mapped to a tag, this means the pact will stay WIP until the branch is merged, even after a successful verification.
-1. Discard all the pacts that were published before the first instance of this provider tag (this is so that if you create a brand new provider branch, you don't  get EVERY head pact included in the WIP pacts list).
+1. Discard all the pacts that have a successful verification by a provider version with the same configured tag (ie. branch) _where the pact content was explicitly specified in the selectors_.
+   - The implication of this is that if a WIP pact is verified successfully when it was included in the list of pacts to verify because it was WIP, this successful verification does not stop it being a WIP pact. It only stops being a WIP pact when the content has been "approved" by having one of the tags that the provider team has chosen to support. If you are using git feature branches with the branch name mapped to a tag, this means the pact will stay WIP until the branch is merged, even after a successful verification.
+1. Discard all the pacts that were published before the first instance of this provider tag (this is so that if you create a brand new provider branch, you don't get EVERY head pact included in the WIP pacts list).
 
 What is left are the outstanding head pacts - the ones that you're still working on.
 
 ## To start using the WIP pacts feature
 
-* You need to either be using [pactflow.io](https://pactflow.io?utm_source=ossdocs&utm_campaign=wip_pacts), or have version 2.60.0+ of the OSS Pact Broker.
-* You need to be on the latest version of the Pact client library for JVM, Javascript, Go, Ruby, .Net or Python (pact-python, not pactman)
-* You need to find the verification documentation for your language, and set the "includeWipPactsSince" date to your chosen date (eg. try a week ago). The reason this date is required is that if you included all the pacts that were considered work in progress, you may include many years of outstanding pacts!
+- You need to either be using [pactflow.io](https://pactflow.io?utm_source=ossdocs&utm_campaign=wip_pacts), or have version 2.60.0+ of the OSS Pact Broker.
+- You need to be on the latest version of the Pact client library for JVM, Javascript, Go, Ruby, .Net or Python (pact-python, not pactman)
+- You need to find the verification documentation for your language, and set the "includeWipPactsSince" date to your chosen date (eg. try a week ago). The reason this date is required is that if you included all the pacts that were considered work in progress, you may include many years of outstanding pacts!
 
 ## FAQ
 

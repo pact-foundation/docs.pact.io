@@ -2,6 +2,13 @@
 title: Wrapper implementations
 ---
 
+## Rust (strategic) shared core implementations
+
+Pact Go (beta)
+Pact JS (beta)
+Pact C++
+## Ruby shared core implementations
+
 The following languages "wrap" a Pact command line executable that is created by taking the original Ruby implementation, and using Travelling Ruby to create a standalone executable that has its own, self contained Ruby runtime. This is called the "Pact Ruby standalone".
 
 * Pact JS (v2)

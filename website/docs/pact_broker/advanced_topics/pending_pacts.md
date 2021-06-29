@@ -4,6 +4,8 @@ title: Pending pacts
 
 The "pending pacts" feature allows changed contracts to be verified without failing the provider's build.
 
+[Watch a video that explains this concept](https://youtu.be/VnOy9Sv9Opo).
+
 ## Why is this feature required?
 
 Without the pending pacts feature turned on, changes made to pacts by the consumer team can block the provider team from being able to deploy, even when the provider is compatible with the deployed version of the consumer.
@@ -19,22 +21,24 @@ To demonstrate how it works, let's compare an example workflow with and without 
 
 ### With the pending pacts feature enabled
 
-1. Provider is configured to verify the pacts with tags `main` and `production`, AND the `enablePending` option is set to true. 
+1. Provider is configured to verify the pacts with tags `main` and `production`, AND the `enablePending` option is set to true.
 2. Consumer publishes a new pact with tag `main` that has a new unsupported interaction in it (as above).
 3. Next time the provider build runs, the verification of the `main` pact fails **BUT** _because `enablePending` is turned on, the verification task does not exit with an error_. This means the pipeline continues and the provider can still deploy to production, because the verification for the `production` pact passed.
 4. Provider team is happy!
 
 Note that in both of these examples, the verification result sent back to the Pact Broker for the `main` pact is still a failure, and the consumer cannot be deployed in either example, as the features it requires are not yet supported (this is why a feature branch should have been used, as the consumer's own pipeline will be blocked by `can-i-deploy` reporting that the provider does not yet support the new interaction).
 
+[Watch a video that explains this concept](https://youtu.be/VnOy9Sv9Opo).
+
 ## How the "pending" property works
 
 The pact verification task determines whether or not to exit with an error status for a failed pact based on the value of the "pending" property for the pact content that is being verified. The "pending" status of a pact is a _dynamically calculated_ property, determined by the Pact Broker when the pacts are fetched for verification. It is based on:
 
-* The content of the contract (also known as the "pact version"). 
-  * Note that the Pact Broker deduplicates and versions the contents of the published pacts. Publishing the same content for multiple consumer versions results in each of the consumer versions being associated with the same underlying pact content version.
-* The verification results that have been published to the Pact Broker for the pact content. 
-  * Note that the verification results belong to the pact _content_ itself, irrespective of which consumer version published it.
-* The branch of the provider, as specified by the provider tags in the verification configuration
+- The content of the contract (also known as the "pact version").
+  - Note that the Pact Broker deduplicates and versions the contents of the published pacts. Publishing the same content for multiple consumer versions results in each of the consumer versions being associated with the same underlying pact content version.
+- The verification results that have been published to the Pact Broker for the pact content.
+  - Note that the verification results belong to the pact _content_ itself, irrespective of which consumer version published it.
+- The branch of the provider, as specified by the provider tags in the verification configuration
 
 **A pact content is considered pending if there has not been a successful verification published by the specified branch of the provider.**
 
@@ -73,16 +77,30 @@ This time, let's walk through the lifecycle of a pact content version with an in
 
 ## To start using the Pending pacts feature
 
+<<<<<<< Updated upstream
+
+- You need to either be using [pactflow.io](https://pactflow.io?utm_source=ossdocs&utm_campaign=pending_pacts), or have version 2.60.0+ of the OSS Pact Broker.
+- You need to be use at least the following version of your Pact library:
+  - JVM: 4.1.7
+  - For the following libraries that wrap the [pact-ruby-standalone](https://docs.pact.io/wrapper_implementations), at least version 1.49.3 of the standalone is required.
+    - JS: 9.11.1 (not supported by the v3 implementation that uses Rust)
+    - Ruby: 1.52.0
+    - Go: latest as of September 2020 (v1.4.1)
+    - .Net: latest as of September 2020 (version TBC)
+    - Python: latest as of September 2020 (version TBC)
+- # You need to find the verification documentation for your language, and set the "enablePending" flag to true.
+
 * You need to either be using [pactflow.io](https://pactflow.io?utm_source=ossdocs&utm_campaign=pending_pacts), or have version 2.60.0+ of the OSS Pact Broker.
 * You need to be use at least the following version of your Pact library:
-  * JVM: 4.1.7
-  * For the following libraries that wrap the [pact-ruby-standalone](https://docs.pact.io/wrapper_implementations), at least version 1.49.3 of the standalone is required.
-    * JS: 9.11.1 (not supported by the v3 implementation that uses Rust)
-    * Ruby: 1.52.0
-    * Go: latest as of September 2020 (v1.4.1)
-    * .Net: latest as of September 2020 (version TBC)
-    * Python: latest as of September 2020 (version TBC)
+  - JVM: 4.1.7
+  - For the following libraries that wrap the [pact-ruby-standalone](https://docs.pact.io/wrapper_implementations), at least version 1.49.3 of the standalone is required.
+    - JS: 9.11.1 (not supported by the v3 implementation that uses Rust)
+    - Ruby: 1.52.0
+    - Go: latest as of September 2020 (v1.4.1)
+    - .Net: latest as of September 2020 (version TBC)
+    - Python: latest as of September 2020 (version TBC)
 * You need to find the verification documentation for your language, and set the "enablePending" flag to true.
+  > > > > > > > Stashed changes
 
 ## FAQ
 
@@ -115,6 +133,4 @@ DEBUG: This pact is in pending state for this version of Bar because a successfu
 DEBUG: This pact is still in pending state for any version of Bar with tag 'master' as a successful verification result with this tag has not yet been published
 ```
 
-If you cannot see this debug output, please consult the documentation for your language to see if you can find a way to turn it on. If you can't find that, please hop on to our [Slack workspace](https://slack.pact.io) and ask about it in the appropriate channel for your language. 
-
-
+If you cannot see this debug output, please consult the documentation for your language to see if you can find a way to turn it on. If you can't find that, please hop on to our [Slack workspace](https://slack.pact.io) and ask about it in the appropriate channel for your language.
