@@ -7,6 +7,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v1.5.3 (03 July 2021)
+  * [5903b70](https://github.com/pact-foundation/pact-go/commit/5903b70) - fix: handle verification response correctly (bbmokus, Fri Jul 2 16:49:11 2021 +0200)
+  * [bc10b4b](https://github.com/pact-foundation/pact-go/commit/bc10b4b) - fix: Dockerfile to reduce vulnerabilities (snyk-bot, Wed Mar 31 06:18:39 2021 +0000)
+
 ### v1.5.2 (25 March 2021)
   * [a461ee3](https://github.com/pact-foundation/pact-go/commit/a461ee3) - fix: pass PactLogDir to verifier binary. Fixes #156 (Matt Fellows, Thu Mar 25 13:14:45 2021 +1100)
 
