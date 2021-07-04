@@ -212,6 +212,7 @@
           "pact_broker/webhooks/debugging_webhooks"
         ]
       },
+      "pact_broker/recording_deployments_and_releases",
       "pact_broker/can_i_deploy",
       "pact_broker/set_up_checklist",
       "pact_broker/client_cli",

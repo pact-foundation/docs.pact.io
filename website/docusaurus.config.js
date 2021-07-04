@@ -150,6 +150,7 @@ const siteConfig = {
         {to: 'implementation_guides/cli', label: 'Pact Docs', position: 'left'},
         {to: 'pact_broker/docker_images', label: 'Pact Broker Docs', position: 'left'},
         {to: 'history', label: 'Resources', position: 'left'},
+        {to: 'blog', label: 'Blog', position: 'left'},
         {to: 'help', label: 'Help', position: 'left'},
       ],
     },
