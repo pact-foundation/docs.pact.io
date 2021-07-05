@@ -11,19 +11,19 @@ hide_table_of_contents: true
 
 "Tags" in the Pact Broker are simple string values that belong to application version resources (aka. "pacticipant version"). They're generally used to represent git branches and environments, and they allow us to manage backwards compatability and "forwards compatability" between applications, and determine if an application is safe to deploy. Tags have the advantage of being flexible and generic enough to support any development workflow.
 
-Tags have their disadvantages though. They are similar enough to Docker tags that users expect them to work the same way, but different enough that pages of documentation need to be written to explain how to use them. The main problem with tags though, is that no semantic information that can be inferred from them ie. it's impossible for the Broker itself to know whether a tag represents a git branch, or a environment, or something else entirely.
+Tags have their disadvantages though. They are similar enough to Docker tags that users expect them to work the same way, but different enough that pages of documentation need to be written to explain how to use them. The main problem with tags though, is that no semantic information that can be inferred from them ie. it's impossible for the Broker to know whether a tag represents a git branch, an environment, or something else entirely.
 
 <!--truncate-->
 
 This pushes the burden of interpreting Pact Broker data and messages onto the user. For example, which message makes more sense - "There is no verified pact between version 6f6ca2f73 of Foo and the latest version of Bar with tag prod (no such version exists)" or "There is no verified pact between version 6f6ca2f73 of Foo and the production version of Bar, as Bar has not been deployed to production yet."
 
-While we used the argument of "tags allow any workflow to be supported in the Broker in a non-opinionated way", it turns out that 99% of the times people use tags, they either represent branches or deployment environments. So, after 8 years of avoiding it, we have finally added first class support for branches and environments, and now, we wish we'd done it years ago! 
+While we used the argument of "tags allow any workflow to be supported in the Broker in a non-opinionated way", it turns out that 99% of the times people use tags, they either represent branches or deployment environments. So, after 8 years of avoiding it, we have finally added first class support for branches, environments, deployments and releases, and now, we wish we'd done it years ago! 
 
 So what are the changes?
 
 1. When pacts and verification results are published, instead of "tagging with the branch name", we now set the more obviously named "branch" property for the application version. 
 2. The pacticipant resource now has a configurable "main branch" property.
-3. Instead of "tagging with the environment name" when an application version is deployed or released, we use the record-deployment or record-release commands provided by the Pact Broker CLI.
+3. Instead of "tagging with the environment name" when an application version is deployed or released, we use the `record-deployment` or `record-release` commands provided by the Pact Broker CLI.
 
 Not only does explicit branch and environment support allow the Broker to show much more meaningful and user friendly messages, it also makes Pact simpler to configure, and makes it easier to set up a CI/CD workflow that would previously have required a much more advanced understanding of the Broker.
 
