@@ -5,7 +5,7 @@ description: How to use Pact + the can-i-deploy tool to ensure that you are safe
 
 Before you deploy a new version of an application to a production environment, you need to know whether or not the version you're about to deploy is compatible with the versions of the other apps that already exist in that environment. The old-fashioned way of managing these dependencies involved deploying sets of pre-tested applications together, creating a bottleneck, and meaning that speedy development and testing on one application may be negated by slow development and testing on another.
 
-The Pact way of managing these dependencies is to use the Pact Matrix - this is the matrix created when you create a table of all the consumer and provider versions that have been tested against each other using Pact. \(When a pact is published, the version of the consumer that generated the pact is recorded. When a pact is verified against a provider, the verification results are published to the Pact Broker, along with the version of the provider that verified the pact. When you put all of the consumer versions and provider versions that have been tested against each other into a table, you end up with the "Pact Matrix".\)
+The Pact way of managing these dependencies is to use the Pact "Matrix" and the `can-i-deploy` tool. The "Matrix" is the grid created when you create a table of all the consumer and provider versions that have been tested against each other using Pact. \(When a pact is published, the version of the consumer that generated the pact is recorded. When a pact is verified against a provider, the verification results are published to the Pact Broker, along with the version of the provider that verified the pact. When you put all of the consumer versions and provider versions that have been tested against each other into a table, you end up with the "Pact Matrix".\)
 
 You can view the Pact Matrix for any pair of applications by clicking on the little grid icon for your pact in the Pact Broker index page.
 
@@ -24,41 +24,45 @@ So how does this help us? Well, if we know that version 56 of Bar is already in 
 
 Let's see how the Pact Matrix helps us deploy safely in practice.
 
-In the deployment script for each application that uses Pact, we need to add a step that checks the Pact Matrix to make sure we're safe to deploy. The tool that we use to check the matrix is called [can-i-deploy](https://github.com/pact-foundation/pact_broker-client#can-i-deploy). It is part of the Pact Broker client command line interface, and is available via Docker, or an executable that you can install via a script.
+In the deployment script for each application that uses Pact, we need to add a step after the successful deployment that notifies the Pact Broker of the event. Depending on which version of the Pact Broker you are using, you will notify the Broker in a different way. The latest versions of the Pact Broker support the [`record-deployment`](/pact_broker/recording_deployments_and_releases/#recording-deployments) and [`record-release`](/pact_broker/recording_deployments_and_releases/#recording-releases) commands. Older versions of the Pact Broker use "tags" to keep track of deployments. See the [section below](#using-can-i-deploy-with-tags) if you are using an version of the Broker that does not support recording deployments.
 
-Here is how we would check to see if we were safe to deploy Foo version 23 to production, given that we know version 56 of Bar is in production. \(The Pact Broker URL and credentials have been skipped for clarity.\) Note that "pacticipant" is not a typo - it's the Pact term for "an application that participates in a pact".
+Notifying the Pact Broker of a deployment looks like this:
 
-`$ pact-broker can-i-deploy --pacticipant Foo --version 23 --pacticipant Bar --version 56` \(exit code 0 means yes!\)
+`$ pact-broker record-deployment --pacticipant Bar --version 56 --environment production`
 
-This works, but there's one problem - how do we get the production version of Bar in that line?
+We're just using `production` in our example, but it's recommended to do exactly the same thing with all your pre-prod environments too.
 
-This is where "tags" come in. Tags are metadata \(just simple string values\) that are stored with the pacticipant version object in the database. A version may have many tags, and the same tag can be applied to many versions. \(You can think of the time ordered list of pacticipant versions that share the same tag as forming a "pseudo-branch" of versions.\)
+Out matrix now looks like this:
 
-When an application version is deployed to an environment, the relevant pacticipant version needs to be "tagged" with the name of that environment, so that the Pact Broker knows what is deployed where. Let's see what that looks like in code.
+| Foo version \(consumer\) | Bar version \(provider\) | Verification success? |
+| :--- | :--- | :--- |
+| 22 | 56 (prod) | true |
+| 23 | 56 (prod) | true |
+| 23 | 57 | false |
+| 23 | 58 | true |
+| 24 | 58 | true |
+| 25 | 58 | false |
 
-`$ pact-broker create-version-tag --pacticipant Bar --version 56 --tag prod`
 
-This line would be added to the end of the deployment script for any application that uses Pact. There's no need to untag the previous `prod` version, as we specify "the latest `prod` version", rather than just "the `prod` version" in our commands. We're just using `prod` in our example, but it's recommended to do exactly the same thing with all your pre-prod environments too.
+The Pact Broker already knows from its contracts what each application's dependencies are, and now the Pact Broker knows which version of each application is in each environment. This means it can now determine whether or not a particular application version can be deployed safely into an environment by inspecting the matrix, and making sure that there is a successful verification result between the version that is about to be deployed, and all the versions of the integrated applications that are already in that environment.
 
-Now let's go back to our Foo can-i-deploy check. Let's ask the broker if we can deploy version 24 of Foo with the latest `prod` version of Bar \(that is, the latest version of Bar that has the tag `prod`.\)
+Here is how we would check to see if we were safe to deploy Foo version 23 to production:
 
-`$ pact-broker can-i-deploy --pacticipant Foo --version 24 --pacticipant Bar --latest prod` \(exit code 0 means yes!\)
+`$ pact-broker can-i-deploy --pacticipant Foo --version 23 --to-environment production` \(exit code 0 means yes!\)
 
-Great! The broker can work out which is the "latest `prod` version of Bar" because of the tags we gave it, and it can then work out if version 24 of Foo is compatible with it.
+Here's what would happen if we tried to deploy Foo version 24 to production:
 
-Now, what happens when Foo gets another provider, Baz. Do we need to add `--pacticipant Baz --latest prod` to the command? Well, actually, if all the providers are using tags, we don't need to specify the pacticipant names at all. The Pact Broker already knows which providers version 24 of Foo has pacts with, so we just need to say "can i deploy version 24 of Foo to prod?" and it can work out the rest.
-
-`$ pact-broker can-i-deploy --pacticipant Foo --version 24 --to prod`
+`$ pact-broker can-i-deploy --pacticipant Foo --version 24 --to-environment production` \(exit code 1 means no\)
 
 ## Summary
 
 To stay safe while avoiding "big bang" deployments, add the following line before deploying:
 
-`$ pact-broker can-i-deploy --pacticipant PACTICIPANT --version VERSION --to STAGE`
+`$ pact-broker can-i-deploy --pacticipant PACTICIPANT --version VERSION --to-environment ENVIRONMENT`
 
 and add the following line after deploying:
 
-`$ pact-broker create-version-tag --pacticipant PACTICIPANT --version VERSION --tag STAGE`
+`$ pact-broker record-deployment --pacticipant PACTICIPANT --version VERSION --environment ENVIRONMENT`
 
 ## Further reading
 
@@ -70,4 +74,20 @@ Other features of `can-i-deploy` include:
 
 Please see the [Pact Broker Client CLI documentation](/pact_broker/client_cli/readme#can-i-deploy) for an explanation of all the parameters for can-i-deploy.
 
+## Using can-i-deploy with tags
 
+Before first class support was added to the Pact Broker for recording deployments and releases, tags were used to keep track of which versions were deployed to each environment. Tags will continue to be supported for existing functionality, however, new features may not include support for tags. We strongly recommend using the new deployments and releases features over tags.
+
+Tags are metadata \(just simple string values\) that are stored with the pacticipant version object in the database. A version may have many tags, and the same tag can be applied to many versions. \(You can think of the time ordered list of pacticipant versions that share the same tag as forming a "pseudo-branch" of versions.\)
+
+When an application version is deployed to an environment, the relevant pacticipant version needs to be "tagged" with the name of that environment, so that the Pact Broker knows what is deployed where. Let's see what that looks like in code.
+
+`$ pact-broker create-version-tag --pacticipant Bar --version 56 --tag production`
+
+This line would be added to the end of the deployment script for any application that uses Pact. There's no need to untag the previous `production` version, as we specify "the latest `production` version", rather than "all `production` versions" in our commands. We're just using `production` in our example, but it's recommended to do exactly the same thing with all your pre-prod environments too.
+
+When using the `can-i-deploy` command in conjunction with tags, use the parameter `--to ENVIRONMENT` rather than `--to-environment ENVIRONMENT`.
+
+eg.
+
+`$ pact-broker can-i-deploy --pacticipant Foo --version 23 --to production`

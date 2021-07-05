@@ -5,7 +5,11 @@ title: Tags
 <a name="golden-rule"/>
 
 :::info The Golden Rule for tagging
-Tag with the branch name when you publish pacts or verification results, and tag with the environment name when you deploy.
+Tag with the branch name when you publish pacts or verification results, ~~and tag with the environment name when you deploy.~~
+:::
+
+:::caution The Golden Rule has been updated
+When you deploy or release an application version, you should now use the [record deployment or release](/pact_broker/recording_deployments_and_releases/) feature.
 :::
 
 To find out what this means, read below!
@@ -41,12 +45,16 @@ Your Pact provider library will allow you to set the "provider version tags" tha
 
 ### After deploying to an environment
 
+:::caution Update
+When you deploy or release an application version, you should now use the [record deployment or release](/pact_broker/recording_deployments_and_releases/) feature.
+:::
+
 _Note: this tag is required for the use of can-i-deploy, however, if you are just starting with Pact, you can skip it for now._
 
 When you deploy an application that uses Pact to a given environment \(eg `test`, `prod`\) then you should tag the relevant pacticipant version with the name of the stage using the [create version tag](https://github.com/pact-foundation/pact_broker-client#create-version-tag) command from the [Pact Broker client](/pact_broker/can_i_deploy). This allows other applications to use [can-i-deploy](/pact_broker/can_i_deploy) to ensure that they're compatible with the version you just deployed before they deploy their own version.
 
 :::info Remember the Golden Rule for tagging is:
-Tag with the branch name when you publish pacts or verification results, and tag with the environment name when you deploy.
+Tag with the branch name when you publish pacts or verification results ~~and tag with the environment name when you deploy.~~
 :::
 
 ## When are tags used?

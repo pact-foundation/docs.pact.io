@@ -4,29 +4,35 @@ title: Consumer Version Selectors
 
 ## Overview
 
-Consumer version selectors are the (new) way to configure which pacts the provider verifies. Instead of providing a list of tag names (as in the past) a list of selector objects is provided. These allow a much more flexible and powerful approach to specifying which pacts to verify.
+Consumer version selectors are used to configure which pacts the provider verifies. Instead of providing a list of tag names (as in the past) a list of selector objects is provided. These allow a much more flexible and powerful approach to specifying which pacts to verify.
 
 ## Properties
 
 A consumer version selector has the following properties:
 
-* `tag`: The name of the tag which applies to the pacticipant (application) versions of the pacts you want to verify. Common examples of the tag names used here are `master`, `test` and `prod`.
+* `tag: "<string>"`: The name of the tag which applies to the pacticipant (application) versions of the pacts you want to verify. Common examples of the tag names used here are `master`, `test` and `prod`.
 
-* `latest`: Whether or not to verify only the pact that belongs to the latest application version. The most common use case is to set this to true. When false, null or omitted, the pacts that belong to *all* application versions with the specified tag will be verified. This is to support the scenario when an API has many production versions, and hence pacts (eg. a mobile consumer).
+* `latest: true|false`: Whether or not to verify only the pact that belongs to the latest application version. The most common use case is to set this to true. When false, null or omitted, the pacts that belong to *all* application versions with the specified tag will be verified. This is to support the scenario when an API has many production versions, and hence pacts (eg. a mobile consumer).
 
-* `consumer`: Filter pacts by the specified consumer. When omitted, all consumer are included. This is generally not needed, as the most common use case is to verify pacts for all consumers. It is useful in the scenario when an API has multiple versions of one particular consumer in production (eg. a mobile consumer) as well as a single version of another consumer (eg. an API consumer). See examples below.
+* `deployedOrReleased: true`: Can only be set to `true`, or the key should be ommitted. If this selector is specified, the pacts for all application versions that are either currently deployed to any environment, or released and currently supported in any environment are returned for verification. When using this selector the integrated applications must record their deployments or releases using the [record-deployment](/pact_broker/recording_deployments_and_releases#deployments) or [record-release](/pact_broker/recording_deployments_and_releases#releases) command. This selector can be further qualified by specifying an `environment` name, however, it is recommended to verify the pacts for all environments, unless there is a particular reason not to.
 
-* `fallbackTag`: If a pact for the specified `tag` does not exist, then use this tag as a fallback. This is useful for co-ordinating development between consumer and provider teams when matching branch names are used.
+* `deployed: true`: Can only be set to `true`, or the key should be ommitted. If this selector is specified, the pacts for all application versions that are currently deployed to any environment are returned for verification. When using this selector the integrated applications must record their deployments using the [record-deployment](/pact_broker/recording_deployments_and_releases#deployments) command. This selector can be further qualified by specifying an `environment` name, however, it is recommended to verify the pacts for all environments, unless there is a particular reason not to. 
+
+* `released: true`: Can only be set to `true`, or the key should be ommitted. If this selector is specified, the pacts for all application versions that are currently released and supported in any environment are returned for verification. When using this selector the integrated applications must record their releases using the [record-release](/pact_broker/recording_deployments_and_releases#releases) command. This selector can be further qualified by specifying an `environment` name, however, it is recommended to verify the pacts for all environments, unless there is a particular reason not to.
+
+* `environment: "<string>"`: The name of the environment for which the pacts of released/deployed versions should be returned. When used on its own, any released or deployed versions are included. Can be used in conjunction with the `deployedOrReleased`, `deployed`, and `released` properties.
+
+* `consumer: "<string>"`: Filter pacts by the specified consumer. When omitted, all consumer are included. This is generally not needed, as the most common use case is to verify pacts for all consumers. It is useful in the scenario when an API has multiple versions of one particular consumer in production (eg. a mobile consumer) as well as a single version of another consumer (eg. an API consumer). See examples below.
+
+* `fallbackTag: "<string>"`: If a pact for the specified `tag` does not exist, then use this tag as a fallback. This is useful for co-ordinating development between consumer and provider teams when matching branch names are used.
 
 ## Deduplication
 
 The Pact Broker API for retrieving pacts by selectors deduplicates the pacts based on their *content*. This means that if the same content was published in multiple selected pacts, the verification for that content will only need to run once. This is quite common when there hasn't been a change to a pact for a while, and the same pact content is present in development, test and production pacts.
 
-
-
 ## Examples
 
-### Verifying the latest development, test and master pacts
+### Verifying the latest development pact, and the pacts for deployed or released versions
 
 This is the most common use case.
 
@@ -52,16 +58,10 @@ import TabItem from '@theme/TabItem';
     // ....
     consumerVersionSelectors: [
       {
-        tag: "master",
-        latest: true
+        mainBranch: true
       },
       {
-        tag: "test",
-        latest: true
-      },
-      {
-        tag: "production",
-        latest: true
+        deployedOrReleased: true
       }
     ]
   }
@@ -112,8 +112,7 @@ import TabItem from '@theme/TabItem';
       pact_broker_base_url "..."
       consumer_version_selectors [
             { tag: "main", latest: true },
-            { tag: "test", latest: true },
-            { tag: "production", latest: true }
+            { deployed_or_released: true }
           ]
     end
   end
@@ -294,6 +293,10 @@ Dynamically determine the current branch of the provider, see if there is a matc
 
 ### Verifying pacts where the consumer is a mobile application
 
+:::caution The information in the following section has been superseded
+Using tags to keep track of which application versions are in an environment has now been replaced by first class support for [deployments and releases](/pact_broker/recording_deployments_and_releases). You can now use the "deployedOrReleased: true" selector for all scenarios.
+:::
+
 Verify the pacts for the latest `master` and `test` versions, and all `production` versions of "my-mobile-consumer".
 
 <Tabs
@@ -400,6 +403,10 @@ Verify the pacts for the latest `master` and `test` versions, and all `productio
 </Tabs>
 
 ### Verifying a pacts where one consumer is a mobile application
+
+:::caution The information in the following section has been superseded
+Using tags to keep track of which application versions are in an environment has now been replaced by first class support for [deployments and releases](/pact_broker/recording_deployments_and_releases). You can now use the "deployedOrReleased: true" selector for all scenarios.
+:::
 
 Verify the latest `production` version of all consumers, and all `production` versions of "my-mobile-consumer". Note that the pacts are [deduplicated](#deduplication), so despite being included by 2 selectors, the verification of the latest production pact for "my-mobile-consumer" will only run once.
 
