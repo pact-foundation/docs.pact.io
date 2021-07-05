@@ -77,8 +77,6 @@ This time, let's walk through the lifecycle of a pact content version with an in
 
 ## To start using the Pending pacts feature
 
-<<<<<<< Updated upstream
-
 - You need to either be using [pactflow.io](https://pactflow.io?utm_source=ossdocs&utm_campaign=pending_pacts), or have version 2.60.0+ of the OSS Pact Broker.
 - You need to be use at least the following version of your Pact library:
   - JVM: 4.1.7
@@ -88,19 +86,7 @@ This time, let's walk through the lifecycle of a pact content version with an in
     - Go: latest as of September 2020 (v1.4.1)
     - .Net: latest as of September 2020 (version TBC)
     - Python: latest as of September 2020 (version TBC)
-- # You need to find the verification documentation for your language, and set the "enablePending" flag to true.
-
-* You need to either be using [pactflow.io](https://pactflow.io?utm_source=ossdocs&utm_campaign=pending_pacts), or have version 2.60.0+ of the OSS Pact Broker.
-* You need to be use at least the following version of your Pact library:
-  - JVM: 4.1.7
-  - For the following libraries that wrap the [pact-ruby-standalone](https://docs.pact.io/wrapper_implementations), at least version 1.49.3 of the standalone is required.
-    - JS: 9.11.1 (not supported by the v3 implementation that uses Rust)
-    - Ruby: 1.52.0
-    - Go: latest as of September 2020 (v1.4.1)
-    - .Net: latest as of September 2020 (version TBC)
-    - Python: latest as of September 2020 (version TBC)
-* You need to find the verification documentation for your language, and set the "enablePending" flag to true.
-  > > > > > > > Stashed changes
+- You need to find the verification documentation for your language, and set the "enablePending" flag to true.
 
 ## FAQ
 
