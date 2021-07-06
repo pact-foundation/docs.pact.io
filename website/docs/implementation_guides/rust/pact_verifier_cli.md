@@ -247,7 +247,7 @@ There were 8 pact failures
 
 ## Verifying message pacts
 
-Message pacts can be verified, the messages just need to be fetched from an HTTP endpoint. The veryfier will send a
+Message pacts can be verified, the messages just need to be fetched from an HTTP endpoint. The verifier will send a
 POST request to the configured provider and expect the message payload in the response. The POST request will include
 the description and any provider states configured in the Pact file for the message, formatted as JSON.
 
@@ -259,3 +259,24 @@ Example POST request:
     "providerStates":[ {"name": "message exists"} ]
 }
 ```
+
+### Verifying metadata
+
+Message metadata can be included as base64 encoded key/value pairs in the response, packed into the `PACT_MESSAGE_METADATA` HTTP header, and will be compared against any expected metadata in the pact file.
+
+The values may contain any valid JSON.
+
+For example, given this metadata:
+
+```json
+{
+  "Content-Type": "application/json",
+  "topic": "baz",
+  "number": 27,
+  "complex": {
+    "foo": "bar"
+  }
+}
+```
+
+we would encode it into a base64 string, giving us `ewogICJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIsCiAgInRvcGljIjogImJheiIsCiAgIm51bWJlciI6IDI3LAogICJjb21wbGV4IjogewogICAgImZvbyI6ICJiYXIiCiAgfQp9Cg==`.
