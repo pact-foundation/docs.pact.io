@@ -47,7 +47,7 @@ follow a C calling convention.
 
 ## Developing
 
-There are 10 main crates to this implementation:
+There are 11 main crates to this implementation:
 
 ### [pact_models](/implementation_guides/rust/pact_models)
 
@@ -64,7 +64,7 @@ This is a library that implements exported functions using C bindings for use in
 ### [pact_matching_ffi](/implementation_guides/rust/pact_matching_ffi) [DEPRECATED]
 
 This is a library that implements exported functions using C bindings for matching requests, responses and messages. 
-It is going to be replaced with a single FFI library.
+It is going to be replaced with a single FFI library [pact_ffi](/implementation_guides/rust/pact_ffi).
 
 ### [pact_mock_server](/implementation_guides/rust/pact_mock_server)
 
@@ -74,7 +74,7 @@ library.
 ### [pact_mock_server_ffi](/implementation_guides/rust/pact_mock_server_ffi) [DEPRECATED]
 
 This is a library that implements exported functions using C bindings for controlling the in-process mock server from
-non-rust languages. It is going to be replaced with a single FFI library.
+non-rust languages. It is going to be replaced with a single FFI library [pact_ffi](/implementation_guides/rust/pact_ffi).
 
 ### [pact_mock_server_cli](/implementation_guides/rust/pact_mock_server_cli)
 
@@ -98,7 +98,7 @@ pact files.
 ### [pact_verifier_ffi](/implementation_guides/rust/pact_verifier_ffi) [DEPRECATED]
 
 This is a library that implements exported functions using C bindings for verifying a provider.  It is going to be 
-replaced with a single FFI library.
+replaced with a single FFI library [pact_ffi](/implementation_guides/rust/pact_ffi).
 
 ### Building
 
@@ -129,6 +129,7 @@ Rust crate documentation is published to the Rust documentation site.
 
 * [pact_consumer](https://docs.rs/pact_consumer/)
 * [pact_matching](https://docs.rs/pact_matching/)
+* [pact_ffi](https://docs.rs/pact_ffi/)
 * [pact_matching_ffi](https://docs.rs/pact_matching_ffi/)
 * [pact_mock_server](https://docs.rs/pact_mock_server/)
 * [pact_mock_server_cli](https://docs.rs/pact_mock_server_cli/)
