@@ -1,9 +1,11 @@
 ---
-title: Pact Matching FFI
+title: Pact Matching FFI [DEPRECATED]
 custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/rust/pact_matching_ffi/README.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+
+**NOTE:** This library is being moved into a single FFI library.
 
 This crate provides a Foreign Function Interface (FFI) to the `pact_matching` crate,
 with the intent of enabling Pact's core matching mechanisms to be used by implementations
