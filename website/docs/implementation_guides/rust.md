@@ -57,6 +57,10 @@ This is a library that provides the Pact models and functions for reading and wr
 
 This is a library that provides the Pact functions for matching requests and responses.
 
+### [pact_ffi](/implementation_guides/rust/pact_ffi)
+
+This is a library that implements exported functions using C bindings for use in foreign languages.
+
 ### [pact_matching_ffi](/implementation_guides/rust/pact_matching_ffi) [DEPRECATED]
 
 This is a library that implements exported functions using C bindings for matching requests, responses and messages. 
