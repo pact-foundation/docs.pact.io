@@ -54,11 +54,11 @@ Now, what happens when Foo gets another provider, Baz. Do we need to add `--pact
 
 To stay safe while avoiding "big bang" deployments, add the following line before deploying:
 
-`$ pact-broker can-i-deploy --pacticipant PACTICIPANT --version VERSION --to STAGE`
+`$ pact-broker can-i-deploy --pacticipant PACTICIPANT --version VERSION --to ENVIRONMENT`
 
 and add the following line after deploying:
 
-`$ pact-broker create-version-tag --pacticipant PACTICIPANT --version VERSION --tag STAGE`
+`$ pact-broker create-version-tag --pacticipant PACTICIPANT --version VERSION --tag ENVIRONMENT`
 
 ## Further reading
 
