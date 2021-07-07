@@ -23,129 +23,128 @@ The project crates are published to crates.io, and you can use them directly.
 
 #### Consumer Projects
 
-For a Rust consumer, refer to the [pact_consumer](https://github.com/pact-foundation/pact-reference/blob/master/pact_consumer) crate.
+For a Rust consumer, refer to the [pact_consumer](/implementation_guides/rust/pact_consumer) crate.
 
 You can find examples where the [integration to the Pact Broker](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_verifier/tests/tests.rs) is tested using 
 Pact tests written with the `pact_consumer` crate.
 
 #### Verifying Providers
 
-To verify a provider, you can use the verifier CLI tool. See [Pact Verifier CLI](https://github.com/pact-foundation/pact-reference/blob/master/pact_verifier_cli).
+To verify a provider, you can use the verifier CLI tool. See [Pact Verifier CLI](/implementation_guides/rust/pact_verifier_cli).
 
 ### FFI Interface
 
+Other languages can use the core features through FFI shared libraries. These libraries expose functions that
+follow a C calling convention.
 
+#### Consumer Projects
 
-### Initial Configuration
+> TODO after merging FFI libs
 
-Some projects require initial configuration (e.g. access tokens or keys, `npm i`).
-This is the section where you would document those requirements.
+#### Verifying Providers
+
+> TODO after merging FFI libs
 
 ## Developing
 
-Here's a brief intro about what a developer must do in order to start developing
-the project further:
+There are 10 main crates to this implementation:
 
-```shell
-git clone https://github.com/your/awesome-project.git
-cd awesome-project/
-packagemanager install
-```
+### [pact_models](/implementation_guides/rust/pact_models)
 
-And state what happens step-by-step.
+This is a library that provides the Pact models and functions for reading and writing pact files.
+
+### [pact_matching](/implementation_guides/rust/pact_matching)
+
+This is a library that provides the Pact functions for matching requests and responses.
+
+### [pact_matching_ffi](/implementation_guides/rust/pact_matching_ffi) [DEPRECATED]
+
+This is a library that implements exported functions using C bindings for matching requests, responses and messages. 
+It is going to be replaced with a single FFI library.
+
+### [pact_mock_server](/implementation_guides/rust/pact_mock_server)
+
+This is a library that provides an in-process mock server for Pact client tests. It uses the [pact_matching](/implementation_guides/rust/pact_matching)
+library.
+
+### [pact_mock_server_ffi](/implementation_guides/rust/pact_mock_server_ffi) [DEPRECATED]
+
+This is a library that implements exported functions using C bindings for controlling the in-process mock server from
+non-rust languages. It is going to be replaced with a single FFI library.
+
+### [pact_mock_server_cli](/implementation_guides/rust/pact_mock_server_cli)
+
+This module provides a command line executable that provides a standalone pact mock server and commands for controlling
+the mock servers. It uses the [libpact_mock_server](/implementation_guides/rust/pact_mock_server) and [libpact_matching](/implementation_guides/rust/pact_matching)
+libraries.
+
+### [pact_consumer](/implementation_guides/rust/pact_consumer)
+
+This is a library that provides the Pact consumer test support and DSL for use in Rust projects.
+
+### [pact_verifier](/implementation_guides/rust/pact_verifier)
+
+This library provides support for verifying a provider against pact files.
+
+### [pact_verifier_cli](/implementation_guides/rust/pact_verifier_cli)
+
+Command line excutable that uses the [pact_verifier](/implementation_guides/rust/pact_verifier) to be able to verify a running provider against
+pact files.
+
+### [pact_verifier_ffi](/implementation_guides/rust/pact_verifier_ffi) [DEPRECATED]
+
+This is a library that implements exported functions using C bindings for verifying a provider.  It is going to be 
+replaced with a single FFI library.
 
 ### Building
 
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here:
+To build the libraries in this project, you need a working Rust environment. Refer to the [Rust Guide](https://www.rust-lang.org/learn/get-started).
+
+The build tool used is `cargo`.
 
 ```shell
-./configure
-make
-make install
+cd rust
+cargo build
 ```
 
-Here again you should state what actually happens when the code above gets
-executed.
+This will compile all the libraries and put the generated files in `rust/target/debug`.
 
-### Deploying / Publishing
+### Releasing
 
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
-
-```shell
-packagemanager deploy awesome-project -s server.com -u username -p password
-```
-
-And again you'd need to tell what the previous code actually does.
-
-## Features
-
-What's all the bells and whistles this project can perform?
-* What's the main functionality
-* You can also do another thing
-* If you get really randy, you can even do this
-
-## Configuration
-
-Here you should write what are all of the configurations a user can enter when
-using the project.
-
-#### Argument 1
-Type: `String`  
-Default: `'default value'`
-
-State what an argument does and how you can use it. If needed, you can provide
-an example below.
-
-Example:
-```bash
-awesome-project "Some other value"  # Prints "You're nailing this readme!"
-```
-
-#### Argument 2
-Type: `Number|Boolean`  
-Default: 100
-
-Copy-paste as many of these as you need.
+The released libraries for each module are built by a GH action that attaches the libraries to the GH release for each
+crate. To release a crate, run the `release.groovy` script in the crate directory. This will guide you through the
+release process for the crate. Then create a GH release using the tag and changelog created by the script.
 
 ## Contributing
 
-When you publish something open source, one of the greatest motivations is that
-anyone can just jump in and start contributing to your project.
+See [CONTRIBUTING](https://github.com/pact-foundation/pact-reference/blob/master/CONTRIBUTING.md) (PRs are always welcome!).
 
-These paragraphs are meant to welcome those kind souls to feel that they are
-needed. You should state something like:
+## Documentation
 
-"If you'd like to contribute, please fork the repository and use a feature
-branch. Pull requests are warmly welcome."
+Rust crate documentation is published to the Rust documentation site.
 
-If there's anything else the developer needs to know (e.g. the code style
-guide), you should link it here. If there's a lot of things to take into
-consideration, it is common to separate this section to its own file called
-`CONTRIBUTING.md` (or similar). If so, you should say that it exists here.
+* [pact_consumer](https://docs.rs/pact_consumer/)
+* [pact_matching](https://docs.rs/pact_matching/)
+* [pact_matching_ffi](https://docs.rs/pact_matching_ffi/)
+* [pact_mock_server](https://docs.rs/pact_mock_server/)
+* [pact_mock_server_cli](https://docs.rs/pact_mock_server_cli/)
+* [pact_mock_server_ffi](https://docs.rs/pact_mock_server_ffi/)
+* [pact_models](https://docs.rs/pact_models/)
+* [pact_verifier](https://docs.rs/pact_verifier/)
+* [pact_verifier_cli](https://docs.rs/pact_verifier_cli/)
+* [pact_verifier_ffi](https://docs.rs/pact_verifier_ffi/)
 
-## Links
+Additional documentation can be found at the main [Pact website](https://pact.io).
 
-Even though this information can be found inside the project on machine-readable
-format like in a .json file, it's good to include a summary of most useful
-links to humans using your project. You can include links like:
+## Contact
 
-- Project homepage: https://your.github.com/awesome-project/
-- Repository: https://github.com/your/awesome-project/
-- Issue tracker: https://github.com/your/awesome-project/issues
-  - In case of sensitive bugs like security vulnerabilities, please contact
-    my@email.com directly instead of using issue tracker. We value your effort
-    to improve the security and privacy of this project!
-- Related projects:
-  - Your other project: https://github.com/your/other-project/
-  - Someone else's project: https://github.com/someones/awesome-project/
+Join us in slack: [![slack](https://slack.pact.io/badge.svg)](https://slack.pact.io)
 
+or
+
+- Twitter: [@pact_up](https://twitter.com/pact_up)
+- Stack Overflow: [stackoverflow.com/questions/tagged/pact](https://stackoverflow.com/questions/tagged/pact)
 
 ## Licensing
 
-One really important part: Give your project a proper license. Here you should
-state what the license is and how to find the text version of the license.
-Something like:
-
-"The code in this project is licensed under MIT license."
+The code in this project is licensed under a MIT license. See [LICENSE](https://github.com/pact-foundation/pact-reference/blob/master/LICENSE).
