@@ -1,8 +1,10 @@
 ---
-title: Pact Mock Server FFI library
+title: Pact Mock Server FFI library [DEPRECATED]
 custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/rust/pact_mock_server_ffi/README.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+
+**NOTE:** This library is being moved into a single FFI library.
 
 This library implements exported functions using C bindings for controlling the in-process mock server for 
 matching HTTP requests and generating responses from a pact file.
