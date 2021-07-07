@@ -4,43 +4,148 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-[![Build Status](https://travis-ci.org/pact-foundation/pact-reference.svg?branch=master)](https://travis-ci.org/pact-foundation/pact-reference) [![Windows Build status](https://ci.appveyor.com/api/projects/status/bqlb7ny924lsu6yi?svg=true)](https://ci.appveyor.com/project/pact-foundation/pact-reference)
+![Logo of the project](https://raw.githubusercontent.com/pact-foundation/pact-reference/master/images/logo.svg)
 
-This is the project for a reference implementation of Pact in Rust. It implements the [V3 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-3).
+[![Pact-Rust Build](https://github.com/pact-foundation/pact-reference/workflows/Pact-Rust%20Build/badge.svg)](https://github.com/pact-foundation/pact-reference/actions?query=workflow%3A%22Pact-Rust+Build%22)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/bqlb7ny924lsu6yi?svg=true)](https://ci.appveyor.com/project/pact-foundation/pact-reference)
+
+> Pact implementation written in Rust.
+
+This project provides a Pact implementation written in Rust. It supports the [V3 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-3)
+and [V4 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-4) and provides shared 
+libraries that can be used in other languages via foreign function interfaces (FFI).
+
+## Installing / Getting started
+
+### Rust Projects
+
+The project crates are published to crates.io, and you can use them directly. 
+
+#### Consumer Projects
+
+For a Rust consumer, refer to the [pact_consumer](https://github.com/pact-foundation/pact-reference/blob/master/pact_consumer) crate.
+
+You can find examples where the [integration to the Pact Broker](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_verifier/tests/tests.rs) is tested using 
+Pact tests written with the `pact_consumer` crate.
+
+#### Verifying Providers
+
+To verify a provider, you can use the verifier CLI tool. See [Pact Verifier CLI](https://github.com/pact-foundation/pact-reference/blob/master/pact_verifier_cli).
+
+### FFI Interface
 
 
-There are 7 main modules to this implementation:
 
-## [pact_matching](/implementation_guides/rust/pact_matching)
+### Initial Configuration
 
-This is a library that provides the Pact models and functions for matching requests and responses, as well as reading
-and writing pact files.
+Some projects require initial configuration (e.g. access tokens or keys, `npm i`).
+This is the section where you would document those requirements.
 
-## [pact_mock_server](/implementation_guides/rust/pact_mock_server)
+## Developing
 
-This is a library that provides an in-process mock server for Pact client tests. It uses the [pact_matching](/implementation_guides/rust/pact_matching)
-library.
+Here's a brief intro about what a developer must do in order to start developing
+the project further:
 
-## [pact_mock_server_ffi](/implementation_guides/rust/pact_mock_server_ffi)
+```shell
+git clone https://github.com/your/awesome-project.git
+cd awesome-project/
+packagemanager install
+```
 
-This is a library that implements exported functions using C bindings for controlling the in-process mock server from
-non-rust languages.
+And state what happens step-by-step.
 
-## [pact_mock_server_cli](/implementation_guides/rust/pact_mock_server_cli)
+### Building
 
-This module provides a command line executable that provides a standalone pact mock server and commands for controlling
-the mock servers. It uses the [libpact_mock_server](/implementation_guides/rust/pact_mock_server) and [libpact_matching](/implementation_guides/rust/pact_matching)
-libraries.
+If your project needs some additional steps for the developer to build the
+project after some code changes, state them here:
 
-## [pact_consumer](/implementation_guides/rust/pact_consumer)
+```shell
+./configure
+make
+make install
+```
 
-This is a library that provides the Pact consumer test support and DSL.
+Here again you should state what actually happens when the code above gets
+executed.
 
-## [pact_verifier](/implementation_guides/rust/pact_verifier)
+### Deploying / Publishing
 
-This library provides support for verifying a provider against pact files.
+In case there's some step you have to take that publishes this project to a
+server, this is the right time to state it.
 
-## [pact_verifier_cli](/implementation_guides/rust/pact_verifier_cli)
+```shell
+packagemanager deploy awesome-project -s server.com -u username -p password
+```
 
-Command line excutable that uses the [pact_verifier](/implementation_guides/rust/pact_verifier) to be able to verify a running provider against
-pact files.
+And again you'd need to tell what the previous code actually does.
+
+## Features
+
+What's all the bells and whistles this project can perform?
+* What's the main functionality
+* You can also do another thing
+* If you get really randy, you can even do this
+
+## Configuration
+
+Here you should write what are all of the configurations a user can enter when
+using the project.
+
+#### Argument 1
+Type: `String`  
+Default: `'default value'`
+
+State what an argument does and how you can use it. If needed, you can provide
+an example below.
+
+Example:
+```bash
+awesome-project "Some other value"  # Prints "You're nailing this readme!"
+```
+
+#### Argument 2
+Type: `Number|Boolean`  
+Default: 100
+
+Copy-paste as many of these as you need.
+
+## Contributing
+
+When you publish something open source, one of the greatest motivations is that
+anyone can just jump in and start contributing to your project.
+
+These paragraphs are meant to welcome those kind souls to feel that they are
+needed. You should state something like:
+
+"If you'd like to contribute, please fork the repository and use a feature
+branch. Pull requests are warmly welcome."
+
+If there's anything else the developer needs to know (e.g. the code style
+guide), you should link it here. If there's a lot of things to take into
+consideration, it is common to separate this section to its own file called
+`CONTRIBUTING.md` (or similar). If so, you should say that it exists here.
+
+## Links
+
+Even though this information can be found inside the project on machine-readable
+format like in a .json file, it's good to include a summary of most useful
+links to humans using your project. You can include links like:
+
+- Project homepage: https://your.github.com/awesome-project/
+- Repository: https://github.com/your/awesome-project/
+- Issue tracker: https://github.com/your/awesome-project/issues
+  - In case of sensitive bugs like security vulnerabilities, please contact
+    my@email.com directly instead of using issue tracker. We value your effort
+    to improve the security and privacy of this project!
+- Related projects:
+  - Your other project: https://github.com/your/other-project/
+  - Someone else's project: https://github.com/someones/awesome-project/
+
+
+## Licensing
+
+One really important part: Give your project a proper license. Here you should
+state what the license is and how to find the text version of the license.
+Something like:
+
+"The code in this project is licensed under MIT license."
