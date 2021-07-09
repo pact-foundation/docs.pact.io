@@ -62,6 +62,8 @@ When a pact version is considered "pending", then any mismatches during verifica
 
 While the provider build may pass, the verification results are still reported (if results publishing is enabled) to the Pact Broker as "failed", as the consumer should not be able to deploy the code that generated this contract.
 
+The pending property is _not_ used by the pact verification build that is triggered by the `contract_content_changed` webhook. This is because the pending status of the pact content is calculated based on the tags that the provider will use to publish the verification results, and the `contract_content_changed` webhook cannot know this information. The webhook triggered build is meant to be an "out of bound" build that does not have any dependencies on it, and it is expected to fail when pacts change.
+
 ### WIP pacts
 
 [Work in progress pacts](/pact_broker/advanced_topics/wip_pacts) always have the pending flag set to true.
