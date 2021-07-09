@@ -32,7 +32,13 @@ Note that in both of these examples, the verification result sent back to the Pa
 
 ## How the "pending" property works
 
-The pact verification task determines whether or not to exit with an error status for a failed pact based on the value of the "pending" property for the pact content that is being verified. The "pending" status of a pact is a _dynamically calculated_ property, determined by the Pact Broker when the pacts are fetched for verification. It is based on:
+### Purpose
+
+The purpose of the pending feature is to ensure that provider builds are not broken by changes that were introduced by the consumer, but to also ensure that backwards compatibility is maintained when a change is introduced by a provider. It achieves this by treating the first successful verification of a pact version by a particular branch of the provider as an implicit acceptance of the contract. Thereafter, if a verification of that pact version fails, it can only be because the provider has made a backwards incompatible change.
+
+### How it is calculated
+
+The "pending" status of a pact is a _dynamically calculated_ property, determined by the Pact Broker when the pacts are fetched for verification. It is based on:
 
 - The content of the contract (also known as the "pact version").
   - Note that the Pact Broker deduplicates and versions the contents of the published pacts. Publishing the same content for multiple consumer versions results in each of the consumer versions being associated with the same underlying pact content version.
@@ -42,11 +48,17 @@ The pact verification task determines whether or not to exit with an error statu
 
 **A pact content is considered pending if there has not been a successful verification published by the specified branch of the provider.**
 
+The provider tags are used to determine the pending status because it is common to implement new features of a provider on a feature branch. If the provider tags were not taken in to consideration, a newly published successful verification on `feat-x` branch of the provider would suddenly cause the verification of that content by the `main` branch of the provider to fail.
+
+This diagram, while not entirely accurate (there is no stored state, it's a dynamic calculation) is a helpful way of understanding the pending state transitions for a pact version and a particular provider branch/tag.
+
+![Pending pact state diagram](/img/pending-state-diagram.png)
+
+### How it is used
+
+The value of the "pending" property is used by the pact verification task to determine whether or not to exit with an error status for a failed pact.
+
 When a pact version is considered "pending", then any mismatches during verification _will not_ cause the overall verification task to fail. When a pact is _not_ considered "pending" then mismatches _will_ cause the overall verification task to fail (until the introduction of this feature, this was the default behaviour).
-
-The purpose of the pending flag is to ensure that provider builds are not broken by changes that were introduced by the consumer, but to also ensure that backwards compatibility is maintained when a change is introduced by a provider. It achieves this by treating the first successful verification of a pact version by a particular branch of the provider as an implicit acceptance of the contract. Thereafter, if a verification of that pact version fails, it can only be because the provider has made a backwards incompatible change.
-
-The provider tags are used to determine the pending status because it is common to implement new features of a provider on a feature branch. If the provider tags were not taken in to consideration, a newly passing verification on `feat-x` of the provider would suddenly cause the verification of that content by branch `main` of the provider to fail.
 
 While the provider build may pass, the verification results are still reported (if results publishing is enabled) to the Pact Broker as "failed", as the consumer should not be able to deploy the code that generated this contract.
 
