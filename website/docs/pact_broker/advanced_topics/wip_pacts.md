@@ -2,7 +2,13 @@
 title: Work In Progress pacts
 ---
 
-The purpose of the "work in progress" (WIP) pacts feature is to get verification results for the pacts that are currently being worked on, without the provider team having to change their configuration each time. This allows the consumer team to get feedback on their changed pacts without having to wait on the provider team to make changes to their code.
+:::info What do I need to know?
+The WIP (work in progress) pacts is a feature that ensures any new contracts are automatically verified in the provider's main pipeline build without requiring an update to the provider configuration.
+
+[Watch a video that explains this concept](https://youtu.be/VnOy9Sv9Opo).
+
+You should enable the work in progress pacts feature by setting `includeWipPactsSince` (or equivalent for your language) in the [provider verification configuration](/provider/recommended_configuration#verification-triggered-by-provider-change) to the date from which you want the changed pacts to start being included (eg. `2021-06-12`) . In the future, this feature will be enabled by default.
+:::
 
 Before reading any further, please read the page on [pending pacts](/pact_broker/advanced_topics/pending_pacts), as the concept of a pact being in "pending" state is required for understanding WIP pacts.
 
@@ -15,10 +21,6 @@ A "work in progress" pact is a pact that:
 The term "pending" is a status that is applied to a single pact. The "work in progress pacts" is a collection of pacts that are pending.
 
 When verifying pacts, the verification task can be configured to include the "work in progress" pacts \(as well as the pacts that you specify explicitly, like `master` or `prod`\). This allows any new pacts to be automatically verified without the provider team having to make configuration changes. When using this feature, it is best to also turn on the `pending pacts` feature, so that any failures caused by the WIP pacts do not cause the build to fail.
-
-You can read more about the backstory on this feature [here](http://blog.pact.io/2020/02/24/introducing-wip-pacts/).
-
-[Watch a video that explains this concept](https://youtu.be/VnOy9Sv9Opo).
 
 ## Technical details
 
@@ -49,8 +51,16 @@ What is left are the outstanding head pacts - the ones that you're still working
 
 From a technical perspective, "WIP" (work in progress) pacts are the ones determined by the Broker to be in need of a verification but that aren't explicitly specified in the selectors.
 
-"Pending" is a property of a pact that is being verified, and it exists on both work in progress and explicitly selected pacts. 
+"Pending" is a property of a pact that is being verified, and it exists on both work in progress and explicitly selected pacts.
 
 For the explicitly selected pacts, the pending flag is calculated dynamically, based on the provider branch (which is represented as a tag). If there are no successful verifications from this branch, then the pact is pending. Once there is a successful verification from that branch, it is no longer pending.
 
 For the WIP pacts, the pending flag is hardcoded to true.
+
+### How is WIP pacts different from the webhook triggered verifications?
+
+If you follow the [recommended CI/CD setup](/pact_nirvana/step_4), there will be two different builds that run the pact verification task. One runs when the provider changes, as part of its standard test suite, and it verifies the configured pacts for all of its consumers. Another build should be set up which will be triggered by a webhook configured in the Pact Broker, that only runs when a pact is published with changed content, and that only verifies the single changed pact.
+
+The webhook triggered build only runs when the changed pact is first published, to allow the consumer to get quick feedback on the status of the pact. It does not continue to trigger if the same content is published by the same branch repeatedly.
+
+The WIP pacts feature ensures that the changed pact is automatically verified each time the provider's _standard_ pipeline runs, even if it is not one of the pacts explicitly configured for verification.
