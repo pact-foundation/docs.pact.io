@@ -2,9 +2,14 @@
 title: Pending pacts
 ---
 
-The "pending pacts" feature allows changed contracts to be verified without failing the provider's build.
+:::info what do I need to know?
+
+The "pending pacts" feature ensures the pact verification task only fails when a breaking change causes a previously supported pact to fail verification. Without the feature enabled, *any* failing pact (eg. ones with new features) will cause the provider's build to break, blocking the provider from deploying even if it is compatible with its deployed consumers.
 
 [Watch a video that explains this concept](https://youtu.be/VnOy9Sv9Opo).
+
+You should enable the pending pacts feature by setting `enablePending` (or equivalent for your language) to `true` in the [provider verification configuration](/provider/recommended_configuration#verification-triggered-by-provider-change). In the future, this feature will be enabled by default.
+:::
 
 ## Why is this feature required?
 
@@ -30,11 +35,15 @@ Note that in both of these examples, the verification result sent back to the Pa
 
 [Watch a video that explains this concept](https://youtu.be/VnOy9Sv9Opo).
 
-## How the "pending" property works
+## How the "pending" feature works
 
 ### Purpose
 
 The purpose of the pending feature is to ensure that provider builds are not broken by changes that were introduced by the consumer, but to also ensure that backwards compatibility is maintained when a change is introduced by a provider. It achieves this by treating the first successful verification of a pact version by a particular branch of the provider as an implicit acceptance of the contract. Thereafter, if a verification of that pact version fails, it can only be because the provider has made a backwards incompatible change.
+
+### How the feature is enabled
+
+The feature is enabled by setting `enablePending` (or `enabled_pending` or `EnabledPending` depending on your language) to `true` in the provider verification configuration (consult the provider verification configuration docs for your language.) In the future, this feature will be enabled by default.
 
 ### How it is calculated
 
@@ -125,12 +134,20 @@ The pending feature is only applicable to the [provider changed workflow](/pact_
 The API that returns the list of pacts to verify has some built in messaging to explain what is going on that should be displayed to the user. Here is an example from the Ruby implementation.
 
 ```
-DEBUG: The pact at https://test.pactflow.io/pacts/provider/Bar/consumer/Foo/pact-version/6c4158b13a7f05dadd208a7633b77d1f299ae375 is being verified because it matches the following configured selection criterion: latest pact between a consumer and Bar
-DEBUG: This pact is in pending state for this version of Bar because a successful verification result for a version of Bar with tag 'master' has not yet been published. If this verification fails, it will not cause the overall build to fail. Read more at https://pact.io/pending
+DEBUG: The pact at https://test.pactflow.io/pacts/provider/Bar/consumer/Foo/pact-version/6c4158b13a7f05dadd208a7633b77d1f299ae375
+is being verified because it matches the following configured selection criterion:
+latest pact between a consumer and Bar
+DEBUG: This pact is in pending state for this version of Bar because a successful verification
+result for a version of Bar with tag 'master' has not yet been published.
+If this verification fails, it will not cause the overall build to fail.
+Read more at https://pact.io/pending
 
 [test output]
 
-DEBUG: This pact is still in pending state for any version of Bar with tag 'master' as a successful verification result with this tag has not yet been published
+DEBUG: This pact is still in pending state for any version of Bar with tag 'master' as a successful
+verification result with this tag has not yet been published
 ```
 
 If you cannot see this debug output, please consult the documentation for your language to see if you can find a way to turn it on. If you can't find that, please hop on to our [Slack workspace](https://slack.pact.io) and ask about it in the appropriate channel for your language.
+
+There is also a [CI/CD workshop](https://docs.pactflow.io/docs/workshops/ci-cd/) that will take you through the process of adding a new feature.
