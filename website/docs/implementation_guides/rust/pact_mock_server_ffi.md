@@ -105,14 +105,3 @@ Configures the response for the Interaction.
 ### [with_body](https://docs.rs/pact_mock_server_ffi/0.0.7/pact_mock_server_ffi/fn.with_body.html)
 
 Adds the body for the interaction.
-
-## Conan package
-
-This library has been deployed to Bintray as a [Conan package](https://bintray.com/pact-foundation/conan/pact_mock_server_ffi%3Apact).
-You can use it by adding `pact_mock_server_ffi/0.0.7@pact/beta` to your conan dependencies. 
-
-You will need to add this repository as a conan remote first:
-
-```console
-conan remote add pact-foundation https://api.bintray.com/conan/pact-foundation/conan
-```
