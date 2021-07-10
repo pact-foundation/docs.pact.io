@@ -59,7 +59,7 @@ For the WIP pacts, the pending flag is hardcoded to true.
 
 ### How is WIP pacts different from the webhook triggered verifications?
 
-If you follow the [recommended CI/CD setup](/pact_nirvana/step_4), there will be two different builds that run the pact verification task. One runs when the provider changes, as part the test stage of the providers release pipeline, and it verifies the configured pacts for all of its consumers. Another build should be set up which will be triggered by a webhook configured in the Pact Broker, that only runs when a pact is published with changed content, and that only verifies the single changed pact.
+If you follow the [recommended CI/CD setup](/pact_nirvana/step_4), there will be two different builds that run the pact verification task. One runs when the provider changes, as part the test stage of the provider's release pipeline, and it verifies the configured pacts for all of its consumers. Another build should be set up which will be triggered by a webhook configured in the Pact Broker, that only runs when a pact is published with changed content, and that only verifies the single changed pact.
 
 The webhook triggered build only runs when the changed pact is first published, to allow the consumer to get quick feedback on the status of the pact. It does not continue to trigger if the same content is published by the same branch repeatedly.
 
