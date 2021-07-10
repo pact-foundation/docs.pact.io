@@ -214,7 +214,6 @@
       },
       "pact_broker/can_i_deploy",
       "pact_broker/set_up_checklist",
-      "pact_broker/client_cli",
       "pact_broker/terraform_provider",
       "pact_broker/upgrading",
       "pact_broker/breaking_changes",
