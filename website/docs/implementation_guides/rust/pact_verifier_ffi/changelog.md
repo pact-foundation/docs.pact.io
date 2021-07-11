@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.0.6 - Deprecated Library
+
+* 8b075d38 - fix: FFI function was exposing a struct from the models crate (Ronald Holshausen, Sun Jun 27 11:30:55 2021 +1000)
+
 ## 0.0.5 - Bugfix Release
 
 * 12e51704 - fix: linux verifier ffi shasum path was incorrect. Fixes #114 (Matt Fellows, Mon Jun 7 09:25:14 2021 +1000)
