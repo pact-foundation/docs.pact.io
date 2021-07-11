@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.1.1 - Deprecated Library
+
+* 0d5ec68a - feat: copied verfier_ffi crate to pact_ffi (Ronald Holshausen, Sat Jul 10 16:54:28 2021 +1000)
+* 084ab46b - feat: Copied pact_mockserver_ffi to pact_ffi (Ronald Holshausen, Sat Jul 10 16:24:29 2021 +1000)
+* 2e6c446a - Merge pull request #119 from pact-foundation/feat/log-via-ffi2 (Matt Fellows, Tue Jul 6 20:10:58 2021 +1000)
+* f683304c - feat: allow callers to add messages to log (Matt Fellows, Sat Jul 3 23:36:46 2021 +1000)
+* 33f9a823 - feat: support complex data structures in message metadata (Matt Fellows, Mon Jul 5 23:38:52 2021 +1000)
+* 78c20d6a - fix: failing test after changing  message_with_contents function signature (Ronald Holshausen, Sun Jun 27 12:08:49 2021 +1000)
+* 64e07005 - fix: update doc comment on message_with_contents function (Ronald Holshausen, Sun Jun 27 11:51:35 2021 +1000)
+* 8b075d38 - fix: FFI function was exposing a struct from the models crate (Ronald Holshausen, Sun Jun 27 11:30:55 2021 +1000)
+
 ## 0.1.0 - Accumulating mock server log entries + bugfixes
 
 * b4e26844 - fix: reqwest is dyn linked to openssl by default, which causes a SIGSEGV on alpine linux (Ronald Holshausen, Tue Jun 1 14:21:31 2021 +1000)
