@@ -10,17 +10,17 @@ just copy it verbatim and expect magical things to happen.
 ### For lib conan package
 
 ```
- git checkout libpact_mock_server_ffi-v0.0.7
+ git checkout libpact_ffi-v0.0.7
  cd conan/lib/
  conan create . pact/beta
- conan upload pact_mock_server_ffi/0.0.7@pact/beta -r=pact-foundation
+ conan upload pact_ffi/0.0.7@pact/beta -r=pact-foundation
 ```
 
 ### For DLL conan package
 
 ```
- git checkout libpact_mock_server_ffi-v0.0.7
+ git checkout libpact_ffi-v0.0.7
  cd conan/dll/
  conan create . pact/beta
- conan upload pact_mock_server_ffi_dll/0.0.7@pact/beta -r=pact-foundation
+ conan upload pact_ffi_dll/0.0.7@pact/beta -r=pact-foundation
 ```
