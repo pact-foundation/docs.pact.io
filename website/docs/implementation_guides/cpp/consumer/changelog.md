@@ -5,6 +5,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-cplusplus/edit/master/c
 <!-- This file has been synced from the pact-foundation/pact-cplusplus repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 
+## 0.1.0 - Update to new pact_ffi lib and JFrog conan repositry
+
+* 433fc19 - fix: Update to new pact_ffi lib and JFrog conan repositry (Ronald Holshausen, Mon Jul 12 11:05:14 2021 +1000)
+* acb4e08 - fix: Fixed errors in consumer.cpp (Talank Baral, Fri Jul 9 14:39:48 2021 +0545)
+* 1a00b53 - bump version to 0.0.7 (Ronald Holshausen, Tue Jan 12 16:07:34 2021 +1100)
+
 ## 0.0.6 - Fix release pipeline
 
 * 08d45ce - bump version to 0.0.6 (Ronald Holshausen, Tue Jan 12 15:28:03 2021 +1100)
