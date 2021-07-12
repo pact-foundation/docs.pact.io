@@ -4,7 +4,8 @@ custom_edit_url: https://github.com/pact-foundation/pact-cplusplus/edit/master/R
 ---
 <!-- This file has been synced from the pact-foundation/pact-cplusplus repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-![https://github.com/pact-foundation/pact-cplusplus/actions](https://github.com/pact-foundation/pact-cplusplus/workflows/Consumer%20Project/badge.svg)
+[![Pact-C++ Build](https://github.com/pact-foundation/pact-cplusplus/workflows/Consumer%20Project/badge.svg)](https://github.com/pact-foundation/pact-cplusplus/actions/workflows/consumer.yaml)
+
 
 C++ implementation of the consumer driven contract library [pact](https://github.com/pact-foundation/pact-specification).
 
