@@ -324,12 +324,12 @@ $ conan remote add pact-foundation https://pactfoundation.jfrog.io/artifactory/a
 $ conan search pact_cpp_consumer -r=pact-foundation
 Existing package recipes:
 
-pact_cpp_consumer/0.0.7@pact/beta
+pact_cpp_consumer/0.1.0@pact/beta
 ```
 
-You can then use the library by adding `pact_cpp_consumer/0.0.7@pact/beta` to the dependencies to your project conan file.
+You can then use the library by adding `pact_cpp_consumer/0.1.0@pact/beta` to the dependencies to your project conan file.
 
-## Building the library (No longer works as Bintray has been shutdown)
+## Building the library
 
 To build the library, you need to do the following:
 
