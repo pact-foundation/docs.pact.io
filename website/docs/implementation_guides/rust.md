@@ -115,14 +115,11 @@ Rust crate documentation is published to the Rust documentation site.
 * [pact_consumer](https://docs.rs/pact_consumer/)
 * [pact_matching](https://docs.rs/pact_matching/)
 * [pact_ffi](https://docs.rs/pact_ffi/)
-* [pact_matching_ffi](https://docs.rs/pact_matching_ffi/)
 * [pact_mock_server](https://docs.rs/pact_mock_server/)
 * [pact_mock_server_cli](https://docs.rs/pact_mock_server_cli/)
-* [pact_mock_server_ffi](https://docs.rs/pact_mock_server_ffi/)
 * [pact_models](https://docs.rs/pact_models/)
 * [pact_verifier](https://docs.rs/pact_verifier/)
 * [pact_verifier_cli](https://docs.rs/pact_verifier_cli/)
-* [pact_verifier_ffi](https://docs.rs/pact_verifier_ffi/)
 
 Additional documentation can be found at the main [Pact website](https://pact.io).
 
