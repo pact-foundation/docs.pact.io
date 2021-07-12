@@ -329,6 +329,11 @@ pact_cpp_consumer/0.1.0@pact/beta
 
 You can then use the library by adding `pact_cpp_consumer/0.1.0@pact/beta` to the dependencies to your project conan file.
 
+## Using the released artifacts
+
+The compiled library and header files for pact_cpp_consumer is attched to the GitHub release. To use them, the lib needs to be
+linked to your test binary along with the dependant libraries: boost, cpprestsdk, pact_ffi and nlohmann_json.
+
 ## Building the library
 
 To build the library, you need to do the following:
@@ -363,4 +368,10 @@ On Windows, you may need to set 64 bit architecture.
 ```
 cmake .. -A x64
 cmake --build . --config Release
+```
+
+8. Generate the installation
+
+```
+cmake --install . --prefix install
 ```
