@@ -262,7 +262,7 @@ Example POST request:
 
 ### Verifying metadata
 
-Message metadata can be included as base64 encoded key/value pairs in the response, packed into the `PACT_MESSAGE_METADATA` HTTP header, and will be compared against any expected metadata in the pact file.
+Message metadata can be included as base64 encoded key/value pairs in the response, packed into the `Pact-Message-Metadata` HTTP header, and will be compared against any expected metadata in the pact file.
 
 The values may contain any valid JSON.
 
