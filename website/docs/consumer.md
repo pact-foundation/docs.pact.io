@@ -85,17 +85,9 @@ A better approach than using Pact for UI tests is to use shared fixtures, or the
 
 If you don’t care about verifying your interactions, you could use something like Webmock for your integrated tests, and use shared fixtures for requests/responses between these tests and the `Pact` tests to ensure that you have some level of verification happening.
 
-## Make the latest pact available to the `Provider` via a URL
+## Ensure all calls to the `Provider` go through classes/functions that have been tested with `Pact`
 
-See [Sharing pacts between `Consumer` and `Provider`](https://github.com/pact-foundation/pact-ruby/wiki/Sharing-pacts-between-consumer-and-provider) for options to implement this.
-
-## Ensure all calls to the `Provider` go through classes that have been tested with `Pact`
-
-Do not hand create any HTTP requests directly in your `Consumer` app. Testing through a client class \(a class with the sole responsibility of handling the HTTP interactions with the `Provider`\) gives you much more assurance that your `Consumer` app will be creating the HTTP requests that you think it should.
-
-## Ensure the models you use in other tests could actually be created from the responses you expect
-
-Sure, you’ve checked that your client deserialises the HTTP response into the Alligator class you expect, but then you need to make sure when you create an Alligator in another test, that you create it with valid attributes \(eg. is the Alligator’s last\_login\_time a Time or a DateTime?\). One way to do this is to use factories or fixtures to create the models for all your tests. See this [gist](https://gist.github.com/bethesque/69ae590e8312523e5337) for a more detailed explanation.
+Do not hand create any HTTP requests directly in your `Consumer` application. Testing through a client class/function \(a class/function with the sole responsibility of handling the HTTP interactions with the `Provider`\) gives you much more assurance that your `Consumer` app will be creating the HTTP requests that you think it should.
 
 ## Beware of Garbage In, Garbage Out with PUT/POST/PATCH
 
@@ -109,3 +101,6 @@ If you can't include the updated resource in the response, another way to avoid 
 
 Use the [can-i-deploy](https://github.com/pact-foundation/pact_broker/wiki/Provider-verification-results) feature of the [Pact Broker CLI](https://github.com/pact-foundation/pact_broker-client#can-i-deploy). It will give you a definitive answer if the version of your consumer that is being deployed, is compatible with all of its providers.
 
+## In dynamic languages, ensure the models you use in other tests could actually be created from the responses you expect
+
+Sure, you’ve checked that your client deserialises the HTTP response into the Alligator class you expect, but then you need to make sure when you create an Alligator in another test, that you create it with valid attributes \(eg. is the Alligator’s last\_login\_time a Time or a DateTime?\). One way to do this is to use factories or fixtures to create the models for all your tests. See this [gist](https://gist.github.com/bethesque/69ae590e8312523e5337) for a more detailed explanation.
