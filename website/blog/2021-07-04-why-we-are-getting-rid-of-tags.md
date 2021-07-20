@@ -56,7 +56,7 @@ As time goes on, explicit branch and environment support will continue to help u
 * Upgrade to the latest version of the Pact Broker
 * Upgrade to the latest version of your Pact clients
 * Set the "main branch" property for each pacticipant in the Pact Broker, using the `create-or-update-pacticipant` command.
-* Create an environment resource for each of your deployment/release environments using the Pact Broker CLI.
+* Create an environment resource for each of your deployment/release environments using the `create-environment` command.
 * Set the branch property when publishing pacts and verification results (leave your existing tags until you've fully switched to branches).
 * Add a call to `record-deployment` or `record-release` where you are currently calling `create-version-tag` on deployment (leave the tagging until you've fully migrated).
 * Update the pact verification consumer version selectors to `{ mainBranch: true }, { deployedOrReleased: true }`.
