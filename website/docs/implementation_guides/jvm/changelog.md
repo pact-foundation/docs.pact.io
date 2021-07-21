@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.2.8 - Bugfix Release
+
+* 34de335e1 - fix: failing test (Ronald Holshausen, Wed Jul 21 16:15:42 2021 +1000)
+* f55168459 - fix: retry condition for the pactbroker unknown response #1405 (Bryan Woodruff, Tue Jul 20 17:13:40 2021 -0700)
+* a8e5d542a - feat: Enable HTTPS MockServer to use provided KeyStore (Javier Llorente, Sat Jul 17 16:20:06 2021 +0200)
+* d74ddf96b - fix: don't encode URLs when making requests from HAL links #1388 (Ronald Holshausen, Sat Jul 17 15:58:51 2021 +1000)
+* 44e481444 - fix: retain previous summary state when updating markdown report #1128 (Daniel Grech, Thu Jul 15 07:55:07 2021 +0200)
+* 7d87ef6bb - feat: support generating UUIDs with different formats (Ronald Holshausen, Sun Jul 11 14:07:45 2021 +1000)
+
 ## 4.2.7 - V4 features + bugfixes
 
 * a84d47a09 - feat: Ignore missing part content type headers with multipart bodies #1385 (Ronald Holshausen, Sun Jun 27 15:55:04 2021 +1000)
