@@ -4,7 +4,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-broker-docker/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact-broker-docker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-[![Build Status](https://travis-ci.org/pact-foundation/pact-broker-docker.svg?branch=master)](https://travis-ci.org/pact-foundation/pact-broker-docker)
+[![Release Docker image](https://github.com/pact-foundation/pact-broker-docker/actions/workflows/release_image.yml/badge.svg)](https://github.com/pact-foundation/pact-broker-docker/actions/workflows/release_image.yml)
 
 This repository contains a Dockerized version of the [Pact Broker][pact-broker]. You can pull the `pactfoundation/pact-broker` image from [Dockerhub][pact-broker-docker]. If you're viewing these docs on Dockerhub, here is a link to the [github repository][github].
 
