@@ -4,7 +4,7 @@ title: Ask Me Anything
 
 ## Join an upcoming Ask Me Anything (AMA) session
 
-Pactflow runs regular monthly AMA's where you can ask a question and one of the team will answer it. [Register](https://www.linkedin.com/company/pactflow/events/?viewAsMember=true) for an upcoming AMA in your timezone.
+There are regular monthly Pact AMAs, currently hosted by Pactflow. At these sessions, you can ask a question and one of their team will answer it. [Register](https://www.linkedin.com/company/pactflow/events/?viewAsMember=true) for an upcoming AMA in your timezone.
 
 ## Previous Ask Me Anything recordings
 
