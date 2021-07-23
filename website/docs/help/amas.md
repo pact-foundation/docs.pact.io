@@ -8,7 +8,7 @@ There are regular monthly Pact AMAs, currently hosted by Pactflow. At these sess
 
 ## Previous Ask Me Anything recordings
 
-You can [watch](https://www.youtube.com/playlist?list=PLwy9Bnco-IpdgdZce-rXeR7EF2_6T8z7S) all of our previouss AMA's in case your questions have already been answered.
+You can [watch](https://www.youtube.com/playlist?list=PLwy9Bnco-IpdgdZce-rXeR7EF2_6T8z7S) all of our previous AMA's in case your questions have already been answered.
 The questions in each AMA are shown below:
 
 ### June 2021
