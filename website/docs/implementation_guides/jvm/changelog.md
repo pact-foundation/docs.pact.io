@@ -4,6 +4,20 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.2.9 - Bugfix Release
+
+* 357714d26 - update changelog for release 4.1.24 (Ronald Holshausen, Sat Jul 31 16:37:45 2021 +1000)
+* 43ec8749a - fix: previous provider states must not be copied over to new interactions #497 (Ronald Holshausen, Sat Jul 31 16:26:00 2021 +1000)
+* 08c639eff - feat: add a message metadata builder DSL #1409 (Ronald Holshausen, Sat Jul 31 16:07:04 2021 +1000)
+* 5c92c4f90 - fix: header values need to be parsed when loaded from older spec pact files #1398 (Ronald Holshausen, Sat Jul 24 16:09:46 2021 +1000)
+* a11b05cde - fix: header values need to be parsed when loaded from older spec pact files #1398 (Ronald Holshausen, Sat Jul 24 16:09:46 2021 +1000)
+* 8e3aa2dae - fix: failing test (Ronald Holshausen, Wed Jul 21 16:15:42 2021 +1000)
+* 46549eed7 - fix: retry condition for the pactbroker unknown response #1405 (Bryan Woodruff, Tue Jul 20 17:13:40 2021 -0700)
+* 2571af65b - fix: don't encode URLs when making requests from HAL links #1388 (Ronald Holshausen, Sat Jul 17 15:58:51 2021 +1000)
+* a510b8fff - fix: retain previous summary state when updating markdown report #1128 (Daniel Grech, Thu Jul 15 07:55:07 2021 +0200)
+* 29b763879 - feat: Ignore missing part content type headers with multipart bodies #1385 (Ronald Holshausen, Sun Jun 27 15:55:04 2021 +1000)
+* 05cafce97 - feat: add option to mock server to disable persistant HTTP/1.1 connections #1383 #342 (Ronald Holshausen, Sun Jun 27 14:22:55 2021 +1000)
+
 ## 4.1.24 - Bugfixes + backports from 4.2.x
 
 * 43ec8749a - fix: previous provider states must not be copied over to new interactions #497 (Ronald Holshausen, Sat Jul 31 16:26:00 2021 +1000)
