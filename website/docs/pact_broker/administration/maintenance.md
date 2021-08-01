@@ -13,7 +13,7 @@ As of version 2.72.0.0 of the Docker Pact Broker images, an automatic "clean" fe
 A configurable task will run on a cron schedule of your choosing to remove:
 
 * Overwritten data for application versions
-  * Overwritten pacts (these are created when pact is published with the same consumer version but different content from a previous publication - it shouldn't happen if following best practise, but it is technically possible to do)
+  * Overwritten pacts (these are created when pact is published with the same consumer version but different content from a previous publication - it shouldn't happen if following best practice, but it is technically possible to do)
   * Duplicate verifications (this happens when verification results for the same pact version content are published by the same provider version multiple times - this can happen quite often under normal operation)
 * Historical webhook execution data (except for the very latest execution for each consumer/provider/event)
 * Application versions and their associated tags/pacts/verifications/webhooks that not in the configurable "keep" list (more on this below).
