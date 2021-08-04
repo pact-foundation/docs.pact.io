@@ -10,6 +10,8 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 **Articles**:
 
+- [Introduction to Consumer Driven Pact Testing - Angular, Spring Boot, Docker, Jest, Junit and Mockito
+  ](https://www.youtube.com/watch?v=OZz7UyHnyKg) (Video)
 - [How to establish quality gates in a Microservices architecture](https://www.cigniti.com/blog/microservices-testing-quality-gates-model/)
 - [Microservice architecture testing strategies](https://www.cigniti.com/blog/microservices-architecture-testing-strategies/)
 - [Reduce the Cost of Migrating to a Microservice Architecture. A kreuzwerker / Pactflow webinar with Q&A](https://vimeo.com/526231279?utm_source=pact-oss-docs&utm_campaign=m2m) (Video)
