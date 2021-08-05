@@ -8,4 +8,4 @@ Please see the documentation for consumer version selectors [here](/pact_broker/
 
 ## Matrix selectors
 
-Please see the documentation for matrix selectors \(used by can-i-deploy\) [here](matrix_selectors).
+Please see the documentation for matrix selectors \(used by can-i-deploy\) [here](/pact_broker/advanced_topics/matrix_selectors).
