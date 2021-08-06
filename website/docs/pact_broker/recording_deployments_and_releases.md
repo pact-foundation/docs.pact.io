@@ -93,3 +93,13 @@ When a released application is deemed to be no longer supported, call `pact-brok
 ```
 record-support-ended --pacticipant foo-mobile-app --version 6897aa95e --environment production
 ```
+
+## Migrating from tags to deployments/releases
+
+* Check that the Pact library for the provider language you are using supports the `{ deployedOrReleased: true }` selector. As of the date of writing this document (6 Aug 2021) those languages are Pact JS, Pact Ruby and the Dockerized or standalone pact-provider-verifier. If your language has not implemented that selector, then there will be an open issue in the Github repo for the feature - please go and comment on it that you are interested in using the feature.
+* Ensure you are using the Pact Broker Client CLI 1.47.0 or later (0.47.0.0 or later of the pact-cli Docker image).
+* Create an environment resource for each of your environments using the `create-environment` command in the Pact Broker CLI.
+* Wherever you are are calling `pact-broker create-version-tag --pacticipant PACTICIPANT --version VERSION --tag ENVIRONMENT` after a deployment, add another command `pact-broker record-deployment --pacticipant PACTICIPANT --version VERSION --environment ENVIRONMENT` (or `record-release` if appropriate).
+* In the provider codebase, add another selector `{ deployedOrReleased: true }` to the consumerVersionSelectors. It's ok if the same pact is returned for multiple selectors - they are de-duplicated. When you run the verification step, you should see that some of pacts have been selected because they are deployed/released.
+* Once all the integrations for a particular application have started using `record-deployment`, update the application's `can-i-deploy` call to use `--to-environment ENVIRONMENT` instead of `--to ENVIRONMENT`.
+* When you are confident that everything is working correctly, you can remove the `create-version-tag` calls, and remove the `{ tag: "<ENVIRONMENT>" }` selector from the consumerVersionSelectors in the provider project.
