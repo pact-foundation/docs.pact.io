@@ -2,8 +2,13 @@
 title: Recording deployments and releases
 ---
 
-:::caution
-This documentation is for features that are a support in the latest verison of the Pact Broker, but are not fully supported in all the Pact client languages.
+:::info
+The features described in this page require:
+
+* Pact Broker >= v2.81.0
+* Pact Broker Client CLI rubygem >= 1.47.0+, or the pact-cli Docker image >= 0.47.0.0+
+
+As of August 2021, not every Pact library supports the `{ deployedOrReleased: true}` consumer version selector - please see the section on migrating from tags at the bottom of the page.
 :::
 
 The Pact Broker needs to know which versions of each application are in each environment so it can return the correct pacts for verification and determine whether a pacticular application version is [safe to deploy](/pact_broker/can_i_deploy).
@@ -17,7 +22,7 @@ To notify the Broker that an application version has been deployed or released, 
 * `record-deployment` automatically marks the previously deployed version as undeployed, and is used for APIs and consumer applications that are deployed to known instances.
 * `record-release` does NOT change the status of any previously released version, and is used for mobile applications and code libraries that are made publicly available via an application store or repository for someone else to install.
 
-"Deployed versions" and "released versions" are different resources in the Pact Broker, and an application version may be both deployed and released. For example, a mobile phone application version may be recorded as deployed to a mobile device for automated testing in a test environment, and then recorded as released to an app store in a production environment.
+"Deployed versions" and "released versions" are different resource types in the Pact Broker, and an application version may be both deployed and released. For example, a mobile phone application version may be recorded as deployed to a mobile device for automated testing in a test environment, and then recorded as released to an app store in a production environment.
 
 ## Deployments
 
@@ -114,6 +119,20 @@ When a released application is deemed to be no longer supported, call `pact-brok
 
 ```
 pact-broker record-support-ended --pacticipant foo-mobile-app --version 6897aa95e --environment production
+```
+
+## Using deployed and released versions
+
+There are two main uses for the deployed and released version resources in the Pact Broker. 
+
+The first is when determining which pacts should be verified by the provider. The pact for every version that is currently deployed or released+supported in an environment should be verified during the provider's release pipeline to ensure backwards compatiblity. The [consumer version selector](/pact_broker/advanced_topics/consumer_version_selectors/) to use to identify these pacts is `{ "deployedOrReleased": true }`. As of the date of writing this document (6 Aug 2021) the languages that support this selector are Pact JS, Pact Ruby and the Dockerized or standalone pact-provider-verifier.
+
+The second use for the deployed and released versions is when using [can-i-deploy](/pact_broker/can_i_deploy/). This is the command that is used to check if the version you are about to deploy into an environment has a successful verification result with each of the application versions that is already in the environment. 
+
+eg.
+
+```
+pact-broker can-i-deploy --pacticipant Foo --version 617c76e8bf05e1a480aed86a0946357c042c533c --to-environment production
 ```
 
 ## Migrating from tags to deployments/releases
