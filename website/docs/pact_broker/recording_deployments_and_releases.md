@@ -3,7 +3,7 @@ title: Recording deployments and releases
 ---
 
 :::caution
-This documentation is for features that are a work in progress, but not yet released. They are being put out for feedback on the planned features before official release. If you have feedback, please post it in the #pact-broker channel in Slack.
+This documentation is for features that are a support in the latest verison of the Pact Broker, but are not fully supported in all the Pact client languages.
 :::
 
 The Pact Broker needs to know which versions of each application are in each environment so it can return the correct pacts for verification and determine whether a pacticular application version is [safe to deploy](/pact_broker/can_i_deploy).
