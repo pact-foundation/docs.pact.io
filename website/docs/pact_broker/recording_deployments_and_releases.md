@@ -96,12 +96,31 @@ record-support-ended --pacticipant foo-mobile-app --version 6897aa95e --environm
 
 ## Migrating from tags to deployments/releases
 
+Before the introduction of deployed and released versions, [tags](/pact_broker/tags) were used to keep track of which environment each application version was deployed to. Tags were simple string values associated with application versions. Every time an application version was deployed or released, the version would be tagged with the name of the environment. 
+
+Because there was poor support for handling "undeployments" with tags, every version that was ever deployed to an environment had the environment tag. For applications that were deployed (ie. services) the "current version" in an environment was inferred to be the latest version with the environment tag. For applications that were released (eg. mobile apps) the "current versions" in an environment were all the versions with the environment tag. This meant there was no way for the Pact Broker identify "the application version(s) in production" - the user had to know whether or not this was the "latest version with tag 'production'" or "all versions with tag 'production'". The inability to infer semantic meaning from the tags made it difficult for the Pact Broker to do intelligent things with the data it had, and pushed the burden of interpetation back onto the user.
+
+Modelling deployments, releases and environments helps the Broker to automatically determine:
+
+* which pacts to verify to ensure backwards compatibility
+* which verifications to trigger when a pact changes to allow the new version of the consumer to be deployed as soon as possible
+* whether it is safe to deploy, without having to customise the command for "released" (eg. mobile) applications
+
+### Why migrate?
+
+If you already have your CI/CD workflow set up to use tags, you may wonder what benefits there are to migrating. Here are some advantages to migration.
+
+* The main reason to migrate is that tags are hard for new users to understand, and even if your current team is experienced with Pact, there will always be new users coming into the organization/team. The UI and error messages are much easier to comprehend when they use language like "the version currently deployed to production" rather than "the version tagged production".
+* The deployed and released versions feature supports use of the new [contract_requiring_verification_published webhook](https://github.com/pact-foundation/pact_broker/pull/476) which will make it easier to get verification results between the head consumer version and the deployed provider versions, resulting in more "yes" responses for `can-i-deploy`, which will allow consumers to deploy to production more often.
+
+### Steps
+
 * Check that the Pact library for the provider language you are using supports the `{ deployedOrReleased: true }` selector. As of the date of writing this document (6 Aug 2021) those languages are Pact JS, Pact Ruby and the Dockerized or standalone pact-provider-verifier. If your language has not implemented that selector, then there will be an open issue in the Github repo for the feature - please go and comment on it that you are interested in using the feature. You can start using the new feature even if your provider library does not support the new selector - you'll just need to use tags and deployments in parallel until the new selector is supported.
 * Ensure you are using the Pact Broker Client CLI 1.47.0 or later (0.47.0.0 or later of the pact-cli Docker image).
 * Create an environment resource for each of your environments using the `create-environment` command in the Pact Broker CLI.
 * Wherever you are are calling `pact-broker create-version-tag --pacticipant PACTICIPANT --version VERSION --tag ENVIRONMENT` after a deployment, add another command `pact-broker record-deployment --pacticipant PACTICIPANT --version VERSION --environment ENVIRONMENT` (or `record-release` if appropriate).
 * If your provider library supports it, in the provider codebase, add another selector `{ deployedOrReleased: true }` to the consumerVersionSelectors. It's ok if the same pact is returned for multiple selectors - they are de-duplicated. When you run the verification step, you should see that some of pacts have been selected because they are deployed/released.
-* Once all the integrations for a particular application have started using `record-deployment`, update the application's `can-i-deploy` call to use `--to-environment ENVIRONMENT` instead of `--to ENVIRONMENT`.
+* Once all the integrations for a particular application have started using `record-deployment`, update the application's `can-i-deploy` call to use `--to-environment ENVIRONMENT` instead of `--to ENVIRONMENT`. Drop any use of the `--all` option for mobile applications and code libraries.
 * When you are confident that everything is working correctly, you can remove the `create-version-tag` calls, and remove the `{ tag: "<ENVIRONMENT>" }` selector from the consumerVersionSelectors in the provider project. If your provider library does not yet support the new selector, you'll need to keep the old tag selector in place until it is supported, and you can upgrade.
 
 You can see can see the overall diff required to migrate to `record-deployment` (which is very small) in the PRs for the [example-consumer](https://github.com/pactflow/example-consumer/pull/9/files) and the [example-provider](https://github.com/pactflow/example-provider/pull/13/files) that are used in the [CI/CD workshop](https://docs.pactflow.io/docs/workshops/ci-cd/) which has been updated to use `record-deployment` instead of tags.
