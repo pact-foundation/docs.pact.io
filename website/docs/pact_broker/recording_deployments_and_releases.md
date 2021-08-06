@@ -2,6 +2,10 @@
 title: Recording deployments and releases
 ---
 
+:::caution
+This documentation is for features that are a support in the latest verison of the Pact Broker, but are not fully supported in all the Pact client languages.
+:::
+
 The Pact Broker needs to know which versions of each application are in each environment so it can return the correct pacts for verification and determine whether a pacticular application version is [safe to deploy](/pact_broker/can_i_deploy).
 
 To notify the Broker that an application version has been deployed or released, the `pact-broker record-deployment` and `pact-broker record-release` commands are provided by the Pact Broker CLI.
