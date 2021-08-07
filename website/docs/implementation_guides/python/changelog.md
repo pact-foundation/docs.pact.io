@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-python/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact-python repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+### 1.4.0
+  * 0089937 - fix: issue originating from snyk with requests and urllib (#252) (Elliott Murray, Sat Jul 31 12:46:15 2021 +0100)
+  * 903371b - feat: added support for message provider (#251) (Fabio Pulvirenti, Sat Jul 31 13:24:19 2021 +0200)
+  * 2c81029 - chore(snyk): update fastapi (#239) (Elliott Murray, Fri Jun 11 09:12:38 2021 +0100)
 ### 1.3.9
   * 98d9a4b - chore(ruby): update ruby standalen (#233) (Elliott Murray, Thu May 13 20:21:10 2021 +0100)
   * 657e770 - fix: change default from empty string to empty list (#235) (Vasile Tofan, Thu May 13 22:20:47 2021 +0300)
