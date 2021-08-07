@@ -4,9 +4,9 @@ require_relative 'support'
 
 SOURCE_REPO = 'pact-foundation/pact_broker-client'
 DESTINATION_DIR = relative_path_to('docs/pact_broker/client_cli')
-TRANSFORM_PATH = -> (path) { File.join(DESTINATION_DIR, path.downcase) }
+TRANSFORM_PATH = -> (path) { File.join(DESTINATION_DIR, path.downcase.gsub("doc/", "/")) }
 INCLUDE = [
-  ->(path) { %w{CHANGELOG.md README.md}.include?(path) }
+  ->(path) { %w{CHANGELOG.md README.md doc/CAN_I_DEPLOY_USAGE_WITH_TAGS.md}.include?(path) }
 ]
 IGNORE = []
 
