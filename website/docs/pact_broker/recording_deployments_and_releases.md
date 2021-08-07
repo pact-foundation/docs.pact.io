@@ -129,20 +129,30 @@ Modelling deployments, releases and environments helps the Broker to automatical
 
 ### Why migrate?
 
-If you already have your CI/CD workflow set up to use tags, you may wonder what benefits there are to migrating. Here are some advantages to migration.
+If you already have your CI/CD workflow set up to use tags, you may wonder what benefits there are to migrating. Here are some advantages.
 
-* The main reason to migrate is that tags are hard for new users to understand, and even if your current team is experienced with Pact, there will always be new users coming into the organization/team. The UI and error messages are much easier to comprehend when they use language like "the version currently deployed to production" rather than "the version tagged production".
+* The main reason to migrate is that tags are hard for new users to understand, and even if your current team is experienced with Pact, there will always be new users coming into the organization/team.
 * The deployed and released versions feature supports use of the new [contract_requiring_verification_published webhook](https://github.com/pact-foundation/pact_broker/pull/476) which will make it easier to get verification results between the head consumer version and the deployed provider versions, resulting in more "yes" responses for `can-i-deploy`, which will allow consumers to deploy to production more often.
+* While tags will continue to be supported, future Pact Broker features will be built for deployed/released versions rather than tags.
 
-### Steps
+### Migration steps
 
+* Upgrade to the latest version of the [Pact Broker](/pact_broker/docker_images).
+* Upgrade to the latest version of the [Pact Broker Client](/pact_broker/client_cli/readme) (either in the pact-cli Docker image, the pact-ruby-standalone or the Ruby gem)
 * Check that the Pact library for the provider language you are using supports the `{ deployedOrReleased: true }` selector. As of the date of writing this document (6 Aug 2021) those languages are Pact JS, Pact Ruby and the Dockerized or standalone pact-provider-verifier. If your language has not implemented that selector, then there will be an open issue in the Github repo for the feature - please go and comment on it that you are interested in using the feature. You can start using the new feature even if your provider library does not support the new selector - you'll just need to use tags and deployments in parallel until the new selector is supported.
-* Ensure you are using the Pact Broker Client CLI 1.47.0 or later (0.47.0.0 or later of the pact-cli Docker image).
-* Create an environment resource for each of your environments using the `create-environment` command in the Pact Broker CLI. If you are using Pactflow, you will need the `environment:manage:*` permission associated with the Administrator role to create an environment.
-* Wherever you are are calling `pact-broker create-version-tag` after a deployment, add another command `pact-broker record-deployment --pacticipant PACTICIPANT --version VERSION --environment ENVIRONMENT` (or `record-release` if appropriate).
+* Create an environment resource for each of your environments using the [create-environment](/pact_broker/client_cli/readme#create-environment) command in the Pact Broker CLI. The "test" and "production" environments will have been seeded for you. You can check the existing environments by running `pact-broker list-environments`. If you are using Pactflow, you will need the `environment:manage:*` permission associated with the Administrator role to create an environment.
+
+    $ pact-broker create-environment --name NAME --display-name DISPLAY_NAME [--no-production|--production]
+
+* Wherever you are are calling `pact-broker create-version-tag` after a deployment, add another command to record the deployment (or release if appropriate).
+
+    $ pact-broker record-deployment --pacticipant PACTICIPANT --version VERSION --environment ENVIRONMENT
+
 * If your provider library supports it, in the provider codebase, add another selector `{ "deployedOrReleased": true }` to the consumerVersionSelectors. It's ok if the same pact is returned for multiple selectors - they are de-duplicated. When you run the verification step, you should see in the output that some of pacts have been selected because they are deployed/released.
 * Once all the integrations for a particular application have started using `record-deployment`, update the application's `can-i-deploy` call to use `--to-environment ENVIRONMENT` instead of `--to ENVIRONMENT`. Drop any use of the `--all` option for mobile applications and code libraries.
-* If/when your provider supports the new selector, and you are confident that everything is working correctly, you can remove the `create-version-tag` calls, and remove the `{ tag: "<ENVIRONMENT>" }` selector from the consumerVersionSelectors in the provider project. 
+
+    $ pact-broker can-i-deploy --pacticipant PACTICIPANT --version VERSION --to-environment ENVIRONMENT
+
+* If/when your provider supports the new selector, and you are confident that everything is working correctly, you can remove the `create-version-tag` calls, and remove the `{ tag: "<ENVIRONMENT>" }` selector(s) from the consumerVersionSelectors in the provider project.
 
 You can see can see the overall diff required to migrate to `record-deployment` (which is very small) in the PRs for the [example-consumer](https://github.com/pactflow/example-consumer/pull/9/files) and the [example-provider](https://github.com/pactflow/example-provider/pull/13/files) that are used in the [CI/CD workshop](https://docs.pactflow.io/docs/workshops/ci-cd/) which has been updated to use `record-deployment` instead of tags.
-
