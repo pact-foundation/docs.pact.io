@@ -35,5 +35,5 @@ One catch - it is only safe to deploy the consumer if it was verified against th
 
 ## Use `can-i-deploy`
 
-Use the [can-i-deploy](https://github.com/pact-foundation/pact_broker/wiki/Provider-verification-results) feature of the [Pact Broker CLI](https://github.com/pact-foundation/pact_broker-client#can-i-deploy). It will give you a definitive answer if the version of your provider that is being deployed, is compatible with all of its known consumers.
+Use the [can-i-deploy](/pact_broker/can_i_deploy/) feature of the [Pact Broker CLI](/pact_broker/client_cli). It will give you a definitive answer if the version of your provider that is being deployed, is compatible with all of its known consumers.
 
