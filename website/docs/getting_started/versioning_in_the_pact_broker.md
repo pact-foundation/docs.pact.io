@@ -7,6 +7,7 @@ When using Pact, you have to be careful about how your application version numbe
 :::info tl;dr
 
 To avoid race conditions, the application (pacticipant) version number that is used to publish pacts and verification results should either _be_ or _contain_ the commit (ie. the git SHA or equivalent for your version control system).
+
 :::
 
 There are conceptually three resources that can have versions in the Pact Broker:
