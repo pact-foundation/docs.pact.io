@@ -137,6 +137,29 @@
   to = "/pact_broker/advanced_topics/wip_pacts?utm_source=pact&utm_medium=client_library"
   status = 301
 
+# Used in the auto-generated docs which are merged into docs.pact.io from which we have stripped the "/go/" tags
+# so that we can tell which links are clicked on in the CLI output, and which are clicked on from a browser.
+
+[[redirects]]
+  from = "/record-deployment"
+  to = "/pact_broker/recording_deployments_and_releases"
+  status = 301
+
+[[redirects]]
+  from = "/record-undeployment"
+  to = "/pact_broker/recording_deployments_and_releases"
+  status = 301
+
+[[redirects]]
+  from = "/record-release"
+  to = "/pact_broker/recording_deployments_and_releases"
+  status = 301
+
+[[redirects]]
+  from = "/record-support-ended"
+  to = "/pact_broker/recording_deployments_and_releases"
+  status = 301
+
 # Used in record-release help output
 
 [[redirects]]
