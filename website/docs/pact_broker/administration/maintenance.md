@@ -51,6 +51,8 @@ The selectors combine by "OR", meaning that a version is kept if it matches any 
 * If an application is not under active development, a selector that keeps versions by age limit might not actually select any versions. To ensure that we don't loose those critical "latest" versions for our main line of development or our deployed environments, add a selector with `{"tag": true, "latest": true}`.
 * For mobile consumers where all production versions of a pact are being verified to ensure backwards compatibility, you will want to keep all production versions by specifying `{"pacticipant": "<YourMobileConsumerName>", "tag": "production"}`. This is not required for applications that run as a single deployed production instance.
 
+#### Initial clean strategy
+
 If you have a very large database, and you are just now enabling the clean, the initial clean up might take some time. To ensure that the clean does not have an impact on the performance of the Broker, it is recommended to set the cron schedule to something quite regular for the first day (eg. every 2 minutes), and set the clean limit quite low (eg. 100). Once the task has stopped deleting any more records, set the schedule back to something like once/twice a day, and make sure the clean limit is higher than the number of new versions you expect in that time period.
 
 ### Configuration options
