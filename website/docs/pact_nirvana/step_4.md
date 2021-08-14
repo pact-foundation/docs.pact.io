@@ -27,7 +27,7 @@ There are two reasons that a verification task will need to be run:
 
 ### Consumer pipeline
 
-The following diagram shows what a fully fledged Pact supported release pipeline might look like for a consumer. During this step of the set up guide, we are going just going to cover publishing the pact, and configuring the webhook. The other parts of this pipeline will be covered in later steps.
+The following diagram shows what a fully fledged Pact supported release pipeline might look like for a consumer. During this step of the set up guide, we are just going to cover publishing the pact, and configuring the webhook. The other parts of this pipeline will be covered in later steps.
 
 ![Consumer release pipeline](/img/advanced-pact-workshop-diagrams-consumer-pipeline.png)
 
