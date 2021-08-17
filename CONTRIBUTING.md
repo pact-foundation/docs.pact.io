@@ -2,6 +2,13 @@
 
 Contributions are very welcome, from beginners and experienced Pact users alike. Please chat to us in the `#documentation` channel of the Pact Foundation Slack workspace ([signup](https://slack.pact.io)|[login](https://pact-foundation.slack.com)) if you have any questions or suggestions, or raise an issue in the Github repository for bugs that you can't submit a PR for yourself.
 
+## A note about spelling
+
+The pact documentation is written in British English, because it's good for 
+readability to standardise on spelling, and pragmatically 
+most of the core maintainers are in countries where the British English
+spelling is the most common. Please don't adjust British to American spelling in your PR.
+
 ## Content updates
 
 * Click on the `EDIT` link of the page you want to update.
