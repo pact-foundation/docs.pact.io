@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.50.0"></a>
+### v1.50.0 (2021-08-16)
+
+#### Features
+
+* add support for creating webhooks with event contract_requiring_verification_published (feature toggled off)	 ([4d4bc4b](https://github.com/pact-foundation/pact_broker-client/commit/4d4bc4b))
+* trim long versions on can-i-deploy formatting (#91)	 ([86d21e1](https://github.com/pact-foundation/pact_broker-client/commit/86d21e1))
+
 <a name="v1.49.0"></a>
 ### v1.49.0 (2021-08-05)
 
