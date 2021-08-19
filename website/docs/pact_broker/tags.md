@@ -14,7 +14,7 @@ When you deploy or release an application version, you should now use the [recor
 
 To find out what this means, read below!
 
-Tags are simple String values that that belong to "pacticipant" version \(that is, application version\) resources in the Pact Broker. They are typically used to provide metadata about a version - the most common use cases being to indicate the git branch of a version \(eg. `master`\) or a stage \(eg `test`, `prod`\).
+Tags are simple String values that belong to "pacticipant" version \(that is, application version\) resources in the Pact Broker. They are typically used to provide metadata about a version - the most common use cases being to indicate the git branch of a version \(eg. `master`\) or a stage \(eg `test`, `prod`\).
 
 Pacticipant version tags can be used for multiple purposes.
 
