@@ -38,7 +38,16 @@ In summary:
 
 ### How does Pact differ from Nock?
 
-We're looking for someone who has experience with both Nock and Pact to write this section. Please click the `EDIT` button and submit a PR if you can contribute.
+[Nock](https://github.com/nock/nock) provides a way to mock out network requests in tests and verify that the consuming code interacts with the mocked interactions as expected.
+
+Nock is great for functional testing, [where Pact is not be the best tool to use for mocking](/consumer/contract_tests_not_functional_tests).
+
+However, unlike Nock:
+
+* Pact verifies that the interactions mocked are provided to the consuming service as expected by the providing service.
+* Pact provides a way to verify message based interactions behave as specified, not just HTTP interactions.
+* Pact runs a mock server on a real port, rather than overriding Node's `http.request` functionality.
+* When using the [Pact Broker](/pact_broker) it will store the pacts (contracts) you make. This allows you to check either changes to the provider or consumer are safe to deploy, where assumed responses from Nock could drift from implementation and become out of date.
 
 ### How does Pact differ from VCR?
 
