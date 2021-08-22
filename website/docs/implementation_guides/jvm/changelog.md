@@ -4,6 +4,22 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.2.10 - Bugfix Release
+
+* 8f84d2b8d - update changelog for release 4.1.25 (Ronald Holshausen, Sun Aug 22 18:04:44 2021 +1000)
+* 603b61266 - feat: add the authentication options to PactBrokerOptions #1415 (Ronald Holshausen, Sun Aug 22 17:21:06 2021 +1000)
+* b44e8d4be - feat: add method to ProviderInfo with better type safety #1415 (Ronald Holshausen, Sat Aug 21 15:43:50 2021 +1000)
+* 4db1f837f - feat: add standalone setting to the XML builder #1414 (Ronald Holshausen, Sat Aug 21 14:51:13 2021 +1000)
+* af9f4948d - feat: add support for verification type RESPONSE_FACTORY. Fixes #1379 (Kyle Florence, Sat Aug 7 20:42:12 2021 -0500)
+* 59493c370 - feat: add support for verification type RESPONSE_FACTORY. Fixes #1379 (Kyle Florence, Sat Aug 7 20:42:12 2021 -0500)
+* cf21bb87f - feat: allow insecure TLS when accessing the broker with Maven #1413 (Ronald Holshausen, Sun Aug 15 16:05:50 2021 +1000)
+* 60a624334 - feat: update the expression markers when loading a pact file if overridden #1410 (Ronald Holshausen, Sun Aug 15 12:33:44 2021 +1000)
+* 837a80176 - feat: restrict expression marker overrides to provider state expressions #1410 (Ronald Holshausen, Sun Aug 15 12:33:00 2021 +1000)
+* e84e19c5e - feat: allow the expression markers in expressions to be overridden #1410 (Ronald Holshausen, Sun Aug 15 11:58:21 2021 +1000)
+* 2a12a3212 - fix: min/max type matchers must not apply the limits when cascading #396 (Ronald Holshausen, Sun Aug 8 13:29:49 2021 +1000)
+* ad664ed5d - feat(V4): Implemented models for Synchronous Message interactions (Ronald Holshausen, Sat Aug 7 16:10:35 2021 +1000)
+* 5bac92c96 - feat: support specifying multiple example values in Java DSL #379 (Ronald Holshausen, Sun Aug 1 18:18:07 2021 +1000)
+
 ## 4.1.25 - Bugfix Release
 
 * 603b61266 - feat: add the authentication options to PactBrokerOptions #1415 (Ronald Holshausen, Sun Aug 22 17:21:06 2021 +1000)
