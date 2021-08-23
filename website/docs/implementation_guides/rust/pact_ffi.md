@@ -8,6 +8,10 @@ This crate provides a Foreign Function Interface (FFI) to the Pact-Rust crates,
 with the intent of enabling Pact's core matching mechanisms to be used by implementations
 in other languages.
 
+## Documentation
+
+Documentation for the FFI functions and types is available at: https://docs.rs/pact_ffi/0.0.2/pact_ffi/index.html
+
 ## Dependencies
 
 This crates requires:
