@@ -11,6 +11,31 @@ There are regular monthly Pact AMAs, currently hosted by Pactflow. At these sess
 You can [watch](https://www.youtube.com/playlist?list=PLwy9Bnco-IpdgdZce-rXeR7EF2_6T8z7S) all of our previous AMA's in case your questions have already been answered.
 The questions in each AMA are shown below:
 
+### August 2021
+
+Theme: Contract Testing with Avro
+Video: https://youtu.be/75uA3X2lVqo
+
+1. What is Avro? What is it and what's unique about it?
+2. What are the key use cases for it and benefits of using it?
+3. What are the challenges with Avro, such as evolving the schema?
+4. How do you go about testing Avro?
+5. Where does Pact fit in? Does it make sense to combine them?
+
+### July 2021
+
+Theme: Schema Testing with OpenAPIs
+
+Video: https://youtu.be/O_lXopbrq_Y
+
+- What are schemas, specifications and contracts?
+- What are the benefits of each and what problems are they trying to solve?
+- Do the concerns overlap (and is that a problem)?
+- How can schemas be combined with contracts to get the most out of each?
+- Integrating these practices with tools such as Postman
+- Experiences / case studies
+- and more
+
 ### June 2021
 
 #### EU/UK
