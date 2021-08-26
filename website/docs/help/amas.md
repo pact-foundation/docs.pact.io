@@ -14,6 +14,7 @@ The questions in each AMA are shown below:
 ### August 2021
 
 Theme: Contract Testing with Avro
+
 Video: https://youtu.be/75uA3X2lVqo
 
 1. What is Avro? What is it and what's unique about it?
