@@ -53,11 +53,13 @@ The "pending" status of a pact is a _dynamically calculated_ property, determine
   - Note that the Pact Broker deduplicates and versions the contents of the published pacts. Publishing the same content for multiple consumer versions results in each of the consumer versions being associated with the same underlying pact content version.
 - The verification results that have been published to the Pact Broker for the pact content.
   - Note that the verification results belong to the pact _content_ itself, irrespective of which consumer version published it.
-- The branch of the provider, as specified by the provider tags in the verification configuration
+- The currrent branch of the provider, as specified by the provider tags in the verification configuration
 
-**A pact content is considered pending if there has not been a successful verification published by the specified branch of the provider.**
+**A pact content is considered pending if there has not been a successful verification published by the current branch of the provider AND there has not been a succcessful verification from another branch of the provider from before this branch was created.**
 
-The provider tags are used to determine the pending status because it is common to implement new features of a provider on a feature branch. If the provider tags were not taken in to consideration, a newly published successful verification on `feat-x` branch of the provider would suddenly cause the verification of that content by the `main` branch of the provider to fail.
+Another way to think about it is: a pact is considered pending for all branches of a provider until the first successful verification has been published. From then on, it is no longer pending for the provider branch that published the successful verification, and will not be pending for any other new provider branches created thereafter. It will stay in pending for branches that already existed at the time of the successful verificaiton.
+
+The provider branch (inferred from its tags) is used to determine the pending status because it is common to implement new features of a provider on a feature branch. If the provider branch was not taken in to consideration, a newly published successful verification on `feat-x` branch of the provider would suddenly cause the verification of that content by the `main` branch of the provider to fail.
 
 This diagram, while not entirely accurate (there is no stored state, it's a dynamic calculation) is a helpful way of understanding the pending state transitions for a pact version and a particular provider branch/tag.
 
