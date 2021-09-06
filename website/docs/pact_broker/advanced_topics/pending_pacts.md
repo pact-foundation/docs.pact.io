@@ -4,7 +4,7 @@ title: Pending pacts
 
 :::info what do I need to know?
 
-The "pending pacts" feature ensures the pact verification task only fails when a breaking change causes a previously supported pact to fail verification. Without the feature enabled, *any* failing pact (eg. ones with new features) will cause the provider's build to break, blocking the provider from deploying even if it is compatible with its deployed consumers.
+The "pending pacts" feature ensures the pact verification task (and therefore, the build) only fails when a breaking change causes a previously supported pact to fail verification. Without the feature enabled, *any* failing pact (eg. ones with new features) will cause the provider's build to break, blocking the provider from deploying even if it is compatible with its deployed consumers.
 
 [Watch a video that explains this concept](https://youtu.be/VnOy9Sv9Opo).
 
