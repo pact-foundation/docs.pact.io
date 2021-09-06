@@ -4,11 +4,13 @@ title: Pending pacts
 
 :::info what do I need to know?
 
-The "pending pacts" feature ensures the pact verification task (and therefore, the build) only fails when a breaking change causes a previously supported pact to fail verification. Without the feature enabled, *any* failing pact (eg. ones with new features) will cause the provider's build to break, blocking the provider from deploying even if it is compatible with its deployed consumers.
+Enabling the "pending pacts" feature ensures the pact verification task (and therefore, the build) only fails when a breaking change causes a previously supported pact to fail verification. Without the feature enabled, *any* failing pact (eg. ones with new features) will cause the provider's build to break, blocking the provider from deploying even if it is compatible with its deployed consumers.
 
 [Watch a video that explains this concept](https://youtu.be/VnOy9Sv9Opo).
 
-You should enable the pending pacts feature by setting `enablePending` (or equivalent for your language) to `true` in the [provider verification configuration](/provider/recommended_configuration#verification-triggered-by-provider-change). In the future, this feature will be enabled by default.
+The logic for the "pending pacts" feature is quite technical and you don't need to understand it to use it. The takeaway from this intro for new Pact users should just be: "enable the 'pending pacts' feature, and the build will only fail when it needs to prevent a breakage to an existing integration."
+
+You can enable the pending pacts feature by setting `enablePending` (or equivalent for your language) to `true` in the [provider verification configuration](/provider/recommended_configuration#verification-triggered-by-provider-change). In the future, this feature will be enabled by default.
 :::
 
 ## Why is this feature required?
