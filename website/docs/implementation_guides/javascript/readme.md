@@ -187,6 +187,7 @@ The `Pact` class provides the following high-level APIs, they are listed in the 
 | `spec`              | no        | number  | Pact specification version (defaults to 2)                                                               |
 | `cors`              | no        | boolean | Allow CORS OPTION requests to be accepted, defaults to false                                             |
 | `pactfileWriteMode` | no        | string  | Control how the Pact files are written. Choices: 'overwrite' 'update' or 'none'. Defaults to 'overwrite' |
+| `timeout`           | no        | number  | The time to wait for the mock server to start up in milliseconds. Defaults to 30 seconds (30000)       |
 
 </details>
 
@@ -320,7 +321,7 @@ new Verifier(opts).verifyProvider().then(function () {
 <details><summary>Verification Options</summary>
 
 | Parameter                   | Required? | Type                           | Description                                                                                                                                                                                        |
-| --------------------------- | --------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- | --------------------------------------------------- |
+| --------------------------- | --------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `providerBaseUrl`           | true      | string                         | Running API provider host endpoint.                                                                                                                                                                |
 | `pactBrokerUrl`             | false     | string                         | Base URL of the Pact Broker from which to retrieve the pacts. Required if `pactUrls` not given.                                                                                                    |
 | `provider`                  | false     | string                         | Name of the provider if fetching from a Broker                                                                                                                                                     |
@@ -338,7 +339,7 @@ new Verifier(opts).verifyProvider().then(function () {
 | `pactBrokerPassword`        | false     | string                         | Password for Pact Broker basic authentication                                                                                                                                                      |
 | `pactBrokerToken`           | false     | string                         | Bearer token for Pact Broker authentication                                                                                                                                                        |
 | `publishVerificationResult` | false     | boolean                        | Publish verification result to Broker (_NOTE_: you should only enable this during CI builds)                                                                                                       |
-| `customProviderHeaders`     | false     | array                          | Header(s) to add to provider state set up and pact verification                                                                                                                                    |     | `requests`. eg 'Authorization: Basic cGFjdDpwYWN0'. |
+| `customProviderHeaders`     | false     | array                          | Header(s) to add to provider state set up and pact verification                                                                                                                                    |  | `requests`. eg 'Authorization: Basic cGFjdDpwYWN0'. |
 | `providerVersion`           | false     | string                         | Provider version, required to publish verification result to Broker. Optional otherwise.                                                                                                           |
 | `enablePending`             | false     | boolean                        | Enable the [pending pacts](https://docs.pact.io/pending) feature.                                                                                                                                  |
 | `timeout`                   | false     | number                         | The duration in ms we should wait to confirm verification process was successful. Defaults to 30000.                                                                                               |
@@ -649,7 +650,7 @@ const {
 } = require("@pact-foundation/pact")
 
 // 1 Dog API Handler
-const dogApiHandler = function (dog) {
+const dogApiHandler = function(dog) {
   if (!dog.id && !dog.name && !dog.type) {
     throw new Error("missing fields")
   }
@@ -1121,7 +1122,7 @@ There is an `XmlBuilder` class that provides a DSL to help construct XML bodies 
 for example:
 
 ```javascript
-body: new XmlBuilder("1.0", "UTF-8", "ns1:projects").build((el) => {
+body: new XmlBuilder("1.0", "UTF-8", "ns1:projects").build(el => {
   el.setAttributes({
     id: "1234",
     "xmlns:ns1": "http://some.namespace/and/more/stuff",
@@ -1134,8 +1135,8 @@ body: new XmlBuilder("1.0", "UTF-8", "ns1:projects").build((el) => {
       name: string("Project 1"),
       due: timestamp("yyyy-MM-dd'T'HH:mm:ss.SZ", "2016-02-11T09:46:56.023Z"),
     },
-    (project) => {
-      project.appendElement("ns1:tasks", {}, (task) => {
+    project => {
+      project.appendElement("ns1:tasks", {}, task => {
         task.eachLike(
           "ns1:task",
           {
