@@ -37,6 +37,7 @@ eg.
 * "Webhook triggered for the following reasons: first time pact published with consumer version tagged feat/y"
 * "Scheduling job for webhook with uuid ap7c1tk-AdEYyphWBVieIg"
 
+If you can't see these logs, set the `PACT_BROKER_LOG_LEVEL` to `DEBUG` and try again (you may wish to set the `PACT_BROKER_SQL_LOG_LEVEL` to `none` to reduce the SQL logging noise).
 
 ## Viewing logs for past webhook executions
 
