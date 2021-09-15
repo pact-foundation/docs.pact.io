@@ -223,7 +223,8 @@
         "type": "category",
         "label": "Configuration",
         "items": [
-          "pact_broker/configuration",
+          "pact_broker/configuration/features",
+          "pact_broker/configuration/settings",
           "pact_broker/advanced_topics/using-tls"
         ]
       },
@@ -253,7 +254,8 @@
           "pact_broker/advanced_topics/ui_docs",
           "pact_broker/advanced_topics/troubleshooting"
         ]
-      }
+      },
+      "pact_broker/changelog"
     ]
   },
   "resources": [

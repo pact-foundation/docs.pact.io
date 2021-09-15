@@ -64,4 +64,4 @@ You can create the pacticipant manually through the API browser of the Pact Brok
 
 ### Disabling the potential duplication checking
 
-If you wish to turn this name checking feature off, see the [configuration](../configuration.md#checking-for-potential-duplicate-pacticipant-names) page.
+If you wish to turn this name checking feature off, see the [configuration settings](/pact_broker/configuration/settings.md#checking-for-potential-duplicate-pacticipant-names) page.
