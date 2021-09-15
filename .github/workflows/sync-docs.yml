@@ -13,6 +13,7 @@ on:
       - pact-broker-docker-dius-docs-updated
       - pact-broker-client-docs-updated
       - pact-net-docs-updated
+      - pact-broker-docs-updated
 
 jobs:
   build:
