@@ -40,15 +40,11 @@ If your broker needs to execute a webhook against a server that has a self signe
 
 If your webhooks need to execute via a HTTP proxy, set the `http_proxy` environment variable to the address of your proxy.
 
-## Heartbeat URL
+## Healthcheck/Heartbeat URL
 
-The heartbeat is available at `/diagnostic/status/heartbeat`.
+The heartbeat is available at `/diagnostic/status/heartbeat`. No database connection will be made during the execution of this endpoint.
 
-If you are running the Pact Broker within an AWS autoscaling group or similar, and you need to make a heartbeat URL publicly available, set [`public_heartbeat`](/pact_broker/configuration/settings#public_heartbeat) to `true`. No database connection will be made during the execution of this endpoint.
-
-## Healthcheck URL
-
-See [Heartbeat URL](#heartbeat-url).
+If you have enabled basic auth, and you are running the Pact Broker within an AWS autoscaling group or similar and you need to make a heartbeat URL publicly available, set [`public_heartbeat`](/pact_broker/configuration/settings#public_heartbeat) to `true`. 
 
 ## Badges
 
