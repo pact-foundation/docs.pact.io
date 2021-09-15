@@ -8,35 +8,6 @@ __NOTE: This page describes how to configure the *native Ruby Pact Broker* appli
 
 The Pact Broker configuration settings are applied in the `config.ru` file. See the Pact Broker [example](https://github.com/pact-foundation/pact_broker/tree/master/example) application if you are unfamiliar with Ruby applications.
 
-## Default configuration values
-
-Change them to your desired values in the `config.ru` file.
-
-```ruby
-app = PactBroker::App.new do | config |
-      config.log_dir = File.expand_path("./log")
-      config.auto_migrate_db = true
-      config.use_hal_browser = true
-      config.validate_database_connection_config = true
-      config.enable_diagnostic_endpoints = true
-      config.enable_public_badge_access = false # For security
-      config.shields_io_base_url = "https://img.shields.io".freeze
-      config.use_case_sensitive_resource_names = true
-      config.html_pact_renderer = default_html_pact_render
-      config.version_parser = PactBroker::Versions::ParseSemanticVersion
-      config.sha_generator = PactBroker::Pacts::GenerateSha
-      config.base_equality_only_on_content_that_affects_verification_results = false
-      config.order_versions_by_date = false
-      config.semver_formats = ["%M.%m.%p%s%d", "%M.%m", "%M"]
-      config.webhook_retry_schedule = [10, 60, 120, 300, 600, 1200] #10 sec, 1 min, 2 min, 5 min, 10 min, 20 min => 38 minutes
-      config.check_for_potential_duplicate_pacticipant_names = true
-      config.disable_ssl_verification = false
-      config.webhook_http_method_whitelist = ['POST']
-      config.webhook_scheme_whitelist = ['https']
-      config.webhook_host_whitelist = []
-end
-```
-
 ## Webhook SSL certificates
 
 If your broker needs to execute a webhook against a server that has a self signed certificate, you will need to add the certificate to the broker's certificate store. Currently, the way to do this is to use the script [script/insert-self-signed-certificate-from-url.rb](https://github.com/pact-foundation/pact_broker/blob/master/script/insert-self-signed-certificate-from-url.rb). The easiest way to run this is to copy it to the machine where the broker is deployed, and modify the database credentials to match those of your broker.
@@ -82,41 +53,11 @@ If you cannot allow access to the public shields server because of Network Secur
 
 NOTE: If you have added your own authentication on top of the broker, you'll need to add a rule to allow public access to the badge URLs.
 
-## Version parser
 
-Configure `version_parser` with a lambda or an object/class that responds to call. It should accept a string, and return a sortable object if the version is valid, and nil if the version is not valid.
-
-```ruby
-class MyCustomVersionParser
-  def self.call string_version
-    ....
-  end
-end
-
-PactBroker::App.new do | config |
-  config.version_parser = MyCustomVersionParser
-end
-```
-
-If you want to customise the error messages to indicate what sort of version format is expected, create a yml file with the following:
-
-```text
-en:
-  pact_broker:
-    errors:
-      validation:
-        consumer_version_number_header_invalid: "Custom message"
-        consumer_version_number_invalid: "Custom message"
-```
-
-```ruby
-# In config.ru, after configuring the Pact Broker app
-I18n.config.load_path << "./path/to/your/custom/messages/file.yml"
-```
 
 ## Ordering versions
 
-By default, pacticipant versions \(and hence their related pacts\) are sorted by date published. In earlier versions of the Pact Broker, the versions were sorted semantically. Semantic ordering is now not recommended, as the best practice is to publish pacts using the git sha as the consumer version.
+By default, pacticipant versions \(and hence their related pacts\) are sorted by date published. In earlier versions of the Pact Broker, the versions were sorted semantically. Semantic ordering is now deprecated, as the best practice is to publish pacts using the git sha as the consumer version.
 
 You are on a very old version of the Broker, and wish to use date ordering, you will need to set `config.order_versions_by_date = true`. After you have restarted, you will need to publish a new pact to trigger a resort, as the ordering is done on insertion.
 
@@ -138,17 +79,7 @@ To turn this feature off, set `check_for_potential_duplicate_pacticipant_names =
 
 ## Running the broker behind a reverse proxy
 
-### When the base URL configuration is supported (v2.46.0 and later)
-
-Please set the base URL of the Pact Broker application (eg. `https://pact-broker.mycompany.com`) via the supported configuration mechanism for the deployment artifact (the environment variable `PACT_BROKER_BASE_URL` for the Docker images, or `PactBroker.configuration.base_url = "..."` for native Ruby). Setting the base URL is recommended as it prevents some security vulnerabilities associated with dynamically inferring the base URL from the request headers.
-
-From version `2.79.0`, multiple base URLs can be configured for architectures that use gateways or proxies that allow the same Pact Broker instance to be addressed with different base URLs. To use this feature, list all the base URLs in the base URL string, separated by a space. eg. `"http://my-internal-pact-broker:9292 https://my-external-pact-broker"`
-
-### When the base URL configuration is not supported (versions prior to 2.46.0)
-
-*It is preferrable to upgrade to the latest version of the Pact Broker, as 2.46 is old and may contain vulerabilities. Also, determining the base URL dynamically using the X-Forwarded headers leaves the application open to [DNS cache poisoning](https://www.cloudflare.com/learning/dns/dns-cache-poisoning/).* The following documentation applies if you have no other option however.
-
-If the pact broker is setup behind a reverse proxy then there are a few headers that must be forwarded on for the HAL browser to work properly. The required headers to be sent depend on the proxy configuration. For example if the reverse proxy is configured to forward from [https://broker.example.com](https://broker.example.com) -&gt; [http://internal.broker](http://internal.broker) then X-Forwarded-Host, X-Forwarded-Port and X-Forwarded-Ssl or X-Forwarded-Scheme would need to set in the nginx configuration.
+If the pact broker is setup behind a reverse proxy then there are a few headers that must be forwarded on for the indexes to be generated with the correct base URLs. The required headers to be sent depend on the proxy configuration. For example if the reverse proxy is configured to forward from [https://broker.example.com](https://broker.example.com) -&gt; [http://internal.broker](http://internal.broker) then X-Forwarded-Host, X-Forwarded-Port and X-Forwarded-Ssl or X-Forwarded-Scheme would need to set in the nginx configuration.
 
 * **X-Forwarded-Scheme**
 
@@ -167,4 +98,14 @@ If the pact broker is setup behind a reverse proxy then there are a few headers 
   Set this to "on" if the scheme of the reverse proxy is https. For example if the URL configured at the proxy is [https://broker.example.com](https://broker.example.com) then this should be "on".
 
 See [this example](https://github.com/DiUS/pact_broker-docker/issues/58#issuecomment-358819665) for how to achieve this with Nginx.
+
+### When the base URL configuration is supported (v2.46.0 and later)
+
+Please set the base URL of the Pact Broker application (eg. `https://pact-broker.mycompany.com`) via the supported configuration mechanism for the deployment artifact (the environment variable `PACT_BROKER_BASE_URL` for the Docker images, or `PactBroker.configuration.base_url = "..."` for native Ruby). Setting the base URL is recommended as it prevents some security vulnerabilities associated with dynamically inferring the base URL from the request headers.
+
+From version `2.79.0`, multiple base URLs can be configured for architectures that use gateways or proxies that allow the same Pact Broker instance to be addressed with different base URLs. To use this feature, list all the base URLs in the base URL string, separated by a space. eg. `"http://my-internal-pact-broker:9292 https://my-external-pact-broker"`
+
+### When the base URL configuration is not supported (versions prior to 2.46.0)
+
+*It is preferrable to upgrade to the latest version of the Pact Broker, as 2.46 is old and may contain vulerabilities. Also, determining the base URL dynamically using the X-Forwarded headers leaves the application open to [DNS cache poisoning](https://www.cloudflare.com/learning/dns/dns-cache-poisoning/).*
 
