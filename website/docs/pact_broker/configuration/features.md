@@ -2,11 +2,9 @@
 title: Features
 ---
 
+See the [settings](/pact_broker/configuration/settings) page for a comprehensive list of all configuration options.
+
 __NOTE: This page describes how to configure the *native Ruby Pact Broker* application. The Pact Broker Ruby application is distributed in 2 different Docker images, one based on [Puma](/pact_broker/docker_images/pactfoundation) (this is our default recommendation) and one based on [Passenger](/pact_broker/docker_images/dius) (older, but still supported). Each of the Docker images is configurable using environment variables that map to the Ruby Pact Broker application configuration options. Please see the documentation for your Docker image for the names and formats of the environment variables.__
-
-## Configuration
-
-The Pact Broker configuration settings are applied in the `config.ru` file. See the Pact Broker [example](https://github.com/pact-foundation/pact_broker/tree/master/example) application if you are unfamiliar with Ruby applications.
 
 ## Webhook SSL certificates
 
@@ -18,22 +16,11 @@ If your webhooks need to execute via a HTTP proxy, set the `http_proxy` environm
 
 ## Webhook whitelists
 
-```ruby
-  # You should set these to appropriate values for your organization
-  config.webhook_host_whitelist = [/.*\.foo\.com$/, "github.com", "foo.slack.com"]
-
-  # For security reasons, it is not recommended to alter this list (see below)
-  config.webhook_http_method_whitelist = ['POST']
-
-  # For security reasons, it is not recommended to alter this list (see below)
-  config.webhook_scheme_whitelist = ['https']
-```
-
 To ensure that webhooks cannot be used maliciously to expose either data about your contracts or your internal network, the following validation rules are applied to webhooks via the Pact Broker configuration settings.
 
-* **Scheme**: Must be included in the `webhook_scheme_whitelist`, which by default only includes `https`. You can change this to include `http` if absolutely necessary, however, keep in mind that the body of any http traffic is visible to the network. You can load a self signed certificate into the Pact Broker to be used for https connections using [script/insert-self-signed-certificate-from-url.rb](https://github.com/pact-foundation/pact_broker/blob/master/script/insert-self-signed-certificate-from-url.rb) in the Pact Broker Github repository.
-* **HTTP method**: Must be included in the `webhook_http_method_whitelist`, which by default only includes `POST`. It is highly recommended that only `POST` requests are allowed to ensure that webhooks cannot be used to retrieve sensitive information from hosts within the same network.
-* **Host**: If the `webhook_host_whitelist` contains any entries, the host must match one or more of the entries. By default, it is empty. For security purposes, if the host whitelist is empty, the response details will not be logged to the UI \(though they can be seen in the application logs at debug level\).
+* **Scheme**: Must be included in the [`webhook_scheme_whitelist`](/pact_broker/configuration/settings#webhook_scheme_whitelist), which by default only includes `https`. You can change this to include `http` if absolutely necessary, however, keep in mind that the body of any http traffic is visible to the network. You can load a self signed certificate into the Pact Broker to be used for https connections using [script/insert-self-signed-certificate-from-url.rb](https://github.com/pact-foundation/pact_broker/blob/master/script/insert-self-signed-certificate-from-url.rb) in the Pact Broker Github repository.
+* **HTTP method**: Must be included in the [`webhook_http_method_whitelist`](/pact_broker/configuration/settings#webhook_http_method_whitelist), which by default only includes `POST`. It is highly recommended that only `POST` requests are allowed to ensure that webhooks cannot be used to retrieve sensitive information from hosts within the same network.
+* **Host**: If the [`webhook_host_whitelist`](/pact_broker/configuration/settings#webhook_host_whitelist) contains any entries, the host must match one or more of the entries. By default, it is empty. For security purposes, if the host whitelist is empty, any host is allowed, but the response details will not be logged to the UI \(though they can be seen in the application logs at debug level\).
 
   The host whitelist may contain hostnames \(eg `"github.com"`\), IPs \(eg `"192.0.345.4"`\), network ranges \(eg `"10.0.0.0/8"`\) or regular expressions \(eg `/.*\.foo\.com$/`\). Note that IPs are not resolved, so if you specify an IP range, you need to use the IP in the webhook URL. If you wish to allow webhooks to any host \(not recommended!\), you can set `webhook_host_whitelist` to `[/.*/]`. Beware of any sensitive endpoints that may be exposed within the same network.
 
@@ -47,13 +34,11 @@ To ensure that webhooks cannot be used maliciously to expose either data about y
 
 ## Badges
 
-Behind the scenes, the Pact Broker uses [img.shields.io](https://img.shields.io) to dynamically create the text on the badges. If the shields.io server cannot be made available to your Pact Broker installation, set `config.shields_io_base_url` to nil, and you will get badges with the hardcoded title "pact" instead of "foo/bar pact".
+Behind the scenes, the Pact Broker uses [img.shields.io](https://img.shields.io) to dynamically create the text on the badges. Older versions of the Pact Broker proxy the badge file from the shields.io server, but newer versions use a redirect response so that the image is fetched directly from the browser. If the shields.io server cannot be made available within your organisation, set `config.shields_io_base_url` to nil, and you will get badges with the hardcoded title "pact" instead of "foo/bar pact".
 
 If you cannot allow access to the public shields server because of Network Security, then you could run your own local [docker](https://github.com/beevelop/docker-shields) one.
 
 NOTE: If you have added your own authentication on top of the broker, you'll need to add a rule to allow public access to the badge URLs.
-
-
 
 ## Ordering versions
 
@@ -79,7 +64,7 @@ To turn this feature off, set `check_for_potential_duplicate_pacticipant_names =
 
 ## Running the broker behind a reverse proxy
 
-If the pact broker is setup behind a reverse proxy then there are a few headers that must be forwarded on for the indexes to be generated with the correct base URLs. The required headers to be sent depend on the proxy configuration. For example if the reverse proxy is configured to forward from [https://broker.example.com](https://broker.example.com) -&gt; [http://internal.broker](http://internal.broker) then X-Forwarded-Host, X-Forwarded-Port and X-Forwarded-Ssl or X-Forwarded-Scheme would need to set in the nginx configuration.
+If the pact broker is setup behind a reverse proxy then there are a few headers that must be set for the hypermedia links in the JSON resources to be generated with the correct base URLs. The required headers to be sent depend on the proxy configuration. For example if the reverse proxy is configured to forward from [https://broker.example.com](https://broker.example.com) -&gt; [http://internal.broker](http://internal.broker) then X-Forwarded-Host, X-Forwarded-Port and X-Forwarded-Ssl or X-Forwarded-Scheme would need to set in the nginx configuration.
 
 * **X-Forwarded-Scheme**
 
