@@ -49,6 +49,10 @@ jobs:
       run: bundle exec scripts/sync/pact_cpp.rb && echo 'COMMIT_MESSAGE="synced pact-cpp docs"' >> $GITHUB_ENV
       if: github.event.action == 'pact-cpp-docs-updated'
 
+    - name: Sync Pact Broker docs
+      run: bundle exec scripts/sync/pact_broker.rb && echo 'COMMIT_MESSAGE="synced pact_broker docs"' >> $GITHUB_ENV
+      if: github.event.action == 'pact-broker-docs-updated'
+
     - name: Sync pactfoundation/pact-broker Docker image docs
       run: bundle exec scripts/sync/pact_broker_docker_pactfoundation.rb && echo 'COMMIT_MESSAGE="synced pactfoundation/pact-broker docker image docs"' >> $GITHUB_ENV
       if: github.event.action == 'pact-broker-docker-pactfoundation-docs-updated'

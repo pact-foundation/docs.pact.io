@@ -104,6 +104,12 @@
   to = "/implementation_guides/jvm/provider/junit5spring"
   status = 301
 
+# moved path
+[[redirects]]
+  from = "/pact_broker/configuration/"
+  to = "/pact_broker/configuration/features"
+  status = 302
+
 # Links below are used in the output of Pact APIs that get shown in the terminal
 
 # Used in publish contracts response
