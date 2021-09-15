@@ -6,15 +6,9 @@ See the [settings](/pact_broker/configuration/settings) page for a comprehensive
 
 __NOTE: This page describes how to configure the *native Ruby Pact Broker* application. The Pact Broker Ruby application is distributed in 2 different Docker images, one based on [Puma](/pact_broker/docker_images/pactfoundation) (this is our default recommendation) and one based on [Passenger](/pact_broker/docker_images/dius) (older, but still supported). Each of the Docker images is configurable using environment variables that map to the Ruby Pact Broker application configuration options. Please see the documentation for your Docker image for the names and formats of the environment variables.__
 
-## Webhook SSL certificates
+## Webhooks
 
-If your broker needs to execute a webhook against a server that has a self signed certificate, you will need to add the certificate to the broker's certificate store. Currently, the way to do this is to use the script [script/insert-self-signed-certificate-from-url.rb](https://github.com/pact-foundation/pact_broker/blob/master/script/insert-self-signed-certificate-from-url.rb). The easiest way to run this is to copy it to the machine where the broker is deployed, and modify the database credentials to match those of your broker.
-
-## Webhook HTTP proxies
-
-If your webhooks need to execute via a HTTP proxy, set the `http_proxy` environment variable to the address of your proxy.
-
-## Webhook whitelists
+### Webhook whitelists
 
 To ensure that webhooks cannot be used maliciously to expose either data about your contracts or your internal network, the following validation rules are applied to webhooks via the Pact Broker configuration settings.
 
@@ -31,6 +25,14 @@ To ensure that webhooks cannot be used maliciously to expose either data about y
   * your code repository \(eg. Github, for sending commit statuses\)
 
   Alternatively, you could use a regular expression to limit requests to your company's domain. eg `/.*\.foo\.com$/` \(don't forget the end of string anchor\). You can test Ruby regular expressions at [rubular.com](http://rubular.com).
+
+### Webhook SSL certificates
+
+If your broker needs to execute a webhook against a server that has a self signed certificate, you will need to add the certificate to the broker's certificate store. Currently, the way to do this is to use the script [script/insert-self-signed-certificate-from-url.rb](https://github.com/pact-foundation/pact_broker/blob/master/script/insert-self-signed-certificate-from-url.rb). The easiest way to run this is to copy it to the machine where the broker is deployed, and modify the database credentials to match those of your broker.
+
+### Webhook HTTP proxies
+
+If your webhooks need to execute via a HTTP proxy, set the `http_proxy` environment variable to the address of your proxy.
 
 ## Badges
 
