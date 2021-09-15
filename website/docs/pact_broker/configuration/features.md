@@ -6,6 +6,12 @@ See the [settings](/pact_broker/configuration/settings) page for a comprehensive
 
 __NOTE: This page describes how to configure the *native Ruby Pact Broker* application. The Pact Broker Ruby application is distributed in 2 different Docker images, one based on [Puma](/pact_broker/docker_images/pactfoundation) (this is our default recommendation) and one based on [Passenger](/pact_broker/docker_images/dius) (older, but still supported). Each of the Docker images is configurable using environment variables that map to the Ruby Pact Broker application configuration options. Please see the documentation for your Docker image for the names and formats of the environment variables.__
 
+## Getting started
+
+The only required configuration settings to get started are the database credentials. You can set the connection string to the database using the environment variable [`PACT_BROKER_DATABASE_URL`](/pact_broker/configuration/settings#database_url) in the format `{database_adapter}://{database_username}:{database_password}@{database_host}:{database_port}/{database_name}`. See the [database section](/pact_broker/configuration/settings#database) of the settings page for futher details.
+
+Once you are up and running, we recommend you set the `webhook_host_whitelist` as per the documentation [below](#webhook-whitelists)
+
 ## Webhooks
 
 ### Webhook whitelists
