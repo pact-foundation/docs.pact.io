@@ -10,7 +10,7 @@ __NOTE: This page describes how to configure the *native Ruby Pact Broker* appli
 
 The only required configuration settings to get started are the database credentials. You can set the connection string to the database using the environment variable [`PACT_BROKER_DATABASE_URL`](/pact_broker/configuration/settings#database_url) in the format `{database_adapter}://{database_username}:{database_password}@{database_host}:{database_port}/{database_name}`. See the [database section](/pact_broker/configuration/settings#database) of the settings page for futher details.
 
-Once you are up and running, we recommend you set the `webhook_host_whitelist` as per the documentation [below](#webhook-whitelists)
+Once you are up and running, we recommend you set the [`base_url`](/pact_broker/configuration/settings#base_url) and the `webhook_host_whitelist` as per the documentation [below](#webhook-whitelists)
 
 ## Webhooks
 
