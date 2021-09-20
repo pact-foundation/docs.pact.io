@@ -280,3 +280,15 @@ For example, given this metadata:
 ```
 
 we would encode it into a base64 string, giving us `ewogICJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIsCiAgInRvcGljIjogImJheiIsCiAgIm51bWJlciI6IDI3LAogICJjb21wbGV4IjogewogICAgImZvbyI6ICJiYXIiCiAgfQp9Cg==`.
+
+## TLS and Certificate Management
+
+Pact uses the [rustls-native-certs](https://lib.rs/crates/rustls-native-certs) crate, which will respect the platform's native certificate store when operating as a TLS client:
+
+This is supported on Windows, macOS and Linux:
+
+* On Windows, certificates are loaded from the system certificate store. The schannel crate is used to access the Windows certificate store APIs.
+* On macOS, certificates are loaded from the keychain. The user, admin and system trust settings are merged together as documented by Apple. The security-framework crate is used to access the keystore APIs.
+* On Linux and other UNIX-like operating systems, the openssl-probe crate is used to discover the filename of the system CA bundle.
+
+On Linux the standard OpenSSL environment variables `SSL_CERT_FILE` and `SSL_CERT_DIR` will also be respected.
