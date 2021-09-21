@@ -135,6 +135,20 @@ If you already have your CI/CD workflow set up to use tags, you may wonder what 
 * The deployed and released versions feature supports use of the new [contract_requiring_verification_published webhook](https://github.com/pact-foundation/pact_broker/pull/476) which will make it easier to get verification results between the head consumer version and the deployed provider versions, resulting in more "yes" responses for `can-i-deploy`, which will allow consumers to deploy to production more often.
 * While tags will continue to be supported, future Pact Broker features will be built for deployed/released versions rather than tags.
 
+### Pact client support for the deployedOrReleased selector
+
+If you would like to make a contribution to Pact by adding support for this selector, please comment on the relevant issue below.
+
+* Pact JS - supported for Javascript from version 9.16 (earlier versions may support the selector but not log it properly in the output)
+* Pact Ruby - 1.59.0 (earlier versions may support the selector but not log it properly in the output)
+* Pact Go - supported in latest version at 22 September 2021
+* Pact Rust - supported in latest version at 22 September 2021
+* Pact JVM - unsupported ([check status or comment on issue](https://github.com/pact-foundation/pact-jvm/issues/1407))
+* Pact NET - unsupported ([check status or comment on issue](https://github.com/pact-foundation/pact-net/issues/311))
+* Pact Python - unsupported ([check status or comment on issue](https://github.com/pact-foundation/pact-python/issues/246))
+* Pact Scala - unsupported ([check status or comment on issue](https://github.com/ITV/scala-pact/issues/224))
+* Pact PHP - unsupported ([check status or comment on issue](https://github.com/pact-foundation/pact-php/issues/206))
+
 ### Migration steps
 
 * Upgrade to the latest version of the [Pact Broker](/pact_broker/docker_images).
