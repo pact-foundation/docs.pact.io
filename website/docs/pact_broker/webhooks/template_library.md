@@ -242,11 +242,11 @@ N.B - currently need to use a personal API token \(ideally for a machine user\)
 }
 ```
 
-## Bitbucket - pipeline trigger build of a branch
+## Bitbucket - trigger pipeline run
 
-If you use Bitbucket and have worked out how to pass parameters into the build, can you please submit a PR to update this example.
+Run the default pipeline for a branch:
 
-```text
+```json
 {
   "events": [{
     "name": "contract_content_changed"
@@ -255,16 +255,56 @@ If you use Bitbucket and have worked out how to pass parameters into the build, 
     "method": "POST",
     "url": "https://api.bitbucket.org/2.0/repositories/{workspace}/{repo_slug}/pipelines/",
     "headers": {
-        "Content-Type": "application/json"
+      "Content-Type": "application/json"
     },
     "username": "username",
     "password": "password",
     "body": {
-        "target": {
-            "ref_type": "branch",
-            "type": "pipeline_ref_target",
-            "ref_name": "your_branch_name"
-          }
+      "target": {
+        "ref_type": "branch",
+        "type": "pipeline_ref_target",
+        "ref_name": "your_branch_name"
+      }
+    }
+  }
+}
+```
+
+Run a specific custom pipeline, with some variables:
+
+```json
+{
+  "events": [{
+    "name": "contract_content_changed"
+  }],
+  "request": {
+    "method": "POST",
+    "url": "https://api.bitbucket.org/2.0/repositories/{workspace}/{repo_slug}/pipelines/",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "username": "username",
+    "password": "password",
+    "body": {
+      "target": {
+        "ref_type": "branch",
+        "type": "pipeline_ref_target",
+        "ref_name": "your_branch_name",
+        "selector": {
+          "type": "custom",
+          "pattern": "pact-verification"
+        }
+      },
+      "variables": [
+        {
+          "key": "CONSUMER_NAME",
+          "value": "${pactbroker.consumerName}"
+        },
+        {
+          "key": "CONSUMER_TAG",
+          "value": "${pactbroker.consumerVersionTags}"
+        }
+      ]
     }
   }
 }
