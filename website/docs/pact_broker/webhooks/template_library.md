@@ -244,7 +244,7 @@ N.B - currently need to use a personal API token \(ideally for a machine user\)
 
 ## Bitbucket - trigger pipeline run
 
-Run the default pipeline for a branch:
+Run the default pipeline for a branch, for the changed pact:
 
 ```json
 {
@@ -264,13 +264,19 @@ Run the default pipeline for a branch:
         "ref_type": "branch",
         "type": "pipeline_ref_target",
         "ref_name": "your_branch_name"
-      }
+      },
+      "variables": [
+        {
+          "key": "PACT_URL",
+          "value": "${pactbroker.pactUrl}"
+        }
+      ]
     }
   }
 }
 ```
 
-Run a specific custom pipeline, with some variables:
+Run a specific custom pipeline, for the changed pact:
 
 ```json
 {
@@ -297,12 +303,8 @@ Run a specific custom pipeline, with some variables:
       },
       "variables": [
         {
-          "key": "CONSUMER_NAME",
-          "value": "${pactbroker.consumerName}"
-        },
-        {
-          "key": "CONSUMER_TAG",
-          "value": "${pactbroker.consumerVersionTags}"
+          "key": "PACT_URL",
+          "value": "${pactbroker.pactUrl}"
         }
       ]
     }
