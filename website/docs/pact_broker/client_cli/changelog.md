@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.53.0"></a>
+### v1.53.0 (2021-09-29)
+
+#### Features
+
+* allow pacts to be published using the old API by setting the environment variable PACT_BROKER_FEATURES=publish_pacts_using_old_api	 ([7c34132](https://github.com/pact-foundation/pact_broker-client/commit/7c34132))
+
 <a name="v1.52.0"></a>
 ### v1.52.0 (2021-09-29)
 
