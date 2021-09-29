@@ -34,21 +34,23 @@ The `pact-broker record-deployment` command should be called at the very end of 
 record-deployment --pacticipant foo --version 6897aa95e --environment production
 
 record-deployment --pacticipant foo --version 6897aa95e --environment production \
-                  --target customer-1
+                  --application-instance customer-1
 
 record-deployment --pacticipant foo --version 6897aa95e --environment test \ 
-                  --target iphone-2
+                  --application-instance iphone-2
 ```
 
-#### Target
+#### Application instances
 
-Setting the "target" field is only necessary when there are multiple instances of an application deployed permanently to the same environment at the same time. An example of this might be when you are maintaining on-premises consumer applications for multiple customers that all share the same backend API instance, or when you have more than one mobile device running the same application in a test environment, all pointing to the same test API instance.
+Setting the "application instance" attribute is only necessary when there are multiple instances of an application *permanently* deployed to the same environment at the same time (ie. not just temporarily during a rolling migration). An example of this might be when you are maintaining on-premises consumer applications for multiple customers that all share the same backend API instance, or when you have more than one mobile device running the same application in a test environment, all pointing to the same test API instance.
 
-The "target" field is used to distinguish between deployed versions of an application within the same environment, and most importantly, to identify which previously deployed version has been replaced by the current deployment. The Pact Broker only allows one unique combination of pacticipant/environment/target to be considered the "currently deployed" one, and any call to record a deployment will cause the previously deployed version with the same pacticipant/environment/target to be automatically marked as undeployed (mimicking the real world process of "deploying over" a previous version). Note that a "null" target is considered to be a distinct target value, so if you record a deployment with no target set, then record a deployment with a target set, you will have two different deployed versions in that environment.
+The "application instance" field is used to distinguish between deployed versions of an application within the same environment, and most importantly, to identify which previously deployed version has been replaced by the current deployment. The Pact Broker only allows one unique combination of pacticipant/environment/application instance to be considered the "currently deployed" one, and any call to record a deployment will cause the previously deployed version with the same pacticipant/environment/application instance to be automatically marked as undeployed (mimicking the real world process of "deploying over" a previous version). Note that a "null" (anonymous) application instance is considered to be a distinct value, so if you record a deployment with no application instance set, then record a deployment with an application instance set, you will have two different deployed versions in that environment.
 
-The target should *not* be used to model blue/green or other forms of no-downtime deployments where there are two different application versions deployed at once during the deployment phase. See the next section for more information.
+The application instance should *not* be used to model blue/green or other forms of no-downtime deployments where there are two different application versions deployed temporarily at once during the deployment phase. See the next section for more information.
 
-##### Why the target should not be used for long running deployments
+Note: In beta releases of the Pact Broker Client, the "application instance" property was called "target". This is still supported, but will generate warnings in the output.
+
+##### Why the application instance should not be used for long running deployments
 
 When executing a rolling deployment (an approach for deploying with no downtime where there are multiple application instances that are deployed to sequentially), there will be a period of time when there are 2 different versions of an application in the environment at the same time. Even if there is a long running deployment, the `record-deployment` should still be called at the end of the deployment, and there is no need to let the Broker know of newer application version until the deployment process is complete.
 
@@ -60,9 +62,9 @@ Provider deploys version 2 using a rolling deployment, during which time the res
 
 ### Recording undeployments
 
-Recording undeployments is not usually necessary, because the `record-deployment` command automatically marks any application version that was deployed to the same target as undeployed.
+Recording undeployments is not usually necessary, because the `record-deployment` command automatically marks any application version that was deployed to the same application instance as undeployed.
 
-If however, a application instance is being permanently removed from an environment, rather than just being deployed over, you can use `pact-broker record-undeployment`.
+If however, an application instance is being permanently removed from an environment, rather than just being deployed over, you can use `pact-broker record-undeployment`.
 
 Once a version is marked as undeployed (either explicitly or automatically), the pacts for that version are no longer returned for verification when using the `{ "deployedOrReleased": true}` [consumer version selector](/pact_broker/advanced_topics/consumer_version_selectors/), and the version is no longer considered when checking if an integrated application is [safe to deploy](/pact_broker/can_i_deploy).
 
@@ -72,14 +74,14 @@ Once a version is marked as undeployed (either explicitly or automatically), the
 record-undeployment --pacticipant my-retired-service --environment test
                     
 record-undeployment --pacticipant foo --environment test \
-                    --target mobile-2
+                    --application-instance mobile-2
 ```
 
 ## Releases
 
 ### Recording releases
 
-The `pact-broker record-release` command should be called once an application version has been successfully made available in a production environment (eg. via a Github release, made available on an app store, or released to a Maven repository etc.). Unlike recording a deployment, recording a release does not change the status of any previously released application versions, and there is no concept of a release "target".
+The `pact-broker record-release` command should be called once an application version has been successfully made available in a production environment (eg. via a Github release, made available on an app store, or released to a Maven repository etc.). Unlike recording a deployment, recording a release does not change the status of any previously released application versions, and there is no concept of a release "application instance".
 
 `record-release` is generally only used for production environments. If you do use it for pre-prod environments, you will need to manually call `record-support-ended` when a version is either promoted to production or it is decided that the version will not be released, otherwise you will end up verifying pacts for unnecessary versions. If you have a pre-prod repository that you are sharing a library to, and you only care about verifying the pacts for the latest version in that repository, then `record-deployment` may be more appropriate for pre-prod releases.
 
