@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.52.0"></a>
+### v1.52.0 (2021-09-29)
+
+#### Features
+
+* rename target to application-instance for record-deployment and record-undeployment (backwards compatible)	 ([53d23eb](https://github.com/pact-foundation/pact_broker-client/commit/53d23eb))
+
 <a name="v1.51.2"></a>
 ### v1.51.2 (2021-09-27)
 
