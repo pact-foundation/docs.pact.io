@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.54.0"></a>
+### v1.54.0 (2021-10-01)
+
+#### Features
+
+* disable SSL verification for HAL client and HTTParty client when environment variable PACT_DISABLE_SSL_VERIFICATION=true	 ([470aafa](https://github.com/pact-foundation/pact_broker-client/commit/470aafa))
+* support setting the --main-branch for a pacticipant	 ([1f18e70](https://github.com/pact-foundation/pact_broker-client/commit/1f18e70))
+
 <a name="v1.53.0"></a>
 ### v1.53.0 (2021-09-29)
 
