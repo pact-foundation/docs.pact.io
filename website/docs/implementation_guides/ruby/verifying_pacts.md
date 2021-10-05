@@ -162,7 +162,7 @@ If you are using version 1.11.0 or later of the pact gem and 2.0.0 or later of t
 
 You should only publish verification results from your CI server, not from your local development machine. The recommended way to do this is to detect an environment variable that will only be present on your CI server, like `BUILD_NUMBER` or `TRAVIS`, or to set an explicit variable like `PUBLISH_VERIFICATION_RESULTS`.
 
-See [Versioning in the Pact Broker](/getting_started/versioning_in_the_pact_broker) for more information on what the value of the version field should contain. If you're in a hurry, the summary is: use the git sha for the app version, and the git branch for the app version tag.
+See [Versioning in the Pact Broker](/getting_started/versioning_in_the_pact_broker) for more information on what the value of the version field should contain. If you're in a hurry, the summary is: use the git sha or equivalent for the app version, and set the app_version_branch from your git branch (or equivalent).
 
 ```ruby
 provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`.strip
@@ -171,7 +171,7 @@ publish_flag = ENV['PUBLISH_VERIFICATION_RESULTS'] == 'true' # or some way of de
 
 Pact.service_provider "My Service Provider" do
   app_version provider_version
-  app_version_branch provider_branch
+  app_version_branch provider_branch # Supported from v1.59.0
   app_version_tags ["foo", "bar"]
   publish_verification_results publish_flag
 end
