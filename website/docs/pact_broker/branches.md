@@ -2,6 +2,9 @@
 title: Branches
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 From version 2.82.0 onwards, the Pact Broker supports repository branches as a first class concept. Previously, users were recommended to use version [tags](/pact_broker/tags) to represent the branch with which a particular pacticipant version was associated. Adding explict support for branches allows the Pact Broker to provide simpler documentation, better messaging and sensible defaults.
 
 ## Domain model
@@ -12,7 +15,92 @@ Remember that a `pacticipant version` in the Pact Broker should map 1:1 to a com
 
 ## When are branches created?
 
-Branches are automatically created and associated with a pacticipant version when pacts and verification results are published. Check the support section to see if your Pact library supports this feature yet.
+Branches are automatically created and associated with a pacticipant version when pacts and verification results are published. Check the [support](#support) section to see if your Pact library supports this feature yet.
+
+### Configuring the branch when publishing pacts
+
+<Tabs
+  groupId="sdk-choice"
+  defaultValue="pact-cli"
+  values={[
+    { label: 'Pact CLI', value: 'pact-cli', },
+    { label: 'Ruby', value: 'ruby' }
+  ]
+}>
+  <TabItem value="pact-cli">
+
+  See [here](/pact_broker/client_cli/readme#publish) for full docs.
+
+  ```
+  pact-broker publish ./pacts --consumer-app-version $GIT_COMMIT --branch $GIT_BRANCH
+
+  # or 
+
+  pact-broker publish ./pacts --auto-detect-version-properties
+  ```
+
+  </TabItem>
+  <TabItem value="ruby">
+
+  See [here](/implementation_guides/ruby/publishing_pacts) for full docs.
+
+  ```ruby
+  # In Gemfile
+
+  gem "pact_broker-client"
+  
+  # In Rakefile
+
+  require "pact_broker/client/tasks"
+
+  PactBroker::Client::PublicationTask.new do | task |
+    task.consumer_version = ENV["GIT_COMMIT"]
+    task.branch = ENV["GIT_BRANCH"]
+  end  
+  ```
+
+  </TabItem>
+</Tabs>
+
+### Configuring the branch when publishing verification results
+
+
+<Tabs
+  groupId="sdk-choice"
+  defaultValue="pact-cli"
+  values={[
+    { label: 'Ruby provider-verifier CLI', value: 'pact-cli', },
+    { label: 'Ruby', value: 'ruby' }
+  ]
+}>
+  <TabItem value="pact-cli">
+
+  See [here](https://github.com/pact-foundation/pact-provider-verifier) for full docs.
+
+  ```  
+  pact-provider-verifier  \
+    --provider "Example API" \
+    --provider-app-version $GIT_COMMIT \
+    --provider-version-branch $GIT_BRANCH \
+    ...
+  ```
+    
+  </TabItem>
+  <TabItem value="ruby">
+
+  See [here](/implementation_guides/ruby/verifying_pacts) for full docs.
+
+  ```ruby
+  # In spec/pact_helper.rb
+
+  Pact.service_provider "My Service Provider" do
+    app_version ENV["GIT_COMMIT"]
+    app_version_branch ENV["GIT_BRANCH"]
+  end
+  ```
+
+  </TabItem>
+</Tabs>
 
 ## When are branches used?
 
@@ -46,12 +134,12 @@ Support for publishing pacts and verification results with branches is currently
 
 * Pact Ruby - v1.59.0
 * Ruby Dockerized pact-provider-verifier - v1.36.0
-* Pact JS - unsupported
-* Pact Go - unsupported
-* Pact Rust - unsupported
-* Pact JVM - unsupported
-* Pact NET - unsupported
-* Pact Python - unsupported
-* Pact Scala - unsupported
-* Pact4s - unsupported
-* Pact PHP - unsupported
+* Pact JS - TBC
+* Pact Go - TBC
+* Pact Rust - TBC
+* Pact JVM - TBC
+* Pact NET - TBC
+* Pact Python - TBC
+* Pact Scala - TBC
+* Pact4s - TBC
+* Pact PHP - TBC
