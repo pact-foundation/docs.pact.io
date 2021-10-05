@@ -172,6 +172,7 @@ If you would like to make a contribution to Pact by adding support for this sele
 * Pact NET - unsupported ([check status or comment on issue](https://github.com/pact-foundation/pact-net/issues/311))
 * Pact Python - unsupported ([check status or comment on issue](https://github.com/pact-foundation/pact-python/issues/246))
 * Pact Scala - unsupported ([check status or comment on issue](https://github.com/ITV/scala-pact/issues/224))
+* Pact4s - unsupported
 * Pact PHP - unsupported ([check status or comment on issue](https://github.com/pact-foundation/pact-php/issues/206))
 
 ### Migration steps
