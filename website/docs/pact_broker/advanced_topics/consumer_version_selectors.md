@@ -10,13 +10,27 @@ Consumer version selectors are the (new) way to configure which pacts the provid
 
 A consumer version selector has the following properties:
 
-- `tag`: The name of the tag which applies to the pacticipant (application) versions of the pacts you want to verify. Common examples of the tag names used here are `master`, `test` and `prod`.
+- `mainBranch`: if the key is specified, can only be set to `true`. Return the pacts for the configured `mainBranch` of each consumer. Use of this selector requires that the consumer has configured the `mainBranch` property, and has set a branch name when publishing the pacts. As of October 2021, this is not yet supported in all Pact client libraries.
 
-- `latest`: Whether or not to verify only the pact that belongs to the latest application version. The most common use case is to set this to true. When false, null or omitted, the pacts that belong to _all_ application versions with the specified tag will be verified. This is to support the scenario when an API has many production versions, and hence pacts (eg. a mobile consumer).
+- `branch`: the branch name of the consumer versions to get the pacts for. Use of this selector requires that the consumer has configured a branch name when publishing the pacts. As of October 2021, this is not yet supported in all Pact client libraries. As of October 2021, this is not yet supported in all Pact client libraries.
 
-- `consumer`: Filter pacts by the specified consumer. When omitted, all consumer are included. This is generally not needed, as the most common use case is to verify pacts for all consumers. It is useful in the scenario when an API has multiple versions of one particular consumer in production (eg. a mobile consumer) as well as a single version of another consumer (eg. an API consumer). See examples below.
+- `fallbackBranch`: the name of the branch to fallback to if the specified `branch` does not exist. Use of this property is discouraged as it may allow a pact to pass on a feature branch while breaking backwards compatibility with the main branch, which is generally not desired. It is better to use two separate consumer version selectors, one with the main branch name, and one with the feature branch name, rather than use this property. As of October 2021, this is not yet supported in all Pact client libraries.
 
-- `fallbackTag`: If a pact for the specified `tag` does not exist, then use this tag as a fallback. This is useful for co-ordinating development between consumer and provider teams when matching branch names are used.
+- `tag`: the tag name(s) of the consumer versions to get the pacts for. *This field is still supported but it is recommended to use the `branch` in preference now.*
+
+- `fallbackTag`: the name of the tag to fallback to if the specified `tag` does not exist. *This field is still supported but it is recommended to use the `fallbackBranch` in preference now.*
+
+- `deployed`: if the key is specified, can only be set to `true`. Returns the pacts for all versions of the consumer that are currently deployed to any environment. Use of this selector requires that the deployment of the consumer application is recorded in the Pact Broker using the `pact-broker record-deployment` CLI. As of October 2021, this is not yet supported in all Pact client libraries.
+
+- `released`: if the key is specified, can only be set to `true`. Returns the pacts for all versions of the consumer that are released and currently supported in any environment. Use of this selector requires that the deployment of the consumer application is recorded in the Pact Broker using the `pact-broker record-release` CLI. As of October 2021, this is not yet supported in all Pact client libraries.
+
+- `deployedOrReleased`: if the key is specified, can only be set to `true`. Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment. Use of this selector requires that the deployment of the consumer application is recorded in the Pact Broker using the `pact-broker record-deployment` or `record-release` CLI. As of October 2021, this is not yet supported in all Pact client libraries.
+
+- `environment`: the name of the environment containing the consumer versions for which to return the pacts. Used to further qualify `{ "deployed": true }` or `{ "released": true }`. Normally, this would not be needed, as it is recommended to verify the pacts for all currently deployed/currently supported released versions. As of October 2021, this is not yet supported in all Pact client libraries.
+
+- `latest`: true. Used in conjuction with the `tag` and `branch` properties. When used with a `branch`, it may be `true` or the key ommitted (in which case it will be inferred to be `true`). This is because it only makes sense to verify the latest pact for a branch. If a `tag` is specified, and `latest` is `true`, then the latest pact for each of the consumers with that tag will be returned. If a `tag` is specified and the latest flag is *not* set to `true`, *all* the pacts with the specified tag will be returned. (This might seem a bit weird, but it's done this way to match the syntax used for the matrix query params. See https://docs.pact.io/selectors). 
+
+- `consumer`: allows a selector to only be applied to a certain consumer.
 
 ## Deduplication
 
