@@ -143,3 +143,9 @@ Support for publishing pacts and verification results with branches is currently
 * Pact Scala - TBC
 * Pact4s - TBC
 * Pact PHP - TBC
+
+## FAQ
+
+### We never use feature branches - do I need to set the branch properties?
+
+Yes. Even if you only ever use one branch, it is recommended to set the branch property when publishing pacts and verification results, and to set the pacticipant's `mainBranch` property. This will allow the Pact Broker to distinguish between a poorly configured Pact Broker (where none of those are populated) and a trunk based workflow.
