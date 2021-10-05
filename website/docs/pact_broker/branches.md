@@ -104,7 +104,7 @@ Branches are automatically created and associated with a pacticipant version whe
 
 ## When are branches used?
 
-Branches are used to identify which pacts a provider should verify using [consumer version selectors](/pact_broker/advanced_topics/consumer_version_selectors). Typically, the provider should be configured to verify the pacts belonging to the main branch of each consumer (amongst others - read more [here](/provider/recommended_configuration#verification-triggered-by-provider-change)). 
+Branches are used to identify which pacts a provider should verify using [consumer version selectors](/pact_broker/advanced_topics/consumer_version_selectors). Typically, the provider should be configured to verify the pacts belonging to the main branch of each consumer (amongst others - read more [here](/provider/recommended_configuration#verification-triggered-by-provider-change)). Branches are also used to calculate the [pending status](/pact_broker/advanced_topics/pending_pacts) of a pact and identify [work in progress pacts](/pact_broker/advanced_topics/wip_pacts).
 
 ## Automatic branch creation from first tag
 
