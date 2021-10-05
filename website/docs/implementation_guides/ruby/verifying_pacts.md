@@ -171,7 +171,8 @@ publish_flag = ENV['PUBLISH_VERIFICATION_RESULTS'] == 'true' # or some way of de
 
 Pact.service_provider "My Service Provider" do
   app_version provider_version
-  app_version_tags [provider_branch]
+  app_version_branch provider_branch
+  app_version_tags ["foo", "bar"]
   publish_verification_results publish_flag
 end
 
