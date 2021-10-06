@@ -7,12 +7,14 @@ DESTINATION_DIR = relative_path_to('docs/pact_broker')
 TRANSFORM_PATH = -> (path) {
   if path.end_with?("CONFIGURATION.md")
     DESTINATION_DIR / "configuration" / "settings.md"
+  elsif path.start_with?("docs/api/")
+    File.join(DESTINATION_DIR, path.downcase.gsub("docs/api/", "api/"))
   else
     File.join(DESTINATION_DIR, path.downcase)
   end
 }
 INCLUDE = [
-  ->(path) { %w{CHANGELOG.md docs/CONFIGURATION.md}.include?(path) }
+  ->(path) { %w{CHANGELOG.md docs/CONFIGURATION.md}.include?(path) || path.start_with?("docs/api/") }
 ]
 IGNORE = []
 

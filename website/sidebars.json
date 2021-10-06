@@ -257,6 +257,13 @@
           "pact_broker/advanced_topics/troubleshooting"
         ]
       },
+      {
+        "type": "category",
+        "label": "API Docs",
+        "items": [
+          "pact_broker/api/webhooks"
+        ]
+      },
       "pact_broker/changelog"
     ]
   },
