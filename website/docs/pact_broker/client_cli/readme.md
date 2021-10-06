@@ -611,8 +611,12 @@ Options:
               # Webhook basic auth username and password eg. username:password
       [--consumer=CONSUMER]                                                        
               # Consumer name
+      [--consumer-label=CONSUMER_LABEL]                                                        
+              # Consumer label
       [--provider=PROVIDER]                                                        
               # Provider name
+      [--provider-label=PROVIDER_LABEL]                                                        
+              # Provider label
       [--description=DESCRIPTION]                                                  
               # Webhook description
       [--contract-content-changed], [--no-contract-content-changed]                
@@ -667,8 +671,12 @@ Options:
               # Webhook basic auth username and password eg. username:password
       [--consumer=CONSUMER]                                                        
               # Consumer name
+      [--consumer-label=CONSUMER_LABEL]                                                        
+              # Consumer label
       [--provider=PROVIDER]                                                        
               # Provider name
+      [--provider-label=PROVIDER_LABEL]                                                        
+              # Provider label
       [--description=DESCRIPTION]                                                  
               # Webhook description
       [--contract-content-changed], [--no-contract-content-changed]                
