@@ -17,6 +17,7 @@ Allowed methods: `GET`, `PUT`, `DELETE`<br/>
 
 Headers: `{"Accept":"application/hal+json"}`<br/>
 
+
 #### Response
 
 Status: `200`<br/>
@@ -49,7 +50,7 @@ Body:
       "name": "contract_content_changed"
     }
   ],
-  "createdAt": "2021-09-01T10:00:00+00:00",
+  "createdAt": "2021-09-01T00:07:21+00:00",
   "_links": {
     "self": {
       "title": "an example webhook",
@@ -82,6 +83,83 @@ Body:
 ```
 
 
+### PUT
+
+#### Request
+
+Headers: `{"Content-Type":"application/json","Accept":"application/hal+json"}`<br/>
+Body:
+
+```
+{
+  "events": [
+    {
+      "name": "contract_content_changed"
+    }
+  ],
+  "request": {
+    "method": "POST",
+    "url": "https://example.org/example",
+    "username": "username",
+    "password": "password",
+    "headers": {
+      "Accept": "application/json"
+    },
+    "body": {
+      "pactUrl": "${pactbroker.pactUrl}"
+    }
+  }
+}
+```
+
+
+#### Response
+
+Status: `200`<br/>
+Headers: `{"Content-Type":"application/hal+json;charset=utf-8"}`<br/>
+Body:
+
+```
+{
+  "uuid": "d2181b32-8b03-4daf-8cc0-d9168b2f6fac",
+  "description": "an example webhook",
+  "enabled": true,
+  "request": {
+    "method": "POST",
+    "url": "https://example.org/example",
+    "headers": {
+      "Accept": "application/json"
+    },
+    "body": {
+      "pactUrl": "${pactbroker.pactUrl}"
+    },
+    "username": "username",
+    "password": "**********"
+  },
+  "events": [
+    {
+      "name": "contract_content_changed"
+    }
+  ],
+  "createdAt": "2021-09-01T00:07:21+00:00",
+  "_links": {
+    "self": {
+      "title": "an example webhook",
+      "href": "http://example.org/webhooks/d2181b32-8b03-4daf-8cc0-d9168b2f6fac"
+    },
+    "pb:execute": {
+      "title": "Test the execution of the webhook with the latest matching pact or verification by sending a POST request to this URL",
+      "href": "http://example.org/webhooks/d2181b32-8b03-4daf-8cc0-d9168b2f6fac/execute"
+    },
+    "pb:webhooks": {
+      "title": "All webhooks",
+      "href": "http://example.org/webhooks"
+    }
+  }
+}
+```
+
+
 
 ## Webhooks
 
@@ -93,6 +171,7 @@ Allowed methods: `GET`, `POST`<br/>
 #### Request
 
 Headers: `{"Accept":"application/hal+json"}`<br/>
+
 
 #### Response
 
@@ -142,6 +221,7 @@ Allowed methods: `POST`, `GET`<br/>
 
 Headers: `{"Accept":"application/hal+json"}`<br/>
 
+
 #### Response
 
 Status: `200`<br/>
@@ -186,6 +266,7 @@ Allowed methods: `POST`, `GET`<br/>
 
 Headers: `{"Accept":"application/hal+json"}`<br/>
 
+
 #### Response
 
 Status: `200`<br/>
@@ -229,6 +310,7 @@ Allowed methods: `POST`, `GET`<br/>
 #### Request
 
 Headers: `{"Accept":"application/hal+json"}`<br/>
+
 
 #### Response
 
@@ -278,6 +360,7 @@ Allowed methods: `POST`, `GET`<br/>
 
 Headers: `{"Accept":"application/hal+json"}`<br/>
 
+
 #### Response
 
 Status: `200`<br/>
@@ -326,6 +409,7 @@ Allowed methods: `GET`<br/>
 
 Headers: `{"Accept":"application/hal+json"}`<br/>
 
+
 #### Response
 
 Status: `200`<br/>
@@ -348,7 +432,7 @@ Body:
         "attemptsRemaining": 6,
         "triggerType": "resource_creation",
         "eventName": "contract_content_changed",
-        "triggeredAt": "2021-09-01T10:00:00+00:00",
+        "triggeredAt": "2021-09-01T00:07:21+00:00",
         "_links": {
           "pb:logs": {
             "href": "http://example.org/triggered-webhooks/6cd5cc48-db3c-4a4c-a36d-e9bedeb9d91e/logs",
@@ -408,6 +492,7 @@ Allowed methods: `POST`<br/>
 
 Headers: `{"Content-Type":"application/json","Accept":"application/hal+json"}`<br/>
 
+
 #### Response
 
 Status: `200`<br/>
@@ -452,6 +537,30 @@ Allowed methods: `POST`<br/>
 #### Request
 
 Headers: `{"Content-Type":"application/json","Accept":"application/hal+json"}`<br/>
+Body:
+
+```
+{
+  "events": [
+    {
+      "name": "contract_content_changed"
+    }
+  ],
+  "request": {
+    "method": "POST",
+    "url": "https://example.org/example",
+    "username": "username",
+    "password": "password",
+    "headers": {
+      "Accept": "application/json"
+    },
+    "body": {
+      "pactUrl": "${pactbroker.pactUrl}"
+    }
+  }
+}
+```
+
 
 #### Response
 
@@ -498,6 +607,7 @@ Allowed methods: `GET`<br/>
 
 Headers: `{"Accept":"application/hal+json"}`<br/>
 
+
 #### Response
 
 Status: `200`<br/>
@@ -515,7 +625,7 @@ Body:
         "attemptsRemaining": 6,
         "triggerType": "resource_creation",
         "eventName": "contract_content_changed",
-        "triggeredAt": "2021-09-01T10:00:00+00:00",
+        "triggeredAt": "2021-09-01T00:07:21+00:00",
         "_links": {
           "pb:logs": {
             "href": "http://example.org/triggered-webhooks/6cd5cc48-db3c-4a4c-a36d-e9bedeb9d91e/logs",
@@ -553,6 +663,7 @@ Allowed methods: `GET`<br/>
 
 Headers: `{"Accept":"application/hal+json"}`<br/>
 
+
 #### Response
 
 Status: `200`<br/>
@@ -587,6 +698,7 @@ Allowed methods: `GET`<br/>
 #### Request
 
 Headers: `{"Accept":"application/hal+json"}`<br/>
+
 
 #### Response
 
