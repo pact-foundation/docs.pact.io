@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.56.0"></a>
+### v1.56.0 (2021-10-06)
+
+#### Features
+
+* add pacticipant label options to webhook create/update commands (#96)	 ([710293f](https://github.com/pact-foundation/pact_broker-client/commit/710293f))
+
 <a name="v1.55.0"></a>
 ### v1.55.0 (2021-10-03)
 
