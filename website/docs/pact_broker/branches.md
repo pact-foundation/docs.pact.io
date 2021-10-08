@@ -144,6 +144,16 @@ Support for publishing pacts and verification results with branches is currently
 * Pact4s - TBC
 * Pact PHP - TBC
 
+## Migrating from tags to branches
+
+Note the [Automatic branch creation](#configuring-the-branch-when-publishing-verification-results) feature mentioned above.
+
+* Upgrade to the latest version of your Pact client library (see the [support](#support) section above).
+* Upgrade to Pact Broker version 2.82.0 or later.
+* If your main branch is called something other than `develop`, `main` or `master`, set the main branch [manually](#setting-the-main-branch-manually)
+* Set the branch property when [publishing pacts](#configuring-the-branch-when-publishing-pacts) and/or [verification results](#configuring-the-branch-when-publishing-verification-results).
+* In the provider, update the consumer version selectors from `{ "tag": "<branch_name>"}` to `{ "branch": "<branch_name>"}`
+
 ## FAQ
 
 ### We never use feature branches - do I need to set the branch properties?
