@@ -32,7 +32,7 @@ This event is supported from version 2.82.0 of the Pact Broker. It is a much sma
 
 The provider versions are de-duplicated by version number, so that if the same provider version is the head, and/or deployed to multiple environments, the webhook will only trigger once for each provider version. The template parameter `${pactbroker.providerVersionDescriptions}` will contain a description of which branch/stages that particular provider version number pertains to. eg. "latest from main branch, deployed in test"
 
-See [below](#using-webhooks-with-the-contract-requiring-verification-published-event) for more information on the usage of this event.
+See [below](#using-webhooks-with-the-contract_requiring_verification_published-event) for more information on the usage of this event.
 
 ### The 'contract published' event
 
@@ -49,6 +49,10 @@ This is triggered every time a verification is published with a successful statu
 ### The 'provider verification failed' event.
 
 This is triggered every time a verification is published with a failed status.
+
+## Template parameters
+
+You can use template parameters in the request URL, body and headers to pass through metadata about the event. The most common use of this feature is to pass though the URL of the pact that has changed to the provider verification build. See [this list](https://github.com/pact-foundation/pact_broker/blob/master/lib/pact_broker/doc/views/webhooks.markdown#dynamic-variable-substitution) of available parameters.
 
 ## Using webhooks with the 'contract_requiring_verification_published' event
 
@@ -70,7 +74,7 @@ Using this webhook event allows the changed pact to be tested against the head, 
 Use of this webhook requires that:
 
 * the provider's [main branch](/pact_broker/branches#pacticipant-main-branch-property) is configured
-* verification results are published with the branch property (even if you use trunk based development, and only ever use one branch)
+* verification results are [published with the branch property](/pact_broker/branches#configuring-the-branch-when-publishing-verification-results) or you are [tagging with the branch name and have automatic branch creation turned on](/pact_broker/branches#automatic-branch-creation-from-first-tag) (even if you use trunk based development, and only ever use one branch)
 * the exact commit of a provider version can be determined from the version number used to publish the verification results (ie. it either _is_ the commit, or _contains_ the commit as per the Pact Broker [version number guidelines](/getting_started/versioning_in_the_pact_broker#guidelines))
 * any deployments and releases are recorded using the [`record-deployment` and `record-release` commands](/pact_broker/recording_deployments_and_releases).
 
@@ -104,10 +108,6 @@ The `contract_requiring_verification_published` event is an improvement over the
 * It won't trigger a build unnecessarily for any of the target provider versions that already have a verification result with the pact content.
 * It de-duplicates the target provider versions, so if the same version is the head, and/or deployed to multiple environments, only one verification job will be run per provider version.
 
-## Template parameters
-
-You can use template parameters in the request URL, body and headers to pass through metadata about the event. The most common use of this feature is to pass though the URL of the pact that has changed to the provider verification build. See [this list](https://github.com/pact-foundation/pact_broker/blob/master/lib/pact_broker/doc/views/webhooks.markdown#dynamic-variable-substitution) of available parameters.
-
 ## Example CI/CD and webhook configuration
 
 ![](https://raw.githubusercontent.com/wiki/pact-foundation/pact_broker/images/webhook_end_to_end.png)
@@ -138,7 +138,7 @@ You can see an example project with a Github Workflow set up as described [here]
 
 #### When the consumer makes a change
 
-* `Changed pact verification job` - triggered by the 'contract\_content\_changed' webhook, this job verifies only the changed pact, and publishes the verification results back to the broker. This pact verification job configuration will be different to the one configured as part of the main provider pipeline, and should accept the URL of the changed pact as a configurable parameter. To do this, you must use webhook [template parameters](/pact_broker/advanced_topics/api_docs/webhooks#dynamic-variable-substitution) to pass the URL of the changed pact through to the CI, which can then pass it in to the verification task. See the pact verification configuration documentation for your language.
+* `Changed pact verification job` - triggered by the ['contract_requiring_verification_published'](#using-webhooks-with-the-contract_requiring_verification_published-event) (preferrable) or 'contract_content_changed' webhook, this job verifies only the changed pact, and publishes the verification results back to the broker. This pact verification job configuration will be different to the one configured as part of the main provider pipeline, and should accept the URL of the changed pact as a configurable parameter. To do this, you must use webhook [template parameters](/pact_broker/advanced_topics/api_docs/webhooks#dynamic-variable-substitution) to pass the URL of the changed pact through to the CI, which can then pass it in to the verification task. See the pact verification configuration documentation for your language.
 
 You can see an example project with a "changed pact verification" Github Workflow set up as described [here](https://github.com/pactflow/example-provider/blob/master/.github/workflows/verify_changed_pact.yml).
 
@@ -146,8 +146,7 @@ You can see an example `create-webhook` command for triggering the "changed pact
 
 ### Pact Broker
 
-* `contract_content_changed` webhook - triggers `Pact verification job`. Note that this webhook will only be triggered if the content of the pact has changed. If it hasn't changed, then the new publication of the pact will inherit the verification from the previous publication and be "pre-verified" \(or "pre-failed"\).
-* `provider_verification_published` webhook - triggers `Consumer pact check job`. This webhook will be triggered every time a verification is published. The `can-i-deploy` tool will need to be used in conjunction with a query to the state of your own infrastructure to let you decide whether or not you need to deploy the consumer. ie. the provider may verify the same version of the pact multiple times, invoking the webhook each time, but you only want to deploy a certain version of your consumer once.
+* `contract_requiring_verification_published` or `contract_content_changed` webhook - triggers `Pact verification job`. Note that this webhook will only be triggered if the content of the pact has changed. If it hasn't changed, then the new publication of the pact will inherit the verification from the previous publication and be "pre-verified" \(or "pre-failed"\).
 
 ## Related resources
 
