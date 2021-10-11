@@ -4,6 +4,22 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.88.0"></a>
+
+### v2.88.0 (2021-10-11)
+
+#### Features
+
+* include relations for each consumer version that a pact version belongs to when retrieved using the URL from the 'pacts for verification' response	 ([3458c9e5](https://github.com/pact-foundation/pact_broker/commit/3458c9e5))
+
+#### Bug Fixes
+
+* use the decoded path info rather than the encoded one when creating the pact info	 ([dd30a1a2](https://github.com/pact-foundation/pact_broker/commit/dd30a1a2))
+* edge case in webhook description rendering with participants specified by labels (#512)	 ([7e6a78d8](https://github.com/pact-foundation/pact_broker/commit/7e6a78d8))
+
+* **matrix**
+  * prevent long version names overlfow the table (#511)	 ([3c279556](https://github.com/pact-foundation/pact_broker/commit/3c279556))
+
 <a name="v2.87.0"></a>
 
 ### v2.87.0 (2021-10-05)
