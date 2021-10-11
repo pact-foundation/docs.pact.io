@@ -4,6 +4,25 @@ title: Question archive
 
 Some less commonly, but no less importantly, asked questions.
 
+## What if I can't run my provider application locally for pact verification?
+
+Pact is designed assuming that the verification step can be run locally, stubbing any external dependencies, **before** deploying to an environment. This is part of the "shift left" philosophy of Pact, which aims to provide feedback on integration compatiblity as early as possible in the development lifecycle. It aims to prevent breaking changes ever being merged or deployed to a test or production environment. If you cannnot run your application locally, and hence cannot run the Pact verification step without using a deployed application, then you are negating many of the benefits (eg. focus, isolation, speed) of using Pact in the first place.
+
+Pact verifications are much harder to run when you do not have a high level of control over the application under test, eg. where you cannot can stub out dependencies, completely control the data in the application, or disable/control timebased authentication. Verifications run on a deployed application will be slower to execute on an interaction level, and will provide feedback to the developer or tester much later in the process.
+
+If your application currently cannot be run without deploying it, we recommend spending some time investigating what could be done to enable it to be run locally. While this may take some time initially, it will mostly likely pay off in the long run. 
+
+Some examples:
+
+* for serverless applications, investigate writing or using some proxy code that will make the provider application available for the test harness over HTTP to mimic the serverless runtime. There are most likely existing frameworks that do this, but you could also write some custom code.
+
+If you have investigated all options for running your application locally, and have decided it is not workable, you have two other options.
+
+1. If your application uses cloud infrastructure, you can deploy a temporary isolated instance/stack of the provider for the purposes of the Pact tests. If you can ensure that each stack is completely isolated from any other stacks, you can run multiple stacks at the same time, and hence, get feedback to developers or testers much earlier than option number 2.
+2. If you cannot create an isolated stack for each pact verification run, then you should create a separate environment just dedicated to running Pact verification tests. The CI build created to run the pact verification step should not allow concurrent builds, and the build should be able to deploy an arbitrary version of the provider, perferrably identified by a commit. This will allow it to work correctly when triggered by branch of the provider, and to support the `contract_requiring_verification_published` webhooks which require the production version of the provider to be run against the changed pact. The downside of this approach is that verification builds will need to queue, and feedback will be slower.
+
+Note that when either of these options is used, you do not need to run `can-i-deploy` before deploying to the Pact specific environment, as a failure would stop you being able to run the verification in the first place. You should still use `can-i-deploy` for your other pre-prod or production environments however, as per the standard [CI/CD setup](/pact_nirvana/step_4).
+
 ## My team wants to run the application inside docker as they feel that running it inside a docker with http server is much more realistic scenario in line with production.
 
 Contract testing is not about providing a realistic situation. It's about testing your requests and responses in focussed way, isolating the application under test from causes of failure that are unrelated to the contents of the requests and responses \(eg. networking issues, deployment problems, race conditions, downstream service unavailability\)
