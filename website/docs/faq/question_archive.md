@@ -4,7 +4,7 @@ title: Question archive
 
 Some less commonly, but no less importantly, asked questions.
 
-## What if I can't run my provider application locally for pact verification?
+## What if I can't run my provider application locally for Pact verification?
 
 Pact is designed assuming that the verification step can be run locally, stubbing any external dependencies, **before** deploying to an environment. This is part of the "shift left" philosophy of Pact, which aims to provide feedback on integration compatiblity as early as possible in the development lifecycle. It aims to prevent breaking changes ever being merged or deployed to a test or production environment. If you cannnot run your application locally, and hence cannot run the Pact verification step without using a deployed application, then you are negating many of the benefits (eg. focus, isolation, speed) of using Pact in the first place.
 
@@ -15,6 +15,7 @@ If your application currently cannot be run without deploying it, we recommend s
 Some examples:
 
 * for serverless applications, investigate writing or using some proxy code that will make the provider application available for the test harness over HTTP to mimic the serverless runtime. There are most likely existing frameworks that do this, but you could also write some custom code.
+* for lambda applications (TBC)
 
 If you have investigated all options for running your application locally, and have decided it is not workable, you have two other options.
 
