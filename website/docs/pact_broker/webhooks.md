@@ -16,10 +16,21 @@ If you're reading this page and you're not sure what you're doing, what you prob
 
 ### The 'contract content changed' event
 
+This event is generally used to trigger a build of the provider when a pact changes. It has been superseeded by the `contract_requiring_verification_published` event from version 2.82.0.
+
 The broker uses the following logic to determine if a pact has changed:
 
 * If the relevant consumer version has any tags, then for each tag, check if the content is different from the previous latest version for that tag. It is 'changed' if any of the checks are true. One side effect of this is that brand new tags will trigger a pact changed event, even if the content is the same as a previous version.
 * If the relevant consumer version has no tags, then check if the content has changed since the previous latest version.
+
+### The 'contract requiring verification published' event
+
+This event is supported from version 2.28.0 of the Pact Broker. It is a much smarter implementation of the `contract_content_changed` event, and triggers when a pact is published that is missing a verification result for any of the following provider versions:
+
+  * the latest version from the provider's [main branch](/pact_broker/branches#pacticipant-main-branch-property)
+  * any version currently [deployed to an environment](/pact_broker/recording_deployments_and_releases)
+
+See [below](#using-webhooks-with-the-contract-requiring-verification-published-event) for more information on the usage of this event.
 
 ### The 'contract published' event
 
@@ -36,6 +47,60 @@ This is triggered every time a verification is published with a successful statu
 ### The 'provider verification failed' event.
 
 This is triggered every time a verification is published with a failed status.
+
+## Using webhooks with the 'contract_requiring_verification_published' event
+
+Using this webhook event allows the changed pact to be tested against the head, test and production versions of the provider, in the same way as the consumer version selectors allow the head, test and production versions of the pact to be tested against a version of the provider.
+
+|               | Provider Head | Provider Test | Provider Prod |
+| --------------| ------------- | ------------- | ------------- |
+| **Consumer Head** | `*` `%` `$`   | `$`           | `$`           |
+| **Consumer Test** | `*`           |               |               |
+| **Consumer Prod** | `*`           |               |               |
+
+
+`*` When the provider changes, these combinations are tested in the provider's release pipeline via the consumer version selectors
+
+`%` When the consumer (pact) changes, this combination is tested via the provider verification triggered by the `contract_content_changed` webhook. Note that it is missing the test and prod combinations.
+
+`$` When the consumer (pact) changes, these combinations are tested via the provider verifications triggered by the `contract_requiring_verification_published` webhook. Note that it is the exact inverse of the combinations tested by in the provider's release pipeline.
+
+Use of this webhook requires that:
+
+* the provider's [main branch](/pact_broker/branches#pacticipant-main-branch-property) is configured
+* verification results are published with the branch property (even if you use trunk based development, and only ever use one branch)
+* the exact commit of a provider version can be determined from the version number used to publish the verification results (ie. it either _is_ the commit, or _contains_ the commit as per the Pact Broker [version number guidelines](/getting_started/versioning_in_the_pact_broker#guidelines))
+* any deployments and releases are recorded using the [`record-deployment` and `record-release` commands](/pact_broker/recording_deployments_and_releases).
+
+A webhook using the `contract_requiring_verification_published` should be configured to pass through the `${pactbroker.pactUrl}` and `${pactbroker.providerVersionNumber}` and `${pactbroker.providerVersionBranch}` to the provider verification build. The build should ensure that the commit and branch that is specified by the `${pactbroker.providerVersionNumber}` and `${pactbroker.providerVersionBranch}` is checked out. If the provider version number _is_ the commit then this can generally be achieved by specifying the commit in the API call to the CI application that triggers the build.
+
+eg. For Travis CI:
+
+```
+{
+  "request": {
+    "message": "Verify changed pact for ${pactbroker.consumerName} version ${pactbroker.consumerVersionNumber} by ${pactbroker.providerVersionDescriptions}",
+    "branch":"${pactbroker.providerVersionBranch}",
+    "sha": "${pactbroker.providerVersionNumber}",
+    "config": {
+      "env": {
+        "global": [
+          "PACT_URL=${pactbroker.pactUrl}"
+        ]
+      }
+    }
+  }
+}
+```
+
+If the provider version number is not the commit, then the build will need to manually check out the correct version of the provider before running the verification step.
+
+The `contract_requiring_verification_published` event is an improvement over the `contract_content_changed` event in the following ways:
+
+* It more easily allows verification results to be returned for deployed versions of the provider, allowing `can-i-deploy` for the consumer to pass more often in the siutation where previously it would have failed due to a missing verification result.
+* It won't trigger a build unnecessarily if new tags are applied to existing content.
+* It won't trigger a build unnecessarily for any of the target provider versions that already have a verification result with the pact content.
+* It de-duplicates the target provider versions, so if the same version is the head, and/or deployed to multiple environments, only one verification job will be run per provider version.
 
 ## Template parameters
 
