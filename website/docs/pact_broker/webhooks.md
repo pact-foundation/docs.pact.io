@@ -25,10 +25,12 @@ The broker uses the following logic to determine if a pact has changed:
 
 ### The 'contract requiring verification published' event
 
-This event is supported from version 2.82.0 of the Pact Broker. It is a much smarter implementation of the `contract_content_changed` event, and triggers when a pact is published that is missing a verification result for any of the following provider versions:
+This event is supported from version 2.82.0 of the Pact Broker. It is a much smarter implementation of the `contract_content_changed` event, designed specifically for the recommended [Pact webhook workflow](/pact_nirvana/step_4). It triggers once for each of the following provider versions that are missing a verification result for the newly published pact:
 
   * the latest version from the provider's [main branch](/pact_broker/branches#pacticipant-main-branch-property)
   * any version currently [deployed to an environment](/pact_broker/recording_deployments_and_releases)
+
+The provider versions are de-duplicated by version number, so that if the same provider version is the head, and/or deployed to multiple environments, the webhook will only trigger once for each provider version. The template parameter `${pactbroker.providerVersionDescriptions}` will contain a description of which branch/stages that particular provider version number pertains to. eg. "latest from main branch, deployed in test"
 
 See [below](#using-webhooks-with-the-contract-requiring-verification-published-event) for more information on the usage of this event.
 
