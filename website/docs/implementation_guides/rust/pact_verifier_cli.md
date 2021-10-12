@@ -15,46 +15,52 @@ The Pact Verifier works by taking all the interactions (requests and responses) 
 The pact verifier is bundled as a single binary executable `pact_verifier_cli`. Running this with out any options displays the standard help.
 
 ```console
-pact_verifier_cli v0.8.0
+pact_verifier_cli v0.8.9
 Standalone Pact verifier
 
 USAGE:
-    pact_verifier_cli [FLAGS] [OPTIONS] --broker-url <broker-url>... --dir <dir>... --file <file>... --provider-name <provider-name> --url <url>...
+    pact_verifier_cli [FLAGS] [OPTIONS] --broker-url <broker-url> --dir <dir>... --file <file>... --provider-name <provider-name> --url <url>...
 
 FLAGS:
-        --enable-pending           Enables Pending Pacts
-        --filter-no-state          Only validate interactions that have no defined provider state
-        --help                     Prints help information
-        --publish                  Enables publishing of verification results back to the Pact Broker. Requires the
-                                   broker-url and provider-version parameters.
-        --state-change-as-query    State change request data will be sent as query parameters instead of in the request
-                                   body
-        --state-change-teardown    State change teardown requests are to be made after each interaction
-    -v, --version                  Prints version information
+        --disable-ssl-verification    Disables validation of SSL certificates
+        --enable-pending              Enables Pending Pacts
+        --help                        Prints help information
+        --publish                     Enables publishing of verification results back to the Pact Broker. Requires the
+                                      broker-url and provider-version parameters.
+        --state-change-as-query       State change request data will be sent as query parameters instead of in the
+                                      request body
+        --state-change-teardown       State change teardown requests are to be made after each interaction
+    -v, --version                     Prints version information
 
 OPTIONS:
-        --base-path <base-path>                                Base path to add to all requests
-    -b, --broker-url <broker-url>...
+        --base-path <base-path>                                      Base path to add to all requests
+    -b, --broker-url <broker-url>
             URL of the pact broker to fetch pacts from to verify (requires the provider name parameter) [env:
-            PACT_BROKER_BASE_URL=https://testdemo.pactflow.io]
+            PACT_BROKER_BASE_URL=]
         --build-url <build-url>
             URL of the build to associate with the published verification results.
 
+        --consumer-version-selectors <consumer-version-selectors>
+            Consumer version selectors to use when fetching pacts from the Broker. Accepts a JSON string as per
+            https://docs.pact.io/pact_broker/advanced_topics/consumer_version_selectors/
         --consumer-version-tags <consumer-version-tags>
             Consumer tags to use when fetching pacts from the Broker. Accepts comma-separated values.
 
-    -d, --dir <dir>...                                         Directory of pact files to verify (can be repeated)
-    -f, --file <file>...                                       Pact file to verify (can be repeated)
+    -d, --dir <dir>...                                               Directory of pact files to verify (can be repeated)
+    -f, --file <file>...                                             Pact file to verify (can be repeated)
     -c, --filter-consumer <filter-consumer>...
             Consumer name to filter the pacts to be verified (can be repeated)
 
         --filter-description <filter-description>
-            Only validate interactions whose descriptions match this filter
+            Only validate interactions whose descriptions match this filter [env: PACT_DESCRIPTION=]
+
+        --filter-no-state <filter-no-state>
+            Only validate interactions that have no defined provider state [env: PACT_PROVIDER_NO_STATE=]
 
         --filter-state <filter-state>
-            Only validate interactions whose provider states match this filter
+            Only validate interactions whose provider states match this filter [env: PACT_PROVIDER_STATE=]
 
-    -h, --hostname <hostname>                                  Provider hostname (defaults to localhost)
+    -h, --hostname <hostname>                                        Provider hostname (defaults to localhost)
         --include-wip-pacts-since <include-wip-pacts-since>
             Allow pacts that don't match given consumer selectors (or tags) to  be verified, without causing the overall
             task to fail. For more information, see https://pact.io/wip
@@ -64,22 +70,27 @@ OPTIONS:
         --password <password>
             Password to use when fetching pacts from URLS [env: PACT_BROKER_PASSWORD=]
 
-    -p, --port <port>                                          Provider port (defaults to protocol default 80/443)
-    -n, --provider-name <provider-name>                        Provider name (defaults to provider)
+    -p, --port <port>                                                Provider port (defaults to protocol default 80/443)
+    -n, --provider-name <provider-name>                              Provider name (defaults to provider)
         --provider-tags <provider-tags>
             Provider tags to use when publishing results. Accepts comma-separated values.
 
         --provider-version <provider-version>
             Provider version that is being verified. This is required when publishing results.
 
-    -s, --state-change-url <state-change-url>                  URL to post state change requests to
-    -t, --token <token>
-            Bearer token to use when fetching pacts from URLS [env: PACT_BROKER_TOKEN=Dk8qO3_ZOqau8EeMaagK5w]
+        --request-timeout <request-timeout>
+            Sets the HTTP request timeout in milliseconds for requests to the target API and for state change requests.
 
-    -u, --url <url>...                                         URL of pact file to verify (can be repeated)
+        --scheme <scheme>
+            Provider URI scheme (defaults to http) [default: http]  [possible values: http, https]
+
+    -s, --state-change-url <state-change-url>                        URL to post state change requests to
+    -t, --token <token>
+            Bearer token to use when fetching pacts from URLS [env: PACT_BROKER_TOKEN=]
+
+    -u, --url <url>...                                               URL of pact file to verify (can be repeated)
         --user <user>
             Username to use when fetching pacts from URLS [env: PACT_BROKER_USERNAME=]
-
 ```
 
 ## Options
@@ -154,6 +165,16 @@ By default, the state for the state change request will be sent as a JSON docume
 #### `--state-change-teardown`
 
 This option will cause the verifier to also make a tear down request after the main request is made. It will receive a second field in the body or a query parameter named `action` with the value `teardown`.
+
+#### `--consumer-version-selectors`
+
+Accepts a set of [Consumer Version Selectors](https://docs.pact.io/pact_broker/advanced_topics/consumer_version_selectors/) encoded as JSON.
+
+An example well formed argument value might be:
+
+```sh
+--consumer-version-selectors '{"branch": "master"}'
+```
 
 ## Example run
 
