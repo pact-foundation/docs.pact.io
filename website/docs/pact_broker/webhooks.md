@@ -108,6 +108,12 @@ The `contract_requiring_verification_published` event is an improvement over the
 * It won't trigger a build unnecessarily for any of the target provider versions that already have a verification result with the pact content.
 * It de-duplicates the target provider versions, so if the same version is the head, and/or deployed to multiple environments, only one verification job will be run per provider version.
 
+### Migrating from the `contract_content_changed` event
+
+* Update your webhook events to use the `contract_requiring_verification_published` instead of the `contract_content_changed` event.
+* Update the webhook body to pass in the `${pactbroker.providerVersionNumber}` as the commit and `${pactbroker.providerVersionBranch}` as the branch, according to your CI's build triggering API.
+* Ensure the build is checking out the expected commit of the provider before verifying the changed pact.
+
 ## Example CI/CD and webhook configuration
 
 ![](https://raw.githubusercontent.com/wiki/pact-foundation/pact_broker/images/webhook_end_to_end.png)
