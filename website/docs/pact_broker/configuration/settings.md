@@ -5,7 +5,7 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/docs
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 
-<!-- This is a generated file. Please do not edit it directly. -->
+<!-- This is a generated file. Please do not edit it directly. The source is https://github.com/pact-foundation/pact_broker/blob/master/docs/configuration.yml -->
 
 The Pact Broker supports configuration via environment variables or a YAML file from version 2.87.0.1 of the Docker images.
 
