@@ -120,6 +120,14 @@ To assist in the migration from tags to branches, the main branch will be automa
 
 The main branch candidate names are [configurable](/pact_broker/configuration/settings#main_branch_candidates). To disable the automatic setting of the main branch, set [`auto_detect_main_branch`](/pact_broker/configuration/settings#auto_detect_main_branch) to `false`.
 
+### Checking the main branch value
+
+Use [`describe-pacticipant`](/pact_broker/client_cli/readme#describe-pacticipant) to check if the main branch is configured.
+
+```shell
+pact-broker describe-pacticipant --name Foo
+```
+
 ### Setting the main branch manually
 
 To explicitly set the main branch of a pacticipant, use the Pact Broker Client [`create-or-update-pacticipant`](/pact_broker/client_cli/readme/#create-or-update-pacticipant) command.
