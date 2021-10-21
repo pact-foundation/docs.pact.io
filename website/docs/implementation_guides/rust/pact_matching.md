@@ -15,11 +15,11 @@ To use it, add it to your dependencies in your cargo manifest:
 
 ```toml
 [dependencies]
-pact_matching = "0.8.14"
+pact_matching = "0.11.0-beta.5"
 ```
 
-This crate provides two functions: `match_request` and `match_response`. These functions take an expected and actual request or response
-model from the `pact_models` crate, and return a vector of mismatches.
+This crate provides three functions: `match_request`, `match_response` and `match_message`. These functions take an 
+expected and actual request, response or message model from the `pact_models` crate, and return a vector of mismatches.
 
 To compare any incoming request, it first needs to be converted to a `pact_models::Request` and then can be compared. Same for
 any response.
@@ -27,7 +27,7 @@ any response.
 ## Reading and writing Pact files
 
 The `Pact` struct in the `pact_models` crate has methods to read and write pact JSON files. It supports all the specification
-versions up to V3, but will be converted a V1, V1.1 and V2 spec file to a V3 format.
+versions up to V4, but will convert a V1, V1.1 and V2 spec file to the V3 format.
 
 ## Matching request and response parts
 
@@ -325,15 +325,293 @@ So for the item with id 102, the matcher with path `$.item1.level[1].id` and wei
 
 The following matchers are supported:
 
-| matcher | example configuration | description |
-|---------|-----------------------|-------------|
-| Equality | `{ "match": "equality" }` | This is the default matcher, and relies on the equals operator |
-| Regex | `{ "match": "regex", "regex": "\\d+" }` | This executes a regular expression match against the string representation of a values. |
-| Type | `{ "match": "type" }` | This executes a type based match against the values, that is, they are equal if they are the same type. |
-| MinType | `{ "match": "type", "min": 2 }` | This executes a type based match against the values, that is, they are equal if they are the same type. In addition, if the values represent a collection, the length of the actual value is compared against the minimum. |
-| MaxType | `{ "match": "type", "max": 10 }` | This executes a type based match against the values, that is, they are equal if they are the same type. In addition, if the values represent a collection, the length of the actual value is compared against the maximum. |
-| MinMaxType | `{ "match": "type", "max": 10, "min": 2 }` | This executes a type based match against the values, that is, they are equal if they are the same type. In addition, if the values represent a collection, the length of the actual value is compared against the minimum and maximum. |
-| Include | `{ "match": "include", "value": "substr" }` | This checks if the string representation of a values contains the substring. |
-| Integer | `{ "match": "integer" }` | This checks if the type of the value is an integer. |
-| Decimal | `{ "match": "decimal" }` | This checks if the type of the value is a number with decimal places. |
-| Number | `{ "match": "number" }` | This checks if the type of the value is a number. |
+| matcher | Spec Version | example configuration | description |
+|---------|--------------|-----------------------|-------------|
+| Equality | V1 | `{ "match": "equality" }` | This is the default matcher, and relies on the equals operator |
+| Regex | V2 | `{ "match": "regex", "regex": "\\d+" }` | This executes a regular expression match against the string representation of a values. |
+| Type | V2 | `{ "match": "type" }` | This executes a type based match against the values, that is, they are equal if they are the same type. |
+| MinType | V2 | `{ "match": "type", "min": 2 }` | This executes a type based match against the values, that is, they are equal if they are the same type. In addition, if the values represent a collection, the length of the actual value is compared against the minimum. |
+| MaxType | V2 | `{ "match": "type", "max": 10 }` | This executes a type based match against the values, that is, they are equal if they are the same type. In addition, if the values represent a collection, the length of the actual value is compared against the maximum. |
+| MinMaxType | V2 | `{ "match": "type", "max": 10, "min": 2 }` | This executes a type based match against the values, that is, they are equal if they are the same type. In addition, if the values represent a collection, the length of the actual value is compared against the minimum and maximum. |
+| Include | V3 | `{ "match": "include", "value": "substr" }` | This checks if the string representation of a value contains the substring. |
+| Integer | V3 | `{ "match": "integer" }` | This checks if the type of the value is an integer. |
+| Decimal | V3 | `{ "match": "decimal" }` | This checks if the type of the value is a number with decimal places. |
+| Number | V3 | `{ "match": "number" }` | This checks if the type of the value is a number. |
+| Timestamp | V3 | `{ "match": "datetime", "format": "yyyy-MM-dd HH:ss:mm" }` | Matches the string representation of a value against the datetime format |
+| Time  | V3 | `{ "match": "time", "format": "HH:ss:mm" }` | Matches the string representation of a value against the time format |
+| Date  | V3 | `{ "match": "date", "format": "yyyy-MM-dd" }` | Matches the string representation of a value against the date format |
+| Null  | V3 | `{ "match": "null" }` | Match if the value is a null value (this is content specific, for JSON will match a JSON null) |
+| Boolean  | V3 | `{ "match": "boolean" }` | Match if the value is a boolean value (booleans and the string values `true` and `false`) |
+| ContentType  | V3 | `{ "match": "contentType", "value": "image/jpeg" }` | Match binary data by its content type (magic file check) |
+| Values  | V3 | `{ "match": "values" }` | Match the values in a map, ignoring the keys |
+| ArrayContains | V4 | `{ "match": "arrayContains", "variants": [...] }` | Checks if all the variants are present in an array. |
+| StatusCode | V4 | `{ "match": "statusCode", "status": "success" }` | Matches the response status code. |
+| NotEmpty | V4 | `{ "match": "notEmpty" }` | Value must be present and not empty (not null or the empty string) |
+| Semver | V4 | `{ "match": "semver" }` | Value must be valid based on the semver specification |
+| Semver | V4 | `{ "match": "semver" }` | Value must be valid based on the semver specification |
+| EachKey | V4 | `{ "match": "eachKey", "rules": [{"match": "regex", "regex": "\\$(\\.\\w+)+"}], "value": "$.test.one" }` | Allows defining matching rules to apply to the keys in a map |
+| EachValue | V4 | `{ "match": "eachValue", "rules": [{"match": "regex", "regex": "\\$(\\.\\w+)+"}], "value": "$.test.one" }` | Allows defining matching rules to apply to the values in a collection. For maps, delgates to the Values matcher. |
+
+## Matching Rule Definition Language
+
+The matching rule definition language is a text format to specify the matching rules to be applied to data formats from
+plugins. It allows the matching rules to be applied without having to specify the specifics of the data format.
+
+For example, they can equally be applied to very different data formats like Protobuf and CSV.
+
+CSV: 
+```
+"column:Date", "matching(datetime, 'yyyy-MM-dd','2000-01-01')"
+```
+
+Protobuf:
+```json
+"contents": {
+    "contentType": "notEmpty('application/json')",
+    "content": "matching(contentType, 'application/json', '{}')",
+    "contentTypeHint": "matching(equalTo, 'TEXT')"
+}
+```
+
+### Matching Rule Definition
+
+Each matching rule definition is a comma-separated list of functions with a number of arguments within brackets. 
+Most of the time only a single definition is required for a value, but in they case were more than one is required, 
+they just need to be separated by a comma.
+
+#### Matching functions
+
+The main function is the `matching` function. This creates a matching rule based on a type and a number of values. The
+values required are dependent on the type of the matching rule.
+
+For example, matching with a regular expression: `matching(regex, '\\$(\\.\\w+)+', '$.test.one')`
+
+##### equalTo
+
+Specifies that the attribute/field must be equal to the example value.
+
+Parameters:
+* example (Primitive value)
+
+Example:
+```
+matching(equalTo, 'TEXT')
+```
+
+##### type
+
+Specifies that the attribute/field must have the same type as the example value.
+
+Parameters:
+* example (Primitive value)
+
+Example:
+```
+matching(type, 100)
+```
+
+##### number types (number, integer, decimal)
+
+Specifies that the attribute/field must be a number type. `number` will match any numeric value, `integer` will match
+numeric values with no decimals (no significant figures after the decimal point) and `decimal` will match numeric values
+that have decimals (at least one significant figure after the decimal point).
+
+Parameters:
+* example (integer or decimal value)
+
+Example:
+```
+matching(integer, 100)
+matching(decimal, 100.1234)
+```
+
+##### date and time matchers (datetime, date, time)
+
+Specifies that the string representation of the attribute/field must match the format specifier. These are based on the
+Java DateTimeFormatter.
+
+Parameters:
+* format (string)
+* example (string)
+
+Example:
+```
+matching(datetime, 'yyyy-MM-dd HH:mm:ss', '2021-10-07 13:00:13')
+matching(date, 'yyyy-MM-dd', '2021-10-07')
+matching(time, 'HH:mm:ss', '13:00:13')
+```
+
+##### Regex
+
+Specifies that the string representation of the attribute/field must match the provided regular expression.
+
+Parameters:
+* regex (string)
+* example (string)
+
+Example:
+```
+matching(regex, '\w+ \w+', 'Hello World')
+```
+
+##### Include
+
+Specifies that the string representation of the attribute/field must include the given string.
+
+Parameters:
+* example (string)
+
+Example:
+```
+matching(include, 'Hello World')
+```
+
+##### Boolean
+
+Specifies that the attribute/field must be a boolean value or its string representation must be the strings `true` or 
+`false`.
+
+Parameters:
+* example (boolean)
+
+Example:
+```
+matching(boolean, false)
+```
+
+##### Semver
+
+Specifies that the string representation of the attribute/field must be a valid semantic version as per the semver 
+specification.
+
+Parameters:
+* example (string)
+
+Example:
+```
+matching(semver, '1.0.0')
+```
+
+##### Content Type
+
+Specifies that the byte string representation of the attribute/field must match the given content type using a magic
+file number check. This compares the first few bytes with a database of rules to determine the type of the contents.
+
+Parameters:
+* content type in MIME format (string)
+* example (string)
+
+Example:
+```
+matching(contentType, 'application/json', '{}')
+```
+
+##### Matching an example type by reference
+
+Type matching can also be specified by a reference to an example. References are defined by a dollar (`$`) followed by
+a string value. The string value must be the attribute/field name that contains the example type.
+
+Parameters:
+* reference name
+
+Example:
+```
+matching($'items') // where items is the name of the example to match the types against
+```
+
+#### NotEmpty
+
+Specifies that the attribute field must be present and contain a value (not null or an empty string).
+
+Parameters:
+* example (primitive value)
+
+Example:
+```
+notEmpty('DateTime')
+```
+
+#### EachKey
+
+Allows a matching rule definition to be applied to the keys in a map.  
+
+Parameters:
+* definition* (comma-separated list of matching rule definitions)
+
+Example:
+```
+eachKey(matching(regex, '\\$(\\.\\w+)+', '$.test.one'))
+```
+
+#### EachValue
+
+Allows a matching rule definition to be applied to the values in a collection (list/array or map form).
+
+Parameters:
+* definition* (comma-separated list of matching rule definitions)
+
+Example:
+```
+eachValue(matching($'items'))
+```
+
+### Grammar
+
+The grammar for the Matching Rule Definition Language (ANTLR 4 format)
+
+```antlrv4
+grammar MatcherDefinition;
+
+matchingDefinition :
+    matchingDefinitionExp  ( COMMA matchingDefinitionExp  )* EOF
+    ;
+
+matchingDefinitionExp :
+    (
+      'matching' LEFT_BRACKET matchingRule RIGHT_BRACKET 
+      | 'notEmpty' LEFT_BRACKET primitiveValue RIGHT_BRACKET 
+      | 'eachKey' LEFT_BRACKET matchingDefinitionExp RIGHT_BRACKET 
+      | 'eachValue' LEFT_BRACKET matchingDefinitionExp RIGHT_BRACKET 
+    )
+    ;
+
+matchingRule :
+  (
+    ( 'equalTo' | 'type' ) COMMA primitiveValue )
+  | 'number' COMMA ( DECIMAL_LITERAL | INTEGER_LITERAL ) 
+  | 'integer' COMMA INTEGER_LITERAL 
+  | 'decimal' COMMA DECIMAL_LITERAL 
+  | ( 'datetime' | 'date' | 'time' ) COMMA string COMMA string 
+  | 'regex' COMMA string COMMA string 
+  | 'include' COMMA string 
+  | 'boolean' COMMA BOOLEAN_LITERAL 
+  | 'semver' COMMA string 
+  | 'contentType' COMMA string COMMA string 
+  | DOLLAR string 
+  ;
+
+primitiveValue :
+  string 
+  | DECIMAL_LITERAL
+  | INTEGER_LITERAL
+  | BOOLEAN_LITERAL
+  ;
+
+string :
+  STRING_LITERAL 
+  | 'null'
+  ;
+
+INTEGER_LITERAL : '-'? DIGIT+ ;
+DECIMAL_LITERAL : '-'? DIGIT+ '.' DIGIT+ ;
+fragment DIGIT  : [0-9] ;
+
+LEFT_BRACKET    : '(' ;
+RIGHT_BRACKET   : ')' ;
+STRING_LITERAL  : '\'' (~['])* '\'' ;
+BOOLEAN_LITERAL : 'true' | 'false' ;
+COMMA           : ',' ;
+DOLLAR          : '$';
+
+WS : [ \t\n\r] + -> skip ;
+```

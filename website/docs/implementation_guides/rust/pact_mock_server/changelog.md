@@ -4,9 +4,28 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.8.0-beta.4 - Bugfix Release
+
+* 918e5beb - fix: update to latest models and plugin driver crates (Ronald Holshausen, Tue Oct 19 17:09:48 2021 +1100)
+
+## 0.8.0-beta.3 - Support matching synchronous request/response messages
+
+
+## 0.8.0-beta.2 - Support synchronous messages
+
+* d0bfb8a8 - feat: Support consumer tests with synchronous messages (Ronald Holshausen, Tue Oct 12 15:51:08 2021 +1100)
+* 35ff0993 - feat: record the version of the lib that created the pact in the metadata (Ronald Holshausen, Tue Oct 12 14:52:43 2021 +1100)
+
+## 0.8.0-beta.1 - Fixes from master + Plugin support (driver version 0.0.3)
+
+* df715cd5 - feat: support native TLS. Fixes #144 (Matt Fellows, Mon Sep 20 13:00:33 2021 +1000)
+
 ## 0.7.21 - support native TLS certs
 
 * df715cd5 - feat: support native TLS. Fixes #144 (Matt Fellows, Mon Sep 20 13:00:33 2021 +1000)
+
+## 0.8.0-beta.0 - Support for plugins with mock server
+
 
 ## 0.7.20 - Refactor
 

@@ -4,12 +4,41 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.2.0-beta.6 - Bugfix Release
+
+* 48a6be5f - fix: EachValue was outputting the wrong JSON (Ronald Holshausen, Tue Oct 19 16:35:17 2021 +1100)
+
+## 0.2.0-beta.5 - matching synchronous request/response messages
+
+
+## 0.2.0-beta.4 - Enhancements for plugins
+
+* a52db737 - feat: record the version of the lib that created the pact in the metadata (Ronald Holshausen, Tue Oct 12 14:55:42 2021 +1100)
+* 35ff0993 - feat: record the version of the lib that created the pact in the metadata (Ronald Holshausen, Tue Oct 12 14:52:43 2021 +1100)
+* 407cc2e5 - fix: notEmpty matching rule defintion should be applied to any primitive value (Ronald Holshausen, Thu Oct 7 14:08:02 2021 +1100)
+
+## 0.2.0-beta.3 - Fixes from master + Updated matching rule definitions
+
+* 9fd9e652 - feat: do no write empty comments + added consumer version to metadata (Ronald Holshausen, Thu Sep 30 17:40:56 2021 +1000)
+* df715cd5 - feat: support native TLS. Fixes #144 (Matt Fellows, Mon Sep 20 13:00:33 2021 +1000)
+
 ## 0.1.4 - WASM support + native TLS certs
 
 * df715cd5 - feat: support native TLS. Fixes #144 (Matt Fellows, Mon Sep 20 13:00:33 2021 +1000)
 * 067ded8f - feat: expose Pact models via WASM (Ronald Holshausen, Sun Sep 5 11:55:26 2021 +1000)
 
+## 0.2.0-beta.2 - Support for getting interaction markup from plugins
+
+* 067ded8f - feat: expose Pact models via WASM (Ronald Holshausen, Sun Sep 5 11:55:26 2021 +1000)
+
 ## 0.1.3 - Bugfix Release
+
+
+## 0.2.0-beta.1 - Support for plugins
+
+* c0bdd359 - fix: PluginData configuration is optional (Ronald Holshausen, Thu Sep 2 15:37:01 2021 +1000)
+
+## 0.2.0-beta.0 - Beta version supporting Pact plugins
 
 
 ## 0.1.2 - upgrade nom to 7.0

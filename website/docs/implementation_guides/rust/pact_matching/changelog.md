@@ -4,6 +4,24 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.11.0-beta.4 - Bugfix Release
+
+* 918e5beb - fix: update to latest models and plugin driver crates (Ronald Holshausen, Tue Oct 19 17:09:48 2021 +1100)
+
+## 0.11.0-beta.3 - Support matching synchronous request/response messages
+
+
+## 0.11.0-beta.2 - synchronous messages with plugins
+
+* d0bfb8a8 - feat: Support consumer tests with synchronous messages (Ronald Holshausen, Tue Oct 12 15:51:08 2021 +1100)
+
+## 0.11.0-beta.1 - Plugin support (driver version 0.0.3)
+
+
+## 0.11.0-beta.0 - Plugin support + nontEmpty and semver matchers
+
+* c0bdd359 - fix: PluginData configuration is optional (Ronald Holshausen, Thu Sep 2 15:37:01 2021 +1000)
+
 ## 0.10.3 - Upgrade treemagic => upgrade nom => upgrade memchr
 
 

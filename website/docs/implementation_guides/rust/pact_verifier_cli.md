@@ -15,7 +15,7 @@ The Pact Verifier works by taking all the interactions (requests and responses) 
 The pact verifier is bundled as a single binary executable `pact_verifier_cli`. Running this with out any options displays the standard help.
 
 ```console
-pact_verifier_cli v0.8.9
+pact_verifier_cli v0.9.9
 Standalone Pact verifier
 
 USAGE:
@@ -313,3 +313,15 @@ This is supported on Windows, macOS and Linux:
 * On Linux and other UNIX-like operating systems, the openssl-probe crate is used to discover the filename of the system CA bundle.
 
 On Linux the standard OpenSSL environment variables `SSL_CERT_FILE` and `SSL_CERT_DIR` will also be respected.
+
+## Verifying V4 Pact files that require plugins
+
+Pact files that require plugins can be verified with version 0.9.0-beta.0+. For details on how plugins work, see the
+[Pact plugin project](https://github.com/pact-foundation/pact-plugins).
+
+Each required plugin is defined in the `plugins` section in the Pact metadata in the Pact file. The plugins will be 
+loaded from the plugin directory. By default, this is `~/.pact/plugins` or the value of the `PACT_PLUGIN_DIR` environment 
+variable. Each plugin required by the Pact file must be installed there. You will need to follow the installation 
+instructions for each plugin, but the default is to unpack the plugin into a sub-directory `<plugin-name>-<plugin-version>`
+(i.e., for the Protobuf plugin 0.0.0 it will be `protobuf-0.0.0`). The plugin manifest file must be present for the
+plugin to be able to be loaded.
