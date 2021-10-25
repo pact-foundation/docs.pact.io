@@ -30,7 +30,33 @@ A consumer version selector has the following properties:
 
 - `latest`: true. Used in conjuction with the `tag` and `branch` properties. When used with a `branch`, it may be `true` or the key ommitted (in which case it will be inferred to be `true`). This is because it only makes sense to verify the latest pact for a branch. If a `tag` is specified, and `latest` is `true`, then the latest pact for each of the consumers with that tag will be returned. If a `tag` is specified and the latest flag is *not* set to `true`, *all* the pacts with the specified tag will be returned. (This might seem a bit weird, but it's done this way to match the syntax used for the matrix query params. See https://docs.pact.io/selectors). 
 
-- `consumer`: allows a selector to only be applied to a certain consumer.
+- `consumer`: allows a selector to only be applied to a certain consumer. Can be specified with any of the above properties.
+
+## Examples
+
+### Recommended
+
+These are the recommended selectors that will cover the majority of workflows.
+
+* `{ "mainBranch": true }` - the latest version from the main branch of each consumer, as specified by the consumer's `mainBranch` property.
+* `{ "branch": "<branch>" }` - the latest version from a particular branch of each consumer.
+* `{ "deployedOrReleased": true }` - all the currently deployed and currently released and supported versions of each consumer.
+* `{ "matchingBranch": true` } - the latest version from any branch of the consumer that has the same name as the current branch of the provider. Used for coordinated development between consumer and provider teams using matching feature branch names.
+
+### Advanced
+
+This is not an exhaustive list, but shows most of the usecases.
+
+* `{ "branch": "<branch>", consumer: "<consumer>" }` - the latest version from a particular branch of a particular consumer.
+* `{ "branch": "<branch>", "fallbackBranch": "<branch>" }` - the latest version from a particular branch of the consumer, falling back to the fallbackBranch if none is found from the specified branch.
+* `{ "deployed": true, environment: "<environment>" }` - any versions currently deployed to the specified environment
+* `{ "released": true, environment: "<environment>" }` - any versions currently released and supported in the specified environment
+* `{ "environment": "<environment>" }` - any versions currently deployed or released and supported in the specified environment
+* `{ "tag": "<tag>" }`- all versions with the specified tag
+* `{ "tag": "<tag>", "latest": true }`- the latest version for each consumer with the specified tag
+* `{ "tag": "<tag>", "latest": true, "fallbackTag": "<tag>" }`- the latest version for each consumer with the specified tag, falling back to the fallbackTag if non is found with the specified tag.
+* `{ "tag": "<tag>", "latest": true, "consumer": "<consumer>" }`- the latest version for a specified consumer with the specified tag
+* `{ "latest": true }` - the latest version for each consumer. NOT RECOMMENDED as it suffers from race conditions when pacts are published from multiple branches.
 
 ## Deduplication
 
