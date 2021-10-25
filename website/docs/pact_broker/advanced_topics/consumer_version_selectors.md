@@ -62,7 +62,7 @@ This is not an exhaustive list, but shows most of the usecases.
 
 The Pact Broker API for retrieving pacts by selectors deduplicates the pacts based on their _content_. This means that if the same content was published in multiple selected pacts, the verification for that content will only need to run once. This is quite common when there hasn't been a change to a pact for a while, and the same pact content is present in development, test and production pacts.
 
-## Examples
+## Code examples
 
 ### Verifying the latest development, test and master pacts
 
