@@ -11,6 +11,42 @@ There are regular monthly Pact AMAs, currently hosted by Pactflow. At these sess
 You can [watch](https://www.youtube.com/playlist?list=PLwy9Bnco-IpdgdZce-rXeR7EF2_6T8z7S) all of our previous AMA's in case your questions have already been answered.
 The questions in each AMA are shown below:
 
+### October 2021
+
+Theme: Test Strategy
+
+Video: https://youtu.be/zKbmpRbPYUg
+
+1. What is integration testing?
+1. Writing code for testability
+1. Utility of devices such as the testing pyramid to think about crafting a test strategy
+1. The benefits and drawbacks of contract testing
+1. Approaches to removing the need for end-to-end integrated testing
+
+Audience questions:
+
+1. What are the anti-patterns of contract testing?
+1. What's the best approach to start contract testing with limited resources across multiple services?
+1. What part of existing testing overhead will Pact contract testing replace?
+
+### September 2021
+
+Theme: Case Study: Rolling out Pact/Pactflow at M1 Finance
+
+Video: https://youtu.be/J6-Zi6noqNE
+
+1. Introduction to M1 finance and case study and existing practices
+1. How did you know contract testing was the right fit for the test automation strategy?
+1. How did you get started with contract testing?
+1. Why did you move to Pactflow?
+
+Audience questions:
+
+1. Have you found a good approach to adding in pact tests to existing software?
+1. Finance can be a slow moving domain, has pact so far been able to help with trusting a `can-i-deploy` and not need to plan and schedule manual deployments?
+1. Have you managed to impact time spent running other types of tests as a result? e.g. less e2e tests, greater stability of tests etc.?
+1. Are you seeing benefits in speed of development yet vs overhead of rolling out additional tests to an existing product, or is there still a way to go?
+
 ### August 2021
 
 Theme: Contract Testing with Avro
