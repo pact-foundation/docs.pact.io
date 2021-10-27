@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.89.1"></a>
+
+### v2.89.1 (2021-10-28)
+
+#### Bug Fixes
+
+* **clean**
+  * honour max_age when set in clean selector	 ([828420d4](https://github.com/pact-foundation/pact_broker/commit/828420d4))
+
+* null safe navigation in case a branch head does not exist for a branch version	 ([4b259a81](https://github.com/pact-foundation/pact_broker/commit/4b259a81))
+
 <a name="v2.89.0"></a>
 
 ### v2.89.0 (2021-10-15)
