@@ -108,7 +108,7 @@ Branches are used to identify which pacts a provider should verify using [consum
 
 ## Automatic branch creation from first tag
 
-To assist in the migration from tags to branches, the Pact Broker from 2.82.0 supports the configuration option [`use_first_tag_as_branch`](/pact_broker/configuration/settings#use_first_tag_as_branch). When set to `true`, the first tag applied to a pacticipant version (within a given timeframe) will be inferred to be the branch. To disable this, set `use_first_tag_as_branch` to `false`.
+To assist in the migration from tags to branches, the Pact Broker from 2.82.0 supports the configuration option [`use_first_tag_as_branch`](/pact_broker/configuration/settings#use_first_tag_as_branch). When set to `true`, the first tag applied to a pacticipant version that does not already have a branch will be inferred to be the branch. This feature is only required to help transition from tags to branches during the rollout of branch support across the Pact clients. Once your Pact clients all support and are configured with a branch, this can be disabled by setting `use_first_tag_as_branch` to `false`.
 
 ## Pacticipant main branch property
 
