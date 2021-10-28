@@ -85,7 +85,7 @@ eg. For Travis CI:
 ```
 {
   "request": {
-    "message": "Verify changed pact for ${pactbroker.consumerName} version ${pactbroker.consumerVersionNumber} by ${pactbroker.providerVersionDescriptions}",
+    "message": "Verify changed pact for ${pactbroker.consumerName} version ${pactbroker.consumerVersionNumber} branch ${pactbroker.consumerVersionBranch} by ${pactbroker.providerVersionNumber} (${pactbroker.providerVersionDescriptions})",
     "branch":"${pactbroker.providerVersionBranch}",
     "sha": "${pactbroker.providerVersionNumber}",
     "config": {
