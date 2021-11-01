@@ -44,6 +44,8 @@ eg.
 pact-broker create-version-tag --pacticipant ${APPLICATION_NAME} --version ${GIT_SHA} --tag ${GIT_BRANCH} --auto-create-version
 ```
 
+There is no CLI yet for creating a version with a branch (it will be coming soon), but the branch version resource can be created using the [Pact Broker API directly](https://github.com/pact-foundation/pact_broker/blob/master/lib/pact_broker/doc/views/index/pacticipant-branch-version.markdown).
+
 If you want to pre-create the "pact changed" webhook for providers so that the first time a consumer publishes a pact, the webhook is immediately triggered, you can use the following commands in your pipeline.
 
 ```
