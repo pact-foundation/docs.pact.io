@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.8.0 - Pact V4 release
+
+* 75dd211c - feat: update readme with plugin example (Ronald Holshausen, Thu Oct 21 11:53:52 2021 +1100)
+* be6c02b1 - feat: update readme with sync req/res message examples (Ronald Holshausen, Thu Oct 21 11:18:41 2021 +1100)
+* e6610312 - feat: update readme with sync req/res message examples (Ronald Holshausen, Thu Oct 21 11:15:05 2021 +1100)
+* 3b7aee5f - feat: update tests and docs with sync req/res message examples (Ronald Holshausen, Thu Oct 21 10:28:08 2021 +1100)
+* 1427aa33 - feat: update tests and docs with message examples (Ronald Holshausen, Wed Oct 20 16:49:29 2021 +1100)
+
 ## 0.8.0-beta.3 - Bugfix Release
 
 * df67b723 - fix: async message builder was not setting the pact plugin config correctly (Ronald Holshausen, Tue Oct 19 17:44:35 2021 +1100)
