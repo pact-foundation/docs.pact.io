@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.57.0"></a>
+### v1.57.0 (2021-11-05)
+
+#### Features
+
+* support the --branch option in the version selectors for can-i-deploy	 ([dba8ec4](https://github.com/pact-foundation/pact_broker-client/commit/dba8ec4))
+* show more helpful error message if pb:environments not available for pactflow	 ([1bf38e3](https://github.com/pact-foundation/pact_broker-client/commit/1bf38e3))
+* print out notices if returned from publish pacts request	 ([86caf7e](https://github.com/pact-foundation/pact_broker-client/commit/86caf7e))
+
 <a name="v1.56.0"></a>
 ### v1.56.0 (2021-10-06)
 
