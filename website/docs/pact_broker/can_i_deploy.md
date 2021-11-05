@@ -77,7 +77,7 @@ Computer says no ¯_(ツ)_/¯
  
 CONSUMER | C.VERSION  | PROVIDER | P.VERSION  | SUCCESS? | RESULT#
 ---------|------------|----------|------------|----------|--------
-Foo      | 23         | Bar      | 56         | false    | 1
+Foo      | 24         | Bar      | 56         | false    | 1
 
  
 VERIFICATION RESULTS
@@ -92,7 +92,7 @@ All required verification results are published and successful
 
 ## Summary
 
-To make you are safe to deploy an application, add the following line before deploying:
+To make sure you are safe to deploy an application, add the following line before deploying:
 
 `$ pact-broker can-i-deploy --pacticipant PACTICIPANT --version VERSION --to-environment ENVIRONMENT`
 
