@@ -7,6 +7,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v1.6.5 (09 November 2021)
+  * [3dc7736](https://github.com/pact-foundation/pact-go/commit/3dc7736) - feat: update to standalone 1.88.78 and support new verifier option: --provider-version-branch (David Fleming, Thu Nov 4 15:47:19 2021 -0400)
+  * [511f144](https://github.com/pact-foundation/pact-go/commit/511f144) - fix: Dockerfile to reduce vulnerabilities (snyk-bot, Thu Oct 14 07:22:29 2021 +0000)
+  * [493f853](https://github.com/pact-foundation/pact-go/commit/493f853) - fix: Dockerfile to reduce vulnerabilities (snyk-bot, Thu Sep 30 05:23:55 2021 +0000)
+  * [0975c27](https://github.com/pact-foundation/pact-go/commit/0975c27) - fix: Dockerfile to reduce vulnerabilities (snyk-bot, Thu Mar 25 06:15:10 2021 +0000)
+
 ### v1.6.4 (09 August 2021)
   * [01b8e81](https://github.com/pact-foundation/pact-go/commit/01b8e81) - fix: fixed linter errors in dsl/pact (antklim, Fri Jul 30 17:27:18 2021 +1000)
   * [5a5ef03](https://github.com/pact-foundation/pact-go/commit/5a5ef03) - fix: fixed linter errors in client/service_manager (antklim, Fri Jul 30 17:17:37 2021 +1000)
