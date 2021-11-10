@@ -10,6 +10,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 **Articles**:
 
+- [The Basics of Contract Tests](https://codeburst.io/the-basics-of-contract-tests-920ff363c820)
 - [Introduction to Consumer Driven Pact Testing - Angular, Spring Boot, Docker, Jest, Junit and Mockito
   ](https://www.youtube.com/watch?v=OZz7UyHnyKg) (Video)
 - [How to establish quality gates in a Microservices architecture](https://www.cigniti.com/blog/microservices-testing-quality-gates-model/)
