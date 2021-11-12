@@ -34,7 +34,11 @@ To ensure that webhooks cannot be used maliciously to expose either data about y
 
 ### Webhook SSL certificates
 
-If your broker needs to execute a webhook against a server that has a self signed certificate, you will need to add the certificate to the broker's certificate store. Currently, the way to do this is to use the script [script/insert-self-signed-certificate-from-url.rb](https://github.com/pact-foundation/pact_broker/blob/master/script/insert-self-signed-certificate-from-url.rb). The easiest way to run this is to copy it to the machine where the broker is deployed, and modify the database credentials to match those of your broker.
+If your broker needs to execute a webhook against a server that has a self signed certificate, you will need to add the certificate to the broker's certificate store. 
+
+From Pact Broker version 2.90.0, you can use the [webhook_certificates](`/pact_broker/configuration/settings#webhook_certificates`) setting in the `pact_broker.yml` config file to configure the certificates.
+
+In previous versions of the Pact Broker, the only way to load the certificates is to use the script [script/prod/insert-self-signed-certificate-from-url.rb](https://github.com/pact-foundation/pact_broker/blob/master/script/prod/insert-self-signed-certificate-from-url.rb). The easiest way to run this is to copy it to the machine where the broker is deployed, and modify the database credentials to match those of your broker.
 
 ### Webhook HTTP proxies
 
