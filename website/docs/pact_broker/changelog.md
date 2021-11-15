@@ -4,6 +4,19 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.91.0"></a>
+
+### v2.91.0 (2021-11-15)
+
+#### Features
+
+* add environments to matrix response	 ([fd50f22c](https://github.com/pact-foundation/pact_broker/commit/fd50f22c))
+* remove feature toggle around change to return the pact for the latest tagged version, rather than the latest pact that has a version with the tag	 ([fac3fc8a](https://github.com/pact-foundation/pact_broker/commit/fac3fc8a))
+
+#### Bug Fixes
+
+* load images from the correct path when the Pact Broker application is run from a non root context	 ([a268ef25](https://github.com/pact-foundation/pact_broker/commit/a268ef25))
+
 <a name="v2.90.0"></a>
 
 ### v2.90.0 (2021-11-12)
