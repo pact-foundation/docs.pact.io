@@ -60,6 +60,10 @@ Imagine an application, Consumer, which depends on application, Provider. Each o
 
 Provider deploys version 2 using a rolling deployment, during which time the response to Consumer's request might come from Provider version 1 or it might come from version 2. Technically, both versions of Provider could be said to be in production at this point in time. However, Consumer v2 cannot be deployed safely to production _until Provider v1 is no longer in production_. This is why there is no advantage to recording Provider v2 as being in production during the time period of the deployment. It's not just that Consumer v2 requires Provider v2 to be in production, it also requires Provider v1 to NOT be in production, and that can't be guaranteed until the deployment is complete.
 
+#### Handling rollbacks
+
+If you need to rollback to a previous version, call `record-deployment` again with the version that you are rolling back to.
+
 ### Recording undeployments
 
 Recording undeployments is not usually necessary, because the `record-deployment` command automatically marks any application version that was deployed to the same application instance as undeployed.
