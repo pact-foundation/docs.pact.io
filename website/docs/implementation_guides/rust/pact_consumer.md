@@ -16,7 +16,7 @@ To use it, add it to your dev-dependencies in your cargo manifest:
 
 ```
 [dev-dependencies]
-pact_consumer = "0.8.1"
+pact_consumer = "0.8.2"
 ```
 
 You can now write a pact test using the consumer DSL.
