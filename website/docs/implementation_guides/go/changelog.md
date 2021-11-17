@@ -7,6 +7,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v1.6.6 (17 November 2021)
+  * [ad35b25](https://github.com/pact-foundation/pact-go/commit/ad35b25) - feat: support matching branch selector. Fixes #184 (Matt Fellows, Wed Nov 17 17:32:44 2021 +1100)
+
 ### v1.6.5 (09 November 2021)
   * [3dc7736](https://github.com/pact-foundation/pact-go/commit/3dc7736) - feat: update to standalone 1.88.78 and support new verifier option: --provider-version-branch (David Fleming, Thu Nov 4 15:47:19 2021 -0400)
   * [511f144](https://github.com/pact-foundation/pact-go/commit/511f144) - fix: Dockerfile to reduce vulnerabilities (snyk-bot, Thu Oct 14 07:22:29 2021 +0000)
