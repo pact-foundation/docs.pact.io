@@ -20,6 +20,8 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 **Customer Stories**
 
+- [M1 Finance](https://pactflow.io/case-studies/m1-finance/)
+- [Boost Insurance](pactflow.io/case-studies/boost-insurance/)
 - [Why We Killed Our End-to-End Test Suite: How Nubank switched to a Contract and Acceptance testing strategy to scale to over 1k engineers](https://building.nubank.com.br/why-we-killed-our-end-to-end-test-suite/)
 - [Consumer-Driven Contract Testing - A path to test in isolation with confidence (Raquel Bautista Garrido / Fanduel)](https://www.ministryoftesting.com/dojo/lessons/consumer-driven-contract-testing-raquel-bautista-garrido) (Video)
 - [Test Automation Talks - Why? What? How? (Bas Dijkstra)](https://www.youtube.com/watch?v=qKKDivgXI8M) (Video)
