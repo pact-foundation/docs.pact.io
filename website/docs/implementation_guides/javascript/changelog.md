@@ -6,6 +6,53 @@ custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/CHANGELO
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.17.0](https://github.com/pact-foundation/pact-js/compare/v9.16.5...v9.17.0) (2021-11-19)
+
+
+### Features
+
+* upgrade pact-node to support branches in verifications. Fixes [#750](https://github.com/pact-foundation/pact-js/issues/750) ([a5ef42e](https://github.com/pact-foundation/pact-js/commit/a5ef42ed41baf51652ebdf5b59e1d1ba5b9a6239))
+
+### [9.16.5](https://github.com/pact-foundation/pact-js/compare/v9.16.4...v9.16.5) (2021-10-24)
+
+
+### Fixes and Improvements
+
+* Bump version of pact-node to ensure the fix for the SSL certificate issue is included ([20bbf7a](https://github.com/pact-foundation/pact-js/commit/20bbf7a1f666dcf08e11b41b0fb6b88a28e4688d))
+* **consumer-tests:** Further improve the error message when a consumer test doesn't seem to have the mock server running ([c2d789c](https://github.com/pact-foundation/pact-js/commit/c2d789c7e051cdb31375685d85490e8e0a1b97f8))
+
+### [9.16.4](https://github.com/pact-foundation/pact-js/compare/v9.16.3...v9.16.4) (2021-10-10)
+
+
+### Fixes and Improvements
+
+* support null values in matchers ([5bee9fc](https://github.com/pact-foundation/pact-js/commit/5bee9fc10391f7ffb0c7e3e135b40b853ba451b2))
+
+### [9.16.3](https://github.com/pact-foundation/pact-js/compare/v9.16.2...v9.16.3) (2021-10-01)
+
+
+### Fixes and Improvements
+
+* **pact-node:** bump dependency on pact-node ([2ab2478](https://github.com/pact-foundation/pact-js/commit/2ab2478b7dc3d44327bc71bb162dc197299e3655))
+
+### [9.16.2](https://github.com/pact-foundation/pact-js/compare/v9.16.1...v9.16.2) (2021-09-30)
+
+
+### Fixes and Improvements
+
+* give up on node 16 musl until we can remove neon ([d2e2a7c](https://github.com/pact-foundation/pact-js/commit/d2e2a7c3139531accacdf7be1f41b5b4f5c32e70))
+* Remove unused package (fixes [#752](https://github.com/pact-foundation/pact-js/issues/752)) ([35584fb](https://github.com/pact-foundation/pact-js/commit/35584fbb34817577dd50be267773fabe603172a1))
+
+### [9.16.1](https://github.com/pact-foundation/pact-js/compare/v9.16.0...v9.16.1) (2021-09-08)
+
+
+### Fixes and Improvements
+
+* Add `timeout` option to PactOptions for waiting for the mock server to start ([85c1d36](https://github.com/pact-foundation/pact-js/commit/85c1d36d8a2ecc7cddb19fd5e5ab128c690facb4))
+* bump dependency on pact-node to avoid broken 10.13.6 ([de5db6b](https://github.com/pact-foundation/pact-js/commit/de5db6b88ae4a36c7f102201362942c35c76d0c8))
+* Bump version of pact-node to pick up less vulnerable dependencies ([0ab095e](https://github.com/pact-foundation/pact-js/commit/0ab095e272ebb4f7e9ac7979d9a3ed5ac5cfc1d5))
+* update examples with path dependency ([#717](https://github.com/pact-foundation/pact-js/issues/717)) ([7c91c33](https://github.com/pact-foundation/pact-js/commit/7c91c33a7a81f74c801f03a957b06905839d8743))
+
 ## [9.16.0](https://github.com/pact-foundation/pact-js/compare/v9.15.5...v9.16.0) (2021-06-21)
 
 
