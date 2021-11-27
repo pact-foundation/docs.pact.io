@@ -4,6 +4,22 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.92.0"></a>
+
+### v2.92.0 (2021-11-27)
+
+#### Features
+
+* allow SQL caller logging to be enabled	 ([861d8f21](https://github.com/pact-foundation/pact_broker/commit/861d8f21))
+* use a separate table to track the successful verifications of pact versions for each provider version tag (feature toggled with "new_wip_calculation")	 ([df0acfa3](https://github.com/pact-foundation/pact_broker/commit/df0acfa3))
+
+#### Bug Fixes
+
+* **cleanup**
+  * Improve delete orphans SQL query (#527)	 ([853354ea](https://github.com/pact-foundation/pact_broker/commit/853354ea))
+
+* cast PACT_BROKER_DATABASE_CONNECTION_VALIDATION_TIMEOUT to an integer	 ([8816c61f](https://github.com/pact-foundation/pact_broker/commit/8816c61f))
+
 <a name="v2.91.0"></a>
 
 ### v2.91.0 (2021-11-15)
