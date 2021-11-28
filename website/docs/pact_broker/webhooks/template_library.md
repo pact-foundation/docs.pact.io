@@ -449,7 +449,7 @@ The following example shows how to trigger a Drone CI build with parameters.
     "name": "<PROVIDER>"
   },
   "consumer": {
-  	"name": "<CONSUMER>"
+    "name": "<CONSUMER>"
   },
   "events": [
     {
