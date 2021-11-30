@@ -436,3 +436,38 @@ The following example shows how to trigger a Jenkins build with parameters.
 Ref:
 
 * [Jenkins Remote API](https://www.jenkins.io/doc/book/using/remote-access-api/).
+
+
+## Drone CI - Trigger Build
+
+The following example shows how to trigger a Drone CI build with parameters.
+
+```json
+{
+  "description": "Trigger ${pactbroker.provider} build on Drone CI",
+  "provider": {
+    "name": "<PROVIDER>"
+  },
+  "consumer": {
+    "name": "<CONSUMER>"
+  },
+  "events": [
+    {
+      "name": "contract_requiring_verification_published"
+    }
+  ],
+  "request": {
+    "method": "POST",
+    "url": "https://<DRONE_HOST>/api/repos/<NAMESPACE>/<REPO_NAME>/builds?branch=${pactbroker.providerVersionBranch}&commit=${pactbroker.providerVersionNumber}&PACT_URL=${pactbroker.pactUrl}",
+    "headers": {
+      "Authorization": "Bearer <DRONE_TOKEN>"
+    }
+  }
+}
+```
+
+`PACT_URL` will be available as an environment variable in your pipeline in steps that are triggered for event type `custom`.
+
+Ref:
+
+* [Drone API - Build Create](https://readme.drone.io/api/builds/build_create/).
