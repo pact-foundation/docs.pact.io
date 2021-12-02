@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.11.2 - Bugfix Release
+
+* f4fdba3c - fix: Templated values in HAL links need to be URL encoded #166 (Ronald Holshausen, Thu Dec 2 11:22:15 2021 +1100)
+* 29605ab0 - fix: support specifying matching_branch in verifications (Matt Fellows, Wed Nov 17 18:59:36 2021 +1100)
+* 260deb70 - fix: support specifying matching_branch in verifications (Matt Fellows, Wed Nov 17 17:47:37 2021 +1100)
+* c45faa2c - feat: support specifying matching_branch in verifications. Fixes #158 (Matt Fellows, Wed Nov 17 17:36:49 2021 +1100)
+* fc5be202 - fix: update to latest driver crate (Ronald Holshausen, Tue Nov 16 16:19:02 2021 +1100)
+
 ## 0.11.1 - Update to latest models and plugin driver crates
 
 
