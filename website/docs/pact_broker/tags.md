@@ -5,7 +5,7 @@ title: Tags
 <a name="golden-rule"/>
 
 :::tip
-Tags that represent branches and environments, while still supported, have been superseeded by first class support for branches and environments. Please read [this post](/blog/2021/10/08/why-we-are-getting-rid-of-tags) for more information. You'll find links at the bottom of the post to help you migrate from tags to branches and environments.
+Tags that represent branches and environments, while still supported, have been superseded by first class support for branches and environments. Please read [this post](/blog/2021/10/08/why-we-are-getting-rid-of-tags) for more information. You'll find links at the bottom of the post to help you migrate from tags to branches and environments.
 :::
 
 :::info The Golden Rule for tagging
@@ -29,6 +29,10 @@ As an example, to tag `Foo` application version `b5236e772` as the production ve
 You may have noticed that the URL for a pacticipant version tag starts with `/pacticipants`, not `/consumers` or `/providers`. That is because `consumer` and `provider` are roles that a pacticipant takes in a pact, not identities in themselves. An application may be both a consumer and a provider. 
 
 When you are using tags, you need to ensure that the version numbering scheme you use to identify a "version" cannot give you version that exists on more than one repository branch - don't hard code it. It should either _be_ the git sha \(or equivalent for your repository\), or it should include the git sha as metadata if you are using semantic versioning eg. `1.2.456+405b31ec6`. See [Versioning in the Pact Broker](/getting_started/versioning_in_the_pact_broker) for more information.
+
+### Identifying versions by tag
+
+When the Pact Broker is determining "the latest application version with tag X" the logic it uses is "find all the _pacticipant versions_ that have the X tag, and return the most recently created one", NOT "find the most recently created X _tag_, and then return the associated pacticipant version". This means that if you tag version 1, then version 2, then version 1 again, version 2 will still be considered the latest for that tag. This has implications for [rollbacks](#handling-rollbacks) and is one of the reasons that using tags to track environments has been superseded by [record-deployment](/pact_broker/recording_deployments_and_releases#recording-deployments) and [record-release](/pact_broker/recording_deployments_and_releases#recording-releases). 
 
 ### "Latest" pacts
 
@@ -174,7 +178,7 @@ When the Pact Broker is determining "the latest `production` application version
 This means that if you are rolling back to a previously deployed (and hence, previously tagged) application version, you need to remove the `production` tag from the version you are undeploying. See the [Deleting tags](#deleting-tags) section.
 
 :::tip
-This complication is one of the reasons that the use of tags to track environments has been superseeded by first class support for [environments](/pact_broker/recording_deployments_and_releases).
+This complication is one of the reasons that the use of tags to track environments has been superseded by first class support for [environments](/pact_broker/recording_deployments_and_releases).
 :::
 
 ## Using tags with feature toggles instead of feature branches
