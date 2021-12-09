@@ -10,6 +10,7 @@ Tags that represent branches and environments, while still supported, have been 
 
 :::info The Golden Rule for tagging
 ~~Tag with the branch name when you publish pacts or verification results, and tag with the environment name when you deploy.~~
+
 Now we recommend that you set the [branch](/pact_broker/branches) property when you publish pacts and verification results, and use [record-deployment](/pact_broker/recording_deployments_and_releases#recording-deployments) or [record-release](/pact_broker/recording_deployments_and_releases#recording-releases) when you deploy/release.
 :::
 
