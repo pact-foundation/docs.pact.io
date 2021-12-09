@@ -14,8 +14,6 @@ Tags that represent branches and environments, while still supported, have been 
 Now we recommend that you set the [branch](/pact_broker/branches) property when you publish pacts and verification results, and use [record-deployment](/pact_broker/recording_deployments_and_releases#recording-deployments) or [record-release](/pact_broker/recording_deployments_and_releases#recording-releases) when you deploy/release.
 :::
 
-To find out what this means, read below!
-
 Tags are simple String values that belong to "pacticipant" version \(that is, application version\) resources in the Pact Broker. They are typically used to provide metadata about a version - the most common use cases being to indicate the git branch of a version \(eg. `master`\) or a stage \(eg `test`, `prod`\).
 
 Pacticipant version tags can be used for multiple purposes.
