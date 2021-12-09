@@ -4,8 +4,13 @@ title: Tags
 
 <a name="golden-rule"/>
 
+:::tip
+Tags that represent branches and environments, while still supported, have been superseeded by first class support for branches and environments. Please read [this post](/blog/2021/10/08/why-we-are-getting-rid-of-tags) for more information. You'll find links at the bottom of the post to help you migrate from tags to branches and environments.
+:::
+
 :::info The Golden Rule for tagging
-Tag with the branch name when you publish pacts or verification results, and tag with the environment name when you deploy.
+~~Tag with the branch name when you publish pacts or verification results, and tag with the environment name when you deploy.~~
+Now we recommend that you set the [branch](/pact_broker/branches) property when you publish pacts and verification results, and use [record-deployment](/pact_broker/recording_deployments_and_releases#recording-deployments) or [record-release](/pact_broker/recording_deployments_and_releases#recording-releases) when you deploy/release.
 :::
 
 To find out what this means, read below!
@@ -167,6 +172,10 @@ Add the `production` tag to the list of tags to verify in your provider's verifi
 When the Pact Broker is determining "the latest `production` application version" or "the latest `production` pact" the logic it uses is "find all the _pacticipant versions_ that have the `production` tag, and return the most recently created one", NOT "find the most recently created `production` _tag_, and then return the associated pacticipant version".
 
 This means that if you are rolling back to a previously deployed (and hence, previously tagged) application version, you need to remove the `production` tag from the version you are undeploying. See the [Deleting tags](#deleting-tags) section.
+
+:::tip
+This complication is one of the reasons that the use of tags to track environments has been superseeded by first class support for [environments](/pact_broker/recording_deployments_and_releases).
+:::
 
 ## Using tags with feature toggles instead of feature branches
 
