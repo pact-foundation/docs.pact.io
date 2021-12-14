@@ -61,7 +61,7 @@
       "implementation_guides/python/readme",
       "implementation_guides/python/changelog"
     ],
-    "Pact Consumer Swift": [
+    "Pact Swift": [
       "implementation_guides/swift"
     ],
     "Pact Scala": [
