@@ -6,6 +6,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 
 ## 0.9.5 - Bugfix Release
 
+
+## 0.9.5 - Bugfix Release
+
 * c97f5d1a - fix: shutdown the tokio reactor correctly when there is an error (Ronald Holshausen, Wed Dec 15 16:28:37 2021 +1100)
 
 ## 0.9.4 - Bugfix Release
