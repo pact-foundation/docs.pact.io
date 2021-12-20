@@ -22,6 +22,23 @@ To notify the Broker that an application version has been deployed or released, 
 
 "Deployed versions" and "released versions" are different resource types in the Pact Broker, and an application version may be both deployed and released. For example, a mobile phone application version may be recorded as deployed to a mobile device for automated testing in a test environment, and then recorded as released to an app store in a production environment.
 
+## Environments
+
+Before you can record a deployment or a release, you must create the environment in the Pact Broker. The "test" and "production" environments are pre-populated in the Pact Broker, to get you you started quickly.
+
+To create and environment, use the following [command](/pact_broker/client_cli/readme#create-environment) from the Pact Broker CLI.
+
+    $ pact-broker create-environment --name NAME --display-name DISPLAY_NAME [--no-production|--production]
+
+For can-i-deploy to work correctly, every team and the Pact Broker must have the same shared understanding of what an "environment" is. Defining the bounds of an environment can be a tricky thing. A consumer team may have multiple deployed consumer applications that all share the same instance of the provider. From the consumer team's point of view, there are multiple environments, but from the provider team's point of view, there is one. For the Pact Broker to operate correctly, in this situation, you have two options. 
+
+1. Create one environment resource in the Pact Broker, and use the `--application-instance` feature described [below](#application-instances), and give each consumer application instance its own identifier. This would work well if there was only one application in each of the sub environments. 
+2. If there are just too many applications in each of the sub environments to want to use the application instance approach, then you can create an environment resource for each sub environment, and when the shared application is deployed, call `record-deployment` once for each sub environment. Before deploying the shared application, the `can-i-deploy` command would need to be called for each sub environment, and it should only deploy if all the results were positive.
+
+#### Examples
+
+    $ pact-broker create-environment --name uat --display-name UAT --no-production
+
 ## Deployments
 
 ### Recording deployments
