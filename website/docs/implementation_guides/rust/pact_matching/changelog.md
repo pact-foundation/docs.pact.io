@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.11.4 - Bugfix Release
+
+
 ## 0.11.3 - Bugfix Release
 
 * 48d061ef - feat: add metrics publishing to matching crate (Ronald Holshausen, Tue Dec 14 16:19:59 2021 +1100)
