@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.93.1"></a>
+
+### v2.93.1 (2021-12-21)
+
+#### Bug Fixes
+
+* optimise query for calculating the latest overall pacts	 ([f44aaa70](https://github.com/pact-foundation/pact_broker/commit/f44aaa70))
+
 <a name="v2.93.0"></a>
 
 ### v2.93.0 (2021-12-07)
