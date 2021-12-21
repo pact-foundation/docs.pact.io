@@ -24,9 +24,9 @@ To notify the Broker that an application version has been deployed or released, 
 
 ## Environments
 
-Before you can record a deployment or a release, you must create the environment in the Pact Broker. The "test" and "production" environments are pre-populated in the Pact Broker, to get you you started quickly.
+Before you can record a deployment or a release, you must create the environment in the Pact Broker. To get you you started quickly, the `test` and `production` environments are pre-populated in the Pact Broker.
 
-To create and environment, use the following [command](/pact_broker/client_cli/readme#create-environment) from the Pact Broker CLI.
+To create a new environment, use the following [command](/pact_broker/client_cli/readme#create-environment) from the Pact Broker CLI.
 
     $ pact-broker create-environment --name NAME --display-name DISPLAY_NAME \
       [--no-production|--production]
@@ -34,6 +34,7 @@ To create and environment, use the following [command](/pact_broker/client_cli/r
 #### Examples
 
     $ pact-broker create-environment --name uat --display-name UAT --no-production
+    $ pact-broker create-environment --name customer-1-production --display-name "Customer 1 Production" --production
 
 ### Handling conflicting views of what an "environment" is
 
