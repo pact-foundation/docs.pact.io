@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.2.3 - Maintenance Release
+
+* 481762f0 - feat: add function to detect if a string is a matching definition (Ronald Holshausen, Tue Dec 21 13:06:31 2021 +1100)
+* c707a8c0 - feat: add a method to join a value onto a doc path (Ronald Holshausen, Thu Dec 16 16:03:27 2021 +1100)
+
 ## 0.2.2 - Fixes to the matching rule parser
 
 * 3207cb49 - feat: implement each key and aech value matching rule definitions (Ronald Holshausen, Wed Nov 24 14:28:42 2021 +1100)
