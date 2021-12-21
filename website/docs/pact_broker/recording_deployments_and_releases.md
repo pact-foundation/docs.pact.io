@@ -8,7 +8,7 @@ The features described in this page require:
 * Pact Broker >= v2.81.0
 * Pact Broker Client CLI rubygem >= 1.47.0+, or the pact-cli Docker image >= 0.47.0.0+
 
-As of August 2021, not every Pact library supports the `{ deployedOrReleased: true}` consumer version selector - please see the section on migrating from tags at the bottom of the page.
+As of August 2021, not every Pact library supports the `{ deployedOrReleased: true }` consumer version selector - please see the section on migrating from tags at the bottom of the page.
 :::
 
 The Pact Broker needs to know which versions of each application are in each environment so it can return the correct pacts for verification and determine whether a pacticular application version is [safe to deploy](/pact_broker/can_i_deploy).
