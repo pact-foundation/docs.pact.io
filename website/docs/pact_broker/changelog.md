@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.93.2"></a>
+
+### v2.93.2 (2021-12-23)
+
+#### Bug Fixes
+
+* Improve SortContent performance on large contracts (#538)	 ([1914c01f](https://github.com/pact-foundation/pact_broker/commit/1914c01f))
+
 <a name="v2.93.1"></a>
 
 ### v2.93.1 (2021-12-21)
