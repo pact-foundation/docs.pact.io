@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.12.0 - Support for matching Protobuf payloads
+
+* 1a01d111 - fix: correct the matching logic with lists and eachkey/eachvalue matchers (Ronald Holshausen, Thu Dec 30 13:34:21 2021 +1100)
+* 28f562e2 - fix: Each key matching was not implemented correctly (Ronald Holshausen, Wed Dec 29 17:20:05 2021 +1100)
+* 07e2a3b6 - fix: Values matchers must not cascade (Ronald Holshausen, Wed Dec 29 16:36:57 2021 +1100)
+* 60764855 - fix: missing import (Ronald Holshausen, Wed Dec 29 15:50:36 2021 +1100)
+* cd6fe27a - fix: map matching logic was not including the EachValue matcher (Ronald Holshausen, Wed Dec 29 15:47:09 2021 +1100)
+* 41b406aa - fix: shared mime-info db not available on Windows (Ronald Holshausen, Wed Dec 29 10:13:43 2021 +1100)
+* a0c9d203 - fix: detect common text types when comparing content type (Ronald Holshausen, Fri Dec 24 16:19:43 2021 +1100)
+* ede663ec - fix: add matching implementations for Vec&lt;u8&;gt; and &Vec&lt;u8&;gt; (Ronald Holshausen, Fri Dec 24 15:24:48 2021 +1100)
+
 ## 0.11.5 - Maintenance Release
 
 
