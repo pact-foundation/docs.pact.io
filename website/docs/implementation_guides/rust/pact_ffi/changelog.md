@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.1.5 - Maintenance Release
+
+* 1cafd00a - fix: drop(from_raw(ptr))` if you intend to drop the `CString` (Ronald Holshausen, Tue Jan 4 10:39:16 2022 +1100)
+* fe22ae3a - fix: expected opaque type, found enum `Result` (Ronald Holshausen, Tue Jan 4 10:26:22 2022 +1100)
+* 213d1459 - fix: add a small delay after loading plugins via FFI to resolve a race condition (Ronald Holshausen, Tue Jan 4 09:56:33 2022 +1100)
+
 ## 0.1.4 - Maintenance Release
 
 * f8042d6b - feat: add metrics event for provider verification (Ronald Holshausen, Tue Dec 14 17:29:44 2021 +1100)
