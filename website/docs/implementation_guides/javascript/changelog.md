@@ -6,6 +6,20 @@ custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/CHANGELO
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.17.2](https://github.com/pact-foundation/pact-js/compare/v9.17.1...v9.17.2) (2022-01-12)
+
+
+### Fixes and Improvements
+
+* All options are now passed down to pact-core in consumer pacts, allowing usage of the undocumented `monkeypatch` option ([50f00b4](https://github.com/pact-foundation/pact-js/commit/50f00b4af66a388c07e721f5d8fc254c8551b192))
+
+### [9.17.1](https://github.com/pact-foundation/pact-js/compare/v9.17.0...v9.17.1) (2021-12-31)
+
+
+### Fixes and Improvements
+
+* Interaction response status can only be a number not a Matcher (Typescript type) ([9904eca](https://github.com/pact-foundation/pact-js/commit/9904eca5d25108ef714d279e4314e0797266536e))
+
 ## [9.17.0](https://github.com/pact-foundation/pact-js/compare/v9.16.5...v9.17.0) (2021-11-19)
 
 
