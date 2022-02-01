@@ -179,8 +179,7 @@
       "recipes/apigateway",
       "recipes/lambdaasync",
       "recipes/lambdahttp",
-      "recipes/cypress",
-      "recipes/msw"
+      "recipes/cypress"
     ]
   },
   "pact_broker": {
