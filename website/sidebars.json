@@ -1,8 +1,6 @@
 {
   "docs": {
-    "Pact command line tools": [
-      "implementation_guides/cli"
-    ],
+    "Pact command line tools": ["implementation_guides/cli"],
     "Pact JS": [
       "implementation_guides/javascript",
       "implementation_guides/javascript/readme",
@@ -61,15 +59,9 @@
       "implementation_guides/python/readme",
       "implementation_guides/python/changelog"
     ],
-    "Pact Swift": [
-      "implementation_guides/swift"
-    ],
-    "Pact Scala": [
-      "implementation_guides/scala"
-    ],
-    "Pact PHP": [
-      "implementation_guides/php"
-    ],
+    "Pact Swift": ["implementation_guides/swift"],
+    "Pact Scala": ["implementation_guides/scala"],
+    "Pact PHP": ["implementation_guides/php"],
     "Pact Ruby": [
       "implementation_guides/ruby/README",
       "implementation_guides/ruby/creating_pacts",
@@ -108,20 +100,14 @@
       "implementation_guides/cpp/consumer",
       "implementation_guides/cpp/consumer/changelog"
     ],
-    "Pact on Docker": [
-      "docker"
-    ],
-    "Other languages": [
-      "implementation_guides/other_languages"
-    ],
+    "Pact on Docker": ["docker"],
+    "Other languages": ["implementation_guides/other_languages"],
     "Feature support": [
       "roadmap/feature_support",
       "roadmap/roadmap",
       "wrapper_implementations"
     ],
-    "Stubs": [
-      "getting_started/stubs"
-    ]
+    "Stubs": ["getting_started/stubs"]
   },
   "getting-started": [
     {
@@ -185,6 +171,16 @@
       "pact_nirvana/step_6",
       "pact_nirvana/step_7",
       "pact_nirvana/step_8"
+    ],
+    "Recipes": [
+      "recipes",
+      "recipes/kafka",
+      "recipes/graphql",
+      "recipes/apigateway",
+      "recipes/lambdaasync",
+      "recipes/lambdahttp",
+      "recipes/cypress",
+      "recipes/msw"
     ]
   },
   "pact_broker": {
@@ -260,9 +256,7 @@
       {
         "type": "category",
         "label": "API Docs",
-        "items": [
-          "pact_broker/api/webhooks"
-        ]
+        "items": ["pact_broker/api/webhooks"]
       },
       "pact_broker/changelog"
     ]
@@ -281,15 +275,8 @@
       ]
     }
   ],
-  "help": [
-    "help",
-    "help/how_to_ask_for_help",
-    "help/amas"
-  ],
+  "help": ["help", "help/how_to_ask_for_help", "help/amas"],
   "docs-other": {
-    "First Category": [
-      "doc4",
-      "doc5"
-    ]
+    "First Category": ["doc4", "doc5"]
   }
 }
