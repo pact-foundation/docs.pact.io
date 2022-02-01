@@ -6,7 +6,7 @@ description: Recipes and pre-built integrations to test common scenarios in Pact
 
 Recipes and pre-built integrations to test common scenarios in Pact
 
-| Recipe/Integratino                                     | Description                                                                                                                         |
+| Recipe/Integration                                     | Description                                                                                                                         |
 | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
 | [GraphQL](recipes/graphql)                             | Strategies for testing GraphQL endpoints (example with Apollo)                                                                      |
 | [API Gateway](recipes/apigateway)                      | Strategies for dealing with API Gateways, such as AWS API Gateway, Kong etc.                                                        |
