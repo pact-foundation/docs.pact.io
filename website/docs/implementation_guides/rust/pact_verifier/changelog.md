@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.13.1 - Updated req/res logging for FFI calls
+
+* 4f47ff65 - feat: log request/response bodies at debug level (Ronald Holshausen, Thu Feb 3 13:14:35 2022 +1100)
+
 ## 0.13.0 - Capture output/results from the verification process
 
 * d0fa29dc - feat: add json output to the verifier CLI (Ronald Holshausen, Fri Jan 28 15:21:17 2022 +1100)
