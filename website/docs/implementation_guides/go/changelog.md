@@ -7,6 +7,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v1.6.8 (04 February 2022)
+  * [18c791e](https://github.com/pact-foundation/pact-go/commit/18c791e) - fix: support struct tags for pointers (Sonia Hamilton, Tue Feb 1 10:31:07 2022 +1100)
+
 ### v1.6.7 (20 December 2021)
   * [5160a01](https://github.com/pact-foundation/pact-go/commit/5160a01) - fix: allow provider log level to be set/logged to file (Matt Fellows, Mon Dec 20 16:28:15 2021 +1100)
 
