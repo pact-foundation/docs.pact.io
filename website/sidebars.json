@@ -145,7 +145,8 @@
       ]
     },
     "implementation_guides/workshops",
-    "faq"
+    "faq",
+    "telemetry"
   ],
   "guides": {
     "Consumer": [

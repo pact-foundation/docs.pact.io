@@ -182,6 +182,10 @@ const siteConfig = {
             },{
               label: 'Help',
               to: 'help'
+            },
+            {
+              label: 'Telemetry',
+              to: 'telemetry',
             }
           ],
         },
