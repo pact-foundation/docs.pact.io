@@ -12,22 +12,43 @@ When using Pact you can control whether telemetry is enabled, and the setting ca
 
 This data is collected via [Google Analytics (GA)](https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide) and is accessible by Pact OSS maintainers.
 
-### Opt Out
+## Opt Out
 
-In macOS and Linux operating systems, you can disable telemetry for a single session. To disable telemetry for your current session, run the following command to set the environment variable PACT_DO_NOT_TRACK to "true". You must repeat the command for each new terminal or session.
+### Disabling telemetry for a session
 
+To disable telemetry for your current session, you must set the environment variable `PACT_DO_NOT_TRACK` to `true`. You must repeat the command for each new terminal or session.
+
+In macOS and Linux operating systems, you can disable telemetry for a single session as follows:
+
+```bash
+export PACT_DO_NOT_TRACK=true
 ```
-export PACT_DO_NOT_TRACK='true'
+
+On Windows (PowerShell):
+
+```powershell
+$env:PACT_DO_NOT_TRACK = 'true'
 ```
 
-To disable telemetry in Windows:
+### Disabling telemetry for your profile in all sessions
 
+To disable telemetry permanenently (for all future sessions), you need to add a new item to your list of permanent environment variables.
+
+In macOS and Linux operating systems, you can add it to your terminal profile as follows:
+
+```bash
+echo "export PACT_DO_NOT_TRACK=true" >> ~/.profile
+source ~/.profile
 ```
+
+On Windows:
+
+```sh
 setx PACT_DO_NOT_TRACK "true"
 refresh env
 ```
 
-### Types of Information Collected
+## Types of Information Collected
 
 The information collected is a combination of data about the the environment and event occurring and parameters required by GA.
 
@@ -50,6 +71,6 @@ The information collected is a combination of data about the the environment and
 | Action                      | Used to indicate an action that occurred in the code when the event was generated.                      |
 | Value                       | Numerical value that can be used to track any number related to the event, e.g number of pacts verified |
 
-### Further Questions?
+## Further Questions?
 
 For more information or help with Telemetry check out ['Where to go for help'](https://docs.pact.io/help/)
