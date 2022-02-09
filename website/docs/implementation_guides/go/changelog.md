@@ -7,6 +7,8 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v1.6.9 (09 February 2022)
+
 ### v1.6.8 (04 February 2022)
   * [18c791e](https://github.com/pact-foundation/pact-go/commit/18c791e) - fix: support struct tags for pointers (Sonia Hamilton, Tue Feb 1 10:31:07 2022 +1100)
 
