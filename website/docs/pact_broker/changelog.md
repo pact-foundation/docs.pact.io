@@ -4,6 +4,20 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.93.3"></a>
+
+### v2.93.3 (2022-02-02)
+
+#### Bug Fixes
+
+* ensure webhook_certificates setting is honoured in webhook	 ([7933a526](https://github.com/pact-foundation/pact_broker/commit/7933a526))
+* ensure disable_ssl_verification setting is honoured in webhook	 ([08bc758c](https://github.com/pact-foundation/pact_broker/commit/08bc758c))
+* ensure webhook_certificates setting is honoured in webhook	 ([8a720cdb](https://github.com/pact-foundation/pact_broker/commit/8a720cdb))
+* ensure disable_ssl_verification setting is honoured in webhook	 ([0728b3d7](https://github.com/pact-foundation/pact_broker/commit/0728b3d7))
+
+* **hal-browser**
+  * fixing vulnerability by upgrading HAL browser dependencies	 ([a6b06f66](https://github.com/pact-foundation/pact_broker/commit/a6b06f66))
+
 <a name="v2.93.2"></a>
 
 ### v2.93.2 (2021-12-23)
