@@ -4,8 +4,6 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/provider/README.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-sub project of https://github.com/DiUS/pact-jvm
-
 The pact provider is responsible for verifying that an API provider adheres to a number of pacts authored by its clients
 
 This library provides the basic tools required to automate the process, and should be usable on its own in many instances.

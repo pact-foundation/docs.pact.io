@@ -107,9 +107,11 @@ The following project properties must be specified as system properties:
 |`pact.verifier.disableUrlPathDecoding`|Disables decoding of request paths|
 |`pact.pactbroker.httpclient.usePreemptiveAuthentication`|Enables preemptive authentication with the pact broker when set to `true`|
 |`pact.provider.tag`|Sets the provider tag to push before publishing verification results (can use a comma separated list)|
+|`pact.provider.branch`|Sets the provider branch to push before publishing verification results|
 |`pact.content_type.override.<TYPE>.<SUBTYPE>=<VAL>` where `<VAL>` may be `text`, `json` or `binary`|Overrides the handling of a particular content type [4.1.3+]|
 |`pact.verifier.enableRedirectHandling`|Enables automatically handling redirects [4.1.8+]|
 |`pact.verifier.generateDiff`|Controls the generation of diffs. Can be set to `true`, `false` or a size threshold (for instance `1mb` or `100kb`) which only enables diffs for payloads of size less than that [4.2.7+]|
+|`pact.verifier.buildUrl`|Specifies buildUrl to report to the broker when publishing verification results [4.2.16/4.3.2+]|
 
 ## Specifying the provider hostname at runtime
 
@@ -231,7 +233,6 @@ To run this task, you would then have to explicitly name it as in ```gradle pact
 would skip it.  This can be useful when you want to define two providers, one with `startProviderTask`/`terminateProviderTask` 
 and as second without, so you can manually start your provider (to debug it from your IDE, for example) but still want a `pactVerify` 
  to run normally from your CI build.
-
 
 ## Enabling insecure SSL
 
@@ -797,6 +798,49 @@ pact {
 }
 ```
 
+## Including the consumer branch when publishing [min versions 4.1.33/4.2.19/4.3.4]
+
+The consumer branch and build URL can be included when the pacts are published. This requires Pact Broker version 
+**2.86.0 or later**.
+
+The branch name and build URL can either be configured in the project or as system properties or environment variables.
+
+### Configured in the build
+
+There are attributes on the `publish` block to set these values.
+
+```groovy
+pact {
+
+    publish {
+      consumerBranch = 'feat/test'
+      // build URL is optional 
+      consumerBuildUrl = 'https://github.com/pact-foundation/pact-jvm/actions/runs/1685674772'
+    }
+
+}
+```
+
+## Configured as JVM system properties
+
+You can configure these values as system properties using the following keys:
+* `pact.publish.consumer.buildUrl`
+* `pact.publish.consumer.branchName`
+* `pact.publish.consumer.version`
+
+## Configured as environment variables
+
+You can configure these values as environment variables using the following keys:
+* `pact.publish.consumer.buildUrl`
+* `pact.publish.consumer.branchName`
+* `pact.publish.consumer.version`
+
+OR
+
+* `PACT_PUBLISH_CONSUMER_BUILDURL`
+* `PACT_PUBLISH_CONSUMER_BRANCHNAME`
+* `PACT_PUBLISH_CONSUMER_VERSION`
+
 # Verifying a message provider
 
 The Gradle plugin has been updated to allow invoking test methods that can return the message contents from a message
@@ -892,6 +936,8 @@ For pacts that are loaded from a Pact Broker, the results of running the verific
  broker against the URL for the pact. You will be able to see the result on the Pact Broker home screen.
 
 To turn on the verification publishing, set the project property `pact.verifier.publishResults` to `true`.
+
+To provide the build URL, set the JVM system property `pact.verifier.buildUrl`.
 
 By default, the Gradle project version will be used as the provider version. You can override this by setting the
 `providerVersion` property.
@@ -1009,3 +1055,21 @@ pact {
   }
 }
 ```
+
+# Verifying V4 Pact files that require plugins (version 4.3.0+)
+
+Pact files that require plugins can be verified with version 4.3.0+. For details on how plugins work, see the
+[Pact plugin project](https://github.com/pact-foundation/pact-plugins).
+
+Each required plugin is defined in the `plugins` section in the Pact metadata in the Pact file. The plugins will be
+loaded from the plugin directory. By default, this is `~/.pact/plugins` or the value of the `PACT_PLUGIN_DIR` environment
+variable. Each plugin required by the Pact file must be installed there. You will need to follow the installation
+instructions for each plugin, but the default is to unpack the plugin into a sub-directory `<plugin-name>-<plugin-version>`
+(i.e., for the Protobuf plugin 0.0.0 it will be `protobuf-0.0.0`). The plugin manifest file must be present for the
+plugin to be able to be loaded.
+
+# Test Analytics
+
+We are tracking anonymous analytics to gather important usage statistics like JVM version
+and operating system. To disable tracking, set the 'pact_do_not_track' system property or environment
+variable to 'true'.

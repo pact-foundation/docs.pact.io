@@ -350,7 +350,7 @@ is verified. It is only recorded in the consumer tests and used by the provider 
 
 ### Building JSON bodies with PactDslJsonBody DSL
 
-**NOTE:** If you are using Java 8, there is [an updated DSL for consumer tests](/implementation_guides/jvm/consumer/java8).
+**NOTE:** If you are using Java 8, there is [an updated DSL for consumer tests](https://github.com/DiUS/pact-jvm/blob/master/consumer/java8/README.md).
 
 The body method of the ConsumerPactBuilder can accept a PactDslJsonBody, which can construct a JSON body as well as
 define regex and type matchers.
@@ -812,3 +812,9 @@ and [#1383](https://github.com/pact-foundation/pact-jvm/issues/1383).
 One option (if the HTTP client supports it, Apache HTTP Client does) is to set the system property `http.keepAlive` to `false` in
 the test JVM. The other option is to set `pact.mockserver.addCloseHeader` to `true` to force the mock server to
 send a `Connection: close` header with every response (supported with Pact-JVM 4.2.7+).
+
+# Test Analytics
+
+We are tracking anonymous analytics to gather important usage statistics like JVM version
+and operating system. To disable tracking, set the 'pact_do_not_track' system property or environment
+variable to 'true'.

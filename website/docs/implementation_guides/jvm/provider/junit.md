@@ -512,7 +512,7 @@ For example, configure it by adding the following to your POM:
 Sometimes you may need to add things to the requests that can't be persisted in a pact file. Examples of these would
 be authentication tokens, which have a small life span. The HttpTarget supports request filters by annotating methods
 on the test class with `@TargetRequestFilter`. These methods must be public void methods that take a single HttpRequest
-parameter.
+parameter of type `org.apache.http.HttpRequest` (4.2.x and before) or `org.apache.hc.core5.http.HttpRequest` (4.3.0+).
 
 For example:
 
@@ -589,6 +589,13 @@ For pacts that are loaded from a Pact Broker, the results of running the verific
  
 To enable publishing of results, set the Java system property or environment variable `pact.verifier.publishResults` to `true`.
 
+### IMPORTANT NOTE!!!: this property needs to be set on the test JVM if your build is running with Gradle or Maven.
+
+Gradle and Maven do not pass in the system properties in to the test JVM from the command line. The system properties
+specified on the command line only control the build JVM (the one that runs Gradle or Maven), but the tests will run in
+a new JVM. See [Maven Surefire Using System Properties](https://maven.apache.org/surefire/maven-surefire-plugin/examples/system-properties.html)
+and [Gradle Test docs](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.testing.Test.html#org.gradle.api.tasks.testing.Test:systemProperties).
+
 ## Tagging the provider before verification results are published [4.0.1+]
 
 You can have a tag pushed against the provider version before the verification results are published. To do this 
@@ -596,6 +603,18 @@ you need set the `pact.provider.tag` JVM system property to the tag value.
 
 From 4.1.8+, you can specify multiple tags with a comma separated string for the `pact.provider.tag`
 system property.
+
+## Setting the provider branch before verification results are published [4.3.0-beta.7+]
+
+Pact Broker version 2.86.0 or later
+
+You can have a branch pushed against the provider version before the verification results are published. To do this
+you need set the `pact.provider.branch` JVM system property to the branch value.
+
+## Setting the build URL for verification results [4.2.16/4.3.2+]
+
+You can specify a URL to link to your CI build output. To do this you need to set the `pact.verifier.buildUrl` JVM
+system property to the URL value.
 
 # Pending Pact Support (version 4.1.3 and later)
 
@@ -636,3 +655,21 @@ public class PactJUnitTest {
 You can also use the `pactbroker.includeWipPactsSince` JVM system property.
 
 Since all WIP pacts are also pending pacts, failed verifications will not cause a build failure.
+
+# Verifying V4 Pact files that require plugins (version 4.3.0+)
+
+Pact files that require plugins can be verified with version 4.3.0+. For details on how plugins work, see the
+[Pact plugin project](https://github.com/pact-foundation/pact-plugins).
+
+Each required plugin is defined in the `plugins` section in the Pact metadata in the Pact file. The plugins will be
+loaded from the plugin directory. By default, this is `~/.pact/plugins` or the value of the `PACT_PLUGIN_DIR` environment
+variable. Each plugin required by the Pact file must be installed there. You will need to follow the installation
+instructions for each plugin, but the default is to unpack the plugin into a sub-directory `<plugin-name>-<plugin-version>`
+(i.e., for the Protobuf plugin 0.0.0 it will be `protobuf-0.0.0`). The plugin manifest file must be present for the
+plugin to be able to be loaded.
+
+# Test Analytics
+
+We are tracking anonymous analytics to gather important usage statistics like JVM version
+and operating system. To disable tracking, set the 'pact_do_not_track' system property or environment
+variable to 'true'.

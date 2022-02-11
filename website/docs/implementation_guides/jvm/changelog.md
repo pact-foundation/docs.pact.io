@@ -4,6 +4,329 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.5 - Bugfix Release
+
+* 8bc5d6818 - update changelog for release 4.2.20 (Ronald Holshausen, Thu Feb 10 11:14:10 2022 +1100)
+* 4bc07519d - update changelog for release 4.1.34 (Ronald Holshausen, Wed Feb 9 17:26:03 2022 +1100)
+* e3651f62d - fix(Gradle): Authentication needs to be propagated when using fromPactBroker #1483 (Ronald Holshausen, Wed Feb 9 17:07:19 2022 +1100)
+* 1ac516838 - fix(Gradle): Cannot connect to authenticated broker with token when verifying #1483 (Ronald Holshausen, Wed Feb 9 15:28:00 2022 +1100)
+* 4e257276d - fix(canIDeploy): Plus signs in version numbers not correctly escaped #1511 (Ronald Holshausen, Wed Feb 9 11:26:48 2022 +1100)
+
+## 4.3.4 - Support branches when publishing Pacts
+
+* 048fc2a73 - update changelog for release 4.2.19 (Ronald Holshausen, Wed Jan 12 15:33:45 2022 +1100)
+* 101b34ecb - update changelog for release 4.1.33 (Ronald Holshausen, Wed Jan 12 14:32:22 2022 +1100)
+* 0b41e1791 - feat: Update readmes on setting branches when publishing #1453 (Ronald Holshausen, Wed Jan 12 14:09:50 2022 +1100)
+* c95d2159c - feat: Update Maven publish task to support branches #1453 (Ronald Holshausen, Wed Jan 12 13:40:58 2022 +1100)
+* d9cffbf52 - feat: Update Gradle publish task to support branches #1453 (Ronald Holshausen, Wed Jan 12 12:53:03 2022 +1100)
+* a84070d02 - feat: Add pact tests for "all in one" endpoint to publish pacts #1452 (Ronald Holshausen, Tue Jan 11 16:46:58 2022 +1100)
+* 8a6adde2a - feat: Use "all in one" endpoint to publish pacts #1452 (Ronald Holshausen, Tue Jan 11 15:28:24 2022 +1100)
+* 0ef2bafdc - feat: Adding custom information to generated pact json file #400 (Ronald Holshausen, Tue Jan 11 12:27:42 2022 +1100)
+* f3c0ba185 - Adding support for Kafka Schema Registry JSON messages. Do not store magic bytes in broker:   - use the content-type to add them to messages for Consumer Tests   - remove first 5 bytes from provider tests before parsing as JSON (Andy Muir, Mon Jan 10 12:23:05 2022 +0000)
+* 21fe703ed - feat: Add support for PactLoader path value expressions (Francisco González Ibáñez, Sun Jan 9 11:50:44 2022 +0100)
+* db13adf64 - update changelog for release 4.2.18 (Ronald Holshausen, Thu Jan 6 11:54:12 2022 +1100)
+* da695682b - update changelog for release 4.1.32 (Ronald Holshausen, Thu Jan 6 11:22:42 2022 +1100)
+* 0fb473089 - fix(metrics): swap uid for cid (Ronald Holshausen, Thu Jan 6 10:22:39 2022 +1100)
+* a425672b3 - fix(metrics): swap uid for cid (Ronald Holshausen, Thu Jan 6 10:22:39 2022 +1100)
+* f7860e371 - Adding support for Kafka Schema Registry JSON messages. Utilise the Content-Type to indicate KSR messages. Deal with the 5 "magic" bytes at the start of the JSON. (Andy Muir, Tue Jan 4 16:47:03 2022 +0000)
+* 00aa12a74 - fix: add required event value to analytics call (Ronald Holshausen, Fri Dec 10 10:56:22 2021 +1100)
+* f907e0c6e - fix: add required event value to analytics call (Ronald Holshausen, Fri Dec 10 10:56:22 2021 +1100)
+* 3929424e9 - update changelog for release 4.1.31 (Ronald Holshausen, Thu Dec 9 17:05:30 2021 +1100)
+* 5f9d4c9c2 - fix: Metrics payload needs to be a classic FORM post (Ronald Holshausen, Thu Dec 9 16:19:02 2021 +1100)
+* a768a49d0 - update changelog for release 4.2.17 (Ronald Holshausen, Thu Dec 9 16:35:32 2021 +1100)
+* 27c150caa - fix: Metrics payload needs to be a classic FORM post (Ronald Holshausen, Thu Dec 9 16:19:02 2021 +1100)
+
+## 4.2.20 - Bugfix Release
+
+* 4bc07519d - update changelog for release 4.1.34 (Ronald Holshausen, Wed Feb 9 17:26:03 2022 +1100)
+* e3651f62d - fix(Gradle): Authentication needs to be propagated when using fromPactBroker #1483 (Ronald Holshausen, Wed Feb 9 17:07:19 2022 +1100)
+* 1ac516838 - fix(Gradle): Cannot connect to authenticated broker with token when verifying #1483 (Ronald Holshausen, Wed Feb 9 15:28:00 2022 +1100)
+* 4e257276d - fix(canIDeploy): Plus signs in version numbers not correctly escaped #1511 (Ronald Holshausen, Wed Feb 9 11:26:48 2022 +1100)
+
+## 4.1.34 - Bugfix Release
+
+* e3651f62d - fix(Gradle): Authentication needs to be propagated when using fromPactBroker #1483 (Ronald Holshausen, Wed Feb 9 17:07:19 2022 +1100)
+* 1ac516838 - fix(Gradle): Cannot connect to authenticated broker with token when verifying #1483 (Ronald Holshausen, Wed Feb 9 15:28:00 2022 +1100)
+* 4e257276d - fix(canIDeploy): Plus signs in version numbers not correctly escaped #1511 (Ronald Holshausen, Wed Feb 9 11:26:48 2022 +1100)
+
+## 4.2.19 - Support branches when publishing Pacts
+
+* 101b34ecb - update changelog for release 4.1.33 (Ronald Holshausen, Wed Jan 12 14:32:22 2022 +1100)
+* 0b41e1791 - feat: Update readmes on setting branches when publishing #1453 (Ronald Holshausen, Wed Jan 12 14:09:50 2022 +1100)
+* c95d2159c - feat: Update Maven publish task to support branches #1453 (Ronald Holshausen, Wed Jan 12 13:40:58 2022 +1100)
+* d9cffbf52 - feat: Update Gradle publish task to support branches #1453 (Ronald Holshausen, Wed Jan 12 12:53:03 2022 +1100)
+* a84070d02 - feat: Add pact tests for "all in one" endpoint to publish pacts #1452 (Ronald Holshausen, Tue Jan 11 16:46:58 2022 +1100)
+* 8a6adde2a - feat: Use "all in one" endpoint to publish pacts #1452 (Ronald Holshausen, Tue Jan 11 15:28:24 2022 +1100)
+* da695682b - update changelog for release 4.1.32 (Ronald Holshausen, Thu Jan 6 11:22:42 2022 +1100)
+* 0fb473089 - fix(metrics): swap uid for cid (Ronald Holshausen, Thu Jan 6 10:22:39 2022 +1100)
+* 00aa12a74 - fix: add required event value to analytics call (Ronald Holshausen, Fri Dec 10 10:56:22 2021 +1100)
+* 3929424e9 - update changelog for release 4.1.31 (Ronald Holshausen, Thu Dec 9 17:05:30 2021 +1100)
+* 5f9d4c9c2 - fix: Metrics payload needs to be a classic FORM post (Ronald Holshausen, Thu Dec 9 16:19:02 2021 +1100)
+
+## 4.1.33 - Support branches when publishing Pacts
+
+* 0b41e1791 - feat: Update readmes on setting branches when publishing #1453 (Ronald Holshausen, Wed Jan 12 14:09:50 2022 +1100)
+* c95d2159c - feat: Update Maven publish task to support branches #1453 (Ronald Holshausen, Wed Jan 12 13:40:58 2022 +1100)
+* d9cffbf52 - feat: Update Gradle publish task to support branches #1453 (Ronald Holshausen, Wed Jan 12 12:53:03 2022 +1100)
+* a84070d02 - feat: Add pact tests for "all in one" endpoint to publish pacts #1452 (Ronald Holshausen, Tue Jan 11 16:46:58 2022 +1100)
+* 8a6adde2a - feat: Use "all in one" endpoint to publish pacts #1452 (Ronald Holshausen, Tue Jan 11 15:28:24 2022 +1100)
+
+## 4.1.32 - Fix Analytics
+
+* 0fb473089 - fix(metrics): swap uid for cid (Ronald Holshausen, Thu Jan 6 10:22:39 2022 +1100)
+* 00aa12a74 - fix: add required event value to analytics call (Ronald Holshausen, Fri Dec 10 10:56:22 2021 +1100)
+
+## 4.1.31 - Bugfix Release
+
+* 5f9d4c9c2 - fix: Metrics payload needs to be a classic FORM post (Ronald Holshausen, Thu Dec 9 16:19:02 2021 +1100)
+
+## 4.2.18 - Fix Analytics
+
+* a425672b3 - fix(metrics): swap uid for cid (Ronald Holshausen, Thu Jan 6 10:22:39 2022 +1100)
+* f907e0c6e - fix: add required event value to analytics call (Ronald Holshausen, Fri Dec 10 10:56:22 2021 +1100)
+
+## 4.2.17 - Bugfix Release
+
+* 27c150caa - fix: Metrics payload needs to be a classic FORM post (Ronald Holshausen, Thu Dec 9 16:19:02 2021 +1100)
+
+## 4.3.3 - Bugfix Release
+
+* f1b629ca1 - fix(metrics): swap uid for cid (Ronald Holshausen, Thu Jan 6 10:22:39 2022 +1100)
+* aadeab41f - Clarify that this plugin is not just for verification; some refinements on pact publishing. (David Van Couvering, Tue Jan 4 17:02:31 2022 -0800)
+* cabd4d28f - fix: use system default parameters on basic-auth (Constantin, Sun Dec 12 17:56:36 2021 +0100)
+* 07014df04 - fix: upgrade to latest plugin driver lib with corrected metrics call (Ronald Holshausen, Fri Dec 10 13:11:30 2021 +1100)
+* c685cfa6d - fix: add required event value to analytics call (Ronald Holshausen, Fri Dec 10 10:56:22 2021 +1100)
+
+## 4.3.2 - Bugfix Release
+
+* c84c65d6c - fix: Metrics payload needs to be a classic FORM post (Ronald Holshausen, Thu Dec 9 15:03:41 2021 +1100)
+* 124d8049e - update changelog for release 4.2.16 (Ronald Holshausen, Thu Dec 9 12:38:23 2021 +1100)
+* ee0571a8c - update changelog for release 4.1.30 (Ronald Holshausen, Wed Dec 8 16:26:40 2021 +1100)
+* 920a4d31f - feat: Specify buildUrl with system property pact.verifier.buildUrl (Michael Bannister, Mon Dec 6 08:50:37 2021 +0000)
+* 92e44a556 - feat: Specify buildUrl with system property pact.verifier.buildUrl (Michael Bannister, Mon Dec 6 08:50:37 2021 +0000)
+* 7a9cae31b - fix(junit): correctly merge success results with error results with JUnit verification tests  #1274 (Ronald Holshausen, Tue Dec 7 14:29:21 2021 +1100)
+* ed72f1c07 - update changelog for release 4.2.15 (Ronald Holshausen, Fri Nov 12 13:56:19 2021 +1100)
+* 3cc941961 - feat: Allow creating both the provider branch and tags when publishing results (Radek Koubsky, Thu Nov 11 13:16:45 2021 +0100)
+* 6c93f5bcc - feat: Publish verification results with provider branch (Radek Koubsky, Tue Nov 9 16:39:45 2021 +0100)
+* 5a7d1bab9 - feat: Add WebTestClient as a test target. (Wai kon Tse, Fri Oct 29 15:04:10 2021 +0200)
+* ce6980b9d - feat: Add support for configuring consumer version selectors from cli as raw json (Radek Koubsky, Mon Oct 25 16:48:18 2021 +0200)
+* 74da6cfd2 - update changelog for release 4.1.29 (Ronald Holshausen, Fri Nov 12 12:51:19 2021 +1100)
+* 78c5af5a5 - feat: Allow creating both the provider branch and tags when publishing results (Radek Koubsky, Thu Nov 11 13:16:45 2021 +0100)
+* d8d55cffb - feat: Publish verification results with provider branch (Radek Koubsky, Tue Nov 9 16:39:45 2021 +0100)
+* 53ebdcc50 - feat: Add support for configuring consumer version selectors from cli as raw json (Radek Koubsky, Mon Oct 25 16:48:18 2021 +0200)
+* 1f213498e - Upgrade commons-io linked to https://www.cvedetails.com/cve/CVE-2021-29425/ (mikrethor, Tue Oct 12 14:14:13 2021 -0400)
+* 1a1c5af95 - test(PactBrokerClient): Update test for when include pending pacts is set to false (Timothy Jones, Thu Sep 30 11:30:40 2021 +1000)
+* bb0b18bd0 - fix(PactBrokerClient): Send `includePendingStatus=false` when enablePending is set to false (Timothy Jones, Thu Sep 30 10:47:32 2021 +1000)
+* e8726c5d5 - fix: PactCanIDeployTask needs to have internal fields maked @Internal for Gradle 7 #1430 (Ronald Holshausen, Sat Sep 18 12:20:55 2021 +1000)
+* eb3e1e69d - Adding support for @DefaultResponseValues/@DefaultRequestValues to work in combination with @PactVerifications, previously only single @PactVerification was supported (Alexei, Wed May 5 21:58:33 2021 -0400)
+
+## 4.2.16 - Bugfix Release
+
+* ee0571a8c - update changelog for release 4.1.30 (Ronald Holshausen, Wed Dec 8 16:26:40 2021 +1100)
+* 920a4d31f - feat: Specify buildUrl with system property pact.verifier.buildUrl (Michael Bannister, Mon Dec 6 08:50:37 2021 +0000)
+* 7a9cae31b - fix(junit): correctly merge success results with error results with JUnit verification tests  #1274 (Ronald Holshausen, Tue Dec 7 14:29:21 2021 +1100)
+* 74da6cfd2 - update changelog for release 4.1.29 (Ronald Holshausen, Fri Nov 12 12:51:19 2021 +1100)
+* 78c5af5a5 - feat: Allow creating both the provider branch and tags when publishing results (Radek Koubsky, Thu Nov 11 13:16:45 2021 +0100)
+* d8d55cffb - feat: Publish verification results with provider branch (Radek Koubsky, Tue Nov 9 16:39:45 2021 +0100)
+* 53ebdcc50 - feat: Add support for configuring consumer version selectors from cli as raw json (Radek Koubsky, Mon Oct 25 16:48:18 2021 +0200)
+* 1f213498e - Upgrade commons-io linked to https://www.cvedetails.com/cve/CVE-2021-29425/ (mikrethor, Tue Oct 12 14:14:13 2021 -0400)
+* 1a1c5af95 - test(PactBrokerClient): Update test for when include pending pacts is set to false (Timothy Jones, Thu Sep 30 11:30:40 2021 +1000)
+* bb0b18bd0 - fix(PactBrokerClient): Send `includePendingStatus=false` when enablePending is set to false (Timothy Jones, Thu Sep 30 10:47:32 2021 +1000)
+
+## 4.1.30 - Bugfix Release
+
+* 920a4d31f - feat: Specify buildUrl with system property pact.verifier.buildUrl (Michael Bannister, Mon Dec 6 08:50:37 2021 +0000)
+* 7a9cae31b - fix(junit): correctly merge success results with error results with JUnit verification tests  #1274 (Ronald Holshausen, Tue Dec 7 14:29:21 2021 +1100)
+
+## 4.1.29 - Fixes backported from master
+
+* 78c5af5a5 - feat: Allow creating both the provider branch and tags when publishing results (Radek Koubsky, Thu Nov 11 13:16:45 2021 +0100)
+* d8d55cffb - feat: Publish verification results with provider branch (Radek Koubsky, Tue Nov 9 16:39:45 2021 +0100)
+* 53ebdcc50 - feat: Add support for configuring consumer version selectors from cli as raw json (Radek Koubsky, Mon Oct 25 16:48:18 2021 +0200)
+* 1f213498e - Upgrade commons-io linked to https://www.cvedetails.com/cve/CVE-2021-29425/ (mikrethor, Tue Oct 12 14:14:13 2021 -0400)
+* 1a1c5af95 - test(PactBrokerClient): Update test for when include pending pacts is set to false (Timothy Jones, Thu Sep 30 11:30:40 2021 +1000)
+* bb0b18bd0 - fix(PactBrokerClient): Send `includePendingStatus=false` when enablePending is set to false (Timothy Jones, Thu Sep 30 10:47:32 2021 +1000)
+* 96521e3a2 - fix: codenarc violation #1449 (Ronald Holshausen, Wed Sep 29 09:13:23 2021 +1000)
+* bcc1d12c0 - fix: correct the pact source description when using the URL option #1449 (Ronald Holshausen, Wed Sep 29 09:01:21 2021 +1000)
+
+## 4.2.15 - Back-ported fixes from master
+
+* 3cc941961 - feat: Allow creating both the provider branch and tags when publishing results (Radek Koubsky, Thu Nov 11 13:16:45 2021 +0100)
+* 6c93f5bcc - feat: Publish verification results with provider branch (Radek Koubsky, Tue Nov 9 16:39:45 2021 +0100)
+* 5a7d1bab9 - feat: Add WebTestClient as a test target. (Wai kon Tse, Fri Oct 29 15:04:10 2021 +0200)
+* ce6980b9d - feat: Add support for configuring consumer version selectors from cli as raw json (Radek Koubsky, Mon Oct 25 16:48:18 2021 +0200)
+* 5fcadf9ce - Upgrade commons-io linked to https://www.cvedetails.com/cve/CVE-2021-29425/ (mikrethor, Tue Oct 12 14:14:13 2021 -0400)
+* e8726c5d5 - fix: PactCanIDeployTask needs to have internal fields maked @Internal for Gradle 7 #1430 (Ronald Holshausen, Sat Sep 18 12:20:55 2021 +1000)
+* eb3e1e69d - Adding support for @DefaultResponseValues/@DefaultRequestValues to work in combination with @PactVerifications, previously only single @PactVerification was supported (Alexei, Wed May 5 21:58:33 2021 -0400)
+
+## 4.3.1 - Fix regressions in JUnit support
+
+* 0950730a5 - fix: support HttpRequest in JUnit 5 tests #1481 (Ronald Holshausen, Wed Nov 17 09:09:13 2021 +1100)
+* 6be794691 - Use MessageInteraction instead of Message in MessageTestTarget (Jere Teittinen, Mon Nov 15 13:17:13 2021 +0200)
+
+## 4.3.0 - Bugfix Release
+
+* a01f9c379 - feat: Allow creating both the provider branch and tags when publishing results (Radek Koubsky, Thu Nov 11 13:16:45 2021 +0100)
+* e9f9b0d8c - feat: Publish verification results with provider branch (Radek Koubsky, Tue Nov 9 16:39:45 2021 +0100)
+* 4012acd13 - feat: Add WebTestClient as a test target. (Wai kon Tse, Fri Oct 29 15:04:10 2021 +0200)
+* 93dd5e78e - fix: capture the interaction markdown from the plugins (after reverting prev commit) (Ronald Holshausen, Thu Oct 28 14:47:40 2021 +1100)
+* 2d0ab3e10 - feat: Add support for configuring consumer version selectors from cli as raw json (Radek Koubsky, Mon Oct 25 16:48:18 2021 +0200)
+* 39fa134df - fix: capture the interaction markdown from the plugins (Ronald Holshausen, Tue Oct 26 16:38:18 2021 +1100)
+* 54df7cf6a - feat(plugins): Update the provider readmes with verifying pacts with plugins (Ronald Holshausen, Thu Oct 21 16:53:03 2021 +1100)
+* 66e286418 - feat(plugins): Update JUnit 5 readme with using plugin details (Ronald Holshausen, Thu Oct 21 16:45:30 2021 +1100)
+* 22db44032 - feat(V4): Add support V4 sync message tests with JUnit 5 (Ronald Holshausen, Thu Oct 21 16:23:36 2021 +1100)
+* ce69e1208 - feat(V4): Update V4 async message test (Ronald Holshausen, Thu Oct 21 14:37:12 2021 +1100)
+* 5fcadf9ce - Upgrade commons-io linked to https://www.cvedetails.com/cve/CVE-2021-29425/ (mikrethor, Tue Oct 12 14:14:13 2021 -0400)
+
+
+
+## 4.3.0-beta.5 - Support using synchrounous messages with JUnit 5 (Protobuf plugin)
+
+* 23df6e53b - feat(plugins): Support V4 synchrounous messages in JUnit 5 tests (Ronald Holshausen, Mon Oct 11 09:11:37 2021 +1100)
+* cc9a183b1 - fix: notEmpty matching rule defintion should be applied to any primitive value (Ronald Holshausen, Thu Oct 7 14:01:59 2021 +1100)
+* 591eb35ce - fix: notEmpty matching rule defintion should be applied to any primitive value (Ronald Holshausen, Thu Oct 7 13:50:08 2021 +1100)
+
+## 4.3.0-beta.4 - Fixes from master + updated matching rule expressions and plugin support
+
+* 528891df4 - update changelog for release 4.2.14 (Ronald Holshausen, Tue Oct 5 10:20:29 2021 +1100)
+* d86e79d16 - fix: broken spec after merging #1455 (Ronald Holshausen, Tue Oct 5 10:08:10 2021 +1100)
+* 25be84f20 - feat: add support for @TestTarget annotation for junit tests written in scala (piotr.sliwa, Mon Oct 4 22:34:04 2021 +0200)
+* 44af3fd14 - feat(plugins): support matching lists and maps via plugin (Ronald Holshausen, Thu Sep 30 16:14:42 2021 +1000)
+* 51132ca5d - fix: Content type matcher was detecting JSON as text/plain (Ronald Holshausen, Thu Sep 30 11:47:57 2021 +1000)
+* 861001505 - test(PactBrokerClient): Update test for when include pending pacts is set to false (Timothy Jones, Thu Sep 30 11:30:40 2021 +1000)
+* 349231d8f - fix(PactBrokerClient): Send `includePendingStatus=false` when enablePending is set to false (Timothy Jones, Thu Sep 30 10:47:32 2021 +1000)
+* 96521e3a2 - fix: codenarc violation #1449 (Ronald Holshausen, Wed Sep 29 09:13:23 2021 +1000)
+* bcc1d12c0 - fix: correct the pact source description when using the URL option #1449 (Ronald Holshausen, Wed Sep 29 09:01:21 2021 +1000)
+* 51a72f2e0 - update changelog for release 4.2.13 (Ronald Holshausen, Mon Sep 27 16:52:34 2021 +1000)
+* 085c12735 - update changelog for release 4.1.28 (Ronald Holshausen, Mon Sep 27 16:21:44 2021 +1000)
+* 70ebaa38f - fix: org.apache.httpcomponents:httpmime needs to be defined as api for consumer lib #1446 (Ronald Holshausen, Mon Sep 27 16:04:51 2021 +1000)
+* e1afb3415 - fix: build after merge from v4.1.x (Ronald Holshausen, Mon Sep 27 16:03:55 2021 +1000)
+* 6bd425fe9 - feat: update readme with ignore options #1444 (Ronald Holshausen, Mon Sep 27 15:51:16 2021 +1000)
+* b9dfa76dd - feat: support setting can-i-deploy ignore values using -D command line #1444 (Ronald Holshausen, Mon Sep 27 15:33:41 2021 +1000)
+* e21f0f05f - feat: add ignore parameter to Maven can-i-deploy mojo #1444 (Ronald Holshausen, Mon Sep 27 14:23:49 2021 +1000)
+* 7c556ea51 - fix: support specifying both tags and consumers as system property list expressions #1447 (Ronald Holshausen, Fri Sep 24 12:53:27 2021 +1000)
+* abebb3aea - fix: matching rule definition INTEGER_LITERAL was associated with the wrong type (Ronald Holshausen, Fri Sep 24 11:26:44 2021 +1000)
+* 02265ad2c - feat(plugins): support references and type inference in matching expressions (Ronald Holshausen, Wed Sep 22 09:59:41 2021 +1000)
+* 6ad3d2b28 - update changelog for release 4.2.12 (Ronald Holshausen, Sun Sep 19 11:59:22 2021 +1000)
+* 37e73ce67 - update changelog for release 4.1.27 (Ronald Holshausen, Sun Sep 19 11:22:18 2021 +1000)
+* 757903466 - feat: add support for non-file parts in the multipart requests (krzysztofmochocki, Sat Sep 18 11:17:47 2021 +0200)
+* 3777d5528 - feat: add support of multiple parts in multipart request (krzysztofmochocki, Sat Sep 18 10:43:28 2021 +0200)
+* 066c5adb1 - fix: PactDslRootValue should return the value as a String, not JSON (Ronald Holshausen, Sat Sep 18 15:06:26 2021 +1000)
+* c2fd9f4d9 - feat: set accessible flag when calling test methods in case the class/method is not public #1431 (Ronald Holshausen, Sat Sep 18 11:56:21 2021 +1000)
+* 0da313082 - feat(plugins): namespace the pact attributes send to plugins + added each key and each value matchers (Ronald Holshausen, Sat Sep 18 11:29:45 2021 +1000)
+* 23155bf80 - feat(plugins): Updated matching rule definitions to include notEmpty and contentType (Ronald Holshausen, Wed Sep 15 12:30:41 2021 +1000)
+* b75661fb0 - fix: resolve Windows build problem when using Maven>=3.3.3 (Marvin Kienitz, Tue Sep 14 17:07:02 2021 +0200)
+* c04aab5a4 - feat: add and refactor handling for 404 responses in Maven plugin (Marvin Kienitz, Tue Sep 14 16:24:24 2021 +0200)
+* 71b46661b - refactor(plugins): rename ContentTypeOverride -> ContentTypeHint (Ronald Holshausen, Tue Sep 14 14:57:39 2021 +1000)
+
+## 4.2.14 - enablePending + scala support
+
+* d86e79d16 - fix: broken spec after merging #1455 (Ronald Holshausen, Tue Oct 5 10:08:10 2021 +1100)
+* 25be84f20 - feat: add support for @TestTarget annotation for junit tests written in scala (piotr.sliwa, Mon Oct 4 22:34:04 2021 +0200)
+* 861001505 - test(PactBrokerClient): Update test for when include pending pacts is set to false (Timothy Jones, Thu Sep 30 11:30:40 2021 +1000)
+* 349231d8f - fix(PactBrokerClient): Send `includePendingStatus=false` when enablePending is set to false (Timothy Jones, Thu Sep 30 10:47:32 2021 +1000)
+* 96521e3a2 - fix: codenarc violation #1449 (Ronald Holshausen, Wed Sep 29 09:13:23 2021 +1000)
+* bcc1d12c0 - fix: correct the pact source description when using the URL option #1449 (Ronald Holshausen, Wed Sep 29 09:01:21 2021 +1000)
+* 085c12735 - update changelog for release 4.1.28 (Ronald Holshausen, Mon Sep 27 16:21:44 2021 +1000)
+
+## 4.2.13 - Bugfix + add ignore parameter to Maven can-i-deploy task
+
+* 70ebaa38f - fix: org.apache.httpcomponents:httpmime needs to be defined as api for consumer lib #1446 (Ronald Holshausen, Mon Sep 27 16:04:51 2021 +1000)
+* e1afb3415 - fix: build after merge from v4.1.x (Ronald Holshausen, Mon Sep 27 16:03:55 2021 +1000)
+* 6bd425fe9 - feat: update readme with ignore options #1444 (Ronald Holshausen, Mon Sep 27 15:51:16 2021 +1000)
+* b9dfa76dd - feat: support setting can-i-deploy ignore values using -D command line #1444 (Ronald Holshausen, Mon Sep 27 15:33:41 2021 +1000)
+* e21f0f05f - feat: add ignore parameter to Maven can-i-deploy mojo #1444 (Ronald Holshausen, Mon Sep 27 14:23:49 2021 +1000)
+* 7c556ea51 - fix: support specifying both tags and consumers as system property list expressions #1447 (Ronald Holshausen, Fri Sep 24 12:53:27 2021 +1000)
+
+## 4.2.12 - Maintenance release + support of multiple parts in multipart request
+
+* 37e73ce67 - update changelog for release 4.1.27 (Ronald Holshausen, Sun Sep 19 11:22:18 2021 +1000)
+* 757903466 - feat: add support for non-file parts in the multipart requests (krzysztofmochocki, Sat Sep 18 11:17:47 2021 +0200)
+* 3777d5528 - feat: add support of multiple parts in multipart request (krzysztofmochocki, Sat Sep 18 10:43:28 2021 +0200)
+* 066c5adb1 - fix: PactDslRootValue should return the value as a String, not JSON (Ronald Holshausen, Sat Sep 18 15:06:26 2021 +1000)
+* c2fd9f4d9 - feat: set accessible flag when calling test methods in case the class/method is not public #1431 (Ronald Holshausen, Sat Sep 18 11:56:21 2021 +1000)
+* b75661fb0 - fix: resolve Windows build problem when using Maven>=3.3.3 (Marvin Kienitz, Tue Sep 14 17:07:02 2021 +0200)
+* c04aab5a4 - feat: add and refactor handling for 404 responses in Maven plugin (Marvin Kienitz, Tue Sep 14 16:24:24 2021 +0200)
+
+## 4.1.28 - add ignore parameter to Maven can-i-deploy
+
+* 6bd425fe9 - feat: update readme with ignore options #1444 (Ronald Holshausen, Mon Sep 27 15:51:16 2021 +1000)
+* b9dfa76dd - feat: support setting can-i-deploy ignore values using -D command line #1444 (Ronald Holshausen, Mon Sep 27 15:33:41 2021 +1000)
+* e21f0f05f - feat: add ignore parameter to Maven can-i-deploy mojo #1444 (Ronald Holshausen, Mon Sep 27 14:23:49 2021 +1000)
+
+## 4.1.27 - Maintenance release + support of multiple parts in multipart request
+
+* 757903466 - feat: add support for non-file parts in the multipart requests (krzysztofmochocki, Sat Sep 18 11:17:47 2021 +0200)
+* 3777d5528 - feat: add support of multiple parts in multipart request (krzysztofmochocki, Sat Sep 18 10:43:28 2021 +0200)
+* c2fd9f4d9 - feat: set accessible flag when calling test methods in case the class/method is not public #1431 (Ronald Holshausen, Sat Sep 18 11:56:21 2021 +1000)
+
+## 4.3.0-beta.3 - Support interaction markup from plugins
+
+* d398eedac - feat(plugins): make interaction markup type explicit (Ronald Holshausen, Thu Sep 9 11:22:32 2021 +1000)
+* bc66c13f2 - feat(Plugins): store plugin config and interaction markup in pact interaction (Ronald Holshausen, Wed Sep 8 16:38:26 2021 +1000)
+
+## 4.3.0-beta.2 - Support plugin data in pact files + fixes from master
+
+* 52847d8d7 - update changelog for release 4.2.11 (Ronald Holshausen, Sat Sep 4 15:24:14 2021 +1000)
+* 005d3a715 - update changelog for release 4.1.26 (Ronald Holshausen, Sat Sep 4 14:18:01 2021 +1000)
+* 8ef861125 - feat: force standalone="yes" when standalone is set to true on the XML builder #1414 (Ronald Holshausen, Sat Sep 4 13:02:14 2021 +1000)
+* 3c752cd1c - fix: allow Gradle providerTags to be an array #1423 (Ronald Holshausen, Sat Sep 4 12:52:36 2021 +1000)
+* c340d9c84 - fix: generators with empty categories should be considered empty (Ronald Holshausen, Thu Sep 2 16:44:16 2021 +1000)
+* d2d45c3ff - fix: when merging interactions into a V4 Pact, update the keys (Ronald Holshausen, Thu Sep 2 16:43:37 2021 +1000)
+* cb45b089b - fix: V4 pacts do not mutate themselves when merging interactions (Ronald Holshausen, Thu Sep 2 15:59:38 2021 +1000)
+* 06b97b6e7 - fix: semver matcher was throwing a different exception (Ronald Holshausen, Thu Sep 2 11:53:39 2021 +1000)
+* b105af2c6 - feat(plugins): Store the plugin config in the Pact file (Ronald Holshausen, Mon Aug 30 16:26:20 2021 +1000)
+* 4ff279e40 - feat(V4): support injecting V4 interactions into a JUnit 5 test (Ronald Holshausen, Mon Aug 30 12:00:27 2021 +1000)
+* d4751bea6 - feat(Maven): Add the ability to dynamically set the provider host/port from an expression #1412 (Ronald Holshausen, Sun Aug 29 12:02:49 2021 +1000)
+* d8bb675ce - feat: add handling for 404 responses in Maven plugin #1419 (Marvin Kienitz, Mon Aug 23 15:20:31 2021 +0200)
+* e72c68c4d - feat(plugins): support message tests with plugins (Ronald Holshausen, Sat Aug 28 13:52:06 2021 +1000)
+* 5df1731ff - feat(plugins): added matcher definition parser (Ronald Holshausen, Thu Aug 26 13:57:48 2021 +1000)
+* d1d33cd15 - Correcting definition for arrayMinLike. (darshna, Tue Aug 24 12:30:16 2021 +0530)
+* 04d911779 - fix: Illegal cast of au.com.dius.pact.core.support.Auth to List&lt;String&gt; #1422 (Ronald Holshausen, Tue Aug 24 11:39:38 2021 +1000)
+* a7d66d873 - feat: add handling for 404 responses in Maven plugin #1419 (Marvin Kienitz, Mon Aug 23 15:20:31 2021 +0200)
+* 5d50ae618 - update changelog for release 4.2.10 (Ronald Holshausen, Sun Aug 22 18:49:25 2021 +1000)
+* 8f84d2b8d - update changelog for release 4.1.25 (Ronald Holshausen, Sun Aug 22 18:04:44 2021 +1000)
+* 603b61266 - feat: add the authentication options to PactBrokerOptions #1415 (Ronald Holshausen, Sun Aug 22 17:21:06 2021 +1000)
+* b44e8d4be - feat: add method to ProviderInfo with better type safety #1415 (Ronald Holshausen, Sat Aug 21 15:43:50 2021 +1000)
+* 4db1f837f - feat: add standalone setting to the XML builder #1414 (Ronald Holshausen, Sat Aug 21 14:51:13 2021 +1000)
+* af9f4948d - feat: add support for verification type RESPONSE_FACTORY. Fixes #1379 (Kyle Florence, Sat Aug 7 20:42:12 2021 -0500)
+
+## 4.2.11 - Bugfix Release
+
+* 005d3a715 - update changelog for release 4.1.26 (Ronald Holshausen, Sat Sep 4 14:18:01 2021 +1000)
+* 8ef861125 - feat: force standalone="yes" when standalone is set to true on the XML builder #1414 (Ronald Holshausen, Sat Sep 4 13:02:14 2021 +1000)
+* 3c752cd1c - fix: allow Gradle providerTags to be an array #1423 (Ronald Holshausen, Sat Sep 4 12:52:36 2021 +1000)
+* d4751bea6 - feat(Maven): Add the ability to dynamically set the provider host/port from an expression #1412 (Ronald Holshausen, Sun Aug 29 12:02:49 2021 +1000)
+* d8bb675ce - feat: add handling for 404 responses in Maven plugin #1419 (Marvin Kienitz, Mon Aug 23 15:20:31 2021 +0200)
+* d1d33cd15 - Correcting definition for arrayMinLike. (darshna, Tue Aug 24 12:30:16 2021 +0530)
+* 04d911779 - fix: Illegal cast of au.com.dius.pact.core.support.Auth to List&lt;String&gt; #1422 (Ronald Holshausen, Tue Aug 24 11:39:38 2021 +1000)
+* a7d66d873 - feat: add handling for 404 responses in Maven plugin #1419 (Marvin Kienitz, Mon Aug 23 15:20:31 2021 +0200)
+
+## 4.1.26 - Bugfix Release
+
+* 8ef861125 - feat: force standalone="yes" when standalone is set to true on the XML builder #1414 (Ronald Holshausen, Sat Sep 4 13:02:14 2021 +1000)
+* 3c752cd1c - fix: allow Gradle providerTags to be an array #1423 (Ronald Holshausen, Sat Sep 4 12:52:36 2021 +1000)
+* d8bb675ce - feat: add handling for 404 responses in Maven plugin #1419 (Marvin Kienitz, Mon Aug 23 15:20:31 2021 +0200)
+* 04d911779 - fix: Illegal cast of au.com.dius.pact.core.support.Auth to List&lt;String&gt; #1422 (Ronald Holshausen, Tue Aug 24 11:39:38 2021 +1000)
+
+## 4.3.0-beta.1 - Updated plugin driver + fixes from master
+
+* 59493c370 - feat: add support for verification type RESPONSE_FACTORY. Fixes #1379 (Kyle Florence, Sat Aug 7 20:42:12 2021 -0500)
+* 013df5fc7 - feat(plugins): Support matching request bodies via plugin (Ronald Holshausen, Mon Aug 16 17:32:58 2021 +1000)
+* cf21bb87f - feat: allow insecure TLS when accessing the broker with Maven #1413 (Ronald Holshausen, Sun Aug 15 16:05:50 2021 +1000)
+* 60a624334 - feat: update the expression markers when loading a pact file if overridden #1410 (Ronald Holshausen, Sun Aug 15 12:33:44 2021 +1000)
+* 837a80176 - feat: restrict expression marker overrides to provider state expressions #1410 (Ronald Holshausen, Sun Aug 15 12:33:00 2021 +1000)
+* e84e19c5e - feat: allow the expression markers in expressions to be overridden #1410 (Ronald Holshausen, Sun Aug 15 11:58:21 2021 +1000)
+
+## 4.3.0-beta.0 - Initial Beta Release
+
+* 2a12a3212 - fix: min/max type matchers must not apply the limits when cascading #396 (Ronald Holshausen, Sun Aug 8 13:29:49 2021 +1000)
+* ad664ed5d - feat(V4): Implemented models for Synchronous Message interactions (Ronald Holshausen, Sat Aug 7 16:10:35 2021 +1000)
+* 0c04aee63 - feat(plugins): support generating content via plugin (Ronald Holshausen, Fri Aug 6 16:39:35 2021 +1000)
+* fa47964c4 - feat(plugins): implemented support for content matchers via plugins (Ronald Holshausen, Thu Aug 5 12:03:22 2021 +1000)
+* 5bac92c96 - feat: support specifying multiple example values in Java DSL #379 (Ronald Holshausen, Sun Aug 1 18:18:07 2021 +1000)
+* c0b176de1 - feat: Introduce PactBuilder DSL class (will be able to apply plugins) (Ronald Holshausen, Wed Jul 28 12:49:14 2021 +1000)
+
 ## 4.2.10 - Bugfix Release
 
 * 8f84d2b8d - update changelog for release 4.1.25 (Ronald Holshausen, Sun Aug 22 18:04:44 2021 +1000)
