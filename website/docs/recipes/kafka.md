@@ -68,13 +68,13 @@ private Deserializer<ConsumerDomainRecord> getProductionKafkaDeserializer() {
 }
 ```
 
-Our test method gets a List of Messages passed in - these are PACT's representation of the message(s) that we defined in the previous step. Each message has space for a byte array and also metadata. We're not going to look much at metadata at this point. 
+Our test method gets a List of Messages passed in - these are Pact's representation of the message(s) that we defined in the previous step. Each message has space for a byte array and also metadata. We're not going to look much at metadata at this point. 
 
-The "useProductionCodeToDeserializeKafkaBytesToDomain" method tries to indicate that we're meant to be using some real production code in our tests. After all, there would be little point if our tests just test themselves. With Kafka, however, this is quite tricky. We need a production object that will take our byte array and process it. With Kafka, we're not so close to the low level action - we typically use "out of the box" classes to do this work for us. A KafkaConsumer will typically return ConsumerRecords<Key,Value> and you can't pass it a byte array! However, it would be configured with the appropriate Deserializers. For normal JSON, we'd configure it with a KafkaJsonDeserializer. Now, those take byte arrays as input. So, here I would suggest that you read your app's configuration, and work our what the class of the deserialiser is, instantiating an instance and returning it. A little tricky, but that's about as close to production code as we're going to get. The "useProductionCodeToDeserializeKafkaBytesToDomain" is a quicker way of doing it for the sake of this demo.
+The `useProductionCodeToDeserializeKafkaBytesToDomain` method tries to indicate that we're meant to be using some real production code in our tests. After all, there would be little point if our tests just test themselves. With Kafka, however, this is quite tricky. We need a production object that will take our byte array and process it. With Kafka, we're not so close to the low level action - we typically use "out of the box" classes to do this work for us. A `KafkaConsumer` will typically return `ConsumerRecords<Key,Value>` and you can't pass it a byte array! However, it would be configured with the appropriate Deserializers. For normal JSON, we'd configure it with a `KafkaJsonDeserializer`. Now, those take byte arrays as input. So, here I would suggest that you read your app's configuration, and work our what the class of the deserialiser is, instantiating an instance and returning it. A little tricky, but that's about as close to production code as we're going to get. The `useProductionCodeToDeserializeKafkaBytesToDomain` is a quicker way of doing it for the sake of this demo.
 
-Having turned out byte array into a custom domain object, what do we do? Well, what would your production application do with it? Call that code and make sure it can process it successfully. We don't need to do all the assertions that "service" tests might be interested in, we just need to be sure that our application understood the input. A simple "assertDoesNotThrow" is likely sufficient.
+Having turned out byte array into a custom domain object, what do we do? Well, what would your production application do with it? Call that code and make sure it can process it successfully. We don't need to do all the assertions that "service" tests might be interested in, we just need to be sure that our application understood the input. A simple `assertDoesNotThrow` is likely sufficient.
 
-Assuming you are using the PACT broker (well, why wouldn't you? Its awesome!), you might want to run and publish the consumer test. This is what it looks like on the PACT broker:
+Assuming you are using the Pact broker (well, why wouldn't you? Its awesome!), you might want to run and publish the consumer test. This is what it looks like on the Pact broker:
 ```
 {
   "consumer": {
@@ -119,7 +119,7 @@ Assuming you are using the PACT broker (well, why wouldn't you? Its awesome!), y
 ```
 
 ## Kafka JSON Provider
-Lets start off by getting our test class in place with the required annotations - its pretty self explanatory, but note the names of the consumer and provider must match what we put in the corresponding consumer test. We'll also add a @BeforeEach which tells PACT we're running Message related tests (rather than HTTP), and implement the @TestTemplate method. Finally, we have a couple of constants that we'll need in the next step:
+Lets start off by getting our test class in place with the required annotations - its pretty self explanatory, but note the names of the consumer and provider must match what we put in the corresponding consumer test. We'll also add a `@BeforeEach` which tells Pact we're running Message related tests (rather than HTTP), and implement the `@TestTemplate` method. Finally, we have a couple of constants that we'll need in the next step:
 ```
 @Provider("jsonKafkaProviderApp")
 @Consumer("jsonKafkaConsumerApp")
@@ -168,4 +168,4 @@ private MessageAndMetadata createPactRepresentationFor(Map<String, Object> metad
 ```
 In a similar fashion to the consumer test, we will need to get hold of a Kafka Serializer, which we should obtain through looking up the configuration of our production code (and again, in this demo, we'll just create an instance for use - make sure you do a better job!). 
 
-The KafkaJsonSerializer will take our domain object and turn it into a byte array. we pass this back to PACT which will compare it to what is held in the PACT broker. If its a match, we're green...
+The `KafkaJsonSerializer` will take our domain object and turn it into a byte array. we pass this back to Pact which will compare it to what is held in the Pact broker. If its a match, we're green...
