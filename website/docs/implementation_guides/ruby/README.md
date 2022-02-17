@@ -1,5 +1,6 @@
 ---
 title: README
+slug: "./readme"
 ---
 
 This getting started guide should help you get off the ground using Pact with Ruby. For more detail or advanced topics, head on over to the [Ruby Pact GitHub repository](https://github.com/pact-foundation/pact-ruby).

@@ -13,7 +13,7 @@ IGNORE = []
 CUSTOM_ACTIONS = [
   [:all, ->(md_file_contents) { md_file_contents.extract_title } ],
   [:all, ->(md_file_contents) { md_file_contents.find_and_replace("```c#", "```csharp") } ],
-  ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README" } ]
+  ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README"; md_file_contents.fields[:slug] = "./readme" } ]
 ]
 
 

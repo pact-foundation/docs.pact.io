@@ -20,7 +20,7 @@ IGNORE = []
 
 CUSTOM_ACTIONS = [
   [->(path) { path != 'CHANGELOG.md'}, ->(md_file_contents) { md_file_contents.extract_title } ],
-  ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README" } ],
+  ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "README"; md_file_contents.fields[:slug] = "./readme" } ],
   ["docs/CONFIGURATION.md", ->(md_file_contents) { md_file_contents.fields[:title] = "Settings" } ],
   ["CHANGELOG.md", -> (md_file_contents) {
     md_file_contents.fields[:title] = "Changelog"

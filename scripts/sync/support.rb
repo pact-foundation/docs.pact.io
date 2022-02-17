@@ -135,7 +135,7 @@ class MarkdownFileContents
   private
 
   def header_lines
-    [:title, :custom_edit_url, :description].collect do | key |
+    [:title, :custom_edit_url, :slug, :description].collect do | key |
       if fields[key]
         "#{key}: #{fields[key]}"
       end
