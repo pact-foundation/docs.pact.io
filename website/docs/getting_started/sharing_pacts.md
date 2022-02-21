@@ -48,7 +48,7 @@ Read the pages in the Pact Broker [quick start guide](/) to get up and running w
 
 You can find all the documentation for the `Pact Broker` in the [Pact Broker wiki](../pact_broker/).
 
-Our sponsor [DiUS](https://www.dius.com.au) has kindly provided a [free hosted broker](https://pact.dius.com.au) to get you started quickly.
+Our sponsor [Pactflow](https://pactflow.io) has kindly provided a [free hosted broker](https://test.pactflow.io) to get you started quickly.
 
 ### Language support
 
@@ -99,7 +99,7 @@ Example publishing with PowerShell:
 $Headers = @{
   Authorization = "Basic $([System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes("dXfltyFMgNOFZAxr8io9wJ37iUpY42M:O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1")))"
 }
-$res = Invoke-WebRequest -Uri "https://test.pact.dius.com.au/pacts/provider/Animal%20Profile%20Service/consumer/Matching%20Service/version/1.0.0" -Headers $Headers -Method Put -InFile .\matching_service-animal_profile_service.json -ContentType "application/json"
+$res = Invoke-WebRequest -Uri "https://test.pactflow.io/pacts/provider/Animal%20Profile%20Service/consumer/Matching%20Service/version/1.0.0" -Headers $Headers -Method Put -InFile .\matching_service-animal_profile_service.json -ContentType "application/json"
 ```
 
 See the [full API](../pact_broker/publishing_and_retrieving_pacts.md).

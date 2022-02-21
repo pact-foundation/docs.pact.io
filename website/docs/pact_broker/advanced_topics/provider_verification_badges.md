@@ -6,12 +6,12 @@ _See the the_ [_Badges_](/pact_broker/configuration/features#badges) _section of
 
 If you are publishing [Provider verification results](provider_verification_results.md) to your Pact Broker \(v2.3.0+\), you can also display the verification status in your READMEs using a shiny badge like this one:
 
-[![Pact Status](https://cdn.rawgit.com/wiki/pact-foundation/pact_broker/images/foo-bar-badge-verified.svg)](https://test.pact.dius.com.au)
+[![Pact Status](https://cdn.rawgit.com/wiki/pact-foundation/pact_broker/images/foo-bar-badge-verified.svg)](https://test.pactflow.io)
 
 
 ## Can I Deploy badge
 
-[![Can I Deploy Status](/img/can-i-deploy-badge.svg)](https://test.pact.dius.com.au)
+[![Can I Deploy Status](/img/can-i-deploy-badge.svg)](https://test.pactflow.io)
 
 Requires version 2.62+ of the Pact Broker.
 
@@ -48,7 +48,7 @@ The markdown to include in your README is as follows:
 For example:
 
 ```text
-[![Foo/Bar Pact Status](https://test.pact.dius.com.au/pacts/provider/Bar/consumer/Foo/latest/badge.svg)](https://test.pact.dius.com.au)
+[![Foo/Bar Pact Status](https://test.pactflow.io/pacts/provider/Bar/consumer/Foo/latest/badge.svg)](https://test.pactflow.io)
 ```
 
 #### With consumer and provider tags
@@ -61,17 +61,17 @@ If you are using tags for both the consumer and provider versions \(this is reco
 
 ### Options
 
-[![Pact Status](https://cdn.rawgit.com/wiki/pact-foundation/pact_broker/images/long-badge.svg)](https://test.pact.dius.com.au)
+[![Pact Status](https://cdn.rawgit.com/wiki/pact-foundation/pact_broker/images/long-badge.svg)](https://test.pactflow.io)
 
 If your consumer and provider name make your badge too long to be aesthetically pleasing, you can shorten it in the following ways.
 
 * Show just the consumer or provider name by adding `?label=consumer` or `?label=provider` to the end of the URL.
 
-  [![Pact Status](https://cdn.rawgit.com/wiki/pact-foundation/pact_broker/images/consumer-badge.svg)](https://test.pact.dius.com.au)
+  [![Pact Status](https://cdn.rawgit.com/wiki/pact-foundation/pact_broker/images/consumer-badge.svg)](https://test.pactflow.io)
 
 * Use the pacticipant's initials by adding `?initials=true`
 
-  [![Pact Status](https://cdn.rawgit.com/wiki/pact-foundation/pact_broker/images/initials-badge.svg)](https://test.pact.dius.com.au)
+  [![Pact Status](https://cdn.rawgit.com/wiki/pact-foundation/pact_broker/images/initials-badge.svg)](https://test.pactflow.io)
 
 * Use both the `label` and the `initials` params to show only the initials of the consumer or provider.
 

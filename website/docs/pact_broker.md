@@ -133,7 +133,7 @@ Use the HAL browser to view documentation as you browse.
 
 #### Hosted
 
-In a hurry? Hate having to run your own infrastructure? Check out the [Hosted Pact Broker](https://pact.dius.com.au/?utm_source=github&utm_campaign=GITHUB_BROKER&utm_medium=github) - it's fast, it's secure and it's free!
+In a hurry? Hate having to run your own infrastructure? Check out the [Hosted Pact Broker](https://pactflow.io/?utm_source=github&utm_campaign=GITHUB_BROKER&utm_medium=github) - it's fast, it's secure and it's free!
 
 #### Container solutions
 

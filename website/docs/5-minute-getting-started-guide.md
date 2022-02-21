@@ -202,7 +202,7 @@ For this purpose, we are going to use a hosted Pact Broker from pactflow.io.
 
 <!-- <iframe style="padding-bottom:20px" frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/docspactio-getting-started-publish?lite=true"></iframe> -->
 
-You can see the published pact [here](https://test.pact.dius.com.au/pacts/provider/GettingStartedOrderApi/consumer/GettingStartedOrderWeb/latest). The Pactflow account is protected using basic auth. Use the username `dXfltyFMgNOFZAxr8io9wJ37iUpY42M`, and password `O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1`.
+You can see the published pact [here](https://test.pactflow.io/pacts/provider/GettingStartedOrderApi/consumer/GettingStartedOrderWeb/latest). The Pactflow account is protected using basic auth. Use the username `dXfltyFMgNOFZAxr8io9wJ37iUpY42M`, and password `O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1`.
 
 After publishing the pact, we can now verify that the Provider meets these expectations.
 
@@ -275,7 +275,7 @@ describe('Pact Verification', () => {
   const opts = {
     provider: providerName,
     providerBaseUrl: `http://localhost:${port}`,
-    pactBrokerUrl: 'https://test.pact.dius.com.au/',
+    pactBrokerUrl: 'https://test.pactflow.io/',
     pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
     pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1',
     publishVerificationResult: true,
