@@ -2,7 +2,7 @@
 title: Provider verification badges
 ---
 
-_See the the_ [_Badges_](../configuration.md#Badges) _section of the configuration page for information about accessing the badges._
+_See the the_ [_Badges_](/pact_broker/configuration/features#badges) _section of the configuration page for information about accessing the badges._
 
 If you are publishing [Provider verification results](provider_verification_results.md) to your Pact Broker \(v2.3.0+\), you can also display the verification status in your READMEs using a shiny badge like this one:
 
