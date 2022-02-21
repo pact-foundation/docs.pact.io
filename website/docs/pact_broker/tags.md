@@ -5,7 +5,7 @@ title: Tags
 <a name="golden-rule"/>
 
 :::tip
-Tags that represent branches and environments, while still supported, have been superseded by first class support for branches and environments. Please read [this post](/blog/2021/10/08/why-we-are-getting-rid-of-tags) for more information. You'll find links at the bottom of the post to help you migrate from tags to branches and environments.
+Tags that represent branches and environments, while still supported, have been superseded by first class support for branches and environments. Please read [this post](/blog/2021/07/04/why-we-are-getting-rid-of-tags) for more information. You'll find links at the bottom of the post to help you migrate from tags to branches and environments.
 :::
 
 :::info The Golden Rule for tagging

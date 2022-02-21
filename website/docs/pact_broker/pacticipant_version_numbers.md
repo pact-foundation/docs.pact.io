@@ -32,11 +32,4 @@ One of the advantages of using the git sha is that you can report the pact verif
 
 ## Sorting
 
-_Note that there is an outstanding_ [_bug_](https://github.com/pact-foundation/pact_broker/issues/175) _in relation to version number parsing, so please configure your broker to_ [_order versions by date_](configuration.md#ordering-versions-by-date)_._
-
-By default, the broker expects semantic versions \(which are now not recommended unless they include the repository reference as metadata\). When sorting by date, the broker sorts by the creation date of the pacticipant version.
-
-Note that pacts are sorted by the order of their pacticipant version, not by the creation date of the pact itself.
-
-The only time that there is a difference in behaviour between semantic ordering and date ordering is if you published a semantic version out of order. For example, if you checked out an older version of your codebase \(eg. for [testing the matrix](http://rea.tech/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/)\) and published a pact or verification from that older codebase and it somehow created a version number that didn't already exist in the broker \(perhaps because you put a build number in the version number\), its `created_at` date would be later than any of the other versions, and it would then be considered the "latest".
-
+Versions are sorted by creation order, unless you are on a very very old version of the Pact Broker, where versions were sorted semantically. Ordering by semantic version is no longer supported or recommended.
