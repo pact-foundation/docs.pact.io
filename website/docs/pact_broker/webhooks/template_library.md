@@ -194,21 +194,30 @@ Ref:
 
 ## Azure DevOps - trigger build
 
+The auth token is created by encoding your PAT and username. See [Azure DevOps: Use personal access tokens](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate) for more details.
+
 ```json
 {
   "request": {
     "method": "POST",
-    "url": "https://<instance>/<organization>/<project>/_apis/build/builds?api-version=6.0",
+    "url": "https://<instance>/<organization>/<project>/_apis/pipelines/<pipelineId>/runs?api-version=6.0-preview.1",
     "headers": {
       "Content-Type": "application/json",
       "Accept": "application/json",
-      "Authorization": "<authorization>"
+      "Authorization": "Basic TOKEN"
     },
     "body": {
-      "definition": {
-        "id": <build-definition-id>
+      "resources": {
+        "repositories": {
+          "self": {
+            "refName": "refs/heads/master"
+          }
+        }
       },
-      "sourceBranch": "refs/heads/master"
+      //Optional: used to send parameters to your pipeline
+      "templateParameters": {
+        "myParameter": "value"
+      }
     }
   }
 }
@@ -216,7 +225,7 @@ Ref:
 
 Ref:
 
-* [Azure DevOps Builds API page](https://docs.microsoft.com/en-us/rest/api/azure/devops/build/builds/queue?view=azure-devops-rest-6.0)
+* [Azure DevOps Builds API page](https://docs.microsoft.com/en-us/rest/api/azure/devops/pipelines/runs/run-pipeline?view=azure-devops-rest-6.0)
 
 ## CircleCI - trigger workflow build
 
