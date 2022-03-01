@@ -81,7 +81,8 @@ const siteConfig = {
     custom: "./src/css/how-pact-works",
 
     algolia: {
-      apiKey: "3df07c3398c2831ab28a34c22c443d41",
+      appId: "6CMS0LVNYE",
+      apiKey: "9d560a8ae18f8a304605caf0130e9874",
       indexName: "pact",
     },
 
