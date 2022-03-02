@@ -199,7 +199,7 @@ MessagePact schemaJsonPact(MessagePactBuilder builder) {
                   .toPact();
 }
 ```
-And there was our change: the metadata has been changed to match that of a schema registry compliant JSON message. This is significant - Pact will now be aware of the need for those 5 magic bytes mentioned earlier. We can now write our test. First, lets add a few constants and a field:
+And there was our change: `.withMetadata(Map.of("contentType", "application/vnd.schemaregistry.v1+json"))` The metadata has been changed to match that of a schema registry compliant JSON message. This is significant - Pact will now be aware of the need for those 5 magic bytes mentioned earlier. We can now write our test. First, lets add a few constants and a field:
 ```
 private static final String TOPIC_NAME = "myKafkaTopic";
 private static final boolean FAIL_UNKNOWN_PROPERTIES = true;
@@ -285,7 +285,7 @@ private JsonSchema getConsumerDomainRecordSchema() throws IOException {
 We're using a MockSchemaRegistryClient which is provided out-of-the-box. Given that we're not actually running Kafka, we're also not running the Schema Registry, so we don't want anything to try and communicate with it, and thats what this class does for us. We need to register the subject (usually the Kafka topic + either "-key" or "-value") along with the JsonSchema itself into the MockSchemaRegistryClient.
 
 ## The Pact
-As ever, running the consumer test will generate the Pact file (JSON), and push it out to the Pact Broker (well, you are using one, right?!):
+As ever, running the consumer test will generate the Pact file (JSON), and push it out to the Pact Broker (well, you are using one, right?!) if running in CI, or publishPacts flag is set:
 ```
 {
   "consumer": {
@@ -331,7 +331,7 @@ As ever, running the consumer test will generate the Pact file (JSON), and push 
 Hopefully, that's pretty much what you expected to see. Again, note the contentType shows up.
 
 ## Schema Registry JSON Provider
-Lets take a lok on the other side now - the provider test. We'll get our JUnit5 test class into being, along with a handful of constants:
+Lets take a look at the other side now - the provider test. We'll get our JUnit5 test class into being, along with a handful of constants:
 ```
 @Provider("jsonSchemaKafkaProviderApp")
 @Consumer("jsonSchemaKafkaConsumerApp")
