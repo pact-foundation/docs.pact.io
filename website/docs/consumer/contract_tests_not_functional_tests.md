@@ -88,8 +88,8 @@ In short, your Pact scenarios should not dig into the business logic of the Prov
 | :--- | :--- |
 | Does the consumer code make the expected request? | Pact consumer tests \(Pact mock service\) |
 | Does the consumer correctly handle the expected response? | Pact consumer tests \(using your own assertions\) |
-| Does the provider handle the expected request? | Pact provider tests \(verifier\) |
-| Does the provider return the expected response? | Pact provider tests \(verifier\) |
+| Does the provider handle the expected request? | Pact provider verifications \(Pact verifier CLI\) |
+| Does the provider return the expected response? | Pact provider verifications \(Pact verifier CLI\) |
 | Does the provider do the right thing with the request? | Provider's own functional tests |
 
 ### Does the consumer code make the expected request?
