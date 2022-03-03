@@ -4,6 +4,37 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.94.0"></a>
+
+### v2.94.0 (2022-02-22)
+
+#### Features
+
+* add can-i-deploy endpoint for checking if the latest version for a branch can be deployed to a particular environment	 ([34b145e8](https://github.com/pact-foundation/pact_broker/commit/34b145e8))
+* truncate tags, branches and versions in UI when they are super long (#513)	 ([94bbf915](https://github.com/pact-foundation/pact_broker/commit/94bbf915))
+
+* **integration dashboard**
+  * add copy buttons next to the branch, tag and environment labels	 ([5b86ac88](https://github.com/pact-foundation/pact_broker/commit/5b86ac88))
+
+#### Bug Fixes
+
+* Improve Matrix request performance (#537)	 ([123f8629](https://github.com/pact-foundation/pact_broker/commit/123f8629))
+* Eagerly load pact publication fields (#536)	 ([c3f6993b](https://github.com/pact-foundation/pact_broker/commit/c3f6993b))
+
+* **hal-browser**
+  * properties accordion should be collapsed by default (#544)	 ([19466121](https://github.com/pact-foundation/pact_broker/commit/19466121))
+
+<a name="v2.93.4"></a>
+
+### v2.93.4 (2022-02-21)
+
+#### Bug Fixes
+
+* **matrix page**
+  * set correct base URL for links when a path is specified in the base URL	 ([8305456b](https://github.com/pact-foundation/pact_broker/commit/8305456b))
+
+* handle DateTimes that come back from Sqlite as Strings	 ([1312a049](https://github.com/pact-foundation/pact_broker/commit/1312a049))
+
 <a name="v2.93.3"></a>
 
 ### v2.93.3 (2022-02-02)
