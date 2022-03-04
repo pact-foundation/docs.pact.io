@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.9.8 - Custom headers + Date-Time expression parser
+
+* 79324802 - feat: add support for custom headers via the verifier CLI #182 (Ronald Holshausen, Mon Feb 28 15:22:47 2022 +1100)
+* 74bd4531 - feat: add support for custom headers with the verifier FFI calls #182 (Ronald Holshausen, Mon Feb 28 13:58:46 2022 +1100)
+
 ## 0.9.7 - Bugfixes + added JSON report option
 
 * 5ecf70a7 - feat: enable ANSI console output on Windows (Ronald Holshausen, Mon Jan 31 11:02:03 2022 +1100)
