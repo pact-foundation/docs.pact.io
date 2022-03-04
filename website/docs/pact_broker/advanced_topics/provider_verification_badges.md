@@ -13,9 +13,23 @@ If you are publishing [Provider verification results](provider_verification_resu
 
 [![Can I Deploy Status](/img/can-i-deploy-badge.svg)](https://test.pactflow.io)
 
+### Using branches and environments
+
+Requires version 2.94+ of the Pact Broker
+
+Returns a status badge that can be displayed in a README file that indicates whether the specified version of a pacticipant from a particular branch can be deployed to the specified environment.
+
+```text
+[![Can I Deploy BRANCH to ENVIRONMENT](https://your-broker/pacticipants/PACTICIPANT/branches/BRANCH/latest-version/can-i-deploy/to-environment/ENVIRONMENT/badge)](https://your-broker/hal-browser/browser.html#https://your-broker/pacticipants/PACTICIPANT/branches/BRANCH/latest-version/can-i-deploy/to-environment/ENVIRONMENT)
+```
+
+To set a custom label for the badge, set the `label` query parameter. eg `?label=my+custom+label+here`.
+
+### Using tags
+
 Requires version 2.62+ of the Pact Broker.
 
-Returns a status badge that can be displayed in a README file that indicates whether the specified version of a pacticipant can be deployed to the specified environment.
+Returns a status badge that can be displayed in a README file that indicates whether the latest version of a pacticipant with a specified tag can be deployed to the specified environment as identified by a tag.
 
 ```text
 [![Can I deploy Foo status](https://your-broker/pacticipants/PACTICIPANT/latest-version/TAG/can-i-deploy/to/ENVIRIONMENT_TAG/badge)](https://your-broker/pacticipants/PACTICIPANT/latest-version/TAG/can-i-deploy/to/ENVIRIONMENT_TAG)
