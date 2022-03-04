@@ -17,7 +17,7 @@ If you are publishing [Provider verification results](provider_verification_resu
 
 Requires version 2.94+ of the Pact Broker
 
-Returns a status badge that can be displayed in a README file that indicates whether the specified version of a pacticipant from a particular branch can be deployed to the specified environment.
+Returns a status badge that can be displayed in a README file that indicates whether the latest version of a pacticipant from a particular branch can be deployed to the specified environment.
 
 ```text
 [![Can I Deploy BRANCH to ENVIRONMENT](https://your-broker/pacticipants/PACTICIPANT/branches/BRANCH/latest-version/can-i-deploy/to-environment/ENVIRONMENT/badge)](https://your-broker/hal-browser/browser.html#https://your-broker/pacticipants/PACTICIPANT/branches/BRANCH/latest-version/can-i-deploy/to-environment/ENVIRONMENT)
