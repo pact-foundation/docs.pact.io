@@ -60,7 +60,7 @@ Looking for PactNet v3.x? See the [`release/3.x` branch](https://github.com/pact
 
 - Join our community [slack workspace](http://pact-foundation.slack.com).
 - Stack Overflow: https://stackoverflow.com/questions/tagged/pact
-- Say 👋 on Twitter: [@pact_up]
+- Say 👋 on [Twitter @pact_up](https://twitter.com/pact_up)
 
 ## Installation
 
@@ -223,6 +223,23 @@ For writing messaging pacts instead of requests/response pacts, see the [messagi
 ![----------](https://raw.githubusercontent.com/pactumjs/pactum/master/assets/rainbow.png)
 
 ## Compatibility
+
+### Operating System
+
+Due to using a shared native library instead of C# for the main Pact logic only certain OSs are supported:
+
+| OS           | Arch     | Support                                                                 |
+| ------------ | -------- | ----------------------------------------------------------------------- |
+| Windows      | x86      | ❌ No                                                                   |
+| Windows      | x64      | ✔️ Yes                                                                  |
+| Linux (libc) | ARM      | ❌ No                                                                   |
+| Linux (libc) | x86      | ❌ No                                                                   |
+| Linux (libc) | x64      | ✔️ Yes                                                                  |
+| Linux (musl) | Any      | ❌ [No](https://github.com/pact-foundation/pact-net/issues/374)         |
+| OSX          | x64      | ✔️ Yes                                                                  |
+| OSX          | ARM (M1) | ⚠️ [Coming Soon](https://github.com/pact-foundation/pact-net/pull/365)  |
+
+### Pact Specification
 
 | Version | Stable | [Spec] Compatibility | Install            |
 | ------- | ------ | -------------------- | ------------------ |
