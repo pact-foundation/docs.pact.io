@@ -4,6 +4,16 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.59.0"></a>
+### v1.59.0 (2022-03-11)
+
+#### Features
+
+* use the feature branch name in GITHUB_HEAD_REF for github pull request builds (#103)	 ([7f94d4a](https://github.com/pact-foundation/pact_broker-client/commit/7f94d4a))
+
+* **webhooks**
+  * show better error message when the pb:webhooks relation doesn't exist when trying to create a webhook	 ([c787300](https://github.com/pact-foundation/pact_broker-client/commit/c787300))
+
 <a name="v1.58.0"></a>
 ### v1.58.0 (2021-11-13)
 
