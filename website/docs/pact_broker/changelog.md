@@ -4,6 +4,20 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.95.0"></a>
+
+### v2.95.0 (2022-03-16)
+
+#### Features
+
+* add relation for can-i-deploy branch to environment badge	 ([6ece8e93](https://github.com/pact-foundation/pact_broker/commit/6ece8e93))
+* add badge url for 'can I deploy latest version of branch to envionment' endpoint	 ([086b8c10](https://github.com/pact-foundation/pact_broker/commit/086b8c10))
+
+#### Bug Fixes
+
+* **pacts for verification**
+  * do not de-duplicate pacts with the same content but different consumers	 ([ae3bb541](https://github.com/pact-foundation/pact_broker/commit/ae3bb541))
+
 <a name="v2.94.0"></a>
 
 ### v2.94.0 (2022-02-22)
