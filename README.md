@@ -6,16 +6,16 @@
 
 ## Table of Contents
 - [Pact Docs Website](#pact-docs-website)
-  - [Table of Contents](#table-of-contents)
-  - [Local development](#local-development)
-  - [Adding pages](#adding-pages)
-  - [Moving pages](#moving-pages)
-  - [Automatic syncing from the markdown files in each Pact implementation repository](#automatic-syncing-from-the-markdown-files-in-each-pact-implementation-repository)
-  - [Slack history](#slack-history)
-  - [Hosting](#hosting)
-  - [Search](#search)
-  - [Contributing](#contributing)
-  - [Contact](#contact)
+- [Table of Contents](#table-of-contents)
+- [Local development](#local-development)
+- [Adding pages](#adding-pages)
+- [Moving pages](#moving-pages)
+- [Automatic syncing from the markdown files in each Pact implementation repository](#automatic-syncing-from-the-markdown-files-in-each-pact-implementation-repository)
+- [Slack history](#slack-history)
+- [Hosting](#hosting)
+- [Search](#search)
+- [Contributing](#contributing)
+- [Contact](#contact)
 
 ## Local development
 
