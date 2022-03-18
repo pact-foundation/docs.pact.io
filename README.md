@@ -5,15 +5,17 @@
 ![Sync Pact docs](https://github.com/pact-foundation/docs.pact.io/workflows/Sync%20Pact%20docs/badge.svg)
 
 ## Table of Contents
-1. [Local development](#local-development)
-2. [Adding pages](#adding-pages)
-3. [Moving pages](#moving-pages)
-4. [Automatic syncing from the markdown files in each Pact implementation repository](#automatic-syncing-from-the-markdown-files-in-each-pact-implementation-repository)
-5. [Slack history](#slack-history)
-6. [Hosting](#hosting)
-7. [Search](#search)
-8. [Contributing](#contributing)
-9. [Contact](#contact)
+- [Pact Docs Website](#pact-docs-website)
+  - [Table of Contents](#table-of-contents)
+  - [Local development](#local-development)
+  - [Adding pages](#adding-pages)
+  - [Moving pages](#moving-pages)
+  - [Automatic syncing from the markdown files in each Pact implementation repository](#automatic-syncing-from-the-markdown-files-in-each-pact-implementation-repository)
+  - [Slack history](#slack-history)
+  - [Hosting](#hosting)
+  - [Search](#search)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
 
 ## Local development
 
@@ -80,7 +82,14 @@ The site will be automatically redeployed after any push to `master`.
 
 ## Search
 
-The search is provided free by Algolia because Pact is an open source project. It is configured in docs.pact.io in `website/siteConfig.js`. It is configured in Algolia in https://github.com/algolia/docsearch-configs/blob/master/configs/pact.json The Algolia analytics page is [here](https://www.algolia.com/apps/BH4D9OD16A/analytics). Currently only Beth has access to it via her Github login. We may be able to add extra people, but she hasn't looked into that yet. Info on how to style the search UI is [here](https://docsearch.algolia.com/docs/styling/).
+The search is provided free by Algolia because Pact is an open source project. 
+
+- It is setup in Algolia [here](https://www.algolia.com/apps/BH4D9OD16A/) with the config placed in the above file.
+- It is configured in docs.pact.io in `docusaurus.config.js` under `themeConfig.algolia` 
+- The Search analytics page is [here](https://www.algolia.com/apps/BH4D9OD16A/analytics). 
+  - It is accessed via the pact-foundation@googlegroups.com account
+- Info on how to style the search UI is [here](https://docsearch.algolia.com/docs/styling/).
+- The Algolia search crawler is configured [here](https://crawler.algolia.com/admin/crawlers/da3a74db-8003-4213-89d7-ae8c564cae42/overview)
 
 ## Contributing
 
