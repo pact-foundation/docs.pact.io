@@ -5,17 +5,15 @@
 ![Sync Pact docs](https://github.com/pact-foundation/docs.pact.io/workflows/Sync%20Pact%20docs/badge.svg)
 
 ## Table of Contents
-- [Pact Docs Website](#pact-docs-website)
-- [Table of Contents](#table-of-contents)
-- [Local development](#local-development)
-- [Adding pages](#adding-pages)
-- [Moving pages](#moving-pages)
-- [Automatic syncing from the markdown files in each Pact implementation repository](#automatic-syncing-from-the-markdown-files-in-each-pact-implementation-repository)
-- [Slack history](#slack-history)
-- [Hosting](#hosting)
-- [Search](#search)
-- [Contributing](#contributing)
-- [Contact](#contact)
+1. [Local development](#local-development)
+2. [Adding pages](#adding-pages)
+3. [Moving pages](#moving-pages)
+4. [Automatic syncing from the markdown files in each Pact implementation repository](#automatic-syncing-from-the-markdown-files-in-each-pact-implementation-repository)
+5. [Slack history](#slack-history)
+6. [Hosting](#hosting)
+7. [Search](#search)
+8. [Contributing](#contributing)
+9. [Contact](#contact)
 
 ## Local development
 
