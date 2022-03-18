@@ -82,12 +82,14 @@ The site will be automatically redeployed after any push to `master`.
 
 The search is provided free by Algolia because Pact is an open source project. 
 
-- It is setup in Algolia [here](https://www.algolia.com/apps/BH4D9OD16A/) with the config placed in the above file.
-- It is configured in docs.pact.io in `docusaurus.config.js` under `themeConfig.algolia` 
-- The Search analytics page is [here](https://www.algolia.com/apps/BH4D9OD16A/analytics). 
-  - It is accessed via the pact-foundation@googlegroups.com account
-- Info on how to style the search UI is [here](https://docsearch.algolia.com/docs/styling/).
-- The Algolia search crawler is configured [here](https://crawler.algolia.com/admin/crawlers/da3a74db-8003-4213-89d7-ae8c564cae42/overview)
+1. An algolia crawler is defined [here](https://crawler.algolia.com/admin/crawlers/da3a74db-8003-4213-89d7-ae8c564cae42/overview) to crawl the docs.pact.io sitemap [here](https://docs.pact.io/sitemap.xml) 
+2. An algolia search index is configured [here](https://www.algolia.com/apps/BH4D9OD16A/) and the crawler results are stored in the search index
+3. The docs.pact.io website which is built on docusaurus, is configured
+   1. in `./website/docusaurus.config.js` under `themeConfig.algolia` 
+4. The Search analytics page is [here](https://www.algolia.com/apps/BH4D9OD16A/analytics). 
+   1. It is accessed via the pact-foundation@googlegroups.com account
+    
+- Info on how to style the search UI is [here](https://docsearch.algolia.com/docs/styling/). 
 
 ## Contributing
 
