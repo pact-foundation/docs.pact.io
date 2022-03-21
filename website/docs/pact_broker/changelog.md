@@ -4,6 +4,19 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.96.0"></a>
+
+### v2.96.0 (2022-03-21)
+
+#### Features
+
+* print final value of configuration attribute rather than source value	 ([9c0fd3c4](https://github.com/pact-foundation/pact_broker/commit/9c0fd3c4))
+
+#### Bug Fixes
+
+* ensure database and basic auth credentials are not coerced to arrays if they contain commas	 ([5bce7ce4](https://github.com/pact-foundation/pact_broker/commit/5bce7ce4))
+* allow lazy loading when finding individual pacts	 ([04e03cb2](https://github.com/pact-foundation/pact_broker/commit/04e03cb2))
+
 <a name="v2.95.1"></a>
 
 ### v2.95.1 (2022-03-18)
