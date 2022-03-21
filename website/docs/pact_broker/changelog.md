@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.95.1"></a>
+
+### v2.95.1 (2022-03-18)
+
+#### Bug Fixes
+
+* **can-i-deploy**
+  * allow new provider to be introduced to existing consumer without can-i-deploy having circular dependency issues	 ([e43974ca](https://github.com/pact-foundation/pact_broker/commit/e43974ca))
+
 <a name="v2.95.0"></a>
 
 ### v2.95.0 (2022-03-16)
