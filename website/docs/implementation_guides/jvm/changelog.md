@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.6 - Bugfix Release
+
+* 0d62de13c - Added secondary constructor to FormPostBuilder to facilitate passing a ContentType. (Thackery Archuletta, Wed Mar 16 12:43:05 2022 -0600)
+* 8745a241d - put issue number (kelly chen, Wed Mar 16 12:35:37 2022 -0600)
+* 22804543b - add printing verification results url to maven as well (kelly chen, Tue Mar 15 15:20:24 2022 -0600)
+* 22aa7bcce - added verification result url from client and printing in gradle can i deploy (kelly chen, Tue Mar 15 15:17:38 2022 -0600)
+* 8868ac5ae - fix: WildcardKeysTest link on README is broken #1518 (Ronald Holshausen, Mon Feb 28 10:49:00 2022 +1100)
+* 0e3c0ff8a - Fix: WildcardKeysTest link on README is broken #1518 (Ronald Holshausen, Mon Feb 28 10:46:36 2022 +1100)
+
 ## 4.3.5 - Bugfix Release
 
 * 8bc5d6818 - update changelog for release 4.2.20 (Ronald Holshausen, Thu Feb 10 11:14:10 2022 +1100)
