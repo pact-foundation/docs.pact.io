@@ -12,7 +12,7 @@ Need to know what Pact provider verification is? Check out the provider verifica
 
 Already know what provider verification is, but need help coding it up? Here are the links to the relevant provider documentation for our most popular languages.
 
-* [Pact JVM](/implementation_guides/jvm/provider_menu) (select your JVM testing library from the menu)
+* [Pact JVM](/implementation_guides/jvm/provider) (select your JVM testing library from the menu)
 * [Pact JS](/implementation_guides/javascript/readme#provider-api-testing)
 * [Pact Net](/implementation_guides/net/readme#service-provider)
 * [Pact Go](/implementation_guides/go/readme#provider-api-testing)
@@ -21,7 +21,7 @@ Already know what provider verification is, but need help coding it up? Here are
 * [Pact Rust](/implementation_guides/rust/pact_verifier_cli)
 * [Pact PHP](https://github.com/pact-foundation/pact-php/#basic-provider-usage)
 
-Can't see your language listed above? Go to the [Pact Docs](/implementation_guides/) page and double check to see if your language is supported. If it's not, you can use the language agnostic [Provider Verifier CLI](/implementation_guides/cli#provider-verifier).
+Can't see your language listed above? Go to the [Pact Docs](/implementation_guides/cli) page and double check to see if your language is supported. If it's not, you can use the language agnostic [Provider Verifier CLI](/implementation_guides/cli#provider-verifier).
 
 ## What do I do next?
 
