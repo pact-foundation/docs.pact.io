@@ -16,7 +16,7 @@ toggles.  In general, you want to uniquely identify each version of the consumer
 A given pact published by the consumer may or may not change actual contents of the pact (e.g. by adding a request 
 parameter, or changing the expected results).  If it does change, then the pact gets a new _pact version_.
 
-[!Consumer domain model](conceptual_overview_images/consumer-domain-model.png)
+![Consumer domain model](conceptual_overview_images/consumer-domain-model.png)
 
 It's important to understand a few rules about how consumers relate to pacts:
 
@@ -36,7 +36,10 @@ of the application.  When you run contract tests for that version, you publish a
 which may or may not generate a new pact version.
 
 | Date | Consumer Versions | Tags | Pact Version |
-|12/21|63be8b|prod, main|1|
+| ---- | ----------------- | ---- | ------------ |
+| 12/21 | 63be8b | prod, main | 1 |
+
+
 12/22|9ecb61|staging,main|2
 12/23
 31696e
