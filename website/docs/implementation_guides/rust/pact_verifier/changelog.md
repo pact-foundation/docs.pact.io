@@ -8,6 +8,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 
 * 345b0011 - feat: support mock servers provided from plugins (Ronald Holshausen, Mon Mar 21 15:59:46 2022 +1100)
 
+## 0.13.3 - Maintenance Release
+
+* 345b0011 - feat: support mock servers provided from plugins (Ronald Holshausen, Mon Mar 21 15:59:46 2022 +1100)
+
 ## 0.13.2 - Maintenance Release
 
 * f52c3625 - feat: add for custom headers to the HTTP client used by the verifier #182 (Ronald Holshausen, Mon Feb 28 14:38:00 2022 +1100)
