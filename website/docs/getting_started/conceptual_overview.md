@@ -82,6 +82,8 @@ The Pact team has generalized the "consumer" and "provider" roles of a pact usin
 pact publication has two pacticipants: the consumer and the provider.  A verification result also has two 
 pacticipants: the consumer and the provider.
 
+![Pacticipant domain model](conceptual_overview_images/pacticipant.png)
+
 This generalized concept of a pacticipant can be useful because sometimes you can perform the same operations on a 
 pacticipant regardless of whether it is a consumer or a provider.
 
