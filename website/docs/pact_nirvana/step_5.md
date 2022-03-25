@@ -65,6 +65,8 @@ Pact verification should run as part of your regular unit test run. But you shou
 
 If you use feature branches for your consumer development, it is recommended to tag the pacticipant version with the name of the branch. If you use feature toggles, the tag could be the name of the feature toggle. Your Pact client library will allow you to configure the name of the tag to be applied when you publish your pacts.
 
+Read [these](https://docs.pact.io/pact_broker/tags#using-tags-with-feature-toggles-instead-of-feature-branches) docs for more in-depth detail 
+
 
 1. However, if you have hardcoded your tag name or are using a feature toggle, you’ll need to manually set the tag to an appropriate value.
 2. Now, when you want to add new expectations to a pact, do it on a feature branch of your consumer codebase (or with a feature toggle). If you are dynamically using the branch name as the broker tag, you don’t need to do anything further. However, if you have hardcoded your tag name or are using a feature toggle, you’ll need to manually set the tag to an appropriate value.
