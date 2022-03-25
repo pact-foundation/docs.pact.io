@@ -5,17 +5,11 @@ sidebar_label: Introduction
 
 Or _"The steps for reaching Pact Nirvana"_
 
-This is a technical guide for developers and testers who want to use Pact to implement consumer driven contract testing.
+This is a technical guide for developers and testers who want to use Pact to implement consumer driven contract testing as part of your ongoing CI/CD workflow.
 
 By the end of the guide, you will understand how to create a release pipeline that allows you to independently deploy any application with the confidence that it will work correctly with the other applications in its environment - without having to run a suite of end to end tests.
 
-Although many guides assume a greenfields project with no existing code, this document is intended to also be useful for retrofitting Pact into an existing project.
-
-Before you read this document, you should:
-
-* have a basic understanding of the concepts of both [consumer driven contracts](https://martinfowler.com/articles/consumerDrivenContracts.html) and Pact,
-* have read the [Pact Broker Overview](pact_broker/overview.md)
-* have read the section on [versioning in the Pact Broker](getting_started/versioning_in_the_pact_broker.md)
+This guide focuses on the scenario where the consumer and provider are both being deployed to an environment rather than released to customers (e.g. a mobile app). That workflow is slightly different, and that guidance will be coming soon.
 
 ### How to use this document
 
@@ -25,15 +19,51 @@ However, there are many similarities in the steps necessary on the journey to a 
 
 Feel free to pick and choose the steps that apply best to your team. You may implement only the first few steps described below, and just use Pact as a precursor to your standard integration tests; or you may throw away your integration tests altogether and reach "Pact Nirvana".
 
+This guide doesn't go into the details of how to write and run consumer tests or provider verification tests. Here we are laying out a high-level strategy for how you can get Pact set up and operational.  Each of the levels below gets you a step towards having a fully automated the process of verifying contracts as part of CI/CD with no need for an integration environment.
+
 As Pact has been implemented in many different languages, this document will outline the theory for each step. You will need to consult the documentation of your chosen language to learn the relevant syntax for each task. See the [implementation guides](/implementation_guides/cli) section for more information.
 
 ### What are the steps for reaching Pact Nirvana?
 
-1. Talk
-2. Spike \(Optional\)
-3. Write and verify a real Pact
-4. Automate the contract and verification results exchange
-5. Allow contracts to change without breaking your builds
-6. Use tags to ensure your provider is compatible with your production consumer
-7. Use The Pact “Matrix” as a gateway to deployments
-8. Prevent missing verifications
+1. Get Prepared - learn about pact
+2. Talk: get team alignment
+3. Bronze level: get a single test working manually
+4. Silver level: manually integrate with Pact Broker
+5. Gold level - integrate with your PR pipelines
+6. Platinum level: Add can-i-deploy with branch tag to PR pipelines
+7. Diamond level - Add Pact to your deploy pipelines
+8. Honors Course - To come in future...
+   1. Add provider state
+   2. Pending Pacts
+   3. Verifying Pacts that are Works in Progress
+   4. Working with Feature Flags
+
+Click below to expand and see each a diagram representing each level
+
+
+<details >
+  <summary>Bronze diagram</summary>
+
+![Bronze diagram](pact_nirvana/images/bronze.png)
+</details>
+<details >
+  <summary>Silver diagram</summary>
+
+![Silver diagram](pact_nirvana/images/silver.png)
+</details>
+<details >
+  <summary>Gold diagram</summary>
+
+![Gold diagram](pact_nirvana/images/gold.png)
+</details>
+<details >
+  <summary>Diamond diagram</summary>
+
+![Diamond diagram](pact_nirvana/images/diamond.png)
+</details>
+
+<details >
+  <summary>Diamond with release branch diagram</summary>
+
+![Diamond with release branch diagram](pact_nirvana/images/diamond-release.png)
+</details>
