@@ -30,7 +30,7 @@ View our roadmap, request a feature, or add your vote to an existing one at [Can
 
 ## Stay up to date
 
-Find out what's new with this project by reading our [blog](http://blog.pact.io)
+Find out what's new with this project by reading our [blog](https://docs.pact.io/blog)
 
 ## Found a bug?
 

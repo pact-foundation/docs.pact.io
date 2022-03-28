@@ -81,7 +81,7 @@ class Footer extends React.Component {
             <h5>More</h5>
             <a href="https://pact.io">Pact home page</a>
             <a href="https://pact.canny.io">Feature requests and roadmap</a>
-            <a href="https://blog.pact.io">Blog</a>
+            <a href="https://docs.pact.io/blog">Blog</a>
             <a href="https://github.com/pact-foundation">GitHub</a>
             {this.props.config.twitterUsername && (
               <div className="social">

@@ -168,7 +168,7 @@ const siteConfig = {
           items: [
             {
               label: "Blog",
-              href: "http://blog.pact.io",
+              href: "https://docs.pact.io/blog",
             },
             {
               label: "GitHub",
