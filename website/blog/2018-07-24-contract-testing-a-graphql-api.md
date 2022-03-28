@@ -4,7 +4,7 @@ author: Matt Fellows
 authorURL: https://twitter.com/matthewfellows
 tags: [GraphQL]
 keywords: [GraphQL]
-date: 2018-24-07
+date: 2018-07-24
 draft: false
 hide_table_of_contents: true
 ---
