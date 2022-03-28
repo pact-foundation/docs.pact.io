@@ -367,8 +367,7 @@ an override property: `pact.content_type.override.<TYPE>.<SUBTYPE>=text|binary`.
 
 ## Provider States
 
-For a description of what provider states are, see the pact documentations: http://docs.pact.io/documentation/provider_states.html
-
+For a description of what provider states are, see the pact documentation: [Provider states](/getting_started/provider_states)
 ### Using a state change URL
 
 For each provider you can specify a state change URL to use to switch the state of the provider. This URL will

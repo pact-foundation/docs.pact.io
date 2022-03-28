@@ -131,4 +131,4 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 - [SE Radio](http://www.se-radio.net/2014/10/episode-213-james-lewis-on-microservices/)
 - [A microservices implementation retrospective](http://techblog.realestate.com.au/a-microservices-implementation-retrospective/)
 - [Karma Refactors to Microservices](http://www.infoq.com/news/2014/07/karma-microservices)
-- [Simplifying microservices testing with pacts](http://dius.com.au/2014/05/19/simplifying-micro-service-testing-with-pacts/)
+- [Simplifying microservices testing with pacts](https://dius.com.au/2014/05/20/simplifying-microservice-testing-with-pacts/)

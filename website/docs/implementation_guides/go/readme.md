@@ -25,7 +25,7 @@ DSL for the consumer project, and interaction playback and verification for the 
 
 From the [Pact website]:
 
-> The Pact family of frameworks provide support for [Consumer Driven Contracts](http://martinfowler.com/articles/consumerDrivenContracts.html) testing.
+> The Pact family of frameworks provide support for [Consumer Driven Contracts](https://martinfowler.com/articles/consumerDrivenContracts.html) testing.
 
 > A Contract is a collection of agreements between a client (Consumer) and an API (Provider) that describes the interactions that can take place between them.
 
