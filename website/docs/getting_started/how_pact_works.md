@@ -36,7 +36,7 @@ Following the diagram:
 
 Pact tests are only successful if each step completes without error.
 
-Usually, the interaction definition and consumer test are written together, such as this example from [this Pact walkthrough guide](https://dius.com.au/2014/05/19/simplifying-micro-service-testing-with-pacts/):
+Usually, the interaction definition and consumer test are written together, such as this example from [this Pact walkthrough guide](https://dius.com.au/2014/05/20/simplifying-microservice-testing-with-pacts/):
 
 ```ruby
 # Describe the interaction
@@ -190,7 +190,7 @@ The `publish` is the bit ("Adapter") that knows how to talk to AWS SNS, the `upd
 
 #### Further Reading
 
-Take a look at an [example consumer project](https://docs.pactflow.io/docs/examples/aws/sns/consumer/readme) and its [example provider project](https://docs.pactflow.io/docs/examples/aws/sns/provider/readme) to see this in action.
+Take a look at an [example consumer project](https://docs.pactflow.io/docs/examples/aws/sns/consumer) and its [example provider project](https://docs.pactflow.io/docs/examples/aws/sns/provider) to see this in action.
 
 ## Next steps
 

@@ -21,7 +21,7 @@ Implementation of the consumer driven contract library [Pact](https://docs.pact.
 
 From the [Pact website](http://docs.pact.io/):
 
-> The Pact family of frameworks provide support for [Consumer Driven Contracts](http://martinfowler.com/articles/consumerDrivenContracts.html) testing.
+> The Pact family of frameworks provide support for [Consumer Driven Contracts](https://martinfowler.com/articles/consumerDrivenContracts.html) testing.
 
 > A Contract is a collection of agreements between a client (Consumer) and an API (Provider) that describes the interactions that can take place between them.
 
