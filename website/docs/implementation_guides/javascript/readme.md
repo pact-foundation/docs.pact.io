@@ -432,7 +432,7 @@ Pending pacts is a feature that allows consumers to publish new contracts or cha
 
 This enables safe introduction of new contracts into the system, without breaking Provider builds, whilst still providing feedback to Consumers as per before.
 
-See the [docs](https://docs.pact.io/pending) and this [article](https://docs.pact.io/blog/2020/02/24/how-we-have-fixed-the-biggest-problem-with-the-pact-workflow/) for more background.
+See the [docs](https://docs.pact.io/pending) and this [article](https://docs.pact.io/blog/2020/02/24/how-weve-fixed-the-biggest-problem-with-the-pact-workflow) for more background.
 
 #### WIP Pacts
 
