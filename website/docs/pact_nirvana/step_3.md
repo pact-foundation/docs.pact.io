@@ -29,7 +29,7 @@ based on their understanding of the interface they're consuming from the provide
 This is actually important and powerful. Too often a provider guesses at what their consumer needs and comes up with an 
 API based on that.   When you let the consumers drive the contract, it is much better aligned with their needs.
  
-So you write the consumer test first.  You can read more about consumer tests here.
+So you write the consumer test first.  You can read more about consumer tests [here](https://docs.pact.io/consumer).
 
 If you are on the provider team, you don't own this test, although you can work with your consumer team to help them 
 write it.  But ultimately the consumer owns these tests and drive the understanding of the contract.
@@ -39,8 +39,7 @@ Note that if at all possible this first test should not introduce the complexity
 ### Manually run the provider verification test
 
 When you run the consumer test and it runs successfully, it is going to generate a pact file (for more information you 
-can read this overview). This file records a series of interactions where the consumer sends a request and the 
-producer returns an expected response.
+can read [this overview](https://docs.pact.io/getting_started/how_pact_works#consumer-testing)). This file records a series of interactions where the consumer sends a request and the producer returns an expected response.
 
 Now you need to see if the provider behaves as the consumer expects. Ultimately this will happen automatically as 
 part of running your provider test suite both locally and in CI/CD. But you can make sure it works correctly before 

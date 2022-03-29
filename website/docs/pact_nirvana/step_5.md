@@ -60,27 +60,9 @@ Pact verification should run as part of your regular unit test run. But you shou
 2. In the provider verification configuration, change the pact that is being verified from the latest pact to the latest pact for the stable tag (see the relevant documentation for your library). This will help keep your provider builds green.
 
 
-### Feature Flag notes
+### Notes
 
-
-If you use feature branches for your consumer development, it is recommended to tag the pacticipant version with the name of the branch. If you use feature toggles, the tag could be the name of the feature toggle. Your Pact client library will allow you to configure the name of the tag to be applied when you publish your pacts.
-
-Read [these](https://docs.pact.io/pact_broker/tags#using-tags-with-feature-toggles-instead-of-feature-branches) docs for more in-depth detail 
-
-
-1. However, if you have hardcoded your tag name or are using a feature toggle, you’ll need to manually set the tag to an appropriate value.
-2. Now, when you want to add new expectations to a pact, do it on a feature branch of your consumer codebase (or with a feature toggle). If you are dynamically using the branch name as the broker tag, you don’t need to do anything further. However, if you have hardcoded your tag name or are using a feature toggle, you’ll need to manually set the tag to an appropriate value.
-3. Use the new "feature pact" as a starting point to discuss the desired new features with the provider team. Remember section 1 on "Talking"!
-4. Once the interface has been agreed on, implement the new functionality in the provider using the feature pact and verify it locally rather than in the CI until the new expectations are passing. Your provider should still be verifying against the stable tag on the CI, so any new changes will not cause the build to break.
-5. Once the feature pact has been locally verified and you have committed the new provider code to master only then can the consumer merge in their own changes to master. To reiterate:
-
-    * verify feature pact locally in the provider
-    * add the new code to the provider
-    * merge the consumer changes after the provider has released their code
-
-    The expectations can be written in the pact before they exist in the provider, but the provider code needs to be released before the consumer code to avoid breaking builds.
-
-In addition to some of the language-specific Pact tools \(eg Grade\), tagging can be done with the [Pact Broker CLI](https://github.com/pact-foundation/pact_broker-client#create-version-tag).
+In addition to some of the language-specific Pact tools \(eg Gradle\), tagging can be done with the [Pact Broker CLI](https://github.com/pact-foundation/pact_broker-client#create-version-tag).
 
 Useful link:
 

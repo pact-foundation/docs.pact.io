@@ -26,7 +26,7 @@ In these cases, checking to see if your provider is compatible with the consumer
 This step is a bit tricky.
 
 In your consumer PR pipeline, can-i-deploy with the tag of main will check to see if this consumer has been 
-verified against the provider that is currently in the provider's main  branch.
+verified against the provider that is currently in the provider's main branch.
 
 But if your consumer just generated and published a new version of the pact, this will always fail because the 
 provider could not possibly have run verification against a newly changed pact.
@@ -36,12 +36,12 @@ new pact. This webhook calls a job that runs provider verification for the new P
 
 So to get can-i-deploy working in your consumer PR pipeline, you need to follow these steps:
 
-- Create a separate provider verification job that will be called by a webhook. This job takes the consumer's branch name as a parameter.
+- Create a separate provider verification job that will be called by a webhook. This job takes the URL of the changed pact as a parameter.
 - Add the webhook in the broker to call this job
 - Add the can-i-deploy build step to the consumer PR validation build job
 
 ### Add a new provider verification job
-This job runs provider verification, taking as a parameter the branch name for the consumer.  You set this up to be 
+This job runs provider verification, taking as a parameter the URL of the changed pact.  You set this up to be 
 called through an API call, however your particular CI/CD system supports that.
 
 1. Create a new CI job that performs just the provider pact verification step for a given pact URL. Consult the documentation for your chosen language for the syntax of how to configure this - you can find an example [here](/provider/recommended_configuration#verification-triggered-by-pact-change). The job should accept the URL of the changed pact in the HTTP request parameters or body. You can find a library of webhooks that trigger a build in many popular CI systems [here](/pact_broker/webhooks/template_library/), otherwise you'll need to consult the documentation for your CI application to learn how to pass in parameters to a build. Note that this build will fail when a consumer pushes an unsupported change to a contract - that is expected and fine. There should be no downstream dependencies on this build. Its only job is to run the verification for the changed pact and report the results back to the broker. 

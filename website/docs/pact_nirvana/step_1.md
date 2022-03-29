@@ -14,4 +14,4 @@ Before setting up Pact in your own environment, it can help to have an idea of w
 
 Completing the [Pact CI/CD workshop](https://docs.pactflow.io/docs/workshops/ci-cd/) will give you a good understanding of how the Pact client libaries interact with the Pact Broker and where these interactions fit into your release pipeline.
 
-> Note that if you are using your own instance of the open source Pact Broker, it does not support secrets, and it does not have a user interface for managing webhooks. You'll need to use the API to create the webhook, and your Travis CI token will have to be stored in plain text in the webhook.
+> Note that if you are using your own instance of the open source Pact Broker, it does not support secrets, and it does not have a user interface for managing [webhooks](https://docs.pact.io/pact_broker/webhooks). You'll need to use the API or HAL Browser to create the webhook, and your CI token will have to be stored in plain text in the webhook. See the Webhooks API reference docs [here](https://docs.pact.io/pact_broker/advanced_topics/api_docs/webhooks)

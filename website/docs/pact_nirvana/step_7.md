@@ -60,7 +60,7 @@ The first step is to start tagging when the consumer or provider is deployed to 
 deploy to staging, apply the staging tag; when you successfully deploy to prod, apply the prod tag. Do this for each 
 environment you deploy to. 
 
-1. Add a step to your deployment process so that when the consumer is deployed to an environment, the relevant pacticipant version in the broker is tagged with the name of the environment (eg. `test`, `production`). This functionality is provided by the [pact broker CLI](/pact_broker/client_cli/readme#create-version-tag) which is available as a standalone executable, and a Docker image.
+1. Add a step to your deployment process so that when the consumer is deployed to an environment, the relevant pacticipant version in the broker is tagged with the name of the environment (eg. `test`, `production`). This functionality is provided by the [pact broker CLI](/pact_broker/client_cli/readme#create-version-tag) which is available as a standalone executable, and a Docker image. Alternatively you can use the API for tagging directly, with documentation available [here](https://docs.pact.io/pact_broker/tags).
 2. Add the new tag names to the list of pacts the provider will verify (eg. `{ consumerVersionSelectors: { tag: "main", latest: true }, { tag: "test", latest: true }, { tag: "production", latest: true } }`).
 3. Make sure that you use the same agreed upon names for each environment for all subsequent applications. (eg. is it `prod` or is it `production`?) Having a mix of environment names will not allow you to successfully use the `can-i-deploy` tool to ensure safe deployments.
    
