@@ -61,6 +61,7 @@ While the default is `file` for the Ruby application, it is set to `stdout` on t
 
 Enable this setting to print the entire request and response to the logs at debug level. Used for troubleshooting issues.
 Do not leave this on permanently, as it will have performance and security issues.
+Ensure the application [`log_level`](#log_level) is set to `debug` when this setting is enabled.
 
 **Supported versions:** From v2.98.0<br/>
 **Environment variable name:** `PACT_BROKER_HTTP_DEBUG_LOGGING_ENABLED`<br/>
@@ -160,7 +161,7 @@ To disable noisy SQL query logging when the application `log_level` is set to `d
 
 **Environment variable name:** `PACT_BROKER_SQL_LOG_LEVEL`<br/>
 **YAML configuration key name:** `sql_log_level`<br/>
-**Default:** `debug`<br/>
+**Default:** From 2.99+, the default is `none`. In previous versions, the default is `debug`.<br/>
 **Allowed values:** `none`, `debug`, `info`, `warn`, `error`, `fatal`<br/>
 
 ### sql_log_warn_duration
