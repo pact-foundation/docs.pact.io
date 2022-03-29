@@ -3,7 +3,7 @@ title: 4. Silver - manually integrate with Pact Broker
 sidebar_label: 4. Silver - manually integrate with Pact Broker
 ---
 
-Now you have two different sets of tests in two different codebases. The artifacts that tie these tests together are the Pact file, and the verification results. The next step is to automate the exchange of these artifacts, however at this level, you still run on your machine, but you have the consumer test publish its pact to the Pact Broker, and manually run provider verification where it gets the latest pact from the broker.
+Now you have two different sets of tests in two different codebases. The artifacts that tie these tests together are the Pact file, and the verification results. The next step is to automate the exchange of these artifacts. At this level, you still run on your machine, but you have the consumer test publish its pact to the Pact Broker, and manually run provider verification where it gets the latest pact from the broker.
 
 <details open>
   <summary>Silver diagram</summary>
