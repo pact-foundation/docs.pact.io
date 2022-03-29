@@ -2,7 +2,7 @@
 title: Community videos and articles
 ---
 
-Check out the official Pact blog at [blog.pact.io](https://docs.pact.io/blog) and the [Pactflow blog](https://pactflow.io/blog) for blogs written by Pact maintainers.
+Check out the official Pact blog at [docs.pact.io/blog](https://docs.pact.io/blog) and the [Pactflow blog](https://pactflow.io/blog) for blogs written by Pact maintainers.
 
 If you've seen a really good talk that's not on this list, please submit a PR to this page with the new link.
 
