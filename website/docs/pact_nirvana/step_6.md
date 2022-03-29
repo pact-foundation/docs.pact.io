@@ -32,7 +32,7 @@ But if your consumer just generated and published a new version of the pact, thi
 provider could not possibly have run verification against a newly changed pact.
 
 You avoid this situation by registering a webhook in the Pact Broker that is triggered by the publication of a 
-new pact when the verification doesn't currently exist. This webhook calls a job that runs provider verification for the new Pact.
+new pact. This webhook calls a job that runs provider verification for the new Pact.
 
 So to get can-i-deploy working in your consumer PR pipeline, you need to follow these steps:
 
