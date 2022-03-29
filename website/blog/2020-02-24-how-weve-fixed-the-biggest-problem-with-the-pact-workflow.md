@@ -60,7 +60,7 @@ We're pretty excited about this new workflow, and we hope it will help make your
 
 [tags]: https://docs.pact.io/best_practices/pact_nirvana#5-allow-contracts-to-change-without-breaking-your-builds
 [webhooks]: https://docs.pact.io/pact_broker/advanced_topics/webhooks
-[github]: http://blog.pact.io/2018/07/16/publishing-pact-verification-statuses-to-github/
+[github]: https://docs.pact.io/blog/2018/07/16/publishing-pact-verification-statuses-to-github/
 [slack]: https://github.com/pact-foundation/pact_broker/wiki/Webhook-template-library#slack---post-notification
 [pact-foundation-slack]: https://pact-foundation.slack.com
 [join]: https://slack.pact.io

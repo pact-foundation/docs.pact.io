@@ -37,6 +37,6 @@ Head to https://docs.pact.io/wip for information on how to setup your Pact Broke
 To start getting the benefit of this new and improved workflow, you will need to upgrade to the latest version of the Pact Broker and your Pact testing libraries. Consult the documentation for your language to find out how to enable the WIP pacts feature.
 
 
-[pending-pacts]: http://blog.pact.io/2020/02/24/how-we-have-fixed-the-biggest-problem-with-the-pact-workflow/
-[git-status]: http://blog.pact.io/2018/07/16/publishing-pact-verification-statuses-to-github/
+[pending-pacts]: https://docs.pact.io/blog/2020/02/24/how-weve-fixed-the-biggest-problem-with-the-pact-workflow
+[git-status]: https://docs.pact.io/blog/2018/07/16/publishing-pact-verification-statuses-to-github/
 [join-slack]: https://slack.pact.io

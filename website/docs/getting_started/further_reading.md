@@ -27,7 +27,7 @@ Hear how Soundcloud ["Move Fast and Consumer-Driven-Contract-Testing Things"](ht
 
 ## Introductory articles
 
-* [Getting started with Pact](https://dius.com.au/2014/05/19/simplifying-micro-service-testing-with-pacts/)
+* [Getting started with Pact](https://dius.com.au/2014/05/20/simplifying-microservice-testing-with-pacts/)
 * [...and more!](../blogs_videos_and_articles.md)
 
 ## Getting Help
