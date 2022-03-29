@@ -61,7 +61,7 @@ deploy to staging, apply the staging tag; when you successfully deploy to prod, 
 environment you deploy to. 
 
 1. Add a step to your deployment process so that when the consumer is deployed to an environment, the relevant pacticipant version in the broker is tagged with the name of the environment (eg. `test`, `production`). This functionality is provided by the [pact broker CLI](/pact_broker/client_cli/readme#create-version-tag) which is available as a standalone executable, and a Docker image. Alternatively you can use the API for tagging directly, with documentation available [here](https://docs.pact.io/pact_broker/tags).
-2. Add the new tag names to the list of pacts the provider will verify (eg. `{ consumerVersionSelectors: { tag: "main", latest: true }, { tag: "test", latest: true }, { tag: "production", latest: true } }`).
+2. Add the new tag names to the list of pacts the provider will verify (eg. `{ consumerVersionSelectors: { tag: "main", latest: true }, { tag: "test", latest: true }, { tag: "production", latest: true } }`), see the consumer version selectors documentation page [here](https://docs.pact.io/pact_broker/advanced_topics/consumer_version_selectors)
 3. Make sure that you use the same agreed upon names for each environment for all subsequent applications. (eg. is it `prod` or is it `production`?) Having a mix of environment names will not allow you to successfully use the `can-i-deploy` tool to ensure safe deployments.
    
 ### Add can-i-deploy to your commit pipelines
@@ -106,3 +106,4 @@ Useful links:
 
 * [Checking verification results using the can-i-deploy CLI](/pact_broker/can_i_deploy/)
 * [can-i-deploy CLI documentation](/pact_broker/client_cli/readme#can-i-deploy)
+* [consumer version selectors](https://docs.pact.io/pact_broker/advanced_topics/consumer_version_selectors)
