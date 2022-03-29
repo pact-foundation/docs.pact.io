@@ -176,6 +176,7 @@
     },
     {
       "Pact concepts": [
+        "getting_started/conceptual_overview",
         "getting_started/terminology",
         "getting_started/testing-scope",
         {
