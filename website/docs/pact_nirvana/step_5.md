@@ -52,7 +52,7 @@ branch. If it gets the latest pact, it may get a pact that is committed on a fea
 
 ### D. Configure pact to be verified when provider changes
 
-One the consumer is publishing its pacts and is tagging them with the correct branch names, you can now add Pact verification and to your provider PR pipeline.
+Once the consumer is publishing its pacts and is tagging them with the correct branch names, you can now add Pact verification and to your provider PR pipeline.
 
 Pact verification should run as part of your regular unit test run. But you should change the tag it verifies against to be the name of the consumer's main branch instead of `latest`.
 
