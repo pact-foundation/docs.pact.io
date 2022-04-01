@@ -278,7 +278,7 @@ When Pact reads the pact files for verification on the Provider side, it needs t
 * If using the JVM, you can use [request filters](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-gradle#modifying-the-requests-before-they-are-sent) to modify the request headers before they are sent to the Provider.
 * If using Pact JS you can use [request filters](https://github.com/pact-foundation/pact-js#modify-requests-prior-to-verification-request-filters)
 * If using Pact Go you can use [request filters](https://github.com/pact-foundation/pact-go#request-filtering)
-* Configure a relaxed OAuth2 validation service on the Provider that accepts any valid headers, so long as the match the spec \(e.g. `Authorization` header\). You might leverage the [provider states](http://docs.pact.io/documentation/provider_states.html) feature for this.
+* Configure a relaxed OAuth2 validation service on the Provider that accepts any valid headers, so long as the match the spec \(e.g. `Authorization` header\). You might leverage the [provider states](http://docs.pact.io/getting_started/provider_states) feature for this.
 * Use Ruby's `Timecop` or similar library to manipulate the runtime clock.
 * Use the `--custom-provider-header` option if you are using one of the implementations that wraps the Ruby standalone and there are no other options \(Python, .NET\).
   * In Python, this is available via the the [`header` option](https://github.com/pact-foundation/pact-python/blob/cf5d5bcd64f0537adf9ac187b23b64944f1a2043/pact/verify.py#L54-L60)

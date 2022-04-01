@@ -4,6 +4,27 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.98.0"></a>
+
+### v2.98.0 (2022-03-29)
+
+#### Features
+
+* support debug logging of entire request and response	 ([42eb4a17](https://github.com/pact-foundation/pact_broker/commit/42eb4a17))
+
+<a name="v2.97.0"></a>
+
+### v2.97.0 (2022-03-29)
+
+#### Features
+
+* **webhook certificates**
+  * support setting webhook certificates using environment variables	 ([82c7a7e5](https://github.com/pact-foundation/pact_broker/commit/82c7a7e5))
+
+#### Bug Fixes
+
+* do not set postgres connection driver options if database_statement_timeout is nil	 ([adec4b00](https://github.com/pact-foundation/pact_broker/commit/adec4b00))
+
 <a name="v2.96.0"></a>
 
 ### v2.96.0 (2022-03-21)
