@@ -108,12 +108,12 @@ The following examples require support for the "pacts for verification" API in y
 
         consumer_version_selectors [
             { tag: 'main', latest: true },
-            { tag: ENV['GIT_BRANCH'], latest: true },
-            { tag: 'test', latest: true }
+            { tag: provider_branch, latest: true },
+            { tag: 'test', latest: true },
             { tag: 'production', latest: true }
         ]
         enable_pending true
-        include_wip_pacts_since ENV['GIT_BRANCH'] == "main" ? "2020-01-01" : nil
+        include_wip_pacts_since provider_branch == "main" ? "2020-01-01" : nil
       end
     end
   ```
