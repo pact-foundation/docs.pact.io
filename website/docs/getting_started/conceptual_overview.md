@@ -1,8 +1,10 @@
 # Pact Conceptual Overview 
+
 Using Pact successfully requires you to understand how Pact works and the concepts and terminology behind Pact. 
 If you try to build your CI/CD without this foundational understanding, you may find yourself getting confused or getting unexpected results.
 
 ## Consumers and publishing pacts
+
 Whenever a consumer runs a contract test for a particular provider and it succeeds, a file is generated that records 
 all of the interactions between the consumer and the provider. This record is called a pact.
 
@@ -16,7 +18,7 @@ toggles.  In general, you want to uniquely identify each version of the consumer
 A given pact published by the consumer may or may not change actual contents of the pact (e.g. by adding a request 
 parameter, or changing the expected results).  If it does change, then the pact gets a new __pact version__.
 
-![Consumer domain model](conceptual_overview_images/consumer-domain-model.png)
+![Consumer domain model](../media/conceptual_overview_images/consumer-domain-model.png)
 
 It's important to understand a few rules about how consumers relate to pacts:
 
@@ -61,7 +63,7 @@ current branch (e.g. a PR branch or the main branch), or you can tag it with the
 The general recommendation is to set a tag of the branch name when a verification passes, and set a tag of the 
 environment name (like "prod" or "staging") when the provider is deployed to that environment.
 
-![Provider domain model](conceptual_overview_images/provider_domain_model.png)
+![Provider domain model](../media/conceptual_overview_images/provider-domain-model.png)
 
 Let's expand the example from above to include the provider and its verifications.
 
@@ -82,7 +84,7 @@ The Pact team has generalized the "consumer" and "provider" roles of a pact usin
 pact publication has two pacticipants: the consumer and the provider.  A verification result also has two 
 pacticipants: the consumer and the provider.
 
-![Pacticipant domain model](conceptual_overview_images/pacticipant.png)
+![Pacticipant domain model](../media/conceptual_overview_images/pacticipant.png)
 
 This generalized concept of a pacticipant can be useful because sometimes you can perform the same operations on a 
 pacticipant regardless of whether it is a consumer or a provider.
