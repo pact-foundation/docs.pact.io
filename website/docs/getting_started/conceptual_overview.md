@@ -1,4 +1,4 @@
-# Pact Conceptual Overview 
+# Conceptual Overview 
 
 Using Pact successfully requires you to understand how Pact works and the concepts and terminology behind Pact. 
 If you try to build your CI/CD without this foundational understanding, you may find yourself getting confused or getting unexpected results.
@@ -13,7 +13,7 @@ This is called a pact publication.
 
 Whenever the consumer changes, this is called a __consumer version__. The version is often identified by its git hash. 
 You may also want to add other distinguishing information, such as the feature toggle name if you are using feature 
-toggles.  In general, you want to uniquely identify each version of the consumer which may require a different contract.
+toggles.  In general, you want to uniquely identify each version of the consumer that may be deployed to an environment which may require a different contract.
 
 A given pact published by the consumer may or may not change actual contents of the pact (e.g. by adding a request 
 parameter, or changing the expected results).  If it does change, then the pact gets a new __pact version__.
@@ -23,32 +23,53 @@ parameter, or changing the expected results).  If it does change, then the pact 
 It's important to understand a few rules about how consumers relate to pacts:
 
 - Multiple versions of the consumer can have the same pact version (if the changes to the consumer don't change the pact)
-- A specific version of the consumer will always have exactly one pact version
+- A specific version of the consumer will always have exactly one pact version for each provider.
 
-## Tagging
-At any point you may want to label a particular version of the consumer with one or more tags. For example, 
-you can tag the consumer with its current branch (e.g. a PR branch or the main branch), or you can tag it with the 
+## Branches & Environments
+
+:::info THE GOLDEN RULE FOR LABELLING
+Label with the branch name when you publish pacts or verification results, and record deployment with the environment name after you deploy.
+
+- [branches](/pact_broker/branches)
+- [recording deployments and releases](/pact_broker/recording_deployments_and_releases)
+
+::: 
+
+At any point you may want to label a particular version of the consumer with one or more identifiers. For example, 
+you can identify the consumer with its current branch (e.g. a PR branch or the main branch), or you can identify it with the 
 environment it has been deployed to.
 
-The general recommendation is to tag with the branch name when you publish a pact, and tag with the environment when you deploy.
-I'll discuss later how we use tags to help answer the question: can I deploy?
+Branches in the Pact Broker are designed to model repository (git, svn etc) branches. A branch in the Pact Broker belongs to a pacticipant (application). A branch may have many pacticipant versions, and a pacticipant version may belong to many branches (but typically, it will belong to just one).
+
+Remember that a pacticipant version in the Pact Broker should map 1:1 to a commit in your repository. To facilitate this, the version number used to publish pacts and verification results should either be or contain the commit.
+
+We recommend that you set the branch property when you publish pacts and verification results, and use record-deployment or record-release when you deploy/release.
+
+The general recommendation is to set the branch name when you publish a pact, and set with the environment when you deploy.
+I'll discuss later how we use labels to help answer the question: can I deploy?
 
 For example, let's say you have a PetStoreConsumer application.  Every time you change it that's a new version 
 of the application.  When you run contract tests for that version, you publish a new pact publication to the broker, 
 which may or may not generate a new pact version.
 
-| Date | Consumer Versions | Tags | Pact Version |
-| ---- | ----------------- | ---- | ------------ |
-| 12/21 | 63be8b | prod, main | 1 |
-| 12/22 |9ecb61 | staging,main| 2 |
-| 12/23 | 31696e | feat-xyz | 2 |
-|12/23|3b4de7|feat-abc|3|
+| Date  | Consumer Versions | branches     | environment | Pact Version |
+| ----- | ----------------- | ------------ | ----------- | ------------ |
+| 12/21 | 63be8b            | prod, main   | production  | 1            |
+| 12/22 | 9ecb61            | staging,main | staging     | 2            |
+| 12/23 | 31696e            | feat-xyz     | N/A         | 2            |
+| 12/23 | 3b4de7            | feat-abc     | N/A         | 3            |
 
 Here we see that:
 - Version 63be8b is deployed to prod and is in the main branch.
 - Version 9ecb61 is deployed to staging, and is also in the main branch. It has changed the pact, so it has a new pact version.
 - Version 31696e is in a feature branch and has not been deployed anywhere. It did not change the pact, so the pact version remains the same
 - Version 3b4de7 is in a different feature branch. It did change the pact, so we now have a new pact version
+  
+
+:::warning A caveat about tags
+Tags that represent branches and environments, while still supported, have been superseded by first class support for branches and environments from version 2.82.0 onwards. Please read this [post](https://docs.pact.io/blog/2021/07/04/why-we-are-getting-rid-of-tags) for more information. You'll find links at the bottom of this [post](https://docs.pact.io/pact_broker/tags) to help you migrate from tags to branches and environments.
+:::
+
 
 ## Verifying the pact
 We need to know if a particular pact version will work with a particular version of the provider. This is done by running 
@@ -58,21 +79,21 @@ In our CI/CD environment, every time we run a verification, the results will be 
 
 Whenever the provider changes, this is called a __provider version__ (usually identified by its git hash plus other identifying information like a toggle name).
 
-Just as with a consumer, you may want to label a particular version of the provider with one or more tags. For example, you can tag the provider with its 
-current branch (e.g. a PR branch or the main branch), or you can tag it with the environment it has been deployed to.  
-The general recommendation is to set a tag of the branch name when a verification passes, and set a tag of the 
+Just as with a consumer, you may want to label a particular version of the provider with one or more branch label. For example, you can label the provider with its 
+current branch (e.g. a PR branch or the main branch), or you can label it with the environment it has been deployed to.  
+The general recommendation is to set a label of the branch name when a verification passes, and record a deployment to 
 environment name (like "prod" or "staging") when the provider is deployed to that environment.
 
 ![Provider domain model](../media/conceptual_overview_images/provider-domain-model.png)
 
 Let's expand the example from above to include the provider and its verifications.
 
-| Date | Provider Version | Tags | Verified against pact versions |
-| ---- | ----------------- | ---- | ------------ |
-|12/21|6464f9|prod, main|1, 2|
-|12/22|a8513e|staging, main|1, 2, 3 |
-|12/23|35a850|feat-X|2, 3|
-|12/23|741a54|feat-Y|3|
+| Date  | Provider Version | branches     | environment | Verified against pact versions |
+| ----- | ----------------- | ------------ | ----------- | ------------ |
+| 12/21 | 6464f9            | prod, main   | production  | 1,2            |
+| 12/22 | a8513e            | staging,main | staging     | 1,2,3           |
+| 12/23 | 35a850            | feat-xyz     | N/A         | 2,3            |
+| 12/23 | 741a54            | feat-abc     | N/A         | 3            |
 
 Note that provider version 35a850 in the feat-X branch has not been verified against pact version 1. Because that's the 
 version that the prod consumer is at, it is not safe to deploy this version of the provider to prod. You probably 
@@ -88,6 +109,4 @@ pacticipants: the consumer and the provider.
 
 This generalized concept of a pacticipant can be useful because sometimes you can perform the same operations on a 
 pacticipant regardless of whether it is a consumer or a provider.
-
-
 
