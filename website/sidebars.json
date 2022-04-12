@@ -23,7 +23,6 @@
           "type": "category",
           "label": "Consumer",
           "items": [
-            "implementation_guides/jvm/consumer/java8",
             "implementation_guides/jvm/consumer/junit",
             "implementation_guides/jvm/consumer/junit5",
             "implementation_guides/jvm/consumer",
