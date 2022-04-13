@@ -25,7 +25,7 @@ Pact is fantastic tool for developing and testing intra-organisation microservic
 
 ## What is it not good for?
 
-* Testing APIs where the team maintaining the other side of the integration will not also being using Pact
+* Testing APIs where the team maintaining the other side of the integration will not also be using Pact
 * Testing APIs where the consumers cannot be individually identified \(eg. public APIs\).
 * Situations where you cannot load data into the provider without using the API that you're actually testing \(eg. public APIs\). [Why?](#why-pact-may-not-be-the-best-tool-for-testing-public-apis)
 * Situations where you cannot control the data being used to generate the provider's responses.
@@ -50,6 +50,6 @@ What you really need is a "non-HTTP" pact between your consumer and the downstre
 
 ## If you are unsure
 
-If you're unsure whether Pact will be valuable for your team, read this [this page](../faq/convinceme.md).
+If you're unsure whether Pact will be valuable for your team, read [this page](../faq/convinceme.md).
 
 
