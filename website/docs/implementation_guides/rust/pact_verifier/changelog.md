@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.13.4 - Bugfix Release
+
+* 73ae0ef0 - fix: Upgrade reqwest to 0.11.10 to resolve #156 (Ronald Holshausen, Wed Apr 13 13:31:55 2022 +1000)
+* e93c5574 - fix: when loading plugins for Pact files, only take minor + major version into account (Ronald Holshausen, Thu Mar 24 16:50:00 2022 +1100)
+
 ## 0.13.3 - Maintenance Release
 
 * 345b0011 - feat: support mock servers provided from plugins (Ronald Holshausen, Mon Mar 21 15:59:46 2022 +1100)
