@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.9.9 - Bugfix Release
+
+* 73ae0ef0 - fix: Upgrade reqwest to 0.11.10 to resolve #156 (Ronald Holshausen, Wed Apr 13 13:31:55 2022 +1000)
+* 345b0011 - feat: support mock servers provided from plugins (Ronald Holshausen, Mon Mar 21 15:59:46 2022 +1100)
+* f709528d - fix: rust/pact_verifier_cli/Dockerfile to reduce vulnerabilities (snyk-bot, Thu Mar 17 22:19:46 2022 +0000)
+
 ## 0.9.8 - Custom headers + Date-Time expression parser
 
 * 79324802 - feat: add support for custom headers via the verifier CLI #182 (Ronald Holshausen, Mon Feb 28 15:22:47 2022 +1100)
