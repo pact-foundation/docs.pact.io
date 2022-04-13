@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.3.3 - Bugfix Release
+
+* 73ae0ef0 - fix: Upgrade reqwest to 0.11.10 to resolve #156 (Ronald Holshausen, Wed Apr 13 13:31:55 2022 +1000)
+* 345b0011 - feat: support mock servers provided from plugins (Ronald Holshausen, Mon Mar 21 15:59:46 2022 +1100)
+* daa2c101 - feat: add mutable iteraction over Pact interactions (Ronald Holshausen, Fri Mar 18 16:55:34 2022 +1100)
+* 01ac989b - fix: was missing setter to set the transport with V4 interactions (Ronald Holshausen, Fri Mar 18 16:04:00 2022 +1100)
+* 7fd87eb9 - feat: store the transport with V4 interactions to support mockservers from plugins (Ronald Holshausen, Fri Mar 18 14:30:20 2022 +1100)
+
 ## 0.3.2 - Maintenance Release
 
 * 01ac989b - fix: was missing setter to set the transport with V4 interactions (Ronald Holshausen, Fri Mar 18 16:04:00 2022 +1100)
