@@ -101,7 +101,7 @@ also don't want to merge it into main until this gets fixed. Similarly provider 
 pact version 3. So it's not safe to deploy to either staging or prod, and should definitely not be merged to main.
 
 ## Generalizing: the pacticipant
-The Pact team has generalized the "consumer" and "provider" roles of a pact using the term __pacticipant__. A particular 
+We have generalized the "consumer" and "provider" roles of a pact using the term __pacticipant__. A particular 
 pact publication has two pacticipants: the consumer and the provider.  A verification result also has two 
 pacticipants: the consumer and the provider.
 
