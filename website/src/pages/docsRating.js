@@ -1,12 +1,14 @@
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import React, { useState } from 'react';
+import {useLocation} from '@docusaurus/router';
 
 const DocsRating = ({ label }) => {
   if (!ExecutionEnvironment.canUseDOM) {
     return null;
   }
+  const location = useLocation();
 
-  const [haveVoted, setHaveVoted] = useState(false);
+  const [haveVoted, setHaveVoted] = useState({ voted: false, location: '' });
   const giveFeedback = (value) => {
     if (window.ga) {
       window.ga('send', {
@@ -17,12 +19,12 @@ const DocsRating = ({ label }) => {
         eventValue: value
       });
     }
-    setHaveVoted(true);
+    setHaveVoted({ voted: true, location: label });
   };
 
   return (
     <div className="docsRating">
-      {haveVoted ? (
+      {label === haveVoted.location && haveVoted.voted ? (
         'Thanks for letting us know!'
       ) : (
         <>
