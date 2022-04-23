@@ -89,6 +89,7 @@ class Index extends React.Component {
           align="center"
           contents={props.children}
           layout={props.layout}
+          key={props.id}
         />
       </div>
     );
@@ -223,7 +224,7 @@ class Index extends React.Component {
           <div className="mainContainer">
             <Features />
             {/* <FeatureCallout /> */}
-            {/*  <TryOut /> */}
+             {/* <TryOut /> */}
             {/* <Description /> */}
             <Showcase />
             <Netlify />
