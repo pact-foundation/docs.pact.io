@@ -231,6 +231,12 @@ const siteConfig = {
         googleAnalytics: {
           trackingID: "UA-8926693-8",
         },
+        theme: {
+          customCss: [
+            require.resolve('./src/css/custom.css'),
+          ],
+        },
+
       },
     ],
   ],

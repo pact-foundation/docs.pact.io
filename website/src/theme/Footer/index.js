@@ -10,11 +10,13 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import DocsRating from '../../pages/docsRating';
+import {useLocation} from '@docusaurus/router';
 
-function FooterLink({to, href, label, prependBaseUrlToHref, ...props}) {
+function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
   const toUrl = useBaseUrl(to);
   const normalizedHref = useBaseUrl(href, {
-    forcePrependBaseUrl: true,
+    forcePrependBaseUrl: true
   });
   return (
     <Link
@@ -23,38 +25,43 @@ function FooterLink({to, href, label, prependBaseUrlToHref, ...props}) {
         ? {
             target: '_blank',
             rel: 'noopener noreferrer',
-            href: prependBaseUrlToHref ? normalizedHref : href,
+            href: prependBaseUrlToHref ? normalizedHref : href
           }
         : {
-            to: toUrl,
+            to: toUrl
           })}
-      {...props}>
+      {...props}
+    >
       {label}
     </Link>
   );
 }
 
-const FooterLogo = ({url, alt}) => (
+const FooterLogo = ({ url, alt }) => (
   <img className="footer__logo" alt={alt} src={url} />
 );
 
 function Footer() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
-  const {themeConfig = {}} = siteConfig;
-  const {footer} = themeConfig;
-  const {copyright, links = [], logo = {}} = footer || {};
+  const { siteConfig = {} } = context;
+  const { themeConfig = {} } = siteConfig;
+  const { footer } = themeConfig;
+  const { copyright, links = [], logo = {} } = footer || {};
   const logoUrl = useBaseUrl(logo.src);
+  const location = useLocation();
 
   if (!footer) {
     return null;
   }
 
   return (
+    <div>
+    <DocsRating label={location.pathname}/>
     <footer
-      className={clsx('footer', {
-        'footer--dark': footer.style === 'dark',
-      })}>
+    className={clsx('footer', {
+      'footer--dark': footer.style === 'dark'
+    })}
+    >
       <div className="container">
         {links && links.length > 0 && (
           <div className="row footer__links">
@@ -74,14 +81,14 @@ function Footer() {
                           className="footer__item" // Developer provided the HTML, so assume it's safe.
                           // eslint-disable-next-line react/no-danger
                           dangerouslySetInnerHTML={{
-                            __html: item.html,
+                            __html: item.html
                           }}
                         />
                       ) : (
                         <li key={item.href || item.to} className="footer__item">
                           <FooterLink {...item} />
                         </li>
-                      ),
+                      )
                     )}
                   </ul>
                 ) : null}
@@ -98,7 +105,8 @@ function Footer() {
                     href={logo.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={styles.footerLogoLink}>
+                    className={styles.footerLogoLink}
+                  >
                     <FooterLogo alt={logo.alt} url={logoUrl} />
                   </a>
                 ) : (
@@ -110,13 +118,14 @@ function Footer() {
             <div // Developer provided the HTML, so assume it's safe.
               // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{
-                __html: copyright,
+                __html: copyright
               }}
             />
           </div>
         )}
       </div>
     </footer>
+    </div>
   );
 }
 
