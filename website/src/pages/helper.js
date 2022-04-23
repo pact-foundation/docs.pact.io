@@ -31,7 +31,7 @@ function Help(props) {
       title: 'Request a feature'
     },
     {
-      content: "Find out what's new with this project by reading our [blog](http://blog.pact.io)",
+      content: "Find out what's new with this project by reading our [blog](https://docs.pact.io/blog)",
       title: 'Stay up to date',
     },{
       content: 'Please create an executable example and raise an issue in the [repository](https://github.com/pact-foundation) of the appropriate implementation.',

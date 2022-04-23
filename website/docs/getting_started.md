@@ -6,7 +6,7 @@ slug: /
 
 Pact is a code-first tool for testing HTTP and message integrations using `contract tests`. Contract tests assert that inter-application messages conform to a shared understanding that is documented in a contract. Without contract testing, the only way to ensure that applications will work correctly together is by using expensive and brittle integration tests.
 
-Do you [set your house on fire to test your smoke alarm?](https://dius.com.au/2014/05/19/simplifying-micro-service-testing-with-pacts/) No, you test the contract it holds with your ears by using the testing button. Pact provides that testing button for your code, allowing you to safely confirm that your applications will work together without having to deploy the world first.
+Do you [set your house on fire to test your smoke alarm?](https://dius.com.au/2014/05/20/simplifying-microservice-testing-with-pacts/) No, you test the contract it holds with your ears by using the testing button. Pact provides that testing button for your code, allowing you to safely confirm that your applications will work together without having to deploy the world first.
 
 To view an animated step-by-step explanation of how Pact works, check out this [How Pact works](https://pactflow.io/how-pact-works?utm_source=ossdocs&utm_campaign=getting_started) (external↗️) page.
 
@@ -43,7 +43,7 @@ In general, a contract is between a _consumer_ \(for example, a client that want
 
 ## Consumer Driven Contracts
 
-Pact is a code-first [_consumer-driven_](http://martinfowler.com/articles/consumerDrivenContracts.html) contract testing tool, and is generally used by developers and testers who code. The contract is generated during the execution of the automated consumer tests. A major advantage of this pattern is that only parts of the communication that are actually used by the consumer\(s\) get tested. This in turn means that any provider behaviour not used by current consumers is free to change without breaking tests.
+Pact is a code-first [_consumer-driven_](https://martinfowler.com/articles/consumerDrivenContracts.html) contract testing tool, and is generally used by developers and testers who code. The contract is generated during the execution of the automated consumer tests. A major advantage of this pattern is that only parts of the communication that are actually used by the consumer\(s\) get tested. This in turn means that any provider behaviour not used by current consumers is free to change without breaking tests.
 
 Unlike a schema or specification \(eg. OAS\), which is a static artefact that describes all possible states of a resource, a Pact contract is enforced by executing a collection of test cases, each of which describes a single concrete request/response pair - Pact is, in effect, "contract by example". Read more on the [difference between schema testing and contract testing](https://pactflow.io/blog/contract-testing-using-json-schemas-and-open-api-part-1/).
 

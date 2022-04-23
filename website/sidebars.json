@@ -23,7 +23,6 @@
           "type": "category",
           "label": "Consumer",
           "items": [
-            "implementation_guides/jvm/consumer/java8",
             "implementation_guides/jvm/consumer/junit",
             "implementation_guides/jvm/consumer/junit5",
             "implementation_guides/jvm/consumer",
@@ -218,7 +217,7 @@
       "pact_nirvana/step_5",
       "pact_nirvana/step_6",
       "pact_nirvana/step_7",
-      "pact_nirvana/step_8"
+      "pact_nirvana/notes_1"
     ],
     "Recipes": [
       "recipes",

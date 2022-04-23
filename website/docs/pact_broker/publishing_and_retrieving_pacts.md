@@ -4,41 +4,23 @@ title: Publishing and retrieving pacts
 
 ## Publishing
 
-### Publish using the Pact client in your language
-
-All of the Pact client libraries should have an API to allow you to publish pacts directly through that API. If your implementation is missing this feature, please raise an issue.
-
 ### Publish using CLI tools
 
-The recommended way to publish pacts if you can't do so through your Pact client library, is to use the [CLI tools](/pact_broker/client_cli) which make administration a breeze:
+The recommended way to publish pacts is to use the [CLI tools](/pact_broker/client_cli):
 
 ```text
-pact-broker publish --consumer-app-version 1.0.0 --broker-base-url https://test.pactflow.io --broker-token SomeToken /path/to/pacts/consumer-provider.json --tag master
+pact-broker publish /path/to/pacts/consumer-provider.json --consumer-app-version 1.0.0 --branch main --broker-base-url https://test.pactflow.io --broker-token SomeToken
 ```
 
 ### Publish using HTTP Requests
 
-Pacts are published by making a `PUT` request to the path `/pacts/provider/PROVIDER/consumer/CONSUMER/version/CONSUMER_VERSION_NUMBER` with the pact json document as the body.
-
-For example:
-
-```text
-curl -v -XPUT \-H "Content-Type: application/json" \
--d@spec/pacts/a_consumer-a_provider.json \
-http://your-pact-broker/pacts/provider/A%20Provider/consumer/A%20Consumer/version/1.0.0+4jvh387gj3
-```
-
-Or on Windows:
-
-```text
-$res = Invoke-WebRequest -Uri "http://your-pact-broker/pacts/provider/A%20Provider/consumer/A%20Consumer/version/1.0.0+4jvh387gj3" -Method Put -InFile .\a_consumer-a_provider.json -ContentType "application/json"
-```
-
-You most likely won't need to get your hands dirty with curl however, as pact publishing is built in to most of the native pact libraries already. See the [Language Support](https://docs.pact.io/getting_started/sharing_pacts#language-support) section of the documentation on "Sharing Pacts" on docs.pact.io to find out how to configure pact publishing in your language.
+While we recommend using the CLI wherever possible, you can publish directly to the API. The documentation for the endpoint is [here](https://github.com/pact-foundation/pact_broker/blob/master/lib/pact_broker/doc/views/index/publish-contracts.markdown).
 
 Please read about [Pacticipant version numbers](pacticipant_version_numbers.md) to ensure you are using the correct format.
 
 ## Retrieving
+
+You should not need to manually construct a pact URL in the recommended workflows, however, the documentation below is kept for posterity.
 
 ### Latest pact for a provider and consumer
 

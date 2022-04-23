@@ -15,7 +15,7 @@ The Pact Verifier works by taking all the interactions (requests and responses) 
 The pact verifier is bundled as a single binary executable `pact_verifier_cli`. Running this with out any options displays the standard help.
 
 ```console
-pact_verifier_cli 0.9.7
+pact_verifier_cli 0.9.10
 Standalone Pact verifier
 
 USAGE:
@@ -46,6 +46,9 @@ OPTIONS:
         --consumer-version-tags <consumer-version-tags>
             Consumer tags to use when fetching pacts from the Broker. Accepts comma-separated values.
 
+        --header <custom-header>...
+            Add a custom header to be included in the calls to the provider. Values must be in the form KEY=VALUE, where
+            KEY and VALUE contain ASCII characters (32-127) only. Can be repeated.
     -d, --dir <dir>...
             Directory of pact files to verify (can be repeated)
 
@@ -87,12 +90,12 @@ OPTIONS:
         --request-timeout <request-timeout>
             Sets the HTTP request timeout in milliseconds for requests to the target API and for state change requests.
 
-        --scheme <scheme>
-            Provider URI scheme (defaults to http) [default: http]  [possible values: http, https]
-
     -s, --state-change-url <state-change-url>                           URL to post state change requests to
     -t, --token <token>
             Bearer token to use when fetching pacts from URLS [env: PACT_BROKER_TOKEN=]
+
+        --transport <transport>
+            Provider protocol transport to use (http, https, grpc, etc., defaults to http) [default: http]
 
     -u, --url <url>...                                                  URL of pact file to verify (can be repeated)
         --user <user>
@@ -109,23 +112,24 @@ You can control the log level with the `-l, --loglevel <loglevel>` option. It de
 
 You can specify the pacts to verify with the following options. They can be repeated to set multiple sources.
 
-| Option | Type | Description |
-|--------|------|-------------|
-| `-f, --file <file>` | File | Loads a pact from the given file |
-| `-u, --url <url>` | URL | Loads a pact from a URL resource |
-| `-d, --dir <dir>` | Directory | Loads all the pacts from the given directory |
+| Option                          | Type        | Description                                                                                                          |
+|---------------------------------|-------------|----------------------------------------------------------------------------------------------------------------------|
+| `-f, --file <file>`             | File        | Loads a pact from the given file                                                                                     |
+| `-u, --url <url>`               | URL         | Loads a pact from a URL resource                                                                                     |
+| `-d, --dir <dir>`               | Directory   | Loads all the pacts from the given directory                                                                         |
 | `-b, --broker-url <broker-url>` | Pact Broker | Loads all the pacts for the provider from the pact broker. Requires the `-n, --provider-name <provider-name>` option |
 
 ### Provider Options
 
 The running provider can be specified with the following options:
 
-| Option | Description |
-|--------|-------------|
-| `-h, --hostname <hostname>` | The provider hostname, defaults to `localhost` |
-| `-p, --port <port>` | The provider port (defaults to protocol default 80/443) |
-| `-n, --provider-name <provider-name>` | The name of the provider. Required if you are loading pacts from a pact broker |
-| `--base-path <base-path>` | If the provider is mounted on a sub-path, you can use this option to set the base path to add to all requests |
+| Option                                | Description                                                                                                   |
+|---------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| `-h, --hostname <hostname>`           | The provider hostname, defaults to `localhost`                                                                |
+| `-p, --port <port>`                   | The provider port (defaults to protocol default 80/443)                                                       |
+| `-n, --provider-name <provider-name>` | The name of the provider. Required if you are loading pacts from a pact broker                                |
+| `--base-path <base-path>`             | If the provider is mounted on a sub-path, you can use this option to set the base path to add to all requests |
+| `--transport <transport>`             | Protocol transport to use. Defaults to HTTP.                                                                  |
 
 ### Filtering the interactions
 

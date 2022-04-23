@@ -52,7 +52,7 @@ and in the [Pact-JVM wiki](https://github.com/DiUS/pact-jvm/wiki). [Stack Overfl
 
 | Branch                                                                 | Specification | JDK  | Kotlin Version | Latest Version | Notes                                  |
 |------------------------------------------------------------------------|---------------|------|----------------|----------------|----------------------------------------|
-| [4.4.x](https://github.com/DiUS/pact-jvm/blob/v4.4.x/README.md)        | V4 + plugins  | 11+  | 1.6.10         | 4.4.0-beta.0   |                                        |
+| [4.4.x](https://github.com/DiUS/pact-jvm/blob/v4.4.x/README.md)        | V4 + plugins  | 11+  | 1.6.20         | 4.4.0-beta.1   |                                        |
 | [4.3.x](https://github.com/DiUS/pact-jvm/blob/v4.3.x/README.md) master | V4            | 11+  | 1.5.21         | 4.3.6          | [Upgrade notes](/implementation_guides/jvm/upgrade-to-4.3.x) |
 | [4.1.x](https://github.com/DiUS/pact-jvm/blob/v4.1.x/README.md)        | V3            | 8-12 | 1.3.72         | 4.1.34         |                                        |
 
@@ -110,8 +110,11 @@ You want to look at: [pact4s](https://github.com/jbwheatley/pact4s) or [scala-pa
 ### I Use Java
 
 You want to look at: [junit](/implementation_guides/jvm/consumer/junit) for JUnit 4 tests and
-[junit5](/implementation_guides/jvm/consumer/junit5) for JUnit 5 tests. Also, if you are using Java 8 or above, there is [an
-updated DSL for consumer tests](https://github.com/DiUS/pact-jvm/blob/master/consumer/java8).
+[junit5](/implementation_guides/jvm/consumer/junit5) for JUnit 5 tests. Also, if you are using Java 11 or above, there is [an
+updated DSL for consumer tests](/implementation_guides/jvm/consumer).
+
+**NOTE:** If you are using Java 8, there is no separate Java 8 support library anymore, see the above library.
+
 
 ### I Use Groovy or Grails
 
