@@ -8,7 +8,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
-import {GridBlock} from '../components/compLibraryv2.js';
+import {GridBlock} from '../components/CompLibraryV2';
 
 // const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 
@@ -89,6 +89,7 @@ class Index extends React.Component {
           align="center"
           contents={props.children}
           layout={props.layout}
+          key={props.id}
         />
       </div>
     );

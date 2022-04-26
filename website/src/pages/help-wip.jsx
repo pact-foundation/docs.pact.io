@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
-import {GridBlock} from '../components/compLibraryV2.js';
+import {GridBlock} from '../components/CompLibraryV2';
 
 // const Container = CompLibrary.Container;
 // const GridBlock = CompLibrary.GridBlock;

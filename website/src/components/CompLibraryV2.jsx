@@ -62,7 +62,7 @@ export class GridBlock extends React.Component {
 
   renderRow(block) {
     return (
-      <div className='row'>
+      <div className='row' key={block[0].title}>
           {this.renderBlock(block[0])}
           {this.renderBlock(block[1])}
           {this.renderBlock(block[2])}
