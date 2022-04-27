@@ -1,0 +1,323 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><a id="1638311061.000200"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1638311061.000200" ><div class="time">2021-11-30 22:24</div></a><div class="msg">has joined #terraform</div></div></div><br/>
+<div><a id="1638311061.000300"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1638311061.000300" ><div class="time">2021-11-30 22:24</div></a><div class="msg">set the channel description: Pact terraform provider</div></div></div><br/>
+<div><a id="1638311067.000500"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1638311067.000500" ><div class="time">2021-11-30 22:24</div></a><div class="msg">has joined #terraform</div></div></div><br/>
+<div><a id="1638311253.000800"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1638311253.000800" ><div class="time">2021-11-30 22:27</div></a><div class="msg">:wave:</div></div></div><br/>
+<div><a id="1638311364.001300"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1638311364.001300" ><div class="time">2021-11-30 22:29</div></a><div class="msg">This is awesome, thanks for creating the channel!</div></div></div><br/>
+<div><a id="1638311436.002600"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1638311436.002600" ><div class="time">2021-11-30 22:30</div></a><div class="msg">I've been toying with the TF module recently, it's going to be great for managing the tool and approvals via PRs. I've got a few questions about it though</div></div></div><br/>
+<div><a id="1638311593.005100"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1638311593.005100" ><div class="time">2021-11-30 22:33</div></a><div class="msg">I had a few issues with state; I couldn't really sync the remote state even using the `refresh` command, and ended up importing resources one by one until I got things in line. If not in sync, TF tries to create existing resources and fails when applying. Do you know of any known issues there?</div></div></div><br/>
+<div><a id="1638311711.006800"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1638311711.006800" ><div class="time">2021-11-30 22:35</div></a><div class="msg">I can reproduce it consistently by removing the `tfstate` file (which would be a similar case to running this in a CI setting, as we shouldn't be committing state files to source control).</div></div></div><br/>
+<div><a id="1638314742.008700"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1638314742.008700" ><div class="time">2021-11-30 23:25</div></a><div class="msg">Interesting. If the resources already exist, by default the provider will error unless they are imported. Once you have a correct state file, presumably you can use the remote state management features - is that your plan?</div></div></div><br/>
+<div><a id="1638314759.009200"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1638314759.009200" ><div class="time">2021-11-30 23:25</div></a><div class="msg">I think we could enhance the refresh capabilities though, which might simplify your use case?</div></div></div><br/>
+<div><a id="1638322320.013000"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1638322320.013000" ><div class="time">2021-12-01 01:32</div></a><div class="msg">Thanks - Yeah, you're right, I should just use remote state and go with that for CI. I thought refresh would sync everything up but it only does it for resources that are already bound in the state file, so that was just a misunderstanding on my part.</div></div></div><br/>
+<div><a id="1638346846.000500"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1638346846.000500" ><div class="time">2021-12-01 08:20</div></a><div class="msg">Cool np, let me know if you have other questions!</div></div></div><br/>
+<div><a id="1638415134.006100"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1638415134.006100" ><div class="time">2021-12-02 03:18</div></a><div class="msg">Hi again - Noob question regarding <a href="https://www.terraform.io/docs/language/modules/develop/providers.html#implicit-provider-inheritance">https://www.terraform.io/docs/language/modules/develop/providers.html#implicit-provider-inheritance</a>. I'd like to start separating my resources into modules (e.g: users, teams, etc) so that I don't have all the config in a single file. I did a quick test creating a module for teams, but I'm getting this error when trying to run it:
+```Error: Failed to query available provider packages
+
+Could not retrieve the list of available versions for provider hashicorp/pact: provider registry <a href="http://registry.terraform.io">http://registry.terraform.io</a> does not have a provider named <a href="http://registry.terraform.io/hashicorp/pact">http://registry.terraform.io/hashicorp/pact</a>
+
+Did you intend to use pactflow/pact? If so, you must specify that source address in each module which requires that provider. To see which modules are currently depending on hashicorp/pact, run the following command: terraform providers```</div></div></div><br/>
+<div><a id="1638415139.006300"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1638415139.006300" ><div class="time">2021-12-02 03:18</div></a><div class="msg">A simplified version of what I've got in my main file is:
+```terraform {
+  required_providers {
+    pact = {
+      source = "pactflow/pact"
+      version = "0.2.0"
+    }
+  }
+}
+
+variable "ACCESS_TOKEN" {
+  type = string
+  sensitive = true
+}
+
+provider "pact" {
+  host = "(my host url)"
+  access_token = var.ACCESS_TOKEN
+}
+
+...
+
+module "teams" {
+  source = "./modules/teams"
+}```
+And the module just:
+```resource "pact_team" "tomato" {
+    name = "Tomato"
+    users = []
+}```
+I would've expected that the module would inherit the provider, but the error is telling me otherwise. Any ideas?</div></div></div><br/>
+<div><a id="1638477882.001600"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1638477882.001600" ><div class="time">2021-12-02 20:44</div></a><div class="msg">^ I think I'll just create separate files for the different resources at the top level instead of creating modules which in retrospect seems like a bad idea for this use case.</div></div></div><br/>
+<div><a id="1638511754.001800"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1638511754.001800" ><div class="time">2021-12-03 06:09</div></a><div class="msg">Sorry, it's been a while since I've used terraform in a bigger project where that's be needed</div></div></div><br/>
+<div><a id="1641776382.001900"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1641776382.001900" ><div class="time">2022-01-10 00:59</div></a><div class="msg">Hi team - Happy new year! I've been troubleshooting a few issues I had and found a few odd things, I'd appreciate some help (and yeah, sorry for bringing the first problems of the year to this channel :grimacing:)</div></div></div><br/>
+<div><a id="1641776438.003300"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1641776438.003300" ><div class="time">2022-01-10 01:00</div></a><div class="msg">In both of the issues I'll describe the problem is that `terraform apply` reports changes that are not actually applied.</div></div></div><br/>
+<div><a id="1641776812.008000"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1641776812.008000" ><div class="time">2022-01-10 01:06</div></a><div class="msg">The first change is changing the `repository_url` of one of the applications. `terraform apply` shows:
+``` # pact_application.fruit will be updated in-place
+  ~ resource "pact_application" "fruit" {
+        id             = "Fruit"
+        name           = "Fruit"
+      ~ repository_url = "<a href="https://github.com/company/admin">https://github.com/company/admin</a>" -&gt; "<a href="https://github.dev.xero.com/Xero/QE-Pactflow-Management">https://github.dev.xero.com/Xero/QE-Pactflow-Management</a>"
+    }```
+After reporting a successful apply command, the resource still has the old url. Looking at the audit events, I found that for some reason the PATCH request has the wrong path, looks like an escaped formatting sequence issue maybe (`%25s`)?
+```{
+    "uuid": "O2VY9vwUAaOBDJMDuOrLmg",
+    "timestamp": "2021-12-10T00:52:32.201+00:00",
+    "type": "pacticipant",
+    "userUUID": "56b15671-a578-4bc6-a858-b4792433ba3e",
+    "name": "Jonatan Jaworski",
+    "tokenUUID": "FqhmJO3ulus-mJ99hGSdKA",
+    "payload": {
+        "path": "/pacticipants/%25s",
+        "queryString": "",
+        "method": "PATCH",
+        "userAgent": "go-pact/0.0.1",
+        "referer": null,
+        "remoteHost": null,
+        "remoteAddress": "10.2.1.48",
+        "requestId": "03c91bf3e3345c024129f7d057d7fe28"
+    },
+    "response": {
+        "status": 200
+    }
+}```
+As a result, I get a new application created ("%25s") instead of updating the existing one. I don't really know when it goes wrong like that.
+
+I also found a log that goes:
+```2022-01-10T11:55:37.780+1300 [WARN]  Provider "<a href="http://registry.terraform.io/pactflow/pact">http://registry.terraform.io/pactflow/pact</a>" produced an unexpected new value for pact_application.fruit during refresh.
+      - .repository_url: was cty.StringVal("<a href="https://github.dev.xero.com/Xero/QE-Pactflow-Management">https://github.dev.xero.com/Xero/QE-Pactflow-Management</a>"), but now cty.StringVal("<a href="https://github.com/company/admin">https://github.com/company/admin</a>")```
+Which to me confirms that TF was expecting the change to be applied when refreshing state but it wasn't.</div></div></div><br/>
+<div><a id="1641777161.010000"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1641777161.010000" ><div class="time">2022-01-10 01:12</div></a><div class="msg">The second change was to add a role to an existing user. The delta is reported correctly:
+```# pact_user.liam_scott will be updated in-place
+  ~ resource "pact_user" "liam_scott" {
+        id     = "e9fb21e1-d84c-45b4-88fe-d2f30d08cebe"
+        name   = "Liam Scott"
+      ~ roles  = [
+            "e9282e22-416b-11ea-a16e-57ee1bb61d18",
+          + "d635f960-88f2-4f13-8043-4641a02dffa0",
+        ]
+        # (4 unchanged attributes hidden)
+    }```
+But then there's no audit entry for that update, all the requests concerning that user are GET. Looking at the logs, I found this:
+```2022-01-10T11:55:37.780+1300 [WARN]  Provider "<a href="http://registry.terraform.io/pactflow/pact">http://registry.terraform.io/pactflow/pact</a>" produced an unexpected new value for pact_user.liam_scott during refresh.
+      - .roles: element 1 has vanished```
+I don't know what's going on there.</div></div></div><br/>
+<div><a id="1641777974.014300"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1641777974.014300" ><div class="time">2022-01-10 01:26</div></a><div class="msg">I also found a couple of minor things that I don't think are having any effect in my project, but probably worth looking at:
+
+Possible issue with optional arguments that are not provided (not sure if this is just user error, it goes away when providing a value - an empty string in this case):
+```2022-01-10T11:55:37.775+1300 [WARN]  Provider "<a href="http://registry.terraform.io/pactflow/pact">http://registry.terraform.io/pactflow/pact</a>" produced an invalid plan for pact_application.fruit_salad, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .repository_url: planned value cty.StringVal("") for a non-computed attribute```
+Possible issue with empty arrays:
+```2022-01-10T14:18:48.629+1300 [WARN]  Provider "<a href="http://registry.terraform.io/pactflow/pact">http://registry.terraform.io/pactflow/pact</a>" produced an invalid plan for pact_team.scallops, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .pacticipants: planned value cty.NullVal(cty.List(cty.String)) does not match config value cty.ListValEmpty(cty.String)```</div></div></div><br/>
+<div><a id="1641852744.000500"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1641852744.000500" ><div class="time">2022-01-10 22:12</div></a><div class="msg">Thanks Jonatan. I?ll raise this on Github and get them looked into.</div></div></div><br/>
+<div><a id="1641852759.000900"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1641852759.000900" ><div class="time">2022-01-10 22:12</div></a><div class="msg">The role one isn?t immediately obvious to me what?s happening, but the repository URL looks like it just needs some better URL escaping</div></div></div><br/>
+<div><a id="1641853157.001700"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1641853157.001700" ><div class="time">2022-01-10 22:19</div></a><div class="msg">Thanks a lot Matt - Let me know if you need any more info.</div></div></div><br/>
+<div><a id="1641853885.002100"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1641853885.002100" ><div class="time">2022-01-10 22:31</div></a><div class="msg">Raised <a href="https://github.com/pactflow/terraform-provider-pact/issues/18">https://github.com/pactflow/terraform-provider-pact/issues/18</a> and <a href="https://github.com/pactflow/terraform-provider-pact/issues/19">https://github.com/pactflow/terraform-provider-pact/issues/19</a></div></div></div><br/>
+<div><a id="1642413123.000100"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1642413123.000100" ><div class="time">2022-01-17 09:52</div></a><div class="msg">Hi Jonatan, I was looking at this issue today and I can?t seem to replicate it (I used the `pactflow-acceptance` suite in the github repository to test setting it up and then changing it)</div></div></div><br/>
+<div><a id="1642415839.000300"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1642415839.000300" ><div class="time">2022-01-17 10:37</div></a><div class="msg">Ah, I see. You?re example above has `Fruit` as the resource name, but I suspect the resource name has the space (not the repository URL)</div></div></div><br/>
+<div><a id="1642422430.000100"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1642422430.000100" ><div class="time">2022-01-17 12:27</div></a><div class="msg">Yes, I believe as we move to a later version of the API we?ll need to deal with those.</div></div></div><br/>
+<div><a id="1642422876.000300"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1642422876.000300" ><div class="time">2022-01-17 12:34</div></a><div class="msg">I?ve released a new version that should fix the above issue (URL escaping was indeed the problem)</div></div></div><br/>
+<div><a id="1642422889.000500"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1642422889.000500" ><div class="time">2022-01-17 12:34</div></a><div class="msg">I had a look at the roles, but with the existing detail I can?t quite work out the problem. I can add/remove them running it against our tf-acceptance account, so I suspect it will be some set of circumstances causing the issue. I?ll look at the roles one in the next day or so if you could share any logs / more detail?</div></div></div><br/>
+<div><a id="1642462469.000200"><img src="https://avatars.slack-edge.com/2021-11-30/2784598044851_4f760493b8c9b6439eb1_72.jpg" /></a><div class="message"><div class="username">alturil</div><a style="text-decoration: none" href="#1642462469.000200" ><div class="time">2022-01-17 23:34</div></a><div class="msg">Thanks a lot Matt - I'll gather some info later today, and try a few things out to see if this can be narrowed down.</div></div></div><br/>
+<div><a id="1642462824.000500"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1642462824.000500" ><div class="time">2022-01-17 23:40</div></a><div class="msg">thanks, that?d be great</div></div></div><br/>
+<div><a id="1643811408.303079"><img src="https://secure.gravatar.com/avatar/4a26516b20146fd5fcb05759c563a3cb.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0001-72.png" /></a><div class="message"><div class="username">ananda-kumar.irudhaya</div><a style="text-decoration: none" href="#1643811408.303079" ><div class="time">2022-02-02 14:16</div></a><div class="msg">has joined #terraform</div></div></div><br/>
+<div><a id="1644413200.744229"><img src="https://avatars.slack-edge.com/2022-02-09/3091871403105_605b41e807aa6b6ab126_72.jpg" /></a><div class="message"><div class="username">agustin.gomes</div><a style="text-decoration: none" href="#1644413200.744229" ><div class="time">2022-02-09 13:26</div></a><div class="msg">has joined #terraform</div></div></div><br/>
+<div><a id="1647570969.768529"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1647570969.768529" ><div class="time">2022-03-18 02:36</div></a><div class="msg">has joined #terraform</div></div></div><br/>
+<div><a id="1647571379.124189"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1647571379.124189" ><div class="time">2022-03-18 02:42</div></a><div class="msg">Hi team - Any chance we can either persist changes when the order of elements change in an array, or ignore the order altogether? Things like this create a loop where `terraform plan` always displays this change, and apparently nothing happens after doing `terraform apply`, so the only way of fixing it is manually changing the order in the tf files to match it, which is not practical when using references instead of the plain uuids (i.e, going: `pact_user.john_doe.uuid`)
+```# pact_team.myTeam will be updated in-place
+  ~ resource "pact_team" "myTeam" {
+        id           = "b3a82ec1-a34e-4f82-845f-e41f9de3da78"
+        name         = "MyTeam"
+      ~ users        = [
+            "967155a1-29a7-4aa3-8520-7bad949abad8",
+          - "1e8c0d39-7937-4647-8886-9e40690e6886",
+            "4e161b2b-b07a-4979-a69e-f5ed2727bfa4",
+          - "50011c55-2fa0-4e70-b5e5-9592fc38e36a",
+            "781a1bf2-9723-40c8-9cee-69ff9515c7f6",
+          + "50011c55-2fa0-4e70-b5e5-9592fc38e36a",
+          + "1e8c0d39-7937-4647-8886-9e40690e6886",
+        ]
+        # (2 unchanged attributes hidden)
+    }```
+</div></div></div><br/>
+<div><a id="1647575552.864609"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1647575552.864609" ><div class="time">2022-03-18 03:52</div></a><div class="msg"><a href="https://github.com/pactflow/terraform-provider-pact/issues/21">https://github.com/pactflow/terraform-provider-pact/issues/21</a></div></div></div><br/>
+<div><a id="1647575572.250899"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1647575572.250899" ><div class="time">2022-03-18 03:52</div></a><div class="msg">Good idea. I think the issue is that the api can return items in different sort orders, which triggers the change</div></div></div><br/>
+<div><a id="1647575587.852579"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1647575587.852579" ><div class="time">2022-03-18 03:53</div></a><div class="msg">I think storing the items in a sorted array will address it</div></div></div><br/>
+<div><a id="1647855283.248339"><img src="https://avatars.slack-edge.com/2022-03-21/3270864936212_f1802a3c1f2b25c45d3a_72.jpg" /></a><div class="message"><div class="username">rupam.saha</div><a style="text-decoration: none" href="#1647855283.248339" ><div class="time">2022-03-21 09:34</div></a><div class="msg">has joined #terraform</div></div></div><br/>
+<div><a id="1647855802.114319"><img src="https://avatars.slack-edge.com/2022-03-21/3270864936212_f1802a3c1f2b25c45d3a_72.jpg" /></a><div class="message"><div class="username">rupam.saha</div><a style="text-decoration: none" href="#1647855802.114319" ><div class="time">2022-03-21 09:43</div></a><div class="msg">Hello Everyone,
+We are trying to implement Contract testing and have almost completed the setup manually. Right now we are in the process of migrating our webhook setup into Terraform. But it seems like the new event `contract_requiring_verification_published` is not supported yet.
+```Error: "events.0" must be one of the allowed events [contract_content_changed contract_published provider_verification_failed provider_verification_published provider_verification_succeeded], got contract_requiring_verification_published```
+I am using `version = "0.4.3"` of the TF provider for Pact.
+Is there any plan in your roadmap to support it or any workaround?
+Thanks in advance :slightly_smiling_face:</div></div></div><br/>
+<div><a id="1647856121.623359"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1647856121.623359" ><div class="time">2022-03-21 09:48</div></a><div class="msg">Release on the way out: <a href="https://github.com/pactflow/terraform-provider-pact/releases/tag/v0.5.0">https://github.com/pactflow/terraform-provider-pact/releases/tag/v0.5.0</a></div></div></div><br/>
+<div><a id="1647856280.031359"><img src="https://avatars.slack-edge.com/2022-03-21/3270864936212_f1802a3c1f2b25c45d3a_72.jpg" /></a><div class="message"><div class="username">rupam.saha</div><a style="text-decoration: none" href="#1647856280.031359" ><div class="time">2022-03-21 09:51</div></a><div class="msg">Awesome! :raised_hands: Thanks Matt!</div></div></div><br/>
+<div><a id="1647858462.771239"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1647858462.771239" ><div class="time">2022-03-21 10:27</div></a><div class="msg">Gah, build failed! I think the GH runtime has changed (or version of go) and arm is failins for unrelated reasons.</div></div></div><br/>
+<div><a id="1647858467.675429"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1647858467.675429" ><div class="time">2022-03-21 10:27</div></a><div class="msg">I?ll have t olook tomorrow</div></div></div><br/>
+<div><a id="1647861278.253089"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1647861278.253089" ><div class="time">2022-03-21 11:14</div></a><div class="msg">OK I had a late call and I think the issue is it was running the release on an older Golang version and somethnig about the GH actions environment has recently changed (because I released last week just fine).
+
+Anywho, `0.5.1` is out with your update!</div></div></div><br/>
+<div><a id="1647864443.484179"><img src="https://avatars.slack-edge.com/2022-03-21/3270864936212_f1802a3c1f2b25c45d3a_72.jpg" /></a><div class="message"><div class="username">rupam.saha</div><a style="text-decoration: none" href="#1647864443.484179" ><div class="time">2022-03-21 12:07</div></a><div class="msg">Wow! Thank you so much :raised_hands:</div></div></div><br/>
+<div><a id="1647865357.685029"><img src="https://avatars.slack-edge.com/2022-03-21/3270864936212_f1802a3c1f2b25c45d3a_72.jpg" /></a><div class="message"><div class="username">rupam.saha</div><a style="text-decoration: none" href="#1647865357.685029" ><div class="time">2022-03-21 12:22</div></a><div class="msg">Hi,
+I have hit another brick wall. I need to pass the Webhook parameters as `query parameters` and not `request body` . However, I could not find the relevant information in the <a href="https://registry.terraform.io/providers/pactflow/pact/latest/docs/resources/webhook#request">https://registry.terraform.io/providers/pactflow/pact/latest/docs/resources/webhook#request</a> and seems `body` is a required field.  Therefore, this is how my tried to write the request:
+```  request {
+    url = "https://&lt;jenkins-url&gt;/generic-webhook-trigger/invoke?token=&lt;token&gt;&amp;consumerName=CustomerWeb&amp;monolithEnv=DOCKER&amp;consumerPactUrl=$${pactbroker.pactUrl}&amp;providerVersion=$${pactbroker.providerVersionNumber}&amp;providerBranch=$${pactbroker.providerVersionBranch}"
+    method = "GET"
+    headers = {
+      "X-Content-Type" = "application/json"
+    }
+    body = &lt;&lt;EOF
+{
+  "pact": "$${pactbroker.pactUrl}"
+}```
+With the above configuration, I am getting the following error:
+```? Error: "request.0.url" must be a valid URL, got: parse "    \"https://********/generic-webhook-trigger/invoke?token=**********&amp;consumerName=CustomerWeb&amp;monolithEnv=DOCKER&amp;consumerPactUrl=${pactbroker.pactUrl}&amp;providerVersion=${pactbroker.providerVersionNumber}&amp;providerBranch=${pactbroker.providerVersionBranch}\"\n": net/url: invalid control character in URL```
+Is there a way to pass query params instead of request body?</div></div></div><br/>
+<div><a id="1649115275.386589"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649115275.386589" ><div class="time">2022-04-04 23:34</div></a><div class="msg">Hi Rupam, apologies I missed this.
+
+Can you please raise an issue? We can get that supported</div></div></div><br/>
+<div><a id="1649149445.308029"><img src="https://avatars.slack-edge.com/2022-03-21/3270864936212_f1802a3c1f2b25c45d3a_72.jpg" /></a><div class="message"><div class="username">rupam.saha</div><a style="text-decoration: none" href="#1649149445.308029" ><div class="time">2022-04-05 09:04</div></a><div class="msg">Sure! at the moment we resolved it by updating our job to accept request body instead of query parameters it is working. I will raise an issue to add support for query params.</div></div></div><br/>
+<div><a id="1649149870.133359"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649149870.133359" ><div class="time">2022-04-05 09:11</div></a><div class="msg">Ah good to hear, thanks!</div></div></div><br/>
+<div><a id="1649386851.603279"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649386851.603279" ><div class="time">2022-04-08 03:00</div></a><div class="msg">Hi team - I don't seem to be able to assign the Team Administrator role via Terraform, are you aware of any limitations there?
+
+What I'm doing at the moment is getting all the roles that are already defined in Pactflow (like User, Viewer, Team Administrator, Guest, etc) into a dictionary that I can then reference elsewhere. Like this:
+```variable "pactflow_roles" {
+  type        = map(any)
+  description = "Roles defined by Pactflow"
+  default = {
+    administrator      = "cf75d7c2-416b-11ea-af5e-53c3b1a4efd8",
+    ci_cd              = "c1878b8e-d09e-11ea-8fde-af02c4677eb7",
+    guest              = "d6938de2-e37c-11eb-b80e-3f68328092ca",
+    team_administrator = "d635f960-88f2-4f13-8043-4641a02dffa0",
+    user               = "e9282e22-416b-11ea-a16e-57ee1bb61d18",
+    viewer             = "9fa50562-a42b-4771-aa8e-4bb3d623ae60"
+  }
+}```
+So that then I can go:
+```resource "pact_user" "john_doe" {
+  name   = "John Doe"
+  email  = "<mailto:jon@doe.com|jon@doe.com>"
+  active = true
+  type   = "user"
+  roles = [
+    var.pactflow_roles["team_administrator"],
+    var.pactflow_roles["user"]
+  ]
+}```
+But only the `user` role gets persisted, no the team administrator one.</div></div></div><br/>
+<div><a id="1649386923.358359"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649386923.358359" ><div class="time">2022-04-08 03:02</div></a><div class="msg">Not sure if this is related, but I can't edit the team administrator or guest roles in the UI (I'm an admin btw)</div></div></div><br/>
+<div><a id="1649388984.258549"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649388984.258549" ><div class="time">2022-04-08 03:36</div></a><div class="msg">hmm I?m definitely not aware of not being able to assign the team admin</div></div></div><br/>
+<div><a id="1649388986.489669"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649388986.489669" ><div class="time">2022-04-08 03:36</div></a><div class="msg">Let me take a look</div></div></div><br/>
+<div><a id="1649388997.369549"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649388997.369549" ><div class="time">2022-04-08 03:36</div></a><div class="msg">as for why you can?t edit them, it?s because they are system roles and have specific meanings.</div></div></div><br/>
+<div><a id="1649399677.524409"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649399677.524409" ><div class="time">2022-04-08 06:34</div></a><div class="msg">TIL: <a href="https://docs.pactflow.io/docs/permissions/predefined-roles#team-administrator">https://docs.pactflow.io/docs/permissions/predefined-roles#team-administrator</a></div></div></div><br/>
+<div><a id="1649623669.828299"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649623669.828299" ><div class="time">2022-04-10 20:47</div></a><div class="msg">Oh, I should've read that first. Considering that, are you planning to add it to the <a href="https://registry.terraform.io/providers/pactflow/pact/latest/docs/resources/team">https://registry.terraform.io/providers/pactflow/pact/latest/docs/resources/team</a> then instead? It would be handy to be able to set up all at once rather than doing it manually later.</div></div></div><br/>
+<div><a id="1649631492.501149"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649631492.501149" ><div class="time">2022-04-10 22:58</div></a><div class="msg">Oh, as in, adding the admin on the Team resource itself? Yes, I have a WIP branch for that</div></div></div><br/>
+<div><a id="1649631535.192219"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649631535.192219" ><div class="time">2022-04-10 22:58</div></a><div class="msg">I?ll see if I can get that to you this morning Jonatan</div></div></div><br/>
+<div><a id="1649631552.034849"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649631552.034849" ><div class="time">2022-04-10 22:59</div></a><div class="msg">Awesome, thanks a lot! :party_parrot:</div></div></div><br/>
+<div><a id="1649669158.947649"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649669158.947649" ><div class="time">2022-04-11 09:25</div></a><div class="msg">release v0.7.0 headed out, should now have the ability to set the team administrator</div></div></div><br/>
+<div><a id="1649711811.935149"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649711811.935149" ><div class="time">2022-04-11 21:16</div></a><div class="msg">Nice!! Thanks!</div></div></div><br/>
+<div><a id="1649713338.594049"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649713338.594049" ><div class="time">2022-04-11 21:42</div></a><div class="msg">Let me know how you go!</div></div></div><br/>
+<div><a id="1649732068.533079"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649732068.533079" ><div class="time">2022-04-12 02:54</div></a><div class="msg">Just got to test in now, works like a charm! :raised_hands:</div></div></div><br/>
+<div><a id="1649732110.486579"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649732110.486579" ><div class="time">2022-04-12 02:55</div></a><div class="msg">The only thing to keep in mind is that even though the team administrator role can't be _assigned_ via the `users` resource, you may want to have it declared anyway so that it doesn't show up as a change in subsequent runs.</div></div></div><br/>
+<div><a id="1649732362.957959"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649732362.957959" ><div class="time">2022-04-12 02:59</div></a><div class="msg">I noticed that <a href="https://github.com/pactflow/terraform-provider-pact/commit/e3894e44ab810df2fd2e8b1ade2b2a3538617f0a">https://github.com/pactflow/terraform-provider-pact/commit/e3894e44ab810df2fd2e8b1ade2b2a3538617f0a</a> was merged in <a href="https://github.com/pactflow/terraform-provider-pact/releases/tag/v0.7.0">https://github.com/pactflow/terraform-provider-pact/releases/tag/v0.7.0</a>, but I can still reproduce the issue.</div></div></div><br/>
+<div><a id="1649733028.624609"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649733028.624609" ><div class="time">2022-04-12 03:10</div></a><div class="msg">bugger, I?ll have to setup an explicit test case for it</div></div></div><br/>
+<div><a id="1649733623.191579"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649733623.191579" ><div class="time">2022-04-12 03:20</div></a><div class="msg">Ah, interesting.</div></div></div><br/>
+<div><a id="1649733718.090839"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649733718.090839" ><div class="time">2022-04-12 03:21</div></a><div class="msg">Good point. I?m wondering if it makes sense to explicitly exclude it in the terraform client. I?m assuming you need to add the role to the user _and_ add the user to the team administrators property, to avoid the ?argh there?s an extra role on this user and we?re going to delete it? terraform plan output?</div></div></div><br/>
+<div><a id="1649733992.237889"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649733992.237889" ><div class="time">2022-04-12 03:26</div></a><div class="msg">Yeah, exactly. And I agree that having it excluded from the roles could be more clear when setting things up.</div></div></div><br/>
+<div><a id="1649733999.539849"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649733999.539849" ><div class="time">2022-04-12 03:26</div></a><div class="msg">Not sure if that would cause a mismatch with the UI though. And I don't know what happens when a user is a member of multiple teams but only the team administrator of one of these, for example.</div></div></div><br/>
+<div><a id="1649734052.064369"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649734052.064369" ><div class="time">2022-04-12 03:27</div></a><div class="msg">I?ll check with the team</div></div></div><br/>
+<div><a id="1649735101.723179"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649735101.723179" ><div class="time">2022-04-12 03:45</div></a><div class="msg">The team administrator has special uuid based scopes:
+
+```                    {
+                        "uuid": "d635f960-88f2-4f13-8043-4641a02dffa0",
+                        "name": "Team Administrator",
+                        "permissions": [
+                            {
+                                "uuid": "066e1800-d462-4a3e-a117-5c42b299d67d",
+                                "scope": "team:manage:5b7cd177-0dd9-49da-8ff2-d6a92bda49ab",
+                                "label": "Manage team",
+                                "description": "Can manage a specific team (add users and applications to the team).",
+                                "group": "Team"
+                            }
+                        ],
+                        "_links": {
+                            "self": {
+                                "title": "User Role",
+                                "name": "Team Administrator",
+                                "href": "<a href="https://test.test.pactflow.io/admin/users/f2ca543f-a181-4695-b6c0-bf43794b86d3/roles/d635f960-88f2-4f13-8043-4641a02dffa0">https://test.test.pactflow.io/admin/users/f2ca543f-a181-4695-b6c0-bf43794b86d3/roles/d635f960-88f2-4f13-8043-4641a02dffa0</a>"
+                            }
+                        }
+                    },
+                    {
+                        "uuid": "d635f960-88f2-4f13-8043-4641a02dffa0",
+                        "name": "Team Administrator",
+                        "permissions": [
+                            {
+                                "uuid": "066e1800-d462-4a3e-a117-5c42b299d67d",
+                                "scope": "team:manage:3eea19ed-1994-444f-90e0-10475e882694",
+                                "label": "Manage team",
+                                "description": "Can manage a specific team (add users and applications to the team).",
+                                "group": "Team"
+                            }
+                        ],
+                        "_links": {
+                            "self": {
+                                "title": "User Role",
+                                "name": "Team Administrator",
+                                "href": "<a href="https://test.test.pactflow.io/admin/users/f2ca543f-a181-4695-b6c0-bf43794b86d3/roles/d635f960-88f2-4f13-8043-4641a02dffa0">https://test.test.pactflow.io/admin/users/f2ca543f-a181-4695-b6c0-bf43794b86d3/roles/d635f960-88f2-4f13-8043-4641a02dffa0</a>"
+                            }
+                        }
+                    }```
+
+Note the `team:manage:uuid` scope - so the role only applies to the specific team scope. Above, one of the scopes is `team:manage:3eea19ed-1994-444f-90e0-10475e882694` which says that I can manage the team with uuid `3eea19ed-1994-444f-90e0-10475e882694`</div></div></div><br/>
+<div><a id="1649735274.826379"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649735274.826379" ><div class="time">2022-04-12 03:47</div></a><div class="msg">Oh, yes, awesome.</div></div></div><br/>
+<div><a id="1649744450.213309"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649744450.213309" ><div class="time">2022-04-12 06:20</div></a><div class="msg">I?m advised we could filter out the team administrator role, so i?ll create an issue to track that</div></div></div><br/>
+<div><a id="1649744453.207369"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1649744453.207369" ><div class="time">2022-04-12 06:20</div></a><div class="msg">thanks for raising</div></div></div><br/>
+<div><a id="1649795212.811649"><img src="https://avatars.slack-edge.com/2022-03-16/3276608670112_9fee6763b76f698d610d_72.jpg" /></a><div class="message"><div class="username">jonatan.jaworski</div><a style="text-decoration: none" href="#1649795212.811649" ><div class="time">2022-04-12 20:26</div></a><div class="msg">Excellent, thanks again for looking into this!</div></div></div><br/>
+<div><a id="1650309144.667929"><img src="https://secure.gravatar.com/avatar/e56972270335da29ddd62580416412c4.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0011-72.png" /></a><div class="message"><div class="username">lewiscowles</div><a style="text-decoration: none" href="#1650309144.667929" ><div class="time">2022-04-18 19:12</div></a><div class="msg">has joined #terraform</div></div></div><br/>
+<div><a id="1650860523.292929"><img src="https://avatars.slack-edge.com/2022-04-19/3403242575558_3582f56b2e25012add25_72.png" /></a><div class="message"><div class="username">florent</div><a style="text-decoration: none" href="#1650860523.292929" ><div class="time">2022-04-25 04:22</div></a><div class="msg">has joined #terraform</div></div></div><br/>
+</div></body></html>
