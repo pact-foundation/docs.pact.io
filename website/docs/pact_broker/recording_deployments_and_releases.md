@@ -173,7 +173,7 @@ If you would like to make a contribution to Pact by adding support for this sele
 * Pact Go - v1.6.3
 * Pact Rust - v0.8.7
 * Pact JVM - unsupported ([check status or comment on issue](https://github.com/pact-foundation/pact-jvm/issues/1407))
-* Pact NET - unsupported ([check status or comment on issue](https://github.com/pact-foundation/pact-net/issues/311))
+* Pact NET - v4.0.0-beta.1  ([check status or comment on issue](https://github.com/pact-foundation/pact-net/issues/311))
 * Pact Python - unsupported ([check status or comment on issue](https://github.com/pact-foundation/pact-python/issues/246))
 * Pact Scala - unsupported ([check status or comment on issue](https://github.com/ITV/scala-pact/issues/224))
 * Pact4s - unsupported
