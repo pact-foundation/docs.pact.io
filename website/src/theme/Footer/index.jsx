@@ -10,6 +10,8 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import DocsRating from '../../components/DocsRating';
+import {useLocation} from '@docusaurus/router';
 
 function FooterLink({to, href, label, prependBaseUrlToHref, ...props}) {
   const toUrl = useBaseUrl(to);
@@ -45,12 +47,15 @@ function Footer() {
   const {footer} = themeConfig;
   const {copyright, links = [], logo = {}} = footer || {};
   const logoUrl = useBaseUrl(logo.src);
+  const location = useLocation();
 
   if (!footer) {
     return null;
   }
 
   return (
+    <div>
+    <DocsRating label={location.pathname}/>
     <footer
       className={clsx('footer', {
         'footer--dark': footer.style === 'dark',
@@ -117,6 +122,7 @@ function Footer() {
         )}
       </div>
     </footer>
+    </div>
   );
 }
 
