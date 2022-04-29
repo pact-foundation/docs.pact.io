@@ -13,7 +13,7 @@ This is called a pact publication.
 
 Whenever the consumer changes, this is called a __consumer version__. The version is often identified by its git hash. 
 You may also want to add other distinguishing information, such as the feature toggle name if you are using feature 
-toggles.  In general, you want to uniquely identify each version of the consumer that may be deployed to an environment which may require a different contract.
+toggles or feature branches, if you are using feature branches.  In general, you want to uniquely identify each version of the consumer that may be deployed to an environment which may require a different contract.
 
 A given pact published by the consumer may or may not change actual contents of the pact (e.g. by adding a request 
 parameter, or changing the expected results).  If it does change, then the pact gets a new __pact version__.
@@ -39,9 +39,9 @@ At any point you may want to label a particular version of the consumer with one
 you can identify the consumer with its current branch (e.g. a PR branch or the main branch), or you can identify it with the 
 environment it has been deployed to.
 
-Branches in the Pact Broker are designed to model repository (git, svn etc) branches. A branch in the Pact Broker belongs to a pacticipant (application). A branch may have many pacticipant versions, and a pacticipant version may belong to many branches (but typically, it will belong to just one).
+Branches in the Pact Broker are designed to model repository (git, svn etc) branches. A branch in the Pact Broker belongs to an application. A branch may have many application versions, and an application version may belong to many branches (but typically, it will belong to just one).
 
-Remember that a pacticipant version in the Pact Broker should map 1:1 to a commit in your repository. To facilitate this, the version number used to publish pacts and verification results should either be or contain the commit.
+> _note_: if you are using feature toggles or other configuration systems that change the behavior depending on a configuration. The same commit in a repository may interact with different versions of a pact, and therefore require different pacticipant versions
 
 We recommend that you set the branch property when you publish pacts and verification results, and use record-deployment or record-release when you deploy/release.
 
@@ -66,7 +66,9 @@ Here we see that:
 - Version 3b4de7 is in a different feature branch. It did change the pact, so we now have a new pact version
   
 
-:::warning A caveat about tags
+:::warning A caveat about Pact terminology `tags`
+If you are not new to Pact, you may have heard of the terminology `tag`, if so, please read this section, otherwise you can skip this note.
+
 Tags that represent branches and environments, while still supported, have been superseded by first class support for branches and environments from version 2.82.0 onwards. Please read this [post](https://docs.pact.io/blog/2021/07/04/why-we-are-getting-rid-of-tags) for more information. You'll find links at the bottom of this [post](https://docs.pact.io/pact_broker/tags) to help you migrate from tags to branches and environments.
 :::
 
