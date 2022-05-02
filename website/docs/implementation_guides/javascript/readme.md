@@ -21,7 +21,7 @@ Implementation of the consumer driven contract library [Pact](https://docs.pact.
 
 From the [Pact website](http://docs.pact.io/):
 
-> The Pact family of frameworks provide support for [Consumer Driven Contracts](https://martinfowler.com/articles/consumerDrivenContracts.html) testing.
+> The Pact family of frameworks provide support for [Consumer Driven Contracts](http://martinfowler.com/articles/consumerDrivenContracts.html) testing.
 
 > A Contract is a collection of agreements between a client (Consumer) and an API (Provider) that describes the interactions that can take place between them.
 
@@ -577,7 +577,7 @@ new Publisher(opts)
 | -------------------- | :------: | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `providerBaseUrl`    | `false`  | string           | Running API provider host endpoint.                                                                                                                         |
 | `pactFilesOrDirs`    |  `true`  | array of strings | Array of local Pact files or directories containing pact files. Path must be absolute. Required.                                                            |
-| `pactBroker`         |  `true`  | string           | The base URL of the Pact Broker. eg. https://test.pact.dius.com.au. Required.                                                                               |
+| `pactBroker`         |  `true`  | string           | The base URL of the Pact Broker. eg. https://test.pactflow.io. Required.                                                                               |
 | `pactBrokerToken`    | `false`  | string           | Bearer token for Pact Broker authentication. Optional. If using Pactflow, you likely need this option                                                       |
 | `pactBrokerUsername` | `false`  | string           | Username for Pact Broker basic authentication. Optional. If using Pactflow, you most likely need to use `pactBrokerToken`                                   |
 | `pactBrokerPassword` | `false`  | string           | Password for Pact Broker basic authentication. Optional. If using Pactflow, you most likely need to use `pactBrokerToken`                                   |
