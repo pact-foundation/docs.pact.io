@@ -24,19 +24,15 @@ Current maintainer: [Beth Skurrie](https://github.com/bethesque/)
 
 ### JVM
 
-Past contributors: Travis Dixon, Mike Farah, Andras Bubics
-
 Current maintainer: [Ron Holshausen](https://github.com/uglyog)
 
 ### Javascript & Node
 
-Past contributors: Tarcio Saraiva
-
-Current maintainers: [Matt Fellows](https://github.com/mefellows), [Michel Boudreau](https://github.com/mboudreau), [Ron Holshausen](https://github.com/uglyog) for V3 support
+Current maintainers: [Matt Fellows](https://github.com/mefellows)
 
 ### .NET
 
-Current maintainer: [Neil Campbell](https://github.com/neilcampbell)
+Current maintainer: [Adam Rodger](https://github.com/adamrodger)
 
 ### Go
 
@@ -44,19 +40,19 @@ Current maintainer: [Matt Fellows](https://github.com/mefellows)
 
 ### Python
 
-Current maintainer: [Matthew Balvanz](https://github.com/matthewbalvanz-wf)
+Current maintainers: [Matthew Balvanz](https://github.com/matthewbalvanz-wf), [Elliott Murray](https://github.com/elliottmurray)
 
 ### Swift/Objective C
 
-Current maintainer: [Andrew Spinks](https://github.com/andrewspinks)
+Current maintainers: [Marko Justinak](https://github.com/surpher), [Andrew Spinks](https://github.com/andrewspinks)
 
 ### PHP
 
 Current maintainer: [Charles Mack](https://github.com/mattermack)
 
-### Scala ITV
+### Scala
 
-Current maintainer: [Dave Smith](https://github.com/davesmith00000)
+Current maintainers: [Jack Wheatley](https://github.com/jbwheatley/), [Dave Smith](https://github.com/davesmith00000)
 
 ### Rust
 
