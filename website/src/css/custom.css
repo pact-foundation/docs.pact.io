@@ -1,5 +1,5 @@
 :root {
-  --ifm-color-primary: grey;
+  --ifm-color-primary: rgb(52, 62, 248);
   --ifm-color-secondary: #040972;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
@@ -7,6 +7,10 @@
   --ifm-color-primary-light: rgb(70, 203, 174);
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #4e89e8;
 }
 
 /**
