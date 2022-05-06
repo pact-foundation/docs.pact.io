@@ -88,6 +88,8 @@ In summary:
 
 If you have experience with another mocking, stubbing or contract testing tool that you would like to write about, please click the `EDIT` button and submit a PR.
 
+### How does Pact differ from schemathesis?
+
  [pacto]: https://github.com/thoughtworks/pacto
  [pacto_example]: http://thoughtworks.github.io/pacto/usage/
 
