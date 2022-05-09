@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.61.1"></a>
+### v1.61.1 (2022-05-09)
+
+#### Bug Fixes
+
+* Aushm use ruby 2.2 syntax (#110)	 ([b006ad7](https://github.com/pact-foundation/pact_broker-client/commit/b006ad7))
+
 <a name="v1.61.0"></a>
 ### v1.61.0 (2022-05-06)
 
