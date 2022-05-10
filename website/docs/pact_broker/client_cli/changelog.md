@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.62.0"></a>
+### v1.62.0 (2022-05-10)
+
+#### Features
+
+* add command to publish provider contracts to pactflow (feature toggle required) (#107)	 ([80cc10e](https://github.com/pact-foundation/pact_broker-client/commit/80cc10e))
+
+#### Bug Fixes
+
+* use ruby < 2.3 syntax. (#108)	 ([20f1e01](https://github.com/pact-foundation/pact_broker-client/commit/20f1e01))
+
 <a name="v1.61.1"></a>
 ### v1.61.1 (2022-05-09)
 
