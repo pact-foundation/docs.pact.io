@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.62.1"></a>
+### v1.62.1 (2022-05-10)
+
+#### Bug Fixes
+
+* set exit on failure to true for new pactflow command	 ([429dfbd](https://github.com/pact-foundation/pact_broker-client/commit/429dfbd))
+
 <a name="v1.62.0"></a>
 ### v1.62.0 (2022-05-10)
 
