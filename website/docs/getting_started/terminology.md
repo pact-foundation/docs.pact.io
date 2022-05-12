@@ -69,5 +69,7 @@ The Matrix is a table that shows the compatibility status of each consumer versi
 
 [Can-i-deploy](/pact_broker/can_i_deploy) is a command line tool that uses the Matrix to determine whether an application version is "safe" to deploy to a particular environment. To do this, it checks that there is a successful verification result between the application being deployed and the currently deployed version of each of the integrated applications in that environment. Can-i-deploy is a feature of the Pact Broker and Pactflow.
 
+## Pacticipant
 
+This is the term used in the Pact Broker/Pactflow API for "an application that participates in a pact". It was a pun created by the Pact Broker author, Beth Skurrie, before she had any idea that the Pact Broker would become such a widely used application. It is a naming decision that she sincerely regrets, 1. because of all the confusion it creates and 2. because she is now incapable of typing the word "participant".
 
