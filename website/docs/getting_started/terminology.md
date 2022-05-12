@@ -16,19 +16,21 @@ For messages: An application that creates a message or data structure for anothe
 
 ## Mock Service Provider
 
-Used by tests in the consumer project to mock out the actual service provider, meaning that integration-like tests can be run without requiring the actual service provider to be available.
+For HTTP: The Pact mock provider is used by Pact tests in the consumer project to mock out the actual service provider, meaning that integration-like tests can be run without requiring the actual service provider to be available.
+
+For messages: Consumers and providers often use an intermediary such as a queue, topic or an event bus to exchange messages, however, a message pact is deliberately technology agnostic. It focusses only on the payload, so there is no such thing as a Pact mock queue/topic/bus.
 
 ## Interaction
 
-A request and response pair. A pact consists of a collection of _interactions_.
+A request and response pair. Each interaction has a description and one or more _provider states_. An HTTP pact consists of a collection of _interactions_.
 
 ## Pact file
 
-A file containing the JSON serialised interactions \(requests and responses\) that were defined in the consumer tests. This is the _Contract_. A Pact defines:
+A file containing the JSON serialised interactions \(requests and responses\) or messages that were defined in the consumer tests. This is the _Contract_. A Pact defines:
 
 * the consumer name
 * the provider name
-* a collection of interactions
+* a collection of interactions or messages
 * the pact specification version \(see below\)
 
 ## Pact verification
@@ -39,9 +41,9 @@ For messages: A piece of code on the provider is executed to cause a message for
 
 ## Provider state
 
-A name describing a “_state_” \(like a fixture\) that the provider should be in when a given request is replayed against it - e.g. “when user John Doe exists” or “when user John Doe has a bank account”. These allow the same endpoint to be tested under different scenarios.
+On the consumer side, a provider state is a name describing a “_state_” \(like a fixture\) that the provider should be in when a given request is replayed against it - e.g. “when user John Doe exists” or “when user John Doe has a bank account”. These allow the same endpoint to be tested under different scenarios.
 
-A provider state name is specified when writing the consumer specs, then, when the pact verification is set up in the provider the same name will be used to identify the set up code block that should be run before the request is executed. The provider state set up code is written by the provider team.
+On the provider side, when the pact verification is executed, the provider state name will be used to identify the set up code block that should be run before the request is executed. The provider state set up code is written by the provider team.
 
 ## Pact specification
 
