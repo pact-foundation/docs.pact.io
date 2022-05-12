@@ -33,7 +33,9 @@ A file containing the JSON serialised interactions \(requests and responses\) th
 
 ## Pact verification
 
-To verify a _Pact contract_, the requests contained in a _Pact file_ are replayed against the provider code, and the responses returned are checked to ensure they match those expected in the Pact file.
+For HTTP: To verify a _Pact contract_, the requests contained in a _pact file_ are replayed against the provider code, and the responses returned are checked to ensure they match those expected in the pact file.
+
+For messages: A piece of code on the provider is executed to cause a message for a given description to be generated, and the generated message is checked to ensure it matches that expected in the pact file.
 
 ## Provider state
 
@@ -41,7 +43,7 @@ A name describing a “_state_” \(like a fixture\) that the provider should be
 
 A provider state name is specified when writing the consumer specs, then, when the pact verification is set up in the provider the same name will be used to identify the set up code block that should be run before the request is executed. The provider state set up code is written by the provider team.
 
-## Pact Specification
+## Pact specification
 
 The [Pact Specification](https://github.com/pact-foundation/pact-specification) is a document that governs the structure of the actual generated Pact files to allow for interoperability between languages \(consider, for example, a JavaScript consumer connecting to a Scala JVM-based provider\) , using semantic versioning to indicate breaking changes.
 
@@ -49,9 +51,9 @@ Each language implementation of Pact needs to implement the rules of this specif
 
 The current version of the specification is [3.0](https://github.com/pact-foundation/pact-specification/tree/version-3) for the JVM implementation, and [2.0](https://github.com/pact-foundation/pact-specification/tree/version-2) for all others.
 
-## The Pact Broker
+## Pact Broker
 
-The [Pact Broker](/pact_broker) is a permanently running, externally hosted service with an API and UI that allows contract testing to be integrated into a CI/CD pipeline.
+The [Pact Broker](/pact_broker) is a permanently running, externally hosted service with an API and UI that allows contract testing to be integrated into a CI/CD pipeline. Like the Pact clients, the Pact Broker is an open source project.
 
 ## Pactflow
 
@@ -59,11 +61,11 @@ The [Pact Broker](/pact_broker) is a permanently running, externally hosted serv
 
 ## The Matrix
 
-The Matrix is a table that shows the compatibility status of each consumer version and provider version, as determined by the contract verification results.
+The Matrix is a table that shows the compatibility status of each consumer version and provider version, as determined by the contract verification results. It is a feature of the Pact Broker and Pactflow.
 
 ## Can-I-Deploy 
 
-[Can-i-deploy](/pact_broker/can_i_deploy) is a command line tool that uses the Matrix to determine whether an application version is "safe" to deploy to a particular environment. To do this, it checks that there is a successful verification result between the application being deployed and the currently deployed version of each of the integrated applications in that environment.
+[Can-i-deploy](/pact_broker/can_i_deploy) is a command line tool that uses the Matrix to determine whether an application version is "safe" to deploy to a particular environment. To do this, it checks that there is a successful verification result between the application being deployed and the currently deployed version of each of the integrated applications in that environment. Can-i-deploy is a feature of the Pact Broker and Pactflow.
 
 
 
