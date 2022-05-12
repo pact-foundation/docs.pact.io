@@ -6,39 +6,6 @@ You can find the answers to some more technical and complex questions [here](/fa
 
 You might also like to look at our [Ask Me Anything videos](/help/amas), which often cover these questions in more detail.
 
-<!--
-## Table of Contents
-
-* [What is Pact good for?](#what-is-pact-good-for)
-* [What is Pact not good for?](#what-is-pact-not-good-for)
-* [Who would typically implement Pact?](#who-would-typically-implement-pact)
-* [What is the difference between contract testing and functional testing?](#what-is-the-difference-between-contract-testing-and-functional-testing)
-* [Can I generate my pact file from something like Swagger?](#can-i-generate-my-pact-file-from-something-like-swagger)
-* [How do I use Pact with UI frameworks like React or Angular?](#how-do-i-use-pact-with-ui-frameworks-like-react-or-angular)
-* [Why doesn't Pact use JSON Schema?](#why-doesnt-pact-use-json-schema)
-* [Why does Pact use concrete JSON documents rather than using more flexible JSONPaths?](#why-does-pact-use-concrete-json-documents-rather-than-using-more-flexible-jsonpaths)
-* [Why is there no support for specifying optional attributes?](#why-is-there-no-support-for-specifying-optional-attributes)
-* [Why are the pacts generated and not static?](#why-are-the-pacts-generated-and-not-static)
-* [How do I test against the latest development and production versions of consumer APIs?](#how-do-i-test-against-the-latest-development-and-production-versions-of-consumer-apis)
-* [What does PACT stand for?](#what-does-pact-stand-for)
-* [Why Pact may not be the best tool for public testing APIs?](#why-pact-may-not-be-the-best-tool-for-public-testing-apis)
-* [Why Pact may not be the best tool for testing pass through APIs?](#why-pact-may-not-be-the-best-tool-for-testing-pass-through-apis)
-* [Do I still need end-to-end tests?](#do-i-still-need-end-to-end-tests)
-* [Can I use Pact for UI tests?](#can-i-use-pact-for-ui-tests)
-* [How can I handle versioning?](#how-can-i-handle-versioning)
-* [How can I make a breaking change to a provider?](#how-can-i-make-a-breaking-change-to-a-provider)
-* [Is there a Jenkins plugin for Pact?](#is-there-a-jenkins-plugin-for-pact)
-* [What is the difference between the Pact Broker and the mock service?](#what-is-the-difference-between-the-pact-broker-and-the-mock-service)
-* [What is the difference between Pact, the Pact Broker and Pactflow?](#what-is-the-difference-between-pact-the-pact-broker-and-pactflow)
-* [Using Pact where the Consumer team is different from the Provider team](#using-pact-where-the-consumer-team-is-different-from-the-provider-team)
-* [How to prevent a consumer from deploying with an invalid contract](#how-to-prevent-a-consumer-from-deploying-with-an-invalid-contract)
-* [How do I test OAuth or other security headers?](#how-do-i-test-oauth-or-other-security-headers)
-* [Should the database or any other part of the provider be stubbed?](#should-the-database-or-any-other-part-of-the-provider-be-stubbed)
-* [How do I deal with a situation where there are multiple systems involved in a scenario?](#how-do-i-deal-with-a-situation-where-there-are-multiple-systems-involved-in-a-scenario)
-* [How do I test binary files in responses, such as a download?](#how-do-i-test-binary-files-in-responses-such-as-a-download)
-
--->
-
 ### What is Pact good for?
 
 Pact is most valuable for designing and testing integrations where you \(or your team/organisation/partner organisation\) control the development of both the consumer and the provider, and the requirements of the consumer are going to be used to drive the features of the provider. It is fantastic tool for developing and testing intra-organisation microservices.
@@ -371,3 +338,7 @@ Protobufs is something we are still thinking about, and we've yet to test it wit
 Contract tests aren't intended to provide any particular percentage coverage of the _provider_ code - that's what the provider's own functional tests are for. The important question to be asking is "what proportion of the consumer code _that makes the calls to the provider_ is covered?". If you execute your consumer Pact tests in a separate step in your test suite, you can use standard code coverage tools to determine whether or not your Pact tests have covered a sufficient percentage of your consumer client code.
 
 While the coverage metric can be helpful, it unfortunately won't be able to tell you whether or not you've covered every semantic variation of an endpoint. Determining that is currently beyond the scope of Pact, but is something that we would love to be able to solve in the future.
+
+### Why does computer say no?
+
+This is a [Little Britain](https://www.youtube.com/watch?v=0n_Ty_72Qds) reference (language warning!).
