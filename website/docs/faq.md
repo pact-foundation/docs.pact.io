@@ -339,6 +339,6 @@ Contract tests aren't intended to provide any particular percentage coverage of 
 
 While the coverage metric can be helpful, it unfortunately won't be able to tell you whether or not you've covered every semantic variation of an endpoint. Determining that is currently beyond the scope of Pact, but is something that we would love to be able to solve in the future.
 
-### Why does computer say no?
+### Why does computer say no in the can-i-deploy tool?
 
 This is a [Little Britain](https://www.youtube.com/watch?v=0n_Ty_72Qds) reference (language warning!).
