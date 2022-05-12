@@ -6,13 +6,13 @@ title: Terminology
 
 For HTTP: An application that initiates a HTTP request to another application \(the service _provider_\). Note that this does not depend on the way the data flows - whether it is a `GET` or a `PUT` / `POST` / `PATCH`, the _consumer_ is the initiator of the HTTP request.
 
-For messages: An application which reads a message that has been created by another application.
+For messages: An application which reads a message or data structure that has been created by another application.
 
 ## Service Provider
 
-For HTTP: A server that responds to an HTTP request from another component \(the service consumer\). A service provider may have one or more HTTP endpoints, and should be thought of as the "deployable unit" - endpoints that get deployed together should be considered part of the same provider.
+For HTTP: A server that responds to an HTTP request from another application \(the service consumer\). A service provider may have one or more HTTP endpoints, and should be thought of as the "deployable unit" - endpoints that get deployed together should be considered part of the same provider.
 
-For messages: An application that creates a message for another application to read.
+For messages: An application that creates a message or data structure for another application to read.
 
 ## Mock Service Provider
 
