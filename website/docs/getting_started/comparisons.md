@@ -40,7 +40,7 @@ In summary:
 
 [Nock](https://github.com/nock/nock) provides a way to mock out network requests in tests and verify that the consuming code interacts with the mocked interactions as expected.
 
-Nock is great for functional testing, [where Pact is not be the best tool to use for mocking](/consumer/contract_tests_not_functional_tests).
+Nock is great for functional testing, [where Pact may not be the best tool to use for mocking](/consumer/contract_tests_not_functional_tests).
 
 However, unlike Nock:
 
