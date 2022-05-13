@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.7 - Maintenance Release
+
+* 37ba29941 - Updating build.gradle to fix vulnerability (rejeeshg, Tue May 10 23:01:39 2022 +0530)
+* abee6c3e5 - feat: Add support for enabling insecure TLS to the PactBrokerLoader. (Colin Anderson, Thu Apr 7 22:06:23 2022 +0100)
+
 ## 4.3.6 - Bugfix Release
 
 * 0d62de13c - Added secondary constructor to FormPostBuilder to facilitate passing a ContentType. (Thackery Archuletta, Wed Mar 16 12:43:05 2022 -0600)
