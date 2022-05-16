@@ -4,6 +4,31 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.99.0"></a>
+
+### v2.99.0 (2022-05-13)
+
+#### Features
+
+* remove disable_use_branch_heads_for_latest_branch_pacts feature toggle	 ([5c6f1766](https://github.com/pact-foundation/pact_broker/commit/5c6f1766))
+* remove new_wip_calculation feature toggle	 ([add6cb08](https://github.com/pact-foundation/pact_broker/commit/add6cb08))
+* timeout long running pact content diff requests (#555)	 ([88abb2cf](https://github.com/pact-foundation/pact_broker/commit/88abb2cf))
+* change sql_log_level default from debug to none	 ([9f7aed46](https://github.com/pact-foundation/pact_broker/commit/9f7aed46))
+
+#### Bug Fixes
+
+* **ui**
+  * fix unescaped pacticipant name and main branch in details and network pages	 ([b8b1d306](https://github.com/pact-foundation/pact_broker/commit/b8b1d306))
+
+* return a 400 when invalid JSON is used to create a version	 ([9af2cfaf](https://github.com/pact-foundation/pact_broker/commit/9af2cfaf))
+* only log API requests/responses, not web assets, when http_debug_logging_enabled is true	 ([1f232c08](https://github.com/pact-foundation/pact_broker/commit/1f232c08))
+
+* **matrix**
+  * fix performance issue when querying matrix with one selector	 ([3a08d128](https://github.com/pact-foundation/pact_broker/commit/3a08d128))
+
+* **pacts for verification**
+  * return the pacts for the branch heads when using the branch selector	 ([6dac495e](https://github.com/pact-foundation/pact_broker/commit/6dac495e))
+
 <a name="v2.98.0"></a>
 
 ### v2.98.0 (2022-03-29)
