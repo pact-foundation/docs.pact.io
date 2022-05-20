@@ -4,6 +4,28 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.100.0"></a>
+
+### v2.100.0 (2022-05-20)
+
+#### Features
+
+* check for potential duplicate pacticipants in publish contracts endpoint (#558)	 ([ed714f03](https://github.com/pact-foundation/pact_broker/commit/ed714f03))
+* add support for "can i merge" matrix query	 ([bb108ed2](https://github.com/pact-foundation/pact_broker/commit/bb108ed2))
+* remove inefficient skynet query for tags	 ([bdc2599c](https://github.com/pact-foundation/pact_broker/commit/bdc2599c))
+* update text for matrix version description when no version is in an enviroment	 ([3eb5581d](https://github.com/pact-foundation/pact_broker/commit/3eb5581d))
+
+* **pacts for verification**
+  * update wip and pending descriptions for wip pacts	 ([b06d4477](https://github.com/pact-foundation/pact_broker/commit/b06d4477))
+
+* **matrix**
+  * add support for selectors specified by branch and environment name when reporting that a version does not exist	 ([07ff8044](https://github.com/pact-foundation/pact_broker/commit/07ff8044))
+
+#### Bug Fixes
+
+* **matrix**
+  * identify the correct failed version when a selector resolves to multiple versions	 ([11e7dc1c](https://github.com/pact-foundation/pact_broker/commit/11e7dc1c))
+
 <a name="v2.99.0"></a>
 
 ### v2.99.0 (2022-05-13)
