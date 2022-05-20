@@ -66,7 +66,7 @@ You are on a very old version of the Broker, and wish to use date ordering, you 
 
 ## Checking for potential duplicate pacticipant names
 
-When a pact is published normally \(via a PUT to `/pacts/provider/PROVIDER/consumer/CONSUMER/version/CONSUMER_APP_VERSION`\) the `consumer`, `provider` and `consumer version` resources are automatically created.
+When a pact is published, the `consumer`, `provider` and `consumer version` resources are automatically created if they do not exist.
 
 To prevent a pacticipant \(consumer or provider\) being created multiple times with slightly different name variants \(eg. FooBar/foo-bar/foo bar/Foo Bar Service\), if a new pacticipant name is deemed similar enough to an existing name, a 409 will be returned. The response body will contain instructions indicating that the pacticipant name should be corrected if it was intended to be an existing one, or that the pacticipant should be created manually if it was intended to be a new one.
 
@@ -78,7 +78,7 @@ eg.
 pact-broker create-or-update-pacticipant --name <NAME>
 ```
 
-To turn this feature off, set `check_for_potential_duplicate_pacticipant_names = false` (or set the appropriate environment variable if using a Docker image) in the Pact Broker configuration, and make sure everyone is very careful with their naming! The usefulness of the broker depends on the integrity of the data, which in turn depends on the correctness of the pacticipant names.
+To turn this feature off, set `check_for_potential_duplicate_pacticipant_names = false` (or set the appropriate environment variable if using a Docker image) in the Pact Broker configuration, and make sure everyone is very careful with their naming! The usefulness of the Pact Broker depends on the integrity of the data, which in turn depends on the correctness of the pacticipant names.
 
 ## Running the broker behind a reverse proxy
 
