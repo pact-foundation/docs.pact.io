@@ -131,6 +131,12 @@
   to = "/pact_broker/webhooks/?utm_source=pact&utm_medium=client_library"
   status = 301
 
+# Used in publish contracts response
+[[redirects]]
+  from = "/go/pbc-cli"
+  to = "/pact_broker/client_cli/readme?utm_source=pact&utm_medium=client_library"
+  status = 301
+
 # Used in pact verification output
 [[redirects]]
   from = "/go/pending"
