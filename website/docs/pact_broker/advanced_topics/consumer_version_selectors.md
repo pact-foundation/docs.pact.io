@@ -225,7 +225,7 @@ verifier = Verifier(
 
 ### Using a fallback tag for coordinated branch development
 
-Dynamically determine the current branch of the provider, see if there is a matching pact for that branch, fallback to the `master` pact if none exists.
+Dynamically determine the current branch of the provider, see if there is a matching pact for that branch, fallback to the `master` pact if none exists. This approach is not longer recommended - see the note on the `fallbackTag` at the top of the page.
 
 <Tabs
 groupId="sdk-choice"
