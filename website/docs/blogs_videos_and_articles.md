@@ -106,6 +106,10 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 - [BBVA](https://www.bbva.com/en/consumer-driven-contract-tests/)
 - [It's not hard to test smart](https://www.youtube.com/watch?v=79GKBYSqMIo) (Video)
 
+**Videos**:
+
+- [Consumer Driven Contract Testing Node.js with Pact - Peter Czibik - NodeBP 2018](https://www.youtube.com/watch?v=1-PPN4IzluM) from RisingStack
+
 ## 2016
 
 - [Consumer driven contract testing - Pact \(.NET\)](https://medium.com/@ericjwhuang/consumer-driven-contract-testing-pact-d791a3eac72a/)
