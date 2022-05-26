@@ -112,6 +112,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 - [Deploy with Confidence! Video from April Melb JVM Meetup](https://www.youtube.com/watch?v=h-79QmIV824) (Video)
 - [Deploy with Confidence! Slides from April Melb JVM Meetup](https://github.com/pact-foundation/pact.io/tree/9da206b230a2f794aab2eb927a70e9c53e693810/media/media/Pact%20-%20Deploy%20with%20Confidence!.pdf).
 - [Verifying Microservice Integrations with Contract Testing - Atlassian at their 2016 summit](https://www.youtube.com/watch?v=-6x6XBDf9sQ&feature=youtu.be) (Video)
+- [Deploy with Confidence - Making your microservices play nicely together with Pact and Consumer Driven Contracts](https://www.youtube.com/watch?v=h-79QmIV824) (Video by our maintainer [Ronald Holshausen](https://github.com/uglyog))
 
 ## 2015
 
