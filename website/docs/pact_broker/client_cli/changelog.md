@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.64.0"></a>
+### v1.64.0 (2022-05-27)
+
+#### Features
+
+* remove feature flag for publish-provider-contract	 ([146a2d8](https://github.com/pact-foundation/pact_broker-client/commit/146a2d8))
+* add pactflow specific message for environment not found when recording a release/deployment	 ([6667cbb](https://github.com/pact-foundation/pact_broker-client/commit/6667cbb))
+
 <a name="v1.63.0"></a>
 ### v1.63.0 (2022-05-10)
 
