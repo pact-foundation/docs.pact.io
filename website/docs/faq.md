@@ -342,3 +342,15 @@ While the coverage metric can be helpful, it unfortunately won't be able to tell
 ### Why does computer say no in the can-i-deploy tool?
 
 This is a [Little Britain](https://www.youtube.com/watch?v=0n_Ty_72Qds) reference (language warning!).
+
+### Does can-i-deploy support circular relationships?
+
+A common use case is that one application sends a message to another, and receives back a confirmation that the job is complete via a separate means. This would be modelled as two contracts i.e. `A` -> `B` and `B` -> `A`. 
+
+The can-i-deploy tool supports bi-directional dependencies between applications, however with some considerations.
+
+If you already have applications that are deployed, and want to introduce pact into an existing relationship, you will need to disable `can-i-deploy` to get the first pair of contracts out into production. Make sure both sides are actually passing before you do this. 
+
+Or, you can choose one direction to start with (deleting the pacts for the other direction if you have already published them), get that deployed, then add in the pacts for the other direction.
+
+Thereafter, you will need to ensure you only ever make changes in one direction of the relationship at a time, otherwise can-i-deploy will very correctly stop you from deploying. If you have changes in both directions that each depend on the other, you will be in the situation where you must deploy both applications at the same time, at which stage you would probably be better off if both services were part of a single application. Bi-directional dependencies tend to cause a lot of issues in both testing and deployments!
