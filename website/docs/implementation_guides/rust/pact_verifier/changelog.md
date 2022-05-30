@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.13.7 - Maintenance Release
+
+* f76ddd8e - feat: allow BrokerWithDynamicConfiguration to publish results (kageru, Tue May 17 11:42:14 2022 +0200)
+
 ## 0.13.6 - Maintenance Release
 
 
