@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.9 - Rename providerBranches to providerBranch
+
+* 39d3739f1 - fix: providerVersionBranch for pending pacts (Praveen Erode Mohanasundaram, Fri May 27 22:15:52 2022 +0100)
+* 6e4b18002 - Updating build.gradle to fix Vulnerability CVE-2022-22970 (Colin, Tue May 24 13:45:25 2022 +1200)
+
 ## 4.3.8 - Support providerVersionBranches in JUnit tests
 
 * 936ac74c3 - Add support for providerVersionBranches #1554 (Ben Pilgrim, Thu May 19 11:15:28 2022 +0100)
