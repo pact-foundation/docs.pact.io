@@ -10,5 +10,9 @@ Note that if you delete a pacticipant resource, all related pacticipant versions
 
 ## Deleting multiple pacts
 
-You can delete all pacts for a given consumer/provider by sending a `DELETE` request to `/pacts/provider/{provider}/consumer/{consumer}/versions`. To delete only those with a certain tag, the path is `/pacts/provider/{provider}/consumer/{consumer}/tag/{tag}`.
+You can delete all pacts for a given consumer/provider by sending a `DELETE` request to `/pacts/provider/{provider}/consumer/{consumer}/versions`. 
+
+To delete only those from certain branch, the path is `/pacts/provider/{provider}/consumer/{consumer}/branch/{branch}`.
+
+To delete only those with a certain tag, the path is `/pacts/provider/{provider}/consumer/{consumer}/tag/{tag}`.
 
