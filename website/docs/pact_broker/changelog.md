@@ -4,6 +4,22 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.101.0"></a>
+
+### v2.101.0 (2022-06-07)
+
+#### Features
+
+* recalculate the branch head if the deleted branch version was the latest for the branch	 ([db51d4fe](https://github.com/pact-foundation/pact_broker/commit/db51d4fe))
+* support deleting branch versions (removing a version from a branch)	 ([661667b3](https://github.com/pact-foundation/pact_broker/commit/661667b3))
+* improve error message when request has non UTF-8 characters (#559)	 ([3addc0c8](https://github.com/pact-foundation/pact_broker/commit/3addc0c8))
+
+#### Bug Fixes
+
+* add missing environment policy record for use when recording deployments	 ([09bb02a6](https://github.com/pact-foundation/pact_broker/commit/09bb02a6))
+* fix bug where pacticipant with blank name was being created instead of updating existing record	 ([be24a8ad](https://github.com/pact-foundation/pact_broker/commit/be24a8ad))
+* ensure pacticipant name is retained when updating with PUT	 ([eeac47c3](https://github.com/pact-foundation/pact_broker/commit/eeac47c3))
+
 <a name="v2.100.0"></a>
 
 ### v2.100.0 (2022-05-20)
