@@ -43,7 +43,7 @@ These properties can be used in any combination, except that `latest` and `max_a
 * keep all main versions for Foo app: `{"pacticipant": "Foo", "tag": "main"}`
 * keep all production versions: `{ "tag" : " production" }`
 
-The selectors combine by "OR", meaning that a version is kept if it matches any of the selectors. So `[{"max_age": 30}, { "latest": true, tag: true }, { "tag": "production" }]` would be "keep every version that's less than 30 days old, or is the latest version for every pacticipant/tag, or is a production version".
+The selectors combine by "OR", meaning that a version is kept if it matches any of the selectors. So `[{"max_age": 30}, { "latest": true, "tag": true }, { "tag": "production" }]` would be "keep every version that's less than 30 days old, or is the latest version for every pacticipant/tag, or is a production version".
 
 #### Recommended starting configuration for keep selectors
 
