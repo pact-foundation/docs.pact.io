@@ -54,9 +54,9 @@ Yes, you can, especially if you're just getting started. You can exchange the pa
 
 #### Step 1. Consumer CI build
 
-1. The consumer project runs its tests using the [Pact](https://github.com/pact-foundation/pact-ruby) library to provide a mock service.
+1. The consumer project runs its tests using the [Pact](/implementation_guides/) library to provide a mock service.
 2. While the tests run, the mock service writes the requests and the expected responses to a JSON "pact" file - this is the consumer contract.
-3. The generated pact is then published to the Pact Broker. Most Pact libraries will make a task available for you to do this easily, however, at its simplest, it is a `PUT` to a resource that specifies the consumer name and application version, and the provider name. eg `http://my-pact-broker/pacts/provider/Animal%20Service/consumer/Zoo%20App/version/1.0.0`
+3. The generated pact is then published to the Pact Broker. The easiest way to do this is to publish the pact file using the [Pact Broker Client CLI](/pact_broker/client_cli/readme)
 
    \(Note that you are specifying the _consumer application version_ in the URL, not the pact version. The broker will take care of versioning the pact behind the scenes when its content changes. It is expected that the consumer application version will increment with every CI build.\)
 
@@ -64,8 +64,8 @@ Yes, you can, especially if you're just getting started. You can exchange the pa
 
 #### Step 2. Provider CI build
 
-1. The provider has a verification task that is configured with the URL to retrieve the latest pact between itself and the consumer. eg `http://my-pact-broker/pacts/provider/Animal%20Service/consumer/Zoo%20App/latest`.
-2. The provider build runs the pact verification task, which retrieves the pact from the Pact Broker, replays each request against the provider, and checks that the responses match the expected responses.
+1. The provider has a verification task that is configured to retrieve the relevant pacts between itself and its consumer.
+2. The provider build runs the pact verification task, which retrieves the pact(s) from the Pact Broker, replays each request against the provider, and checks that the responses match the expected responses.
 3. If the pact verification fails, the build fails. The [Pact Broker CI Nerf Gun](https://github.com/pact-foundation/pact_broker/wiki/pact-broker-ci-nerf-gun) magically determines who caused the verification to fail, and shoots them.
 4. The results of the verification are published back to the Pact Broker by the pact verification tool, so the consumer team will know if the code they have written will work in real life.
 
