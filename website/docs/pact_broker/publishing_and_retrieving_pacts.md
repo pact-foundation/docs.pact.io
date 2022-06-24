@@ -20,7 +20,7 @@ Please read about [Pacticipant version numbers](pacticipant_version_numbers.md) 
 
 ## Retrieving
 
-You should not need to manually construct a pact URL in the recommended workflows, however, the documentation below is kept for posterity.
+Pacts are generally retrieved for verification by specifying [consumer version selectors](/pact_broker/advanced_topics/consumer_version_selectors), or via a URL passed to a provider verification build via a [webhook](/pact_broker/webhooks). You should not need to manually construct a pact URL in the recommended workflows, however, the documentation below is kept for posterity.
 
 ### Latest pact for a provider and consumer
 
