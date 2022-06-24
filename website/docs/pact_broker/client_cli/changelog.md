@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.65.0"></a>
+### v1.65.0 (2022-06-24)
+
+#### Features
+
+* add support for automatically detecting the git commit and branch for Azure DevOps	 ([889f83f](https://github.com/pact-foundation/pact_broker-client/commit/889f83f))
+
 <a name="v1.64.0"></a>
 ### v1.64.0 (2022-05-27)
 
