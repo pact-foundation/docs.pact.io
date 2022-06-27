@@ -7,6 +7,14 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v1.7.0 (27 June 2022)
+  * [c040311](https://github.com/pact-foundation/pact-go/commit/c040311) - feat: add GraphQL response type (Matt Fellows, Mon Jun 27 11:10:01 2022 +1000)
+  * [dcd8e0e](https://github.com/pact-foundation/pact-go/commit/dcd8e0e) - feat: graphql interface (Matt Fellows, Tue Feb 8 12:58:21 2022 +1100)
+  * [dfc7c3a](https://github.com/pact-foundation/pact-go/commit/dfc7c3a) - fix: Dockerfile to reduce vulnerabilities (#206) (Snyk bot, Mon Jun 27 05:17:04 2022 +0100)
+  * [91f2ac8](https://github.com/pact-foundation/pact-go/commit/91f2ac8) - fix: build on darwin arm64 (#211) (Wim Vander Schelden, Fri Apr 22 02:59:43 2022 +0200)
+  * [59f097f](https://github.com/pact-foundation/pact-go/commit/59f097f) - fix: add option to tag provider with git branch from Verify methods (Jeffrey, Mon Mar 28 15:57:12 2022 +0200)
+  * [f82584d](https://github.com/pact-foundation/pact-go/commit/f82584d) - fix: Dockerfile to reduce vulnerabilities (#207) (Snyk bot, Mon Mar 21 23:16:03 2022 +0000)
+
 ### v1.6.9 (09 February 2022)
 
 ### v1.6.8 (04 February 2022)
