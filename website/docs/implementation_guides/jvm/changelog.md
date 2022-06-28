@@ -4,6 +4,18 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.10 - Branches and releases with Gradle plugin
+
+* ba88e3019 - feat: add Gradle DSL functions for deprecated tag forms of selectors (Ronald Holshausen, Tue Jun 28 12:26:41 2022 +1000)
+* 60712c465 - fix: call the updated selector method from the Gradle plugin (Ronald Holshausen, Tue Jun 28 11:42:36 2022 +1000)
+* f927119bf - Feat: Implement new Gradle DSL for consumer version selectors (Ronald Holshausen, Mon Jun 27 17:03:09 2022 +1000)
+* 5acf7d226 - refactor(Gradle): use delegation instead of inheritance to allow supporting Gradle 8 changes (Ronald Holshausen, Fri Jun 24 17:12:46 2022 +1000)
+* 905ed6560 - fix: failing test on Windows (Ronald Holshausen, Fri Jun 24 16:14:25 2022 +1000)
+* 832718413 - feat(Gradle): Add auth option for no auth (Ronald Holshausen, Fri Jun 24 15:57:15 2022 +1000)
+* de753fc2f - feat: allow consumer version selector JSON to be provided with an environment variable (Ronald Holshausen, Tue Jun 21 14:05:48 2022 +1000)
+* 05309c11a - fix: correct codenarc violations #1569 (Ronald Holshausen, Wed Jun 15 17:32:29 2022 +1000)
+* 0fa5b5eae - fix: make the use of content type overrides consistent #1569 (Ronald Holshausen, Wed Jun 15 17:29:07 2022 +1000)
+
 ## 4.3.9 - Rename providerBranches to providerBranch
 
 * 39d3739f1 - fix: providerVersionBranch for pending pacts (Praveen Erode Mohanasundaram, Fri May 27 22:15:52 2022 +0100)
