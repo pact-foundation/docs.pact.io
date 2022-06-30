@@ -7,6 +7,11 @@ slug: ./readme
 
 <!-- Please use absolute URLs for all links so that they work when the content of this page is rendered in docs.pact.io -->
 
+| :zap: New beta for the 2.x.x release |
+|-----------------------------------------|
+| If you are interested in testing out the new new beta package that supports all of the V3 and V4 [spec], synchronous messages, plugins and more, please head to [v2.x.x] and also let us know on [slack].|
+
+
 
 Golang version of [Pact](http://pact.io). Pact is a contract testing framework for HTTP APIs and non-HTTP asynchronous messaging systems.
 
@@ -18,6 +23,7 @@ DSL for the consumer project, and interaction playback and verification for the 
 [![Go Report Card](https://goreportcard.com/badge/github.com/pact-foundation/pact-go)](https://goreportcard.com/report/github.com/pact-foundation/pact-go)
 [![GoDoc](https://godoc.org/github.com/pact-foundation/pact-go?status.svg)](https://godoc.org/github.com/pact-foundation/pact-go)
 [![slack](https://slack.pact.io/badge.svg)](https://slack.pact.io)
+
 
 ## Introduction
 
@@ -38,13 +44,6 @@ Read [Getting started with Pact] for more information for beginners.
     <img width="880" src="https://raw.githubusercontent.com/pact-foundation/pact-go/master/.github/pact-small.svg?sanitize=true"></img>
   </a>
 </p>
-
-## Announcement 📣
-
-| :zap: New beta release supporting Pact V3, Plugins and more |
-|-----------------------------------------|
-
-If you are interested in testing out the new new beta package that supports all of the V3 and V4 [spec], including synchronous messages, plugins, moves to a rust shared core and more, please head to [v2.x.x] and also let us know on [slack].
 
 
 ## Table of Contents
