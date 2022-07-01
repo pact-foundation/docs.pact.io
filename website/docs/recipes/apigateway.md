@@ -4,6 +4,12 @@ title: API Gateway
 description: How to use Pact with API Gateways
 ---
 
+:::info
+
+This document is currently in **DRAFT** status
+
+:::
+
 ## Problem statement
 
 The core challenge with using Pact with gateways, is that they are usually configuration based tools or pieces of infrastructure that don't store any state (they delegate to other systems). Validating pacts for them can be very cumbersome, because all of the state handling must be stubbed out for any tests to pass because the gateway doesn't actually know about the functionality. Furthermore, they then must recreate all of the scenarios to pass on to the downstream systems to ensure there are no gaps in contract coverage.
