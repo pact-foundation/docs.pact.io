@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.11 - Support consumer version selectors DSL for JUnit 5
+
+* 8335063df - fix: correct publish config to work with Gradle 7 (Ronald Holshausen, Tue Jul 5 16:19:56 2022 +1000)
+* 0ccc32dd2 - feat: Update JUnit 5 readme with Consumer Version Selectors DSL (Ronald Holshausen, Tue Jul 5 16:02:18 2022 +1000)
+* 79b0038c3 - feat: Update JUnit 5 readme with Consumer Version Selectors DSL (Ronald Holshausen, Tue Jul 5 15:49:02 2022 +1000)
+* d50014ce2 - feat: Update JUnit 5 readme with Consumer Version Selectors DSL (Ronald Holshausen, Tue Jul 5 15:43:00 2022 +1000)
+* f37c1379f - Feat: Support consumer version selectors DSL for JUnit 5 (Ronald Holshausen, Tue Jul 5 14:29:04 2022 +1000)
+* 3932b2456 - feat(JUnit): allow pact loader to setup from the test class instead of just annotations (Ronald Holshausen, Wed Jun 29 13:55:05 2022 +1000)
+
 ## 4.3.10 - Branches and releases with Gradle plugin
 
 * ba88e3019 - feat: add Gradle DSL functions for deprecated tag forms of selectors (Ronald Holshausen, Tue Jun 28 12:26:41 2022 +1000)
