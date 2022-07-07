@@ -4,6 +4,21 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.102.0"></a>
+
+### v2.102.0 (2022-07-07)
+
+#### Features
+
+* default allow_dangerous_contract_modification to false for new installations	 ([85a89951](https://github.com/pact-foundation/pact_broker/commit/85a89951))
+
+#### Bug Fixes
+
+* add missing provider version branch parameter to webhook requests	 ([262dae44](https://github.com/pact-foundation/pact_broker/commit/262dae44))
+* clean up pacticipants with no names	 ([0aff250d](https://github.com/pact-foundation/pact_broker/commit/0aff250d))
+* update string refinements with blank? and present?	 ([8373f88f](https://github.com/pact-foundation/pact_broker/commit/8373f88f))
+* update validation for creating pacticipants to return a 400 when name is missing	 ([fcb02aa6](https://github.com/pact-foundation/pact_broker/commit/fcb02aa6))
+
 <a name="v2.101.0"></a>
 
 ### v2.101.0 (2022-06-07)
