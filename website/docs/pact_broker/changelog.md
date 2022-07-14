@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.102.2"></a>
+
+### v2.102.2 (2022-07-14)
+
+#### Bug Fixes
+
+* add blank? refinement for TrueClass and FalseClass	 ([05bb3bed](https://github.com/pact-foundation/pact_broker/commit/05bb3bed))
+
 <a name="v2.102.1"></a>
 
 ### v2.102.1 (2022-07-08)
