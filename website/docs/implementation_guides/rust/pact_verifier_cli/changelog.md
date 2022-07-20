@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.9.12 - add --no-color option to verfier CLI
+
+* 701c93a6 - Merge pull request #204 from pact-foundation/snyk-fix-e3dc7fb516c9ab76c1050c65ab20c6fb (Ronald Holshausen, Tue Jul 19 22:47:31 2022 -0400)
+* 4530dbde - feat: add --no-color option to verfier CLI #203 (Ronald Holshausen, Wed Jul 20 12:45:20 2022 +1000)
+* c7f68871 - fix: rust/pact_verifier_cli/Dockerfile to reduce vulnerabilities (snyk-bot, Wed Jul 6 23:50:14 2022 +0000)
+
 ## 0.9.11 - Bug fixes + Support publishing results from webhook calls
 
 * 18118e82 - feat: add retries to the provider state change calls #197 (Ronald Holshausen, Tue Jun 7 09:10:23 2022 +1000)
