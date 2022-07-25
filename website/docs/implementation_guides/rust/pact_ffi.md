@@ -10,7 +10,7 @@ in other languages.
 
 ## Documentation
 
-Documentation for the FFI functions and types is available at: https://docs.rs/pact_ffi/0.0.2/pact_ffi/index.html
+Documentation for the FFI functions and types is available at: https://docs.rs/pact_ffi/0.3.4/pact_ffi/index.html
 
 ## Dependencies
 
