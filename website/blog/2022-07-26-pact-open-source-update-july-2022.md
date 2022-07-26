@@ -25,17 +25,15 @@ Attention Golang users - the latest 2.x.x is out (2.0.0-beta.13)! :rocket:This i
 
 Summary:
 
-V4 Pact support
+- V4 Pact support
+- Support for synchronous messages
+- Support for plugins (e.g. for gRPC + Protobufs support https://github.com/pact-foundation/pact-go/tree/2.x.x/examples/grpc)
 
-Support for synchronous messages
+A word from our Pactflow co-founder & pact-go maintainer [Matt Fellows](https://github.com/mefellows)
 
-Support for plugins (e.g. for gRPC + Protobufs support https://github.com/pact-foundation/pact-go/tree/2.x.x/examples/grpc)
-
-Because the API is more complex, we’ve used a type state builder pattern to force which options can be used at any point in time, and ensure that pre-requisite methods are called in sequence.
-
-We are still not 100% happy with the HTTP package layout (and requiring V2/V3/V4 prefixes on a number of types), so there might be another refactor in that space, but mainly we think it would just be the names of types and packages that could change.
-
-We will tidy up the documentation over the next few days, but look to the examples folder in the short term if you’re wondering what’s changed. Our core maintainer found refactoring the existing examples fairly straightforward, so we hope you do too.
+> Because the API is more complex, we’ve used a type state builder pattern to force which options can be used at any point in time, and ensure that pre-requisite methods are called in sequence.
+> We are still not 100% happy with the HTTP package layout (and requiring V2/V3/V4 prefixes on a number of types), so there might be another refactor in that space, but mainly we think it would just be the names of types and packages that could change.
+> We will tidy up the documentation over the next few days, but look to the examples folder in the short term if you’re wondering what’s changed. Our core maintainer found refactoring the existing examples fairly straightforward, so we hope you do too.
 
 Chat with us in: [#pact-go](https://pact-foundation.slack.com/archives/C9UTHTFFB)
 
