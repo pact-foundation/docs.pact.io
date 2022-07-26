@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.12 - Bugfixes + Update Maven plugin with latest consumer version selectors
+
+* ad812c438 - feat: add support for LocalDate to LambdaDslObject #1530 (Ronald Holshausen, Tue Jul 26 15:15:10 2022 +1000)
+* d914ff1d3 - fix: pass the value resolver on to the PactVerificationContext, fixes issues with Spring tests #1572 (Ronald Holshausen, Tue Jul 26 14:47:20 2022 +1000)
+* c085da667 - fix: pass consumer.pending through when validating an async message interaction #1573 (Ronald Holshausen, Tue Jul 26 14:17:13 2022 +1000)
+* fe762dc9c - fix: support multipart form posts with multiple parts #1574 (Ronald Holshausen, Tue Jul 26 13:45:48 2022 +1000)
+* 021c0c7e7 - fix: support multi-line matching with plain text matcher #1579 (Ronald Holshausen, Tue Jul 26 11:16:08 2022 +1000)
+* 2a0f97761 - fix: for NoSuchMethodError: void kotlin.jvm.internal.FunctionReferenceImpl (Ronald Holshausen, Mon Jul 25 16:40:42 2022 +1000)
+* 6c60109c3 - feat: Update Maven plugin readme with latest consumer version selectors (Ronald Holshausen, Mon Jul 25 15:02:39 2022 +1000)
+* d46c317d3 - feat: Update Maven plugin with latest consumer version selectors (Ronald Holshausen, Mon Jul 25 14:16:02 2022 +1000)
+
 ## 4.3.11 - Support consumer version selectors DSL for JUnit 5
 
 * 8335063df - fix: correct publish config to work with Gradle 7 (Ronald Holshausen, Tue Jul 5 16:19:56 2022 +1000)
