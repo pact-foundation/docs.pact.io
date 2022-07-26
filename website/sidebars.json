@@ -163,7 +163,8 @@
       "items": [
         "getting_started",
         "getting_started/how_pact_works",
-        "5-minute-getting-started-guide"
+        "5-minute-getting-started-guide",
+        "getting_started/feature_toggles"
       ]
     },
     {
