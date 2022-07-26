@@ -1,8 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/saf/dev/pact-foundation/docs.pact.io'
-docker-compose run --name docs-start --rm -p 3000:3000 --entrypoint /usr/bin/make dev-service _start
-make: Leaving directory `/Users/saf/dev/pact-foundation/docs.pact.io'
- 
-Makefile:11: warning: overriding commands for target `start'
-Makefile:2: warning: ignoring old commands for target `start'
-
