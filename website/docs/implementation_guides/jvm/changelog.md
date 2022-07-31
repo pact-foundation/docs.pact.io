@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.13 - Bugfix Release
+
+* b85250936 - fix(Gradle): fixes gradle provider verification from pact file #1587 (Ronald Holshausen, Fri Jul 29 14:29:50 2022 +1000)
+* d7ec72411 - fix(Gradle): Update methods on GradleProviderInfo to support calling hasPactsFromPactBroker without options #1586 (Ronald Holshausen, Fri Jul 29 13:20:09 2022 +1000)
+
 ## 4.3.12 - Bugfixes + Update Maven plugin with latest consumer version selectors
 
 * ad812c438 - feat: add support for LocalDate to LambdaDslObject #1530 (Ronald Holshausen, Tue Jul 26 15:15:10 2022 +1000)
