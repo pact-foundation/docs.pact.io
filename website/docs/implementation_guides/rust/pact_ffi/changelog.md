@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.3.5 - Support message interactions with FFI body functions
+
+* 8f112ad0 - feat: add FFI function to set a message contents as binary (Ronald Holshausen, Wed Jul 27 15:15:41 2022 +1000)
+* cf40b7de - feat: add FFI function to set a message contents (Ronald Holshausen, Wed Jul 27 14:52:41 2022 +1000)
+
 ## 0.3.4 - Bugfix Release
 
 * 40f7bdc4 - feat: add verification option to disable ANSI escape codes in output #203 (Ronald Holshausen, Wed Jul 20 12:18:12 2022 +1000)
