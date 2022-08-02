@@ -48,15 +48,15 @@ class MarkdownFileContents
   end
 
   def extract_title
-    heading_underline_index = lines.find_index{ |line| line.start_with?("======") }
+    heading_underline_index = lines.find_index{ |line| line.start_with?("======") } || -1
+    heading_index = lines.find_index { | line | line.start_with?('#') } || -1
 
-    if heading_underline_index && heading_underline_index > 0
+    if heading_underline_index != -1 && heading_underline_index < heading_index
       lines.delete_at(heading_underline_index)
       title = lines.delete_at(heading_underline_index - 1).strip
       self.fields[:title] = title
     else
-      heading_index = lines.find_index { | line | line.start_with?('#') }
-      if heading_index
+      if heading_index != -1
         title = lines.delete_at(heading_index).gsub(/^#+/, '').strip
         self.fields[:title] = title
       else
