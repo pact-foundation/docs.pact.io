@@ -10,7 +10,7 @@ Before you read this document, you should:
 * have read the section on [versioning in the Pact Broker](getting_started/versioning_in_the_pact_broker.md)
 * Do the CI/CD workshop
 
-Before setting up Pact in your own environment, it can help to have an idea of what a working pipeline might look like. 
+Before setting up Pact in your own environment, it can help to have an idea of what a working pipeline might look like.
 
 Completing the [Pact CI/CD workshop](https://docs.pactflow.io/docs/workshops/ci-cd/) will give you a good understanding of how the Pact client libaries interact with the Pact Broker and where these interactions fit into your release pipeline.
 

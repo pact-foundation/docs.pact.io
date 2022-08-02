@@ -32,7 +32,7 @@ API based on that.   When you let the consumers drive the contract, it is much b
 So you write the consumer test first.  You can read more about consumer tests [here](https://docs.pact.io/consumer).
 
 If you are on the provider team, you don't own this test, although you can work with your consumer team to help them 
-write it.  But ultimately the consumer owns these tests and drive the understanding of the contract.
+write it.  But ultimately the consumer owns these tests and drives the understanding of the contract.
 
 Note that if at all possible this first test should not introduce the complexity of provider states. You can add that as a later step.
 
@@ -51,7 +51,7 @@ unless you're pretty lucky.  So now you can iterate with the consumer and the pr
 
 ### Additional Notes
 
-We have also have features such as
+We also have features such as:
 - provider states
 - matchers
   

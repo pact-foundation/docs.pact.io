@@ -88,7 +88,7 @@ The search is provided free by Algolia because Pact is an open source project.
    1. in `./website/docusaurus.config.js` under `themeConfig.algolia` 
 4. The Search analytics page is [here](https://www.algolia.com/apps/BH4D9OD16A/analytics). 
    1. It is accessed via the pact-foundation@googlegroups.com account
-    
+
 - Info on how to style the search UI is [here](https://docsearch.algolia.com/docs/styling/). 
 
 ## Contributing
