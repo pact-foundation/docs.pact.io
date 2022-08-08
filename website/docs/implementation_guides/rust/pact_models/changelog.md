@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.2 - Maintenance Release
+
+* 2ca2fe49 - fix: add function to display binary data in a meaningful way (Ronald Holshausen, Mon Aug 1 17:39:34 2022 +1000)
+* 1972a74a - feat: Detect Pactbroker responses from the URL content #199 (Ronald Holshausen, Mon Jun 6 14:48:06 2022 +1000)
+
 ## 0.4.1 - switch pact_models to use tracing crate
 
 
