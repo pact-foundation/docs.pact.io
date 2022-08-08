@@ -85,8 +85,10 @@ const siteConfig = {
       apiKey: "9d560a8ae18f8a304605caf0130e9874",
       indexName: "pact",
     },
-    
-    metadata: [ {name: 'docsearch:docusaurus_tag', content: 'docs-default-current'} ],
+
+    metadata: [
+      { name: "docsearch:docusaurus_tag", content: "docs-default-current" },
+    ],
 
     navbar: {
       title: "Pact",
@@ -232,9 +234,11 @@ const siteConfig = {
           trackingID: "UA-8926693-8",
         },
         theme: {
-          customCss: [
-            require.resolve('./src/css/custom.css'),
-          ],
+          customCss: [require.resolve("./src/css/custom.css")],
+        },
+        blog: {
+          blogSidebarTitle: "All posts",
+          blogSidebarCount: "ALL",
         },
       },
     ],
