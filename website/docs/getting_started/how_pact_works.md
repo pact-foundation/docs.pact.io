@@ -106,7 +106,7 @@ When writing tests, Pact takes the place of the intermediary (MQ/broker etc.) an
 
 We recommend that you split the code that is responsible for handling the protocol specific things - for example an AWS lambda handler and the AWS SNS input body - and the piece of code that actually handles the payload.
 
-You're probably familiar with layered architectures such as Ports and Adaptors (also referred to as a Hexagonal architecture). Following a modular architecture will allow you to do this much more easily:
+You're probably familiar with layered architectures such as Ports and Adapters (also referred to as a Hexagonal architecture). Following a modular architecture will allow you to do this much more easily:
 
 ![Ports and Adapters architecture](/img/ports-and-adapters.png)
 
