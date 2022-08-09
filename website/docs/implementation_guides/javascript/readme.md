@@ -1,5 +1,5 @@
 ---
-title: README
+title: Overview
 custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/README.md
 slug: ./readme
 ---
@@ -73,15 +73,15 @@ Watch our [series](https://www.youtube.com/playlist?list=PLwy9Bnco-IpfZ72VQ7hce8
 This readme offers an basic introduction to the library. The full documentation for Pact JS and the rest of the framework is available at https://docs.pact.io/.
 
 - [Installation](#installation)
-- [Consumer Testing](https://github.com/pact-foundation/pact-js/blob/master/docs/consumer.md)
-  - [Matching](https://github.com/pact-foundation/pact-js/blob/master/docs/matching.md)
-- [Provider Testing](https://github.com/pact-foundation/pact-js/blob/master/docs/provider.md)
-- [Event Driven Systems](https://github.com/pact-foundation/pact-js/blob/master/docs/messages.md)
-- [GraphQL](https://github.com/pact-foundation/pact-js/blob/master/docs/graphql.md)
-- [XML](https://github.com/pact-foundation/pact-js/blob/master/docs/xml.md)
+- [Consumer Testing](/implementation_guides/javascript/docs/consumer)
+  - [Matching](/implementation_guides/javascript/docs/matching)
+- [Provider Testing](/implementation_guides/javascript/docs/provider)
+- [Event Driven Systems](/implementation_guides/javascript/docs/messages)
+- [GraphQL](/implementation_guides/javascript/docs/graphql)
+- [XML](/implementation_guides/javascript/docs/xml)
 - [Examples](https://github.com/pact-foundation/pact-js/tree/master/examples/)
 - [Migration guide](https://github.com/pact-foundation/pact-js/blob/master/MIGRATION.md)
-- [Troubleshooting](https://github.com/pact-foundation/pact-js/blob/master/docs/troubleshooting.md)
+- [Troubleshooting](/implementation_guides/javascript/docs/troubleshooting)
 
 ### Tutorial (60 minutes)
 

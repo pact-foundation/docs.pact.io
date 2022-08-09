@@ -7,9 +7,15 @@
     },
     {
       "Pact JS": [
-        "implementation_guides/javascript",
         "implementation_guides/javascript/readme",
-        "implementation_guides/javascript/roadmap",
+        "implementation_guides/javascript/docs/consumer",
+        "implementation_guides/javascript/docs/matching",
+        "implementation_guides/javascript/docs/provider",
+        "implementation_guides/javascript/docs/messages",
+        "implementation_guides/javascript/docs/graphql",
+        "implementation_guides/javascript/docs/xml",
+        "implementation_guides/javascript/docs/troubleshooting",
+        "implementation_guides/javascript/docs/migrations/9-10",
         "implementation_guides/javascript/changelog",
         "implementation_guides/javascript/contributing"
       ]
