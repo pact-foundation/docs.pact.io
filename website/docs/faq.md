@@ -343,14 +343,8 @@ While the coverage metric can be helpful, it unfortunately won't be able to tell
 
 This is a [Little Britain](https://www.youtube.com/watch?v=0n_Ty_72Qds) reference (language warning!).
 
-### Does can-i-deploy support circular relationships?
+### Can I verify my pacts against a deployed instance of a provider?
 
-A common use case is that one application sends a message to another, and receives back a confirmation that the job is complete via a separate means. This would be modelled as two contracts i.e. `A` -> `B` and `B` -> `A`. 
+This is not recommended. Pact is designed to give you confidence that your integration is working correctly *before* you deploy either application. To achieve this, the verification step must be run against a locally running instance of your provider on a development machine or in CI/CD.
 
-The can-i-deploy tool supports bi-directional dependencies between applications, however with some considerations.
-
-If you already have applications that are deployed, and want to introduce pact into an existing relationship, you will need to disable `can-i-deploy` to get the first pair of contracts out into production. Make sure both sides are actually passing before you do this. 
-
-Or, you can choose one direction to start with (deleting the pacts for the other direction if you have already published them), get that deployed, then add in the pacts for the other direction.
-
-Thereafter, you will need to ensure you only ever make changes in one direction of the relationship at a time, otherwise can-i-deploy will very correctly stop you from deploying. If you have changes in both directions that each depend on the other, you will be in the situation where you must deploy both applications at the same time, at which stage you would probably be better off if both services were part of a single application. Bi-directional dependencies tend to cause a lot of issues in both testing and deployments!
+Verifying pacts against an already deployed provider will mean you don't get the benefits that contract testing was intended to provide - fast feedback, easy debugging, reliable tests. It will create a bottleneck as you won't be able to run tests in parallel, and you won't be able to use features like the webhook that trigger builds for [different versions of your provider](/pact_broker/webhooks#using-webhooks-with-the-contract_requiring_verification_published-event).
