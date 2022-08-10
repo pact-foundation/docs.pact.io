@@ -46,3 +46,14 @@ You can if you want, but it's not necessary unless you have another use for them
 
 This is actually the wrong question to be asking. Contract tests aren't intended to provide any particular percentage coverage of the _provider_ (that's what the provider's own functional tests are for). Contract tests are meant to provide (as close to) 100% coverage of the _consumer_ code that makes the calls to the provider (you can think of this as the "provider client code"). If you execute your consumer Pact tests in a separate step in your test suite, you can use standard code coverage tools to determine whether or not your Pact tests have covered a sufficient percentage of your provider client code.
 
+## Does can-i-deploy support circular relationships?
+
+A common use case is that one application sends a message to another, and receives back a confirmation that the job is complete via a separate means. This would be modelled as two contracts i.e. `A` -> `B` and `B` -> `A`. 
+
+The can-i-deploy tool supports bi-directional dependencies between applications, however with some considerations.
+
+If you already have applications that are deployed, and want to introduce pact into an existing relationship, you will need to disable `can-i-deploy` to get the first pair of contracts out into production. Make sure both sides are actually passing before you do this. 
+
+Or, you can choose one direction to start with (deleting the pacts for the other direction if you have already published them), get that deployed, then add in the pacts for the other direction.
+
+Thereafter, you will need to ensure you only ever make changes in one direction of the relationship at a time, otherwise can-i-deploy will very correctly stop you from deploying. If you have changes in both directions that each depend on the other, you will be in the situation where you must deploy both applications at the same time, at which stage you would probably be better off if both services were part of a single application. Bi-directional dependencies tend to cause a lot of issues in both testing and deployments!
