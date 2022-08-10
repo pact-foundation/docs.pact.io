@@ -4,7 +4,7 @@ title: Docker
 
 Often times, you'll want to use Docker to run Pact. For example, a common approach is to run all CI builds within a docker container. This guide offers some assistance in those wanting to pursue this path.
 
-## Docker Images
+## Official Docker Images
 
 Images from the `"pactfoundation"` [repository](https://hub.docker.com/u/pactfoundation) can be considered official:
 
@@ -14,17 +14,31 @@ Images from the `"pactfoundation"` [repository](https://hub.docker.com/u/pactfou
 
 ## Alpine Linux
 
-Many teams choose to use Alpine Linux due to its tiny footprint, and smaller security surface area.
+Many teams choose to run builds on Alpine Linux due to its tiny footprint, and smaller security surface area. 
 
-For Pact implementations that leverage the underlying [Ruby binary](https://github.com/pact-foundation/pact.io/tree/4534866180df92046ce0e8fcac019ea3b0cd8e2a/docker/feature_support.md) for their implementation, you'll need to ensure the following dependencies are met:
+### For Pact implementations that use the [Rust shared core](roadmap/feature_support)
+:::info
+**Applicable languages**: Pact JS, Pact .NET, Pact Go, Pact C++ and Pact Swift
+:::
+
+Alpine is not supported as it requires us to build dynamically linked libraries for each specific version of Alpine and musl.
+
+It's possible to make it work, but we make no guarantees and it's likely to [break](https://ariadne.space/2021/08/26/there-is-no-such-thing-as-a-glibc-based-alpine-image/) in subtle ways and we would instead recommend adopting Ubuntu or Debian which supports linking to glibc. 
+
+### For Pact implementations that use the [Ruby shared core](roadmap/feature_support) 
+:::info
+**Applicable languages**: Pact PHP, Python
+:::
+
+You'll need to ensure the following dependencies are met:
 
 * Bash \(it's not enough to have Ash\)
 * Standard CAs for TLS network communication
 * glibc
 
-_NOTE_: You do not need to install Ruby \(unless of course your code is a Ruby app\). The distribution takes care of this for you.
+_NOTE_: You do not need to install Ruby. The distribution takes care of this for you.
 
-### Reference Image
+#### Reference Image
 
 Here is an example NodeJS container that can be used as a reference to create a working container for your example:
 
@@ -47,3 +61,10 @@ COPY . /app/
 RUN npm test
 ```
 
+
+### For all other languages
+:::info
+**Applicable languages**: Pact JVM, pact4s, Rust, Ruby
+:::
+
+There are no specific requirements for Pact in these environments, you should be able to follow the standard guidance for your specific runtime.
