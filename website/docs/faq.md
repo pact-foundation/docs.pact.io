@@ -2,7 +2,11 @@
 title: FAQ
 ---
 
+:::note
+
 You can find the answers to some more technical and complex questions [here](/faq/question_archive).
+
+:::
 
 You might also like to look at our [Ask Me Anything videos](/help/amas), which often cover these questions in more detail.
 
