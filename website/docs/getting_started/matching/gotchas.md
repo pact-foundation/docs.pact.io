@@ -24,3 +24,9 @@ Following Postel's law, the provider may return fields that the consumer will ju
 
 If you are writing tests on the Consumer side with a different language on the Provider side, you must ensure you use a common Pact Specification between them or you will be unable to validate the Pacts. Currently, all official languages are at least v2.0 compatible.
 
+## I have a problem of which I solved with regex, now I have two problems
+
+Be one with your regex and know what you're matching.   Take for example validating an enum field with this regex: `(OBJECT|STRING|INTEGER|FLOAT|BOOLEAN|TIME)`.  All's well until it's not!
+
+A change in the provider enum can easily break the compatibility of the API, and this unfortunate matcher may provide an unintended verification result.  For example, adding `_RESULT` to the enum names will not break the pact; and consequently `INTEGER` is now `INTEGER_RESULT`. For durability, try `^(OBJECT|STRING|INTEGER|FLOAT|BOOLEAN|TIME)$` instead.
+
