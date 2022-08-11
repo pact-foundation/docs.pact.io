@@ -26,7 +26,7 @@ If you are writing tests on the Consumer side with a different language on the P
 
 ## I have a problem of which I solved with regex, now I have two problems
 
-Be one with your regex and know what you're matching.   Take for example validating an enum field with this regex: `(OBJECT|STRING|INTEGER|FLOAT|BOOLEAN|TIME)`.  All's well until it's not!
+Be one with your regex and know what you're matching. Take for example validating an enum field with this regex: `(OBJECT|STRING|INTEGER|FLOAT|BOOLEAN|TIME)`.  All's well until it's not!
 
-A change in the provider enum can easily break the compatibility of the API, and this unfortunate matcher may provide an unintended verification result.  For example, adding `_RESULT` to the enum names will not break the pact; and consequently `INTEGER` is now `INTEGER_RESULT`. For durability, try `^(OBJECT|STRING|INTEGER|FLOAT|BOOLEAN|TIME)$` instead.
+A change in the provider enum can easily break the compatibility of the API, and this unfortunate matcher may provide an unintended verification result as it does not match on the full string (it's missing the `^` and `$` at each end).  For example, adding `_RESULT` to the enum names will not break a pact with this regular expression, so the change from `INTEGER` to `INTEGER_RESULT` would not be picked up. For durability, try `^(OBJECT|STRING|INTEGER|FLOAT|BOOLEAN|TIME)$` instead.
 
