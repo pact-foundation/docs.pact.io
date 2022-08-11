@@ -6,9 +6,19 @@ Check out the official Pact blog at [docs.pact.io/blog](https://docs.pact.io/blo
 
 If you've seen a really good talk that's not on this list, please submit a PR to this page with the new link.
 
+## 2022
+
+**Articles**
+
+- [Contract Testing fundamentals(part 1)](https://medium.com/testvagrant/contract-testing-fundamentals-b4758fe61cda)
+- [Contract Testing fundamentals(part 2)](https://medium.com/testvagrant/pact-enabling-contract-test-automation-26fd51917065)
+
 ## 2021
 
 **Articles**:
+
+- [Consumer Driven contract t esting with Pact](https://orbitventures.medium.com/consumer-driven-contract-testing-using-pact-f0ca28fb6f58)
+- [The Test Kite (incl. Contract Testing)](https://medium.com/@kyriacoselia/the-test-kite-bb9fe9fafd6)
 
 - [The Basics of Contract Tests](https://codeburst.io/the-basics-of-contract-tests-920ff363c820)
 - [Introduction to Consumer Driven Pact Testing - Angular, Spring Boot, Docker, Jest, Junit and Mockito
@@ -20,6 +30,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 **Customer Stories**
 
+- [Ibotta](https://medium.com/building-ibotta/understanding-pact-and-contract-testing-as-part-of-a-complete-testing-strategy-f062a52a317c)
 - [M1 Finance](https://pactflow.io/case-studies/m1-finance/)
 - [Boost Insurance](https://pactflow.io/case-studies/boost-insurance/)
 - [Why We Killed Our End-to-End Test Suite: How Nubank switched to a Contract and Acceptance testing strategy to scale to over 1k engineers](https://building.nubank.com.br/why-we-killed-our-end-to-end-test-suite/)
