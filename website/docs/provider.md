@@ -6,7 +6,7 @@ title: Verifying Pacts
 
 Pact is designed to give you confidence that your integration is working correctly *before* you deploy either application. To achieve this, the verification step must be run against a locally running instance of your provider on a development machine or in CI/CD. External dependencies (ie. other services) should be stubbed. If you can run a local, lightweight instance of your database, it is fine to use your real database. If that is impractical, you may be better off stubbing your data layer.
 
-Verifying pacts against an already deployed provider will mean you don't get the benefits that contract testing was intended to provide - fast feedback, easy debugging, reliable tests. It will create a bottleneck as you won't be able to run tests in parallel, and you won't be able to use features like the webhook that trigger builds for [different versions of your provider](/pact_broker/webhooks#using-webhooks-with-the-contract_requiring_verification_published-event).
+Verifying pacts against an already deployed provider will mean you don't get the benefits that contract testing was intended to provide - fast feedback, easy debugging, reliable tests. It will create a bottleneck as you won't be able to run tests in parallel, and you won't be able to use features like the webhook that trigger builds for [different versions of your provider](/pact_broker/webhooks#using-webhooks-with-the-contract_requiring_verification_published-event). It is also much more difficult to insert, remove or mock the data required for provider states, to stub external dependencies, and to control areas like authentication.
 
 ## Ensure that Pact verify runs as part of your CI build
 
