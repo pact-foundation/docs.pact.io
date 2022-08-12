@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.14 - Bugfix Release
+
+* ddf7d794b - feat: add example JUnit4 Spring test using new consumer version selector method (Ronald Holshausen, Thu Aug 11 14:18:30 2022 +1000)
+* 09d907b79 - feat: Add docs for using consumer version selector methods with JUnit4 (Ronald Holshausen, Thu Aug 11 14:05:42 2022 +1000)
+* cfc6e3893 - fix: support consumer version selector methods on Kotlin test classes #1594 (Ronald Holshausen, Thu Aug 11 13:21:40 2022 +1000)
+* d56079c0d - fix: raise an exception when the consumerVersionSelectors method has the wrong signature #1594 (Ronald Holshausen, Thu Aug 11 11:53:19 2022 +1000)
+* 4ee099dae - Updated kotlin version from 1.5.31 to 1.6.21 (Jaswanth, Thu Aug 11 11:51:00 2022 +1000)
+* 561f0428d - fix: allways apply the plugin-publish plugin to the Gradle plugin project #1588 (Ronald Holshausen, Wed Aug 10 16:17:49 2022 +1000)
+* 37de1f298 - Consumer version selector method must be public (Stefano Lucka, Tue Aug 9 19:30:32 2022 +0200)
+* 18832534b - Replace diff-utils with the latest actively maintained version 4.12 (Bernard Fugas, Fri Aug 5 08:38:11 2022 +0200)
+
 ## 4.3.13 - Bugfix Release
 
 * b85250936 - fix(Gradle): fixes gradle provider verification from pact file #1587 (Ronald Holshausen, Fri Jul 29 14:29:50 2022 +1000)
