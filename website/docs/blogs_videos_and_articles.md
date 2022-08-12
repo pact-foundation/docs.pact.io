@@ -10,6 +10,7 @@ If you've seen a really good talk that's not on this list, please submit a PR to
 
 **Articles**
 
+- [Introduction To Contract Testing With Examples (Lewis Prescott)](https://www.softwaretestinghelp.com/contract-testing/)
 - [Contract Testing fundamentals(part 1)](https://medium.com/testvagrant/contract-testing-fundamentals-b4758fe61cda)
 - [Contract Testing fundamentals(part 2)](https://medium.com/testvagrant/pact-enabling-contract-test-automation-26fd51917065)
 
