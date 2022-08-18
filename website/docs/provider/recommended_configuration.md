@@ -19,16 +19,24 @@ The following examples require support for the "pacts for verification" API in y
 
 
 * Consumer Version Selectors
+   * If using branches/environments:
+      * The minimum pact that should be verified is the latest pact from the main line of development from the consumer (eg. `{ "mainBranch": true }`). This requires that the [consumer has configured the branch](/pact_broker/branches#configuring-the-branch-when-publishing-pacts) when publishing the pact.
+      * If you have matured your Pact workflow to the stage that you are [recording deployments](/pact_broker/recording_deployments_and_releases) in the Pact Broker when you deploy to an environment, then you should include selectors for the deployed and released versions (eg. `{ "deployedOrReleased": true }` )
+      * A common pattern to use when adding new features is for the provider to make a branch with the same name as the consumer's branch (which is used to create the consumer version tag), and to use a selector to find the matching branch (eg. `{ "matchingBranch": true}`). This way, the provider Pact configuration doesn't need to be modified to pull in the matching pact.
+          * The pacts will be de-duplicated, so if the `GIT_BRANCH` is `main`, you'll still only get one pact to verify. If there are no pacts for the current `GIT_BRANCH`, the selector will just be ignored.
 
-    * The minimum pact that should be verified is the latest pact from the main line of development from the consumer (eg. `{ tag: "main", latest: true }`). This requires that the [consumer has configured their tag](/consumer/recommended_configuration) to be the name of the git branch when publishing the pact.
+      * If you can't dynamically determine the tags of the feature pacts you want to verify, you will have to change the selectors while you are on a branch, and then put them back to normal once you've merged.
 
-    * If you have matured your Pact workflow to the stage that you are [tagging your application versions](/pact_nirvana/step_6) in the Pact Broker when you deploy to an environment, then you should include selectors for your various environments (eg. `test`, `production`).
+* If using tags (not recommended if you are on versions of the Pact Broker and Pact libraries that support branches and environments):
+      * The minimum pact that should be verified is the latest pact from the main line of development from the consumer (eg. `{ tag: "main", latest: true }`). This requires that the [consumer has configured their tag](/consumer/recommended_configuration) to be the name of the git branch when publishing the pact.
 
-    * A common pattern to use when adding new features is for the provider to make a branch with the same name as the consumer's branch (which is used to create the consumer version tag), and to configure a selector that uses the name of the current provider branch (eg. `{ tag: process.env.GIT_BRANCH, latest: true }`). This way, the provider Pact configuration doesn't need to be modified to pull in the matching pact.
+      * If you have matured your Pact workflow to the stage that you are [tagging your application versions](/pact_nirvana/step_6) in the Pact Broker when you deploy to an environment, then you should include selectors for your various environments (eg. `test`, `production`).
 
-        * The pacts will be deduplicated, so if the `GIT_BRANCH` is `main`, you'll still only get one pact to verify. If there are no pacts for the `GIT_BRANCH` tag, the selector will just be ignored.
+      * A common pattern to use when adding new features is for the provider to make a branch with the same name as the consumer's branch (which is used to create the consumer version tag), and to configure a selector that uses the name of the current provider branch (eg. `{ tag: process.env.GIT_BRANCH, latest: true }`). This way, the provider Pact configuration doesn't need to be modified to pull in the matching pact.
 
-    * If you can't dynamically determine the tags of the feature pacts you want to verify, you will have to change the selectors while you are on a branch, and then put it back to normal once you've merged.
+          * The pacts will be de-duplicated, so if the `GIT_BRANCH` is `main`, you'll still only get one pact to verify. If there are no pacts for the `GIT_BRANCH` tag, the selector will just be ignored.
+
+      * If you can't dynamically determine the tags of the feature pacts you want to verify, you will have to change the selectors while you are on a branch, and then put them back to normal once you've merged.
 
 * Pending pacts
 
