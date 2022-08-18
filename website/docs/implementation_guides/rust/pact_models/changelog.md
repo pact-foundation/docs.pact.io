@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.3 - Bugfix Release
+
+* 74a36a1b - fix: Matching rule parser was not handling decimal values correctly (Ronald Holshausen, Wed Aug 17 13:19:58 2022 +1000)
+
 ## 0.4.2 - Maintenance Release
 
 * 2ca2fe49 - fix: add function to display binary data in a meaningful way (Ronald Holshausen, Mon Aug 1 17:39:34 2022 +1000)
