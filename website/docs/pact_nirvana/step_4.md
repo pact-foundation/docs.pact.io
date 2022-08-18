@@ -66,10 +66,28 @@ Useful links:
 
 * [Installing a Docker Pact Broker](https://hub.docker.com/r/pactfoundation/pact-broker)
 
+For each of the next steps, you will need to set the following variables to your projects
+
+- `PACT_BROKER_BASE_URL`
+- `PACT_BROKER_USERNAME` # Pact Broker Only
+- `PACT_BROKER_PASSWORD` # Pact Broker Only
+- `PACT_BROKER_TOKEN` # Pactflow Broker Only
+
 ### B. Manually publish the pact to the Pact Broker
 
 Now that things in are a fairly stable state, you can start taking advantage of the Pact Broker to manage the 
 communication between your provider and consumer.
+
+- See the recommended configuration for publishing https://docs.pact.io/consumer/recommended_configuration
+- Use of of our [Pact CLI tools](https://docs.pact.io/pact_broker/client_cli)
+  1. [Docker](https://hub.docker.com/r/pactfoundation/pact-cli)
+  2. [Pact Standalone CLI](https://github.com/pact-foundation/pact-ruby-standalone/releases)
+  3. [Pact Broker Client (Ruby)](https://github.com/pact-foundation/pact_broker-client)
+  4. [Github Actions](https://github.com/pactflow/actions)
+
+You can read more about publishing and retrieving pacts from a Pact Broker [here](https://docs.pact.io/pact_broker/publishing_and_retrieving_pacts#publishing)
+
+If you are using Pactflow - see https://docs.pactflow.io/#consumer for how to configure your consumer in each respective language implementation
 
 Debug this until it works and looks good.
 
@@ -78,3 +96,4 @@ Debug this until it works and looks good.
 Now you can see if you can run your provider tests, this time pulling the pact file not from your local filesystem, 
 but from the broker. Reconfigure your provider project to get the latest pact for each of its consumers from the broker.
 
+If you are using Pactflow - see https://docs.pactflow.io/#provider for how to configure your provider in each respective language implementation
