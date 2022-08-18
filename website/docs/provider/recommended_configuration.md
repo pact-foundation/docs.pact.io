@@ -56,7 +56,36 @@ The following examples require support for the "pacts for verification" API in y
   ]
 }>
   <TabItem value="javascript">
+  Using tags
+    
+  ```js
+  const verificationOptions = {
+    // ....
+    provider: "example-provider",
+    pactBrokerUrl: "http://test.pactflow.io",
+    consumerVersionSelectors: [
+      {
+        mainBranch: true
+      },
+      {
+        matchingBranch: true
+      },
+      {
+        deployedOrReleased: true
+      }
+    ],
+    enablePending: true,
+    includeWipPactsSince: process.env.GIT_BRANCH === "main" ? "2020-01-01" : undefined,
 
+    // used when publishing verification results
+    publishVerificationResult: process.env.CI === "true", //only publish from CI
+    providerVersion: process.env.GIT_COMMIT, //use the appropriate env var from your CI system
+    providerBranch: process.env.GIT_BRANCH,  //use the appropriate env var from your CI system
+  }
+  ```
+    
+  Using tags (this approach is now superseded by branches and environments)
+    
   ```js
   const verificationOptions = {
     // ....
@@ -94,6 +123,41 @@ The following examples require support for the "pacts for verification" API in y
   
   <TabItem value="ruby">
 
+  Using branches and environments
+    
+  ```ruby
+    # The git commands are just for local testing, not needed for real CI
+    provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`.strip
+    provider_branch = ENV['GIT_BRANCH'] || `git name-rev --name-only HEAD`.strip
+    publish_results = ENV['CI'] == 'true' # results should only be published from CI
+    # choose the appropriate credentials for your broker
+    credentials = {
+      username: ENV['PACT_BROKER_USERNAME'],
+      password: ENV['PACT_BROKER_PASSWORD'],
+      token: ENV['PACT_BROKER_TOKEN']
+    }.compact
+
+    Pact.service_provider "example-provider" do
+      app_version provider_version
+      app_version_branch provider_branch
+      publish_verification_results publish_results
+      
+      honours_pacts_from_pact_broker do
+        pact_broker_base_url 'http://test.pactflow.io', credentials
+
+        consumer_version_selectors [
+            { main_branch: true },
+            { matching_branch: true },
+            { deployed_or_released: true }
+        ]
+        enable_pending true
+        include_wip_pacts_since provider_branch == "main" ? "2020-01-01" : nil
+      end
+    end
+  ```    
+    
+  Using tags (this approach is now superseded by branches and environments)
+    
   ```ruby
     # The git commands are just for local testing, not needed for real CI
     provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`.strip
@@ -154,7 +218,8 @@ When the pact URL is known, the `pactBrokerUrl`, `providerName`, `consumerVersio
 
     publishVerificationResult: process.env.CI === "true", //only publish from CI
     providerVersion: process.env.GIT_COMMIT, //use the appropriate env var from your CI system
-    providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [],
+    providerBranch: process.env.GIT_BRANCH // if using branches and environments
+    providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [], //only if not setting the branch
   }
    ```
 
