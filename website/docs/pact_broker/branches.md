@@ -154,7 +154,7 @@ Support for publishing pacts and verification results with branches is currently
 
 ## Migrating from tags to branches
 
-Note the [Automatic branch creation](#configuring-the-branch-when-publishing-verification-results) feature mentioned above.
+Note the [Automatic branch creation](#automatic-branch-creation-from-first-tag) feature mentioned above.
 
 * Upgrade to the latest version of your Pact client library (see the [support](#support) section above).
 * Upgrade to Pact Broker version 2.82.0 or later.
