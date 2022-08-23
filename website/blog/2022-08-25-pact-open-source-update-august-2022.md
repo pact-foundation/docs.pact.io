@@ -5,7 +5,7 @@ authorURL: https://twitter.com/you54f
 tags: [pact, oss, community]
 keywords: [pact, oss, community]
 date: 2022-08-25
-draft: true
+draft: false
 hide_table_of_contents: true
 ---
 
@@ -89,6 +89,8 @@ This feedback is critical in helping us improve the tooling for all of our users
 ## Become a contributor
 
 If you’re passionate about Open Source, Pact or a specific language, get involved as a maintainer. There’s no minimum time commitment and you can get involved on your own terms. One thing that does make the Pact OSS so great is regular, committer contributions.
+
+Read our [Contributing](https://docs.pact.io/contributing) page to find out many of the different ways you can get involved in Open Source, no matter what role, or skillset you hold.
 
 That's all for now, catch you next month!
 
