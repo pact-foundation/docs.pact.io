@@ -60,8 +60,8 @@ Big props to the many who have helped make Pact-JS such as success, but we wante
 
 [Ron](https://github.com/uglyog) has been diligently plugging away at the Rust core, a Pact implementation written in Rust. It supports the [V3 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-3) and [V4 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-4) and provides shared libraries that can be used in other languages via foreign function interfaces (FFI).
 
-> It has now been adopted in Pact-JVM, Pact.Net, Pact-JS and Pact-Go, and although we are still ironing out issues, we are so grateful for the time Ron spends in trying to improve the landscape. I’ll let Ron explain some of the journey
->
+It has now been adopted in Pact-JVM, Pact.Net, Pact-JS and Pact-Go, and although we are still ironing out issues, we are so grateful for the time Ron spends in trying to improve the landscape. I’ll let Ron explain some of the journey
+
 > One of the strengths of Pact is its specification, allowing anybody to create a new language binding in an interoperable way. Whilst this has been great at unifying compatibility, the sprawl of languages makes it hard to add significant new features/behaviour into the framework quickly (e.g. GraphQL or Protobuf support).
 >
 > We have attempted to combat this time-to-market problem, by focussing on a shared implementation (the "shared core") in many of the languages. We initially [bundled Ruby](https://docs.pact.io/wrapper_implementations), because it was convenient, but have been slowly moving to our [Rust core](https://github.com/pact-foundation/pact-reference) which solves many of the challenges that bundling Ruby presented.
