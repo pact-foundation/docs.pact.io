@@ -17,15 +17,13 @@ I have some awesome updates for you this month!
 
 ## Pact JS
 
-Pact JS 10.x.x is now live – here's how to get started
-
-[ short video ]
+Pact JS 10.x.x is now live
 
 Get it here 👉: https://github.com/pact-foundation/pact-js
 
 ### Summary of the good stuff
 
-- Speed! - It’s quick, blisteringly quick. You’ve probably heard people talk about just how good Rust is, they weren’t wrong. See some of the benchmarks.
+- Speed! - It’s quick, blisteringly quick. You’ve probably heard people talk about just how good Rust is, they weren’t wrong.
 - Full support for binary payloads (both HTTP and Async) and multi-part uploads
 - For Async, the ability to specify and verify message metadata
 - XML support
@@ -54,7 +52,7 @@ Get it here 👉: https://github.com/pact-foundation/pact-js
 
 ## Community corner – member shout outs
 
-Big props to the many who have helped make Pact-JS such as success, but we wanted to take a moment to give a shout out for a few whose contributions have really propelled adoption and the beta, into GA. We of course, can't forget [Matt Fellows](https://github.com/mefellows) who is a machine that never sleeps, each contribution, helps Matt get 5 more minutes with the kids. Save a Matt, make a contribution.
+Big props to the many who have helped make Pact-JS such a success, but we wanted to take a moment to give a shout out for a few whose contributions have really propelled adoption and the beta, into GA. We of course, can't forget [Matt Fellows](https://github.com/mefellows) who is a machine that never sleeps, each contribution, helps Matt get 5 more minutes with the kids. Save a Matt, make a contribution.
 
 ### Ron Holshausen
 
