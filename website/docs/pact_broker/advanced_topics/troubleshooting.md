@@ -35,6 +35,8 @@ If you get a 409, you have two options.
   * Manually create the pacticipant with the desired name (recommended)
   * Disable the potential duplicate checking (not recommended).
 
+To see what has changed between two versions of a pact, see [this guide](https://docs.pact.io/pact_broker/advanced_topics/see_changes_pact).
+
 ### Manually creating the pacticipant via curl
 
 If the pact broker requires authentication, include '-u yourusername:yourpassword' in the command.
