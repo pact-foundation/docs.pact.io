@@ -19,7 +19,7 @@ However, there are many similarities in the steps necessary on the journey to a 
 
 Feel free to pick and choose the steps that apply best to your team. You may implement only the first few steps described below, and just use Pact as a precursor to your standard integration tests; or you may throw away your integration tests altogether and reach "Pact Nirvana".
 
-This guide doesn't go into the details of how to write and run consumer tests or provider verification tests. Here we are laying out a high-level strategy for how you can get Pact set up and operational.  Each of the levels below gets you a step towards having a fully automated the process of verifying contracts as part of CI/CD with no need for an integration environment.
+This guide doesn't go into the details of how to write and run consumer tests or provider verification tests. Here we are laying out a high-level strategy for how you can get Pact set up and operational.  Each of the levels below gets you a step towards having a fully automated process of verifying contracts as part of CI/CD with no need for an integration environment.
 
 As Pact has been implemented in many different languages, this document will outline the theory for each step. You will need to consult the documentation of your chosen language to learn the relevant syntax for each task. See the [implementation guides](/implementation_guides/cli) section for more information.
 
