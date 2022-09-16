@@ -67,3 +67,5 @@ Click below to expand and see each a diagram representing each level
 
 ![Diamond with release branch diagram](pact_nirvana/images/diamond-release.png)
 </details>
+
+> A diamond level contract testing implementation is exemplified in this repository: https://github.com/PauloGoncalvesBH/contract-test-nirvana
