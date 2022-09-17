@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.104.0"></a>
+
+### v2.104.0 (2022-09-17)
+
+#### Features
+
+* ignore deleted webhooks when calculating the latest triggered webhook status	 ([c3105dcb](https://github.com/pact-foundation/pact_broker/commit/c3105dcb))
+
 <a name="v2.103.0"></a>
 
 ### v2.103.0 (2022-09-14)
