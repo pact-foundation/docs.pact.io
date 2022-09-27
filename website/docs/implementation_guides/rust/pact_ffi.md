@@ -10,7 +10,8 @@ in other languages.
 
 ## Documentation
 
-Documentation for the FFI functions and types is available at: https://docs.rs/pact_ffi/0.3.4/pact_ffi/index.html
+Documentation for the FFI functions and types is available at https://docs.rs/pact_ffi/latest/pact_ffi/index.html, and
+documentation on the integration JSON format is [IntegrationJson.md](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_ffi/IntegrationJson.md).
 
 ## Dependencies
 
@@ -88,4 +89,4 @@ $ cmake --build .
 ## Architecture
 
 You can read about the architecture and design choices of this crate in
-[ARCHITECTURE.md](/implementation_guides/rust/pact_ffi/architecture).
+[ARCHITECTURE.md](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_ffi/ARCHITECTURE.md).
