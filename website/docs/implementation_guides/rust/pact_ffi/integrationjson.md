@@ -11,11 +11,11 @@ query parameters, etc.)
 For each value were matching rules or generators are required, a JSON object can be passed in with the following 
 attributes:
 
-| Attribute             | Description                           | Values                                                                                                                                                                    |
-|-----------------------|---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `pact:matcher:type`   | ID of the matcher to use              | One of: "regex", "equality", "include", "type", "number", "integer", "decimal", "real", "timestamp", "date", "time", "null", "values", "contentType", "arrayContains"     |
-| `pact:generator:type` | ID of the generator to use (optional) | One of: "RandomInt", "Uuid", "RandomDecimal", "RandomHexadecimal", "RandomString", "Regex", "Date", "Time", "DateTime", "RandomBoolean", "ProviderState", "MockServerURL" |
-| `value`               | Example value to use                  | Can be any JSON value, including arrays and objects                                                                                                                       |
+| Attribute             | Description                           | Values                                                                                                                                                                                                                              |
+|-----------------------|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `pact:matcher:type`   | ID of the matcher to use              | One of: "regex", "equality", "include", "type", "number", "integer", "decimal", "boolean", "datetime", "date", "time", "null", "contentType", "arrayContains", "values", "statusCode", "notEmpty", "semver", "eachKey", "eachValue" |
+| `pact:generator:type` | ID of the generator to use (optional) | One of: "RandomInt", "Uuid", "RandomDecimal", "RandomHexadecimal", "RandomString", "Regex", "Date", "Time", "DateTime", "RandomBoolean", "ProviderState", "MockServerURL"                                                           |
+| `value`               | Example value to use                  | Can be any JSON value, including arrays and objects                                                                                                                                                                                 |
 
 plus the attributes required for the matching rule and generator (if used). Required attributes for matching rules are
 documented at [V4 matching rules](https://github.com/pact-foundation/pact-specification/tree/version-4#matching-rules) and
