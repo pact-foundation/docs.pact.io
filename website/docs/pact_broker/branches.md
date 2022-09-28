@@ -145,7 +145,7 @@ Support for publishing pacts and verification results with branches is currently
 * Pact Ruby - v1.59.0
 * Ruby Dockerized pact-provider-verifier - v1.36.0
 * Pact Python - v1.6.0
-* Pact JS - TBC [Issue](https://github.com/pact-foundation/pact-js/issues/749)
+* Pact JS - v9.17.0 for verifying / For publishing see [Issue](https://github.com/pact-foundation/pact-js/issues/749)
 * Pact Go - v1.6.6 [Issue](https://github.com/pact-foundation/pact-go/issues/184)
 * Pact Rust - Pact Verifier Library v0.10.10 [Issue](https://github.com/pact-foundation/pact-reference/issues/151) 
 * Pact JVM - v4.1.39 / v4.3.12 / v4.4.0-beta.3 [Issue](https://github.com/pact-foundation/pact-jvm/issues/1454)
