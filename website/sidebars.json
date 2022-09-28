@@ -146,7 +146,8 @@
     {
       "Stubs": ["getting_started/stubs"]
     },
-    "telemetry"
+    "telemetry",
+    "implementation_guides/pact_specification"
   ],
   "getting-started": [
     {
