@@ -58,6 +58,10 @@ _Note:_ One implications of this philosophy is that you cannot verify, using pac
 
 In order to faciliate the move to from v2 to v3 specification, in the respective client libraries, migration guides have been written to help to transition across.
 
+###  General notes
+
+- A migration between pact specifications, for existing published contracts, will trigger a rule [`content_that_affects_verification_results`](https://github.com/pact-foundation/pact_broker/blob/d1fd60bb52a64b555d9e3df92c432474fec4fb68/lib/pact_broker/pacts/content.rb#L99) causing a `contract_content_changed` [event type](https://docs.pact.io/pact_broker/advanced_topics/api_docs/webhooks#event-types) as the generated matcher rules may have changed between specifications.
+
 ### v2 to v3
 
 - [Pact-JS](https://github.com/pact-foundation/pact-js/blob/master/docs/migrations/9-10.md)
