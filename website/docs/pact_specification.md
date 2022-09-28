@@ -42,17 +42,27 @@ _Note:_ One implications of this philosophy is that you cannot verify, using pac
 
 | Implementation | v1 | v1.1 | v2 | v3 | v4 |
 | --- | --- | --- | --- | --- | --- |
-| Pact-rust | | | | | |
-| Pact-ruby | | | | | |
-| Pact-jvm | | | | | |
-| Pact-js | | | | | |
-| Pact-net | | | | | |
-| Pact-python | | | | | |
-| Pact-php | | | | | |
-| Pact-go | | | | | |
-| Pact-C++ | | | | | |
-| Pact-scala | | | | | |
-| Pact-swift | | | | | |
+| [Pact-rust](https://github.com/pact-foundation/pact-reference/blob/master/rust/README.md#pact-rust) | | | | X | X |
+| [Pact-jvm](https://github.com/pact-foundation/pact-jvm#supported-jdk-and-specification-versions) | | | 0 |X| X|
+| [Pact-ruby](https://github.com/pact-foundation/pact-ruby#current-pact-specification-version)| || X | | |
+| [Pact-js](https://github.com/pact-foundation/pact-js#compatibility) | | | X | X | |
+| [Pact-net](https://github.com/pact-foundation/pact-net#compatibility) | | | X | X | |
+| [Pact-python](https://github.com/pact-foundation/pact-python#pact-python) | | | X | | |
+| [Pact-php](https://github.com/pact-foundation/pact-php#specifications) | | | X | | |
+| [Pact-go](https://github.com/pact-foundation/pact-go/tree/2.x.x#compatibility) | | | X | 1 | |
+| [Pact-C++](https://github.com/pact-foundation/pact-cplusplus/tree/master/consumer) | | | X | | |
+| scala ([scala-pact](https://github.com/ITV/scala-pact#latest-version-is-440)) | | | X | | |
+| scala ([pact4s](https://github.com/jbwheatley/pact4s#getting-started)) | | | | X | 1 |
+| swift ([pact-consumer-swift](https://github.com/DiUS/pact-consumer-swift)) | | | X | | |
+| swift ([pact-swift](https://github.com/surpher/PactSwift)) | | | | X | |
+
+X - Implemented and actively supported
+1 - Implemented in beta
+0 - Implemented and not actively supported
+
+> All new Pact implementations should wrap the Rust implementation using FFI calls, to allow us to roll out new features quickly and consistently across our 10+ Pact languages.
+>
+> Support is appreciated if you wish to contribute in migrating a language from the Ruby to Rust core, or wish to create a new language implementation
 
 ## Migration guides
 
@@ -60,7 +70,7 @@ In order to faciliate the move to from v2 to v3 specification, in the respective
 
 ###  General notes
 
-- A migration between pact specifications, for existing published contracts, will trigger a rule [`content_that_affects_verification_results`](https://github.com/pact-foundation/pact_broker/blob/d1fd60bb52a64b555d9e3df92c432474fec4fb68/lib/pact_broker/pacts/content.rb#L99) causing a `contract_content_changed` [event type](https://docs.pact.io/pact_broker/advanced_topics/api_docs/webhooks#event-types) as the generated matcher rules may have changed between specifications.
+- A migration between pact specifications, for existing published contracts, will trigger a rule [`content_that_affects_verification_results`](https://github.com/pact-foundation/pact_broker/blob/d1fd60bb52a64b555d9e3df92c432474fec4fb68/lib/pact_broker/pacts/content.rb#L99) causing a `contract_content_changed` / `contract_requiring_verification_published` [event type](https://docs.pact.io/pact_broker/advanced_topics/api_docs/webhooks#event-types) as the generated matcher rules may have changed between specifications.
 
 ### v2 to v3
 
