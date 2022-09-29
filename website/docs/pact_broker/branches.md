@@ -138,19 +138,21 @@ pact-broker create-or-update-pacticipant --name Foo --main-branch dev
 
 ## Support
 
-Support for publishing pacts and verification results with branches is currently (late 2021) being rolled out across the Pact client libraries.
+Support for publishing pacts and verification results with branches is currently (late 2022) being rolled out across the Pact client libraries.
+
+> We recommend using the Pact CLI for publishing pacts, some libraries will not provide support for publishing branches natively such as pact-net v4 and pact4s
 
 * Pact Ruby - v1.59.0
 * Ruby Dockerized pact-provider-verifier - v1.36.0
-* Pact JS - TBC
-* Pact Go - TBC
-* Pact Rust - TBC
-* Pact JVM - TBC
-* Pact NET - TBC
-* Pact Python - TBC
-* Pact Scala - TBC
-* Pact4s - TBC
-* Pact PHP - TBC
+* Pact Python - v1.6.0
+* Pact JS - v9.17.0 for verifying / For publishing see [Issue](https://github.com/pact-foundation/pact-js/issues/749)
+* Pact Go - v1.6.6 [Issue](https://github.com/pact-foundation/pact-go/issues/184)
+* Pact Rust - Pact Verifier Library v0.10.10 [Issue](https://github.com/pact-foundation/pact-reference/issues/151) 
+* Pact JVM - v4.1.39 / v4.3.12 / v4.4.0-beta.3 [Issue](https://github.com/pact-foundation/pact-jvm/issues/1454)
+* Pact NET -  [v4.x](https://github.com/pact-foundation/pact-net/blob/master/docs/upgrading-to-4.md#provider-tests) for v3 spec pacts / TBC for ruby based core (v2 spec, v3 pact-net) [Issue](https://github.com/pact-foundation/pact-net/issues/327), 
+* Pact Scala - TBC [Issue](https://github.com/ITV/scala-pact/issues/230)
+* Pact4s - v0.2.0 [Issue](https://github.com/jbwheatley/pact4s/issues/89)
+* Pact PHP - 7.1.0 [PR](https://github.com/pact-foundation/pact-php/pull/240)
 
 ## Migrating from tags to branches
 
