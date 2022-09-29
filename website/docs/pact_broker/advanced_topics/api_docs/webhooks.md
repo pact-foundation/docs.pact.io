@@ -84,7 +84,11 @@ To specify an XML body, you will need to use a correctly escaped string \(or use
 
 `contract_published:` triggered every time a contract is published. It is not recommended to trigger your provider verification build every time a contract is published - see `contract_content_changed` below.
 
-`contract_content_changed:` triggered when the content of the contract, or tags applied to the contract have changed since the previous publication. If `base_equality_only_on_content_that_affects_verification_results` is set to `true` in the configuration \(the default\), any changes to whitespace, ordering of keys, or the ordering of the `interactions` or `messages` will be ignored, and will not trigger this event. It is recommended to trigger a provider verification build for this event.
+[`contract_content_changed:`](https://docs.pact.io/pact_broker/webhooks#the-contract-content-changed-event) triggered when the content of the contract, or tags applied to the contract have changed since the previous publication. If `base_equality_only_on_content_that_affects_verification_results` is set to `true` in the configuration \(the default\), any changes to whitespace, ordering of keys, or the ordering of the `interactions` or `messages` will be ignored, and will not trigger this event. It is recommended to trigger a provider verification build for this event.
+_note:_ To migrate to the `contract_requiring_verification_published` shown below, see the [link](https://docs.pact.io/pact_broker/webhooks#migrating-from-the-contract_content_changed-event)
+
+[`contract_requiring_verification_published`](https://docs.pact.io/pact_broker/webhooks#using-webhooks-with-the-contract_requiring_verification_published-event): A much smarter implementation of the contract_content_changed event. Using this webhook event allows the changed pact to be tested against the head, test and production versions of the provider, in the same way as the consumer version selectors allow the head, test and production versions of the pact to be tested against a version of the provider.
+_note:_ This requires the use of branches and record-deployment/release, see above link for further information
 
 `provider_verification_published:` triggered whenever a provider publishes a verification.
 
@@ -153,4 +157,3 @@ Send a DELETE request to the webhook URL.
 ## Updating
 
 Send a PUT request to the webhook URL with all fields required for the new webhook.
-
