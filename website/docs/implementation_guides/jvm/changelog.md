@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.15 - Bugfix Release
+
+* 873b0e5b3 - Use Thread Context ClassLoader to find test resources (Holly Cummins, Sat Sep 17 12:36:48 2022 +0100)
+* 50863b9f6 - Bump version of Kotlin Result to work around Unresolved reference build failures (Holly Cummins, Fri Sep 16 20:10:55 2022 +0100)
+* db962337e - Fix issue with base classes (Stefano Lucka, Fri Sep 16 20:08:34 2022 +0200)
+* d31b3e6f4 - feat: update docs on providing raw selector JSON (Ronald Holshausen, Thu Sep 1 12:10:14 2022 +1000)
+* 416b19d23 - feat: add capability to the selector builder DSL to add raw JSON snippets (Ronald Holshausen, Wed Aug 31 16:54:53 2022 +1000)
+* fa7d27065 - fix(Gradle): publishing pacts - default to the consumer version system property if it is set #1601 (Ronald Holshausen, Wed Aug 31 14:14:01 2022 +1000)
+* 08bb852a3 - feat: add matching functions to consumer DSL to matcher numbers with a regex #1600 (Ronald Holshausen, Tue Aug 30 14:15:39 2022 +1000)
+* 7580b4599 - Adding Lambda DSL variants for request/response (Zabuzard, Fri Aug 19 14:57:09 2022 +0200)
+
 ## 4.3.14 - Bugfix Release
 
 * ddf7d794b - feat: add example JUnit4 Spring test using new consumer version selector method (Ronald Holshausen, Thu Aug 11 14:18:30 2022 +1000)
