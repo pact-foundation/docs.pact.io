@@ -6,6 +6,20 @@ custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/CHANGELO
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.1.4](https://github.com/pact-foundation/pact-js/compare/v10.1.3...v10.1.4) (2022-09-21)
+
+
+### Fixes and Improvements
+
+* Fix issue where MatchersV3.string() with no arguments would not correctly match strings ([ed70734](https://github.com/pact-foundation/pact-js/commit/ed7073427234449328a88ba32bad6b736c32459c))
+
+### [10.1.3](https://github.com/pact-foundation/pact-js/compare/v10.1.2...v10.1.3) (2022-09-06)
+
+
+### Fixes and Improvements
+
+* PactV4 error handling logic ([78ff0bf](https://github.com/pact-foundation/pact-js/commit/78ff0bf64f45c1de95e34a7f401d97068775b668))
+
 ### [10.1.2](https://github.com/pact-foundation/pact-js/compare/v10.1.1...v10.1.2) (2022-08-20)
 
 
