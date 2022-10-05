@@ -1,4 +1,7 @@
-## Webhook Whitelist
+---
+title: Webhook Whitelists
+---
+## Webhook Whitelists
 
 To ensure that webhooks cannot be used maliciously to expose either data about your contracts or your internal network, the following validation rules are applied to webhooks via the Pact Broker [webhook whitelist configuration settings](/pact_broker/configuration/features#webhook-whitelists) .
 
