@@ -1,9 +1,7 @@
 {
   "docs": [
     {
-      "Pact command line tools": [
-        "implementation_guides/cli"
-      ]
+      "Pact command line tools": ["implementation_guides/cli"]
     },
     {
       "Pact JS": [
@@ -80,19 +78,13 @@
       ]
     },
     {
-      "Pact Swift": [
-        "implementation_guides/swift"
-      ]
+      "Pact Swift": ["implementation_guides/swift"]
     },
     {
-      "Pact Scala": [
-        "implementation_guides/scala"
-      ]
+      "Pact Scala": ["implementation_guides/scala"]
     },
     {
-      "Pact PHP": [
-        "implementation_guides/php"
-      ]
+      "Pact PHP": ["implementation_guides/php"]
     },
     {
       "Pact Ruby": [
@@ -139,14 +131,10 @@
       ]
     },
     {
-      "Pact on Docker": [
-        "docker"
-      ]
+      "Pact on Docker": ["docker"]
     },
     {
-      "Other languages": [
-        "implementation_guides/other_languages"
-      ]
+      "Other languages": ["implementation_guides/other_languages"]
     },
     {
       "Feature support": [
@@ -156,9 +144,7 @@
       ]
     },
     {
-      "Stubs": [
-        "getting_started/stubs"
-      ]
+      "Stubs": ["getting_started/stubs"]
     },
     "telemetry"
   ],
@@ -310,9 +296,7 @@
       {
         "type": "category",
         "label": "API Docs",
-        "items": [
-          "pact_broker/api/webhooks"
-        ]
+        "items": ["pact_broker/api/webhooks"]
       },
       "pact_broker/changelog"
     ]
@@ -331,15 +315,5 @@
       ]
     }
   ],
-  "help": [
-    "help",
-    "help/how_to_ask_for_help",
-    "help/amas"
-  ],
-  "docs-other": {
-    "First Category": [
-      "doc4",
-      "doc5"
-    ]
-  }
+  "help": ["help", "help/how_to_ask_for_help", "help/amas"]
 }
