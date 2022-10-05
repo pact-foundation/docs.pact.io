@@ -1,111 +1,61 @@
 ---
 title: Webhooks template library
+toc_max_heading_level: 4
 ---
 
 Please feel free add any that you think might be useful to others.
 
-## Github - publish commit status
+## Triggering Builds
 
-Report the pact verification status back to the consumer project in Github.
+### Using the contract_requiring_verification_published event (recommended)
 
-### CLI
+#### GitHub - trigger build
 
-```
-pact-broker create-webhook \
-  'https://api.github.com/repos/<organization>/<project>/statuses/${pactbroker.consumerVersionNumber}' \
-  -X POST \
-  -H "Content-Type: application/json" \
-  -d '{ "state": "${pactbroker.githubVerificationStatus}", "description": "Pact Verification Tests ${pactbroker.providerVersionTags}", "context": "${pactbroker.providerName}", "target_url": "${pactbroker.verificationResultUrl}" }' \
-  --user username:password \
-  --description "Publish pact verification status to Github" \
-  --contract-published \
-  --provider-verification-published \
-  --broker-base-url <your-broker>
-```
-
-### JSON
+Trigger a build in GitHub using the repository_dispatch event.
 
 ```javascript
 {
-  "consumer": {
-    "name": "<consumer name>"
-  },
-  "events": [
-    {
-      "name": "contract_published"
-    },
-    {
-      "name": "provider_verification_published"
-    }
-  ],
+  "events": [{
+    "name": "contract_requiring_verification_published"
+  }],
   "request": {
     "method": "POST",
-    "url": "https://api.github.com/repos/<organization>/<project>/statuses/${pactbroker.consumerVersionNumber}",
+    "url": "https://api.github.com/repos/<organisation>/<repository>/dispatches",
     "headers": {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Accept": "application/vnd.github.everest-preview+json",
+      "Authorization": "Bearer ${user.GithubToken}"
     },
     "body": {
-      "state": "${pactbroker.githubVerificationStatus}",
-      "description": "Pact Verification Tests ${pactbroker.providerVersionTags}",
-      "context": "${pactbroker.providerName}",
-      "target_url": "${pactbroker.verificationResultUrl}"
-    },
-    "username": "USERNAME",
-    "password": "PASSWORD"
-  }
-}
-```
-
-## Slack - post notification - contract_published
-
-```javascript
-{
-  "events": [
-    {
-      "name": "contract_published"
-    }
-  ],
-  "request": {
-    "method": "POST",
-    "url": "https://hooks.slack.com/services/<webhook id>",
-    "headers": {
-      "Content-Type": "application/json"
-    },
-    "body": {
-      "channel": "#<your-channel-here>",
-      "username": "webhookbot",
-      "text": "New version of pact created for ${pactbroker.consumerName}/${pactbroker.providerName}: <${pactbroker.pactUrl}|contract-details>",
-      "icon_emoji": ":ghost:"
-    }
-  }
-}
-```
-## Slack - post notification - provider_verification_published
-
-```javascript
-{
-  "events": [
-    {
-      "name": "provider_verification_published"
-    }
-  ],
-  "request": {
-    "method": "POST",
-    "url": "https://hooks.slack.com/services/<webhook id>",
-    "headers": {
-      "Content-Type": "application/json"
-    },
-    "body": {
-      "channel": "#<your-channel-here>",
-      "username": "webhookbot",
-      "text": "Pact Verification published for $${pactbroker.consumerName}/$${pactbroker.providerName}<$${pactbroker.verificationResultUrl}|$${pactbroker.githubVerificationStatus}>",
-      "icon_emoji": ":ghost:"
+      "event_type": "contract_requiring_verification_published",
+      "client_payload": {
+        "pact_url": "${pactbroker.pactUrl}",
+        "sha": "${pactbroker.providerVersionNumber}",
+        "branch": "${pactbroker.providerVersionBranch}",
+        "message": "Verify changed pact for ${pactbroker.consumerName} version ${pactbroker.consumerVersionNumber} branch ${pactbroker.consumerVersionBranch} by ${pactbroker.providerVersionNumber} (${pactbroker.providerVersionDescriptions})"
+      }
     }
   }
 }
 ```
 
-## GitHub - trigger build
+Ref:
+
+* [Github repository_dispatch docs](https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#create-a-repository-dispatch-event)
+
+### Using the pact_changed event (superseded)
+
+:::info
+
+We recommend using the [contract_requiring_verification_published](https://docs.pact.io/pact_broker/webhooks#the-contract-requiring-verification-published-event)
+
+The following templates can be updated for support by checking [this short three step guide](https://docs.pact.io/pact_broker/webhooks#migrating-from-the-contract_content_changed-event)
+
+We would welcome a pull-request to update any of the below webhooks, to the section above.
+
+:::
+
+#### GitHub - trigger build
 
 Trigger a build in GitHub using the repository_dispatch event.
 
@@ -131,11 +81,12 @@ Trigger a build in GitHub using the repository_dispatch event.
   }
 }
 ```
+
 Ref:
 
 * [Github repository_dispatch docs](https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#create-a-repository-dispatch-event)
 
-## Travis - trigger build
+#### Travis - trigger build
 
 ```javascript
 {
@@ -172,7 +123,7 @@ Ref:
 
 * [Travis triggering builds docs](https://docs.travis-ci.com/user/triggering-builds)
 
-## Bamboo - trigger build
+#### Bamboo - trigger build
 
 ```javascript
 {
@@ -192,7 +143,7 @@ Ref:
 
 * [Bamboo Queue documentation](https://docs.atlassian.com/atlassian-bamboo/REST/4.0/?_ga=2.99385502.104409444.1592869883-400989189.1592276231#idp263696)
 
-## Azure DevOps - trigger build
+#### Azure DevOps - trigger build
 
 The auth token is created by encoding your PAT and username. See [Azure DevOps: Use personal access tokens](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate) for more details.
 
@@ -227,7 +178,7 @@ Ref:
 
 * [Azure DevOps Builds API page](https://docs.microsoft.com/en-us/rest/api/azure/devops/pipelines/runs/run-pipeline?view=azure-devops-rest-6.0)
 
-## CircleCI - trigger workflow build
+#### CircleCI - trigger workflow build
 
 N.B - currently need to use a personal API token \(ideally for a machine user\)
 
@@ -251,7 +202,7 @@ N.B - currently need to use a personal API token \(ideally for a machine user\)
 }
 ```
 
-## Bitbucket - trigger pipeline run
+#### Bitbucket - trigger pipeline run
 
 Run the default pipeline for a branch, for the changed pact:
 
@@ -326,8 +277,7 @@ Ref:
 * [Bitbucket API page](https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/pipelines/)
 * [Bitbucket App Password](https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html)
 
-
-## Buildkite - trigger build
+#### Buildkite - trigger build
 
 ```
 {
@@ -359,8 +309,7 @@ Ref:
 
 * [Buildkite API](https://buildkite.com/docs/apis/rest-api/builds#create-a-build)
 
-
-## GitLab - trigger build
+#### GitLab - trigger build
 
 ```json
 {
@@ -384,7 +333,7 @@ Ref:
 * [GitLab - Adding a new trigger](https://docs.gitlab.com/ee/ci/triggers/#adding-a-new-trigger)
 * [GitLab - Pipeline triggers](https://docs.gitlab.com/ee/api/pipeline_triggers.html)
 
-## TeamCity - trigger build
+#### TeamCity - trigger build
 
 If you use TeamCity and know out how to pass parameters into the build, can you please submit a PR to update this example.
 
@@ -414,7 +363,7 @@ Ref:
 * [TeamCity - REST Authentication](https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-RESTAuthentication)
 * [TeamCity - Triggering Build](https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-TriggeringaBuild)
 
-## Jenkins - Trigger Build
+#### Jenkins - Trigger Build
 
 The following example shows how to trigger a Jenkins build with parameters.
 
@@ -425,7 +374,7 @@ The following example shows how to trigger a Jenkins build with parameters.
     "name": "<PROVIDER>"
   },
   "consumer": {
-  	"name": "<CONSUMER>"
+   "name": "<CONSUMER>"
   },
   "events": [{
     "name": "contract_content_changed"
@@ -446,8 +395,7 @@ Ref:
 
 * [Jenkins Remote API](https://www.jenkins.io/doc/book/using/remote-access-api/).
 
-
-## Drone CI - Trigger Build
+#### Drone CI - Trigger Build
 
 The following example shows how to trigger a Drone CI build with parameters.
 
@@ -480,3 +428,111 @@ The following example shows how to trigger a Drone CI build with parameters.
 Ref:
 
 * [Drone API - Build Create](https://readme.drone.io/api/builds/build_create/).
+
+## Triggering Notifications
+
+### Commit Status
+
+#### Github - publish commit status
+
+Report the pact verification status back to the consumer project in Github.
+
+##### CLI
+
+```
+pact-broker create-webhook \
+  'https://api.github.com/repos/<organization>/<project>/statuses/${pactbroker.consumerVersionNumber}' \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d '{ "state": "${pactbroker.githubVerificationStatus}", "description": "Pact Verification Tests ${pactbroker.providerVersionTags}", "context": "${pactbroker.providerName}", "target_url": "${pactbroker.verificationResultUrl}" }' \
+  --user username:password \
+  --description "Publish pact verification status to Github" \
+  --contract-published \
+  --provider-verification-published \
+  --broker-base-url <your-broker>
+```
+
+##### JSON
+
+```javascript
+{
+  "consumer": {
+    "name": "<consumer name>"
+  },
+  "events": [
+    {
+      "name": "contract_published"
+    },
+    {
+      "name": "provider_verification_published"
+    }
+  ],
+  "request": {
+    "method": "POST",
+    "url": "https://api.github.com/repos/<organization>/<project>/statuses/${pactbroker.consumerVersionNumber}",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "state": "${pactbroker.githubVerificationStatus}",
+      "description": "Pact Verification Tests ${pactbroker.providerVersionTags}",
+      "context": "${pactbroker.providerName}",
+      "target_url": "${pactbroker.verificationResultUrl}"
+    },
+    "username": "USERNAME",
+    "password": "PASSWORD"
+  }
+}
+```
+
+### Collaboration Platforms
+
+#### Slack - post notification - contract_published
+
+```javascript
+{
+  "events": [
+    {
+      "name": "contract_published"
+    }
+  ],
+  "request": {
+    "method": "POST",
+    "url": "https://hooks.slack.com/services/<webhook id>",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "channel": "#<your-channel-here>",
+      "username": "webhookbot",
+      "text": "New version of pact created for ${pactbroker.consumerName}/${pactbroker.providerName}: <${pactbroker.pactUrl}|contract-details>",
+      "icon_emoji": ":ghost:"
+    }
+  }
+}
+```
+
+#### Slack - post notification - provider_verification_published
+
+```javascript
+{
+  "events": [
+    {
+      "name": "provider_verification_published"
+    }
+  ],
+  "request": {
+    "method": "POST",
+    "url": "https://hooks.slack.com/services/<webhook id>",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "channel": "#<your-channel-here>",
+      "username": "webhookbot",
+      "text": "Pact Verification published for $${pactbroker.consumerName}/$${pactbroker.providerName}<$${pactbroker.verificationResultUrl}|$${pactbroker.githubVerificationStatus}>",
+      "icon_emoji": ":ghost:"
+    }
+  }
+}
+```
