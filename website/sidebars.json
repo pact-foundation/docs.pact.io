@@ -146,7 +146,8 @@
     {
       "Stubs": ["getting_started/stubs"]
     },
-    "telemetry"
+    "telemetry",
+    "implementation_guides/pact_specification"
   ],
   "getting-started": [
     {
@@ -311,11 +312,11 @@
     {
       "Contributing": [
         "contributing",
+        "contributing/code",
         "contributing/docs",
         "contributing/contributors",
         "contributing/code-of-conduct"
       ]
     }
-  ],
-  "help": ["help", "help/how_to_ask_for_help", "help/amas"]
+  ]
 }
