@@ -23,19 +23,20 @@ While you can use Pact without a Pact Broker, using one allows you to get the mo
 
 ### Verifying pacts
 
-There are two reasons that a verification task will need to be run: 
+There are two reasons that a verification task will need to be run:
 
 1. When the provider code changes
-  * The verification task will run as part of the normal CI/CD pipeline for the provider
-  * The verification task will fetch and verify all the relevant pacts from all consumers from the Pact Broker to ensure no regressions have occurred.
+
+* The verification task will run as part of the normal CI/CD pipeline for the provider
+* The verification task will fetch and verify all the relevant pacts from all consumers from the Pact Broker to ensure no regressions have occurred.
+
 2. When the pact changes
-  * We recommend that a separate pipeline is set up to verify just the changed pact (more details on this later in the guide).
+
+* We recommend that a separate pipeline is set up to verify just the changed pact (more details on this later in the guide).
 
 ### Consumer pipeline
 
 The following diagram shows what a fully fledged Pact supported release pipeline might look like for a consumer. During this step of the set up guide, we are just going to cover publishing the pact. The other parts of this pipeline will be covered in later steps.
-
-
 
 <details open>
   <summary>Consumer release pipeline</summary>
@@ -46,8 +47,6 @@ The following diagram shows what a fully fledged Pact supported release pipeline
 ### Provider pipeline
 
 The following diagram shows what a fully fledged Pact supported release pipeline might look like for a provider. During this step of the set up guide, we are just going to cover the pact verification and results publication. The other parts of this pipeline will be covered in later steps.
-
-
 
 <details open>
   <summary>Provider release pipeline</summary>
@@ -68,18 +67,18 @@ Useful links:
 
 For each of the next steps, you will need to set the following variables to your projects
 
-- `PACT_BROKER_BASE_URL`
-- `PACT_BROKER_USERNAME` # Pact Broker Only
-- `PACT_BROKER_PASSWORD` # Pact Broker Only
-- `PACT_BROKER_TOKEN` # Pactflow Broker Only
+* `PACT_BROKER_BASE_URL`
+* `PACT_BROKER_USERNAME` # Pact Broker Only
+* `PACT_BROKER_PASSWORD` # Pact Broker Only
+* `PACT_BROKER_TOKEN` # Pactflow Broker Only
 
 ### B. Manually publish the pact to the Pact Broker
 
-Now that things in are a fairly stable state, you can start taking advantage of the Pact Broker to manage the 
+Now that things in are a fairly stable state, you can start taking advantage of the Pact Broker to manage the
 communication between your provider and consumer.
 
-- See the recommended configuration for publishing https://docs.pact.io/consumer/recommended_configuration
-- Use of of our [Pact CLI tools](https://docs.pact.io/pact_broker/client_cli)
+* See the recommended configuration for publishing <https://docs.pact.io/consumer/recommended_configuration>
+* Use one of our [Pact CLI tools](https://docs.pact.io/pact_broker/client_cli)
   1. [Docker](https://hub.docker.com/r/pactfoundation/pact-cli)
   2. [Pact Standalone CLI](https://github.com/pact-foundation/pact-ruby-standalone/releases)
   3. [Pact Broker Client (Ruby)](https://github.com/pact-foundation/pact_broker-client)
@@ -87,13 +86,13 @@ communication between your provider and consumer.
 
 You can read more about publishing and retrieving pacts from a Pact Broker [here](https://docs.pact.io/pact_broker/publishing_and_retrieving_pacts#publishing)
 
-If you are using Pactflow - see https://docs.pactflow.io/#consumer for how to configure your consumer in each respective language implementation
+If you are using Pactflow - see <https://docs.pactflow.io/#consumer> for how to configure your consumer in each respective language implementation
 
 Debug this until it works and looks good.
 
 ### C. Manually verify using the Pact Broker
 
-Now you can see if you can run your provider tests, this time pulling the pact file not from your local filesystem, 
+Now you can see if you can run your provider tests, this time pulling the pact file not from your local filesystem,
 but from the broker. Reconfigure your provider project to get the latest pact for each of its consumers from the broker.
 
-If you are using Pactflow - see https://docs.pactflow.io/#provider for how to configure your provider in each respective language implementation
+If you are using Pactflow - see <https://docs.pactflow.io/#provider> for how to configure your provider in each respective language implementation
