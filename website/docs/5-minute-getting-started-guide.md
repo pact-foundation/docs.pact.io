@@ -9,7 +9,6 @@ This getting started guide runs purely in the browser, with the intention to get
 
 <iframe frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/Getting-Started-Intro?lite=true"></iframe>
 
-
 ## An example scenario: Order API
 
 Here we have an example describing Pact tests between a consumer \(Order Web\), and its provider \(the Order API\).
@@ -86,7 +85,6 @@ module.exports = [
 ### 2. Create an Order API client
 
 Here we have our external collaborator client. Its job is to both make the external request to the Order API and convert the response into the internal Order model as per above:
-
 
 <!--DOCUSAURUS_CODE_TABS-->
 <!--orderClient.js-->
@@ -199,7 +197,6 @@ For this purpose, we are going to use a hosted Pact Broker from pactflow.io.
 >
 > To get started for free, you can sign up to our Developer Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=five_minute_guide_dev_plan).
 
-
 <!-- <iframe style="padding-bottom:20px" frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/docspactio-getting-started-publish?lite=true"></iframe> -->
 
 You can see the published pact [here](https://test.pactflow.io/pacts/provider/GettingStartedOrderApi/consumer/GettingStartedOrderWeb/latest). The Pactflow account is protected using basic auth. Use the username `dXfltyFMgNOFZAxr8io9wJ37iUpY42M`, and password `O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1`.
@@ -279,8 +276,8 @@ describe('Pact Verification', () => {
     pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
     pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1',
     publishVerificationResult: true,
-    tags: ['prod'],
-    providerVersion: '1.0.' + process.env.HOSTNAME,
+    providerVersionBranch: process.env.GIT_BRANCH ?? 'master',
+    providerVersion: process.env.GIT_COMMIT ?? '1.0.' + process.env.HOSTNAME,
   }
 
   before(async () => {
@@ -301,4 +298,3 @@ describe('Pact Verification', () => {
 Let's run the provider test. If you like, click around the project to see the files from above in context. The most interesting file is the consumer test in `./provider/provider.spec.js` .
 
 <iframe frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/docspactio-getting-started-provider?lite=true"></iframe>
-
