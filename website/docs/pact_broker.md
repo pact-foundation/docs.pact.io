@@ -47,7 +47,7 @@ Yes, you can, especially if you're just getting started. You can exchange the pa
 
 * ensure that your contract tests have passed successfully *before* deploying a consumer or provider application ([can-i-deploy](/pact_broker/can_i_deploy))
 * ensure that the provider verification takes place every time a pact changes ([webhooks](/pact_broker/webhooks))
-* ensure backwards compatibility between services is maintained ([tags](/pact_broker/tags))
+* ensure backwards compatibility between services is maintained ([branches](/pact_broker/branches)/[tags](/pact_broker/tags))
 * allow contracts to change without breaking provider builds ([pending pacts](/pact_broker/advanced_topics/pending_pacts))
 
 ### How would I use the Pact Broker?
@@ -60,7 +60,7 @@ Yes, you can, especially if you're just getting started. You can exchange the pa
 
    \(Note that you are specifying the _consumer application version_ in the URL, not the pact version. The broker will take care of versioning the pact behind the scenes when its content changes. It is expected that the consumer application version will increment with every CI build.\)
 
-4. When a pact is published, a webhook in the Pact Broker kicks off a build of the provider project if the pact content has changed since the previous version.
+4. When a pact is published, a webhook in the Pact Broker kicks off a build of the provider project if the pact content has changed since the previous version and requires verification.
 
 #### Step 2. Provider CI build
 
@@ -68,6 +68,9 @@ Yes, you can, especially if you're just getting started. You can exchange the pa
 2. The provider build runs the pact verification task, which retrieves the pact(s) from the Pact Broker, replays each request against the provider, and checks that the responses match the expected responses.
 3. If the pact verification fails, the build fails. The [Pact Broker CI Nerf Gun](https://github.com/pact-foundation/pact_broker/wiki/pact-broker-ci-nerf-gun) magically determines who caused the verification to fail, and shoots them.
 4. The results of the verification are published back to the Pact Broker by the pact verification tool, so the consumer team will know if the code they have written will work in real life.
+5. The Provider CI determines if the provider is compatible with its consumers in a particular environment `pact-broker can-i-deploy --pacticipant PROVIDER_NAME --version PROVIDER_VERSION --to-environment...` \(see documentation [here](https://github.com/pact-foundation/pact_broker-client#can-i-deploy)\)
+6. If the pact has been verified successfully, the deployment can proceed.
+7. When the provider is deployed they record the deployment with Pact \(see documentation [here](https://docs.pact.io/pact_broker/recording_deployments_and_releases)\)
 
 If you don't have a [Pact Broker CI Nerf Gun](https://github.com/pact-foundation/pact_broker/wiki/pact-broker-ci-nerf-gun), you'll probably want to read about using pact when the consumer and provider are being written by [different teams](https://github.com/pact-foundation/pact-ruby/wiki/Using-pact-where-the-consumer-team-is-different-from-the-provider-team).
 
@@ -75,6 +78,7 @@ If you don't have a [Pact Broker CI Nerf Gun](https://github.com/pact-foundation
 
 1. The Consumer CI determines if the pact has been verified by running `pact-broker can-i-deploy --pacticipant CONSUMER_NAME --version CONSUMER_VERSION ...` \(see documentation [here](https://github.com/pact-foundation/pact_broker-client#can-i-deploy)\)
 2. If the pact has been verified successfully, the deployment can proceed.
+3. When the consumer is deployed they record the deployment with Pact \(see documentation [here](https://docs.pact.io/pact_broker/recording_deployments_and_releases)\)
 
 Read more about how to use the Pact Broker in the [overview](/pact_broker/overview.md) page
 

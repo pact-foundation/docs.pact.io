@@ -81,12 +81,16 @@ Including [work in progress pacts](/pact_broker/advanced_topics/wip_pacts) allow
       }
     ],
     enablePending: true,
-    includeWipPactsSince: process.env.GIT_BRANCH === "main" ? "2020-01-01" : undefined,
+    ...(process.env.GIT_BRANCH === "main"
+  ? {
+      includeWipPactsSince: "2020-01-01",
+    }
+  : {})
 
     // used when publishing verification results
     publishVerificationResult: process.env.CI === "true", //only publish from CI
     providerVersion: process.env.GIT_COMMIT, //use the appropriate env var from your CI system
-    providerBranch: process.env.GIT_BRANCH,  //use the appropriate env var from your CI system
+    providerVersionBranch: process.env.GIT_BRANCH,  //use the appropriate env var from your CI system
   }
   ```
 
@@ -231,8 +235,8 @@ You can find samples in our [webhook template library](/pact_broker/webhooks/tem
 
     publishVerificationResult: process.env.CI === "true", //only publish from CI
     providerVersion: process.env.GIT_COMMIT, //use the appropriate env var from your CI system
-    providerBranch: process.env.GIT_BRANCH // if using branches and environments
-    providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [], //only if not setting the branch
+    providerVersionBranch: process.env.GIT_BRANCH // if using branches and environments (recommended)
+    providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [], // optional, it is recommend you set the branch as well.
   }
    ```
 
