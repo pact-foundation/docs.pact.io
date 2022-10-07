@@ -27,8 +27,8 @@ The broker uses the following logic to determine if a pact has changed:
 
 This event is supported from version 2.82.0 of the Pact Broker. It is a much smarter implementation of the `contract_content_changed` event, designed specifically for the recommended [Pact webhook workflow](/pact_nirvana/step_6). It triggers once for each of the following provider versions that are missing a verification result for the newly published pact:
 
-  * the latest version from the provider's [main branch](/pact_broker/branches#pacticipant-main-branch-property)
-  * any version currently [deployed to an environment](/pact_broker/recording_deployments_and_releases)
+* the latest version from the provider's [main branch](/pact_broker/branches#pacticipant-main-branch-property)
+* any version currently [deployed to an environment](/pact_broker/recording_deployments_and_releases)
 
 The provider versions are de-duplicated by version number, so that if the same provider version is the head, and/or deployed to multiple environments, the webhook will only trigger once for each provider version. The template parameter `${pactbroker.providerVersionDescriptions}` will contain a description of which branch/stages that particular provider version number pertains to. eg. "latest from main branch, deployed in test"
 
@@ -38,15 +38,15 @@ See [below](#using-webhooks-with-the-contract_requiring_verification_published-e
 
 This is triggered every time a pact is published, regardless of whether it has changed or not.
 
-### The 'provider verification published' event.
+### The 'provider verification published' event
 
 This is triggered every time a verification is published.
 
-### The 'provider verification succeeded' event.
+### The 'provider verification succeeded' event
 
 This is triggered every time a verification is published with a successful status.
 
-### The 'provider verification failed' event.
+### The 'provider verification failed' event
 
 This is triggered every time a verification is published with a failed status.
 
@@ -56,14 +56,15 @@ You can use template parameters in the request URL, body and headers to pass thr
 
 ## Using webhooks with the 'contract_requiring_verification_published' event
 
-Using this webhook event allows the changed pact to be tested against the head, test and production versions of the provider, in the same way as the consumer version selectors allow the head, test and production versions of the pact to be tested against a version of the provider.
+Using this webhook event allows the changed pact to be tested against the head of the providers main branch and any deployed or released versions of the provider, in the same way as the consumer version selectors can be configured to allow the head of the consumers main branch and any deployed or released versions of the pact to be tested against a version of the provider.
+
+We can take a look at the following example with two environments `Test` and `Prod` and both the consumers, and providers `HEAD` of their main branches.
 
 |               | Provider Head | Provider Test | Provider Prod |
 | --------------| ------------- | ------------- | ------------- |
 | **Consumer Head** | `*` `%` `$`   | `$`           | `$`           |
 | **Consumer Test** | `*`           |               |               |
 | **Consumer Prod** | `*`           |               |               |
-
 
 `*` When the provider changes, these combinations are tested in the provider's release pipeline via the consumer version selectors
 
@@ -163,4 +164,3 @@ You can see an example `create-webhook` command for triggering the "changed pact
 * [Webhook template parameters](/pact_broker/advanced_topics/api_docs/webhooks#dynamic-variable-substitution)
 * [can-i-deploy documentation](https://github.com/pact-foundation/pact_broker-client#can-i-deploy) - Documentation for the Pact Broker `can-i-deploy` CLI, which allows you to retrieve the verification results and determine whether your application is safe to deploy.
 * [Webhook template library](/pact_broker/webhooks/template_library) - a library of useful webhook templates
-

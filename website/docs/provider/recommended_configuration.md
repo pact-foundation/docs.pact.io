@@ -207,7 +207,7 @@ Including [work in progress pacts](/pact_broker/advanced_topics/wip_pacts) allow
 
 When a pact has changed, a webhook in the Pact Broker will kick off a build of the provider, passing through the URL of the pact that has changed. See [this](/pact_nirvana/step_6#add-a-new-provider-verification-job) section of the CI/CD set up guide for more information on this.
 
-Using this webhook event allows the changed pact to be tested against the head, test and production versions of the provider, in the same way as the consumer version selectors allow the head, test and production versions of the pact to be tested against a version of the provider.
+Using this webhook event allows the changed pact to be tested against the head of the providers main branch and any deployed or released versions of the provider, in the same way as the consumer version selectors can be configured to allow the head of the consumers main branch and any deployed or released versions of the pact to be tested against a version of the provider.
 
 More details on the webhook can be found in the [webhook documentation](/pact_broker/webhooks#using-webhooks-with-the-contract_requiring_verification_published-event)
 
