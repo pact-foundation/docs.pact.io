@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.3.13 - Bugfix Release
+
+* eb505b7f - Merge pull request #221 from pact-foundation/feat/multiple-transports-in-ffi (Matt Fellows, Wed Oct 12 10:11:15 2022 +1100)
+* 965a1c41 - fix: Upgrade plugin driver to 0.1.13 (fixes issue loading plugin when there are multiple versions for the same plugin) (Ronald Holshausen, Wed Oct 5 17:29:37 2022 +1100)
+
 ## 0.3.12 - Bugfix Release
 
 
