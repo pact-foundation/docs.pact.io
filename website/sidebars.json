@@ -203,7 +203,6 @@
       "provider/recommended_configuration",
       "provider/how_to_fix_failing_verification_tests"
     ],
-    "Organisational Scale": ["org_scale/best_practise"],
     "CI/CD Setup Guide": [
       "pact_nirvana",
       "pact_nirvana/step_1",
