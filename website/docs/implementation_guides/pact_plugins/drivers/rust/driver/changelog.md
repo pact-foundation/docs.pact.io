@@ -1,0 +1,257 @@
+---
+title: Changelog
+custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/drivers/rust/driver/CHANGELOG.md
+---
+<!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+
+## Source Code
+
+https://github.com/pact-foundation/pact-plugins/tree/main/drivers
+
+To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
+
+
+* 8fbfac2 - fix: Updated load plugin manifest to return the max matching version, not the first one (Ronald Holshausen, Wed Oct 5 16:37:52 2022 +1100)
+* 2a26a25 - bump version to 0.1.13 (Ronald Holshausen, Mon Sep 12 17:40:54 2022 +1000)
+
+# 0.1.12 - Bugfix Release
+
+* f059f54 - fix(Rust driver): register_plugin_entries was setting the entry keys incorrectly (Ronald Holshausen, Mon Sep 12 17:14:23 2022 +1000)
+* a54765f - chore: run build with latest CSV plugin (Ronald Holshausen, Thu Sep 8 15:11:14 2022 +1000)
+* c220ddb - chore: download the plugin cli instead of building it every time (Ronald Holshausen, Thu Sep 8 13:50:24 2022 +1000)
+* 96dca91 - bump version to 0.1.12 (Ronald Holshausen, Thu Sep 8 11:21:55 2022 +1000)
+
+# 0.1.11 - Maintenance Release
+
+* 97d8bd4 - feat: Implement update_catalogue call and add function to increment plugin access count (Ronald Holshausen, Thu Sep 8 11:12:58 2022 +1000)
+* d638a27 - bump version to 0.1.11 (Ronald Holshausen, Thu Aug 18 14:05:18 2022 +1000)
+
+# 0.1.10 - Maintenance Release
+
+* 5e685c8 - chore: inline the generated protobuf code so the build no longer requires protoc installed (Ronald Holshausen, Thu Aug 18 13:56:10 2022 +1000)
+* be7cda2 - chore: Upgrade pact_models and tracing crates (Ronald Holshausen, Thu Aug 18 13:44:55 2022 +1000)
+* 95bfb08 - bump version to 0.1.10 (Ronald Holshausen, Wed Aug 10 09:58:06 2022 +1000)
+
+# 0.1.9 - Maintenance Release
+
+* 973aed9 - chore: Upgrade pact models to 0.4.2 (Ronald Holshausen, Wed Aug 10 09:47:20 2022 +1000)
+* f44348e - chore: Update musl build (Ronald Holshausen, Mon Aug 8 17:57:34 2022 +1000)
+* 77ea0f2 - chore: Update deprecated method after updating dependencies (Ronald Holshausen, Mon Aug 8 15:37:02 2022 +1000)
+* c2cbf48 - chore: Update dependent crates (prost, tonic, sysinfo, uuid) (Ronald Holshausen, Mon Aug 8 14:59:58 2022 +1000)
+* ab7899a - feat: add support for plugin command line args (Ronald Holshausen, Fri Jul 15 13:28:29 2022 -0400)
+* 2515001 - fix: was missing an import (Ronald Holshausen, Fri Jun 3 16:38:39 2022 +1000)
+* cdcda73 - feat: add support for installing plugins from Zip files (Ronald Holshausen, Fri Jun 3 16:20:31 2022 +1000)
+* 24b25a8 - bump version to 0.1.9 (Ronald Holshausen, Thu May 26 14:14:38 2022 +1000)
+
+# 0.1.8 - Bugfix Release
+
+* 0ecb1cc - fix: log level was not being set correctly (Ronald Holshausen, Thu May 26 12:50:32 2022 +1000)
+* 7515dfb - bump version to 0.1.8 (Ronald Holshausen, Fri May 20 15:23:04 2022 +1000)
+
+# 0.1.7 - return mock server results from a running server
+
+* 647cf93 - feat: add method to return mock server results from a running server (Ronald Holshausen, Fri May 20 14:22:50 2022 +1000)
+* 105abe1 - feat: added example gRPC consumer example (Ronald Holshausen, Tue May 10 16:57:03 2022 +1000)
+* 7a3881f - bump version to 0.1.7 (Ronald Holshausen, Mon May 9 17:18:07 2022 +1000)
+
+# 0.1.6 - replace logging with tracing crate
+
+* 1dbb311 - chore: lock the version of the tracing core crate (Ronald Holshausen, Mon May 9 16:39:13 2022 +1000)
+* e194ab9 - chore: replace logging with tracing crate (Ronald Holshausen, Mon May 9 16:27:31 2022 +1000)
+* f2e4c3f - chore: Update dependencies (Ronald Holshausen, Mon May 9 14:59:12 2022 +1000)
+* 75bf662 - bump version to 0.1.6 (Ronald Holshausen, Tue Apr 26 13:51:05 2022 +1000)
+
+# 0.1.5 - Maintenance Release
+
+* aa04485 - chore: move pact tests into a seperate crate (Ronald Holshausen, Tue Apr 26 13:25:20 2022 +1000)
+* 3bb8a49 - feat: support plugins returning user output for verification (Ronald Holshausen, Tue Apr 26 13:19:41 2022 +1000)
+* addce70 - bump version to 0.1.5 (Ronald Holshausen, Fri Apr 22 14:40:58 2022 +1000)
+
+# 0.1.4 - Plugin Verification
+
+* f1c147e - feat: add support for plugins verifying interactions (Ronald Holshausen, Fri Apr 22 14:16:30 2022 +1000)
+* 2fc040e - chore: Upgrade pact_consumer to 0.9.1 and reqwest to 0.11.10 (Ronald Holshausen, Wed Apr 13 16:23:05 2022 +1000)
+* ac47083 - bump version to 0.1.4 (Ronald Holshausen, Wed Apr 13 13:59:17 2022 +1000)
+
+# 0.1.3 - Maintenance Release
+
+* a47a327 - fix: Upgrade pact-models to 0.3.3 (fixes issue with handling bad system DER certs) (Ronald Holshausen, Wed Apr 13 13:52:48 2022 +1000)
+* d3865e3 - bump version to 0.1.3 (Ronald Holshausen, Wed Apr 13 12:31:28 2022 +1000)
+
+# 0.1.2 - Bugfix Release
+
+* f543f99 - fix: async functions can not use closures (Ronald Holshausen, Wed Apr 13 11:55:25 2022 +1000)
+* e4a8b68 - fix: try an IP4 connection if the IP6 one to the plugin fails (Ronald Holshausen, Wed Apr 13 11:33:44 2022 +1000)
+* 83c701f - bump version to 0.1.2 (Ronald Holshausen, Mon Apr 11 17:35:27 2022 +1000)
+
+# 0.1.1 - Supports verifying interactions via plugins
+
+* a01d903 - feat: update interface to return mismatch info from verification call (Ronald Holshausen, Fri Apr 8 14:29:08 2022 +1000)
+* 09874d1 - fix: return failed verification error instead of throwing an exception (Ronald Holshausen, Thu Apr 7 12:13:55 2022 +1000)
+* 949ec66 - feat: add the pact and integration into the verify call (Ronald Holshausen, Thu Mar 31 11:41:50 2022 +1100)
+* 8699571 - feat: interface to verify an interaction via a plugin (Ronald Holshausen, Wed Mar 30 16:46:19 2022 +1100)
+* 22606f1 - fix: correct the plugin version check when loading plugins (Ronald Holshausen, Fri Mar 25 11:47:34 2022 +1100)
+* 5473a72 - fix: do not include the plugin version in the test (Ronald Holshausen, Thu Mar 24 17:30:48 2022 +1100)
+* ee303fe - chore: use the published version of pact_consumer crate (Ronald Holshausen, Thu Mar 24 15:20:44 2022 +1100)
+* fda31e6 - Revert "chore: tmp disable Pact tests to resolve cyclic dependency issue" (Ronald Holshausen, Thu Mar 24 15:18:43 2022 +1100)
+* 0ca4c28 - bump version to 0.1.1 (Ronald Holshausen, Thu Mar 24 13:29:15 2022 +1100)
+
+# 0.1.0 - Support mock servers from plugins
+
+* 13ee5e1 - chore: tmp disable Pact tests to resolve cyclic dependency issue (Ronald Holshausen, Thu Mar 24 12:47:47 2022 +1100)
+* 04d982f - refactor: rename mock-server -> transport in Rust code (Ronald Holshausen, Mon Mar 21 15:57:03 2022 +1100)
+* 3259859 - chore: update pact models to 0.3.1 (Ronald Holshausen, Fri Mar 18 14:58:25 2022 +1100)
+* a36e2d3 - feat: support for plugins supplying mock servers (Ronald Holshausen, Thu Mar 17 16:32:29 2022 +1100)
+* 3624f36 - feat: correct MockServerResult message, remove double repeated field (Ronald Holshausen, Fri Mar 11 14:10:47 2022 +1100)
+* 1d3700f - chore: switch from log crate to tracing crate (Ronald Holshausen, Thu Mar 10 14:34:41 2022 +1100)
+* bb0b2b3 - feat: Update plugin interface to return the results from the mock server (Ronald Holshausen, Thu Mar 10 14:28:52 2022 +1100)
+* 6777c17 - Merge branch 'main' into feat/grpc-mock-server (Ronald Holshausen, Mon Mar 7 10:31:12 2022 +1100)
+* 65f680d - chore: update dependencies (Ronald Holshausen, Mon Mar 7 10:28:47 2022 +1100)
+* b725d2c - bump version to 0.0.19 (Ronald Holshausen, Fri Mar 4 12:17:25 2022 +1100)
+* 3ab2701 - wip: started support for plugins providing mock servers (Ronald Holshausen, Fri Mar 4 11:14:46 2022 +1100)
+
+# 0.0.18 - Upgrade pact-models to 0.3.0
+
+* ca7d4d1 - chore: Upgrade pact-models to 0.3.0 (Ronald Holshausen, Fri Mar 4 12:02:06 2022 +1100)
+* 686bbca - chore: Upgrade pact consumer crate to 0.8.5 (Ronald Holshausen, Wed Jan 19 11:30:59 2022 +1100)
+* a45fac8 - bump version to 0.0.18 (Ronald Holshausen, Mon Jan 17 11:19:34 2022 +1100)
+
+# 0.0.17 - Bugfix Release
+
+* d97daeb - chore: Upgrade pact-models crate to 0.2.7 (Ronald Holshausen, Mon Jan 17 10:58:01 2022 +1100)
+* e871081 - fix: log crate version must be fixed across all pact crates (i.e. pact FFI) (Ronald Holshausen, Fri Jan 14 16:12:48 2022 +1100)
+* 883a414 - chore: Update pact_consumer to 0.8.4 (Ronald Holshausen, Tue Jan 4 12:55:06 2022 +1100)
+* 676a728 - bump version to 0.0.17 (Ronald Holshausen, Tue Jan 4 09:25:39 2022 +1100)
+
+# 0.0.16 - Maintenance Release
+
+* e0b779d - chore: add some trace statements for looking up content handlers (Ronald Holshausen, Tue Jan 4 09:17:06 2022 +1100)
+* 3e58db9 - bump version to 0.0.16 (Ronald Holshausen, Fri Dec 31 15:00:13 2021 +1100)
+
+# 0.0.15 - Bugfix Release
+
+* d3af83b - chore: Upgrade to pact_models 0.2.6 (Ronald Holshausen, Fri Dec 31 14:54:40 2021 +1100)
+* 7270c75 - fix: allow plugin versions to differ in patch version (Ronald Holshausen, Fri Dec 31 14:42:44 2021 +1100)
+* 8289071 - chore: correct the Protobuf pact tests to correctly reflect the proto file (Ronald Holshausen, Thu Dec 30 14:48:21 2021 +1100)
+* 27759eb - chore: Update pact_consumer crate to 0.8.3 (Ronald Holshausen, Thu Dec 23 13:51:02 2021 +1100)
+* 950b6ad - bump version to 0.0.15 (Ronald Holshausen, Thu Dec 23 12:50:35 2021 +1100)
+
+# 0.0.14 - Maintenance Release
+
+* 61f3d4c - chore: update pact models to 0.2.5 (Ronald Holshausen, Thu Dec 23 12:03:43 2021 +1100)
+* cbf7bd9 - chore: update pact models crate to latest (Ronald Holshausen, Tue Dec 21 13:19:42 2021 +1100)
+* f3b4c0d - chore: Update tonic, prost and pact_matching crates (Ronald Holshausen, Mon Dec 20 12:27:35 2021 +1100)
+* c5248a9 - bump version to 0.0.14 (Ronald Holshausen, Mon Dec 20 12:05:21 2021 +1100)
+
+# 0.0.13 - Bugfix Release
+
+* 5cec4c6 - fix(metrics): swap uid for cid (Ronald Holshausen, Mon Dec 20 11:12:48 2021 +1100)
+* b83fa60 - chore: update to latest pact consumer crate (Ronald Holshausen, Wed Dec 15 14:41:44 2021 +1100)
+* 653aa89 - bump version to 0.0.13 (Ronald Holshausen, Tue Dec 14 13:35:26 2021 +1100)
+
+# 0.0.12 - Bugfix Release
+
+* 085de61 - fix: correct the plugin load metric call which needs to be a URL encoded FORM POST (Ronald Holshausen, Fri Dec 10 16:56:11 2021 +1100)
+* aa19339 - bump version to 0.0.12 (Ronald Holshausen, Mon Nov 29 12:49:39 2021 +1100)
+
+# 0.0.11 - config section in plugin manifest
+
+* 01c3a5c - feat: support config section in plugin manifest (Ronald Holshausen, Mon Nov 29 12:34:00 2021 +1100)
+* fc194db - chore: Update to latest models crate (Ronald Holshausen, Mon Nov 29 12:33:29 2021 +1100)
+* 601dd9b - chore: bump version (Ronald Holshausen, Tue Nov 16 16:16:03 2021 +1100)
+
+# 0.0.10 - Fix for race condition in Pact FFI calls
+
+* ab64c95 - chore: add additional trace logs for diagnosing race condition (Ronald Holshausen, Tue Nov 16 15:58:19 2021 +1100)
+* 6c46e1c - chore: update to the published pact crates (Ronald Holshausen, Tue Nov 16 14:09:07 2021 +1100)
+* 2c7849b - bump version to 0.0.10 (Ronald Holshausen, Tue Nov 16 11:46:23 2021 +1100)
+
+# 0.0.9 - Bugfix Release
+
+* 51e7d78 - chore: test using plugin needs to use multi_thread tokio reactor (Ronald Holshausen, Tue Nov 16 11:28:15 2021 +1100)
+* 948218c - chore: update to latest pact models (Ronald Holshausen, Tue Nov 16 10:46:17 2021 +1100)
+* 9c95244 - feat: add message FFI test using protobuf plugin (Ronald Holshausen, Wed Nov 10 17:09:32 2021 +1100)
+* 9e15c48 - feat: update content manager to expose plugin version (Ronald Holshausen, Tue Nov 9 16:08:30 2021 +1100)
+* b12590b - chore: use the non-beta pact libs (Ronald Holshausen, Thu Nov 4 16:22:06 2021 +1100)
+* 8d2c092 - bump version to 0.0.9 (Ronald Holshausen, Thu Oct 21 18:07:33 2021 +1100)
+
+# 0.0.8 - Bugfix Release
+
+* eaa3f49 - chore: switch to non-beta pact models version (Ronald Holshausen, Thu Oct 21 17:59:27 2021 +1100)
+* cd26cd1 - chore: use the channel from the Rust stdlib (Ronald Holshausen, Wed Oct 20 12:09:55 2021 +1100)
+* 522f3f0 - chore: fix build on alpine (Ronald Holshausen, Wed Oct 20 11:51:22 2021 +1100)
+* 77218b7 - chore: canonicalize() is broken with Windows absolute paths (Ronald Holshausen, Wed Oct 20 10:01:46 2021 +1100)
+* d43b68d - chore: debug windows build (Ronald Holshausen, Wed Oct 20 09:23:47 2021 +1100)
+* b1106e6 - chore: update to latest pact consumer crate (Ronald Holshausen, Tue Oct 19 17:56:58 2021 +1100)
+* 885963c - bump version to 0.0.8 (Ronald Holshausen, Tue Oct 19 17:01:13 2021 +1100)
+* 47cc81d - update changelog for release 0.0.7 (Ronald Holshausen, Tue Oct 19 16:57:19 2021 +1100)
+* 2219e31 - chore: cargo manifest was pointing to dev consumer crate (Ronald Holshausen, Tue Oct 19 16:55:04 2021 +1100)
+
+# 0.0.7 - Bugfix Release
+
+* 2219e31 - chore: cargo manifest was pointing to dev consumer crate (Ronald Holshausen, Tue Oct 19 16:55:04 2021 +1100)
+
+# 0.0.7 - Bugfix Release
+
+* 1b4ba6e - fix: update pact-models to fix -> EachValue was outputting the wrong JSON (Ronald Holshausen, Tue Oct 19 16:50:52 2021 +1100)
+* 8df13ed - chore: update to the latest pact consumer crate (Ronald Holshausen, Tue Oct 19 12:00:03 2021 +1100)
+* 0184113 - bump version to 0.0.7 (Ronald Holshausen, Tue Oct 19 10:34:49 2021 +1100)
+
+# 0.0.6 - Bugfix Release
+
+* 856492a - Revert "fix: making entryPoints optional broke loading on Windows" (Ronald Holshausen, Tue Oct 19 09:00:32 2021 +1100)
+* b111439 - chore: debugging windows (Ronald Holshausen, Mon Oct 18 17:56:05 2021 +1100)
+* b0df1a8 - fix: making entryPoints optional broke loading on Windows (Ronald Holshausen, Mon Oct 18 16:56:15 2021 +1100)
+* 1f8acb8 - fix: entry_points should be optional (Ronald Holshausen, Mon Oct 18 15:05:10 2021 +1100)
+* cce4258 - fix: handle content types with attributes (Ronald Holshausen, Mon Oct 18 15:04:38 2021 +1100)
+* d34e4fe - bump version to 0.0.6 (Ronald Holshausen, Mon Oct 18 13:36:22 2021 +1100)
+
+# 0.0.5 - Support additional plugin entry points
+
+* 403ccbb - chore: update to the latest pact models crate (Ronald Holshausen, Mon Oct 18 13:29:58 2021 +1100)
+* d20b9dc - chore: alpine build on CI was failing do to missing protobuf plugin (Ronald Holshausen, Wed Oct 13 13:04:25 2021 +1100)
+* ced8d43 - feat: support additional entry points for other operating systems (i.e. requiring a .bat file for Windows) (Ronald Holshausen, Wed Oct 13 10:26:30 2021 +1100)
+* 409be18 - feat: Add protobuf consumer pact test (Ronald Holshausen, Tue Oct 12 16:50:52 2021 +1100)
+* c3d1585 - bump version to 0.0.5 (Ronald Holshausen, Tue Oct 12 15:42:47 2021 +1100)
+
+# 0.0.4 - synchronous messages with plugins
+
+* a7c6339 - feat: Support synchronous messages with plugins in Rust (Ronald Holshausen, Tue Oct 12 15:35:02 2021 +1100)
+* ceee4f4 - chore: update driver readmes (Ronald Holshausen, Tue Oct 5 16:22:28 2021 +1100)
+* 233f68d - bump version to 0.0.4 (Ronald Holshausen, Tue Oct 5 15:27:03 2021 +1100)
+
+# 0.0.3 - Changes for Protobuf plugin
+
+* 7c2c122 - chore: use the published version of Pact models (Ronald Holshausen, Tue Oct 5 15:18:01 2021 +1100)
+* cf73204 - feat: working Rust consumer test with Protobuf repeated and map fields (Ronald Holshausen, Wed Sep 29 11:21:14 2021 +1000)
+* dce8418 - feat: support returning an error when configuring an interaction from the plugin (Ronald Holshausen, Wed Sep 22 17:53:44 2021 +1000)
+* e5ecd93 - refactor: rename ContentTypeOverride -> ContentTypeHint (Ronald Holshausen, Tue Sep 14 15:33:26 2021 +1000)
+* 261e155 - bump version to 0.0.3 (Ronald Holshausen, Fri Sep 10 14:30:50 2021 +1000)
+
+# 0.0.2 - interaction markup from plugins + concurrent test access
+
+* 691980a - chore: update pact models version (Ronald Holshausen, Fri Sep 10 14:20:17 2021 +1000)
+* dd257e0 - feat: Support access to plugins from concurrent running tests (Ronald Holshausen, Fri Sep 10 13:22:55 2021 +1000)
+* 9175d18 - refactor: make interaction markup type explicit (Ronald Holshausen, Thu Sep 9 11:20:26 2021 +1000)
+* 893f47e - feat: support getting config and interaction markup from plugins (Ronald Holshausen, Wed Sep 8 16:42:01 2021 +1000)
+* e3372b9 - bump version to 0.0.2 (Ronald Holshausen, Fri Sep 3 17:41:18 2021 +1000)
+
+# 0.0.1 - Support for protobuf plugin
+
+* 38b2712 - chore: fix the rust driver build (Ronald Holshausen, Fri Sep 3 17:23:43 2021 +1000)
+* cda0043 - chore: update docs (Ronald Holshausen, Fri Sep 3 17:22:14 2021 +1000)
+* 84d8175 - chore: update plugin driver docs (Ronald Holshausen, Fri Sep 3 14:49:07 2021 +1000)
+* de55fc5 - refactor: change configure_interation to return a struct instead of a tuple (Ronald Holshausen, Fri Sep 3 13:07:32 2021 +1000)
+* 1e26b94 - feat: update the proto file with comments and enums were needed (Ronald Holshausen, Thu Sep 2 14:26:45 2021 +1000)
+* e7f5477 - feat: support for plugins verifying responses (Ronald Holshausen, Thu Sep 2 11:37:08 2021 +1000)
+* e657611 - refactor: rename ConfigureContentsRequest -> ConfigureInteractionRequest (Ronald Holshausen, Mon Aug 30 16:28:36 2021 +1000)
+* 8fe5b0c - feat(plugins): allow the plugin to override text/binary of a content type (Ronald Holshausen, Mon Aug 30 11:16:38 2021 +1000)
+* d10f41e - chore: correct build script for windows (Ronald Holshausen, Mon Aug 23 15:39:28 2021 +1000)
+* 9cb8b03 - chore: correct description (Ronald Holshausen, Mon Aug 23 15:35:32 2021 +1000)
+* 250bfd4 - chore: bump version to 0.0.1 (Ronald Holshausen, Mon Aug 23 15:33:32 2021 +1000)
+* 952a15c - chore: add readme (Ronald Holshausen, Mon Aug 23 15:22:32 2021 +1000)
+* e3d5851 - chore: run musl build on updated docker image (Ronald Holshausen, Mon Aug 23 15:17:17 2021 +1000)
+* 003d0c4 - chore: to publish the rust driver, the proto file needs to be included (Ronald Holshausen, Mon Aug 23 14:52:11 2021 +1000)
+* 8bfd42d - chore: set proto dir relative to cargo manifest dir (Ronald Holshausen, Mon Aug 23 14:47:45 2021 +1000)
+
+# 0.0.0 - First Release

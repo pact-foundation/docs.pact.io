@@ -7,7 +7,7 @@ require 'pathname'
 module UrlAbsolutizer
   extend self
 
-  def absolutize_links(contents, source_repository_slug, link_transformer, contents_source_path, synced_source_paths)
+  def absolutize_links(contents, source_repository_slug, link_transformer, contents_source_path, synced_source_paths, branch)
     contents.gsub(/\]\(([^)]+)\)/) { | match |
       url = match[2..-2]
 
@@ -30,7 +30,7 @@ module UrlAbsolutizer
         elsif synced_source_paths.include?(File.join(path_from_root, 'README.md'))
           "](#{transformed_link})"
         else
-          absolute_url = (Addressable::URI.parse("https://github.com/#{source_repository_slug}/blob/master/") + path_from_root).to_s + optional_anchor
+          absolute_url = (Addressable::URI.parse("https://github.com/#{source_repository_slug}/blob/#{branch}/") + path_from_root).to_s + optional_anchor
           "](#{absolute_url})"
         end
       end
@@ -97,8 +97,11 @@ class MarkdownFileContents
     end.compact
   end
 
-  def absolutize_links(repository_slug, link_transformer, contents_source_path, source_paths)
-    @lines = lines.collect { | line | UrlAbsolutizer.absolutize_links(line, repository_slug, link_transformer, contents_source_path, source_paths) }
+  def absolutize_links(repository_slug, link_transformer, contents_source_path, source_paths, branch)
+    @lines = lines.collect do |line|
+      UrlAbsolutizer.absolutize_links(line, repository_slug, link_transformer, contents_source_path, source_paths,
+                                      branch)
+    end
   end
 
   def escape_things_that_look_like_jsx_tags
@@ -153,10 +156,10 @@ def edit_comment_for slug
   "<!-- This file has been synced from the #{slug} repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->"
 end
 
-def get_file_list(repository_slug, include_conditions = [], exclude_conditions = [])
+def get_file_list(repository_slug, include_conditions = [], exclude_conditions = [], branch)
   client = Octokit::Client.new(:access_token => ENV['GITHUB_ACCESS_TOKEN'])
   client.auto_paginate = true
-  tree = client.tree(repository_slug, 'master',  recursive: true).tree
+  tree = client.tree(repository_slug, branch, recursive: true).tree
   if include_conditions.any? || exclude_conditions.any?
     filter_file_list(tree, include_conditions, exclude_conditions)
   else
@@ -183,16 +186,16 @@ def select_actions(custom_actions, path)
     .collect(&:last)
 end
 
-def process_file(path, content, path_transformer, custom_actions, comment, source_file_paths, source_repository_slug)
+def process_file(path, content, path_transformer, custom_actions, comment, source_file_paths, source_repository_slug, branch = 'master')
   destination = path_transformer.call(path)
-  fields = { custom_edit_url: "https://github.com/#{source_repository_slug}/edit/master/#{path}" }
+  fields = { custom_edit_url: "https://github.com/#{source_repository_slug}/edit/#{branch}/#{path}" }
   md_file_contents = MarkdownFileContents.new(content.split("\n"), fields, [comment])
   select_actions(custom_actions, path).each { |action| action.call(md_file_contents) }
   if source_file_paths && source_repository_slug
     link_transformer = -> (path){
       path_transformer.call(path).delete_prefix('website/docs').chomp('.md')
     }
-    md_file_contents.absolutize_links(source_repository_slug, link_transformer, path, source_file_paths)
+    md_file_contents.absolutize_links(source_repository_slug, link_transformer, path, source_file_paths, branch)
   end
 
   puts "Writing file #{destination}"
@@ -201,10 +204,10 @@ def process_file(path, content, path_transformer, custom_actions, comment, sourc
   md_file_contents
 end
 
-def sync source_repository_slug, include_filter, ignore_filter, path_transformer, actions
-  file_list = get_file_list(source_repository_slug)
-  sync_file_list = filter_file_list(file_list, include_filter, ignore_filter)
-  processed_files = each_file(sync_file_list) do | path, content |
-    process_file(path, content, path_transformer, actions, edit_comment_for(source_repository_slug), sync_file_list.collect(&:path), source_repository_slug)
+def sync(source_repository_slug, include_filter, ignore_filter, path_transformer, actions, branch = 'master')
+  file_list = get_file_list(source_repository_slug, include_filter, ignore_filter, branch)
+  processed_files = each_file(file_list) do |path, content|
+    process_file(path, content, path_transformer, actions, edit_comment_for(source_repository_slug),
+                 file_list.collect(&:path), source_repository_slug, branch)
   end
 end

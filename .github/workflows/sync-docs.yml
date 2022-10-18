@@ -14,6 +14,7 @@ on:
       - pact-broker-client-docs-updated
       - pact-net-docs-updated
       - pact-broker-docs-updated
+      - pact-plugins-docs-updated
 
 jobs:
   build:
@@ -69,6 +70,10 @@ jobs:
     - name: Sync Pact Net docs
       run: bundle exec scripts/sync/pact_net.rb && echo 'COMMIT_MESSAGE="synced pact-net docs"' >> $GITHUB_ENV
       if: github.event.action == 'pact-net-docs-updated'
+
+    - name: Sync Pact Plugins docs
+      run: bundle exec scripts/sync/pact_plugins.rb && echo 'COMMIT_MESSAGE="synced pact-plugins docs"' >> $GITHUB_ENV
+      if: github.event.action == 'pact-plugins-docs-updated'
 
     - uses: actions/setup-node@v2
       with:

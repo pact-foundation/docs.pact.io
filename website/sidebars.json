@@ -134,6 +134,99 @@
       "Pact on Docker": ["docker"]
     },
     {
+      "Pact Plugins": [
+        "implementation_guides/pact_plugins/readme",
+        {
+          "CLI Tool": [
+            "implementation_guides/pact_plugins/cli/readme",
+            "implementation_guides/pact_plugins/cli/changelog"
+          ]
+        },
+        {
+          "Plugin Docs": [
+            "implementation_guides/pact_plugins/docs/content-matcher-design",
+            "implementation_guides/pact_plugins/docs/matching-rule-definition-expressions",
+            "implementation_guides/pact_plugins/docs/protocol-plugin-design",
+            "implementation_guides/pact_plugins/docs/writing-plugin-guide"
+          ]
+        },
+        {
+          "Drivers": [
+            {
+              "rust": [
+                "implementation_guides/pact_plugins/drivers/rust/driver/readme",
+                "implementation_guides/pact_plugins/drivers/rust/driver/changelog"
+              ]
+            },
+            {
+              "jvm": [
+                "implementation_guides/pact_plugins/drivers/jvm/readme",
+                "implementation_guides/pact_plugins/drivers/jvm/changelog"
+              ]
+            }
+          ]
+        },
+        {
+          "Examples": [
+            {
+              "csv": ["implementation_guides/pact_plugins/examples/csv/readme"]
+            },
+            {
+              "gRPC": [
+                "implementation_guides/pact_plugins/examples/grpc/readme",
+                "implementation_guides/pact_plugins/examples/grpc/area_calculator/readme",
+
+                {
+                  "go": [
+                    "implementation_guides/pact_plugins/examples/grpc/area_calculator/consumer-go/readme",
+                    "implementation_guides/pact_plugins/examples/grpc/area_calculator/provider-go/readme"
+                  ]
+                },
+                {
+                  "rust": [
+                    "implementation_guides/pact_plugins/examples/grpc/area_calculator/consumer-rust/readme"
+                  ]
+                },
+                {
+                  "jvm": [
+                    "implementation_guides/pact_plugins/examples/grpc/area_calculator/consumer-jvm/readme",
+                    "implementation_guides/pact_plugins/examples/grpc/area_calculator/provider-jvm/readme"
+                  ]
+                }
+              ]
+            },
+            {
+              "protobuf": [
+                "implementation_guides/pact_plugins/examples/protobuf/readme",
+                {
+                  "go": [
+                    "implementation_guides/pact_plugins/examples/protobuf/protobuf-provider/readme"
+                  ]
+                },
+                {
+                  "rust": [
+                    "implementation_guides/pact_plugins/examples/protobuf/protobuf-consumer-rust/readme"
+                  ]
+                },
+                {
+                  "jvm": [
+                    "implementation_guides/pact_plugins/examples/protobuf/protobuf-consumer-jvm/readme"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Plugins": [
+            "implementation_guides/pact_plugins/plugins/readme",
+            "implementation_guides/pact_plugins/plugins/csv/readme",
+            "implementation_guides/pact_plugins/plugins/protobuf/readme"
+          ]
+        }
+      ]
+    },
+    {
       "Other languages": ["implementation_guides/other_languages"]
     },
     {
