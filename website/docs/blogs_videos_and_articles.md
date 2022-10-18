@@ -4,12 +4,13 @@ title: Community videos and articles
 
 Check out the official Pact blog at [docs.pact.io/blog](https://docs.pact.io/blog) and the [Pactflow blog](https://pactflow.io/blog) for blogs written by Pact maintainers.
 
-If you've seen a really good talk that's not on this list, please submit a PR to this page with the new link.
+If you've seen a really good talk that's not on this list, please submit [a PR to this page](https://github.com/pact-foundation/docs.pact.io/blob/master/website/docs/blogs_videos_and_articles.md) with the new link.
 
 ## 2022
 
 **Articles**
 
+- [How to avoid common pitfalls with modern microservices testing](https://www.youtube.com/watch?v=vYwkDPrzqV8) (Video, [slides](https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx/) also available)
 - [Introduction To Contract Testing With Examples (Lewis Prescott)](https://www.softwaretestinghelp.com/contract-testing/)
 - [Contract Testing fundamentals(part 1)](https://medium.com/testvagrant/contract-testing-fundamentals-b4758fe61cda)
 - [Contract Testing fundamentals(part 2)](https://medium.com/testvagrant/pact-enabling-contract-test-automation-26fd51917065)
