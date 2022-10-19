@@ -4,6 +4,25 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.105.0"></a>
+
+### v2.105.0 (2022-10-19)
+
+#### Features
+
+* update wording of version description for version in environment	 ([d122fa68](https://github.com/pact-foundation/pact_broker/commit/d122fa68))
+
+* **webhooks**
+  * allow auth headers to be logged for debugging purposes (#575)	 ([102b1930](https://github.com/pact-foundation/pact_broker/commit/102b1930))
+
+#### Bug Fixes
+
+* add validation to ensure an environment or to tag is specified for the /can-i-deploy endpoint	 ([e9d772eb](https://github.com/pact-foundation/pact_broker/commit/e9d772eb))
+* implement pending logic for provider branches	 ([7cdf1a7c](https://github.com/pact-foundation/pact_broker/commit/7cdf1a7c))
+
+* **wip pacts**
+  * fix performance issue encountered when removing explicitly specified pacts from the list of potential WIP pacts (#573)	 ([757f0301](https://github.com/pact-foundation/pact_broker/commit/757f0301))
+
 <a name="v2.104.0"></a>
 
 ### v2.104.0 (2022-09-17)
