@@ -401,6 +401,7 @@
   "resources": [
     "history",
     "blogs_videos_and_articles",
+    "community_repos",
     "books",
     "events",
     {
