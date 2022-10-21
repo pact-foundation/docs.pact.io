@@ -343,7 +343,9 @@
         "items": [
           "pact_broker/webhooks",
           "pact_broker/webhooks/template_library",
-          "pact_broker/webhooks/debugging_webhooks"
+          "pact_broker/webhooks/debugging_webhooks",
+          "pact_broker/webhooks/webhook_whitelist",
+          "pact_broker/webhooks/dynamic_variable_sub"
         ]
       },
       "pact_broker/can_i_deploy",
@@ -391,21 +393,24 @@
       {
         "type": "category",
         "label": "API Docs",
-        "items": ["pact_broker/api/webhooks"]
+        "items": ["pact_broker/api/webhooks", "pact_broker/api/pacticipants"]
       },
       "pact_broker/changelog"
     ]
   },
-  "resources": ["history", "blogs_videos_and_articles", "books", "events"],
-  "Contributing": [
-    "contributing",
-    "contributing/code",
-    "contributing/docs",
-    "contributing/contributors",
-    "contributing/code-of-conduct"
-  ],
-  "help": ["help", "help/how_to_ask_for_help", "help/amas"],
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
-  }
+  "resources": [
+    "history",
+    "blogs_videos_and_articles",
+    "books",
+    "events",
+    {
+      "Contributing": [
+        "contributing",
+        "contributing/code",
+        "contributing/docs",
+        "contributing/contributors",
+        "contributing/code-of-conduct"
+      ]
+    }
+  ]
 }

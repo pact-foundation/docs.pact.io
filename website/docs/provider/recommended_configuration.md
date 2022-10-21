@@ -5,7 +5,6 @@ title: Recommended configuration for verifying pacts
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
 There are typically two different reasons why a pact verification task will need to be run.
 
 1. When the provider makes a change
@@ -17,10 +16,9 @@ There are typically two different reasons why a pact verification task will need
 
 The following examples require support for the "pacts for verification" API in your Pact library which you can read about [here](/pact_broker/advanced_topics/provider_verification_results#pacts-for-verification).
 
-
 ### Consumer Version Selectors
 
-#### If using branches/environments:
+#### If using branches/environments
 
 See [this blog post](/blog/2021/07/04/why-we-are-getting-rid-of-tags) on branches and environments.
 
@@ -30,7 +28,7 @@ See [this blog post](/blog/2021/07/04/why-we-are-getting-rid-of-tags) on branche
   * The pacts will be de-duplicated, so if the `GIT_BRANCH` is `main`, you'll still only get one pact to verify. If there are no pacts for the current `GIT_BRANCH`, the selector will just be ignored.
   * If you can't dynamically determine the tags of the feature pacts you want to verify, you will have to change the selectors while you are on a branch, and then put them back to normal once you've merged.
 
-#### If using tags 
+#### If using tags
 
 This not recommended if you are on versions of the Pact Broker and Pact libraries that support branches and environments.
 
@@ -65,7 +63,7 @@ Including [work in progress pacts](/pact_broker/advanced_topics/wip_pacts) allow
   <TabItem value="javascript">
 
   Using branches and environments
-    
+
   ```js
   const verificationOptions = {
     // ....
@@ -83,17 +81,21 @@ Including [work in progress pacts](/pact_broker/advanced_topics/wip_pacts) allow
       }
     ],
     enablePending: true,
-    includeWipPactsSince: process.env.GIT_BRANCH === "main" ? "2020-01-01" : undefined,
+    ...(process.env.GIT_BRANCH === "main"
+  ? {
+      includeWipPactsSince: "2020-01-01",
+    }
+  : {})
 
     // used when publishing verification results
     publishVerificationResult: process.env.CI === "true", //only publish from CI
     providerVersion: process.env.GIT_COMMIT, //use the appropriate env var from your CI system
-    providerBranch: process.env.GIT_BRANCH,  //use the appropriate env var from your CI system
+    providerVersionBranch: process.env.GIT_BRANCH,  //use the appropriate env var from your CI system
   }
   ```
-    
+
   Using tags (this approach is now superseded by branches and environments)
-    
+
   ```js
   const verificationOptions = {
     // ....
@@ -126,13 +128,13 @@ Including [work in progress pacts](/pact_broker/advanced_topics/wip_pacts) allow
     providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [],
   }
   ```
+
   </TabItem>
 
-  
   <TabItem value="ruby">
 
   Using branches and environments
-    
+
   ```ruby
     # The git commands are just for local testing, not needed for real CI
     provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`.strip
@@ -162,10 +164,10 @@ Including [work in progress pacts](/pact_broker/advanced_topics/wip_pacts) allow
         include_wip_pacts_since provider_branch == "main" ? "2020-01-01" : nil
       end
     end
-  ```    
-    
+  ```
+
   Using tags (this approach is now superseded by branches and environments)
-    
+
   ```ruby
     # The git commands are just for local testing, not needed for real CI
     provider_version = ENV['GIT_COMMIT'] || `git rev-parse --verify HEAD`.strip
@@ -201,14 +203,19 @@ Including [work in progress pacts](/pact_broker/advanced_topics/wip_pacts) allow
   </TabItem>
 </Tabs>
 
+## Verification triggered by a contract requiring verification published
 
-## Verification triggered by pact change
+When a pact has changed, a webhook in the Pact Broker will kick off a build of the provider, passing through the URL of the pact that has changed. See [this](/pact_nirvana/step_6#add-a-new-provider-verification-job) section of the CI/CD set up guide for more information on this.
 
-When a pact has changed, a webhook in the Pact Broker will kick off a build of the provider, passing through the URL of the pact that has changed. See [this](/pact_nirvana/step_4#e-configure-pact-to-be-verified-when-contract-changes) section of the CI/CD set up guide for more information on this.
+Using this webhook event allows the changed pact to be tested against the head of the providers main branch and any deployed or released versions of the provider, in the same way as the consumer version selectors can be configured to allow the head of the consumers main branch and any deployed or released versions of the pact to be tested against a version of the provider.
+
+More details on the webhook can be found in the [webhook documentation](/pact_broker/webhooks#using-webhooks-with-the-contract_requiring_verification_published-event)
 
 When the pact URL is known, the `pactBrokerUrl`, `providerName`, `consumerVersionSelectors/consumerVersionTags`, `enablePending`, `includeWipPactsSince` fields should not be set. You can see an example of switching between the two verification modes (all vs changed) in [this Node example](https://github.com/pactflow/example-provider/blob/f1c91ec9f6ab428f95e03cce27c9bd525ee37107/src/product/product.pact.test.js#L23-L75)
 
 ### Examples
+
+You can find samples in our [webhook template library](/pact_broker/webhooks/template_library) for common build systems and see below for how to configure your provider build to use the pact URL.
 
 <Tabs
   groupId="sdk-choice"
@@ -228,8 +235,8 @@ When the pact URL is known, the `pactBrokerUrl`, `providerName`, `consumerVersio
 
     publishVerificationResult: process.env.CI === "true", //only publish from CI
     providerVersion: process.env.GIT_COMMIT, //use the appropriate env var from your CI system
-    providerBranch: process.env.GIT_BRANCH // if using branches and environments
-    providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [], //only if not setting the branch
+    providerVersionBranch: process.env.GIT_BRANCH // if using branches and environments (recommended)
+    providerVersionTags: process.env.GIT_BRANCH ? [process.env.GIT_BRANCH] : [], // optional, it is recommend you set the branch as well.
   }
    ```
 
