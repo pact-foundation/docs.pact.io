@@ -34,7 +34,7 @@ Main responsibilities:
 * Provide a messaging bus to facilitate communication between the language implementation and the plugins.
 * Manage the plugin lifecycles.
 
-See [Plugin driver design docs](https://github.com/pact-foundation/pact-plugins/blob/main/docs/plugin-driver-design.md).
+See [Plugin driver design docs](/implementation_guides/pact_plugins/docs/plugin-driver-design).
 
 There are two implementations of plugin drivers: [JVM](/implementation_guides/pact_plugins/drivers/jvm) and [Rust](https://github.com/pact-foundation/pact-plugins/blob/main/drivers/rust).
 

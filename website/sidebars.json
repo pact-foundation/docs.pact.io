@@ -144,6 +144,7 @@
         },
         {
           "Plugin Docs": [
+            "implementation_guides/pact_plugins/docs/plugin-driver-design",
             "implementation_guides/pact_plugins/docs/content-matcher-design",
             "implementation_guides/pact_plugins/docs/matching-rule-definition-expressions",
             "implementation_guides/pact_plugins/docs/protocol-plugin-design",

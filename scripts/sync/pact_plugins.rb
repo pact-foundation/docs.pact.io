@@ -11,8 +11,7 @@ INCLUDE = [
   ->(path) { path.end_with?('.md') }
 ]
 IGNORE = [
-  ->(path) { path.include?('vendor/') },
-  ->(path) { path.include?('plugin-driver-design.md') }
+  ->(path) { path.include?('vendor/') }
 ]
 
 CUSTOM_ACTIONS = [
@@ -33,7 +32,10 @@ CUSTOM_ACTIONS = [
                                           }],
   [->(path) { path.include?('plugins') }, lambda { |md_file_contents|
                                             md_file_contents.add_lines_at_start("## Source Code\n\nhttps://github.com/#{SOURCE_REPO}/tree/main/plugins\n")
-                                          }]
+                                          }],
+  [->(path) { path.include?('plugin-driver-design.md') }, lambda { |md_file_contents|
+                                                            md_file_contents.escape_things_that_look_like_jsx_tags
+                                                          }]
 ]
 
 FileUtils.mkdir_p DESTINATION_DIR
