@@ -275,7 +275,7 @@ GenerateContentResponse {
 ## Sequence Diagrams
 
 ### Consumer test
-![Sequence consumer test](https://github.com/pact-foundation/pact-plugins/blob/main/content-matcher-sequence-consumer-test.png)
+![Sequence consumer test](https://raw.githubusercontent.com/pact-foundation/pact-plugins/main/docs/content-matcher-sequence-consumer-test.png)
 
 ### Provider verification
-![Sequence provider test](https://github.com/pact-foundation/pact-plugins/blob/main/content-matcher-sequence-provider-verification.png)
+![Sequence provider test](https://raw.githubusercontent.com/pact-foundation/pact-plugins/main/docs/content-matcher-sequence-provider-verification.png)
