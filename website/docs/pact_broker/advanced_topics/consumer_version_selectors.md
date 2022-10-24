@@ -65,6 +65,29 @@ This is not an exhaustive list, but shows most of the usecases.
 
 The Pact Broker API for retrieving pacts by selectors deduplicates the pacts based on their *content*. This means that if the same content was published in multiple selected pacts, the verification for that content will only need to run once. This is quite common when there hasn't been a change to a pact for a while, and the same pact content is present in development, test and production pacts.
 
+## Docs
+
+You can checkout code-snippets below, but here are some links to either documentation, or source code, from the respective languages, around their use of consumer version selectors. Ideally all languages should support raw json version selectors, to allow for extensiblity in the future.
+
+- JavaScript
+  - <https://docs.pact.io/implementation_guides/javascript/docs/provider#verification-options>
+  - <https://github.com/pact-foundation/pact-js-core/blob/master/src/verifier/types.ts#L3>
+- Java
+  - <https://docs.pact.io/implementation_guides/jvm/provider/junit#selecting-the-pacts-to-verify-with-consumer-version-selectors-4314>
+- Gradle
+  - <https://docs.pact.io/implementation_guides/jvm/provider/gradle#using-consumer-version-selectors-4310>
+- Ruby
+  - <https://docs.pact.io/implementation_guides/ruby/verifying_pacts#fetching-pacts-from-a-pact-broker>
+  - <https://github.com/pact-foundation/pact-ruby/blob/master/lib/pact/pact_broker/pact_selection_description.rb>
+- Python - Takes raw json consumer_version_selectors
+  - <https://github.com/pact-foundation/pact-python/blob/89733d6470cfa4b57102438c464f053093ddd858/pact/verifier.py#L109>
+- C#
+  - <https://github.com/pact-foundation/pact-net/blob/master/docs/upgrading-to-4.md#provider-tests>
+  - <https://github.com/pact-foundation/pact-net/blob/master/src/PactNet.Abstractions/Verifier/ConsumerVersionSelector.cs>
+- Golang
+  - <https://github.com/pact-foundation/pact-go/blob/2.x.x/docs/provider.md#selecting-pacts-to-verify>
+  - <https://github.com/pact-foundation/pact-go/blob/master/types/consumer_version_selector.go>
+
 ## Code examples with branches
 
 ### Verifying the latest development, test and master pacts
