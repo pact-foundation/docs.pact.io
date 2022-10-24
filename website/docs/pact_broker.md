@@ -54,7 +54,7 @@ Yes, you can, especially if you're just getting started. You can exchange the pa
 
 #### Step 1. Consumer CI build
 
-1. The consumer project runs its tests using the [Pact](/implementation_guides/) library to provide a mock service.
+1. The consumer project runs its tests using the [Pact](/implementation_guides/cli) library to provide a mock service.
 2. While the tests run, the mock service writes the requests and the expected responses to a JSON "pact" file - this is the consumer contract.
 3. The generated pact is then published to the Pact Broker. The easiest way to do this is to publish the pact file using the [Pact Broker Client CLI](/pact_broker/client_cli/readme)
 
