@@ -10,6 +10,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 
 **Articles**
 
+- [Step by step working demo of 🤝 Contract Testing with Pact](https://dev.to/rogervinas/contract-testing-with-pact-4g2n)
 - [How to avoid common pitfalls with modern microservices testing](https://www.youtube.com/watch?v=vYwkDPrzqV8) (Video, [slides](https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx/) also available)
 - [Introduction To Contract Testing With Examples (Lewis Prescott)](https://www.softwaretestinghelp.com/contract-testing/)
 - [Contract Testing fundamentals(part 1)](https://medium.com/testvagrant/contract-testing-fundamentals-b4758fe61cda)
