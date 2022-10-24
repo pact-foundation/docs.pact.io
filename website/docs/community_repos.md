@@ -22,3 +22,10 @@ Please try to add
   - Consumer Language: JavaScript
   - Provider Language: JavaScript
   - Transport Mechanism: HTTP
+- [https://github.com/quarkusio/quarkus-super-heroes](https://github.com/quarkusio/quarkus-super-heroes)
+  - Description: This is a sample application demonstrating Quarkus features and best practices. The application allows superheroes to fight against supervillains, it features multi-protocol, with the RESTful services tested with Pact
+  - Consumer Language: Java
+  - Provider Language: Java
+  - Transport Mechanism: HTTP
+  - Supporting material
+    - [How to avoid common pitfalls with modern microservices testing](https://www.youtube.com/watch?v=vYwkDPrzqV8) (Video, [slides](https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx/) also available)
