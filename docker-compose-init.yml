@@ -1,8 +1,0 @@
-version: '3'
-
-services:
-  dev-service:
-    image: node:12-buster
-    working_dir: /home
-    volumes:
-      - .:/home

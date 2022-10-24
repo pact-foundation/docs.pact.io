@@ -49,7 +49,7 @@ called through an API call, however your particular CI/CD system supports that.
 ### Add can-i-deploy webhook to Pact Broker
 Once you have the provider verification job set up and working, you can integrate it with the Pact Broker by creating a webhook.
 
-2. Configure a [webhook](/pact_broker/webhooks) to kick off the provider verification build when a pact changes, and use [webhook templates](/pact_broker/advanced_topics/api_docs/webhooks#dynamic-variable-substitution) to pass the URL of the changed pact to the build.
+1. Configure a [webhook](/pact_broker/webhooks) to kick off the provider verification build when a pact changes, and use [webhook templates](/pact_broker/webhooks/dynamic_variable_sub) to pass the URL of the changed pact to the build.
 
 After setting up the webhook, add `can-i-deploy` to your consumer job
 

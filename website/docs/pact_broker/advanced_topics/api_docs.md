@@ -10,7 +10,6 @@ _Key resources:_
 
 * [Publishing pacts](./api_docs/publish_pact)
 * [Publishing verification results](./api_docs/publish_verification_result)
-* [Webhooks](./api_docs/webhooks)
+* [Webhooks](/pact_broker/api/webhooks)
 * [Pacticipants](./api_docs/pacticipant/)
 * [Pact diff](./api_docs/pact_diff/)
-

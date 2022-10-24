@@ -147,7 +147,7 @@ You can see an example project with a Github Workflow set up as described [here]
 
 #### When the consumer makes a change
 
-* `Changed pact verification job` - triggered by the ['contract_requiring_verification_published'](#using-webhooks-with-the-contract_requiring_verification_published-event) (preferrable) or 'contract_content_changed' webhook, this job verifies only the changed pact, and publishes the verification results back to the broker. This pact verification job configuration will be different to the one configured as part of the main provider pipeline, and should accept the URL of the changed pact as a configurable parameter. To do this, you must use webhook [template parameters](/pact_broker/advanced_topics/api_docs/webhooks#dynamic-variable-substitution) to pass the URL of the changed pact through to the CI, which can then pass it in to the verification task. See the pact verification configuration documentation for your language.
+* `Changed pact verification job` - triggered by the ['contract_requiring_verification_published'](#using-webhooks-with-the-contract_requiring_verification_published-event) (preferrable) or 'contract_content_changed' webhook, this job verifies only the changed pact, and publishes the verification results back to the broker. This pact verification job configuration will be different to the one configured as part of the main provider pipeline, and should accept the URL of the changed pact as a configurable parameter. To do this, you must use webhook [template parameters](/pact_broker/webhooks/dynamic_variable_sub) to pass the URL of the changed pact through to the CI, which can then pass it in to the verification task. See the pact verification configuration documentation for your language.
 
 You can see an example project with a "changed pact verification" Github Workflow set up as described [here](https://github.com/pactflow/example-provider/blob/master/.github/workflows/verify_changed_pact.yml).
 
@@ -160,7 +160,7 @@ You can see an example `create-webhook` command for triggering the "changed pact
 ## Related resources
 
 * [Debugging webhooks](/pact_broker/webhooks/debugging_webhooks)
-* [Webhook API documentation](/pact_broker/advanced_topics/api_docs/webhooks) - note that there is not yet a UI for creating webhooks. If you're interested in creating one, contact us on the Pact Broker [slack](https://slack.pact.io) channel.
-* [Webhook template parameters](/pact_broker/advanced_topics/api_docs/webhooks#dynamic-variable-substitution)
+* [Webhook API documentation](/pact_broker/api/webhooks) - note that there is not yet a UI for creating webhooks. If you're interested in creating one, contact us on the Pact Broker [slack](https://slack.pact.io) channel.
+* [Webhook template parameters](/pact_broker/webhooks/dynamic_variable_sub)
 * [can-i-deploy documentation](https://github.com/pact-foundation/pact_broker-client#can-i-deploy) - Documentation for the Pact Broker `can-i-deploy` CLI, which allows you to retrieve the verification results and determine whether your application is safe to deploy.
 * [Webhook template library](/pact_broker/webhooks/template_library) - a library of useful webhook templates

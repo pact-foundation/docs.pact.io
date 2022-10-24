@@ -1,23 +1,19 @@
 {
   "scripts": {
     "examples": "docusaurus examples",
-    "start": "docusaurus start",
+    "start": "docusaurus start --host 0.0.0.0 --port 3000",
     "build": "docusaurus build",
-    "publish-gh-pages": "docusaurus publish",
     "write-translations": "docusaurus write-translations",
-    "version": "docusaurus version",
     "swizzle": "docusaurus swizzle",
-    "rename-version": "docusaurus rename-version"
-  },
-  "devDependencies": {
-    "@docusaurus/migrate": "^2.0.0-beta.15"
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.15",
-    "@docusaurus/preset-classic": "^2.0.0-beta.15",
-    "clsx": "^1.1.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "@docusaurus/core": "^2.1.0",
+    "@docusaurus/preset-classic": "^2.1.0",
+    "clsx": "^1.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "remarkable": "^2.0.1"
   },
   "browserslist": {
