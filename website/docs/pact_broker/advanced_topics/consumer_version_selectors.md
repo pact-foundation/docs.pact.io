@@ -2,6 +2,9 @@
 title: Consumer Version Selectors
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Overview
 
 Consumer version selectors are the (new) way to configure which pacts the provider verifies. Instead of providing a list of tag names (as in the past) a list of selector objects is provided. These allow a much more flexible and powerful approach to specifying which pacts to verify.
@@ -28,7 +31,7 @@ A consumer version selector has the following properties:
 
 - `environment`: the name of the environment containing the consumer versions for which to return the pacts. Used to further qualify `{ "deployed": true }` or `{ "released": true }`. Normally, this would not be needed, as it is recommended to verify the pacts for all currently deployed/currently supported released versions. As of October 2021, this is not yet supported in all Pact client libraries.
 
-- `latest`: true. Used in conjuction with the `tag` property. If a `tag` is specified, and `latest` is `true`, then the latest pact for each of the consumers with that tag will be returned. If a `tag` is specified and the latest flag is *not* set to `true`, *all* the pacts with the specified tag will be returned. (This might seem a bit weird, but it's done this way to match the syntax used for the matrix query params. See https://docs.pact.io/selectors). 
+- `latest`: true. Used in conjuction with the `tag` property. If a `tag` is specified, and `latest` is `true`, then the latest pact for each of the consumers with that tag will be returned. If a `tag` is specified and the latest flag is *not* set to `true`, *all* the pacts with the specified tag will be returned. (This might seem a bit weird, but it's done this way to match the syntax used for the matrix query params. See <https://docs.pact.io/selectors>).
 
 - `consumer`: allows a selector to only be applied to a certain consumer. Can be specified with any of the above properties.
 
@@ -38,41 +41,865 @@ A consumer version selector has the following properties:
 
 These are the recommended selectors that will cover the majority of workflows.
 
-* `{ "mainBranch": true }` - the latest version from the main branch of each consumer, as specified by the consumer's `mainBranch` property.
-* `{ "branch": "<branch>" }` - the latest version from a particular branch of each consumer.
-* `{ "deployedOrReleased": true }` - all the currently deployed and currently released and supported versions of each consumer.
-* `{ "matchingBranch": true` } - the latest version from any branch of the consumer that has the same name as the current branch of the provider. Used for coordinated development between consumer and provider teams using matching feature branch names.
+- `{ "mainBranch": true }` - the latest version from the main branch of each consumer, as specified by the consumer's `mainBranch` property.
+- `{ "branch": "<branch>" }` - the latest version from a particular branch of each consumer.
+- `{ "deployedOrReleased": true }` - all the currently deployed and currently released and supported versions of each consumer.
+- `{ "matchingBranch": true` } - the latest version from any branch of the consumer that has the same name as the current branch of the provider. Used for coordinated development between consumer and provider teams using matching feature branch names.
 
 ### Advanced
 
 This is not an exhaustive list, but shows most of the usecases.
 
-* `{ "branch": "<branch>", consumer: "<consumer>" }` - the latest version from a particular branch of a particular consumer.
-* `{ "branch": "<branch>", "fallbackBranch": "<branch>" }` - the latest version from a particular branch of the consumer, falling back to the fallbackBranch if none is found from the specified branch.
-* `{ "deployed": true, environment: "<environment>" }` - any versions currently deployed to the specified environment
-* `{ "released": true, environment: "<environment>" }` - any versions currently released and supported in the specified environment
-* `{ "environment": "<environment>" }` - any versions currently deployed or released and supported in the specified environment
-* `{ "tag": "<tag>" }`- all versions with the specified tag
-* `{ "tag": "<tag>", "latest": true }`- the latest version for each consumer with the specified tag
-* `{ "tag": "<tag>", "latest": true, "fallbackTag": "<tag>" }`- the latest version for each consumer with the specified tag, falling back to the fallbackTag if non is found with the specified tag.
-* `{ "tag": "<tag>", "latest": true, "consumer": "<consumer>" }`- the latest version for a specified consumer with the specified tag
-* `{ "latest": true }` - the latest version for each consumer. NOT RECOMMENDED as it suffers from race conditions when pacts are published from multiple branches.
+- `{ "branch": "<branch>", consumer: "<consumer>" }` - the latest version from a particular branch of a particular consumer.
+- `{ "branch": "<branch>", "fallbackBranch": "<branch>" }` - the latest version from a particular branch of the consumer, falling back to the fallbackBranch if none is found from the specified branch.
+- `{ "deployed": true, environment: "<environment>" }` - any versions currently deployed to the specified environment
+- `{ "released": true, environment: "<environment>" }` - any versions currently released and supported in the specified environment
+- `{ "environment": "<environment>" }` - any versions currently deployed or released and supported in the specified environment
+- `{ "tag": "<tag>" }`- all versions with the specified tag
+- `{ "tag": "<tag>", "latest": true }`- the latest version for each consumer with the specified tag
+- `{ "tag": "<tag>", "latest": true, "fallbackTag": "<tag>" }`- the latest version for each consumer with the specified tag, falling back to the fallbackTag if non is found with the specified tag.
+- `{ "tag": "<tag>", "latest": true, "consumer": "<consumer>" }`- the latest version for a specified consumer with the specified tag
+- `{ "latest": true }` - the latest version for each consumer. NOT RECOMMENDED as it suffers from race conditions when pacts are published from multiple branches.
 
 ## Deduplication
 
-The Pact Broker API for retrieving pacts by selectors deduplicates the pacts based on their _content_. This means that if the same content was published in multiple selected pacts, the verification for that content will only need to run once. This is quite common when there hasn't been a change to a pact for a while, and the same pact content is present in development, test and production pacts.
+The Pact Broker API for retrieving pacts by selectors deduplicates the pacts based on their *content*. This means that if the same content was published in multiple selected pacts, the verification for that content will only need to run once. This is quite common when there hasn't been a change to a pact for a while, and the same pact content is present in development, test and production pacts.
 
-## Code examples
+## Code examples with branches
 
 ### Verifying the latest development, test and master pacts
 
 This is the most common use case.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+- We recommend using `deployedOrReleased` to return the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment, this allows the provider to not know that detail and let the Pact broker take care of it for you)
+  - alternatively you can target just `deployed` or just `released` consumers across `all` environments , or consumers only in specified `environments`.
+- We recommend using `mainBranch` to return the pacts associated with any consumers configured `mainBranch` property (your consumer may have the branch `main`, `master` or `develop`, this allows the provider to not know that detail and let the Pact broker take care of it for you)
+- The shown selectors, will target for the provider
+  - any pacts for the consumer associated with their configured `mainBranch` property
+  - any pacts for the consumers, deployed to `any` environment
+    - This if filtered by only pacts `deployed` or `released` to the `test` / `production` environments.
+    - If this consumer/provider pair, has an additional environment `staging`, it would not be picked up, due to the named `test` / `production` environments. Removing these conditions, will return any pacts, deployed or released to any environment, which is the recommended setup for the majority of cases. (coupled with enabling pending pacts.)
 
 <Tabs
 groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'Python', value: 'python', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]
+}>
+<TabItem value="javascript">
+
+```js
+const verificationOptions = {
+  // ....
+  consumerVersionSelectors: [
+    {
+      mainBranch: true, // (recommended) - Returns the pacts for consumers configured mainBranch property
+    },
+    {
+      deployedOrReleased: true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+    },
+    {
+      environment: 'test', // Normally, this would not be needed, as it is recommended to verify the pacts for all currently deployed/currently supported released versions.
+    },
+    {
+      environment: 'production', // Normally, this would not be needed, as it is recommended to verify the pacts for all currently deployed/currently supported released versions.
+    },
+  ],
+};
+```
+
+  </TabItem>
+
+  <TabItem value="java">
+
+```java
+  @au.com.dius.pact.provider.junitsupport.loader.PactBrokerConsumerVersionSelectors
+  public static SelectorBuilder consumerVersionSelectors() {
+    return new SelectorBuilder()
+      .mainBranch(); // (recommended) - Returns the pacts for consumers configured mainBranch property
+      .deployedOrReleased();  // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+      .deployedTo('test'); // Normally, this would not be needed, Any versions currently deployed to the specified environment.
+      .deployedTo('production'); // Normally, this would not be needed, Any versions currently deployed to the specified environment.
+      .environment('test') // Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+      .environment('production') // Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+  }
+
+```
+
+  </TabItem>
+
+  <TabItem value="gradle">
+
+```groovy
+
+pact {
+  serviceProviders {
+    'Your Service' {
+      providerVersion = { '1.2.3' }
+
+      fromPactBroker {
+        withSelectors {
+            mainBranch() // (recommended) - Returns the pacts for consumers configured mainBranch property
+            deployedOrReleased() // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+            deployedTo('test') // Normally, this would not be needed, Any versions currently deployed to the specified environment.
+            deployedTo('test') // Normally, this would not be needed, Any versions currently deployed to the specified environment.
+            environment('test')  // Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+            environment('production')  // Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+        }
+      }
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value="ruby">
+
+```ruby
+Pact.service_provider "Your provider" do
+  honours_pacts_from_pact_broker do
+    pact_broker_base_url "..."
+    consumer_version_selectors [
+          { mainBranch: true }, # (recommended) - Returns the pacts for consumers configured mainBranch property
+          { deployedOrReleased: true }, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+          { deployed: "test" }, # Normally, this would not be needed, Any versions currently deployed to the specified environment.
+          { deployed: "production" } # Normally, this would not be needed, Any versions currently deployed to the specified environment.
+          { environment: "test" }, #  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+          { environment: "production" } #  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+        ]
+  end
+end
+```
+
+  </TabItem>
+
+  <TabItem value="python">
+
+```python
+verifier = Verifier(
+    provider="Your provider",
+    broker_url="...",
+    consumer_version_selectors=[
+        {"mainBranch": True}, # (recommended) - Returns the pacts for consumers configured mainBranch property
+        {"deployedOrReleased": True}, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+        {"deployed": "test"}, # Normally, this would not be needed, Any versions currently deployed to the specified environment.
+        {"deployed": "production"}, # Normally, this would not be needed, Any versions currently deployed to the specified environment.
+        {"environment": "test"}, #  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+        {"environment": "production"}, #  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+    ],
+    # ...
+)
+```
+
+  </TabItem>
+
+  <TabItem value="c#">
+
+```csharp
+    IPactVerifier verifier = new PactVerifier(config); 
+    verifier.ServiceProvider("My Provider", this.fixture.ServerUri)
+        .WithPactBrokerSource(new Uri("https://broker.example.org"), options =>
+        {
+            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, // (recommended) - Returns the pacts for consumers configured mainBranch property
+                                                  new ConsumerVersionSelector { DeployedOrReleased = true } // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+                                                  new ConsumerVersionSelector { Deployed = true, Environment = "test" }, // Normally, this would not be needed, Any versions currently deployed to the specified environment.
+                                                  new ConsumerVersionSelector { Deployed = true, Environment = "production" }, // Normally, this would not be needed, Any versions currently deployed to the specified environment.
+                                                  new ConsumerVersionSelector { Released = true, Deployed = true, Environment = "test" }, //  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+                                                  new ConsumerVersionSelector { Released = true, Deployed = true, Environment = "production" }, //  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+                                                  )
+                    .PublishResults(version, results =>
+                    {
+                        results.ProviderBranch(branch)
+                              .BuildUri(new Uri(buildUri));
+                    });
+        })
+        .WithProviderStateUrl(new Uri(this.fixture.ServerUri, "/provider-states"))
+        .Verify();       
+```
+
+  </TabItem>
+
+  <TabItem value="golang">
+
+```golang
+ pact.VerifyProvider(t, types.VerifyRequest{
+  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
+   types.ConsumerVersionSelector{
+    MainBranch:      true,  // (recommended) - Returns the pacts for consumers configured mainBranch property
+   },
+   types.ConsumerVersionSelector{
+    DeployedOrReleased:      true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+   },
+   types.ConsumerVersionSelector{
+    Deployed:         "test", // Normally, this would not be needed, Any versions currently deployed to the specified environment.
+   },
+   types.ConsumerVersionSelector{
+    Deployed:         "production", // Normally, this would not be needed, Any versions currently deployed to the specified environment.
+   },
+   types.ConsumerVersionSelector{
+    Environment:         "test", //  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+   },
+   types.ConsumerVersionSelector{
+    Environment:         "production", //  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+   },
+  },
+        // ...
+ })
+```
+
+  </TabItem>
+
+</Tabs>
+
+### Using a matching branch for coordinated branch development
+
+Dynamically determine the current branch of the provider, see if there is a matching pact for that branch.
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'Python', value: 'python', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]
+}>
+<TabItem value="javascript">
+
+```js
+const verificationOptions = {
+  //...
+  consumerVersionSelectors: [
+    {
+      matchingBranch: true, // Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
+    },
+    {
+      mainBranch: true, // (recommended) - Returns the pacts for consumers configured mainBranch property
+    },
+    {
+      deployedOrReleased: true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+    },
+  ],
+};
+```
+
+  </TabItem>
+
+  <TabItem value="java">
+
+```java
+// Requires Pact-JVM 4.1.10 or later
+  @au.com.dius.pact.provider.junitsupport.loader.PactBrokerConsumerVersionSelectors
+  public static SelectorBuilder consumerVersionSelectors() {
+    return new SelectorBuilder()
+      .matchingBranch(); // Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
+      .mainBranch(); // (recommended) - Returns the pacts for consumers configured mainBranch property
+      .deployedOrReleased();  // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+  }
+```
+
+  </TabItem>
+
+  <TabItem value="gradle">
+
+```groovy
+// Requires Pact-JVM 4.1.10 or later
+pact {
+  serviceProviders {
+    'Your Service' {
+      providerVersion = { '1.2.3' }
+
+      fromPactBroker {
+        withSelectors {
+            matchingBranch() // Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
+            mainBranch() // (recommended) - Returns the pacts for consumers configured mainBranch property
+            deployedOrReleased() // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+        }
+      }
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value="ruby">
+
+```ruby
+Pact.service_provider "Your provider" do
+  honours_pacts_from_pact_broker do
+    pact_broker_base_url "..."
+    consumer_version_selectors [
+          { matchingBranch: true }, # Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
+          { mainBranch: true }, # (recommended) - Returns the pacts for consumers configured mainBranch property
+          { deployedOrReleased: true }, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+        ]
+  end
+end
+```
+
+  </TabItem>
+
+  <TabItem value="python">
+
+```python
+verifier = Verifier(
+    provider="Your provider",
+    broker_url="...",
+    consumer_version_selectors=[
+        {"matchingBranch": True}, #  Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
+        {"mainBranch": True}, # (recommended) - Returns the pacts for consumers configured mainBranch property
+        {"deployedOrReleased": True}, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+    ],
+    # ...
+)
+```
+
+  </TabItem>
+
+  <TabItem value="c#">
+
+```csharp
+    IPactVerifier verifier = new PactVerifier(config); 
+    verifier.ServiceProvider("My Provider", this.fixture.ServerUri)
+        .WithPactBrokerSource(new Uri("https://broker.example.org"), options =>
+        {
+            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MatchingBranch = true }, //  Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
+                                                  new ConsumerVersionSelector { DeployedOrReleased = true } // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+                                                  new ConsumerVersionSelector { MainBranch = true }, // (recommended) - Returns the pacts for consumers configured mainBranch property
+                                                  )
+                    .PublishResults(version, results =>
+                    {
+                        results.ProviderBranch(branch)
+                              .BuildUri(new Uri(buildUri));
+                    });
+        })
+        .WithProviderStateUrl(new Uri(this.fixture.ServerUri, "/provider-states"))
+        .Verify();     
+```
+
+  </TabItem>
+
+  <TabItem value="golang">
+
+```golang
+ pact.VerifyProvider(t, types.VerifyRequest{
+  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
+   types.ConsumerVersionSelector{
+    MatchingBranch:      true,  //  Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
+   },
+   types.ConsumerVersionSelector{
+    MainBranch:      true,  // (recommended) - Returns the pacts for consumers configured mainBranch property
+   },
+   types.ConsumerVersionSelector{
+    DeployedOrReleased:      true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+   },
+  },
+        // ...
+ })
+```
+
+  </TabItem>
+
+</Tabs>
+
+### Verifying pacts where the consumer is a mobile application
+
+Verify the pacts for the latest `master` and `test` versions, and all `production` versions of "my-mobile-consumer".
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'Python', value: 'python', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]
+}>
+<TabItem value="javascript">
+
+```js
+const verificationOptions = {
+  // ....
+  consumerVersionSelectors: [
+    {
+      mainBranch: true, // (recommended) - Returns the pacts for consumers configured mainBranch property
+    },
+    {
+      deployed: 'test', // only the latest deployed version to test
+    },
+    {
+      deployedOrReleased: 'production', // all deployed or released versions in production
+    },
+  ],
+};
+```
+
+  </TabItem>
+
+  <TabItem value="java">
+
+```java
+  @au.com.dius.pact.provider.junitsupport.loader.PactBrokerConsumerVersionSelectors
+  public static SelectorBuilder consumerVersionSelectors() {
+    return new SelectorBuilder()
+      .mainBranch(); // (recommended) - Returns the pacts for consumers configured mainBranch property
+      .deployedTo('test'); // only the latest deployed version to test
+      .environment('production') // all deployed or released versions in production
+  }
+
+```
+
+  </TabItem>
+
+  <TabItem value="gradle">
+
+```groovy
+
+pact {
+  serviceProviders {
+    'Your Service' {
+      providerVersion = { '1.2.3' }
+
+      fromPactBroker {
+        withSelectors {
+            mainBranch() // (recommended) - Returns the pacts for consumers configured mainBranch property
+            deployedTo('test') // only the latest deployed version to test
+            environment('production')  // all deployed or released versions in production
+        }
+      }
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value="ruby">
+
+```ruby
+Pact.service_provider "Your provider" do
+  honours_pacts_from_pact_broker do
+    pact_broker_base_url "..."
+    consumer_version_selectors [
+          { mainBranch: true }, # (recommended) - Returns the pacts for consumers configured mainBranch property
+          { deployed: "test" }, # only the latest deployed version to test
+          { environment: "production" } #  all deployed or released versions in production
+        ]
+  end
+end
+```
+
+  </TabItem>
+
+  <TabItem value="python">
+
+```python
+verifier = Verifier(
+    provider="Your provider",
+    broker_url="...",
+    consumer_version_selectors=[
+        {"mainBranch": True}, # (recommended) - Returns the pacts for consumers configured mainBranch property
+        {"deployed": "test"}, # only the latest deployed version to test
+        {"environment": "production"}, # all deployed or released versions in production
+    ],
+    # ...
+)
+```
+
+  </TabItem>
+
+  <TabItem value="c#">
+
+```csharp
+    IPactVerifier verifier = new PactVerifier(config); 
+    verifier.ServiceProvider("My Provider", this.fixture.ServerUri)
+        .WithPactBrokerSource(new Uri("https://broker.example.org"), options =>
+        {
+            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, // (recommended) - Returns the pacts for consumers configured mainBranch property
+                                                  new ConsumerVersionSelector { Deployed = true, Environment = "test" }, // only the latest deployed version to test
+                                                  new ConsumerVersionSelector { Released = true, Deployed = true, Environment = "production" }, // all deployed or released versions in production
+                                                  )
+                    .PublishResults(version, results =>
+                    {
+                        results.ProviderBranch(branch)
+                              .BuildUri(new Uri(buildUri));
+                    });
+        })
+        .WithProviderStateUrl(new Uri(this.fixture.ServerUri, "/provider-states"))
+        .Verify();       
+```
+
+  </TabItem>
+
+  <TabItem value="golang">
+
+```golang
+ pact.VerifyProvider(t, types.VerifyRequest{
+  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
+   types.ConsumerVersionSelector{
+    MainBranch:      true,  // (recommended) - Returns the pacts for consumers configured mainBranch property
+   },
+   types.ConsumerVersionSelector{
+    Deployed:         "test", // only the latest deployed version to test
+   },
+   types.ConsumerVersionSelector{
+    Environment:         "production", //  all deployed or released versions in production
+   },
+  },
+        // ...
+ })
+```
+
+  </TabItem>
+
+</Tabs>
+
+### Verifying a pacts where one consumer is a mobile application
+
+Verify the latest `production` version of all consumers, and all `production` versions of "my-mobile-consumer". Note that the pacts are [deduplicated](#deduplication), so despite being included by 2 selectors, the verification of the latest production pact for "my-mobile-consumer" will only run once.
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'Python', value: 'python', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]
+}>
+<TabItem value="javascript">
+
+```js
+const verificationOptions = {
+  // ....
+  consumerVersionSelectors: [
+    {
+      mainBranch: true, // (recommended) - Returns the pacts for consumers configured mainBranch property
+    },
+    {
+      deployed: 'test', // Verify the latest deployed `test` version of all consumers
+    },
+    {
+      deployed: 'production', // Verify the latest deployed `production` version of all consumers
+    },
+    {
+      deployedOrReleased: 'production', // Verify all deployed or released `production` versions of my-mobile-consumer
+      consumer: 'my-mobile-consumer'
+    },
+  ],
+};
+```
+
+  </TabItem>
+
+  <TabItem value="java">
+
+```java
+  @au.com.dius.pact.provider.junitsupport.loader.PactBrokerConsumerVersionSelectors
+  public static SelectorBuilder consumerVersionSelectors() {
+    return new SelectorBuilder()
+      .mainBranch(); // (recommended) - Returns the pacts for consumers configured mainBranch property
+      .deployedTo('test'); // Verify the latest deployed `test` version of all consumers
+      .deployedTo('production'); // Verify the latest deployed `production` version of all consumers
+      .rawSelectorJson('{ "deployedOrReleased": "production", "consumer": "my-mobile-consumer" }') // Verify all deployed or released `production` versions of my-mobile-consumer
+  }
+
+```
+
+  </TabItem>
+
+  <TabItem value="gradle">
+
+```groovy
+
+pact {
+  serviceProviders {
+    'Your Service' {
+      providerVersion = { '1.2.3' }
+
+      fromPactBroker {
+        withSelectors {
+            mainBranch() // (recommended) - Returns the pacts for consumers configured mainBranch property
+            deployedTo('test') // Verify the latest deployed `test` version of all consumers
+            deployedTo('production')  // Verify the latest deployed `production` version of all consumers
+            rawSelectorJson('{ "deployedOrReleased": "production", "consumer": "my-mobile-consumer" }') // Verify all deployed or released `production` versions of my-mobile-consumer
+        }
+      }
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value="ruby">
+
+```ruby
+Pact.service_provider "Your provider" do
+  honours_pacts_from_pact_broker do
+    pact_broker_base_url "..."
+    consumer_version_selectors [
+          { mainBranch: true }, # (recommended) - Returns the pacts for consumers configured mainBranch property
+          { deployed: "test" }, # Verify the latest deployed `test` version of all consumers
+          { deployed: "production" }, # Verify the latest deployed `production` version of all consumers
+          { deployedOrReleased: "production", consumer: "my-mobile-consumer" } #  Verify all deployed or released `production` versions of my-mobile-consumer
+        ]
+  end
+end
+```
+
+  </TabItem>
+
+  <TabItem value="python">
+
+```python
+verifier = Verifier(
+    provider="Your provider",
+    broker_url="...",
+    consumer_version_selectors=[
+        {"mainBranch": True}, # (recommended) - Returns the pacts for consumers configured mainBranch property
+        {"deployed": "test"}, # Verify the latest deployed `test` version of all consumers
+        {"deployed": "production"}, # Verify the latest deployed `production` version of all consumers
+        {"environment": "production", "consumer": "my-mobile-consumer" }, #  Verify all deployed or released `production` versions of my-mobile-consumer
+    ],
+    # ...
+)
+```
+
+  </TabItem>
+
+  <TabItem value="c#">
+
+```csharp
+    IPactVerifier verifier = new PactVerifier(config); 
+    verifier.ServiceProvider("My Provider", this.fixture.ServerUri)
+        .WithPactBrokerSource(new Uri("https://broker.example.org"), options =>
+        {
+            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, // (recommended) - Returns the pacts for consumers configured mainBranch property
+                                                  new ConsumerVersionSelector { Deployed = true, Environment = "test" }, // Verify the latest deployed `test` version of all consumers
+                                                  new ConsumerVersionSelector { Deployed = true, Environment = "production" }, // Verify the latest deployed `production` version of all consumers
+                                                  new ConsumerVersionSelector { Released = true, Deployed = true, Environment = "production", Consumer = "my-mobile-consumer" }, // Verify all deployed or released `production` versions of my-mobile-consumer
+                                                  )
+                    .PublishResults(version, results =>
+                    {
+                        results.ProviderBranch(branch)
+                              .BuildUri(new Uri(buildUri));
+                    });
+        })
+        .WithProviderStateUrl(new Uri(this.fixture.ServerUri, "/provider-states"))
+        .Verify();       
+```
+
+  </TabItem>
+
+  <TabItem value="golang">
+
+```golang
+ pact.VerifyProvider(t, types.VerifyRequest{
+  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
+   types.ConsumerVersionSelector{
+    MainBranch:      true,  // (recommended) - Returns the pacts for consumers configured mainBranch property
+   },
+   types.ConsumerVersionSelector{
+    Deployed:         "test", // Verify the latest deployed `test` version of all consumers
+   },
+   types.ConsumerVersionSelector{
+    Deployed:         "production", //  Verify the latest deployed `production` version of all consumers
+   },
+   types.ConsumerVersionSelector{
+    Environment:         "production", //  Verify all deployed or released `production` versions of my-mobile-consumer
+    Consumer:    "my-mobile-consumer",
+   },
+  },
+        // ...
+ })
+```
+
+  </TabItem>
+
+</Tabs>
+
+### Verifying the overall latest pact for each consumer
+
+Verifying the overall latest pact for each consumer is syntactically possible, but not recommended, as pacts for different branches of the consumer may overwrite each other as the current latest.
+
+You can do this by setting `latest: true`, however as this is wholly unrecommended, we instead show the minimum ideal requirement, to cover the latest pacts for
+
+- any consumer that is registered with the provider
+  - the latest pact for any environment the consumer is `deployed` to
+  - the latest pact, for any environment in the consumer is `released` to
+  - the latest pact, for the consumer configured `mainBranch`
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'Python', value: 'python', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]
+}>
+<TabItem value="javascript">
+
+```js
+const verificationOptions = {
+  // ....
+  consumerVersionSelectors: [
+    {
+      mainBranch: true, // (recommended) - Returns the pacts for consumers configured mainBranch property
+    },
+    {
+      deployedOrReleased: true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+    },
+  ],
+};
+```
+
+  </TabItem>
+
+  <TabItem value="java">
+
+```java
+  @au.com.dius.pact.provider.junitsupport.loader.PactBrokerConsumerVersionSelectors
+  public static SelectorBuilder consumerVersionSelectors() {
+    return new SelectorBuilder()
+      .mainBranch(); // (recommended) - Returns the pacts for consumers configured mainBranch property
+      .deployedOrReleased();  // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+  }
+
+```
+
+  </TabItem>
+
+  <TabItem value="gradle">
+
+```groovy
+
+pact {
+  serviceProviders {
+    'Your Service' {
+      providerVersion = { '1.2.3' }
+
+      fromPactBroker {
+        withSelectors {
+            mainBranch() // (recommended) - Returns the pacts for consumers configured mainBranch property
+            deployedOrReleased() // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+        }
+      }
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value="ruby">
+
+```ruby
+Pact.service_provider "Your provider" do
+  honours_pacts_from_pact_broker do
+    pact_broker_base_url "..."
+    consumer_version_selectors [
+          { mainBranch: true }, # (recommended) - Returns the pacts for consumers configured mainBranch property
+          { deployedOrReleased: true }, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+        ]
+  end
+end
+```
+
+  </TabItem>
+
+  <TabItem value="python">
+
+```python
+verifier = Verifier(
+    provider="Your provider",
+    broker_url="...",
+    consumer_version_selectors=[
+        {"mainBranch": True}, # (recommended) - Returns the pacts for consumers configured mainBranch property
+        {"deployedOrReleased": True}, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+    ],
+    # ...
+)
+```
+
+  </TabItem>
+
+  <TabItem value="c#">
+
+```csharp
+    IPactVerifier verifier = new PactVerifier(config); 
+    verifier.ServiceProvider("My Provider", this.fixture.ServerUri)
+        .WithPactBrokerSource(new Uri("https://broker.example.org"), options =>
+        {
+            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, // (recommended) - Returns the pacts for consumers configured mainBranch property
+                                                  new ConsumerVersionSelector { DeployedOrReleased = true } // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+                                                  )
+                    .PublishResults(version, results =>
+                    {
+                        results.ProviderBranch(branch)
+                              .BuildUri(new Uri(buildUri));
+                    });
+        })
+        .WithProviderStateUrl(new Uri(this.fixture.ServerUri, "/provider-states"))
+        .Verify();       
+```
+
+  </TabItem>
+
+  <TabItem value="golang">
+
+```golang
+ pact.VerifyProvider(t, types.VerifyRequest{
+  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
+   types.ConsumerVersionSelector{
+    MainBranch:      true,  // (recommended) - Returns the pacts for consumers configured mainBranch property
+   },
+   types.ConsumerVersionSelector{
+    DeployedOrReleased:      true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+   },
+  },
+        // ...
+ })
+```
+
+  </TabItem>
+
+</Tabs>
+
+## Code examples with tags
+
+### Verifying the latest development, test and master pacts
+
+This is the most common use case.
+
+<Tabs
+groupId="sdk-choice-tags"
 defaultValue="javascript"
 values={[
 {label: 'Javascript', value: 'javascript', },
@@ -200,23 +1027,23 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
-	pact.VerifyProvider(t, types.VerifyRequest{
-		ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-			types.ConsumerVersionSelector{
-				Tag:         "master",
-				Latest:      true,
-			},
-			types.ConsumerVersionSelector{
-				Tag:         "test",
-				Latest:      true,
-			},
-			types.ConsumerVersionSelector{
-				Tag:         "production",
-				Latest:      true,
-			},
-		},
+ pact.VerifyProvider(t, types.VerifyRequest{
+  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
+   types.ConsumerVersionSelector{
+    Tag:         "master",
+    Latest:      true,
+   },
+   types.ConsumerVersionSelector{
+    Tag:         "test",
+    Latest:      true,
+   },
+   types.ConsumerVersionSelector{
+    Tag:         "production",
+    Latest:      true,
+   },
+  },
         // ...
-	})
+ })
 ```
 
   </TabItem>
@@ -358,24 +1185,24 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
-	pact.VerifyProvider(t, types.VerifyRequest{
+ pact.VerifyProvider(t, types.VerifyRequest{
     ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-			types.ConsumerVersionSelector{
-				Tag:         os.Getenv("GIT_BRANCH"),
-				FallbackTag: "master",
-				Latest:      true,
-			},
-			types.ConsumerVersionSelector{
-				Tag:    "test",
-				Latest: true,
-			},
-			types.ConsumerVersionSelector{
-				Tag:    "production",
-				Latest: true,
-			},
-		},
+   types.ConsumerVersionSelector{
+    Tag:         os.Getenv("GIT_BRANCH"),
+    FallbackTag: "master",
+    Latest:      true,
+   },
+   types.ConsumerVersionSelector{
+    Tag:    "test",
+    Latest: true,
+   },
+   types.ConsumerVersionSelector{
+    Tag:    "production",
+    Latest: true,
+   },
+  },
         // ...
-	})
+ })
 ```
 
   </TabItem>
@@ -493,24 +1320,24 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
-	pact.VerifyProvider(t, types.VerifyRequest{
-		ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-			types.ConsumerVersionSelector{
-				Tag:         os.Getenv("GIT_BRANCH"),
-				FallbackTag: "master",
-				Latest:      true,
-			},
-			types.ConsumerVersionSelector{
-				Tag:    "test",
-				Latest: true,
-			},
-			types.ConsumerVersionSelector{
-				Tag:    "production",
-				Latest: false,
-			},
-		},
+ pact.VerifyProvider(t, types.VerifyRequest{
+  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
+   types.ConsumerVersionSelector{
+    Tag:         os.Getenv("GIT_BRANCH"),
+    FallbackTag: "master",
+    Latest:      true,
+   },
+   types.ConsumerVersionSelector{
+    Tag:    "test",
+    Latest: true,
+   },
+   types.ConsumerVersionSelector{
+    Tag:    "production",
+    Latest: false,
+   },
+  },
         // ...
-	})
+ })
 ```
 
   </TabItem>
@@ -639,28 +1466,28 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
-	pact.VerifyProvider(t, types.VerifyRequest{
-		ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-			types.ConsumerVersionSelector{
-				Tag:         os.Getenv("GIT_BRANCH"),
-				FallbackTag: "master",
-				Latest:      true,
-			},
-			types.ConsumerVersionSelector{
-				Tag:         "test",
-				Latest:      true,
-			},
-			types.ConsumerVersionSelector{
-				Tag:         "production",
-				Latest:      true,
-			},
-			types.ConsumerVersionSelector{
-				Tag:         "production",
-				Consumer:    "my-mobile-consumer",
-			},
-		},
+ pact.VerifyProvider(t, types.VerifyRequest{
+  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
+   types.ConsumerVersionSelector{
+    Tag:         os.Getenv("GIT_BRANCH"),
+    FallbackTag: "master",
+    Latest:      true,
+   },
+   types.ConsumerVersionSelector{
+    Tag:         "test",
+    Latest:      true,
+   },
+   types.ConsumerVersionSelector{
+    Tag:         "production",
+    Latest:      true,
+   },
+   types.ConsumerVersionSelector{
+    Tag:         "production",
+    Consumer:    "my-mobile-consumer",
+   },
+  },
         // ...
-	})
+ })
 ```
 
   </TabItem>
@@ -761,14 +1588,14 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
-	pact.VerifyProvider(t, types.VerifyRequest{
-		ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-			types.ConsumerVersionSelector{
-				Latest:      true,
-			},
-		},
+ pact.VerifyProvider(t, types.VerifyRequest{
+  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
+   types.ConsumerVersionSelector{
+    Latest:      true,
+   },
+  },
         // ...
-	})
+ })
 ```
 
   </TabItem>

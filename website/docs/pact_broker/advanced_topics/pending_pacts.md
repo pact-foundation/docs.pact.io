@@ -103,7 +103,7 @@ The pending property *is not used* by the pact verification build that is trigge
 
 [Work in progress pacts](/pact_broker/advanced_topics/wip_pacts) always have the pending flag set to true.
 
-## Examples with branches
+## Examples
 
 Let's walk through the "pending" lifecycle of a particular pact content version with an interaction that is implemented directly on the `main` branch of a provider.
 
