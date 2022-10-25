@@ -4,7 +4,8 @@ title: Events
 Upcoming events
 ---
 18 Nov 2022 - Pact Plugin Framework Launch 
-> Register
+
+> [Register](/events/plugins-framework-launch)
 
 Past events
 ---
