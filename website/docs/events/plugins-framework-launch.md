@@ -1,5 +1,5 @@
 ---
-title: Webinar: Customise contract testing for you with the new Pact Plugin Framework 
+title: Webinar - Customise contract testing for you with the new Pact Plugin Framework 
 ---
 
 The new Pact Plugins Framework is the next generation underpinning for the most highly adopted Pact contract testing specification! We are excited to share that we're expanding the Pact capability from RESTful HTTP messaging services to a multi-protocol approach - with plugins. 
