@@ -403,7 +403,14 @@
     "blogs_videos_and_articles",
     "community_repos",
     "books",
-    "events",
+    {
+      "Events": [
+        "events",
+        {
+          "Webinars": ["events/plugins-framework-launch"]
+        }
+      ]
+    },
     {
       "Contributing": [
         "contributing",

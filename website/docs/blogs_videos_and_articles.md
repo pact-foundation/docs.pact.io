@@ -20,7 +20,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 
 **Articles**:
 
-- [Consumer Driven contract t esting with Pact](https://orbitventures.medium.com/consumer-driven-contract-testing-using-pact-f0ca28fb6f58)
+- [Consumer Driven contract testing with Pact](https://orbitventures.medium.com/consumer-driven-contract-testing-using-pact-f0ca28fb6f58)
 - [The Test Kite (incl. Contract Testing)](https://medium.com/@kyriacoselia/the-test-kite-bb9fe9fafd6)
 
 - [The Basics of Contract Tests](https://codeburst.io/the-basics-of-contract-tests-920ff363c820)
@@ -42,7 +42,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 
 ## 2020
 
-**[Pact Community Event](/events/20201119)**
+**[Pact Community Event](/events/#19-nov-2020---online-pact-community-event)**
 
 **Customer Stories**:
 
