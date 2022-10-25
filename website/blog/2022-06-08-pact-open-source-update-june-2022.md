@@ -6,7 +6,7 @@ tags: [pact, oss, community]
 keywords: [pact, oss, community]
 date: 2022-06-08
 draft: false
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 Welcome to the Pact Open Source June 2022 update!
@@ -36,7 +36,7 @@ Chat with us in: [#pact-net](https://pact-foundation.slack.com/archives/C9UTHV2A
 
 [Omer Morad](https://github.com/omermorad), our friend in, Tel Aviv, Israel, is a backend-oriented developer, OOP flavored, in a distributed systems world and also a Web artisan, TypeScripter, open-source enthusiast, and guitar player.
 
-He recently brought in https://github.com/pact-foundation/nestjs-pact to the pact-foundation and we would love to get it featured on the [awesome-nestjs repo](https://github.com/jmcdo29/testing-nestjs/issues/1676).
+He recently brought in <https://github.com/pact-foundation/nestjs-pact> to the pact-foundation and we would love to get it featured on the [awesome-nestjs repo](https://github.com/jmcdo29/testing-nestjs/issues/1676).
 
 Are you using NestJS + Pact? Want to help build out an example? Chat with us in: [#pact-nestjs](https://pact-foundation.slack.com/archives/C03ELGE8UMB)
 
@@ -74,7 +74,7 @@ Thanks [Stef Heyenrath](https://www.linkedin.com/in/ACoAAAClHlsBdpo1lJc1LiT8eM46
 2. [Nicholas Simons](https://github.com/simonn01) for [post request support](https://github.com/pactflow/pact-msw-adapter/pull/42)
 3. And we cannot forget [Juan Cruz](https://github.com/IJuanI) for being an early trailblazer and improving the developer experience vastly
 
-### Create your own adapters to use in Bi-Directional Contract Testing!
+### Create your own adapters to use in Bi-Directional Contract Testing
 
 Inspired by our list of tools, but don’t see your [favourite](https://docs.pactflow.io/docs/bi-directional-contract-testing/tools)? Create your own! Here's how:
 
@@ -84,7 +84,7 @@ Inspired by our list of tools, but don’t see your [favourite](https://docs.pac
 
 ## Our awesome community
 
-Developer Relations at Pact-Foundation now has a new home @ https://github.com/pact-foundation/devrel
+Developer Relations at Pact-Foundation now has a new home @ <https://github.com/pact-foundation/devrel>
 
 We recently hooked up [Orbit.love](https://orbit.love/), to give us a bit of a glance across our open source estate, and we were able to pull out well over 2k different contributions from just the top 15 in the leaderboard excluding Pactflow’s co-founders!
 

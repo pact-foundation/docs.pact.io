@@ -6,7 +6,7 @@ tags: [pact, oss, community]
 keywords: [pact, oss, community]
 date: 2022-07-26
 draft: false
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 Welcome to the Pact Open Source July 2022 update!
@@ -27,7 +27,7 @@ Summary:
 
 - V4 Pact support
 - Support for synchronous messages
-- Support for plugins (e.g. for gRPC + Protobufs support https://github.com/pact-foundation/pact-go/tree/2.x.x/examples/grpc)
+- Support for plugins (e.g. for gRPC + Protobufs support <https://github.com/pact-foundation/pact-go/tree/2.x.x/examples/grpc>)
 
 A word from our Pactflow co-founder & pact-go maintainer [Matt Fellows](https://github.com/mefellows)
 
@@ -39,13 +39,13 @@ Chat with us in: [#pact-go](https://pact-foundation.slack.com/archives/C9UTHTFFB
 
 ### Node JS
 
-[Pact-JS](https://github.com/pact-foundation/pact-js) - Pact specification V3 beta now supports modifying the request body in the verifier which has been a long standing issue and more work is progressing on stabilizing for General release: https://github.com/pact-foundation/pact-js/tree/feat/v3.0.0/ (v10.0.0-beta.60). Follow the roadmap progress.
+[Pact-JS](https://github.com/pact-foundation/pact-js) - Pact specification V3 beta now supports modifying the request body in the verifier which has been a long standing issue and more work is progressing on stabilizing for General release: <https://github.com/pact-foundation/pact-js/tree/feat/v3.0.0/> (v10.0.0-beta.60). Follow the roadmap progress.
 
 Chat with us in: [#pact-js](https://pact-foundation.slack.com/archives/C9VBGLUM9)
 
 ### Rust
 
-Pact FFI 0.3.3 was released https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.3.3 which brought in [add retries to the provider state change calls](https://github.com/pact-foundation/pact-reference/commit/18118e8280bd1da2d89d0e366d81c6a4628c4911) along with some bug fixes
+Pact FFI 0.3.3 was released <https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.3.3> which brought in [add retries to the provider state change calls](https://github.com/pact-foundation/pact-reference/commit/18118e8280bd1da2d89d0e366d81c6a4628c4911) along with some bug fixes
 
 Chat with us in: [#pact-rust](https://pact-foundation.slack.com/archives/CA2S7E6KC)
 
@@ -69,36 +69,36 @@ You are all awesome
 
 Big call out to [Dave Clissold](https://github.com/DaveClissold) who performed the first two PR’s in this list, which resolved one of the most active outstanding [issues](https://github.com/pact-foundation/pact-js/issues/304) in Pact-JS and indeed across the pact-foundation. It was 3 years old, and shows how difficult it can be to get changes in, with ever-changing demands, but you can get involved, and help deliver the features you want now, and we can help guide you along
 
-- https://github.com/pact-foundation/pact-js/pull/873
-- https://github.com/pact-foundation/pact-js/pull/875
-- https://github.com/pact-foundation/pact-go/pull/209
-- https://github.com/pact-foundation/pact-js/pull/882
-- https://github.com/pactflow/example-bi-directional-consumer-mountebank/pull/6
-- https://github.com/pact-foundation/pact_broker/pull/569
+- <https://github.com/pact-foundation/pact-js/pull/873>
+- <https://github.com/pact-foundation/pact-js/pull/875>
+- <https://github.com/pact-foundation/pact-go/pull/209>
+- <https://github.com/pact-foundation/pact-js/pull/882>
+- <https://github.com/pactflow/example-bi-directional-consumer-mountebank/pull/6>
+- <https://github.com/pact-foundation/pact_broker/pull/569>
 
 ### Pull Requests – Docs
 
 Much respect to Eduardo Lopez for [adding illustrations to our docs](https://github.com/pact-foundation/docs.pact.io/pull/152), to help guide people around the OSS Broker UI, it’s not all about the code, and there is always a need to keep our documentation up to date and consistent. Found a snag, patch it up with a new PR and get some committer kudos. It can be as easy as adding screenshots, and it will make a massive difference
 
-- https://github.com/pact-foundation/pact-provider-verifier/pull/83
-- https://github.com/pact-foundation/docs.pact.io/pull/152
-- https://github.com/pact-foundation/docs.pact.io/pull/151
-- https://github.com/pact-foundation/pact-jvm/pull/1571
-- https://github.com/pact-foundation/docs.pact.io/pull/152
-- https://github.com/pactflow/swagger-mock-validator/pull/6
-- https://github.com/pact-foundation/docs.pact.io/pull/153
-- https://github.com/pact-foundation/pact-go/pull/204
-- https://github.com/pact-foundation/docs.pact.io/pull/154
-- https://github.com/pact-foundation/pact-net/pull/411
+- <https://github.com/pact-foundation/pact-provider-verifier/pull/83>
+- <https://github.com/pact-foundation/docs.pact.io/pull/152>
+- <https://github.com/pact-foundation/docs.pact.io/pull/151>
+- <https://github.com/pact-foundation/pact-jvm/pull/1571>
+- <https://github.com/pact-foundation/docs.pact.io/pull/152>
+- <https://github.com/pactflow/swagger-mock-validator/pull/6>
+- <https://github.com/pact-foundation/docs.pact.io/pull/153>
+- <https://github.com/pact-foundation/pact-go/pull/204>
+- <https://github.com/pact-foundation/docs.pact.io/pull/154>
+- <https://github.com/pact-foundation/pact-net/pull/411>
 
 ### Pull Requests – Maintenance Stuff
 
 Shout out to [Artur Neumann](https://github.com/individual-it), for being a pivotal member in supporting the pact-js beta rollout and helping make Matt’s life a little easier.
 
-- https://github.com/pact-foundation/pact-python/pull/297
-- https://github.com/pact-foundation/pact-php/pull/263
-- https://github.com/pact-foundation/pact-js/pull/885
-- https://github.com/pact-foundation/pact-js/pull/883
+- <https://github.com/pact-foundation/pact-python/pull/297>
+- <https://github.com/pact-foundation/pact-php/pull/263>
+- <https://github.com/pact-foundation/pact-js/pull/885>
+- <https://github.com/pact-foundation/pact-js/pull/883>
 
 ### Community Spotlight – Mike Geeves
 
