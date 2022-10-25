@@ -37,8 +37,7 @@ and fast. Here's a roundup of the top merged PRs.
 
 You don't have to start writing code to get involved. There's always a
 raft of open pull requests eagerly awaiting review. You can check out
-the full list
-[here](https://github.com/pulls?q=is%3Aopen+is%3Apr+org%3Apact-foundation+archived%3Afalse+),
+the full list [here](https://github.com/pulls?q=is%3Aopen+is%3Apr+org%3Apact-foundation+archived%3Afalse+),
 but I've pulled out some of the juiciest ones, which will make a big
 impact when they land. Any help on these would be greatly appreciated!
 
@@ -67,9 +66,10 @@ The following documentation is now live, or updated on the site:
   - See it [👉 here](https://docs.pact.io/implementation_guides/pact_specification)
 - **Pact-Plugins**
   - The Pact plugins docs are now syncing from their
-    readme, and displayed alongside our other Pact tooling. (Join us for
-    the official launch next month.)
-  - See it [👉 here](https://docs.pact.io/implementation_guides/pact_plugins)
+    readme, and displayed alongside our other Pact tooling.
+    - See it [👉 here](https://docs.pact.io/implementation_guides/pact_plugins)
+  - Join us for the official launch next month
+    - You can checkout the details and register [👉 here](/events/plugins-framework-launch)
 - **Webhook template library**
   - Updated to use the new contract requiring verification published event. We'd love your help to add
     new ones to the list!
@@ -89,7 +89,7 @@ The following documentation is now live, or updated on the site:
 
 ## Community corner - member shout outs
 
-**Paulo Gonçalves**
+### Paulo Gonçalves
 
 We know it can be difficult to visualise the path to Pact Nirvana, the
 recommend CI/CD setup for your Pact integrations. Contributors have been
@@ -109,14 +109,14 @@ free to use!*
 PLUS extra kudos to Paulo, who delivered a [contract testing workshop entirely in Spanish](https://www.youtube.com/watch?v=1c2JmM9dafA) for
 our Spanish-speaking friends!
 
-### **Eric Deandrea and Holly Cummins**
+### Eric Deandrea and Holly Cummins
 
 Many thanks to **[Eric Deandrea](https://twitter.com/edeandrea) and [Holly Cummins](https://twitter.com/holly_cummins),** who co-delivered a fantastic, funny talk at Devoxx Belgium on "[How to avoid common pitfalls with modern microservices testing](https://www.youtube.com/watch?v=vYwkDPrzqV8)". I enjoyed watching this, and think challenging mental models is a wonderful way to break down an often complex and misunderstood subject
 
 Holly has been particularly active whilst she worked in the IBM Garage,
 so it's wonderful to see her delivering fantastic talks.
 
-### **Liran Tal**
+### Liran Tal
 
 A talented Developer Advocate, **[Liran Tal](https://twitter.com/liran_tal)** at Synk is a long-time
 friend of the Pact Open Source Foundation. He often tours the conference
@@ -155,8 +155,8 @@ plugin](https://docs.pact.io/implementation_guides/pact_plugins/docs/writing-plu
 - such as Avro or GraphQL content type or a Websockets transport.
 
 If this sounds like something you'd like to know more about, join us
-next month to learn about the Plugin Framework and how you can get
-involved.
+next month at our launch event to learn about the Plugin Framework and how you can get
+involved. You can checkout the details and register [👉 here](/events/plugins-framework-launch)
 
 Whether you've participated before or are ready to take the first
 plunge, the team and I are here to support you! Need extra convincing? I
