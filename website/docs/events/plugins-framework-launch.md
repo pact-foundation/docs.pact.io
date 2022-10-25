@@ -1,8 +1,7 @@
 ---
 title: Customise contract testing for you with the new Pact Plugin Framework
 tags:
-  - Demo
-  - Getting started
+  - webinar
 ---
 
 import Highlight from '../../src/components/Highlight';
