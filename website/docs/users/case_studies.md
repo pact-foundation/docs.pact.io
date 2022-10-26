@@ -8,9 +8,13 @@ We have some great case studies written by our users for you read, just click on
 
 ## Boost Insurance
 
+> Boost Insurance sees 80% increase in service stability with Pactflow contract testing.
+
 <a href="./case_studies/case_study_boostinsurance"><img src="/img/logos/brand/boost-insurance-logo.svg" alt="Boost insurance Logo" width="150" /></a>
 
 ## M1 Finance
+
+> How hypergrowth FinTech, M1 Finance rapidly rolled out contract testing with Pactflow.
 
 <a href="./case_studies/case_study_m1finance"><img src="/img/logos/brand/m1-logo-dark.svg" alt="M1 finance Logo" width="150" /></a>
 

@@ -88,5 +88,41 @@
   {
     "caption": "John Lewis & Partners",
     "image": "/img/logos/brand/john-lewis.png"
+  },
+  {
+    "caption": "M1 Finance",
+    "image": "/img/logos/brand/m1-logo-dark.svg"
+  },
+  {
+    "caption": "Boost Insurance",
+    "image": "/img/logos/brand/boost-insurance-logo.svg"
+  },
+  {
+    "caption": "Booking.com",
+    "image": "/img/logos/brand/bookingdotcom.png"
+  },
+  {
+    "caption": "ASOS",
+    "image": "/img/logos/brand/asos.svg"
+  },
+  {
+    "caption": "IBM",
+    "image": "/img/logos/brand/ibm.png"
+  },
+  {
+    "caption": "Contentful",
+    "image": "/img/logos/brand/contentful.png"
+  },
+  {
+    "caption": "Die Mobiliar",
+    "image": "/img/logos/brand/die-mobiliar.png"
+  },
+  {
+    "caption": "IHS Markit",
+    "image": "/img/logos/brand/ihsmarkit.png"
+  },
+  {
+    "caption": "Pager",
+    "image": "/img/logos/brand/pager.png"
   }
 ]
