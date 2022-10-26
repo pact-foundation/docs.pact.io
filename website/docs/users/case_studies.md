@@ -50,7 +50,7 @@ You can see a list community articles [here](blogs_videos_and_articles), but her
 
 > Contract Tests vs Functional Tests in a World of Squads
 
-<a href="https://www.youtube.com/watch?v=SAtXTT214ro&feature=youtu.be"><img src="/img/logos/brand/asos.svg" alt="John Lewis & Partners Logo" width="150" /></a>
+<a href="https://www.youtube.com/watch?v=SAtXTT214ro&feature=youtu.be"><img src="/img/users/asos.png" alt="Asos Logo" width="150" /></a>
 
 ### John Lewis (retail)
 
