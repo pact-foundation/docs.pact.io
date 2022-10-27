@@ -106,8 +106,8 @@ safely, and more frequently.
 *Paulo to continue to create quality software content, which is 100%
 free to use!*
 
-PLUS extra kudos to Paulo, who delivered a [contract testing workshop entirely in Spanish](https://www.youtube.com/watch?v=1c2JmM9dafA) for
-our Spanish-speaking friends!
+PLUS extra kudos to Paulo, who delivered a [contract testing workshop entirely in Portuguese](https://www.youtube.com/watch?v=1c2JmM9dafA) for
+our Portuguese-speaking friends!
 
 ### Eric Deandrea and Holly Cummins
 
