@@ -118,13 +118,13 @@ so it's wonderful to see her delivering fantastic talks.
 
 ### Liran Tal
 
-A talented Developer Advocate, **[Liran Tal](https://twitter.com/liran_tal)** at Synk is a long-time
+A talented Developer Advocate, **[Liran Tal](https://twitter.com/liran_tal)** at Snyk is a long-time
 friend of the Pact Open Source Foundation. He often tours the conference
 circuit in his easily recognizable green hat.
 
 Liran created the incredible [**Comprehensive Guide to Contract Testing
 APIs in a Service Oriented
-Architecture**](https://lirantal.medium.com/a-comprehensive-guide-to-contract-testing-apis-in-a-service-oriented-architecture-5695ccf9ac5a)"**.**
+Architecture**](https://www.lirantal.com/blog/a-comprehensive-guide-to-contract-testing-apis-in-a-service-oriented-architecture-5695ccf9ac5a)"**.**
 He's also the author of
 [awesome-contract-testing](https://github.com/lirantal/awesome-contract-testing)
 because, as you already know, contract testing is AWESOME! 👌
