@@ -4,6 +4,23 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.16 - Bugfix Release
+
+* 4d7a28bbf - fix: replace AssertJ with Hamcrest (Ronald Holshausen, Thu Oct 27 10:02:07 2022 +1100)
+* b4ff3a854 - feat: protect json body generation against loop for cicly reference (Samuel, Fri Oct 21 16:56:16 2022 +0200)
+* 72f9193ba - feat: add method to setup content type body matching in the consumer DSL #1623 (Ronald Holshausen, Wed Oct 26 15:14:40 2022 +1100)
+* 8bd14d589 - feat: support MessagePact with a string as a content #1619 (Ronald Holshausen, Wed Oct 26 13:22:28 2022 +1100)
+* 86813ba68 - feat: Support system properties or environment variables for consumer and provider annotation with JUnit4 provider tests #528 #1616 (Ronald Holshausen, Wed Oct 26 12:21:38 2022 +1100)
+* aabee8c44 - fix:  queryMatchingDatetime creates invalid genetator #1612 (Ronald Holshausen, Wed Oct 26 10:18:41 2022 +1100)
+* fc7e13e87 - fix: write empty bodies to the Pact file #1611 (Ronald Holshausen, Tue Oct 25 18:21:14 2022 +1100)
+* 870a99956 - feat: Support generators with URI FORM encoded bodies #1610 (Ronald Holshausen, Tue Oct 25 16:47:55 2022 +1100)
+* 719f07b9b - feat: add capabilityi to build json body based on data class required constructor fields (Samuel, Fri Oct 21 16:02:57 2022 +0200)
+* d1e76e376 - Make PactVerificationTask as much ready as possible for configuration cache (Marco Gomiero, Sat Oct 15 12:42:19 2022 +0200)
+* 1fd9c0901 - bump actions/setup-java to v3 (Nikolas Grottendieck, Sun Oct 16 13:34:01 2022 +0200)
+* 0a804b139 - bump org.json:json version to latest (Nikolas Grottendieck, Sun Oct 16 13:17:02 2022 +0200)
+* 0a23caba1 - Make PactCanIDeployTask compatible with Gradle Configuration Cache (Marco Gomiero, Mon Oct 10 23:19:53 2022 +0200)
+* e3dd8bf5d - Make PactPublishTask compatible with Gradle Configuration Cache (Marco Gomiero, Mon Oct 10 21:50:52 2022 +0200)
+
 ## 4.3.15 - Bugfix Release
 
 * 873b0e5b3 - Use Thread Context ClassLoader to find test resources (Holly Cummins, Sat Sep 17 12:36:48 2022 +0100)
