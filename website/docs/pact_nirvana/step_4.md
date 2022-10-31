@@ -15,7 +15,26 @@ The [Pact Broker](https://github.com/pact-foundation/pact_broker) is a service t
 
 While you can use Pact without a Pact Broker, using one allows you to get the most out of Pact. Without the Broker, you will have to work out how to create your own feedback loop that lets you know the results of the pact verifications, and your pacts will not enable to you release your services independently and safely using the `can-i-deploy` tool \(more on this later\).
 
-> **Quick Start**
+### Sharing the contracts with the provider team via a broker
+
+> Sharing is caring
+
+Now that you have created and run your consumer tests, producing a contract \(the pact file\) as an artefact.
+You've shared it with the team responsible for managing the Order API.
+They can confirm they meet all of the expectations set in it. 
+
+There are multiple ways to [share pacts](getting_started/sharing_pacts.md), but the recommended approach is to use a [Pact Broker](pact_broker/) as it enables powerful automation workflows.
+
+There are two flavours. 
+
+- The Pact Broker is an open source tool that requires you to deploy, administer and host it yourself. 
+- The Pactflow Broker is plug-and-play option, that we've created [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=five_minute_guide), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
+
+> To get started for free, you can sign up to our Developer Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=five_minute_guide_dev_plan).
+
+We will get started with the Open source broker, at this point in the demo, and once you have a full workflow, we will get you setup with a free hosted Pact Broker from pactflow.io
+
+> **Quick Start with Pactflow**
 >
 > The Pact Broker is an open source tool that requires you to deploy, administer and host it yourself. If you would prefer a plug-and-play option, we've created [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=effective_pact_setup), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
 >
@@ -72,6 +91,13 @@ For each of the next steps, you will need to set the following variables to your
 * `PACT_BROKER_PASSWORD` # Pact Broker Only
 * `PACT_BROKER_TOKEN` # Pactflow Broker Only
 
+
+Copy this file and run `docker-compose up -d`, once it is running you can visit it at http://localhost:8000 and login with pact_workshop/pact_workshop
+
+```js reference
+https://github.com/YOU54F/path-to-pact-nirvana/blob/main/Step_03_GetAPactBroker/docker-compose.yml
+```
+
 ### B. Manually publish the pact to the Pact Broker
 
 Now that things in are a fairly stable state, you can start taking advantage of the Pact Broker to manage the
@@ -96,3 +122,21 @@ Now you can see if you can run your provider tests, this time pulling the pact f
 but from the broker. Reconfigure your provider project to get the latest pact for each of its consumers from the broker.
 
 If you are using Pactflow - see <https://docs.pactflow.io/#provider> for how to configure your provider in each respective language implementation
+
+> See folder ./Step_05_VerifyYourFirstPactFromABrokerLocally
+
+Once your pact is uploaded, grab the pact file URL.
+
+run you test with `PACT_URL=your_url npm run test:provider`
+
+We will setup this task to run later via a webhook, so that it runs when the consumer pact file changes. We can publish our results back to the broker.
+
+However we would normally do that via CI, you can trigger it by setting an env var
+
+`PACT_URL=your_url PACT_BROKER_PUBLISH_VERIFICATION_RESULTS=true npm run test:provider`
+
+```js reference
+https://github.com/YOU54F/path-to-pact-nirvana/blob/main/Step_05_VerifyYourFirstPactFromABrokerLocally/provider/provider.spec.js
+```
+
+As verification results can affect things, lets run it from CI instead, so every time we make a change in our codebase, we can upload our pacts to the broker, and verify them

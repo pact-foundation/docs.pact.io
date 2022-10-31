@@ -188,10 +188,20 @@ const siteConfig = {
     twitterImage: 'img/undraw_tweetstorm.svg',
 
     prism: {
-      additionalLanguages: ['ruby', 'csharp']
-    }
-    // ...
+      // default list https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
+      // additional supported langs https://prismjs.com/#supported-languages
+      additionalLanguages: [
+        "powershell",
+        "ruby",
+        "csharp",
+        "java",
+        "docker",
+        "groovy",
+        "scala"
+      ],
+    },
   },
+  themes: ["@you54f/theme-github-codeblock"], // switch to @saucelabs/theme-github-codeblock when merged https://github.com/saucelabs/docusaurus-theme-github-codeblock/pull/19
   /* path to images for header/footer */
   favicon: 'img/favicon.ico',
 

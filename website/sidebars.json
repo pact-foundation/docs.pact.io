@@ -251,6 +251,9 @@
         "getting_started",
         "getting_started/how_pact_works",
         "5-minute-getting-started-guide",
+        "5-minute-path-nirvana",
+        "5-minute-path-to-nirvana",
+        "pact_broker/code_samples",
         "getting_started/feature_toggles"
       ]
     },

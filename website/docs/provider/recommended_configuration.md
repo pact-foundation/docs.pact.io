@@ -50,6 +50,7 @@ Enabling the [pending pacts](/pact_broker/advanced_topics/pending_pacts) feature
 
 Including [work in progress pacts](/pact_broker/advanced_topics/wip_pacts) allows newly changed pacts to be verified without having to manually change the configuration. You may wish to only enable this feature on your main line of development, as if you are on a branch, you are probably either trying to fulfill a specific pact, or you aren't changing any Pact related code at all.
 
+## Verifying pacts
 ### Examples
 
 <Tabs
@@ -203,7 +204,7 @@ Including [work in progress pacts](/pact_broker/advanced_topics/wip_pacts) allow
   </TabItem>
 </Tabs>
 
-## Verification triggered by a contract requiring verification published
+### Verification triggered by a contract requiring verification published
 
 When a pact has changed, a webhook in the Pact Broker will kick off a build of the provider, passing through the URL of the pact that has changed. See [this](/pact_nirvana/step_6#add-a-new-provider-verification-job) section of the CI/CD set up guide for more information on this.
 

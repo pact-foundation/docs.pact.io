@@ -36,26 +36,74 @@ If you use feature branches for your consumer development, it is recommended to 
 If you have done it correctly, then the consumer contract tests should run as part of your regular test run. But you still need to modify your PR validation job to publish the pact, correctly identifying the consumer version and apply a tag with the PR branch name
 
 1. Configure your consumer build to run the Pact tests and publish its pact to the Broker as part of its main build \(consult the documentation for your chosen language\). Consumer Pact tests typically run after the unit tests, and before deploying to a test environment.
-2. Configure a tag name to be used for every consumer build that publishes a pact (again, see your Pact language docs). The recommended default is to dynamically determine and use the name of your git/svn branch. If this doesn’t work for you, then you could hardcode it to something like "master" or "stable". It will make the configuration simpler if each consumer and provider uses the same tag name for the stable "main line" of development, so it's best to decide on this together.
+2. Configure a branch name to be used for every consumer build that publishes a pact (again, see your Pact language docs). The recommended default is to dynamically determine and use the name of your git/svn branch. If this doesn’t work for you, then you could hardcode it to something like "master" or "stable". Your consumer and provider can be configured to use different name branches, it is just important to set the `mainBranch` property on each application (`pacticipant`) in the pact broker
 
-### B. Modify the consumer commit pipeline to tag with master branch
+### B. Modify the consumer commit pipeline to publish with main branch
 
 After you have set up the consumer PR pipeline to publish pacts, you need to also modify your consumer's main
 branch commit pipeline to indicate that a particular consumer version is now in the main branch.
 
-### C. Add a step at the beginning of the pipeline to apply the tag with the name of your main branch (e.g. master, trunk or main)
+### C. Add a step at the beginning of the pipeline to apply the name of your main branch (e.g. master, trunk or main)
 
 The provider verification needs this information so it can get the latest pact that has been committed to the main
 branch. If it gets the latest pact, it may get a pact that is committed on a feature branch and not ready for verification.
 
+### **What it looks like***
+
+We need a CI workflow
+
+```js reference
+https://github.com/YOU54F/path-to-pact-nirvana/blob/main/Step_06_PublishYourFirstPactFromCI/.github/workflows/build.yml
+```
+
+We run it via a script, that way we can move CI providers easily, Pact works in any CI/CD system
+
+```js reference
+https://github.com/YOU54F/path-to-pact-nirvana/blob/main/Step_06_PublishYourFirstPactFromCI/Makefile
+```
+
 ### D. Configure pact to be verified when provider changes
 
-Once the consumer is publishing its pacts and is tagging them with the correct branch names, you can now add Pact verification to your provider PR pipeline.
+Once the consumer is publishing its pacts and is associating them with the correct branch names, you can now add Pact verification to your provider PR pipeline.
 
-Pact verification should run as part of your regular unit test run. But you should change the tag it verifies against to be the name of the consumer's main branch instead of `latest`.
+Pact verification should run as part of your providers regular unit test run. We use consumer version selectors to determine which pacts to select
 
-1. Configure your provider build to fetch the pact(s) from the broker and publish the verification results as part of its main build \(consult the documentation for your chosen language\). This would typically happen after the unit tests, and before deploying to a test environment. You can find the recommended configuration [here](/provider/recommended_configuration#verification-triggered-by-provider-change).
-2. In the provider verification configuration, change the pact that is being verified from the latest pact to the latest pact for the stable tag (see the relevant documentation for your library). This will help keep your provider builds green.
+1. Configure a new provider build to fetch the pact(s) from the broker and publish the verification results as part of its main build \(consult the documentation for your chosen language\). This would typically happen after the unit tests, and before deploying to a test environment. You can find the recommended configuration [here](/provider/recommended_configuration#verification-triggered-by-provider-change).
+2. In the provider verification configuration, setup the consumer version selectors, so the pact that is being verified is the latest for targeted branches and later environments. This will help keep your provider builds green.
+
+### **What it looks like***
+
+We need a workflow file for our provider, it looks very similar to our consumer ci, this workflow file will run every time the provider code changes
+
+```js reference
+https://github.com/YOU54F/path-to-pact-nirvana/blob/main/Step_07_VerifyYourFirstPactFromCI/.github/workflows/build.yml
+```
+
+We run it via a script, that way we can move CI providers easily, Pact works in any CI/CD system.
+
+You will note there are two tasks, `test_contract_requiring_verification` & `test_provider_change`
+
+```js reference
+https://github.com/YOU54F/path-to-pact-nirvana/blob/main/Step_07_VerifyYourFirstPactFromCI/Makefile
+```
+
+Lets update our original provider verification task to read from our Pact broker, this is our `test_contract_requiring_verification`, we wont run this now, it will be triggered later.
+
+```js reference
+https://github.com/YOU54F/path-to-pact-nirvana/blob/main/Step_07_VerifyYourFirstPactFromCI/provider/provider.consumerChange.spec.js
+```
+
+We are going to create a new provider CI task, this is designed to protect our provider, when they change
+
+```js reference
+https://github.com/YOU54F/path-to-pact-nirvana/blob/main/Step_07_VerifyYourFirstPactFromCI/provider/provider.providerChange.spec.js
+```
+
+Lets update our setup file, so we only run the specified test files
+
+```js reference
+https://github.com/YOU54F/path-to-pact-nirvana/blob/main/Step_07_VerifyYourFirstPactFromCI/package.json
+```
 
 ### Notes
 
