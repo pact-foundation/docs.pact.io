@@ -251,9 +251,27 @@
         "getting_started",
         "getting_started/how_pact_works",
         "5-minute-getting-started-guide",
-        "5-minute-path-nirvana",
-        "5-minute-path-to-nirvana",
-        "pact_broker/code_samples",
+        "15-minute-path-to-nirvana",
+        {
+          "Code Samples": [
+            {
+              "Consumer": [
+                "pact_broker/samples_consumer_publish"
+    
+              ]
+            },
+            {
+              "Provider": [
+                "pact_broker/samples_provider_verification",
+                "pact_broker/samples_provider_verification_contract_changed",
+                "pact_broker/samples_provider_verification_provider_changed",
+                "pact_broker/webhooks/template_library"
+  
+              ]
+            }
+          ]
+        },
+
         "getting_started/feature_toggles"
       ]
     },
