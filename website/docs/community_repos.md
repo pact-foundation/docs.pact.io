@@ -29,3 +29,8 @@ Please try to add
   - Transport Mechanism: HTTP
   - Supporting material
     - [How to avoid common pitfalls with modern microservices testing](https://www.youtube.com/watch?v=vYwkDPrzqV8) (Video, [slides](https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx/) also available)
+- [https://github.com/AndrewJanuary/pact-ruby-demo](https://github.com/AndrewJanuary/pact-ruby-demo)
+  - Description: A demonstration of Consumer Driven Contract Testing for a message based (non-HTTP) producer and consumer relationship using the [pact-message-ruby gem](https://github.com/pact-foundation/pact-message-ruby).
+  - Consumer Language: Ruby
+  - Provider Language: Ruby
+  - Transport Mechanism: Message
