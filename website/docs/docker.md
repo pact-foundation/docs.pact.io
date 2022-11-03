@@ -14,7 +14,7 @@ We provide official containers to run common utilities as Docker images. All ima
 
 ## Running Pact on Docker
 
-If you want to run your Pact tests in Docker, please note the following following guidance.
+If you want to run your Pact tests in Docker, please note the following guidance.
 
 ### Requirements
 
