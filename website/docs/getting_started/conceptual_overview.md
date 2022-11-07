@@ -13,7 +13,7 @@ This is called a pact publication.
 
 Whenever the consumer changes, this is called a __consumer version__. The version is often identified by its git hash.
 You may also want to add other distinguishing information, such as the feature toggle name if you are using feature
-toggles or feature branches, if you are using feature branches.  In general, you should be uniquely identify each version of the consumer that may be deployed to an environment which may require a different contract.
+toggles or feature branches, if you are using feature branches.  In general, you should uniquely identify each version of the consumer that may be deployed to an environment which may require a different contract.
 
 A given pact published by the consumer may or may not change actual contents of the pact (e.g. by adding a request
 parameter, or changing the expected results).  If it does change, then the pact gets a new __pact version__.
