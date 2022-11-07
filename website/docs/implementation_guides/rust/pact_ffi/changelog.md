@@ -6,6 +6,13 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 
 ## 0.3.13 - Bugfix Release
 
+* 577824e7 - fix: Upgrade pact_models to 1.0 and pact-plugin-driver to 0.1.15 to fix cyclic dependency issue (Ronald Holshausen, Mon Nov 7 11:14:20 2022 +1100)
+* 6ad00a5d - fix: Update onig to latest master to fix  Regex Matcher Fails On Valid Inputs #214 (Ronald Holshausen, Fri Nov 4 15:23:50 2022 +1100)
+* d976db0c - fix: panicked at 'called  on a  value' when FFI LevelFilter == Off #226 (Ronald Holshausen, Fri Nov 4 13:47:20 2022 +1100)
+* 9dad5d2a - fix: ffi.pactffi_logger_attach_sink causes seg fault if log directory doesn't exist #226 (Ronald Holshausen, Fri Nov 4 12:26:15 2022 +1100)
+
+## 0.3.13 - Bugfix Release
+
 * eb505b7f - Merge pull request #221 from pact-foundation/feat/multiple-transports-in-ffi (Matt Fellows, Wed Oct 12 10:11:15 2022 +1100)
 * 965a1c41 - fix: Upgrade plugin driver to 0.1.13 (fixes issue loading plugin when there are multiple versions for the same plugin) (Ronald Holshausen, Wed Oct 5 17:29:37 2022 +1100)
 
