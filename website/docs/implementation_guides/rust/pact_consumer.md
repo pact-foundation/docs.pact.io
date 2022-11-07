@@ -14,7 +14,7 @@ This library provides a test DSL for writing consumer pact tests in Rust. It sup
 
 To use it, add it to your dev-dependencies in your cargo manifest:
 
-```
+```toml
 [dev-dependencies]
 pact_consumer = "0.9.8"
 ```
@@ -25,30 +25,33 @@ You can now write a pact test using the consumer DSL.
 use pact_consumer::prelude::*;
 use pact_consumer::*;
 
-#[test]
-fn a_service_consumer_side_of_a_pact_goes_a_little_something_like_this() {
-
-    // Define the Pact for the test (you can setup multiple interactions by chaining the given or upon_receiving calls)
-    let pact_runner = ConsumerPactBuilder::consumer("Consumer".to_string()) // Define the service consumer by name
-        .has_pact_with("Alice Service".to_string())                         // Define the service provider that it has a pact with
-        .given("there is some good mallory".to_string())                    // defines a provider state. It is optional.
-        .upon_receiving("a retrieve Mallory request".to_string())           // upon_receiving starts a new interaction
-            .path(s!("/mallory"))                                           // define the request, a GET (default) request to '/mallory'
-        .will_respond_with()                                                // define the response we want returned
-            .status(200)
-            .headers(hashmap!{ "Content-Type".to_string() => "text/html".to_string() })
-            .body(OptionalBody::Present("That is some good Mallory.".to_string()))
-        .build();
-
-    // Execute the run method to have the mock server run (the URL to the mock server will be passed in).
-    // It takes a closure to execute your requests and returns a Pact VerificationResult.
-    let result = pact_runner.run(&|url| {
-        let client = Client { url: url.clone(), .. Client::default() }; // You would use your actual client code here
-        let result = client.fetch("/mallory"); // we get our client code to execute the request
-        expect!(result).to(be_ok().value("That is some good Mallory."));
-        Ok(())
-    });
-    expect!(result).to(be_equal_to(VerificationResult::PactVerified)); // This means it is all good
+#[tokio::test]
+async fn a_service_consumer_side_of_a_pact_goes_a_little_something_like_this() {
+   let alice_service = PactBuilder::new("Consumer", "Alice Service")
+       // Start a new interaction. We can add as many interactions as we want.
+       .interaction("a retrieve Mallory request", "", |mut i| {
+           // Defines a provider state. It is optional.
+           i.given("there is some good mallory");
+           // Define the request, a GET (default) request to '/mallory'.
+           i.request.path("/mallory");
+           // Define the response we want returned. We assume a 200 OK
+           // response by default.
+           i.response
+               .content_type("text/plain")
+               .body("That is some good Mallory.");
+           // Return the interaction builder back to the pact framework
+           i
+       }).start_mock_server(None);
+  
+   // You would use your actual client code here.
+   let mallory_url = alice_service.path("/mallory");
+   let mut response = reqwest::get(mallory_url).await.expect("could not fetch URL")
+     .text().await.expect("Could not read response body");
+   assert_eq!(response, "That is some good Mallory.");
+  
+   // When `alice_service` goes out of scope, your pact will be validated,
+   // and the test will fail if the mock server didn't receive matching
+   // requests.
 }
 ```
 
@@ -79,8 +82,8 @@ file.
 use pact_consumer::prelude::*;
 use pact_consumer::*;
 
-#[tokio::test]
-async fn a_message_consumer_side_of_a_pact_goes_a_little_something_like_this() {
+#[test]
+fn a_message_consumer_side_of_a_pact_goes_a_little_something_like_this() {
 
     // Define the Pact for the test (you can setup multiple interactions by chaining the given or message_interaction calls)
     // For messages we need to use the V4 Pact format.
@@ -89,7 +92,7 @@ async fn a_message_consumer_side_of_a_pact_goes_a_little_something_like_this() {
       // defines a provider state. It is optional.
       .given("there is some good mallory".to_string())                                           
       // Adds an interaction given the message description and type.
-      .message_interaction("Mallory Message", "core/interaction/message", |mut i| async move { 
+      .message_interaction("Mallory Message", "core/interaction/message", |mut i| { 
         // Can set the test name (optional)
         i.test_name("a_message_consumer_side_of_a_pact_goes_a_little_something_like_this");
         // Set the contents of the message. Here we use a JSON pattern, so that matching rules are applied
@@ -98,8 +101,7 @@ async fn a_message_consumer_side_of_a_pact_goes_a_little_something_like_this() {
         }));
         // Need to return the mutated interaction builder
         i
-      })
-      .await;
+      });
 
     // This will return each message configured with the Pact builder. We need to process them
     // with out message handler (it should be the one used to actually process your messages).
@@ -126,15 +128,15 @@ use pact_consumer::*;
 use expectest::prelude::*;
 use serde_json::{Value, from_slice};
 
-#[tokio::test]
-async fn a_synchronous_message_consumer_side_of_a_pact_goes_a_little_something_like_this() {
+#[test]
+fn a_synchronous_message_consumer_side_of_a_pact_goes_a_little_something_like_this() {
 
   // Define the Pact for the test (you can setup multiple interactions by chaining the given or message_interaction calls)
   // For synchronous messages we also need to use the V4 Pact format.
   let mut pact_builder = PactBuilder::new_v4("message-consumer", "message-provider"); // Define the message consumer and provider by name
   pact_builder
     // Adds an interaction given the message description and type.
-    .synchronous_message_interaction("Mallory Message", "core/interaction/synchronous-message", |mut i| async move {
+    .synchronous_message_interaction("Mallory Message", "core/interaction/synchronous-message", |mut i| {
       // defines a provider state. It is optional.
       i.given("there is some good mallory".to_string());
       // Can set the test name (optional)
@@ -150,8 +152,7 @@ async fn a_synchronous_message_consumer_side_of_a_pact_goes_a_little_something_l
         }));
       // Need to return the mutated interaction builder
       i
-    })
-    .await;
+    });
 
   // For our test we want to invoke our message handling code that is going to initialise the request
   // to the provider with the request message. But we need some mechanism to mock the response
