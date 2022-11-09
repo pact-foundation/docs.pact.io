@@ -19,9 +19,8 @@ Join Matt & Yousaf at one of two live webinars to learn about the Pact Plugin Fr
 Register
 ---
 
-Session 1: Wed 15 Nov - 4pm EST; 1pm PST / Wed 16 Nov - 8am AEST - [Register Now](https://smartbear.zoom.us/webinar/register/WN_JnLf8Gm8TminRlZDkoZJXQ)
-
-Session 2: Wed 16 Nov - 10am BST / 9pm AEST - [Register Now](https://smartbear.zoom.us/webinar/register/WN_HESBWkhITTa5uaqCA0BGag)
+Session 1: Wed 30 Nov - 4pm EST; 1pm PST / Wed 30 Nov - 8am AEST - [Register Now](https://smartbear.zoom.us/webinar/register/WN_JnLf8Gm8TminRlZDkoZJXQ)
+Session 2: Wed 1 Dec - 10am BST / 9pm AEST - [Register Now](https://smartbear.zoom.us/webinar/register/WN_HESBWkhITTa5uaqCA0BGag)
 
 Note: we will record these sessions and email them the following day.
 
