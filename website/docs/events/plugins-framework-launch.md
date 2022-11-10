@@ -26,10 +26,15 @@ The industry has continued to innovate since Pact was created in 2013, and RESTf
 
 If you’ve been held up applying contract testing to a specific use case, consider the blockers abolished with the new Pact Plugin Framework! Now anyone can build a new component to use with contract testing without the burden of having to set up and manage the underlying framework.
 
+Register
+---
+
 Join Matt & Yousaf at one of two live webinars to learn about the Pact Plugin Framework, how you can now build your own plugin and ask any questions you may have. · 
 
-* Session 1: Wed 30 Nov - 4pm EST; 1pm PST / Wed 30 Nov - 8am AEST - [Register Now](https://smartbear.zoom.us/webinar/register/WN_JnLf8Gm8TminRlZDkoZJXQ)
-* Session 2: Wed 1 Dec - 10am BST / 9pm AEST - [Register Now](https://smartbear.zoom.us/webinar/register/WN_HESBWkhITTa5uaqCA0BGag)
+* Session 1: Wed 30 Nov - 4pm EST; 1pm PST / Thursday 1 Dec - 8am AEST
+  * [Register Now](https://smartbear.zoom.us/webinar/register/WN_JnLf8Gm8TminRlZDkoZJXQ)
+* Session 2: Wed 1 Dec - 10am BST / Thursday 1 Dec - 9pm AEST
+  * [Register Now](https://smartbear.zoom.us/webinar/register/WN_HESBWkhITTa5uaqCA0BGag)
 
 *Note: we will record these sessions and email them the following day.*
 
