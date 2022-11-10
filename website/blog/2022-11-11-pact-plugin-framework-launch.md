@@ -39,7 +39,7 @@ Hats off to [Ronald Holshausen](https://github.com/uglyog) who undertook the mam
 
 ## How this new capability works  
 
-Pact may have been applied to one team or application using RESTful microservices but another using GraphQL, as been unable to get the [complete benefits of contract testing](ttps://pactflow.io/blog/what-is-contract-testing/). The Plugin Framework is the answer – developers can build plugins for their custom needs, whether they open source the plugin or keep it closed source for in house only usage.  
+Pact may have been applied to one team or application using RESTful microservices but another using GraphQL, as been unable to get the [complete benefits of contract testing](https://pactflow.io/blog/what-is-contract-testing/). The Plugin Framework is the answer – developers can build plugins for their custom needs, whether they open source the plugin or keep it closed source for in house only usage.  
 
 For those familiar with Pact, this is a substantial innovation. By having a single generic interface, the Plugin Framework side steps the problems of requiring the input of core maintainers to support a new feature and its constituent concepts that must be built into each client language. 
 
