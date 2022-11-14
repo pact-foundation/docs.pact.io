@@ -23,7 +23,7 @@ Loved by thousands of development teams globally, Pact was originally created to
 
 As architectures have evolved, organisations find that the existing Pact contract testing framework may not support all of their use cases. 
 
-The industry has continued to innovate since Pact was created in 2013, and RESTful microservices are now only one of the key use cases today. According SmartBear’s 2021 State of Quality [report](https://smartbear.com/state-of-software-quality/api/tools/#api-protocols), we are seeing the growth of: 
+The industry has continued to innovate since Pact was created in 2013, and RESTful microservices are now only one of the key use cases today. According to SmartBear’s 2021 State of Quality [report](https://smartbear.com/state-of-software-quality/api/tools/#api-protocols), we are seeing the growth of: 
 
 * Protocols such as Protobufs and GraphQL (80% of organisations run multi-protocol and more than 60% of organisations manage three or more) 
 * Transports such as gRPC, Websockets  and MQTT 
@@ -35,11 +35,11 @@ The industry has continued to innovate since Pact was created in 2013, and RESTf
 
 The Pact maintainers have been acutely aware of the changing trends – we [blogged](https://pactflow.io/blog/extending-pact-with-plugins/) about the idea for the Pact Plugin Framework in 2021 and have been actively chipping award at the [roadmap item](https://github.com/pactflow/roadmap/issues/33) to enable developers everywhere to use contract testing where they previously couldn’t. 
 
-Hats off to [Ronald Holshausen](https://github.com/uglyog) who undertook the mammoth task of standing up the Framework. With this, development teams now can now harness the power of contract testing where they previously couldn’t, applying it to unique and emerging use cases and technologies - no matter the scale or the language, transport, protocol or content type.  
+Hats off to [Ronald Holshausen](https://github.com/uglyog) who undertook the mammoth task of standing up the Framework. With this, development teams can now harness the power of contract testing where they previously couldn’t, applying it to unique and emerging use cases and technologies - no matter the scale or the language, transport, protocol or content type.  
 
 ## How this new capability works  
 
-Pact may have been applied to one team or application using RESTful microservices but another using GraphQL, as been unable to get the [complete benefits of contract testing](https://pactflow.io/blog/what-is-contract-testing/). The Plugin Framework is the answer – developers can build plugins for their custom needs, whether they open source the plugin or keep it closed source for in house only usage.  
+Pact may have been applied to one team or application using RESTful microservices but another using GraphQL, have been unable to get the [complete benefits of contract testing](https://pactflow.io/blog/what-is-contract-testing/). The Plugin Framework is the answer – developers can build plugins for their custom needs, whether they open source the plugin or keep it closed source for in house only usage.  
 
 For those familiar with Pact, this is a substantial innovation. By having a single generic interface, the Plugin Framework side steps the problems of requiring the input of core maintainers to support a new feature and its constituent concepts that must be built into each client language. 
 
