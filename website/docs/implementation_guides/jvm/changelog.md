@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.3.17 - Maintenance Release
+
+* da6efdec9 - GH-1632 invent default auth header with additional tests (Artem Ptushkin, Fri Nov 4 15:29:26 2022 +0100)
+
 ## 4.3.16 - Bugfix Release
 
 * 4d7a28bbf - fix: replace AssertJ with Hamcrest (Ronald Holshausen, Thu Oct 27 10:02:07 2022 +1100)
