@@ -955,7 +955,7 @@ Failures:```</div></div></div><br/>
 <div><a id="1633608177.159500"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1633608177.159500" ><div class="time">2021-10-07 12:02</div></a><div class="msg">From what I can see, you must have an invalid DER certificates in your system which is causing that issue. Looking at the <a href="https://docs.rs/reqwest/0.11.4/src/reqwest/async_impl/client.rs.html#1695-1696">https://docs.rs/reqwest/0.11.4/src/reqwest/async_impl/client.rs.html#1695-1696</a>, it?s assuming that the native certs library doesn?t fail (hence the panic), but that just defers to this <a href="https://github.com/rustls/rustls-native-certs/blob/fb25baaf27c4e70793c1600c844d6a644d0813c0/src/rustls.rs#L31">https://github.com/rustls/rustls-native-certs/blob/fb25baaf27c4e70793c1600c844d6a644d0813c0/src/rustls.rs#L31</a>, which attempts to load each certificate into the trust store. but if ANY certificate is invalid, it instead bails out.
 
 That seems strange to me, but perhaps there is a good reason for that.</div></div></div><br/>
-<div><a id="1637365944.000200"><img src="https://secure.gravatar.com/avatar/33361ec7d9f0d7864ca5eaf139e7449f.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0016-72.png" /></a><div class="message"><div class="username">rholshausen</div><a style="text-decoration: none" href="#1637365944.000200" ><div class="time">2021-11-19 23:52</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1637365944.000200"><img src="https://secure.gravatar.com/avatar/3d118b71e69a37138c8e6cf474307507.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0016-72.png" /></a><div class="message"><div class="username">rholshausen</div><a style="text-decoration: none" href="#1637365944.000200" ><div class="time">2021-11-19 23:52</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
 <div><a id="1638396680.000300"><img src="https://avatars.slack-edge.com/2021-11-08/2692463631910_326d4058fe7a25fbbf74_72.png" /></a><div class="message"><div class="username">mike.geeves064</div><a style="text-decoration: none" href="#1638396680.000300" ><div class="time">2021-12-01 22:11</div></a><div class="msg">Ohh, that's novel, I left a reference for myself and actually found it again :joy:</div></div></div><br/>
 <div><a id="1641314358.002300"><img src="https://secure.gravatar.com/avatar/9f8196b3226c3638b967ba586ad7484f.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0024-72.png" /></a><div class="message"><div class="username">tien.xuan.vo</div><a style="text-decoration: none" href="#1641314358.002300" ><div class="time">2022-01-04 16:39</div></a><div class="msg">Is it true that if we use `pactffi_using_plugin` , then we have to use `pactffi_interaction_contents` , and we can't use other ffi functions like:
 ? `pactffi_message_with_contents`
@@ -1513,4 +1513,517 @@ This makes it super easy to convert other JSON structures to a Pact interaction.
 But you can see how the validation on this sort of structure would get super messy with plugins (and indeed, some of the features in v3). I?ll probably preserve it for HTTP pact, but I?d like a more type safe API going forward if possible. e.g. you shouldn?t be able to add an HTTP header to a message pact. Or, if using a different transport, you shouldn?t be configuring other things on the HTTP mock server</div></div></div><br/>
 <div><a id="1647819014.473919"><img src="" /></a><div class="message"><div class="username"></div><a style="text-decoration: none" href="#1647819014.473919" ><div class="time">2022-03-20 23:30</div></a><div class="msg"><a href="https://github.com/pact-foundation/pact-plugins">https://github.com/pact-foundation/pact-plugins</a></div></div></div><br/>
 <div><a id="1650309130.409529"><img src="https://secure.gravatar.com/avatar/e56972270335da29ddd62580416412c4.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0011-72.png" /></a><div class="message"><div class="username">lewiscowles</div><a style="text-decoration: none" href="#1650309130.409529" ><div class="time">2022-04-18 19:12</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1651243109.212969"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1651243109.212969" ><div class="time">2022-04-29 14:38</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1652118673.510459"><img src="https://avatars.slack-edge.com/2022-05-09/3501740885028_0927e4b769c57ee9769f_72.png" /></a><div class="message"><div class="username">orbit</div><a style="text-decoration: none" href="#1652118673.510459" ><div class="time">2022-05-09 17:51</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1653420048.714029"><img src="https://avatars.slack-edge.com/2022-02-04/3042827452823_04aefaa8271d55360355_72.jpg" /></a><div class="message"><div class="username">pact544</div><a style="text-decoration: none" href="#1653420048.714029" ><div class="time">2022-05-24 19:20</div></a><div class="msg">I've just raised a new FFI issue for a breaking change: <a href="https://github.com/pact-foundation/pact-reference/issues/196">https://github.com/pact-foundation/pact-reference/issues/196</a>
+
+I think it's really important as we want more and more libraries to be shipping on top of the FFI to have a really good regression test suite at the 'black box' level (i.e. using the FFI library itself from another language) and also to communicate breaking changes really clearly with maintainers.
+
+There has been no discussion on this channel about the change beforehand, no impact assessment/statement, no guidance on what to look out for afterwards, and I think we need to fix that. I think we need a more mature process around evolving the FFI and maintainers need to be a big part of that discussion.
+
+I just happened to notice that it had made logging unusable, and people are going to come to rely on that because they can't just set a breakpoint in their code or whatever, because it now all crosses an FFI boundary. This is the type of thing we need to discuss beforehand so that maintainers are aware they need to check things after upgrades, and ideally this should be found long before the FFI is released and people start upgrading to it.
+
+The big problem with the FFI approach is that the bugs will ultimately be reported at the client library level instead of in `pact-reference` itself. If I would've missed that and shipped it, the bug reports would've been raised against PactNet, even though nothing in PactNet changed and the fix doesn't need to be made to PactNet. This hurts the reputation of PactNet, me personally, and the pact ecosystem as a whole, despite it being something generally outside of my control.
+
+I apologise that that's a bit of a rant, but it's very frustrating to be surprised like that and I think we need to define an approach going forwards which prevents those surprises.</div></div></div><br/>
+<div><a id="1653420074.139979"><img src="https://avatars.slack-edge.com/2022-02-04/3042827452823_04aefaa8271d55360355_72.jpg" /></a><div class="message"><div class="username">pact544</div><a style="text-decoration: none" href="#1653420074.139979" ><div class="time">2022-05-24 19:21</div></a><div class="msg">Probably one for @yousafn</div></div></div><br/>
+<div><a id="1653423043.336759"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1653423043.336759" ><div class="time">2022-05-24 20:10</div></a><div class="msg">Really fair comments @pact544 - Rants are welcome, it is a safe space here.
+
+We do need to and have a duty to make sure the developer experience is on point for maintainers, as it can have direct and very real impact on end users who are using our libraries to protect their deployments.
+
+Appreciate your eagle eye, and I also noted an issue you raised against the pact-specification today aswell.
+
+Will take some time to digest, discuss and get something open arranged for us to attend, collect thoughts, agree a path forward.
+
+Apologies for the inconvenience!
+
+</div></div></div><br/>
+<div><a id="1653429014.094699"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1653429014.094699" ><div class="time">2022-05-24 21:50</div></a><div class="msg">There are actually a number of tests/examples for the FFI interface (including some c tests e.g. <a href="https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_ffi/examples/logging/src/main.c">https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_ffi/examples/logging/src/main.c</a>).
+
+But I think this behaviour is not included in that.
+
+I think it would be a good opportunity to revisit the test strategy here. We have discussed the idea of a BDD suite here that shows what the FFI does (ideally, there is also a standard client BDD test suite we have also that can be used to test each language. This could also work as a nice up-to-date feature matrix table)</div></div></div><br/>
+<div><a id="1653432204.407589"><img src="https://avatars.slack-edge.com/2022-05-24/3575003179924_6a8aaf418f225aff2252_72.jpg" /></a><div class="message"><div class="username">marti92</div><a style="text-decoration: none" href="#1653432204.407589" ><div class="time">2022-05-24 22:43</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1653433410.137719"><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /></a><div class="message"><div class="username">bethskurrie</div><a style="text-decoration: none" href="#1653433410.137719" ><div class="time">2022-05-24 23:03</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1653466887.875169"><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /></a><div class="message"><div class="username">uglyog</div><a style="text-decoration: none" href="#1653466887.875169" ><div class="time">2022-05-25 08:21</div></a><div class="msg">@pact544 can you please stay on the 0.2.x version. I'll let you know when 0.3.x is ok to use</div></div></div><br/>
+<div><a id="1653480437.189689"><img src="https://avatars.slack-edge.com/2021-11-08/2692463631910_326d4058fe7a25fbbf74_72.png" /></a><div class="message"><div class="username">mike.geeves064</div><a style="text-decoration: none" href="#1653480437.189689" ><div class="time">2022-05-25 12:07</div></a><div class="msg">(+1 for structured logging! :slightly_smiling_face:)</div></div></div><br/>
+<div><a id="1653489694.118169"><img src="https://avatars.slack-edge.com/2022-02-04/3042827452823_04aefaa8271d55360355_72.jpg" /></a><div class="message"><div class="username">pact544</div><a style="text-decoration: none" href="#1653489694.118169" ><div class="time">2022-05-25 14:41</div></a><div class="msg">I don't think structured logging solves the problem, because then that just pushes the problem of parsing and displaying it onto every client library.
+
+We want a consistent report in all the client libraries, and our method for that is to do it in the shared FFI.
+
+I can't stress enough how important these logs are. I've just migrated a codebase with 2283 consumer tests, where 68 were falling after the upgrade.
+
+I had to use the logs extensively because there are a number of breaking changes to track down, and the logs are the only place that give you the info you need to work that out.
+
+In my case, most of the failures were because the Ruby library doesn't validate query string parameters whereas the Rust library does. We had a few tests where the client sends a query parameter but the setup didn't include it, so now those tests fail.
+
+The logs are the **only** way you can find that out.</div></div></div><br/>
+<div><a id="1653495793.692369"><img src="https://avatars.slack-edge.com/2021-11-08/2692463631910_326d4058fe7a25fbbf74_72.png" /></a><div class="message"><div class="username">mike.geeves064</div><a style="text-decoration: none" href="#1653495793.692369" ><div class="time">2022-05-25 16:23</div></a><div class="msg">:disappointed: I'm not quite sure where the last year went, I still have on my to-do list progressing looking at how the different libraries get logs and what they look like for useful filtering etc following a conversation with Tim
+I will actually get time at some point :open_mouth:I struggled a bit with the overhead of getting a similar example for each language to get anything meaningful
+Getting a bit closer :wave: @yousafn  :grinning:</div></div></div><br/>
+<div><a id="1653497412.347199"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1653497412.347199" ><div class="time">2022-05-25 16:50</div></a><div class="msg">We might want to find a way to open this discussion up and maybe get some face time together. 
+
+There appears to be a few collaborators who are existing maintainers, long time contributors, or new contributors who are getting involved in different parts of the estate and would be good to get a round table.
+
+I can see some work @lewiscowles has been doing across various repos, so is offering fresh insight with some sensible ideas for long term maintainence which are worth surfacing somewhere.
+
+I know this is diverging slightly from the actual logging issue but might allow us to take a wider lense view of the estate as a whole.
+
+Just spitballing
+
+? agree on a central place to collab
+? Drop in sessions across different tz?s to allow video communication as well as async communication
+proper Diagram of the dependency graph of doom
+? target state
+? Gap analysis
+Definitely worth getting the input and thoughts of other maintainers, contributors and users here as there will be such valuable insight and potential actionable items, that I can help coordinate </div></div></div><br/>
+<div><a id="1653498512.361259"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1653498512.361259" ><div class="time">2022-05-25 17:08</div></a><div class="msg">Associated pact-php consumption of ffi thread here <a href="https://pact-foundation.slack.com/archives/C9W94PXPY/p1653476185980649">https://pact-foundation.slack.com/archives/C9W94PXPY/p1653476185980649</a>
+
+We can save all the prior discussions from this and other conversations/issues over the months/years and move them as they are a bit scattered and reducing context/platform switching or providing a single index is probably key to focusing our cognitive load towards common goals</div></div></div><br/>
+<div><a id="1653595118.121969"><img src="https://avatars.slack-edge.com/2022-02-04/3042827452823_04aefaa8271d55360355_72.jpg" /></a><div class="message"><div class="username">pact544</div><a style="text-decoration: none" href="#1653595118.121969" ><div class="time">2022-05-26 19:58</div></a><div class="msg">@matt.fellows @uglyog We were having a discussion about publishing verification results when using non-broker sources <a href="https://pact-foundation.slack.com/archives/C9UTHV2AD/p1653469545842399">https://pact-foundation.slack.com/archives/C9UTHV2AD/p1653469545842399</a>. Someone had asked because the <a href="https://docs.pact.io/pact_nirvana">https://docs.pact.io/pact_nirvana</a> recommend that a verification job be invoked with a changed pact URI (linked to the broker), which you then verify via a URL source (not a broker source) and publish the verification results back.
+
+The user was surprised that PactNet didn't support this option, but in the thread I explained that you can't publish verification results because you don't know the broker URL (and potentially credentials also). I raised <a href="https://github.com/pact-foundation/pact-net/issues/392">https://github.com/pact-foundation/pact-net/issues/392</a>  and I've already pushed up a draft MR for it, but unfortunately at the moment it can't progress.
+
+I've checked the FFI and it doesn't support publishing verification results for anything other than broker sources:
+
+<a href="https://github.com/pact-foundation/pact-reference/blob/e32caf8defd399029dcdf09c5d9298a1fe71d75a/rust/pact_verifier/src/lib.rs#L1207-L1228">https://github.com/pact-foundation/pact-reference/blob/e32caf8defd399029dcdf09c5d9298a1fe71d75a/rust/pact_verifier/src/lib.rs#L1207-L1228</a>
+
+If I call `set_publish_options` on the FFI and add anything other than a broker source then it'll simply not publish anything and log an error instead.</div></div></div><br/>
+<div><a id="1653595527.373799"><img src="https://avatars.slack-edge.com/2022-02-04/3042827452823_04aefaa8271d55360355_72.jpg" /></a><div class="message"><div class="username">pact544</div><a style="text-decoration: none" href="#1653595527.373799" ><div class="time">2022-05-26 20:05</div></a><div class="msg">So I think the only safe/robust thing to do if we want to support this (and given the CI/CD guide says it's the recommended way of doing it...) is that the user is forced to specify the broker URL in the publish options at the FFI boundary. We can design nicer library APIs on top of that, but fundamentally you can't just assume the host of the URI is also the host of the broker.</div></div></div><br/>
+<div><a id="1653595656.604369"><img src="https://avatars.slack-edge.com/2022-02-04/3042827452823_04aefaa8271d55360355_72.jpg" /></a><div class="message"><div class="username">pact544</div><a style="text-decoration: none" href="#1653595656.604369" ><div class="time">2022-05-26 20:07</div></a><div class="msg">e.g. the broker could be running on a sub-path instead of a dedicated sub-domain, like `<a href="https://ci.example.org/broker">https://ci.example.org/broker</a>` , so you can't just extract the host and reuse that.
+
+It'd also be very hacky to use some kind of fixed string in the path and take everything up to that path. Pact broker URLs always have `/pacts/` in them somewhere, but you can't just assume that's the only place that'll be. Again, someone could run their broker at `<a href="https://ci.example.org/pacts">https://ci.example.org/pacts</a>` and now string splitting is just asking for trouble.</div></div></div><br/>
+<div><a id="1653621400.349339"><img src="https://secure.gravatar.com/avatar/3d118b71e69a37138c8e6cf474307507.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0016-72.png" /></a><div class="message"><div class="username">rholshausen</div><a style="text-decoration: none" href="#1653621400.349339" ><div class="time">2022-05-27 03:16</div></a><div class="msg">What do we need to do to resolve these issues? One thing I have been thinking of is splitting out the FFI into it's own repository. That way we could hand it over to this group to manage, and I can step away to focus on other areas.
+
+The plugin and gRPC work is now nearly complete (which is what I have been focusing on the last 6 months). I just need to get an example project working via FFI (hence the recent change which required a new function), then there are no more plans to change anything else.</div></div></div><br/>
+<div><a id="1653633893.804109"><img src="https://avatars.slack-edge.com/2018-03-24/334971398433_5b9e9a14ced9f82cd894_72.jpg" /></a><div class="message"><div class="username">bethskurrie</div><a style="text-decoration: none" href="#1653633893.804109" ><div class="time">2022-05-27 06:44</div></a><div class="msg">I have answered on the issue.</div></div></div><br/>
+<div><a id="1654590332.544199"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654590332.544199" ><div class="time">2022-06-07 08:25</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1654599656.189109"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654599656.189109" ><div class="time">2022-06-07 11:00</div></a><div class="msg">Hello.
+
+I don't know if this is the correct venue to ask for help but here we go.
+
+I am using `pact-go` and when running the provider verification I am noticing that the test hangs after the call to `libpact_ffi`.
+
+```2022/06/02 13:09:55 [INFO] package libpact_ffi found
+2022/06/02 13:09:55 [INFO] checking version 0.3.3 for lib libpact_ffi within semver range &gt;= 0.1.2, &lt; 1.0.0
+2022/06/02 13:09:55 [INFO] checking version 0.3.3 of libpact_ffi against semver constraint &gt;= 0.1.2, &lt; 1.0.0
+2022/06/02 13:09:55 [DEBUG] 0.3.3 satisfies constraints 0.3.3 &gt;= 0.1.2, &lt; 1.0.0
+2022/06/02 13:09:55 [DEBUG] version check completed
+2022/06/02 13:10:21 [DEBUG] starting new proxy with opts {http localhost:8080  0 [0x1036d5910] /__setup &lt;nil&gt;}
+2022/06/02 13:10:21 [DEBUG] starting reverse proxy on port 49359
+2022/06/02 13:10:21 [DEBUG] waiting for port 49359 to become available
+2022/06/02 13:10:21 [DEBUG] pact provider verification
+2022/06/02 13:10:21 [DEBUG] initialising rust mock server interface
+2022/06/02 13:10:22 [DEBUG] waiting for port 49359 to become available
+2022/06/02 13:10:24 [DEBUG] executing verifier FFI with args [--file /Users/nunofrias/Documents/repos/entitlement-orchestrator/cmd/pacts/reseller-entitlement-service-entitlement-orchestrator.json --hostname localhost --port 49359 --provider-name entitlement-orchestrator --loglevel trace]
+
+Hangs here !```
+I proceeded to debug the rust ffi code and found that the exact point where it hangs is in the `make_provider_request` function in `<a href="http://provider_client.rs">http://provider_client.rs</a>` , more precisely in:
+
+```let response = request.send()
+    .map_err(|err| anyhow!(err))
+    .and_then(native_response_to_pact_response)
+    .await?;```
+More curiously I have also noticed that the first time I run the provider verification after I start the terminal application, it succeeds. Subsequent verifications fails more often than not -- if I restart the command line the verification succeeds.
+
+I would dearly appreciate some help as my knowledge of rust is rather basic.
+
+Thank you.</div></div></div><br/>
+<div><a id="1654602604.020449"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654602604.020449" ><div class="time">2022-06-07 11:50</div></a><div class="msg">Hi Nuno, thanks for diving into this</div></div></div><br/>
+<div><a id="1654602684.866359"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654602684.866359" ><div class="time">2022-06-07 11:51</div></a><div class="msg">what would be great to know:
+
+? Does it only do this on certain OS?s (e.g. Mac but not linux)? 
+? Which version of Pact Go are you running 
+</div></div></div><br/>
+<div><a id="1654602747.111989"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654602747.111989" ><div class="time">2022-06-07 11:52</div></a><div class="msg">The ?it works once? makes me wonder if any processes are up and about. For example, when it hangs above, can you send http calls to the provider? eg. `curl localhost:49359` or to the proxied target (the actual provider)?</div></div></div><br/>
+<div><a id="1654602889.031079"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654602889.031079" ><div class="time">2022-06-07 11:54</div></a><div class="msg">Hi Matt
+
+I am using `go version go1.17.6 darwin/arm64`
+
+I am running on Mac OS 12 (and it is an M1 chip)
+
+I suspect there are some processes outstanding. I am about to enable `dtruss` (strace equivalent) to try and pinpoint the error.</div></div></div><br/>
+<div><a id="1654602925.653489"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654602925.653489" ><div class="time">2022-06-07 11:55</div></a><div class="msg">I can send calls to `localhost:49359` and I see the server responses.</div></div></div><br/>
+<div><a id="1654602953.776839"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654602953.776839" ><div class="time">2022-06-07 11:55</div></a><div class="msg">Thanks! What version of pact go?</div></div></div><br/>
+<div><a id="1654603046.299759"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654603046.299759" ><div class="time">2022-06-07 11:57</div></a><div class="msg">`v2.0.0-beta.11`</div></div></div><br/>
+<div><a id="1654603060.196239"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654603060.196239" ><div class="time">2022-06-07 11:57</div></a><div class="msg">I am using the `v2.x.x` branch.</div></div></div><br/>
+<div><a id="1654603128.399069"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654603128.399069" ><div class="time">2022-06-07 11:58</div></a><div class="msg">:thinking_face:</div></div></div><br/>
+<div><a id="1654603148.672059"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654603148.672059" ><div class="time">2022-06-07 11:59</div></a><div class="msg">have you got a github actions / some build we can see running that reproduces the issue? Does it only happen on M1 (FYI I?m running an M1)</div></div></div><br/>
+<div><a id="1654603340.444349"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654603340.444349" ><div class="time">2022-06-07 12:02</div></a><div class="msg">I don't have a build you can test. What I can do is actually run the examples on pact-go and see if the problem occurs.
+
+I'll try on Linux (raspberry py) to see if I can see the issue there.</div></div></div><br/>
+<div><a id="1654603368.394579"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654603368.394579" ><div class="time">2022-06-07 12:02</div></a><div class="msg">On it</div></div></div><br/>
+<div><a id="1654611499.585759"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654611499.585759" ><div class="time">2022-06-07 14:18</div></a><div class="msg">I managed to reproduce it with the examples in Pact go.
+
+I am sending a patch file with some very minor changes to the default examples namely to the provider test. Essentially I am commenting out the ProviderVersion BrokerURL ConsumerVersionSelectors PublishVerificationResults as I am using a local pact file and to simplify this scenario I am bypassing the communication with the broker. I also comment out the StateHandlers bit as it caused the test to hang on the state change rather than on running the actual provider request -- the underlying issue seems identical.
+
+To set up the example you only need to:
+
+``` git checkout 2.x.x
+ git pull
+ git apply pact_go_examples.diff
+ cd pact-go/examples
+ go test -run ^TestConsumerV3$ .
+ go test -tags provider -run ^TestV3HTTPProvider$```
+I am still working on setting up the GitHub actions (but let me know if the above suffices).</div></div></div><br/>
+<div><a id="1654615922.882129"><img src="https://secure.gravatar.com/avatar/a79d85d4eb3862bb32398487bd057d5d.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0018-72.png" /></a><div class="message"><div class="username">phil.vint</div><a style="text-decoration: none" href="#1654615922.882129" ><div class="time">2022-06-07 15:32</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1654621299.350139"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654621299.350139" ><div class="time">2022-06-07 17:01</div></a><div class="msg">I should have a github action ready briefly.</div></div></div><br/>
+<div><a id="1654630862.357149"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654630862.357149" ><div class="time">2022-06-07 19:41</div></a><div class="msg">Here it is.
+
+This project contains a minimal example. Apologies for taking this long, I am not used to github actions.
+
+<a href="https://github.com/nsfrias/pact-go-issue-repro-20220607">https://github.com/nsfrias/pact-go-issue-repro-20220607</a></div></div></div><br/>
+<div><a id="1654630975.060069"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654630975.060069" ><div class="time">2022-06-07 19:42</div></a><div class="msg">As of now I am still waiting for the results of the `macos-12` (which I hope behave similarly to my Mac).
+
+<a href="https://github.com/nsfrias/pact-go-issue-repro-20220607/actions/runs/2456922279">https://github.com/nsfrias/pact-go-issue-repro-20220607/actions/runs/2456922279</a></div></div></div><br/>
+<div><a id="1654630992.246899"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654630992.246899" ><div class="time">2022-06-07 19:43</div></a><div class="msg">In ubuntu the issue does not occur.</div></div></div><br/>
+<div><a id="1654642639.463169"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654642639.463169" ><div class="time">2022-06-07 22:57</div></a><div class="msg">Thanks Nuno. I can see that it worked on linux too, but the mac build is hanging :man-shrugging:</div></div></div><br/>
+<div><a id="1654692453.154729"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654692453.154729" ><div class="time">2022-06-08 12:47</div></a><div class="msg">I am having difficulty running the build against even a x86 macos
+<a href="https://github.com/nsfrias/pact-go-issue-repro-20220607/runs/6793692978?check_suite_focus=true">https://github.com/nsfrias/pact-go-issue-repro-20220607/runs/6793692978?check_suite_focus=true</a>
+
+Would it be possible for you to install the project locally on an M1 platform and run the test?</div></div></div><br/>
+<div><a id="1654693817.274049"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654693817.274049" ><div class="time">2022-06-08 13:10</div></a><div class="msg">I added some manual reproduction steps on the README</div></div></div><br/>
+<div><a id="1654708921.606919"><img src="https://avatars.slack-edge.com/2022-10-06/4188780648804_06ad6132e8393dbb202f_72.png" /></a><div class="message"><div class="username">slacksync</div><a style="text-decoration: none" href="#1654708921.606919" ><div class="time">2022-06-08 17:22</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1654754176.868299"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654754176.868299" ><div class="time">2022-06-09 05:56</div></a><div class="msg">```?  /tmp git clone <a href="https://github.com/nsfrias/pact-go-issue-repro-20220607.git">https://github.com/nsfrias/pact-go-issue-repro-20220607.git</a>
+Cloning into 'pact-go-issue-repro-20220607'...
+remote: Enumerating objects: 63, done.
+remote: Counting objects: 100% (63/63), done.
+remote: Compressing objects: 100% (31/31), done.
+remote: Total 63 (delta 22), reused 48 (delta 11), pack-reused 0
+Receiving objects: 100% (63/63), 26.85 KiB | 8.95 MiB/s, done.
+Resolving deltas: 100% (22/22), done.
+?  /tmp cd pact-go-issue-repro-20220607
+?  pact-go-issue-repro-20220607 git:(main) go install <a href="http://github.com/pact-foundation/pact-go/v2@2.x.x">http://github.com/pact-foundation/pact-go/v2@2.x.x</a>
+
+go: downloading <a href="http://github.com/pact-foundation/pact-go/v2">http://github.com/pact-foundation/pact-go/v2</a> v2.0.0-beta.11.0.20220607035712-b017cad30d3d
+?  pact-go-issue-repro-20220607 git:(main) pact-go -l DEBUG install
+2022/06/09 15:54:22 [INFO] package libpact_ffi found
+2022/06/09 15:54:22 [INFO] checking version 0.3.2 of libpact_ffi against semver constraint &gt;= 0.3.0, &lt; 1.0.0
+2022/06/09 15:54:22 [DEBUG] 0.3.2 satisfies constraints 0.3.2 &gt;= 0.3.0, &lt; 1.0.0
+2022/06/09 15:54:22 [INFO] package libpact_ffi is correctly installed
+2022/06/09 15:54:22 [DEBUG] skip checking ffi version() call because FFI not loaded. This is expected when running the 'pact-go' command.
+
+?  pact-go-issue-repro-20220607 git:(main) go test -run "^TestConsumerV3$" consumer_test.go
+go: downloading github.com/stretchr/testify v1.7.2
+go: downloading github.com/golang/protobuf v1.3.3
+ok  	command-line-arguments	0.846s
+?  pact-go-issue-repro-20220607 git:(main) go test -timeout 30s -run "^TestV3HTTPProvider$" .
+ok  	example.com/m	3.618s
+?  pact-go-issue-repro-20220607 git:(main) go test -v -timeout 30s -run "^TestV3HTTPProvider$" .
+=== RUN   TestV3HTTPProvider
+2022/06/09 15:55:26 [INFO] package libpact_ffi found
+2022/06/09 15:55:26 [INFO] checking version 0.3.2 for lib libpact_ffi within semver range &gt;= 0.1.2, &lt; 1.0.0
+2022/06/09 15:55:26 [INFO] checking version 0.3.2 of libpact_ffi against semver constraint &gt;= 0.1.2, &lt; 1.0.0
+2022/06/09 15:55:26 [DEBUG] 0.3.2 satisfies constraints 0.3.2 &gt;= 0.1.2, &lt; 1.0.0
+2022/06/09 15:55:26 [DEBUG] version check completed
+2022/06/09 15:55:26 [DEBUG] starting new proxy with opts {http localhost:8111  0 [0x4390e60 0x4391160 0x461c1c0] /__setup &lt;nil&gt;}
+2022/06/09 15:55:26 [DEBUG] starting reverse proxy on port 64647
+2022/06/09 15:55:26 [DEBUG] waiting for port 64647 to become available
+2022/06/09 15:55:26 [DEBUG] pact provider verification
+2022/06/09 15:55:26 [DEBUG] initialising rust mock server interface
+2022/06/09 15:55:26 [DEBUG] waiting for port 64647 to become available
+2022/06/09 15:55:26 [DEBUG] executing verifier FFI with args [--file /tmp/pact-go-issue-repro-20220607/pacts/PactGoV3Consumer-V3Provider.json --hostname localhost --port 64647 --provider-name V3Provider --loglevel trace]
+  Given User foo exists
+    WARNING: State Change ignored as there is no state change URL provided
+2022/06/09 15:55:28 [DEBUG] HOOK request filter
+2022/06/09 15:55:28 [DEBUG] http reverse proxy received connection from [::1]:64653 on path /foobar?baz=bar&amp;baz=bat&amp;baz=baz
+2022/06/09 15:55:28 [DEBUG] setting proxy to target
+2022/06/09 15:55:28 [DEBUG] incoming request /foobar?baz=bar&amp;baz=bat&amp;baz=baz
+2022/06/09 15:55:28 [DEBUG] outgoing request to target <a href="http://localhost:8111/foobar?baz=bar&amp;baz=bat&amp;baz=baz">http://localhost:8111/foobar?baz=bar&amp;baz=bat&amp;baz=baz</a>
+2022/06/09 15:55:28 [TRACE] proxy outgoing request
+ POST /foobar?baz=bar&amp;baz=bat&amp;baz=baz HTTP/1.1
+Host: localhost:8111
+User-Agent: Pact Go
+Content-Length: 76
+Accept: */*
+Accept-Encoding: gzip, deflate
+Authorization: Bearer 1234
+Authorization: Bearer 1234-dynamic-value
+Content-Type: application/json
+X-Forwarded-For: ::1
+
+
+2022/06/09 15:55:28 [TRACE] proxied server response
+ HTTP/1.1 200 OK
+Content-Length: 458
+Content-Type: application/json
+Date: Thu, 09 Jun 2022 05:55:28 GMT
+
+
+			{
+				"accountBalance": 123.76,
+				"datetime": "2020-01-01",
+				"equality": "a thing",
+				"id": 12,
+				"itemsMin": [
+					"thereshouldbe3ofthese",
+					"thereshouldbe3ofthese",
+					"thereshouldbe3ofthese"
+				],
+				"itemsMinMax": [
+					27,
+					27,
+					27,
+					27,
+					27
+				],
+				"lastName": "Sampson",
+				"name": "Billy",
+				"superstring": "foo",
+				"arrayContaining": [
+					"string",
+					1,
+					{
+						"foo": "bar"
+					}
+				]
+			}
+2022/06/09 15:55:28 [DEBUG] executing after hook
+2022/06/09 15:55:28 [DEBUG] HOOK after each
+  Given User foo exists
+    WARNING: State Change ignored as there is no state change URL provided
+2022/06/09 15:55:28 [DEBUG] HOOK request filter
+2022/06/09 15:55:28 [DEBUG] http reverse proxy received connection from [::1]:64656 on path /foobar?baz=bar&amp;baz=bat&amp;baz=baz
+2022/06/09 15:55:28 [DEBUG] setting proxy to target
+2022/06/09 15:55:28 [DEBUG] incoming request /foobar?baz=bar&amp;baz=bat&amp;baz=baz
+2022/06/09 15:55:28 [DEBUG] outgoing request to target <a href="http://localhost:8111/foobar?baz=bar&amp;baz=bat&amp;baz=baz">http://localhost:8111/foobar?baz=bar&amp;baz=bat&amp;baz=baz</a>
+2022/06/09 15:55:28 [TRACE] proxy outgoing request
+ POST /foobar?baz=bar&amp;baz=bat&amp;baz=baz HTTP/1.1
+Host: localhost:8111
+User-Agent: Pact Go
+Content-Length: 76
+Accept: */*
+Accept-Encoding: gzip, deflate
+Authorization: Bearer 1234
+Authorization: Bearer 1234-dynamic-value
+Content-Type: application/json
+X-Forwarded-For: ::1
+
+
+2022/06/09 15:55:28 [TRACE] proxied server response
+ HTTP/1.1 200 OK
+Content-Length: 458
+Content-Type: application/json
+Date: Thu, 09 Jun 2022 05:55:28 GMT
+
+
+			{
+				"accountBalance": 123.76,
+				"datetime": "2020-01-01",
+				"equality": "a thing",
+				"id": 12,
+				"itemsMin": [
+					"thereshouldbe3ofthese",
+					"thereshouldbe3ofthese",
+					"thereshouldbe3ofthese"
+				],
+				"itemsMinMax": [
+					27,
+					27,
+					27,
+					27,
+					27
+				],
+				"lastName": "Sampson",
+				"name": "Billy",
+				"superstring": "foo",
+				"arrayContaining": [
+					"string",
+					1,
+					{
+						"foo": "bar"
+					}
+				]
+			}
+2022/06/09 15:55:28 [DEBUG] executing after hook
+2022/06/09 15:55:28 [DEBUG] HOOK after each
+  Given User foo exists
+    WARNING: State Change ignored as there is no state change URL provided
+2022/06/09 15:55:29 [DEBUG] HOOK request filter
+2022/06/09 15:55:29 [DEBUG] http reverse proxy received connection from [::1]:64659 on path /foobar?baz=bar&amp;baz=bat&amp;baz=baz
+2022/06/09 15:55:29 [DEBUG] setting proxy to target
+2022/06/09 15:55:29 [DEBUG] incoming request /foobar?baz=bar&amp;baz=bat&amp;baz=baz
+2022/06/09 15:55:29 [DEBUG] outgoing request to target <a href="http://localhost:8111/foobar?baz=bar&amp;baz=bat&amp;baz=baz">http://localhost:8111/foobar?baz=bar&amp;baz=bat&amp;baz=baz</a>
+2022/06/09 15:55:29 [TRACE] proxy outgoing request
+ POST /foobar?baz=bar&amp;baz=bat&amp;baz=baz HTTP/1.1
+Host: localhost:8111
+User-Agent: Pact Go
+Content-Length: 76
+Accept: */*
+Accept-Encoding: gzip, deflate
+Authorization: Bearer 1234
+Authorization: Bearer 1234-dynamic-value
+Content-Type: application/json
+X-Forwarded-For: ::1
+
+
+2022/06/09 15:55:29 [TRACE] proxied server response
+ HTTP/1.1 200 OK
+Content-Length: 458
+Content-Type: application/json
+Date: Thu, 09 Jun 2022 05:55:29 GMT
+
+
+			{
+				"accountBalance": 123.76,
+				"datetime": "2020-01-01",
+				"equality": "a thing",
+				"id": 12,
+				"itemsMin": [
+					"thereshouldbe3ofthese",
+					"thereshouldbe3ofthese",
+					"thereshouldbe3ofthese"
+				],
+				"itemsMinMax": [
+					27,
+					27,
+					27,
+					27,
+					27
+				],
+				"lastName": "Sampson",
+				"name": "Billy",
+				"superstring": "foo",
+				"arrayContaining": [
+					"string",
+					1,
+					{
+						"foo": "bar"
+					}
+				]
+			}
+2022/06/09 15:55:29 [DEBUG] executing after hook
+2022/06/09 15:55:29 [DEBUG] HOOK after each
+
+Verifying a pact between PactGoV3Consumer and V3Provider
+
+  A request to do a foo
+    returns a response which
+      has status code 200 (OK)
+      includes headers
+        "Content-Type" with value "application/json" (OK)
+      has a matching body (OK)
+
+
+Verifying a pact between PactGoV3Consumer and V3Provider
+
+  A request to do a foo
+    returns a response which
+      has status code 200 (OK)
+      includes headers
+        "Content-Type" with value "application/json" (OK)
+      has a matching body (OK)
+
+
+Verifying a pact between V3Consumer and V3Provider
+
+  A request to do a foo
+    returns a response which
+      has status code 200 (OK)
+      includes headers
+        "Content-Type" with value "application/json" (OK)
+      has a matching body (OK)
+
+
+=== RUN   TestV3HTTPProvider/Provider_pact_verification
+--- PASS: TestV3HTTPProvider (3.10s)
+    --- PASS: TestV3HTTPProvider/Provider_pact_verification (0.00s)
+PASS
+ok  	<a href="http://example.com/m">http://example.com/m</a>	3.663s```</div></div></div><br/>
+<div><a id="1654754198.708339"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654754198.708339" ><div class="time">2022-06-09 05:56</div></a><div class="msg">output from `go env`:
+
+```
+GO111MODULE=""
+GOARCH="amd64"
+GOBIN=""
+GOCACHE="/Users/matthew.fellows/Library/Caches/go-build"
+GOENV="/Users/matthew.fellows/Library/Application Support/go/env"
+GOEXE=""
+GOEXPERIMENT=""
+GOFLAGS=""
+GOHOSTARCH="amd64"
+GOHOSTOS="darwin"
+GOINSECURE=""
+GOMODCACHE="/Users/matthew.fellows/go/pkg/mod"
+GONOPROXY=""
+GONOSUMDB=""
+GOOS="darwin"
+GOPATH="/Users/matthew.fellows/go"
+GOPRIVATE=""
+GOPROXY="<a href="https://proxy.golang.org">https://proxy.golang.org</a>,direct"
+GOROOT="/usr/local/Cellar/go/1.18.2/libexec"
+GOSUMDB="<a href="http://sum.golang.org">http://sum.golang.org</a>"
+GOTMPDIR=""
+GOTOOLDIR="/usr/local/Cellar/go/1.18.2/libexec/pkg/tool/darwin_amd64"
+GOVCS=""
+GOVERSION="go1.18.2"
+GCCGO="gccgo"
+GOAMD64="v1"
+AR="ar"
+CC="clang"
+CXX="clang++"
+CGO_ENABLED="1"
+GOMOD="/tmp/pact-go-issue-repro-20220607/go.mod"
+GOWORK=""
+CGO_CFLAGS="-g -O2"
+CGO_CPPFLAGS=""
+CGO_CXXFLAGS="-g -O2"
+CGO_FFLAGS="-g -O2"
+CGO_LDFLAGS="-g -O2"
+PKG_CONFIG="pkg-config"
+GOGCCFLAGS="-fPIC -arch x86_64 -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/gl/c3f3yhws1mg754r_t7l5hfm80000gp/T/go-build2365344512=/tmp/go-build -gno-record-gcc-switches -fno-common"```</div></div></div><br/>
+<div><a id="1654851267.868699"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654851267.868699" ><div class="time">2022-06-10 08:54</div></a><div class="msg">Thank you very much</div></div></div><br/>
+<div><a id="1654851366.880969"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654851366.880969" ><div class="time">2022-06-10 08:56</div></a><div class="msg">I still encounter the same issue, so does a colleague with M1.</div></div></div><br/>
+<div><a id="1654851397.757039"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654851397.757039" ><div class="time">2022-06-10 08:56</div></a><div class="msg">The only difference is the `go env`</div></div></div><br/>
+<div><a id="1654852626.038929"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654852626.038929" ><div class="time">2022-06-10 09:17</div></a><div class="msg">Are you running in Rosetta mode or normal? Have you tried both?</div></div></div><br/>
+<div><a id="1654852658.810789"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654852658.810789" ><div class="time">2022-06-10 09:17</div></a><div class="msg">Are they work machines or personal? Is it possible there is AV or endpoint security interference?</div></div></div><br/>
+<div><a id="1654852675.547039"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654852675.547039" ><div class="time">2022-06-10 09:17</div></a><div class="msg">I am running in normal mode. I have had some issues with rosetta in the past.</div></div></div><br/>
+<div><a id="1654852698.444669"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654852698.444669" ><div class="time">2022-06-10 09:18</div></a><div class="msg">Work machines</div></div></div><br/>
+<div><a id="1654852821.384679"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654852821.384679" ><div class="time">2022-06-10 09:20</div></a><div class="msg">I wish we could run builds on M1 to create a reproducible environment. Unfortunately there are no real options to do so at the moment</div></div></div><br/>
+<div><a id="1654852852.532589"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654852852.532589" ><div class="time">2022-06-10 09:20</div></a><div class="msg">I am trying to run in rosetta mode</div></div></div><br/>
+<div><a id="1654852908.438469"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654852908.438469" ><div class="time">2022-06-10 09:21</div></a><div class="msg">That said I manage to workaround the issue by running the tests on a linux VM running on my mac</div></div></div><br/>
+<div><a id="1654853128.092639"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654853128.092639" ><div class="time">2022-06-10 09:25</div></a><div class="msg">Btw I add to add another `cgo`  config to run pact-go in linux arm64.
+```diff --git a/internal/native/lib.go b/internal/native/lib.go
+index 9ece6b7..d4324ff 100644
+--- a/internal/native/lib.go
++++ b/internal/native/lib.go
+@@ -6,5 +6,6 @@ package native
+ #cgo darwin,amd64 LDFLAGS: -L/tmp -L/usr/local/lib -Wl,-rpath -Wl,/tmp -Wl,-rpath -Wl,/usr/local/lib -lpact_ffi
+ #cgo windows,amd64 LDFLAGS: -lpact_ffi
+ #cgo linux,amd64 LDFLAGS: -L/tmp -L/opt/pact/lib -L/usr/local/lib -Wl,-rpath -Wl,/opt/pact/lib -Wl,-rpath -Wl,/tmp -Wl,-rpath -Wl,/usr/local/lib -lpact_ffi
++#cgo linux,arm64 LDFLAGS: -L/tmp -L/opt/pact/lib -L/usr/local/lib -Wl,-rpath -Wl,/opt/pact/lib -Wl,-rpath -Wl,/tmp -Wl,-rpath -Wl,/usr/local/lib -lpact_ffi
+ */
+ import "C"```</div></div></div><br/>
+<div><a id="1654853185.770149"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654853185.770149" ><div class="time">2022-06-10 09:26</div></a><div class="msg">Will submit a merge request for that asap</div></div></div><br/>
+<div><a id="1654853405.822719"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654853405.822719" ><div class="time">2022-06-10 09:30</div></a><div class="msg">Does it work on Linux arm? I don't think it should, to my knowledge we don't compile for it: <a href="https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.3.2">https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.3.2</a></div></div></div><br/>
+<div><a id="1654853433.425879"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654853433.425879" ><div class="time">2022-06-10 09:30</div></a><div class="msg">I compiled for it locally</div></div></div><br/>
+<div><a id="1654853734.911479"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654853734.911479" ><div class="time">2022-06-10 09:35</div></a><div class="msg">Ah, got it.</div></div></div><br/>
+<div><a id="1654853744.836399"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654853744.836399" ><div class="time">2022-06-10 09:35</div></a><div class="msg">Fair enough we can definitely bring that in</div></div></div><br/>
+<div><a id="1654854011.391419"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654854011.391419" ><div class="time">2022-06-10 09:40</div></a><div class="msg">I feel sheepish now. I gave it a try with rosetta and it is passing consistently.</div></div></div><br/>
+<div><a id="1654854072.515879"><img src="https://secure.gravatar.com/avatar/ce25bf8f9d996435cab3447d764bf860.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0014-72.png" /></a><div class="message"><div class="username">nuno.frias</div><a style="text-decoration: none" href="#1654854072.515879" ><div class="time">2022-06-10 09:41</div></a><div class="msg">Thank you very much for all the help.</div></div></div><br/>
+<div><a id="1654854085.761069"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1654854085.761069" ><div class="time">2022-06-10 09:41</div></a><div class="msg">But it should be able to work outside of Rosetta. That's a good clue though. I should be able to repro that situation</div></div></div><br/>
+<div><a id="1657643805.068049"><img src="https://avatars.slack-edge.com/2022-07-12/3783075922518_481957910b9265514ddc_72.jpg" /></a><div class="message"><div class="username">fabricio.mendes.ti</div><a style="text-decoration: none" href="#1657643805.068049" ><div class="time">2022-07-12 16:36</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1660075672.327039"><img src="https://avatars.slack-edge.com/2022-07-28/3859408756438_728818d745011d5bd6a9_72.png" /></a><div class="message"><div class="username">robert.henzel</div><a style="text-decoration: none" href="#1660075672.327039" ><div class="time">2022-08-09 20:07</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1660980302.060169"><img src="https://avatars.slack-edge.com/2022-08-20/3980240791361_a2e07b726cc933ec5455_72.png" /></a><div class="message"><div class="username">duynguyenptithcm</div><a style="text-decoration: none" href="#1660980302.060169" ><div class="time">2022-08-20 07:25</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1661618365.886359"><img src="https://avatars.slack-edge.com/2022-08-26/4011959190689_585b829a2681e4ff8e42_72.jpg" /></a><div class="message"><div class="username">dwalleck</div><a style="text-decoration: none" href="#1661618365.886359" ><div class="time">2022-08-27 16:39</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1661896347.280049"><img src="https://avatars.slack-edge.com/2022-06-08/3641985330595_c13084492ddd51522418_72.jpg" /></a><div class="message"><div class="username">hazem</div><a style="text-decoration: none" href="#1661896347.280049" ><div class="time">2022-08-30 21:52</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
+<div><a id="1663777921.362419"><img src="https://secure.gravatar.com/avatar/9f8196b3226c3638b967ba586ad7484f.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0024-72.png" /></a><div class="message"><div class="username">tien.xuan.vo</div><a style="text-decoration: none" href="#1663777921.362419" ><div class="time">2022-09-21 16:32</div></a><div class="msg">I got one problem with pact plugins:
+
+When I verify provider's pacts that required plugins (csv, protobuf), on Linux and Mac, it work fine, but on Windows it hang.
+
+It happen on this line <a href="https://github.com/tienvx/pact-php/blob/rust-ffi-plugins-downloads/src/PhpPact/Standalone/ProviderVerifier/Verifier.php#L163">https://github.com/tienvx/pact-php/blob/rust-ffi-plugins-downloads/src/PhpPact/Standalone/ProviderVerifier/Verifier.php#L163</a>
+
+As you can see here <a href="https://github.com/tienvx/pact-php/actions/runs/3099040342">https://github.com/tienvx/pact-php/actions/runs/3099040342</a> , all tests *passed* on Linux and Mac. On Windows it *hang* for hours. I have to cancel it manually.
+
+Version:
+? pact-ffi: 0.3.11
+? pact-csv-plugin: 0.0.3
+? pact-protobuf-plugin: 0.1.13
+Pacts: <a href="https://github.com/tienvx/pact-php/tree/rust-ffi-plugins-downloads/example/pacts">https://github.com/tienvx/pact-php/tree/rust-ffi-plugins-downloads/example/pacts</a>
+
+I test again on my Windows machine and the same behavior:</div></div></div><br/>
+<div><a id="1663809467.203579"><img src="https://avatars.slack-edge.com/2019-08-26/740232217414_014b213119f6e40fa572_72.jpg" /></a><div class="message"><div class="username">uglyog</div><a style="text-decoration: none" href="#1663809467.203579" ><div class="time">2022-09-22 01:17</div></a><div class="msg">I have this same problem, and I haven't found the answer to the issue. Can you raise an issue for this?</div></div></div><br/>
+<div><a id="1663809548.906409"><img src="https://secure.gravatar.com/avatar/9f8196b3226c3638b967ba586ad7484f.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0024-72.png" /></a><div class="message"><div class="username">tien.xuan.vo</div><a style="text-decoration: none" href="#1663809548.906409" ><div class="time">2022-09-22 01:19</div></a><div class="msg">Sure. I will report to pact-plugins repo</div></div></div><br/>
+<div><a id="1663812087.032159"><img src="https://secure.gravatar.com/avatar/9f8196b3226c3638b967ba586ad7484f.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0024-72.png" /></a><div class="message"><div class="username">tien.xuan.vo</div><a style="text-decoration: none" href="#1663812087.032159" ><div class="time">2022-09-22 02:01</div></a><div class="msg"><a href="https://github.com/pact-foundation/pact-plugins/issues/8">https://github.com/pact-foundation/pact-plugins/issues/8</a></div></div></div><br/>
+<div><a id="1667433854.748409"><img src="https://avatars.slack-edge.com/2022-09-12/4050998332375_d04de8442fc38384b164_72.png" /></a><div class="message"><div class="username">marko.justinek</div><a style="text-decoration: none" href="#1667433854.748409" ><div class="time">2022-11-03 00:04</div></a><div class="msg">has joined #libpact_ffi-users</div></div></div><br/>
 </div></body></html>

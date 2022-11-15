@@ -702,4 +702,40 @@ curiously, if i try to run the verification locally with the same pact JSON, it 
 <div><a id="1637349896.005300"><img src="https://avatars.slack-edge.com/2021-11-19/2748483986867_5c5088aa7b675d970811_72.png" /></a><div class="message"><div class="username">martin.carlin</div><a style="text-decoration: none" href="#1637349896.005300" ><div class="time">2021-11-19 19:24</div></a><div class="msg">I?ve verified and the mentioned pact file exists and should be found</div></div></div><br/>
 <div><a id="1638246052.000200"><img src="https://avatars.slack-edge.com/2021-08-09/2361631297682_efc9a72070b3c52a3db7_72.jpg" /></a><div class="message"><div class="username">kyle.florence</div><a style="text-decoration: none" href="#1638246052.000200" ><div class="time">2021-11-30 04:20</div></a><div class="msg">has joined #pact-scala-itv</div></div></div><br/>
 <div><a id="1643800603.595479"><img src="https://avatars.slack-edge.com/2022-02-02/3067499212400_80000ac920dfa0e40533_72.jpg" /></a><div class="message"><div class="username">dougie.robertson</div><a style="text-decoration: none" href="#1643800603.595479" ><div class="time">2022-02-02 11:16</div></a><div class="msg">has joined #pact-scala-itv</div></div></div><br/>
+<div><a id="1651243136.274669"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1651243136.274669" ><div class="time">2022-04-29 14:38</div></a><div class="msg">has joined #pact-scala-itv</div></div></div><br/>
+<div><a id="1652119327.522799"><img src="https://avatars.slack-edge.com/2022-05-09/3501740885028_0927e4b769c57ee9769f_72.png" /></a><div class="message"><div class="username">orbit</div><a style="text-decoration: none" href="#1652119327.522799" ><div class="time">2022-05-09 18:02</div></a><div class="msg">has joined #pact-scala-itv</div></div></div><br/>
+<div><a id="1652690882.290769"><img src="https://avatars.slack-edge.com/2018-06-18/383099788962_f8a3efa7488b02d0dfb8_72.png" /></a><div class="message"><div class="username">tjones</div><a style="text-decoration: none" href="#1652690882.290769" ><div class="time">2022-05-16 08:48</div></a><div class="msg">@tjones has left the channel</div></div></div><br/>
+<div><a id="1654708918.109479"><img src="https://avatars.slack-edge.com/2022-10-06/4188780648804_06ad6132e8393dbb202f_72.png" /></a><div class="message"><div class="username">slacksync</div><a style="text-decoration: none" href="#1654708918.109479" ><div class="time">2022-06-08 17:21</div></a><div class="msg">has joined #pact-scala-itv</div></div></div><br/>
+<div><a id="1660980354.426989"><img src="https://avatars.slack-edge.com/2022-08-20/3980240791361_a2e07b726cc933ec5455_72.png" /></a><div class="message"><div class="username">duynguyenptithcm</div><a style="text-decoration: none" href="#1660980354.426989" ><div class="time">2022-08-20 07:25</div></a><div class="msg">has joined #pact-scala-itv</div></div></div><br/>
+<div><a id="1666969265.882489"><img src="https://avatars.slack-edge.com/2022-10-20/4238027888199_44f7d09bf4c7555607c0_72.png" /></a><div class="message"><div class="username">xuw</div><a style="text-decoration: none" href="#1666969265.882489" ><div class="time">2022-10-28 15:01</div></a><div class="msg">has joined #pact-scala-itv</div></div></div><br/>
+<div><a id="1667418845.700309"><img src="https://avatars.slack-edge.com/2022-10-20/4238027888199_44f7d09bf4c7555607c0_72.png" /></a><div class="message"><div class="username">xuw</div><a style="text-decoration: none" href="#1667418845.700309" ><div class="time">2022-11-02 19:54</div></a><div class="msg">Been trying to figure out the right matching rule for this sitaution. Below is the body
+```{
+  "ok" : true,
+  "systems" : {
+    "GooglePubSub" : {
+      "ok" : "true"
+    },
+    "Database" : {
+      "ok" : "true"
+    },
+    "GoogleGroups" : {
+      "ok" : "true"
+    },
+    "GoogleIam" : {
+      "ok" : "true"
+    },
+    "OpenDJ" : {
+      "ok" : "true"
+    }
+  }
+}```
+I would want to make sure that each system name (?GooglePubSub? etc) is a string. I know that you can do a matching rule on the ok type, but not really sure how to check the field name</div></div></div><br/>
+<div><a id="1667419104.093119"><img src="https://avatars.slack-edge.com/2022-10-20/4238027888199_44f7d09bf4c7555607c0_72.png" /></a><div class="message"><div class="username">xuw</div><a style="text-decoration: none" href="#1667419104.093119" ><div class="time">2022-11-02 19:58</div></a><div class="msg">In the case that I can?t check the field name, is there a trick to get a similar effect?</div></div></div><br/>
+<div><a id="1667440537.017559"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1667440537.017559" ><div class="time">2022-11-03 01:55</div></a><div class="msg">It would probably be a method named something like ?each key like?
+
+I think <a href="https://docs.pact.io/implementation_guides/jvm/consumer#matching-any-key-in-a-map">https://docs.pact.io/implementation_guides/jvm/consumer#matching-any-key-in-a-map</a> is what you want. My understanding is that these matchers are exposed to the scale interface yeah?</div></div></div><br/>
+<div><a id="1667440540.834399"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1667440540.834399" ><div class="time">2022-11-03 01:55</div></a><div class="msg">oh, no</div></div></div><br/>
+<div><a id="1667440549.924069"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1667440549.924069" ><div class="time">2022-11-03 01:55</div></a><div class="msg">I don?t know if scale ITV does. `pact4s` I think would</div></div></div><br/>
+<div><a id="1667440605.590499"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1667440605.590499" ><div class="time">2022-11-03 01:56</div></a><div class="msg">If you know the keys in advance, you don?t need to check the types, you can just check that they exist and their values are correct. But I suspect you know this, and that there could be many keys</div></div></div><br/>
+<div><a id="1667440628.474649"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1667440628.474649" ><div class="time">2022-11-03 01:57</div></a><div class="msg">You could potentially deal with this using Provider states (given that GooglePubSub, Database? exist)</div></div></div><br/>
 </div></body></html>
