@@ -221,7 +221,7 @@ To prove how easy it was, and as a nice little nod back to the Grandmother of Pa
 
 > This will allow you to see Pact and the Pact-Plugin Framework to test multiple transport and content types. You will see Pact used for gRPC, Protobuf and CSV based messages. Hope it feeds your imagination of the possiblities, it certainly has for me!
 
-- 👉 [Try out gRPC, CSV & Protobuf testing in Go, Rust & Javam with Pact Plugins](https://killercoda.com/safdotdev/course/safacoda/grpc_quick_start)
+- 👉 [Try out gRPC, CSV & Protobuf testing in Go, Rust & Java with Pact Plugins](https://killercoda.com/safdotdev/course/safacoda/grpc_quick_start)
 
 And to anchor it back to a picture you probably know from our Pact docs, plugins just sit in the middle and help extend the capabalities 
 
