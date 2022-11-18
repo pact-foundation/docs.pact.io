@@ -4,19 +4,7 @@ title: Overview
 
 # Case Studies
 
-We have some great case studies written by our users for you read, just click on a logo to take you a post!
-
-## Boost Insurance
-
-> Boost Insurance sees 80% increase in service stability with Pactflow contract testing.
-
-<a href="./case_studies/case_study_boostinsurance"><img src="/img/logos/brand/boost-insurance-logo.svg" alt="Boost insurance Logo" width="150" /></a>
-
-## M1 Finance
-
-> How hypergrowth FinTech, M1 Finance rapidly rolled out contract testing with Pactflow.
-
-<a href="./case_studies/case_study_m1finance"><img src="/img/logos/brand/m1-logo-dark.svg" alt="M1 finance Logo" width="150" /></a>
+We have some great case studies covering the use of Pact, just click on a logo to take you a post!
 
 ## Gov.UK Pay
 
@@ -75,3 +63,19 @@ You can see a list community articles [here](blogs_videos_and_articles), but her
 > How to set up Pact tests with Angular & Jest
 
 <a href="https://medium.com/@dany.marques/how-to-set-up-pact-tests-with-angular-jest-ae157f272428"><img src="/img/logos/brand/die-mobiliar.png" alt="Die Mobiliar Logo" width="150" /></a>
+
+# Pactflow case studies
+
+We also have case studies about Pactflow - you might be interested to read how these Pactflow customers transitions from the Pact Open Source Pact Broker to Pactflow.
+
+## Boost Insurance
+
+> Boost Insurance sees 80% increase in service stability with Pactflow contract testing.
+
+<a href="./case_studies/case_study_boostinsurance"><img src="/img/logos/brand/boost-insurance-logo.svg" alt="Boost insurance Logo" width="150" /></a>
+
+## M1 Finance
+
+> How hypergrowth FinTech, M1 Finance rapidly rolled out contract testing with Pactflow.
+
+<a href="./case_studies/case_study_m1finance"><img src="/img/logos/brand/m1-logo-dark.svg" alt="M1 finance Logo" width="150" /></a>
