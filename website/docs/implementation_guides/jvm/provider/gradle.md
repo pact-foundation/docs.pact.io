@@ -22,7 +22,7 @@ plugins {
 ```
 
 
-### For Gradle versions prior to 2.1 or if you can't access the Gradle plugin portal
+### For Gradle versions prior to 2.1
 
 #### 1.1. Add the gradle jar file to your build script class path:
 

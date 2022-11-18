@@ -4,6 +4,30 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.4.0 - 4.4.0 Release
+
+* e273b2ebc - fix: Upgrade plugin driver to 0.1.7 (fixes startMockServer doesn't set hostInterface, port, and tls) (Ronald Holshausen, Fri Nov 18 14:34:14 2022 +1100)
+
+## 4.4.0-beta.8 - Fixes from master
+
+* 50a6bf01b - update changelog for release 4.3.17 (Ronald Holshausen, Mon Nov 14 15:57:12 2022 +1100)
+* da6efdec9 - GH-1632 invent default auth header with additional tests (Artem Ptushkin, Fri Nov 4 15:29:26 2022 +0100)
+* 000976e32 - update changelog for release 4.3.16 (Ronald Holshausen, Fri Oct 28 18:16:53 2022 +1100)
+* 4d7a28bbf - fix: replace AssertJ with Hamcrest (Ronald Holshausen, Thu Oct 27 10:02:07 2022 +1100)
+* b4ff3a854 - feat: protect json body generation against loop for cicly reference (Samuel, Fri Oct 21 16:56:16 2022 +0200)
+* 72f9193ba - feat: add method to setup content type body matching in the consumer DSL #1623 (Ronald Holshausen, Wed Oct 26 15:14:40 2022 +1100)
+* 8bd14d589 - feat: support MessagePact with a string as a content #1619 (Ronald Holshausen, Wed Oct 26 13:22:28 2022 +1100)
+* 86813ba68 - feat: Support system properties or environment variables for consumer and provider annotation with JUnit4 provider tests #528 #1616 (Ronald Holshausen, Wed Oct 26 12:21:38 2022 +1100)
+* aabee8c44 - fix:  queryMatchingDatetime creates invalid genetator #1612 (Ronald Holshausen, Wed Oct 26 10:18:41 2022 +1100)
+* fc7e13e87 - fix: write empty bodies to the Pact file #1611 (Ronald Holshausen, Tue Oct 25 18:21:14 2022 +1100)
+* 870a99956 - feat: Support generators with URI FORM encoded bodies #1610 (Ronald Holshausen, Tue Oct 25 16:47:55 2022 +1100)
+* 719f07b9b - feat: add capabilityi to build json body based on data class required constructor fields (Samuel, Fri Oct 21 16:02:57 2022 +0200)
+* d1e76e376 - Make PactVerificationTask as much ready as possible for configuration cache (Marco Gomiero, Sat Oct 15 12:42:19 2022 +0200)
+* 1fd9c0901 - bump actions/setup-java to v3 (Nikolas Grottendieck, Sun Oct 16 13:34:01 2022 +0200)
+* 0a804b139 - bump org.json:json version to latest (Nikolas Grottendieck, Sun Oct 16 13:17:02 2022 +0200)
+* 0a23caba1 - Make PactCanIDeployTask compatible with Gradle Configuration Cache (Marco Gomiero, Mon Oct 10 23:19:53 2022 +0200)
+* e3dd8bf5d - Make PactPublishTask compatible with Gradle Configuration Cache (Marco Gomiero, Mon Oct 10 21:50:52 2022 +0200)
+
 ## 4.3.17 - Maintenance Release
 
 * da6efdec9 - GH-1632 invent default auth header with additional tests (Artem Ptushkin, Fri Nov 4 15:29:26 2022 +0100)
@@ -25,6 +49,18 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 * 0a23caba1 - Make PactCanIDeployTask compatible with Gradle Configuration Cache (Marco Gomiero, Mon Oct 10 23:19:53 2022 +0200)
 * e3dd8bf5d - Make PactPublishTask compatible with Gradle Configuration Cache (Marco Gomiero, Mon Oct 10 21:50:52 2022 +0200)
 
+## 4.4.0-beta.7 - Maintenance Release
+
+
+## 4.4.0-beta.6 - Maintenance Release
+
+* ccca23c95 - fix: Upgrade plugin driver to 0.1.6 (fixes plugin loading with multiple versions of the same plugin) (Ronald Holshausen, Wed Oct 5 17:17:51 2022 +1100)
+* ef423a527 - update changelog for release 4.3.15 (Ronald Holshausen, Fri Sep 30 15:22:23 2022 +1000)
+* 873b0e5b3 - Use Thread Context ClassLoader to find test resources (Holly Cummins, Sat Sep 17 12:36:48 2022 +0100)
+* 50863b9f6 - Bump version of Kotlin Result to work around Unresolved reference build failures (Holly Cummins, Fri Sep 16 20:10:55 2022 +0100)
+* db962337e - Fix issue with base classes (Stefano Lucka, Fri Sep 16 20:08:34 2022 +0200)
+* 11811508c - fix: PactBuilder was not correctly setting up HTTP interaction given a Map structure (Ronald Holshausen, Wed Sep 14 10:55:34 2022 +1000)
+
 ## 4.3.15 - Bugfix Release
 
 * 873b0e5b3 - Use Thread Context ClassLoader to find test resources (Holly Cummins, Sat Sep 17 12:36:48 2022 +0100)
@@ -35,6 +71,31 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 * fa7d27065 - fix(Gradle): publishing pacts - default to the consumer version system property if it is set #1601 (Ronald Holshausen, Wed Aug 31 14:14:01 2022 +1000)
 * 08bb852a3 - feat: add matching functions to consumer DSL to matcher numbers with a regex #1600 (Ronald Holshausen, Tue Aug 30 14:15:39 2022 +1000)
 * 7580b4599 - Adding Lambda DSL variants for request/response (Zabuzard, Fri Aug 19 14:57:09 2022 +0200)
+
+## 4.4.0-beta.5 - Bugfix Release
+
+* 674562d27 - fix: Update PactBuilder DSL to support TRANSPORT and default to HTTP interactions (Ronald Holshausen, Wed Sep 7 13:13:14 2022 +1000)
+* d31b3e6f4 - feat: update docs on providing raw selector JSON (Ronald Holshausen, Thu Sep 1 12:10:14 2022 +1000)
+* 416b19d23 - feat: add capability to the selector builder DSL to add raw JSON snippets (Ronald Holshausen, Wed Aug 31 16:54:53 2022 +1000)
+* fa7d27065 - fix(Gradle): publishing pacts - default to the consumer version system property if it is set #1601 (Ronald Holshausen, Wed Aug 31 14:14:01 2022 +1000)
+* 08bb852a3 - feat: add matching functions to consumer DSL to matcher numbers with a regex #1600 (Ronald Holshausen, Tue Aug 30 14:15:39 2022 +1000)
+* 7580b4599 - Adding Lambda DSL variants for request/response (Zabuzard, Fri Aug 19 14:57:09 2022 +0200)
+
+## 4.4.0-beta.4 - Fixes from master + fix for tests using gRPC plugin
+
+* 9a1c9c3cf - fix: Upgrade plugin driver to 0.1.4. Supports plugins that use IP4 addresses (Ronald Holshausen, Fri Aug 12 16:27:09 2022 +1000)
+* 5cc2bdba1 - update changelog for release 4.3.14 (Ronald Holshausen, Fri Aug 12 12:27:04 2022 +1000)
+* ddf7d794b - feat: add example JUnit4 Spring test using new consumer version selector method (Ronald Holshausen, Thu Aug 11 14:18:30 2022 +1000)
+* 09d907b79 - feat: Add docs for using consumer version selector methods with JUnit4 (Ronald Holshausen, Thu Aug 11 14:05:42 2022 +1000)
+* cfc6e3893 - fix: support consumer version selector methods on Kotlin test classes #1594 (Ronald Holshausen, Thu Aug 11 13:21:40 2022 +1000)
+* d56079c0d - fix: raise an exception when the consumerVersionSelectors method has the wrong signature #1594 (Ronald Holshausen, Thu Aug 11 11:53:19 2022 +1000)
+* 4ee099dae - Updated kotlin version from 1.5.31 to 1.6.21 (Jaswanth, Thu Aug 11 11:51:00 2022 +1000)
+* 561f0428d - fix: allways apply the plugin-publish plugin to the Gradle plugin project #1588 (Ronald Holshausen, Wed Aug 10 16:17:49 2022 +1000)
+* 37de1f298 - Consumer version selector method must be public (Stefano Lucka, Tue Aug 9 19:30:32 2022 +0200)
+* 18832534b - Replace diff-utils with the latest actively maintained version 4.12 (Bernard Fugas, Fri Aug 5 08:38:11 2022 +0200)
+* aa425a9fe - update changelog for release 4.3.13 (Ronald Holshausen, Mon Aug 1 09:15:51 2022 +1000)
+* b85250936 - fix(Gradle): fixes gradle provider verification from pact file #1587 (Ronald Holshausen, Fri Jul 29 14:29:50 2022 +1000)
+* d7ec72411 - fix(Gradle): Update methods on GradleProviderInfo to support calling hasPactsFromPactBroker without options #1586 (Ronald Holshausen, Fri Jul 29 13:20:09 2022 +1000)
 
 ## 4.3.14 - Bugfix Release
 
@@ -51,6 +112,44 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 
 * b85250936 - fix(Gradle): fixes gradle provider verification from pact file #1587 (Ronald Holshausen, Fri Jul 29 14:29:50 2022 +1000)
 * d7ec72411 - fix(Gradle): Update methods on GradleProviderInfo to support calling hasPactsFromPactBroker without options #1586 (Ronald Holshausen, Fri Jul 29 13:20:09 2022 +1000)
+
+## 4.4.0-beta.3 - Merged all changes from master
+
+* 98efb3f3c - update changelog for release 4.3.12 (Ronald Holshausen, Tue Jul 26 16:07:23 2022 +1000)
+* ad812c438 - feat: add support for LocalDate to LambdaDslObject #1530 (Ronald Holshausen, Tue Jul 26 15:15:10 2022 +1000)
+* d914ff1d3 - fix: pass the value resolver on to the PactVerificationContext, fixes issues with Spring tests #1572 (Ronald Holshausen, Tue Jul 26 14:47:20 2022 +1000)
+* c085da667 - fix: pass consumer.pending through when validating an async message interaction #1573 (Ronald Holshausen, Tue Jul 26 14:17:13 2022 +1000)
+* fe762dc9c - fix: support multipart form posts with multiple parts #1574 (Ronald Holshausen, Tue Jul 26 13:45:48 2022 +1000)
+* 021c0c7e7 - fix: support multi-line matching with plain text matcher #1579 (Ronald Holshausen, Tue Jul 26 11:16:08 2022 +1000)
+* 2a0f97761 - fix: for NoSuchMethodError: void kotlin.jvm.internal.FunctionReferenceImpl (Ronald Holshausen, Mon Jul 25 16:40:42 2022 +1000)
+* 6c60109c3 - feat: Update Maven plugin readme with latest consumer version selectors (Ronald Holshausen, Mon Jul 25 15:02:39 2022 +1000)
+* d46c317d3 - feat: Update Maven plugin with latest consumer version selectors (Ronald Holshausen, Mon Jul 25 14:16:02 2022 +1000)
+* 1864b9a78 - update changelog for release 4.3.7 (Ronald Holshausen, Fri May 13 16:25:37 2022 +1000)
+* 51e6c9e7a - Updating build.gradle to fix vulnerability (rejeeshg, Tue May 10 23:01:39 2022 +0530)
+* 987b46b57 - update changelog for release 4.3.11 (Ronald Holshausen, Wed Jul 6 11:03:55 2022 +1000)
+* 8335063df - fix: correct publish config to work with Gradle 7 (Ronald Holshausen, Tue Jul 5 16:19:56 2022 +1000)
+* 0ccc32dd2 - feat: Update JUnit 5 readme with Consumer Version Selectors DSL (Ronald Holshausen, Tue Jul 5 16:02:18 2022 +1000)
+* 79b0038c3 - feat: Update JUnit 5 readme with Consumer Version Selectors DSL (Ronald Holshausen, Tue Jul 5 15:49:02 2022 +1000)
+* d50014ce2 - feat: Update JUnit 5 readme with Consumer Version Selectors DSL (Ronald Holshausen, Tue Jul 5 15:43:00 2022 +1000)
+* f37c1379f - Feat: Support consumer version selectors DSL for JUnit 5 (Ronald Holshausen, Tue Jul 5 14:29:04 2022 +1000)
+* 3932b2456 - feat(JUnit): allow pact loader to setup from the test class instead of just annotations (Ronald Holshausen, Wed Jun 29 13:55:05 2022 +1000)
+* 66ad21e8f - update changelog for release 4.3.10 (Ronald Holshausen, Tue Jun 28 13:11:35 2022 +1000)
+* ba88e3019 - feat: add Gradle DSL functions for deprecated tag forms of selectors (Ronald Holshausen, Tue Jun 28 12:26:41 2022 +1000)
+* 60712c465 - fix: call the updated selector method from the Gradle plugin (Ronald Holshausen, Tue Jun 28 11:42:36 2022 +1000)
+* f927119bf - Feat: Implement new Gradle DSL for consumer version selectors (Ronald Holshausen, Mon Jun 27 17:03:09 2022 +1000)
+* 5acf7d226 - refactor(Gradle): use delegation instead of inheritance to allow supporting Gradle 8 changes (Ronald Holshausen, Fri Jun 24 17:12:46 2022 +1000)
+* 905ed6560 - fix: failing test on Windows (Ronald Holshausen, Fri Jun 24 16:14:25 2022 +1000)
+* 832718413 - feat(Gradle): Add auth option for no auth (Ronald Holshausen, Fri Jun 24 15:57:15 2022 +1000)
+* de753fc2f - feat: allow consumer version selector JSON to be provided with an environment variable (Ronald Holshausen, Tue Jun 21 14:05:48 2022 +1000)
+* 05309c11a - fix: correct codenarc violations #1569 (Ronald Holshausen, Wed Jun 15 17:32:29 2022 +1000)
+* 0fa5b5eae - fix: make the use of content type overrides consistent #1569 (Ronald Holshausen, Wed Jun 15 17:29:07 2022 +1000)
+* b8fe6e905 - update changelog for release 4.3.9 (Ronald Holshausen, Tue May 31 17:14:27 2022 +1000)
+* 39d3739f1 - fix: providerVersionBranch for pending pacts (Praveen Erode Mohanasundaram, Fri May 27 22:15:52 2022 +0100)
+* f28aae835 - update changelog for release 4.3.8 (Ronald Holshausen, Thu May 26 11:39:34 2022 +1000)
+* 6e4b18002 - Updating build.gradle to fix Vulnerability CVE-2022-22970 (Colin, Tue May 24 13:45:25 2022 +1200)
+* 936ac74c3 - Add support for providerVersionBranches #1554 (Ben Pilgrim, Thu May 19 11:15:28 2022 +0100)
+* d6d68d6eb - update changelog for release 4.3.7 (Ronald Holshausen, Fri May 13 16:25:37 2022 +1000)
+* 37ba29941 - Updating build.gradle to fix vulnerability (rejeeshg, Tue May 10 23:01:39 2022 +0530)
 
 ## 4.3.12 - Bugfixes + Update Maven plugin with latest consumer version selectors
 
@@ -97,6 +196,26 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 
 * 37ba29941 - Updating build.gradle to fix vulnerability (rejeeshg, Tue May 10 23:01:39 2022 +0530)
 * abee6c3e5 - feat: Add support for enabling insecure TLS to the PactBrokerLoader. (Colin Anderson, Thu Apr 7 22:06:23 2022 +0100)
+
+## 4.4.0-beta.2 - Support handling output from verification via plugins
+
+* 9a88653ac - feat: support handling output from verification via plugins (Ronald Holshausen, Wed Apr 27 13:30:29 2022 +1000)
+
+## 4.4.0-beta.1 - Support verifying interactions via plugins
+
+* dcd81d13e - fix: Correctly return verification results from plugin (Ronald Holshausen, Mon Apr 11 15:37:48 2022 +1000)
+* abee6c3e5 - feat: Add support for enabling insecure TLS to the PactBrokerLoader. (Colin Anderson, Thu Apr 7 22:06:23 2022 +0100)
+* 91f86f51f - fix: handle failed verification from plugins correctly (Ronald Holshausen, Thu Apr 7 12:15:50 2022 +1000)
+* 53baadfa9 - feat: Plugin verifyInteraction requires the Pact and Interaction (Ronald Holshausen, Thu Mar 31 11:40:13 2022 +1100)
+* 1220ed21d - feat: add support for validating an interaction via a plugin (Ronald Holshausen, Wed Mar 30 16:54:09 2022 +1100)
+* bf7609253 - update changelog for release 4.4.0-beta.0 (Ronald Holshausen, Tue Mar 22 16:20:48 2022 +1100)
+
+## 4.4.0-beta.0 - Support for mock servers from plugins
+
+* 4bd1201b6 - feat: Allow lookup of mock server if only the transport is given (Ronald Holshausen, Tue Mar 22 15:25:25 2022 +1100)
+* 97de8d546 - feat: Plugin mock servers needs to presist the transport in the Pact files (Ronald Holshausen, Fri Mar 18 14:07:42 2022 +1100)
+* ba5e6dcdb - fix: avoid NPE when the plugin does not start correctly (Ronald Holshausen, Thu Mar 17 16:36:18 2022 +1100)
+* b270f6977 - feat: support mock servers from plugins (Ronald Holshausen, Fri Mar 11 16:38:39 2022 +1100)
 
 ## 4.3.6 - Bugfix Release
 
