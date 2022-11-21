@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.4.1 - Bugfix Release
+
+* 7913c0e0c - fix: remove kotlin-logging from the convention plugin project constraints #1639 (Ronald Holshausen, Mon Nov 21 14:55:13 2022 +1100)
+* 498758668 - update changelog for release 4.4.1 (Ronald Holshausen, Mon Nov 21 14:40:27 2022 +1100)
+* 32852036f - fix: com.michael-bull.kotlin-result was causing dependency issues #1639 (Ronald Holshausen, Mon Nov 21 14:26:30 2022 +1100)
+* d9eff8f3f - fix: correct the kotlin-logging dependency (Ronald Holshausen, Mon Nov 21 10:04:25 2022 +1100)
+
 ## 4.4.0 - 4.4.0 Release
 
 * e273b2ebc - fix: Upgrade plugin driver to 0.1.7 (fixes startMockServer doesn't set hostInterface, port, and tls) (Ronald Holshausen, Fri Nov 18 14:34:14 2022 +1100)
