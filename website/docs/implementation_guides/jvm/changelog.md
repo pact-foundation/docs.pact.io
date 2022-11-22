@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.4.2 - Fix transitive dependencies
+
+* 362924b38 - fix: httpclient5 and org.json need to be defined as api deps in the dependency constraints #1639 (Ronald Holshausen, Tue Nov 22 11:21:54 2022 +1100)
+
 ## 4.4.1 - Bugfix Release
 
 * 7913c0e0c - fix: remove kotlin-logging from the convention plugin project constraints #1639 (Ronald Holshausen, Mon Nov 21 14:55:13 2022 +1100)
