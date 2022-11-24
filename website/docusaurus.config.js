@@ -188,10 +188,20 @@ const siteConfig = {
     twitterImage: 'img/undraw_tweetstorm.svg',
 
     prism: {
-      additionalLanguages: ['ruby', 'csharp']
+      additionalLanguages: [
+        'ruby',
+        'rb',
+        'csharp',
+        'java',
+        'powershell',
+        'docker',
+        'groovy',
+        'scala',
+      ]
     }
     // ...
   },
+
   /* path to images for header/footer */
   favicon: 'img/favicon.ico',
 
