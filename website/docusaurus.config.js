@@ -190,7 +190,7 @@ const siteConfig = {
     prism: {
       additionalLanguages: [
         'ruby',
-        'rb',
+        'rust',
         'csharp',
         'java',
         'powershell',
