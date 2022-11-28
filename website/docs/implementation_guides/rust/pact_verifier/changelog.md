@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.13.16 - Bugfix Release
+
+* c12d9a61 - fix: Verification results across multiple pacts accumulate, publishing invalid results #231 (Ronald Holshausen, Mon Nov 28 12:00:38 2022 +1100)
+* 33a784a0 - fix: add test for publish verification result issue #231 (Ronald Holshausen, Mon Nov 28 11:04:38 2022 +1100)
+
 ## 0.13.15 - Maintenance Release
 
 * 577824e7 - fix: Upgrade pact_models to 1.0 and pact-plugin-driver to 0.1.15 to fix cyclic dependency issue (Ronald Holshausen, Mon Nov 7 11:14:20 2022 +1100)
