@@ -4,6 +4,18 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.3.15 - Bugfix + FFI functions to support plugin authors
+
+* 2e5823a0 - feat: add custom-header to the old FFI args for implementations that have not moved to handles (Ronald Holshausen, Fri Nov 25 11:09:46 2022 +1100)
+* 570e33c1 - feat: add FFI function to return generator JSON (Ronald Holshausen, Mon Nov 14 14:53:11 2022 +1100)
+* 7a2686e0 - feat: add function to get matching rule as JSON (Ronald Holshausen, Mon Nov 14 13:35:46 2022 +1100)
+* cfc565e3 - feat: add docs on the matching rule IDs (Ronald Holshausen, Mon Nov 14 12:08:26 2022 +1100)
+* 18e1e113 - feat: add an iterator over the matching rules from a matching definition expression (Ronald Holshausen, Mon Nov 14 12:02:41 2022 +1100)
+* e21d3454 - feat: add FFI function to parse JSON to a Pact model (Ronald Holshausen, Fri Nov 11 17:00:36 2022 +1100)
+* b7c010eb - feat: add generator FFI functions (Ronald Holshausen, Fri Nov 11 14:54:39 2022 +1100)
+* f7b561ee - feat: add FFI function to get the generator from a matching definition (Ronald Holshausen, Fri Nov 11 11:16:58 2022 +1100)
+* 768a132b - feat: add FFI function to parse a matching definition expression (Ronald Holshausen, Thu Nov 10 18:18:39 2022 +1100)
+
 ## 0.3.14 - Bugfix Release
 
 * 577824e7 - fix: Upgrade pact_models to 1.0 and pact-plugin-driver to 0.1.15 to fix cyclic dependency issue (Ronald Holshausen, Mon Nov 7 11:14:20 2022 +1100)
