@@ -6,6 +6,45 @@ custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/CHANGELO
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.3.0](https://github.com/pact-foundation/pact-js/compare/v10.2.2...v10.3.0) (2022-11-29)
+
+
+### Features
+
+* expose V4 public interface ([047b61d](https://github.com/pact-foundation/pact-js/commit/047b61d79227ce19629140b90fa2e02edc201f66))
+
+
+### Fixes and Improvements
+
+* add --detectOpenHandles to provider state tests ([9f14582](https://github.com/pact-foundation/pact-js/commit/9f145825829950da23af36f54e5a353d53fd3762))
+* update to latest pact-core 13.12.2 ([e54aa7a](https://github.com/pact-foundation/pact-js/commit/e54aa7ae421e1651c982cada82a7602f7920317a))
+
+### [10.2.2](https://github.com/pact-foundation/pact-js/compare/v10.2.1...v10.2.2) (2022-11-14)
+
+
+### Fixes and Improvements
+
+* remove all remaining absolute imports ([1d16a76](https://github.com/pact-foundation/pact-js/commit/1d16a76462bb86c64ba0ffeb0120cb4037ce13a8))
+
+### [10.2.1](https://github.com/pact-foundation/pact-js/compare/v10.2.0...v10.2.1) (2022-11-14)
+
+
+### Fixes and Improvements
+
+* remove absolute import paths in types. Fixes [#974](https://github.com/pact-foundation/pact-js/issues/974) ([a20ad80](https://github.com/pact-foundation/pact-js/commit/a20ad8038dc560168da20d4a22cd65381d93af26))
+
+## [10.2.0](https://github.com/pact-foundation/pact-js/compare/v10.1.4...v10.2.0) (2022-11-10)
+
+
+### Features
+
+* support V4 Pact interface (beta) ([7f87896](https://github.com/pact-foundation/pact-js/commit/7f87896b58f291aa84b1dff3445e43c166f4ee1c))
+
+
+### Fixes and Improvements
+
+* Fix an issue where extractPayload would not work correctly with objects with a value key ([469e6d3](https://github.com/pact-foundation/pact-js/commit/469e6d35c162e16f63ac206de1c2bbb833720673))
+
 ### [10.1.4](https://github.com/pact-foundation/pact-js/compare/v10.1.3...v10.1.4) (2022-09-21)
 
 
