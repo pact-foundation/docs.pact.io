@@ -8,16 +8,13 @@ Now we are going to publish our plugin so that anybody may use it.
 
 Let's open our plugin project once again:
 
-`cd ~/pact-plugin-template-golang`{{exec}}
+`cd ~/pact-plugin-template-golang`
 
 ## Configure Git
 
-Prepare Git for use, replace the values below with your email and name:
+You have probably already configured git on your command line.
 
-```
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
-```{{copy}}
+If not, check the [instructions](https://docs.github.com/en/get-started/quickstart/set-up-git) on the GitHub site
 
 ### Create a fine grained personal access token
 
@@ -29,23 +26,23 @@ head to https://github.com/settings/personal-access-tokens/new
 * Under "repository permissions" choose read and write for "Contents"
 * Choose "generate token" and copy the value
 
-## Commit the changes 
+## Commit the changes
 
 Add the files and commit the changes:
 
-```
+```sh
 git add .
 git commit -m 'feat: initial foobar plugin'
 git push origin master
 ```
 
-_NOTE: you will need to use your personal access token as the password in this step_
+_**NOTE**: you will need to use your personal access token as the password in this step_
 
 To release, we simply need to:
 
 * Bump the `VERSION` in the `Makefile`. It's currently set to `0.0.1` which is appropriate.
-* Tag the project `git tag -a v0.0.1 -m "Initial release"`{{exec}}
-* Push the tag `git push origin v0.0.1`{{exec}}
+* Tag the project `git tag -a v0.0.1 -m "Initial release"`
+* Push the tag `git push origin v0.0.1`
 
 That's it! There is a `release.yml` in the github workflows directory that will automatically build and publish the artifact to GitHub.
 
@@ -57,26 +54,26 @@ Once it's completed, it will create a number of release artifacts that are ready
 
 In fact, they are prepared in a way that can also be installed through the Plugin CLI. Let's download the CLI and install it that way:
 
-`curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-plugins/main/scripts/install-plugin-cli.sh | bash`{{exec}}
+`curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-plugins/main/scripts/install-plugin-cli.sh | bash`
 
 Install your plugin, using the CLI, customised to your git repo:
 
-```
+```sh
 /root/bin/pact-plugin-cli install -y https://github.com/YOUR_ORG/pact-foobar-plugin/releases/tag/v0.0.1
-```{{copy}}
+```
 
 Check if it's installed:
 
-`/root/bin/pact-plugin-cli list`{{exec}}
+`/root/bin/pact-plugin-cli list`
 
 You can now head back to your JS tests and try running again to see if it works:
 
-```
+```sh
 cd ~/example-project-js-foobar-plugin
 npm t
-```{{exec}}
-
 ```
+
+```js
 ...
 Verifying a pact between myconsumer and myprovider
 

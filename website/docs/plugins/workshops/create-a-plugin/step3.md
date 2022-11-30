@@ -20,10 +20,10 @@ We recommend you provide first class support for the following OS/Architecture t
 | OS      | Architecture | Supported |
 | ------- | ------------ | --------- |
 | OSX     | x86_64       | ✅         |
-| OSX     | arm          | ✅         |
+| OSX     | aarch64 (arm)| ✅         |
 | Linux   | x86_64       | ✅         |
-| Linux   | arm          | ✅         |
+| Linux   | aarch64 (arm)| ✅         |
 | Windows | x86_64       | ✅         |
-| Windows | arm          | ✅         |
+| Windows | aarch64 (arm)| ✅         |
 
 GitHub provides support for compiling for such targets.

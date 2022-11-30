@@ -7,11 +7,15 @@ title: 5. Creating our first plugin
 
 ## The scenario
 
-We are going to create a new plugin to support a fictional content type `application/foo`. Initially, it will simply be a text-based protocol with no special features. However in an bonus module, we will encourage you to modify and implement a custom grammar for the language.
+We are going to create a new plugin to support a fictional content type `application/foo`. 
+
+Initially, it will simply be a text-based protocol with no special features. However in an bonus module, we will encourage you to modify and implement a custom grammar for the language.
 
 ## The Template
 
-We will be using the following template project to create our plugin: https://github.com/pact-foundation/pact-plugin-template-golang
+We will be using the following template project to create our plugin: 
+
+- https://github.com/pact-foundation/pact-plugin-template-golang
 
 The template helps you bootstrap a new plugin quickly. It features:
 
@@ -21,35 +25,40 @@ The template helps you bootstrap a new plugin quickly. It features:
 
 It's worth opening the `README` in `pact-plugin-template-golang/README.md` and familiarising yourself.
 
-We will now proceed to create our first plugin! Let's open the template project:
-
-`cd ~/pact-plugin-template-golang`{{exec}}
-
 ## Creating the plugin
 
 Please familiarise yourself with the general guide for creating a [Content Matcher](https://github.com/pact-foundation/pact-plugins/blob/main/docs/content-matcher-design.md) Plugin before moving on. 
 
 This should give you some perspective for when we dive into the code. Take particular note of the sequence diagram to understand the flow of events.
 
-## Create a new GitHub repo
+## Create a new GitHub repo from our plugin template
 
-1. Create a new repository in GitHub. The name of the project should be `pact-<PROJECT>-plugin`. We will use `pact-foobar-plugin`
-   * ![New Repository](./assets/new-repository.png)
-2. Change into the template folder: `cd ~/pact-plugin-template-golang/`{{exec}}
-3. Add your remote, e.g. `git remote add origin https://github.com/YOUR_ORG/pact-foobar-plugin.git`
-4. Push this code to your new repository `git push origin`
+We will now proceed to create our first plugin! 
 
-You should now have a basic template in your new project on GitHub.
+Rather than setting up a plugin from scratch, you can use our template repository, to bootstrap your development, with templated repositories
+
+1. Visit the [selected template repository](https://github.com/pact-foundation/pact-plugin-template-golang) and click the green `Use this template` button and select `Create a new repository`
+2. You'll need to choose a name for your Plugin
+   1. . The name of the project should be `pact-<PROJECT>-plugin`. We will use `pact-foobar-plugin`
+      * ![New Repository](./assets/new-repository.png)
+3. Clone your new repository onto your local machine `git clone https://github.com/YOUR_ORG/pact-foobar-plugin.git`
+4. Change into the template folder: `cd pact-foobar-plugin`
+
+You should now have a basic template in your new project on GitHub and on your local machine
 
 ## Compile and run the plugin
 
+Let's open your new project:
+
+`cd pact-foobar-plugin`
+
 At this point, the plugin should be able to compile and start a gRPC server.
 
-Run `make bin`{{exec}} to create the plugin, and then start it: `build/myplugin`{{exec}}. 
+Run `make bin` to create the plugin, and then start it: `build/myplugin`. 
 
 You should see some output that looks like this:
 
-```
+```json
 {"port": 40555, "serverKey": "bf71bb84-2e08-411b-86d5-8449e2b0497b"}
 ```
 
@@ -68,10 +77,10 @@ Similarly, correct the import at the top of [`plugin.go`](./plugin.go) and [`ser
 
 Or simply do a workspace wide search and replace from `github.com/pact-foundation/pact-plugin-template-golang` to your go module name.
 
-```
+```sh
 go mod tidy
 go mod vendor
-```{{exec}}
+```
 
 ## Set the name and version
 
@@ -102,7 +111,7 @@ await pact
   })
   .executeTest((mockserver) => {
           ...
-```          
+```
 
 The user needs to specify the request and response body portion of the request.
 
@@ -113,7 +122,7 @@ This being said, most plugins have opted to use a JSON structure, and use keys s
 
 This structure is be represented in [`configuration.go`](./configuration.go).
 
-Think about how you would like your user to specify the interaction details for the various interaction types. 
+Think about how you would like your user to specify the interaction details for the various interaction types.
 
 Here is an example for a TCP plugin with a custom text protocol:
 
@@ -229,11 +238,11 @@ The Golang library doesn't support generators, so you can leave this method as i
 
 By now, you should have a simple text content matcher that knows how to handle a `application/foo` content type. It can now be used in any Pact test or interaction that supports plugins, and uses that content type.
 
-Run `make bin`{{exec}} to create the plugin, and then start it to ensure it compiles and runs: `build/foobar`{{exec}}. 
+Run `make bin` to create the plugin, and then start it to ensure it compiles and runs: `build/foobar`. 
 
 ## Install our plugin for local testing
 
-run `make install_local`{{exec}} to build the plugin and move it into the plugins directory for local development.
+run `make install_local` to build the plugin and move it into the plugins directory for local development.
 
 ## Further Reading
 

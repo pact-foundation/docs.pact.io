@@ -1,5 +1,5 @@
 ---
-title: 3. gRPC
+title: 3. Transport Overview - gRPC
 ---
 
 
@@ -9,7 +9,7 @@ gRPC was chosen because it is a high performance RPC framework - keeping our tes
 
 Teaching gRPC and Protobufs is beyond the scope of this tutorial, and we have provided some links at the bottom of this step for further reading.
 
-*NOTE: you won't need an understanding of gRPC for this tutorial.*
+**NOTE:** you won't need an understanding of gRPC for this tutorial.
 
 ## The Plugin API
 

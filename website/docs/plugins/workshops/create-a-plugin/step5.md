@@ -14,8 +14,7 @@ As we iterate on the plugin, it's helpful to have a development cycle that allow
 
 Open up the  `plugin.consumer.spec.ts` and also the provider test `plugin.provider.spec.ts` to see how the plugin is used in an HTTP interaction. Note the plugin can also be used in other interaction types and transports provided by other plugins
 
-```
+```sh
 cd ~/example-project-js-foobar-plugin
 npm t
-```{{exec}}
-
+```

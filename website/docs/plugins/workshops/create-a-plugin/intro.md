@@ -19,3 +19,9 @@ You will:
 2. Learn the basics of plugins by creating a simple Content Matcher plugin
 3. Publish the plugin to GitHub so that it can be used by others
 4. Use the plugin in a project
+
+
+## Ways you can run it
+
+1. You can follow this course by clicking on the steps on the bottom right, of each page. You will be instructed to perform some commands on your local machine.
+2. You can run the entire workshop, from the comfort of your browser, in our interactive tutorials https://killercoda.com/pactflow/scenario/create-a-plugin

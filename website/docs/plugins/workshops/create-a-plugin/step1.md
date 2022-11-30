@@ -1,5 +1,5 @@
 ---
-title: 2. Intro
+title: 2. Conceptual Overview - Plugin Framework
 ---
 
 ## Introduction to Plugins
