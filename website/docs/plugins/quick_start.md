@@ -1,5 +1,5 @@
 ---
-title: Quick Start
+title: Pact Plugins
 ---
 
 # Getting started with Pact Plugins
