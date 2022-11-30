@@ -199,3 +199,8 @@
   from = "/plugins"
   to = "/plugins/quick_start"
   status = 301
+
+[[redirects]]
+  from = "/university/create-a-plugin"
+  to = "/plugins/workshops/create-a-plugin/intro"
+  status = 301
