@@ -194,3 +194,8 @@
   from = "/record-support-ended"
   to = "/pact_broker/recording_deployments_and_releases"
   status = 301
+
+[[redirects]]
+  from = "/plugins"
+  to = "/implementation_guides/pact_plugins"
+  status = 301
