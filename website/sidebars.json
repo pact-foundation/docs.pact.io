@@ -251,7 +251,8 @@
         "getting_started",
         "getting_started/how_pact_works",
         "5-minute-getting-started-guide",
-        "getting_started/feature_toggles"
+        "getting_started/feature_toggles",
+        "plugins/quick_start"
       ]
     },
     {
@@ -409,6 +410,13 @@
         {
           "Webinars": ["events/plugins-framework-launch"]
         }
+      ]
+    },
+    {
+      "Pact Plugins": [
+        "plugins/quick_start",
+        "plugins/directory"
+        
       ]
     },
     {

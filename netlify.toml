@@ -197,5 +197,5 @@
 
 [[redirects]]
   from = "/plugins"
-  to = "/implementation_guides/pact_plugins"
+  to = "/plugins/quick_start"
   status = 301
