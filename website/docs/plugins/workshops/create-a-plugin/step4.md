@@ -69,11 +69,11 @@ Stop the server by running `ctrl-c` in the terminal.
 
 ## Update the Go module name
 
-We need to rename all the things, otherwise it will be called the unhelpful `myplugin`. 
+We need to rename all the things, otherwise it will be called the unhelpful `myplugin`
 
-Replace `github.com/pact-foundation/pact-plugin-template-golang` in [`go.mod`](./go.mod) with your github URL (without the protocol prefix) to identify the package uniquely.
+Replace `github.com/pact-foundation/pact-plugin-template-golang` in `go.mod` with your github URL (without the protocol prefix) to identify the package uniquely.
 
-Similarly, correct the import at the top of [`plugin.go`](./plugin.go) and [`server.go`](./server.go).
+Similarly, correct the import at the top of `plugin.go` and `server.go`
 
 Or simply do a workspace wide search and replace from `github.com/pact-foundation/pact-plugin-template-golang` to your go module name.
 
@@ -84,7 +84,7 @@ go mod vendor
 
 ## Set the name and version
 
-In the top of the [`Makefile`](./Makefile) set `PROJECT` to your plugin's name - `foobar`
+In the top of the `Makefile` set `PROJECT` to your plugin's name - `foobar`
 
 *NOTE: It's important that the name of your go module and the `PROJECT` variable must align, to create artifacts discoverable to the CLI tooling, such as the [Plugin CLI](https://docs.pact.io/implementation_guides/pact_plugins/cli).*
 
@@ -120,7 +120,7 @@ on this data structure and is something you need to design.
 
 This being said, most plugins have opted to use a JSON structure, and use keys similar to how they are mapped in Pact today (under the `request` and `response` properties).
 
-This structure is be represented in [`configuration.go`](./configuration.go).
+This structure is be represented in `configuration.go`
 
 Think about how you would like your user to specify the interaction details for the various interaction types.
 
@@ -157,7 +157,7 @@ We will stick with this default for now, but note it is an important design deci
 
 ### Implement the relevant RPC functions
 
-Open [`plugin.go`](./plugin.go) and update the relevant RPC functions. 
+Open `plugin.go` and update the relevant RPC functions.
 
 Depending on your use case, some of the RPC calls won't be required, each method is well signposted to help you along.
 
