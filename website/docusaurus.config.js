@@ -112,7 +112,8 @@ const siteConfig = {
         { to: 'history', label: 'Resources', position: 'left' },
         { to: 'contributing', label: 'Contributing', position: 'left' },
         { to: 'blog', label: 'Blog', position: 'left' },
-        { to: 'help', label: 'Help', position: 'left' }
+        { to: 'help', label: 'Help', position: 'left' },
+        { to: 'university', label: 'University', position: 'left' }
       ]
     },
 

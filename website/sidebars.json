@@ -251,7 +251,8 @@
         "getting_started",
         "getting_started/how_pact_works",
         "5-minute-getting-started-guide",
-        "getting_started/feature_toggles"
+        "getting_started/feature_toggles",
+        { "id": "plugins/quick_start", "type": "doc", "label": "Quick Start" }
       ]
     },
     {
@@ -412,6 +413,12 @@
       ]
     },
     {
+      "Pact Plugins": [
+        { "id": "plugins/quick_start", "type": "doc", "label": "Quick Start" },
+        "plugins/directory"
+      ]
+    },
+    {
       "Contributing": [
         "contributing",
         "contributing/code",
@@ -431,6 +438,33 @@
             "users/case_studies/case_study_atlassian",
             "users/case_studies/case_study_boostinsurance",
             "users/case_studies/case_study_m1finance"
+          ]
+        }
+      ]
+    }
+  ],
+  "university": [
+    {
+      "type": "category",
+      "label": "Pact University",
+      "items": [
+        "university",
+        {
+          "type": "category",
+          "label": "Pact Plugins",
+          "items": [
+            {
+              "Create a Plugin": [
+                "plugins/workshops/create-a-plugin/intro",
+                "plugins/workshops/create-a-plugin/step1",
+                "plugins/workshops/create-a-plugin/step2",
+                "plugins/workshops/create-a-plugin/step3",
+                "plugins/workshops/create-a-plugin/step4",
+                "plugins/workshops/create-a-plugin/step5",
+                "plugins/workshops/create-a-plugin/step6",
+                "plugins/workshops/create-a-plugin/step7"
+              ]
+            }
           ]
         }
       ]
