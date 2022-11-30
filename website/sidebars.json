@@ -252,7 +252,7 @@
         "getting_started/how_pact_works",
         "5-minute-getting-started-guide",
         "getting_started/feature_toggles",
-        { "id": "plugins/quick_start", "type": "doc", "label": "Quick Start" }
+        { "id": "plugins/quick_start", "type": "doc", "label": "Pact Plugins" }
       ]
     },
     {
