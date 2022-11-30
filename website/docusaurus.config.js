@@ -78,6 +78,14 @@ const siteConfig = {
   organizationName: 'Pact Foundation',
 
   themeConfig: {
+    announcementBar: {
+      id: 'oss-survey-2022',
+      content:
+        '<div id="oss-survey-2022">The 2022 <a target="_blank" href="https://forms.office.com/r/ccxYTMxhJm">Pact Open Source Community Survey</a> is now open.</div>',
+      backgroundColor: '#454CF0',
+      textColor: '#fff',
+      isCloseable: false,
+    },
     custom: './src/css/how-pact-works',
 
     algolia: {
