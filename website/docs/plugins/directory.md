@@ -44,7 +44,7 @@ We have built out some demos based on a few scenario's, that you can run on your
 |gRPC   |Area Calculator   | Consumer  |  Java - Maven | [Code](https://github.com/pact-foundation/pact-plugins/tree/main/examples/gRPC/area_calculator/consumer-maven)  |
 |gRPC   |Area Calculator   | Consumer  |  Rust  | [Code](https://github.com/pact-foundation/pact-plugins/tree/main/examples/gRPC/area_calculator/consumer-rust)  |
 |gRPC   |Area Calculator   | Consumer  |  Go  | [Code](https://github.com/pact-foundation/pact-plugins/tree/main/examples/gRPC/area_calculator/consumer-go)  |
-|gRPC   |Area Calculator   | Provider  |  Java - Gradle   | [Code](https://github.com/pact-foundation/pact-plugins/tree/main/examples/gRPC/area_calculator/consumer-jvm)  |
+|gRPC   |Area Calculator   | Provider  |  Java - Gradle   | [Code](https://github.com/pact-foundation/pact-plugins/tree/main/examples/gRPC/area_calculator/provider-jvm)  |
 |gRPC   |Area Calculator   | Provider  |  Go  | [Code](https://github.com/pact-foundation/pact-plugins/tree/main/examples/gRPC/area_calculator/provider-go) |
 |Protobuf   |Pact Plugin   | Consumer  |  Java - Gradle  | [Code](https://github.com/pact-foundation/pact-plugins/tree/main/examples/protobuf/protobuf-consumer-jvm)  |
 |Protobuf   |Pact Plugin    | Consumer  |  Java - Maven | [Code](https://github.com/pact-foundation/pact-plugins/tree/main/examples/protobuf/protobuf-consumer-maven) |
