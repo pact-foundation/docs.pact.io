@@ -1,5 +1,5 @@
 ---
-title: Pact Plugin Framework - Workshop
+title: Create a Pact Plugin in an hour
 tags:
   - webinar
 ---
@@ -7,8 +7,6 @@ tags:
 import Highlight from '../../src/components/Highlight';
 
 <Highlight color="#25c2a0">Workshop</Highlight><p/>
-
-### Pact Plugin Framework - hands on workshop
 
 Your favourite contract testing framework comes Pact with more power! The new Pact Plugin Framework completes the missing piece to help development teams apply contract testing across all of their API technologies and use cases.
 

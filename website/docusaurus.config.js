@@ -80,8 +80,8 @@ const siteConfig = {
   themeConfig: {
     announcementBar: {
       id: 'oss-survey-2022',
-      content:
-        '<div id="oss-survey-2022">The 2022 <a target="_blank" href="https://forms.office.com/r/ccxYTMxhJm">Pact Open Source Community Survey</a> is now open.</div>',
+      // content: '<div id="oss-survey-2022">❤️ Help us improve - the 2022 <a target="_blank" href="https://forms.office.com/r/ccxYTMxhJm">Pact Open Source Community Survey</a> is now open.</div>',
+      content: '<div id="oss-survey-2022">Join our upcoming workshop: <a target="_blank" href="/events/plugins-framework-workshop">Create a Pact Plugin in an hour</a>.</div>',
       backgroundColor: '#454CF0',
       textColor: '#fff',
       isCloseable: false,
