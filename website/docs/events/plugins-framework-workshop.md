@@ -34,9 +34,9 @@ play along with the instructors.
 Register
 ---
 
-* Session 1: Tuesday 13 Dec - 4pm EST; 1pm PST / Wednesday 14 Dec - 8am AEST
+* Session 1: Tues 13 Dec - 4pm EST; 1pm PST / Wed 14 Dec - 8am AEST
   * [Register Now](https://smartbear.zoom.us/webinar/register/WN_pWsqiuZ6R7WArBSY0BOBeg)
-* Session 2: Wed 14 Dec - 10am BST / Wednesday 14 Dec - 9pm AEST
+* Session 2: Wed 14 Dec - 10am BST / Wed 14 Dec - 9pm AEST
   * [Register Now](https://smartbear.zoom.us/webinar/register/WN_IPtGiMzgS626THnyrjT75g)
 
 *Note: we will record these sessions and email them the following day.*
