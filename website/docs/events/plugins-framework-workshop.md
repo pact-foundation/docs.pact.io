@@ -8,33 +8,36 @@ import Highlight from '../../src/components/Highlight';
 
 <Highlight color="#25c2a0">Workshop</Highlight><p/>
 
-**Pact Plugin Framework - hands on workshop**
+### Pact Plugin Framework - hands on workshop
 
 Your favourite contract testing framework comes Pact with more power! The new Pact Plugin Framework completes the missing piece to help development teams apply contract testing across all of their API technologies and use cases.
 
-Pact was originally created to support the rise of RESTful microservices and has since expanded to support asynchronous messaging, becoming the defacto API contract testing solution.
+In this hands-on workshop, you will create and run your first Pact Plugin to solve for use cases you previously couldn't.
 
-As architectures have evolved, organisations find that the existing Pact contract testing framework may not support all of their use cases.
+**We will:**
 
-The industry has continued to innovate since Pact was created in 2013, and RESTful microservices are now only one of the key use cases today, we now see growth of:
+* Cover the key concepts and components of the Plugin Framework
+* Create a new Content Matcher to support a new MIME type
+* Publish and release your new Plugin to GitHub
+* Add it to a project and run a pact test
 
-* Protocols such as Protobufs and GraphQL (80% of organisations run multi-protocol and more than 60% of organisations manage three or more)
-* Transports such as gRPC, Websockets and MQTT
-* Newer interaction models such as streaming, async or server push
-* Event Driven Architectures and data pipelines
-* Emerging standards such as AsyncAPI and CloudEvent
+**Pre-requisites:**
 
-If you’ve been held up applying contract testing to a specific use case, consider the blockers abolished with the new Pact Plugin Framework! Now anyone can build a new component to use with contract testing without the burden of having to set up and manage the underlying framework.
+* A GitHub account
+* Programming experience in a language such as Java, .NET, or Javascript 
+ 
+:::note
+Whilst this is a 301 level lesson aimed at practitioners wanting to build a plugin, if you're not comfortable in an IDE, writing code and executing builds in CI, you can still 
+play along with the instructors.
+:::
 
 Register
 ---
 
-Join Matt & Yousaf for a hands-on Pact Plugin Framework workshop, where you will build and use your first plugin: 
-
-* Session 1: Wed 30 Nov - 4pm EST; 1pm PST / Thursday 1 Dec - 8am AEST
-  * [Register Now](https://smartbear.zoom.us/webinar/register/WN_JnLf8Gm8TminRlZDkoZJXQ)
-* Session 2: Wed 1 Dec - 10am BST / Thursday 1 Dec - 9pm AEST
-  * [Register Now](https://smartbear.zoom.us/webinar/register/WN_HESBWkhITTa5uaqCA0BGag)
+* Session 1: Tuesday 13 Dec - 4pm EST; 1pm PST / Wednesday 14 Dec - 8am AEST
+  * [Register Now](https://smartbear.zoom.us/webinar/register/WN_pWsqiuZ6R7WArBSY0BOBeg)
+* Session 2: Wed 14 Dec - 10am BST / Wednesday 14 Dec - 9pm AEST
+  * [Register Now](https://smartbear.zoom.us/webinar/register/WN_IPtGiMzgS626THnyrjT75g)
 
 *Note: we will record these sessions and email them the following day.*
 

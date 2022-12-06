@@ -408,7 +408,7 @@
       "Events": [
         "events",
         {
-          "Webinars": ["events/plugins-framework-launch"]
+          "Webinars and Workshops": ["events/plugins-framework-workshop", "events/plugins-framework-launch"]
         }
       ]
     },
