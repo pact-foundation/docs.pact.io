@@ -5,7 +5,7 @@ title: Events
 
 **14 Dec 2022 - Pact Plugin Framework: Workshop**
 
-* [Event page](/events/plugins-framework-launch)
+* [Event page](/events/plugins-framework-workshop)
 
 
 ## Past events
