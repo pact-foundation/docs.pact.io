@@ -12,7 +12,8 @@ title: Events
 
 **18 Nov 2022 - Pact Plugin Framework Launch**
 
-* [Event page](/events/plugins-framework-launch)
+* [Watch recording](https://www.youtube.com/watch?v=XA0yKOv5DjE)
+* [Event registration page](/events/plugins-framework-launch)
  
 **19 Nov 2020 - Online Pact Community Event**
 

@@ -8,6 +8,10 @@ import Highlight from '../../src/components/Highlight';
 
 <Highlight color="#25c2a0">Webinar</Highlight><p/>
 
+:::note
+This webinar has ended, and you may now [watch the recording](https://www.youtube.com/watch?v=XA0yKOv5DjE).
+:::
+
 **Pact with more power – introducing the Pact Plugin Framework**
 
 Your favourite contract testing framework comes Pact with more power! The new Pact Plugin Framework completes the missing piece to help development teams apply contract testing across all of their API technologies and use cases.
