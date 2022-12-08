@@ -149,9 +149,9 @@ You can see an example project with a Github Workflow set up as described [here]
 
 * `Changed pact verification job` - triggered by the ['contract_requiring_verification_published'](#using-webhooks-with-the-contract_requiring_verification_published-event) (preferrable) or 'contract_content_changed' webhook, this job verifies only the changed pact, and publishes the verification results back to the broker. This pact verification job configuration will be different to the one configured as part of the main provider pipeline, and should accept the URL of the changed pact as a configurable parameter. To do this, you must use webhook [template parameters](/pact_broker/webhooks/dynamic_variable_sub) to pass the URL of the changed pact through to the CI, which can then pass it in to the verification task. See the pact verification configuration documentation for your language.
 
-You can see an example project with a "changed pact verification" Github Workflow set up as described [here](https://github.com/pactflow/example-provider/blob/master/.github/workflows/verify_changed_pact.yml).
+You can see an example project with a [`verify-contract-requiring-verification` Github Workflow](https://github.com/pactflow/example-provider/blob/master/.github/workflows/contract_requiring_verification_published.yml).
 
-You can see an example `create-webhook` command for triggering the "changed pact verification" [here](https://github.com/pactflow/example-provider/blob/master/Makefile#L83)
+You can see an example `create-webhook` [command for triggering the `contract-requiring-verification-published`](https://github.com/pactflow/example-provider/blob/master/Makefile#L86-L99)
 
 ### Pact Broker
 
