@@ -32,7 +32,7 @@ __NOTE:__ If you are using `tags` then set the `provider version tag` which is r
 The logic for what constitutes a WIP pact is actually quite complex! To make it work as a human would intuitively expect involves many rules. It might be easiest to explain how the pacts are selected by stepping through it procedurally as the code does.
 
 1. Find all the pacts that are the latest for their branch (the "head" pacts). (eg. The latest pact for a version associated with branch `main` + the latest pact for a version with branch `feat-x` + the latest pact for a version with branch `feat-y` ...)
-2. Discard the pacts that have been explicitly selected in the consumerVersionSelectors. (eg. usually you'd configure the consumer version selectors with `{ "mainBranch" : true }` / `{"tag": "main", "latest": "true"}`, so discard the latest `main` branch pact)
+2. Discard the pacts that have been explicitly selected in the consumerVersionSelectors. (eg. usually you'd configure the consumer version selectors with `{ "mainBranch" : true }` or if using tags `{"tag": "main", "latest": "true"}`, so discard the latest `main` branch pact)
 3. Discard all the pacts created before the `includeWipPactsSince` date (we don't want to verify every unverified head pact since the dawn of time).
 4. Discard all the pacts that have a successful verification by a provider version with a different configured branch before this branch was created (this is so that if you create a brand new provider branch, you don't get EVERY head pact included in the WIP pacts list).
 5. Discard all the pacts that have a successful verification by a provider version with the same configured branch (or tag) _where the pact content was explicitly specified in the selectors_.
