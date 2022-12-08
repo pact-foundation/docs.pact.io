@@ -333,12 +333,15 @@ Ref:
 * [GitLab - Adding a new trigger](https://docs.gitlab.com/ee/ci/triggers/#adding-a-new-trigger)
 * [GitLab - Pipeline triggers](https://docs.gitlab.com/ee/api/pipeline_triggers.html)
 
-#### TeamCity - trigger build
+#### TeamCity - Trigger Build
 
-If you use TeamCity and know out how to pass parameters into the build, can you please submit a PR to update this example.
 
 ```json
 {
+  "description": "Trigger 'contract_content_changed' event",
+  "provider": {
+    "name": "<Provider name>"
+  },
   "events": [
     {
       "name": "contract_content_changed"
@@ -346,22 +349,42 @@ If you use TeamCity and know out how to pass parameters into the build, can you 
   ],
   "request": {
     "method": "POST",
-    "url": "https://teamcity.net/app/rest/buildQueue?",
+    "url": "https://<TEAMCITY_URL>/app/rest/buildQueue",
     "headers": {
-      "Content-Type": "application/xml",
-      "Authorization": "bearer token"
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Authorization": "Bearer Token"
     },
-    "body": "<build><buildType id='YourJobId'\/><\/build>",
-    "username": "username",
-    "password": "password"
+    "body": {
+      "buildType": {
+        "id": "<Build Configuration Id>"
+      },
+      "branchName": "${pactbroker.consumerVersionBranch}",
+      "properties": {
+        "property": [
+          {
+            "name": "env.pactConsumerVersionBranch",
+            "value": "${pactbroker.consumerVersionBranch}"
+          },
+          {
+            "name": "env.pactConsumerName",
+            "value": "${pactbroker.consumerName}"
+          }
+        ]
+      }
+    },
   }
 }
 ```
 
+The webhook body accepts the body parameters available at the [addBuildToQueue](https://www.jetbrains.com/help/teamcity/rest/buildqueueapi.html#addBuildToQueue) endpoint.
+
+`pactbroker.consumerVersionBranch` will be available as an environment variable in the teamcity build under the name `env.pactConsumerVersionBranch`
+
 Ref:
 
 * [TeamCity - REST Authentication](https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-RESTAuthentication)
-* [TeamCity - Triggering Build](https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-TriggeringaBuild)
+* [TeamCity - Add Build To Queue](https://www.jetbrains.com/help/teamcity/rest/buildqueueapi.html#addBuildToQueue)
 
 #### Jenkins - Trigger Build
 
