@@ -13,7 +13,7 @@ hide_table_of_contents: false
 
 Today we share the news that your favourite contract testing framework comes Pact with more power! The new Pact Plugin Framework completes the missing piece to help development teams apply contract testing all their API technologies and use cases.  
 
-:::Watch
+:::note
 Replay the [launch webinar](https://youtu.be/XA0yKOv5DjE) to hear Matt and Yousaf explain the Pact Plugin Framework
 :::
 
