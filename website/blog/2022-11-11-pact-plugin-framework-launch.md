@@ -13,8 +13,8 @@ hide_table_of_contents: false
 
 Today we share the news that your favourite contract testing framework comes Pact with more power! The new Pact Plugin Framework completes the missing piece to help development teams apply contract testing all their API technologies and use cases.  
 
-:::note
-[Register](https://docs.pact.io/events/plugins-framework-launch) for an upcoming webinar to learn more.
+:::Watch
+Replay the [launch webinar](https://youtu.be/XA0yKOv5DjE) to hear Matt and Yousaf explain the Pact Plugin Framework
 :::
 
 ## Why we built the Pact Plugin Framework 
@@ -47,9 +47,9 @@ Read the full use case for the Plugin Framework is explained in detail on the [G
 
 ## Getting started
 
-If you’re as excited by this new feature as we are, you can jump right in and give it a try in two ways: 
+If you’re as excited by this new feature as we are, you can: 
 
-1. [Build your own plugin](https://docs.pact.io/implementation_guides/pact_plugins/docs/writing-plugin-guide) for any use case you and your team require – visit the guide to writing your own plugin 
-1. Try out a pre-made plugin - visit the [implementation guide for GPRC](https://github.com/pactflow/pact-protobuf-plugin)
+1. Replay the [launch webinar](https://youtu.be/XA0yKOv5DjE) to hear Matt and Yousaf explain the Pact Plugin Framework
+2.  [Build your own plugin](https://docs.pact.io/implementation_guides/pact_plugins/docs/writing-plugin-guide) for any use case you and your team require – visit the guide to writing your own plugin 
+3. Try out a pre-made plugin - visit the [implementation guide for GPRC](https://github.com/pactflow/pact-protobuf-plugin)
 
-Plus, on Wed 30 November, we’re hosting two live webinars to present the backstory, introduce the Pact Plugin Framework and answer questions about getting started. [Sign up here](https://docs.pact.io/events/plugins-framework-launch).
