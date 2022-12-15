@@ -5,7 +5,7 @@ authorURL: https://github.com/you54f
 tags: [pact, oss, community, plugins, 2022, history,wrapup,almanac]
 keywords: [pact, oss, community, plugins, 2022, history,wrapup,almanac]
 date: 2022-12-15
-draft: true
+draft: false
 hide_table_of_contents: false
 ---
 
