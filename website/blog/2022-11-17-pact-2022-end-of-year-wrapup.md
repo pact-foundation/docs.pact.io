@@ -11,7 +11,7 @@ hide_table_of_contents: false
 
 ## ⏳ And just like that, 2023 draws near
 
-We at the Pact team, love nothing more than making micro service testing easier, our community and churning out the code. This year has been no exception. As many of you have wrapped up for your christmas break, we thought we would take some time to reflect on the year and the communities achievements.
+We at the Pact team love nothing more than making microservices testing easier, our community and churning out the code. This year has been no exception. As many of you have wrapped up for your christmas break, we thought we would take some time to reflect on the year and the communities achievements.
 
 ## Pact Open Source Community Survey
 
@@ -19,12 +19,16 @@ Our new survey is now open! The purpose of this survey is a pulse check on the c
 
 ## Brought to Life through Visualizations
 
-Earlier in the year [we mentioned we rolled out Orbit.love](https://docs.pact.io/blog/2022/06/08/pact-open-source-update-june-2022#our-awesome-community) to help us track activities across the Pact Foundation. We’re still in the process of determining the most effective usage and views of the data. We are thinking about ways we can expose the dataset (as it’s all publicly available information from GitHub), so that you can tell us what you make of it. Think of it as an interactive state of open-source survey if you will! The good news is that we’ll be doing so together with our friends over at the Cucumber and Swagger communities. We even hope to extend it over the SmartBear GitHub account too.
+Earlier in the year [we mentioned we rolled out Orbit.love](https://docs.pact.io/blog/2022/06/08/pact-open-source-update-june-2022#our-awesome-community) to help us track activities across the Pact Foundation's many open doors.
+
+I would login into GitHub, Slack, YouTube, Slack Overflow, Twitter, check my emails, all before I could get down to any work. I imagine the story is much the same for our maintainers, when they get that precious free time to code, it can be exhausting. Orbit gives me a single view I can go to every day, and see who is posting asking for help, or where the activity is, so I can come jump in a help out.
+
+We’re still in the process of determining the most effective usage and views of the data, in a wider context rather than just helping us on the day to day. We are thinking about ways we can expose the dataset (as it’s all publicly available information from GitHub), so that you can tell us what you make of it. Think of it as an interactive _state of open-source_ survey if you will! The good news is that we’ll be doing so together with our friends over at the [Cucumber](https://cucumber.io/) and [Swagger](http://swagger.io/) communities. We even hope to extend it over the SmartBear GitHub account too.
 
 ![](https://user-images.githubusercontent.com/19932401/207966715-9e4d4687-eb29-45f7-838b-ea4ea8cdbbe0.png)
 
 
-We saw over 3 thousand of you interacting with us via our open source channels, and introduced 2.7k more into the fold.
+We saw over 3,000 of you interacting with us via our open source channels, and introduced 2.7k more into the fold.
 
 ![](https://user-images.githubusercontent.com/19932401/207966692-2a5a44b6-b5bc-4d52-bf92-faa95ae58753.png)
 
@@ -165,6 +169,7 @@ So here is my go, a  veritable buffet, corralling of some of the best bits of th
 ![](https://user-images.githubusercontent.com/19932401/207966731-0699586d-ebd1-4185-8871-0c55038216f0.png)
 
 - [Eric Deandrea](https://twitter.com/edeandrea) and [Holly Cummins](https://twitter.com/holly_cummins) co-delivered a fantastic, funny talk at Devoxx Belgium on [How to avoid common pitfalls with modern microservices testing](https://www.youtube.com/watch?v=vYwkDPrzqV8).
+- Anton Yakutovich on [Operation Pact](https://dev.to/drakulavich/operation-pact-or-how-i-learned-to-stop-worrying-and-love-contract-testing-4nhh) or: How I Learned to Stop Worrying and Love Contract Testing, brought Pact and GoThinksters RealWorld app
 
 ### Oct
 
