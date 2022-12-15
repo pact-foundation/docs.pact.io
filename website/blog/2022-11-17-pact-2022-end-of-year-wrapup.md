@@ -21,25 +21,28 @@ Our new survey is now open! The purpose of this survey is a pulse check on the c
 
 Earlier in the year [we mentioned we rolled out Orbit.love](https://docs.pact.io/blog/2022/06/08/pact-open-source-update-june-2022#our-awesome-community) to help us track activities across the Pact Foundation. We’re still in the process of determining the most effective usage and views of the data. We are thinking about ways we can expose the dataset (as it’s all publicly available information from GitHub), so that you can tell us what you make of it. Think of it as an interactive state of open-source survey if you will! The good news is that we’ll be doing so together with our friends over at the Cucumber and Swagger communities. We even hope to extend it over the SmartBear GitHub account too.
 
+![](https://user-images.githubusercontent.com/19932401/207966715-9e4d4687-eb29-45f7-838b-ea4ea8cdbbe0.png)
+
+
 We saw over 3 thousand of you interacting with us via our open source channels, and introduced 2.7k more into the fold.
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966692-2a5a44b6-b5bc-4d52-bf92-faa95ae58753.png)
 
 This years community heroes. Thank you for participating in the Pact community, we couldn’t do it without you.
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966721-f96282be-e00c-45d5-b03a-7b4709aec8b1.png)
 
-We really couldn’t, just take a look at some of the names of the organisations using Pact ordered by their employee count.
+We really couldn't resist taking a look at what organizations are using (and we hope loving) Pact. The list below is ordered by organization employee count.
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207972596-9b98890f-cbfb-47d6-ba31-f88b720130b9.png)
 
-Thankfully we aren’t alone, this list of organisations ordered by the active members using Pact who have interacted with our public repos. In most cases, these are individual people, or small teams often giving back improvements to the Pact framework from time out in the field. Why not read some of their testimonials and case studies [here](https://docs.pact.io/users/testimonials) and add one of your own 🥰
+We're a small team at Pact, so we also rely and appreciate contributions by teams and individuals leveraging Pact. Below is a list of organizations ordered by the active members using Pact who have interacted with our public repos. In most cases, these are individual people, or small teams often giving back improvements to the Pact framework from time out in the field. Why not read some of their testimonials and case studies here https://docs.pact.io/users/testimonials and add one of your own :smiling_face_with_3_hearts:
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966720-5495435e-be93-4a63-9380-f964058f88f3.png)
 
 We looked back on the history as Pact, as we near 10 years, over 12 thousand of you have followed along.
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966706-6019687d-215e-4e8c-b8ca-5993c1ae98bd.png)
 
 You can check out our interactive history lesson of Pact here <https://docs.pact.io/blog/2022/11/17/pact-facts-a-history-lesson>
 
@@ -90,62 +93,68 @@ Check out [Canny](https://pact.canny.io/), our public feature board for the late
   - Hackathons
   - Code Alongs
   - Summer of Source
-  - CukenFest
+  - [CukenFest](https://cukenfest.cucumber.io/) - A BDD Conference
+  - Pact + Swagger + Cucumber meetups
 
 ## Pact Almanac 2022
 
 I always love the idea of Almanac’s, probably from being sucked into Back to the Future as a kid
 
+![image](https://user-images.githubusercontent.com/19932401/207968429-dad9294a-2221-41cb-b387-6acd7c0bba4f.png)
+
 So here is my go, a  veritable buffet, corralling of some of the best bits of the year, mainly in your own words. There is so much good juice out there, for this Devo Avo to squeeze. I won’t focus on any of the big milestones centrally in the project, but rather your individual contributions and wins, you can go through our [Blogs](https://docs.pact.io/blog) bi-monthly updates, or check the [GitHub repo’s](https://github.com/pact-foundation) themselves for an immutable source of truth. 🕵️
 
 ### January
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966755-85a0e1d4-9b6c-4d55-baf7-7685e152289c.png)
+
 
 - Baran Gayretli showed SpringBoot users the [benefits of Contract Testing](https://www.kloia.com/blog/way-to-microservices-contract-testing-a-spring/pact-implemantation)
 - Rahul kumar gave us lots to look forward to with a [blog series](https://blog.knoldus.com/pact-and-its-elements-in-contract-testing/)
 
 ### Feb
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966753-699a0526-8235-4d01-b72e-d4efaaa7a396.png)
+
 
 - Marie Drake helped [demystify Pact webhooks](https://www.testingwithmarie.com/post/using-pact-webhooks-to-improve-contract-testing), often a source of confusion for new starters.
 
 ### Mar
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966752-187f80a3-47f6-4a9f-ba2c-68dedf4d9def.png)
+
 
 - Lewis Prescott, the Pactman himself, started his [blog series](https://www.pactman.co.uk/post/blog-series-get-started-with-api-contract-testing) and [Podcast](https://www.pactman.co.uk/contract-testing-podcast) dedicated to our favourite topic with some of the players in the industry helping you calm the chaos
 
 ### Apr
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966748-632d474e-6f66-4f61-ae52-ce0ec034bcfc.png)
 
 - A triple whammy of authors from Lastminute.com talking about [their adventures in Pact](https://technology.lastminute.com/contract-testing-asynchronous-messaging-pact-junit-mockk). thanks team!
 
 ### May
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966742-50cc4d82-2d14-4cef-b0a1-a3d0803bf610.png)
 
-- Marie Drake is at in again, delivering a [contract testing 101](https://zoopla.blog/posts/2022/contract-testing-101/) at her previous employer Zoopla where she evangelised Pact, she now works as a Developer Advocate as k6.io and is always putting out great content.
+- Marie Drake again, delivering a [contract testing 101](https://zoopla.blog/posts/2022/contract-testing-101/) at her previous employer Zoopla where she evangelised Pact, she now works as a Developer Advocate as k6.io and is always putting out great content.
 - Tamerlan Gudabayev delivers a [great post](https://tamerlan.dev/contract-testing-for-dummies/) that helps what contract testing is, and where it fits in in your testing lifecycle.
 
 ### June
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207968285-7e588e31-7aa1-4751-9b9e-9ce5d862ce16.png)
 
-- Tamas Kadlecsik delivers an [intro in nodeJS](https://blog.risingstack.com/consumer-driven-contract-testing-with-pact) and goes on in a 2nd part to discuss a[dvanced techniques with pattern matching](https://blog.risingstack.com/advanced-contract-testing-pact-verification-with-pattern-matching/)
+- Tamas Kadlecsik delivers an [intro in nodeJS](https://blog.risingstack.com/consumer-driven-contract-testing-with-pact) and goes on in a 2nd part to discuss [advanced techniques with pattern matching](https://blog.risingstack.com/advanced-contract-testing-pact-verification-with-pattern-matching/)
 - Rafael Huerta over in Mexico, shows Java users how to [get rocking with V4 Pacts](https://blog.zephyrok.com/contract-testing-using-pact-with-java/).
 
 ### July
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966738-ca7cc95a-63f6-41a3-8e9d-bc6581902fc3.png)
 
-- Bas Dijkstra has been helping individuals, teams and organsations build quality systems for years with automation. This in-depth [6-parter](https://www.ontestautomation.com/an-introduction-to-contract-testing-part-1-meet-the-players/) are words from a sage.
+- Bas Dijkstra has been helping individuals, teams and organisations build quality systems for years with automation. This in-depth [6-parter](https://www.ontestautomation.com/an-introduction-to-contract-testing-part-1-meet-the-players/) are words from a sage.
 
 ### Aug
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966735-2e8b3f37-f768-484d-8d78-7f592e7956b0.png)
 
 - Anja Gruss delivered an [intro to Bi-Directional contract testing](https://kreuzwerker.de/en/post/painless-contract-testing-with-pactflow).
 
@@ -153,19 +162,19 @@ IMAGE HERE
 
 ### Sept
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966731-0699586d-ebd1-4185-8871-0c55038216f0.png)
 
-- **[Eric Deandrea](https://twitter.com/edeandrea) and [Holly Cummins](https://twitter.com/holly_cummins),** co-delivered a fantastic, funny talk at Devoxx Belgium on "[How to avoid common pitfalls with modern microservices testing](https://www.youtube.com/watch?v=vYwkDPrzqV8)".
+- [Eric Deandrea](https://twitter.com/edeandrea) and [Holly Cummins](https://twitter.com/holly_cummins) co-delivered a fantastic, funny talk at Devoxx Belgium on [How to avoid common pitfalls with modern microservices testing](https://www.youtube.com/watch?v=vYwkDPrzqV8).
 
 ### Oct
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966730-7b0776f5-3f31-4de7-8af3-89e354aaa71c.png)
 
 - Another month, [another 6 parter](https://dev.to/rogervinas/contract-testing-with-pact-4g2n) thanks to Roger Viñas Alcon getting you going in Kotlin
 
 ### Nov
 
-IMAGE HERE
+![](https://user-images.githubusercontent.com/19932401/207966727-bd8d43b7-8cf6-4c2d-bf80-f8d06a442816.png)
 
 - Chris Burns for building a [Pact Foundation Helm Chart,](https://github.com/pact-foundation/pact-broker-chart) which has been officially adopted into the org.
 - Andrew January add his community contribution [here](https://docs.pact.io/community_repos#full-workflows) for his Pact Ruby messaging demo.
@@ -176,11 +185,11 @@ IMAGE HERE
 
 - Guillaume Camus released the [Pact Broker Graph tool](https://github.com/ManoManoTech/pact-graph-networ)
 
-IMAGE HERE
+![Pact Broker Graph](https://user-images.githubusercontent.com/19932401/207968070-b85198cb-b9f1-40eb-a7d1-759c1b75f55a.png)
 
 - Sam Hogarth delivered a [great 101 talk](https://sh1989.gitlab.io/talks/consumer-driven-contract-testing) at over at Tesco UK.
 
-> Pact saves Christmas, by ensuring those in charge on getting the turkeys to your table are deploying safely!
+> Pact saves the holidays, by ensuring those in charge of getting the turkeys to your table are deploying safely!
 
 If you've done something great, and want to share it, [get it listed](https://docs.pact.io/contributing) - the site is open source and you can edit any page, we want to give you a platform to help amplify your voice!
 
