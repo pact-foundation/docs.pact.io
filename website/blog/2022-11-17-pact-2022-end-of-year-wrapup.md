@@ -65,7 +65,7 @@ Pact arose while Pactflows Co-Founders Beth Skurrie, Ron Holshausen and Matt wer
 
 > We are always on the look-out for new contributors, across any of our languages, and if you have interest or have used Swagger, Cucumber or BDD principles in the past, we would love to hear from you.
 
-_We would also love to wish our **[DiUS](https://dius.com.au/)** family thanks for all the support, and helping us reach bigger heights, and ultimately help more people. I'll slip an extra shrimp on the barbie for you._
+_We would also love to wish our **[DiUS](https://dius.com.au/)** family thanks for all the support, and helping us reach bigger heights, and ultimately help more people. **We'll slip an extra shrimp on the barbie for you.**_
 
 ## What's in store for Pact in 2023?
 
@@ -169,7 +169,7 @@ IMAGE HERE
 
 - Chris Burns for building a [Pact Foundation Helm Chart,](https://github.com/pact-foundation/pact-broker-chart) which has been officially adopted into the org.
 - Andrew January add his community contribution [here](https://docs.pact.io/community_repos#full-workflows) for his Pact Ruby messaging demo.
-- Lewis Prescott gave a talk 
+- Lewis Prescott gave a talk
   - [Testing Microservices End-to-End in Isolation with API Contracts | Lewis Prescott | TestFlix 2022](https://www.youtube.com/watch?v=MtJA90VC9g4&ab_channel=TheTestTribe)
 
 ### Dec
@@ -178,7 +178,7 @@ IMAGE HERE
 
 IMAGE HERE
 
-- Sam Hogarth delivered a [great 101 talk](https://sh1989.gitlab.io/talks/consumer-driven-contract-testing) at over at Tesco UK. 
+- Sam Hogarth delivered a [great 101 talk](https://sh1989.gitlab.io/talks/consumer-driven-contract-testing) at over at Tesco UK.
 
 > Pact saves Christmas, by ensuring those in charge on getting the turkeys to your table are deploying safely!
 
