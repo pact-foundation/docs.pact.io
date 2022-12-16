@@ -29,11 +29,18 @@
 }
 */
 
+@media (max-width: 768px) {
+  .DocSearch-Container {
+    z-index: calc(var(--ifm-z-index-fixed) + 2) !important;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .separateOnPageNav .docsNavContainer {
     flex: 0 0 260px;
   }
 }
+
 /*
 @media only screen and (max-width: 1023px) {
 }
@@ -66,7 +73,7 @@ p.netlifyThanks {
     border-radius: 0 var(--ifm-global-radius) var(--ifm-global-radius) 0;
   }
 
-  .i_thumbsup  {
+  .i_thumbsup {
     fill: #56a211;
     transform: translateY(0.25em);
     margin-left: 12px;
@@ -96,11 +103,11 @@ p.netlifyThanks {
 
 
 
-@media only screen  {
-  .docsRating {
-    width: 100%;
-    margin: 36px 0 0 !important;
-    border-radius: var(--ifm-global-radius);
+  @media only screen {
+    .docsRating {
+      width: 100%;
+      margin: 36px 0 0 !important;
+      border-radius: var(--ifm-global-radius);
+    }
   }
-}
 }
