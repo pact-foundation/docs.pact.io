@@ -17,10 +17,12 @@ To notify the Broker that an application version has been deployed or released, 
 
 "Deployed versions" and "released versions" are very similar, but are modelled slightly differently in the Pact Broker. The difference between `record-deployment` and `record-release` is that 
 
-* `record-deployment` automatically marks the previously deployed version as undeployed, and is used for APIs and consumer applications that are deployed to known instances.
-* `record-release` does NOT change the status of any previously released version, and is used for mobile applications and libraries that are made publicly available via an application store or repository.
+* `record-deployment` is used to model the real life scenario where a deployment causes the previous version of an application to be replaced by a new version. It is used for APIs and consumer applications that are deployed to known instances. When called, it automatically marks the previously deployed version as undeployed.
+* `record-release` models the real life scenario where the release of a new version of an artifact does not cause the previously released versions of the artifact to become unavailable. It is used for mobile applications and libraries that are made publicly available via an application store or repository. When called, it does NOT change the status of any previously released version.
 
-"Deployed versions" and "released versions" are different resource types in the Pact Broker, and an application version may be both deployed and released. For example, a mobile phone application version may be recorded as deployed to a mobile device for automated testing in a test environment, and then recorded as released to an app store in a production environment.
+"Deployed versions" and "released versions" are different resource types in the Pact Broker, and an application version may be both deployed and released. For example, a mobile phone application version may be recorded as deployed to a mobile device for automated testing in a test environment, and then recorded as released to an app store in a production environment. 
+
+Deployments and release lifecycles are completely independent of each other. Ending support for a release will not cause a currently deployed version to be marked as undeployed, and marking a version as undeployed will not end support for a release.
 
 ## Environments
 
