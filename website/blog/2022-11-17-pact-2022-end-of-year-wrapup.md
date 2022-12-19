@@ -45,7 +45,7 @@ We really couldn't resist taking a look at what organizations are using (and we 
 
 ![](https://user-images.githubusercontent.com/19932401/207972596-9b98890f-cbfb-47d6-ba31-f88b720130b9.png)
 
-We're a small team at Pact, so we also rely and appreciate contributions by teams and individuals leveraging Pact. Below is a list of organizations ordered by the active members using Pact who have interacted with our public repos. In most cases, these are individual people, or small teams often giving back improvements to the Pact framework from time out in the field. Why not read some of their testimonials and case studies [here] (https://docs.pact.io/users/testimonials) and add one of your own :smiling_face_with_3_hearts:
+We're a small team at Pact, so we also rely and appreciate contributions by teams and individuals leveraging Pact. Below is a list of organizations ordered by the active members using Pact who have interacted with our public repos. In most cases, these are individual people, or small teams often giving back improvements to the Pact framework from time out in the field. Why not read some of their testimonials and case studies [here](https://docs.pact.io/users/testimonials) and add one of your own :smiling_face_with_3_hearts:
 
 ![](https://user-images.githubusercontent.com/19932401/207966720-5495435e-be93-4a63-9380-f964058f88f3.png)
 
@@ -55,11 +55,11 @@ We looked back on the history as Pact, as we near 10 years, over 12 thousand of 
 
 ![](https://user-images.githubusercontent.com/19932401/207966706-6019687d-215e-4e8c-b8ca-5993c1ae98bd.png)
 
-I wrote an interactive history lesson of Pact which you can check out [here] (https://docs.pact.io/blog/2022/11/17/pact-facts-a-history-lesson)
+I wrote an interactive history lesson of Pact which you can check out [here](https://docs.pact.io/blog/2022/11/17/pact-facts-a-history-lesson)
 
 ## Big innovations: the Pact Plugin Framework
 
-We were pleased to launch the Pact Plugin Framework to the masses. As with all our major initiatives, it is true to our open source roots and we hope that unlock new capacities to a community of builders.
+We were pleased to launch the Pact Plugin Framework to the masses. As with all our major initiatives, it is true to our open source roots and we hope that unlock new capabilities to a community of builders.
 
 Our first plugin provides support for testing gRPC with Pact, and Pacts core, built in Rust, provides a Foreign Function Interface, unlocking Pact’s capabilities in supporting languages.We look forward to 2023 and the introduction of Pact’s feature-set to a few more languages, some of which are waiting to be built.
 
@@ -67,7 +67,7 @@ Our first plugin provides support for testing gRPC with Pact, and Pacts core, bu
 
 In the meantime, why not get powered by Pact plugins and create your own?
 
-Find out how to [get started] (https://docs.pact.io/plugins)
+Find out how to [get started](https://docs.pact.io/plugins)
 
 ## Supporters of Pact
 
@@ -77,7 +77,7 @@ Pact’s biggest sponsor got even bigger this year.
 
 Pact arose while Pactflow's Co-Founders Beth Skurrie, Ron Holshausen and Matt Fellows were employed by Australian technology consultancy, [DiUS](https://dius.com.au/), supporting companies of all sizes to transition to cloud-native application development and to accelerate their digital initiatives. 
 
-Pactflow is now part of a much wider quality initiative after being [acquired by SmartBear](https://docs.pact.io/blog/2022/04/06/pactflow-joins-smartbear). We care so much for OSS and are so pleased that SmartBear has a strong and demonstrated commitment to OSS—as proven through the support and scale of Cucumber and Swagger. Through our partnership, we will be able to take contract testing to new heights and help deliver key milestones in Pact’s OSS roadmap, and bring closer alignments between our now larger family of open source tools, and smooth pathways between our open source and commercial tools. Providing you a seamless, and wonderful experience, whichever tool you are using.
+Pactflow is now part of a much wider quality initiative after being [acquired by SmartBear](https://docs.pact.io/blog/2022/04/06/pactflow-joins-smartbear). We care so much for OSS and are so pleased that SmartBear has a strong and demonstrated commitment to OSS — as proven through the support and scale of Cucumber and Swagger. Through our partnership, we will be able to take contract testing to new heights and help deliver key milestones in Pact’s OSS roadmap, and bring closer alignments between our now larger family of open source tools, and smooth pathways between our open source and commercial tools. Providing you a seamless, and wonderful experience, whichever tool you are using.
 
 > We are always on the look-out for new contributors, across any of our languages, and if you have interest or have used Swagger, Cucumber or BDD principles in the past, we would love to hear from you. Drop me a note in [Slack](http://slack.pact.io/).
 
@@ -123,7 +123,7 @@ So here is my go, a  veritable buffet, corralling of some of the best bits of th
 
 
 - Baran Gayretli showed SpringBoot users the [benefits of Contract Testing](https://www.kloia.com/blog/way-to-microservices-contract-testing-a-spring/pact-implemantation).
-- Rahul kumar gave us lots to look forward to with a [blog series](https://blog.knoldus.com/pact-and-its-elements-in-contract-testing/).
+- Rahul Kumar gave us lots to look forward to with a [blog series](https://blog.knoldus.com/pact-and-its-elements-in-contract-testing/).
 
 ### Feb
 
