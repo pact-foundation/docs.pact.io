@@ -870,7 +870,7 @@ By default, the test classpath is scanned for annotated methods. You can overrid
 </plugin>
 ```
 
-# Publishing pact files to a pact broker
+## Publishing pact files to a pact broker
 
 **NOTE**: There is also a pact CLI that can be used to publish pacts. See https://github.com/pact-foundation/pact-ruby-cli.
 
