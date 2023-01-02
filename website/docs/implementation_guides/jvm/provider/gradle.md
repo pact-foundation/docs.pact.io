@@ -819,7 +819,7 @@ pact {
 **NOTE:** you can't use the `url` function with S3 URLs, as the URL and URI classes from the Java SDK
  don't support URLs with the s3 scheme.
 
-# Publishing pact files to a pact broker
+## Publishing pact files to a pact broker
 
 **NOTE**: There is a pact CLI that can be used to publish pacts. See https://github.com/pact-foundation/pact-ruby-cli.
 
