@@ -4,7 +4,7 @@ title: Maintenance
 
 ## Automatic data clean up
 
-Performance can degrade when too much data accumulates in the Pact Broker. Luckily, a lot of the data in a broker instance is "unreachable" and can be removed without affecting the way it operates functionally, as generally speaking, the application (pacticipant) versions that are referenced in the verification and can-i-deploy tasks are either the latest for their tag (eg. verifying the latest pact for a version with tag `feat/some-new-feature`, `main` or `production`) or a fairly recent version of the main line of development (eg. when deploying commit `193d71a4` of the `main` branch to `production`).
+Performance can degrade when too much data accumulates in the Pact Broker. Luckily, a lot of the data in a broker instance is "unreachable" and can be removed without affecting the way it operates functionally, as generally speaking, the application (pacticipant) versions that are referenced in the verification and can-i-deploy tasks are either the latest for their branch or tag (eg. verifying the latest pact for a version with tag `feat/some-new-feature`, `main` or `production`) or a fairly recent version of the main line of development (eg. when deploying commit `193d71a4` of the `main` branch to `production`).
 
 As of version 2.72.0.0 of the Docker Pact Broker images, an automatic "clean" feature has been included in the image. 
 
@@ -27,6 +27,7 @@ To ensure that the data that is still in use is not deleted, a list of "keep" se
 The keep selectors operate in a very similar way to the [consumer version selectors](/pact_broker/advanced_topics/consumer_version_selectors/) used during verification. Each selector can have the following properties:
 
 * `pacticipant`: the name of the pacticipant
+* `branch`: the name of the branch as a string to indicate a particular branch, or a boolean `true` to indicate "any version associated with a branch"
 * `tag`: the name of the tag as a string to indicate a particular tag, or a boolean `true` to indicate "any version with a tag"
 * `latest`: if `true`, then the latest version matching the other selection properties is specified. If `false` or omitted, all versions matching the other selection properties are specified.
 * `max_age`: the number of days since it was created, as an integer, for which to keep the application version.
