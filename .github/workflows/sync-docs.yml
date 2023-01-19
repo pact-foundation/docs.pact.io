@@ -18,23 +18,22 @@ on:
   workflow_dispatch:
     inputs:
       update_event:
-        event:
-          type: choice
-          description: Which event happened?
-          required: true
-          options:
-            - pact-js-docs-updated
-            - pact-jvm-docs-updated
-            - pact-python-docs-updated
-            - pact-go-docs-updated
-            - pact-rust-docs-updated
-            - pact-cpp-docs-updated
-            - pact-broker-docker-pactfoundation-docs-updated
-            - pact-broker-docker-dius-docs-updated
-            - pact-broker-client-docs-updated
-            - pact-net-docs-updated
-            - pact-broker-docs-updated
-            - pact-plugins-docs-updated
+        type: choice
+        description: Which event happened?
+        required: true
+        options:
+          - pact-js-docs-updated
+          - pact-jvm-docs-updated
+          - pact-python-docs-updated
+          - pact-go-docs-updated
+          - pact-rust-docs-updated
+          - pact-cpp-docs-updated
+          - pact-broker-docker-pactfoundation-docs-updated
+          - pact-broker-docker-dius-docs-updated
+          - pact-broker-client-docs-updated
+          - pact-net-docs-updated
+          - pact-broker-docs-updated
+          - pact-plugins-docs-updated
 
 jobs:
   build:
