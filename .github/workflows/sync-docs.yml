@@ -17,7 +17,7 @@ on:
       - pact-plugins-docs-updated
   workflow_dispatch:
     inputs:
-      name:
+      update_event:
         event:
           type: choice
           description: Which event happened?
