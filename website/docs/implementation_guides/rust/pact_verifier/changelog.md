@@ -4,6 +4,25 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.13.20 - Bugfix Release
+
+* 4409441b - fix: Matching rules are not being applied correctly to message metadata #245 (Ronald Holshausen, Mon Jan 9 13:43:41 2023 +1100)
+* 34a67cb9 - fix: when loading pacts from a dir, filter by the provider name #233 (Ronald Holshausen, Wed Jan 4 18:12:28 2023 +1100)
+* 8216ec76 - feat: always execute provider_states callbacks even when no state is defined (Ronald Holshausen, Tue Jan 3 14:40:45 2023 +1100)
+
+## 0.13.19 - Add user-agent header + Support generators in plugins
+
+* 8bb2534d - feat: add user-agent header to the HALClient (andrisak, Sat Dec 17 12:42:05 2022 +0100)
+* 5fbb0d6a - feat: Upgrade plugin driver to 0.2.2 (supports passing a test context to support generators) (Ronald Holshausen, Fri Dec 16 16:38:03 2022 +1100)
+
+## 0.13.18 - Maintenance Release
+
+
+## 0.13.17 - Bugfix + Support plugins generating interaction content
+
+* 9fc56580 - fix: add tests for PUT and POST requests #220 (Ronald Holshausen, Thu Dec 1 11:42:31 2022 +1100)
+* 77a7c8ba - fix: make HAL client fetch and fetch link functions support brokers hosted with context paths #220 (Ronald Holshausen, Wed Nov 30 18:20:23 2022 +1100)
+
 ## 0.13.16 - Bugfix Release
 
 * c12d9a61 - fix: Verification results across multiple pacts accumulate, publishing invalid results #231 (Ronald Holshausen, Mon Nov 28 12:00:38 2022 +1100)

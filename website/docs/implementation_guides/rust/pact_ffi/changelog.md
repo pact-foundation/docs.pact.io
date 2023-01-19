@@ -4,6 +4,29 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.0 - Add FFI functions for plugin authors to parse Pact JSON and get matching rules and generators + bugfixes
+
+* 3760c2b3 - fix: matcher_from_integration_json in mockserver/bodies.rs doesn't support all MatchingRules #247 (Ronald Holshausen, Wed Jan 11 13:58:33 2023 +1100)
+* 34a67cb9 - fix: when loading pacts from a dir, filter by the provider name #233 (Ronald Holshausen, Wed Jan 4 18:12:28 2023 +1100)
+
+## 0.3.19 - Fix for V3 Message ignores the interaction ID when loaded from a Pact Broker
+
+
+## 0.3.18 - Bugfixes + Support generators in plugins
+
+* dece8df7 - Merge pull request #235 from leonasa/feat/allow-non-deafult-json-content-type (Ronald Holshausen, Mon Dec 19 13:19:29 2022 +1100)
+* 61e4d69d - fix: cbindgen fails in latest nightly rust (Ronald Holshausen, Mon Dec 19 12:48:31 2022 +1100)
+* 4b1ba4a2 - fix: cbindgen fails in latest nightly rust (Ronald Holshausen, Mon Dec 19 12:07:43 2022 +1100)
+* 5fbb0d6a - feat: Upgrade plugin driver to 0.2.2 (supports passing a test context to support generators) (Ronald Holshausen, Fri Dec 16 16:38:03 2022 +1100)
+* 5251fcf5 - fix: error caused an internal mutex to be poisoned (Ronald Holshausen, Fri Dec 16 16:34:19 2022 +1100)
+* c1ccb62f - feat: allow non deafult json content-type (Leonardo Santana, Mon Dec 12 15:26:22 2022 -0500)
+
+## 0.3.17 - Bugfix Release
+
+
+## 0.3.16 - Support for plugin authors
+
+
 ## 0.3.15 - Bugfix + FFI functions to support plugin authors
 
 * 2e5823a0 - feat: add custom-header to the old FFI args for implementations that have not moved to handles (Ronald Holshausen, Fri Nov 25 11:09:46 2022 +1100)

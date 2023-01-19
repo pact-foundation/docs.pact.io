@@ -11,6 +11,88 @@ https://github.com/pact-foundation/pact-plugins/tree/main/drivers
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)'  TAGNAME..HEAD` replacing TAGNAME and HEAD as appropriate.
 
 
+* 2de4518 - feat: Support passing a test context through to the start mock server call (Ronald Holshausen, Fri Dec 16 16:14:48 2022 +1100)
+* 56b0bad - chore: Upgrade tokio to latest (Ronald Holshausen, Fri Dec 16 11:03:10 2022 +1100)
+* 6a4739b - chore: Upgrade tokio to latest (Ronald Holshausen, Fri Dec 16 11:01:40 2022 +1100)
+* a1c7ec0 - fix: consumer-jvm/src/test/java/io/pact/example/grpc/consumer/PactConsumerTest.java (Ronald Holshausen, Fri Dec 16 10:50:27 2022 +1100)
+* 7f8e508 - chore: fix gRPC/area_calculator/consumer-jvm (Ronald Holshausen, Fri Dec 16 09:16:20 2022 +1100)
+* 0d2a79e - chore: fix gRPC examples (Ronald Holshausen, Thu Dec 15 17:29:40 2022 +1100)
+* 785f15a - chore: diagnosing CI example failure (Ronald Holshausen, Thu Dec 15 11:21:42 2022 +1100)
+* 4e974df - chore: use 0.2.0 of the Protobuf plugin (Ronald Holshausen, Thu Dec 15 10:49:19 2022 +1100)
+* e600487 - chore: Update example CI build (Ronald Holshausen, Thu Dec 15 10:30:59 2022 +1100)
+* d109005 - chore: Update dependencies (Ronald Holshausen, Thu Dec 15 09:59:23 2022 +1100)
+* aaa0572 - fix: examples/protobuf/protobuf-consumer-jvm (Ronald Holshausen, Thu Dec 15 09:26:36 2022 +1100)
+* b711651 - chore: Upgrade Gradle to 6.9.3 to resolve Could not resolve au.com.dius.pact.consumer:junit5:4.4.2 error (Ronald Holshausen, Thu Dec 15 08:47:36 2022 +1100)
+* a568dab - chore: disable pact metrics (Ronald Holshausen, Thu Dec 15 08:36:23 2022 +1100)
+* 24d9825 - chore: Upgrade example JVM to v4.5.x (Ronald Holshausen, Wed Dec 14 18:09:19 2022 +1100)
+* ba6af82 - chore: re-enable driver Pact test (Ronald Holshausen, Wed Dec 14 16:08:12 2022 +1100)
+* 6e252b5 - feat: Add Protobuf JVM example which uses a generator (Ronald Holshausen, Wed Dec 14 16:00:10 2022 +1100)
+* 2f2059e - bump version to 0.2.2 (Ronald Holshausen, Wed Dec 14 15:04:05 2022 +1100)
+
+# 0.2.1 - Implement support for GenerateContentRequest
+
+* 7fdc756 - bump version to 0.2.2 (Ronald Holshausen, Wed Dec 14 14:46:27 2022 +1100)
+* adad914 - update changelog for release 0.2.1 (Ronald Holshausen, Wed Dec 14 14:45:10 2022 +1100)
+* f17b134 - chore: Upgrade Kotlin to 1.7.22 (Ronald Holshausen, Wed Dec 14 14:38:10 2022 +1100)
+* 3cc6f04 - feat: add TestMode and ContentFor to GenerateContentRequest; Implement support in JVM driver (Ronald Holshausen, Wed Dec 14 14:26:22 2022 +1100)
+* da05e85 - bump version to 0.2.1 (Ronald Holshausen, Tue Dec 13 13:48:58 2022 +1100)
+
+# 0.2.0 - Bump minor version
+
+* b46198f - refactor: Use Result class from Pact-JVM support lib (Ronald Holshausen, Tue Dec 13 13:34:38 2022 +1100)
+* b6682bf - chore: Bump minor version (Ronald Holshausen, Tue Dec 13 13:34:10 2022 +1100)
+* 6694124 - chore: fix CI build (Ronald Holshausen, Mon Dec 12 16:13:44 2022 +1100)
+* 309e1b7 - chore: add Protobuf example test with a generator (Ronald Holshausen, Mon Dec 12 14:49:21 2022 +1100)
+* ea9a604 - chore: Upgrade Pact FFI and consumer crates (Ronald Holshausen, Mon Dec 12 14:38:04 2022 +1100)
+* 27fb978 - chore: Update dependencies for driver_pact_tests (Ronald Holshausen, Mon Dec 12 11:45:04 2022 +1100)
+* 256080d - bump version to 0.2.1 (Ronald Holshausen, Fri Dec 9 16:53:12 2022 +1100)
+* 8cf380c - update changelog for release 0.2.0 (Ronald Holshausen, Fri Dec 9 16:52:15 2022 +1100)
+* dfeb529 - chore: Update to 0.2.0 of the driver (Ronald Holshausen, Fri Dec 9 15:58:43 2022 +1100)
+* 19c846c - chore: Update to 0.2.0 of the driver (Ronald Holshausen, Fri Dec 9 15:53:05 2022 +1100)
+* 4174c86 - feat: Update driver to support GenerateContents RPC method (Ronald Holshausen, Fri Dec 9 15:44:45 2022 +1100)
+* a61ab86 - feat: Update driver to support GenerateContents RPC method (Ronald Holshausen, Fri Dec 9 15:35:19 2022 +1100)
+* ce83c3c - chore: add Maven gRPC provider example (Ronald Holshausen, Fri Dec 2 14:09:41 2022 +1100)
+* e741549 - chore: add conceptual overview and minor content changes (Matt Fellows, Tue Nov 29 21:48:28 2022 +1100)
+* 79e5b15 - bump version to 0.1.17 (Ronald Holshausen, Mon Nov 28 13:51:36 2022 +1100)
+* 10db62c - update changelog for release 0.1.16 (Ronald Holshausen, Mon Nov 28 13:49:31 2022 +1100)
+* c4c814e - chore: set pact models to use any 1.0+ version (Ronald Holshausen, Mon Nov 28 13:35:05 2022 +1100)
+* 90edd9e - chore: Add Maven Protobuf example (Ronald Holshausen, Thu Nov 24 12:11:39 2022 +1100)
+* a0b84df - chore: Add Maven gRPC example (Ronald Holshausen, Thu Nov 24 11:47:22 2022 +1100)
+* 90a89f6 - chore: Upgrade to latest Pact-JVM libs (Ronald Holshausen, Tue Nov 22 16:31:05 2022 +1100)
+* 5b0006b - chore: bump Pact-JVM to 4.4.1 (Ronald Holshausen, Mon Nov 21 17:42:06 2022 +1100)
+* b177328 - bump version to 0.1.9 (Ronald Holshausen, Mon Nov 21 12:42:22 2022 +1100)
+
+# 0.1.8 - Bugfix Release
+
+* 8a553d6 - fix: Correct dependencies for Pact-JVM use (Ronald Holshausen, Mon Nov 21 12:41:07 2022 +1100)
+* dab1af6 - bump version to 0.1.8 (Ronald Holshausen, Fri Nov 18 14:10:26 2022 +1100)
+
+# 0.1.7 - Bugfix Release
+
+* 2a4a963 - fix: Pass the mock server host and port though to the plugin #9 (Ronald Holshausen, Fri Nov 18 13:49:32 2022 +1100)
+* 5194bd4 - chore: Upgrade Gradle to 7.5.1 and update dependencies (Ronald Holshausen, Thu Nov 17 14:30:29 2022 +1100)
+* ef0289f - chore: Upgrade gRPC example dependencies (Ronald Holshausen, Mon Nov 7 16:19:52 2022 +1100)
+* 17fa7c0 - chore: fix Rust build (Ronald Holshausen, Mon Nov 7 16:16:11 2022 +1100)
+* 26741e0 - chore: Upgrade Protobuf example dependencies (Ronald Holshausen, Mon Nov 7 16:10:18 2022 +1100)
+* b8b778b - chore: Upgrade CSV example dependencies (Ronald Holshausen, Mon Nov 7 16:07:54 2022 +1100)
+* 5272fde - chore: Upgrade dependencies (Ronald Holshausen, Mon Nov 7 15:59:05 2022 +1100)
+* bf03fe0 - chore: Upgrade pact_consumer to 0.10.0 (Ronald Holshausen, Mon Nov 7 13:55:41 2022 +1100)
+* 55da8a9 - bump version to 0.1.16 (Ronald Holshausen, Mon Nov 7 11:06:12 2022 +1100)
+* e4ca2b9 - update changelog for release 0.1.15 (Ronald Holshausen, Mon Nov 7 11:03:58 2022 +1100)
+* 93d436c - fix: Upgrade pact models to 1.0 to fix dependency cycle issue (Ronald Holshausen, Mon Nov 7 10:48:52 2022 +1100)
+* 211cb85 - bump version to 0.1.15 (Ronald Holshausen, Fri Nov 4 16:09:31 2022 +1100)
+* 1e2c194 - update changelog for release 0.1.14 (Ronald Holshausen, Fri Nov 4 16:08:04 2022 +1100)
+* 80395c8 - chore: Upgrade pact_models to 0.4.6 (Ronald Holshausen, Fri Nov 4 15:56:26 2022 +1100)
+* d16fb18 - chore: fix example readmes #10 (Ronald Holshausen, Thu Nov 3 16:41:17 2022 +1100)
+* 1757890 - chore: mv workflow to .github folder (Yousaf Nabi, Tue Oct 18 19:26:36 2022 +0100)
+* 54811fd - ci(docs): add trigger on docs to docs.pact.io (Yousaf Nabi, Tue Oct 18 19:25:55 2022 +0100)
+* cf2c273 - fix: flaky test when rnd number < 2 (Ronald Holshausen, Thu Oct 6 09:01:27 2022 +1100)
+* f9fc661 - bump version to 0.1.14 (Ronald Holshausen, Wed Oct 5 17:23:25 2022 +1100)
+* 8bd39f4 - update changelog for release 0.1.13 (Ronald Holshausen, Wed Oct 5 17:22:31 2022 +1100)
+* bb46108 - bump version to 0.1.7 (Ronald Holshausen, Wed Oct 5 16:56:23 2022 +1100)
+
+# 0.1.6 - Bugfix Release
+
 * 8fbfac2 - fix: Updated load plugin manifest to return the max matching version, not the first one (Ronald Holshausen, Wed Oct 5 16:37:52 2022 +1100)
 * 79613f8 - fix: when loading plugin manifests, select the max valid version by semver order (Ronald Holshausen, Wed Oct 5 15:06:15 2022 +1100)
 * e9dacdf - chore: helps to use correctly formated JSON (Ronald Holshausen, Tue Sep 13 13:05:56 2022 +1000)

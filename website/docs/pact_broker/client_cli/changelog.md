@@ -4,6 +4,31 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.66.1"></a>
+### v1.66.1 (2023-01-11)
+
+#### Bug Fixes
+
+* **deps**
+  * update httparty for https://github.com/jnunemaker/httparty/security/advisories/GHSA-5pq7-52mg-hr42	 ([08597c2](https://github.com/pact-foundation/pact_broker-client/commit/08597c2))
+
+<a name="v1.66.0"></a>
+### v1.66.0 (2022-12-01)
+
+#### Features
+
+* **can-i-deploy**
+  * support specifying --ignore using the environment variable PACT_BROKER_CAN_I_DEPLOY_IGNORE	 ([04a0894](https://github.com/pact-foundation/pact_broker-client/commit/04a0894))
+
+* refactor can-i-deploy to use HAL Client instead of HTTParty	 ([d21efe6](https://github.com/pact-foundation/pact_broker-client/commit/d21efe6))
+
+#### Bug Fixes
+
+* found the missing computer arm when computer says no (#120)	 ([7b8ea24](https://github.com/pact-foundation/pact_broker-client/commit/7b8ea24))
+
+* **publish-provider-contract**
+  * raise validation error when pact broker base URL is missing or blank	 ([2d719c3](https://github.com/pact-foundation/pact_broker-client/commit/2d719c3))
+
 <a name="v1.65.0"></a>
 ### v1.65.0 (2022-06-24)
 

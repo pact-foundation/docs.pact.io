@@ -59,7 +59,7 @@ _High Level Summary_
 
 _Consumer Sequence Diagram_
 
-![pact_consumer_plugin_sequence](https://raw.githubusercontent.com/pact-foundation/pact-plugins/main/docs/protocol-transport-sequence-consumer-test.png)
+![pact_consumer_plugin_sequence](https://github.com/pact-foundation/pact-plugins/blob/main/protocol-transport-sequence-consumer-test.png)
 
 _Example consumer test_
 
@@ -81,7 +81,7 @@ _High Level Summary_
 
 _Provider Sequence Diagram_
 
-![pact_provider_plugin_sequence](https://raw.githubusercontent.com/pact-foundation/pact-plugins/main/docs/protocol-transport-sequence-provider-test.png)
+![pact_provider_plugin_sequence](https://github.com/pact-foundation/pact-plugins/blob/main/protocol-transport-sequence-provider-test.png)
 
 
 _Example provider test_

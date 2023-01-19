@@ -19,7 +19,7 @@ From the [Ruby Pact website](https://github.com/pact-foundation/pact-ruby):
 >
 >This allows testing of both sides of an integration point using fast unit tests.
 >
->This gem is inspired by the concept of "Consumer driven contracts". See https://martinfowler.com/articles/consumerDrivenContracts.html for more information.
+>This gem is inspired by the concept of "Consumer driven contracts". See http://martinfowler.com/articles/consumerDrivenContracts.html for more information.
 
 
 Read [Getting started with Pact](https://docs.pact.io/5-minute-getting-started-guide) for more information on how to get going.

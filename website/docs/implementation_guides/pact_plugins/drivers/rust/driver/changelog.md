@@ -11,6 +11,37 @@ https://github.com/pact-foundation/pact-plugins/tree/main/drivers
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
 
 
+* 2de4518 - feat: Support passing a test context through to the start mock server call (Ronald Holshausen, Fri Dec 16 16:14:48 2022 +1100)
+* 6a4739b - chore: Upgrade tokio to latest (Ronald Holshausen, Fri Dec 16 11:01:40 2022 +1100)
+* 7fdc756 - bump version to 0.2.2 (Ronald Holshausen, Wed Dec 14 14:46:27 2022 +1100)
+
+# 0.2.1 - Maintenance Release
+
+* 3cc6f04 - feat: add TestMode and ContentFor to GenerateContentRequest; Implement support in JVM driver (Ronald Holshausen, Wed Dec 14 14:26:22 2022 +1100)
+* 256080d - bump version to 0.2.1 (Ronald Holshausen, Fri Dec 9 16:53:12 2022 +1100)
+
+# 0.2.0 - support GenerateContents RPC method
+
+* a61ab86 - feat: Update driver to support GenerateContents RPC method (Ronald Holshausen, Fri Dec 9 15:35:19 2022 +1100)
+* 79e5b15 - bump version to 0.1.17 (Ronald Holshausen, Mon Nov 28 13:51:36 2022 +1100)
+
+# 0.1.16 - Maintenance Release
+
+* c4c814e - chore: set pact models to use any 1.0+ version (Ronald Holshausen, Mon Nov 28 13:35:05 2022 +1100)
+* 55da8a9 - bump version to 0.1.16 (Ronald Holshausen, Mon Nov 7 11:06:12 2022 +1100)
+
+# 0.1.15 - Maintenance Release
+
+* 93d436c - fix: Upgrade pact models to 1.0 to fix dependency cycle issue (Ronald Holshausen, Mon Nov 7 10:48:52 2022 +1100)
+* 211cb85 - bump version to 0.1.15 (Ronald Holshausen, Fri Nov 4 16:09:31 2022 +1100)
+
+# 0.1.14 - Maintenance Release
+
+* 80395c8 - chore: Upgrade pact_models to 0.4.6 (Ronald Holshausen, Fri Nov 4 15:56:26 2022 +1100)
+* f9fc661 - bump version to 0.1.14 (Ronald Holshausen, Wed Oct 5 17:23:25 2022 +1100)
+
+# 0.1.13 - Bugfix Release
+
 * 8fbfac2 - fix: Updated load plugin manifest to return the max matching version, not the first one (Ronald Holshausen, Wed Oct 5 16:37:52 2022 +1100)
 * 2a26a25 - bump version to 0.1.13 (Ronald Holshausen, Mon Sep 12 17:40:54 2022 +1000)
 

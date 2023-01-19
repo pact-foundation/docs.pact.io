@@ -4,6 +4,24 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.3 - Bugfix Release
+
+* 2c8467ed - fix: Header matching rules with an index were not being applied #238 (Ronald Holshausen, Mon Jan 9 16:45:51 2023 +1100)
+* 4409441b - fix: Matching rules are not being applied correctly to message metadata #245 (Ronald Holshausen, Mon Jan 9 13:43:41 2023 +1100)
+* 4f786ff4 - fix: support header values that are not well formed #228 (Ronald Holshausen, Wed Jan 4 11:05:45 2023 +1100)
+
+## 1.0.2 - Maintenance Release
+
+* 5fbb0d6a - feat: Upgrade plugin driver to 0.2.2 (supports passing a test context to support generators) (Ronald Holshausen, Fri Dec 16 16:38:03 2022 +1100)
+
+## 1.0.1 - Bugfix Release
+
+* e91ad622 - fix: Interaction builder was not copying plugin config data to the Pact metadata (Ronald Holshausen, Mon Dec 12 13:59:36 2022 +1100)
+
+## 1.0.0 - Support plugins generating interaction content
+
+* 1744ddc2 - feat: Support plugins generating interaction content (Ronald Holshausen, Fri Dec 9 17:24:04 2022 +1100)
+
 ## 0.12.15 - Maintenance Release
 
 

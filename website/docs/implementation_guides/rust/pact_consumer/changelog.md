@@ -4,6 +4,19 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.10.3 - Support generators in plugins
+
+* 5fbb0d6a - feat: Upgrade plugin driver to 0.2.2 (supports passing a test context to support generators) (Ronald Holshausen, Fri Dec 16 16:38:03 2022 +1100)
+
+## 0.10.2 - Bugfix Release
+
+* e91ad622 - fix: Interaction builder was not copying plugin config data to the Pact metadata (Ronald Holshausen, Mon Dec 12 13:59:36 2022 +1100)
+
+## 0.10.1 - Support plugins generating interaction content
+
+* 2cf5d8ad - fix: Correct test after upgrading pact_models to 1.0.2 (Ronald Holshausen, Fri Dec 9 12:59:24 2022 +1100)
+* 2e5823a0 - feat: add custom-header to the old FFI args for implementations that have not moved to handles (Ronald Holshausen, Fri Nov 25 11:09:46 2022 +1100)
+
 ## 0.10.0 - Bugfix Release
 
 * a3fa7d63 - feat: Split the builders into synch and async versions (Ronald Holshausen, Mon Nov 7 12:46:00 2022 +1100)

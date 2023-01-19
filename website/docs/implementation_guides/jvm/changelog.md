@@ -4,6 +4,52 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.4.4 - Maintenance Release
+
+* a5eb417c2 - fix: restrict tests with reverse lookups to Linux agents #405 (Ronald Holshausen, Wed Jan 18 16:26:19 2023 +1100)
+* edb04a4d9 - fix: revert some changes due to GH Windows agents #405 (Ronald Holshausen, Wed Jan 18 16:09:40 2023 +1100)
+* af634ceb1 - fix: revert some changes due to GH Windows agents #405 (Ronald Holshausen, Wed Jan 18 15:51:06 2023 +1100)
+* 6ed72c2d9 - fix: revert some changes due to GH Windows agents #405 (Ronald Holshausen, Wed Jan 18 15:34:01 2023 +1100)
+* 750c1353e - fix: restrict tests with reverse lookups to Linux agents #405 (Ronald Holshausen, Wed Jan 18 15:02:05 2023 +1100)
+* 08c283c62 - fix: restrict tests with reverse lookups to Linux agents #405 (Ronald Holshausen, Wed Jan 18 14:47:25 2023 +1100)
+* 5cdbbb5dc - fix: restrict tests with reverse lookups to Linux agents #405 (Ronald Holshausen, Wed Jan 18 14:44:35 2023 +1100)
+* 480c651b4 - fix: restrict tests with reverse lookups to Linux agents #405 (Ronald Holshausen, Wed Jan 18 14:00:29 2023 +1100)
+* 0078f8c0d - fix: restrict tests with reverse lookups to Linux agents #405 (Ronald Holshausen, Wed Jan 18 13:56:39 2023 +1100)
+* 9049f7429 - fix: restrict tests with reverse lookups to Linux agents #405 (Ronald Holshausen, Wed Jan 18 13:26:02 2023 +1100)
+* f57111549 - fix: fix test on CI #405 (Ronald Holshausen, Wed Jan 18 13:04:19 2023 +1100)
+* 47af8b186 - fix: fix test on CI #405 (Ronald Holshausen, Wed Jan 18 12:58:10 2023 +1100)
+* 21b06cf1e - fix: Support IP6 hosts #405 (Ronald Holshausen, Wed Jan 18 12:16:29 2023 +1100)
+* a8877b221 - fix: JUnit 4 tests were not running as the junit-vintage-engine was not on the test classpath (Ronald Holshausen, Tue Jan 17 15:08:46 2023 +1100)
+* 859fff26a - feat: add the remaining status code methods to response DSL builder (Ronald Holshausen, Tue Jan 17 12:37:11 2023 +1100)
+* 01dda6cfe - feat: add the remaining body methods to request/response DSL builders (Ronald Holshausen, Tue Jan 17 11:49:42 2023 +1100)
+* 75ba28ae9 - feat: Add support for query parameters with new DSL (Ronald Holshausen, Mon Jan 16 16:28:18 2023 +1100)
+* b888d07ca - feat: Add support for matching rules with headers with new DSL (Ronald Holshausen, Mon Jan 16 15:21:06 2023 +1100)
+* 6ae543c4a - update changelog for release 4.3.19 (Ronald Holshausen, Mon Jan 16 13:01:43 2023 +1100)
+* 1d279221b - feat: Add initial DSL using builder pattern to replace legacy DSL (Ronald Holshausen, Mon Jan 16 11:50:52 2023 +1100)
+* 050647645 - feat: add methods to setup provider states on PactBuilder #1646 (Ronald Holshausen, Thu Jan 12 17:29:54 2023 +1100)
+* e8e5457bb - fix: remove the optional annotation from PactPublish attribute in PactPublishTask #1634 (Ronald Holshausen, Thu Jan 12 11:23:44 2023 +1100)
+* 8dd926fe2 - chore(deps): bump tomhjp/gh-action-jira-search from 0.1.0 to 0.2.1 (dependabot[bot], Mon Jan 9 16:06:08 2023 +0000)
+* ba38e5dee - feat: validate list type as per default (Samuel, Tue Dec 27 23:53:55 2022 +0100)
+* 639f7f893 - fix(regression): HTTP Pact with root json array fails when using unordered array matching #1631 (Ronald Holshausen, Wed Jan 4 16:19:42 2023 +1100)
+* 4a5ff5979 - fix: Use context.testMethod instead of context.requiredTestMethod #1643 (Ronald Holshausen, Wed Jan 4 14:43:02 2023 +1100)
+* 5a46e37ae - chore(deps): bump actions/github-script from 5 to 6 (dependabot[bot], Wed Jan 4 03:33:04 2023 +0000)
+* 58b6982d3 - fix: bug in how the @MockServerConfig annotation is being resolved #1641 (Ronald Holshausen, Wed Jan 4 14:17:31 2023 +1100)
+* 09bb4afe3 - feat: Update Groovy message builder to be able to create a message with a NULL body #1637 (Ronald Holshausen, Wed Jan 4 11:29:54 2023 +1100)
+* be8d57dcf - fix(regression): Upgrading au.com.dius.pact.provider:junit5 from 4.3.15 to 4.3.16 results in compilation failure #1630 (Ronald Holshausen, Tue Jan 3 16:42:02 2023 +1100)
+
+## 4.3.19 - Maintenance Release
+
+* 5462deaec - fix: remove the optional annotation from PactPublish attribute in PactPublishTask #1634 (Ronald Holshausen, Thu Jan 12 11:23:44 2023 +1100)
+* 639f7f893 - fix(regression): HTTP Pact with root json array fails when using unordered array matching #1631 (Ronald Holshausen, Wed Jan 4 16:19:42 2023 +1100)
+* be8d57dcf - fix(regression): Upgrading au.com.dius.pact.provider:junit5 from 4.3.15 to 4.3.16 results in compilation failure #1630 (Ronald Holshausen, Tue Jan 3 16:42:02 2023 +1100)
+
+## 4.4.3 - Bugfixes + write date/time matchers in the correct format as per the spec
+
+* 8aae4d414 - update changelog for release 4.3.18 (Ronald Holshausen, Fri Dec 23 14:06:59 2022 +1100)
+* b1d6c01c0 - fix: write date/time matchers in the correct format as per the spec #1617 (Ronald Holshausen, Fri Dec 23 11:49:18 2022 +1100)
+* aa117914c - fix: Update matching rule loading code to support correct + incorrect formatted date/time matchers #1617 (Ronald Holshausen, Fri Dec 23 11:13:54 2022 +1100)
+* 102e67362 - bugfix: fix custom header propagation in list case (Artem Ptushkin, Tue Dec 6 10:14:01 2022 +0100)
+
 ## 4.4.2 - Fix transitive dependencies
 
 * 362924b38 - fix: httpclient5 and org.json need to be defined as api deps in the dependency constraints #1639 (Ronald Holshausen, Tue Nov 22 11:21:54 2022 +1100)
@@ -38,6 +84,11 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 * 0a804b139 - bump org.json:json version to latest (Nikolas Grottendieck, Sun Oct 16 13:17:02 2022 +0200)
 * 0a23caba1 - Make PactCanIDeployTask compatible with Gradle Configuration Cache (Marco Gomiero, Mon Oct 10 23:19:53 2022 +0200)
 * e3dd8bf5d - Make PactPublishTask compatible with Gradle Configuration Cache (Marco Gomiero, Mon Oct 10 21:50:52 2022 +0200)
+
+## 4.3.18 - fix: write date/time matchers in the correct format as per the spec
+
+* b1d6c01c0 - fix: write date/time matchers in the correct format as per the spec #1617 (Ronald Holshausen, Fri Dec 23 11:49:18 2022 +1100)
+* aa117914c - fix: Update matching rule loading code to support correct + incorrect formatted date/time matchers #1617 (Ronald Holshausen, Fri Dec 23 11:13:54 2022 +1100)
 
 ## 4.3.17 - Maintenance Release
 
