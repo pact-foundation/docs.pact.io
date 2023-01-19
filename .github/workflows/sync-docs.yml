@@ -15,6 +15,26 @@ on:
       - pact-net-docs-updated
       - pact-broker-docs-updated
       - pact-plugins-docs-updated
+  workflow_dispatch:
+    inputs:
+      name:
+        event:
+          type: choice
+          description: Which event happened?
+          required: true
+          options:
+            - pact-js-docs-updated
+            - pact-jvm-docs-updated
+            - pact-python-docs-updated
+            - pact-go-docs-updated
+            - pact-rust-docs-updated
+            - pact-cpp-docs-updated
+            - pact-broker-docker-pactfoundation-docs-updated
+            - pact-broker-docker-dius-docs-updated
+            - pact-broker-client-docs-updated
+            - pact-net-docs-updated
+            - pact-broker-docs-updated
+            - pact-plugins-docs-updated
 
 jobs:
   build:
@@ -22,58 +42,61 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-ruby@v1
+    - uses: ruby/setup-ruby@v1
       with:
         ruby-version: '2.6'
     - run: gem install bundler -v 2.0.2 && bundle install --without test development
 
+    - id: identify_event
+      run:  echo "update_event=${{ github.event.action }}${{ github.event.inputs.update_event }}" >> $GITHUB_OUTPUT
+
     - name: Sync Pact JS docs
       run: bundle exec scripts/sync/pact_js.rb && echo 'COMMIT_MESSAGE="synced pact-js docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-js-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-js-docs-updated'
 
     - name: Sync Pact JVM docs
       run: bundle exec scripts/sync/pact_jvm.rb && echo 'COMMIT_MESSAGE="synced pact-jvm docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-jvm-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-jvm-docs-updated'
 
     - name: Sync Pact Python docs
       run: bundle exec scripts/sync/pact_python.rb && echo 'COMMIT_MESSAGE="synced pact-python docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-python-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-python-docs-updated'
 
     - name: Sync Pact Go docs
       run: bundle exec scripts/sync/pact_go.rb && echo 'COMMIT_MESSAGE="synced pact-go docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-go-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-go-docs-updated'
 
     - name: Sync Pact Rust docs
       run: bundle exec scripts/sync/pact_rust.rb && echo 'COMMIT_MESSAGE="synced pact-rust docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-rust-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-rust-docs-updated'
 
     - name: Sync Pact C++ docs
       run: bundle exec scripts/sync/pact_cpp.rb && echo 'COMMIT_MESSAGE="synced pact-cpp docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-cpp-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-cpp-docs-updated'
 
     - name: Sync Pact Broker docs
       run: bundle exec scripts/sync/pact_broker.rb && echo 'COMMIT_MESSAGE="synced pact_broker docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-broker-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-broker-docs-updated'
 
     - name: Sync pactfoundation/pact-broker Docker image docs
       run: bundle exec scripts/sync/pact_broker_docker_pactfoundation.rb && echo 'COMMIT_MESSAGE="synced pactfoundation/pact-broker docker image docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-broker-docker-pactfoundation-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-broker-docker-pactfoundation-docs-updated'
 
     - name: Sync dius/pact-broker Docker image docs
       run: bundle exec scripts/sync/pact_broker_docker_dius.rb && echo 'COMMIT_MESSAGE="synced dius/pact-broker docker image docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-broker-docker-dius-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-broker-docker-dius-docs-updated'
 
     - name: Sync Pact Broker Client docs
       run: bundle exec scripts/sync/pact_broker_client.rb && echo 'COMMIT_MESSAGE="synced pact broker client docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-broker-client-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-broker-client-docs-updated'
 
     - name: Sync Pact Net docs
       run: bundle exec scripts/sync/pact_net.rb && echo 'COMMIT_MESSAGE="synced pact-net docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-net-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-net-docs-updated'
 
     - name: Sync Pact Plugins docs
       run: bundle exec scripts/sync/pact_plugins.rb && echo 'COMMIT_MESSAGE="synced pact-plugins docs"' >> $GITHUB_ENV
-      if: github.event.action == 'pact-plugins-docs-updated'
+      if: steps.identify_event.outputs.update_event == 'pact-plugins-docs-updated'
 
     - uses: actions/setup-node@v2
       with:
