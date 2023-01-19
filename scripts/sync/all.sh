@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ -z "${GITHUB_ACCESS_TOKEN}" ]; then
-  echo "Please set GITHUB_ACCESS_TOKEN"
+if [ -z "${GITHUB_TOKEN}" ]; then
+  echo "Please set GITHUB_TOKEN"
   exit 1
 fi
 

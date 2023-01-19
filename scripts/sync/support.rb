@@ -157,7 +157,7 @@ def edit_comment_for slug
 end
 
 def get_file_list(repository_slug, include_conditions = [], exclude_conditions = [], branch)
-  client = Octokit::Client.new(:access_token => ENV['GITHUB_ACCESS_TOKEN'])
+  client = Octokit::Client.new(:access_token => ENV['GITHUB_TOKEN'])
   client.auto_paginate = true
   tree = client.tree(repository_slug, branch, recursive: true).tree
   if include_conditions.any? || exclude_conditions.any?
