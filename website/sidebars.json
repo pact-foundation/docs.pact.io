@@ -394,7 +394,7 @@
       {
         "type": "category",
         "label": "API Docs",
-        "items": ["pact_broker/api/webhooks", "pact_broker/api/pacticipants"]
+        "items": ["pact_broker/api/webhooks", "pact_broker/api/pacticipants", "pact_broker/api/pagination"]
       },
       "pact_broker/changelog"
     ]
