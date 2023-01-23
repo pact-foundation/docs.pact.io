@@ -46,8 +46,8 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '2.6'
-    - run: gem install bundler -v 2.0.2 && bundle install --without test development
+        ruby-version: '2.7'
+    - run: bundle install --without test development
 
     - id: identify_event
       run:  echo "update_event=${{ github.event.action }}${{ github.event.inputs.update_event }}" >> $GITHUB_OUTPUT
