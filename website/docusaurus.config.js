@@ -79,8 +79,8 @@ const siteConfig = {
 
   themeConfig: {
     announcementBar: {
-      id: 'oss-survey-2022',
-      content: '<div id="oss-survey-2022">❤️ Help us improve - the 2022 <a target="_blank" href="https://forms.office.com/r/ccxYTMxhJm">Pact Open Source Community Survey</a> is now open.</div>',
+      id: 'announcement-bar',
+      content: '<div id="announcement-bar">Pact\'s 🔗 new Plugin 🔌 Framework introduces new possiblities, read more about it <a target="_blank" href="/plugins">here</a>.</div>',
       backgroundColor: '#454CF0',
       textColor: '#fff',
       isCloseable: false,
