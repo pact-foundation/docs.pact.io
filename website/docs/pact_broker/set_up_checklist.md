@@ -10,7 +10,7 @@ This will get you to the stage where your consumer and provider have a pact that
 
 ### Anyone
 
-* [Set up](https://github.com/pact-foundation/pact_broker#for-reals) an instance of the Pact Broker or create a [Pactflow](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=pact_broker_set_up_checklist) account.
+* [Set up](https://github.com/pact-foundation/pact_broker#for-reals) an instance of the Pact Broker or create a [PactFlow](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=pact_broker_set_up_checklist) account.
 
 ### Consumer team
 

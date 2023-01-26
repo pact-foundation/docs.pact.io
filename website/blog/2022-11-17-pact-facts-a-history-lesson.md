@@ -43,12 +43,12 @@ Pact was originally written by a development team at [realestate.com.au](https:/
 
 [![Screenshot 2022-11-16 at 14 16 59](https://user-images.githubusercontent.com/19932401/202204239-f2bfa18e-5ff3-450a-b037-8d0a5cc5387d.png)](https://github.com/pact-foundation/pact-ruby/commit/590f10f67d231838a54fd7cb2bfda50487f9ef6e)
 
-[Ron Holshausen](https://github.com/uglyog) (at the time at [DiUS](https://dius.com.au/), still one of the present day maintainers of [Pact](http://pact.io/), and co-founder of [Pactflow](https://pactflow.io/)), first commit came shortly after. 
+[Ron Holshausen](https://github.com/uglyog) (at the time at [DiUS](https://dius.com.au/), still one of the present day maintainers of [Pact](http://pact.io/), and co-founder of [PactFlow](https://pactflow.io/)), first commit came shortly after. 
 
 [![Screenshot 2022-11-16 at 14 27 47](https://user-images.githubusercontent.com/19932401/202207018-8483082b-df76-4c95-b807-4458dbfdb3ca.png)](https://github.com/pact-foundation/pact-ruby/commit/2113359743a55d0fa8d2bea17848749ec2223d86)
 
 
-A few months later [Beth Skurrie](https://github.com/bethesque) (then at [DiUS](https://dius.com.au/), still one of the present day maintainers of [Pact](http://pact.io/) and co-founder of [Pactflow](http://pactflow.io/) ), joined one of the teams that was working with the Pact authors' team.
+A few months later [Beth Skurrie](https://github.com/bethesque) (then at [DiUS](https://dius.com.au/), still one of the present day maintainers of [Pact](http://pact.io/) and co-founder of [PactFlow](http://pactflow.io/) ), joined one of the teams that was working with the Pact authors' team.
 
 She had recently seen a talk by [J.B.Rainsberger entitled "Integration tests are a scam"](https://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam), which promoted the concept of "collaboration" and "contract" tests, so she was immediately interested when she was introduced to Pact.
 
@@ -126,7 +126,7 @@ A few days apart, [DiUS/pactjs0](https://github.com/DiUS/pactjs0) was created, t
 Jeff Cann. Ron dropped his [first commit](https://github.com/DiUS/pactjs0/commit/ddf8dcb48c6d9c3344d64972f29ee4bb62edce31) 
 ultimately [deprecating it](https://github.com/DiUS/pactjs0/commit/750379851fcdfc52b86aaa2ba8ad547514831173) a little while later.
 
-Enter [Matt Fellows](https://github.com/mefellows), dropping his [first commit](https://github.com/DiUS/pact-consumer-js-dsl/commit/9442f36579a82583dcc1910012344d8195968eda). A man of many talents, Matt is still one of the present day maintainers of [Pact](http://pact.io/), as well as co-founding [Pactflow](http://pactflow.io/).
+Enter [Matt Fellows](https://github.com/mefellows), dropping his [first commit](https://github.com/DiUS/pact-consumer-js-dsl/commit/9442f36579a82583dcc1910012344d8195968eda). A man of many talents, Matt is still one of the present day maintainers of [Pact](http://pact.io/), as well as co-founding [PactFlow](http://pactflow.io/).
 
 It's funny, JavaScript is akin to the bus service, you wait for ages and then three turn up at once 🤯. 
 

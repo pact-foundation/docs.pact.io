@@ -4,7 +4,7 @@ title: Ask Me Anything
 
 ## Join an upcoming Ask Me Anything (AMA) session
 
-There are regular monthly Pact AMAs, currently hosted by Pactflow. At these sessions, you can ask a question and one of their team will answer it. [Register](https://www.linkedin.com/company/pactflow/events/?viewAsMember=true) for an upcoming AMA in your timezone.
+There are regular monthly Pact AMAs, currently hosted by PactFlow. At these sessions, you can ask a question and one of their team will answer it. [Register](https://www.linkedin.com/company/pactflow/events/?viewAsMember=true) for an upcoming AMA in your timezone.
 
 ## Previous Ask Me Anything recordings
 
@@ -31,14 +31,14 @@ Audience questions:
 
 ### September 2021
 
-Theme: Case Study: Rolling out Pact/Pactflow at M1 Finance
+Theme: Case Study: Rolling out Pact/PactFlow at M1 Finance
 
 Video: https://youtu.be/J6-Zi6noqNE
 
 1. Introduction to M1 finance and case study and existing practices
 1. How did you know contract testing was the right fit for the test automation strategy?
 1. How did you get started with contract testing?
-1. Why did you move to Pactflow?
+1. Why did you move to PactFlow?
 
 Audience questions:
 
@@ -96,7 +96,7 @@ Video: https://youtu.be/VnOy9Sv9Opo
 - _(audience question)_ Can users be synced with Google? Can users be part of multiple teams?
 - _(audience question)_ Should we have multiple brokers (e.g. 1 per project) or is this something the Teams feature addresses?
 - _(audience question)_ How does Pact work with IoT solutions?
-- _(audience question)_ What are the SLAs for Pactflow SaaS? Are there enterprise options?
+- _(audience question)_ What are the SLAs for PactFlow SaaS? Are there enterprise options?
 
 ### May 2021
 

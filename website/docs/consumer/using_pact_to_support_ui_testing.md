@@ -18,9 +18,9 @@ An alternative is to parse the JSON pact file, extract the interactions you are 
 
 Another approach to ensure your stub data is kept in line with the contract is to use shared fixture data to set up both the Pact tests, and the stubs for the UI tests.
 
-## 4. Use a Pactflow stub
+## 4. Use a PactFlow stub
 
-If you are using [Pactflow](https://pactflow.io?utm_source=ossdocs&utm_campaign=using_pact_to_support_ui_testing) as your Pact Broker, you have access to a hosted stub for every pact that you publish. You can read more about the hosted stubs [here](https://pactflow.io/blog/hosted-stubs/?utm_source=ossdocs&utm_campaign=using_pact_to_support_ui_testing).
+If you are using [PactFlow](https://pactflow.io?utm_source=ossdocs&utm_campaign=using_pact_to_support_ui_testing) as your Pact Broker, you have access to a hosted stub for every pact that you publish. You can read more about the hosted stubs [here](https://pactflow.io/blog/hosted-stubs/?utm_source=ossdocs&utm_campaign=using_pact_to_support_ui_testing).
 
 ## Further Reading
 

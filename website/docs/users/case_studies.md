@@ -64,18 +64,18 @@ You can see a list community articles [here](blogs_videos_and_articles), but her
 
 <a href="https://medium.com/@dany.marques/how-to-set-up-pact-tests-with-angular-jest-ae157f272428"><img src="/img/logos/brand/die-mobiliar.png" alt="Die Mobiliar Logo" width="150" /></a>
 
-# Pactflow case studies
+# PactFlow case studies
 
-We also have case studies about Pactflow - you might be interested to read how these Pactflow customers transitions from the Pact Open Source Pact Broker to Pactflow.
+We also have case studies about PactFlow - you might be interested to read how these PactFlow customers transitions from the Pact Open Source Pact Broker to PactFlow.
 
 ## Boost Insurance
 
-> Boost Insurance sees 80% increase in service stability with Pactflow contract testing.
+> Boost Insurance sees 80% increase in service stability with PactFlow contract testing.
 
 <a href="./case_studies/case_study_boostinsurance"><img src="/img/logos/brand/boost-insurance-logo.svg" alt="Boost insurance Logo" width="150" /></a>
 
 ## M1 Finance
 
-> How hypergrowth FinTech, M1 Finance rapidly rolled out contract testing with Pactflow.
+> How hypergrowth FinTech, M1 Finance rapidly rolled out contract testing with PactFlow.
 
 <a href="./case_studies/case_study_m1finance"><img src="/img/logos/brand/m1-logo-dark.svg" alt="M1 finance Logo" width="150" /></a>

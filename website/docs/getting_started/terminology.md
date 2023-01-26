@@ -57,19 +57,19 @@ The current version of the specification is [3.0](https://github.com/pact-founda
 
 The [Pact Broker](/pact_broker) is a permanently running, externally hosted service with an API and UI that allows contract testing to be integrated into a CI/CD pipeline. Like the Pact clients, the Pact Broker is an open source project.
 
-## Pactflow
+## PactFlow
 
-[Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=terminology) is a commercial offering of the Pact Broker which adds features required to use Pact at scale.
+[PactFlow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=terminology) is a commercial offering of the Pact Broker which adds features required to use Pact at scale.
 
 ## The Matrix
 
-The Matrix is a table that shows the compatibility status of each consumer version and provider version, as determined by the contract verification results. It is a feature of the Pact Broker and Pactflow.
+The Matrix is a table that shows the compatibility status of each consumer version and provider version, as determined by the contract verification results. It is a feature of the Pact Broker and PactFlow.
 
 ## Can-I-Deploy 
 
-[Can-i-deploy](/pact_broker/can_i_deploy) is a command line tool that uses the Matrix to determine whether an application version is "safe" to deploy to a particular environment. To do this, it checks that there is a successful verification result between the application being deployed and the currently deployed version of each of the integrated applications in that environment. Can-i-deploy is a feature of the Pact Broker and Pactflow.
+[Can-i-deploy](/pact_broker/can_i_deploy) is a command line tool that uses the Matrix to determine whether an application version is "safe" to deploy to a particular environment. To do this, it checks that there is a successful verification result between the application being deployed and the currently deployed version of each of the integrated applications in that environment. Can-i-deploy is a feature of the Pact Broker and PactFlow.
 
 ## Pacticipant
 
-This is the term used in the Pact Broker/Pactflow API for "an application that participates in a pact". It was a pun created by the Pact Broker author, Beth Skurrie, before she had any idea that the Pact Broker would become such a widely used application. It is a naming decision that she sincerely regrets, 1. because of all the confusion it creates and 2. because she is now incapable of typing the word "participant".
+This is the term used in the Pact Broker/PactFlow API for "an application that participates in a pact". It was a pun created by the Pact Broker author, Beth Skurrie, before she had any idea that the Pact Broker would become such a widely used application. It is a naming decision that she sincerely regrets, 1. because of all the confusion it creates and 2. because she is now incapable of typing the word "participant".
 

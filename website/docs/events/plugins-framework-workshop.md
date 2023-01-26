@@ -44,8 +44,8 @@ Workshop Facilitators
 
 ![Matt Fellows-B W-circle-200px](https://user-images.githubusercontent.com/70673937/197754384-2d05b939-add8-499c-8f40-3fc2af160e03.png)
 
-Matt Fellows - Core Maintainer at Pact and Principal Product Manager - Pactflow at SmartBear
+Matt Fellows - Core Maintainer at Pact and Principal Product Manager - PactFlow at SmartBear
 
 ![Yousaf Nabi_B W-circle -200px](https://user-images.githubusercontent.com/70673937/197754405-896450b2-35a0-49b5-840b-35b9b8b986f3.png)
 
-Yousaf Nabi - Core Maintainer & Community Shepherd at Pact and Developer Advocate - Pactflow at SmartBear
+Yousaf Nabi - Core Maintainer & Community Shepherd at Pact and Developer Advocate - PactFlow at SmartBear

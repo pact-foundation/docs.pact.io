@@ -29,7 +29,7 @@ Summary:
 - Support for synchronous messages
 - Support for plugins (e.g. for gRPC + Protobufs support <https://github.com/pact-foundation/pact-go/tree/2.x.x/examples/grpc>)
 
-A word from our Pactflow co-founder & pact-go maintainer [Matt Fellows](https://github.com/mefellows)
+A word from our PactFlow co-founder & pact-go maintainer [Matt Fellows](https://github.com/mefellows)
 
 > Because the API is more complex, we’ve used a type state builder pattern to force which options can be used at any point in time, and ensure that pre-requisite methods are called in sequence.
 > We are still not 100% happy with the HTTP package layout (and requiring V2/V3/V4 prefixes on a number of types), so there might be another refactor in that space, but mainly we think it would just be the names of types and packages that could change.
@@ -102,7 +102,7 @@ Shout out to [Artur Neumann](https://github.com/individual-it), for being a pivo
 
 ### Community Spotlight – Mike Geeves
 
-We haven’t spoken enough about [Mike Geeves](https://github.com/mikegeeves) from Bearly Compiling :chef kiss: - He has been working on Pact on and off, over the last couple of years, and has been thoroughly confused enough by our examples at times, to want to do something about it!! Mike has helped me during my time joining the Pactflow team and has been great for the occasional rant, and productive conversations that always end up in more work. I don’t think we’ve quite cracked pomodoro.
+We haven’t spoken enough about [Mike Geeves](https://github.com/mikegeeves) from Bearly Compiling :chef kiss: - He has been working on Pact on and off, over the last couple of years, and has been thoroughly confused enough by our examples at times, to want to do something about it!! Mike has helped me during my time joining the PactFlow team and has been great for the occasional rant, and productive conversations that always end up in more work. I don’t think we’ve quite cracked pomodoro.
 
 So why did Mike start tickling Pact?
 
@@ -112,4 +112,4 @@ So what are Mike and I up to now? We are looking at our examples with a particul
 
 That's all for now, catch you next month!
 
-- Yousaf Nabi — Developer Advocate at Pactflow and Community Shepherd at Pact.
+- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact.

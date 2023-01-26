@@ -1,15 +1,15 @@
 ---
-title: Announcing Pactflow - our managed Pact Broker
+title: Announcing PactFlow - our managed Pact Broker
 author: Matt Fellows
 authorURL: https://twitter.com/matthewfellows
-tags: [Pactflow]
-keywords: [Pactflow]
+tags: [PactFlow]
+keywords: [PactFlow]
 date: 2019-05-01
 draft: false
 hide_table_of_contents: true
 ---
 
-If you use Pact and would like to support us in realising our vision of transforming the way teams test and release distributed systems, we have recently released [Pactflow](http://pactflow.io) - our fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact and contract testing. 
+If you use Pact and would like to support us in realising our vision of transforming the way teams test and release distributed systems, we have recently released [PactFlow](http://pactflow.io) - our fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact and contract testing. 
 
 Read our [launch announcement](https://blog.pactflow.io/pactflow-continuous-delivery-for-microservices/) for more background as to why and how this all came about. It's just the start, but we're really excited about the future.
 

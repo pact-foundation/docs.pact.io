@@ -11,7 +11,7 @@ While there are [high level instructions][rollyourown] provided for running the 
 
 ## In a hurry?
 
-If you want to try out a Pact Broker that can be accessed by all your teams, without having to fill in infrastructure requisition forms and wait for 3 months, you can get a free trial at <a href="https://pactflow.io/?utm_source=github&utm_campaign=dockerized_pact_broker_index">pactflow.io</a>. Built by a group of core Pact maintainers, Pactflow is a fork of the OSS Pact Broker with extra goodies like an improved UI, field level verification results, and user and teams management. It's also fully supported, and that means when something goes wrong, *someone else* gets woken up in the middle of the afternoon to fix it...
+If you want to try out a Pact Broker that can be accessed by all your teams, without having to fill in infrastructure requisition forms and wait for 3 months, you can get a free trial at <a href="https://pactflow.io/?utm_source=github&utm_campaign=dockerized_pact_broker_index">pactflow.io</a>. Built by a group of core Pact maintainers, PactFlow is a fork of the OSS Pact Broker with extra goodies like an improved UI, field level verification results, and user and teams management. It's also fully supported, and that means when something goes wrong, *someone else* gets woken up in the middle of the afternoon to fix it...
 
 
 ## Which Docker image should I use?

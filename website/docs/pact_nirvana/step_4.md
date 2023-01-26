@@ -17,7 +17,7 @@ While you can use Pact without a Pact Broker, using one allows you to get the mo
 
 > **Quick Start**
 >
-> The Pact Broker is an open source tool that requires you to deploy, administer and host it yourself. If you would prefer a plug-and-play option, we've created [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=effective_pact_setup), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
+> The Pact Broker is an open source tool that requires you to deploy, administer and host it yourself. If you would prefer a plug-and-play option, we've created [PactFlow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=effective_pact_setup), a fully managed Pact Broker with additional features to simplify teams getting started and scaling with Pact.
 >
 > Get started for free on our Developer Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=effective_pact_setup_dev_plan).
 
@@ -58,7 +58,7 @@ The following diagram shows what a fully fledged Pact supported release pipeline
 
 ### A. Set up a Pact Broker
 
-1. Read the Pact Broker [home page](https://github.com/pact-foundation/pact_broker), \(taking note of the various deployment options available to you in the Usage section\), or sign up to a hosted Developer plan at [Pactflow](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=effective_pact_setup_step_1).
+1. Read the Pact Broker [home page](https://github.com/pact-foundation/pact_broker), \(taking note of the various deployment options available to you in the Usage section\), or sign up to a hosted Developer plan at [PactFlow](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=effective_pact_setup_step_1).
 2. Deploy a Pact Broker to a network that has access to both consumer and provider CI systems so it can trigger builds.
 
 Useful links:
@@ -70,7 +70,7 @@ For each of the next steps, you will need to set the following variables to your
 * `PACT_BROKER_BASE_URL`
 * `PACT_BROKER_USERNAME` # Pact Broker Only
 * `PACT_BROKER_PASSWORD` # Pact Broker Only
-* `PACT_BROKER_TOKEN` # Pactflow Broker Only
+* `PACT_BROKER_TOKEN` # PactFlow Broker Only
 
 ### B. Manually publish the pact to the Pact Broker
 
@@ -86,7 +86,7 @@ communication between your provider and consumer.
 
 You can read more about publishing and retrieving pacts from a Pact Broker [here](https://docs.pact.io/pact_broker/publishing_and_retrieving_pacts#publishing)
 
-If you are using Pactflow - see <https://docs.pactflow.io/#consumer> for how to configure your consumer in each respective language implementation
+If you are using PactFlow - see <https://docs.pactflow.io/#consumer> for how to configure your consumer in each respective language implementation
 
 Debug this until it works and looks good.
 
@@ -95,4 +95,4 @@ Debug this until it works and looks good.
 Now you can see if you can run your provider tests, this time pulling the pact file not from your local filesystem,
 but from the broker. Reconfigure your provider project to get the latest pact for each of its consumers from the broker.
 
-If you are using Pactflow - see <https://docs.pactflow.io/#provider> for how to configure your provider in each respective language implementation
+If you are using PactFlow - see <https://docs.pactflow.io/#provider> for how to configure your provider in each respective language implementation

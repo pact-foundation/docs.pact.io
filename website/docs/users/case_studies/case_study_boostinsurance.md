@@ -7,7 +7,7 @@ title: Case Study - Boost Insurance
 
 <p style={{textAlign:"center"}}><img src="/img/logos/brand/boost-insurance-logo.svg" alt="Boost Logo" /></p>
 
-> **Boost Insurance sees 80% increase in service stability with Pactflow contract testing.**
+> **Boost Insurance sees 80% increase in service stability with PactFlow contract testing.**
 
 
 > - **About**: Boost unlocks the insurance vertical by powering white-labeled programs for innovators across all industries.
@@ -20,7 +20,7 @@ title: Case Study - Boost Insurance
 
 ### At a glance
 
-Boost is a growing "infrastructure as a service" (IaaS) startup that provides an API-driven platform for companies to embed, create and offer insurance products to their customers. Implementing a microservices architecture has allowed the company to manage the complexities of state-by-state insurance legislation. To combat the complexities that have arisen as they have scaled their offering, Boost implemented Pactflow which allowed them to dramatically stabilise their service by reducing service outages and errors in deployment.
+Boost is a growing "infrastructure as a service" (IaaS) startup that provides an API-driven platform for companies to embed, create and offer insurance products to their customers. Implementing a microservices architecture has allowed the company to manage the complexities of state-by-state insurance legislation. To combat the complexities that have arisen as they have scaled their offering, Boost implemented PactFlow which allowed them to dramatically stabilise their service by reducing service outages and errors in deployment.
 
 ### Democratising insurance is a complex business
 
@@ -40,25 +40,25 @@ The trigger to tackle their stability challenge came at a critical time. David a
 
 As most other Engineering Managers would relate to, a microservices architecture enables flexibility and scale but doesn’t come without challenges. Over time, traditional end to end testing is no longer comprehensive enough to cover all scenarios, can become costly to maintain and slows the release process. David and his team found these pain points all too familiar and as a result, were experiencing service outages and errors in deployments.
 
-The hosted version of Pactflow was an easy choice for Boost when choosing to implement contract testing. As an automated testing process, once this initial setup process is complete, little maintenance effort is required. And with complete visibility via an audit trail of tests and results, David and his team have no need to question tests.
+The hosted version of PactFlow was an easy choice for Boost when choosing to implement contract testing. As an automated testing process, once this initial setup process is complete, little maintenance effort is required. And with complete visibility via an audit trail of tests and results, David and his team have no need to question tests.
 
-Boost runs continuous integration as a standard practice on each code push, which includes Pact testing as part of the automated testing phase. They have also integrated Pactflow with their product development and release processes, preventing developers from merging or deploying incompatible changes, and providing a seamless developer experience. Contrasting this to an end-to-end testing approach, where there are more manual interventions is always a risk of being stuck in a situation where there is only one test environment (which has to be set up correctly) or a separate environment has to be set up for every set of every combination of services.
+Boost runs continuous integration as a standard practice on each code push, which includes Pact testing as part of the automated testing phase. They have also integrated PactFlow with their product development and release processes, preventing developers from merging or deploying incompatible changes, and providing a seamless developer experience. Contrasting this to an end-to-end testing approach, where there are more manual interventions is always a risk of being stuck in a situation where there is only one test environment (which has to be set up correctly) or a separate environment has to be set up for every set of every combination of services.
 
 ### Great service stability - less service outages and errors
 
 The shift from completely manual testing to simpler, automated contract testing solved David’s main challenge - the stability of Boost’s service.
 
 #### Reduction in service outages
-Previously, Boost would experience one outage a month. Today, using Pactflow and more than 15 microservices and integrations, there are virtually no service outages.
+Previously, Boost would experience one outage a month. Today, using PactFlow and more than 15 microservices and integrations, there are virtually no service outages.
 
 #### Reduction in errors in production
-Because testing has been moved to a point in the process where the outcomes can be measured with more confidence, Boost also sees less errors in production. Before implementing Pactflow, David recalls a dozen issues in production each quarter - this has since reduced to no more than two issues a quarter.
+Because testing has been moved to a point in the process where the outcomes can be measured with more confidence, Boost also sees less errors in production. Before implementing PactFlow, David recalls a dozen issues in production each quarter - this has since reduced to no more than two issues a quarter.
 
-> Today, using Pactflow with more than 15 microservices and ~30 integrations, there are virtually no service outages.
+> Today, using PactFlow with more than 15 microservices and ~30 integrations, there are virtually no service outages.
 
 As David and the team scale their offering, while also increasing the complexity of their microservices architecture, the previous, cumbersome manual verification process is no longer needed. David and his team value the simple and scalable testing process enabling them to prevent issues before they arise.
 
-Additionally serving as the lead for the architecture working group, David has such confidence in Pactflow that he would happily see end to end testing eliminated completely and contract testing used 100% of the time. To David, the value of this is not only in the elimination of errors but the opportunity to shift his focus from putting out fires, to a focus on the big picture, future thinking for Boost.
+Additionally serving as the lead for the architecture working group, David has such confidence in PactFlow that he would happily see end to end testing eliminated completely and contract testing used 100% of the time. To David, the value of this is not only in the elimination of errors but the opportunity to shift his focus from putting out fires, to a focus on the big picture, future thinking for Boost.
 
 <p style={{textAlign:"center"}}><img src="/img/case_studies/boost/boost_david.jpeg" alt="Boost david" width="500" /></p>
 

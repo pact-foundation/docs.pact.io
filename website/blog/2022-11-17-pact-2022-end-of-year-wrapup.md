@@ -75,9 +75,9 @@ Pact’s biggest sponsor got even bigger this year.
 
 ![SbHeartPact](https://docs.pact.io/assets/images/pactflow-smartbear-77908456e1d225c6c1bde17d4eb9a3e9.png)
 
-Pact arose while Pactflow's Co-Founders Beth Skurrie, Ron Holshausen and Matt Fellows were employed by Australian technology consultancy, [DiUS](https://dius.com.au/), supporting companies of all sizes to transition to cloud-native application development and to accelerate their digital initiatives. 
+Pact arose while PactFlow's Co-Founders Beth Skurrie, Ron Holshausen and Matt Fellows were employed by Australian technology consultancy, [DiUS](https://dius.com.au/), supporting companies of all sizes to transition to cloud-native application development and to accelerate their digital initiatives. 
 
-Pactflow is now part of a much wider quality initiative after being [acquired by SmartBear](https://docs.pact.io/blog/2022/04/06/pactflow-joins-smartbear). We care so much for OSS and are so pleased that SmartBear has a strong and demonstrated commitment to OSS — as proven through the support and scale of Cucumber and Swagger. Through our partnership, we will be able to take contract testing to new heights and help deliver key milestones in Pact’s OSS roadmap, and bring closer alignments between our now larger family of open source tools, and smooth pathways between our open source and commercial tools. Providing you a seamless, and wonderful experience, whichever tool you are using.
+PactFlow is now part of a much wider quality initiative after being [acquired by SmartBear](https://docs.pact.io/blog/2022/04/06/pactflow-joins-smartbear). We care so much for OSS and are so pleased that SmartBear has a strong and demonstrated commitment to OSS — as proven through the support and scale of Cucumber and Swagger. Through our partnership, we will be able to take contract testing to new heights and help deliver key milestones in Pact’s OSS roadmap, and bring closer alignments between our now larger family of open source tools, and smooth pathways between our open source and commercial tools. Providing you a seamless, and wonderful experience, whichever tool you are using.
 
 > We are always on the look-out for new contributors, across any of our languages, and if you have interest or have used Swagger, Cucumber or BDD principles in the past, we would love to hear from you. Drop me a note in [Slack](http://slack.pact.io/).
 
@@ -171,7 +171,7 @@ So here is my go, a  veritable buffet, corralling of some of the best bits of th
 
 - Anja Gruss delivered an [intro to bi-directional contract testing](https://kreuzwerker.de/en/post/painless-contract-testing-with-pactflow).
 
-> Whilst this feature in a Pact Broker, exists only in Pactflow (our commercial sponsor and guardian) the source code is open source and lives [here](https://github.com/pactflow/swagger-mock-validator) for the underlying tool. If you want to help make improvements or use it to aid and augment your testing efforts with your OSS Broker, or if you use other mechanisms bar a broker to share pacts. If you do, we would love to what you are up to!
+> Whilst this feature in a Pact Broker, exists only in PactFlow (our commercial sponsor and guardian) the source code is open source and lives [here](https://github.com/pactflow/swagger-mock-validator) for the underlying tool. If you want to help make improvements or use it to aid and augment your testing efforts with your OSS Broker, or if you use other mechanisms bar a broker to share pacts. If you do, we would love to what you are up to!
 
 ### Sept
 

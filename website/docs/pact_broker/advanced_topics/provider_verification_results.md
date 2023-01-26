@@ -60,4 +60,4 @@ Changes to the contract that may cause the initial provider verification to fail
 
 ## Viewing
 
-There is no UI for viewing the interaction level verification results in the open source Pact Broker \(this UI is available in [Pactflow](https://pactflow.io)\) however, you can view them in the API browser. The easiest way to find them is to click on the "Matrix" icon for the integration (the little grid icon in between the consumer and provider names) and then click on the link in the "Pact Verified" column for the results that you want to see. 
+There is no UI for viewing the interaction level verification results in the open source Pact Broker \(this UI is available in [PactFlow](https://pactflow.io)\) however, you can view them in the API browser. The easiest way to find them is to click on the "Matrix" icon for the integration (the little grid icon in between the consumer and provider names) and then click on the link in the "Pact Verified" column for the results that you want to see. 

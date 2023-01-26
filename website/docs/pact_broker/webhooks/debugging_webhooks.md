@@ -8,11 +8,11 @@ Webhooks are executed when either the pact content changes, or a verification is
 
 First, check the [webhook template library](/pact_broker/webhooks/template_library) to see if there is an example for the webhook you want to create.
 
-The best process to create a new webhook is to first get the API call that the webhook will execute working outside the Pact Broker, using a tool like curl or Postman. If you use curl, you can then take the arguments that you passed to the command, and use them to create the webhook using the [Pact Broker Client CLI](/pact_broker/client_cli/readme#create-webhook). If you are using a token or username/password, be aware that they are stored unencrypted in the Pact Broker database, so make sure you use a token or account with limited permissions. If you are using [Pactflow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=debugging_webhooks) then you can store the credential(s) in a [secret](https://docs.pactflow.io/docs/user-interface/settings/secrets/).
+The best process to create a new webhook is to first get the API call that the webhook will execute working outside the Pact Broker, using a tool like curl or Postman. If you use curl, you can then take the arguments that you passed to the command, and use them to create the webhook using the [Pact Broker Client CLI](/pact_broker/client_cli/readme#create-webhook). If you are using a token or username/password, be aware that they are stored unencrypted in the Pact Broker database, so make sure you use a token or account with limited permissions. If you are using [PactFlow](https://pactflow.io/?utm_source=ossdocs&utm_campaign=debugging_webhooks) then you can store the credential(s) in a [secret](https://docs.pactflow.io/docs/user-interface/settings/secrets/).
 
 ## Testing webhook execution
 
-### Pactflow
+### PactFlow
 
 Click on the Settings icon, and then select the Webhooks tab.
 

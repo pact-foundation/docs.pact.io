@@ -1016,7 +1016,7 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
   * log schema versions and migration info on startup	 ([b385e535](https://github.com/pact-foundation/pact_broker/commit/b385e535))
   * allow options to be passed to Sequel migrate via the MigrationTask	 ([143613e7](https://github.com/pact-foundation/pact_broker/commit/143613e7))
 
-* allow Pactflow messages in logs to be hidden by setting PACT_BROKER_HIDE_PACTFLOW_MESSAGES=true	 ([a7550105](https://github.com/pact-foundation/pact_broker/commit/a7550105))
+* allow PactFlow messages in logs to be hidden by setting PACT_BROKER_HIDE_PACTFLOW_MESSAGES=true	 ([a7550105](https://github.com/pact-foundation/pact_broker/commit/a7550105))
 
 * **can-i-deploy**
   * experimental - add a warning message if there are interactions missing verification test results.	 ([f7ab8cc5](https://github.com/pact-foundation/pact_broker/commit/f7ab8cc5))
