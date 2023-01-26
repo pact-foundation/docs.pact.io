@@ -68,7 +68,7 @@ It has now been adopted in Pact-JVM, Pact.Net, Pact-JS and Pact-Go, and although
 
 ### Tim Jones
 
-Pact-JS wouldn’t be half of what it is today, without [Tim Jones](https://github.com/TimothyJones). Outside of the Pactflow co-founders and myself, Tim has the most GitHub and Slack contributions of anyone in the Pact community, it really is staggering. He always delivers gems of well thought advice with a smile, and is an absolute delight to work with. He took a well earned break from being a full-time Pact maintainer earlier this year, but if you’ve had the time to visit the Pact Slack group, you’ve probably seen him armed with Tim’s Tech Tidbits, which we all need to encourage him to make into a YouTube series.
+Pact-JS wouldn’t be half of what it is today, without [Tim Jones](https://github.com/TimothyJones). Outside of the PactFlow co-founders and myself, Tim has the most GitHub and Slack contributions of anyone in the Pact community, it really is staggering. He always delivers gems of well thought advice with a smile, and is an absolute delight to work with. He took a well earned break from being a full-time Pact maintainer earlier this year, but if you’ve had the time to visit the Pact Slack group, you’ve probably seen him armed with Tim’s Tech Tidbits, which we all need to encourage him to make into a YouTube series.
 
 ### Aligntech
 
@@ -92,4 +92,4 @@ Read our [Contributing](https://docs.pact.io/contributing) page to find out many
 
 That's all for now, catch you next month!
 
-- Yousaf Nabi — Developer Advocate at Pactflow and Community Shepherd at Pact.
+- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact.

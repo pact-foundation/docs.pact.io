@@ -70,7 +70,7 @@ See [Content matcher design docs](/implementation_guides/pact_plugins/docs/conte
 There are two example prototype plugins that support matching different types of content: [Protobuf](/implementation_guides/pact_plugins/plugins/protobuf) and 
 [CSV](/implementation_guides/pact_plugins/plugins/csv).
 
-See [Pactflow Protobuf/gRPC plugin](https://github.com/pactflow/pact-protobuf-plugin) for a Pactflow supported plugin.
+See [PactFlow Protobuf/gRPC plugin](https://github.com/pactflow/pact-protobuf-plugin) for a PactFlow supported plugin.
 
 #### Plugins that provide matchers/generators (WIP)
 

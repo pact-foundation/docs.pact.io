@@ -4,7 +4,7 @@ title: Hands on learning
 
 ## Video Training
 
-**Introduction to Pact (via Pactflow)**
+**Introduction to Pact (via PactFlow)**
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/videoseries?list=PLwy9Bnco-IpfZ72VQ7hce8GicVZs7nm0i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

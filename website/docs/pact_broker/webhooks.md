@@ -10,7 +10,7 @@ Webhooks can be used in conjunction with the [can-i-deploy](/pact_broker/can_i_d
 
 ## New to Pact?
 
-If you're reading this page and you're not sure what you're doing, what you probably need to do is to create a webhook that triggers a provider verification build when a pact is published with new content. How this works is described below in the [When the consumer makes a change](#when-the-consumer-makes-a-change) section. If you are using Pactflow, you can create a webhook through the UI. If you are using the OSS Pact Broker, using the [create-webhook](https://docs.pact.io/pact_broker/client_cli/readme#create-webhook) command from the Pact Broker CLI is the easiest approach. You'll find a library of commonly used webhook templates for many of the popular CI systems [here](/pact_broker/webhooks/template_library).
+If you're reading this page and you're not sure what you're doing, what you probably need to do is to create a webhook that triggers a provider verification build when a pact is published with new content. How this works is described below in the [When the consumer makes a change](#when-the-consumer-makes-a-change) section. If you are using PactFlow, you can create a webhook through the UI. If you are using the OSS Pact Broker, using the [create-webhook](https://docs.pact.io/pact_broker/client_cli/readme#create-webhook) command from the Pact Broker CLI is the easiest approach. You'll find a library of commonly used webhook templates for many of the popular CI systems [here](/pact_broker/webhooks/template_library).
 
 ## Events
 

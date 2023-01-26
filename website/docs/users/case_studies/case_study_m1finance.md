@@ -6,7 +6,7 @@ title: Case Study - M1 Finance
 
 <p style={{textAlign:"center"}}><img src="/img/logos/brand/m1-logo-dark.svg" alt="M1 Logo" align="centre" /></p>
 
-> **How hypergrowth FinTech, M1 Finance rapidly rolled out contract testing with Pactflow.**
+> **How hypergrowth FinTech, M1 Finance rapidly rolled out contract testing with PactFlow.**
 
 
 > - **About**: [M1 Finance](https://www.m1finance.com/) is an all-in-one money management platform that helps self-directed investors achieve long-term financial wellness.
@@ -62,14 +62,14 @@ Bedford was familiar with contract testing however it was at M1, where he paired
 The first step was to put together the initial prototype. To do so, Bedford and Ion used the self-hosted Open Source Pact Broker locally. This worked for the prototype, but they quickly realised they would need a way to run it as a centralised piece of infrastructure if they were to use Pact across teams and integrate into their CI/CD infrastructure.
 
 
-#### Stage two - assess the best approach to implement, using Pactflow
+#### Stage two - assess the best approach to implement, using PactFlow
 
-Bedford was aware of Pactflow and the features it offered over the self-hosted Pact Broker. Running into a few friction points with the initial prototype—namely the overheads of self-hosting and CI/CD pipeline, they had to consider the options for expanding the roll out: build and maintain or buy with added benefits.
+Bedford was aware of PactFlow and the features it offered over the self-hosted Pact Broker. Running into a few friction points with the initial prototype—namely the overheads of self-hosting and CI/CD pipeline, they had to consider the options for expanding the roll out: build and maintain or buy with added benefits.
 
-So the second step was signing up to Pactflow’s Starter Plan, allowing them to easily involve other team members and add it to their CI/CD pipeline. Following this, and a successful demo to their team, the confidence to proceed with Pactflow for contract testing was confirmed.
+So the second step was signing up to PactFlow’s Starter Plan, allowing them to easily involve other team members and add it to their CI/CD pipeline. Following this, and a successful demo to their team, the confidence to proceed with PactFlow for contract testing was confirmed.
 
 
-> We realised it was much easier for us to get Pactflow up and running rather than building and supporting the self-hosted Pact Broker by running a proof of concept.
+> We realised it was much easier for us to get PactFlow up and running rather than building and supporting the self-hosted Pact Broker by running a proof of concept.
 
 All in all, the process has taken less than six months—from proof of concept and bringing key stakeholders on the journey—they are now up and running with 17 services and counting.
 
@@ -77,23 +77,23 @@ All in all, the process has taken less than six months—from proof of concept a
 
 <p style={{textAlign:"center"}}><img src="/img/case_studies/m1/m1-finance-arch-2021-08-20.png" alt="M1 Arch" width="500" /></p>
 
-Network diagram of M1’s microservices architecture (generated via Pactflow on August 20, 2021)
+Network diagram of M1’s microservices architecture (generated via PactFlow on August 20, 2021)
 
 ### Bringing the team on the journey
 
 While now a popular method of testing within complex microservices and API environments, contract testing does require a shift in mindset and process for teams taking it on board.
 
-The exercise of building out the prototype was an important step to not only demonstrate the value of contract testing but the use of Pactflow as the best means for M1 Finance to apply contract testing.
+The exercise of building out the prototype was an important step to not only demonstrate the value of contract testing but the use of PactFlow as the best means for M1 Finance to apply contract testing.
 
-Bedford found that his colleagues working on the API / front end side of the product grasped the benefits of contract testing with Pactflow easily.
+Bedford found that his colleagues working on the API / front end side of the product grasped the benefits of contract testing with PactFlow easily.
 
 Other parts of the broader team came with questions such as how contract testing differs from from Swagger (OpenAPI Specification) and why not focus more on end-to-end integration testing
 
-The case for contract testing was simple: rather than generating a bulk of ineffective and expensive-to-maintain tests, contract testing with Pactflow saves time and gives a greater level of confidence
+The case for contract testing was simple: rather than generating a bulk of ineffective and expensive-to-maintain tests, contract testing with PactFlow saves time and gives a greater level of confidence
 
 ### Great results with contract testing: two use cases
 
-Contract testing with Pactflow is alive and well at M1 Finance, giving many teams more mental freedom. Rather than having to worry about potential issues in advance, or having the entire system top of mind, engineers and product teams can focus on the task at hand, knowing that if there are problems they'll be caught.
+Contract testing with PactFlow is alive and well at M1 Finance, giving many teams more mental freedom. Rather than having to worry about potential issues in advance, or having the entire system top of mind, engineers and product teams can focus on the task at hand, knowing that if there are problems they'll be caught.
 
 Bedford shared two recent use cases with us that demonstrate how much they have achieved in a short period of time.
 
@@ -101,17 +101,17 @@ Bedford shared two recent use cases with us that demonstrate how much they have 
 
 Bedford was called upon by the team building the feature; they were seeking a way to deliver automated testing to ensure that if they turned off a service, nothing else would break.
 
-This ended up being a great use case for contract testing due to the lack of end-to-end and UI tests employed at the time— contract testing with Pact provided unit level coverage in an easy to use and nimble way. Paired with Pactflow, the team had control and visibility of the status of the services, being able to validate easily through the build process, requiring less checkpoints along the way.
+This ended up being a great use case for contract testing due to the lack of end-to-end and UI tests employed at the time— contract testing with Pact provided unit level coverage in an easy to use and nimble way. Paired with PactFlow, the team had control and visibility of the status of the services, being able to validate easily through the build process, requiring less checkpoints along the way.
 
 Moving forward in a more nimble way, with a higher level of confidence, is a major win in Bedford’s books.
 
 #### Use case two: credit card for the platform
 
-A second use case, the introduction of a credit card for the platform, required a great deal of complex integrations for the backend with external vendors. The introduction of contract testing with Pactflow meant that the team could validate the assumptions they were making were correct.
+A second use case, the introduction of a credit card for the platform, required a great deal of complex integrations for the backend with external vendors. The introduction of contract testing with PactFlow meant that the team could validate the assumptions they were making were correct.
 
 
 
-For Bedford and the team at M1, it’s not just about being able to operate at a higher velocity, it's about confidence. Without a holistic, automated test strategy and when using tools such as Postman, there’s a great deal of room for error. Including contract testing with Pactflow in his test automation strategy has meant teams can simply reveal both the provider and the consumer side of the contract and move forward with confidence when they see validation.
+For Bedford and the team at M1, it’s not just about being able to operate at a higher velocity, it's about confidence. Without a holistic, automated test strategy and when using tools such as Postman, there’s a great deal of room for error. Including contract testing with PactFlow in his test automation strategy has meant teams can simply reveal both the provider and the consumer side of the contract and move forward with confidence when they see validation.
 
 <p style={{textAlign:"center"}}><img src="/img/case_studies/m1/m1_bedford.png" alt="M1 Bedford" width="500" /></p>
 

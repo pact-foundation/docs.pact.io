@@ -86,7 +86,7 @@ Inspired by our list of tools, but don’t see your [favourite](https://docs.pac
 
 Developer Relations at Pact-Foundation now has a new home @ <https://github.com/pact-foundation/devrel>
 
-We recently hooked up [Orbit.love](https://orbit.love/), to give us a bit of a glance across our open source estate, and we were able to pull out well over 2k different contributions from just the top 15 in the leaderboard excluding Pactflow’s co-founders!
+We recently hooked up [Orbit.love](https://orbit.love/), to give us a bit of a glance across our open source estate, and we were able to pull out well over 2k different contributions from just the top 15 in the leaderboard excluding PactFlow’s co-founders!
 
 Particular shout-out to Timothy Jones, who has been on an epic crusade to empower those around him with words of contract testing wisdom and delightful development life-hacks. The Pact world wouldn’t be the same without you all, and we appreciate every contribution big or small.
 
@@ -115,4 +115,4 @@ There are a multitude of ways, and you don't need to be a code wizard to start:
 
 That's all for now, catch you next month!
 
-- Yousaf Nabi — Developer Advocate at Pactflow and Community Shepherd at Pact.
+- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact.

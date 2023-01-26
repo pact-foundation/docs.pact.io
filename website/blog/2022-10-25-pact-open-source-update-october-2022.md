@@ -170,5 +170,5 @@ hold.
 
 That's all for now. Catch you on Slack!
 
-- Yousaf Nabi -- Developer Advocate at Pactflow and Community
+- Yousaf Nabi -- Developer Advocate at PactFlow and Community
     Shepherd at Pact.

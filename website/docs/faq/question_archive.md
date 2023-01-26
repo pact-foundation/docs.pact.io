@@ -32,7 +32,7 @@ The types of tests that are about providing realistic situations are end-to-end 
 
 ## Should pact files be used for Postman collections to execute integration tests?
 
-You can do this, but would you be getting any extra benefit from it over your existing contract tests? Using contract tests should mean that the boring "when I send this request, I get this response" kind of tests are already done. Viewing the pacts and the verification results in a Pact Broker \(including interaction level results if using Pactflow\) will allow QAs to see what has already been covered, and allow them to identify any gaps, rather than just repeating existing automated tests. This should allow them to spend more time on high value exploratory manual testing.
+You can do this, but would you be getting any extra benefit from it over your existing contract tests? Using contract tests should mean that the boring "when I send this request, I get this response" kind of tests are already done. Viewing the pacts and the verification results in a Pact Broker \(including interaction level results if using PactFlow\) will allow QAs to see what has already been covered, and allow them to identify any gaps, rather than just repeating existing automated tests. This should allow them to spend more time on high value exploratory manual testing.
 
 ## Does implementing contract tests means we have to get rid of existing integration tests with Postman?
 

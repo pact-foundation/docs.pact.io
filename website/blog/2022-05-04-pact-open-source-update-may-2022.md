@@ -11,7 +11,7 @@ hide_table_of_contents: false
 
 Welcome to the inaugural Pact Open Source update!
 
-This month Pactflow officially joins the SmartBear family, and with this, the Pact OSS community will be supported by SmartBear. We're excited to join SmartBear and together, expand contract testing to more developers and testers. [Read](https://pactflow.io/blog/pactflow-joins-the-smartbear-family/) more about what this means for you.
+This month PactFlow officially joins the SmartBear family, and with this, the Pact OSS community will be supported by SmartBear. We're excited to join SmartBear and together, expand contract testing to more developers and testers. [Read](https://pactflow.io/blog/pactflow-joins-the-smartbear-family/) more about what this means for you.
 
 The contributor community has been hard at work uplifting key languages to integrate our [Rust shared core](https://github.com/pact-foundation/pact-specification/issues/83?mc_cid=0ede309bca&mc_eid=UNIQID), enabling support for the latest features in the [specification](https://github.com/pact-foundation/pact-specification?mc_cid=0ede309bca&mc_eid=UNIQID), [plugins](https://github.com/pact-foundation/pact-specification/issues/83?mc_cid=0ede309bca&mc_eid=UNIQID) and more.‌
 ‌‌
@@ -72,7 +72,7 @@ Back in September 2021 Matt introduced us to [The case for contract testing Prot
 
 We are pleased to announced initial support for testing gRPC interactions via [plugins](https://github.com/pact-foundation/pact-specification/issues/83) has been added to Pact-JVM (for Junit5) and Pact-Rust including the shared core, enabling distribution to other client libraries.
 
-We have released an official [Pactflow Protobuf / gRPC plugin](https://github.com/pactflow/pact-protobuf-plugin) for Pact.
+We have released an official [PactFlow Protobuf / gRPC plugin](https://github.com/pactflow/pact-protobuf-plugin) for Pact.
 
 Join the [Developer Preview Program](https://github.com/pactflow/roadmap#developer-preview-programs) for updates, or chat to us in [#protobufs](https://pact-foundation.slack.com/archives/CEQBDD5U4).
 
@@ -103,4 +103,4 @@ There are a multitude of ways, and you don't need to be a code wizard to start:
 
 That's all for now, catch you next month!
 
-- Yousaf Nabi — Developer Advocate at Pactflow and Community Shepherd at Pact.
+- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact.

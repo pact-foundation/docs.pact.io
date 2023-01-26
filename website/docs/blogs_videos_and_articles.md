@@ -2,7 +2,7 @@
 title: Community videos and articles
 ---
 
-Check out the official Pact blog at [docs.pact.io/blog](https://docs.pact.io/blog) and the [Pactflow blog](https://pactflow.io/blog) for blogs written by Pact maintainers.
+Check out the official Pact blog at [docs.pact.io/blog](https://docs.pact.io/blog) and the [PactFlow blog](https://pactflow.io/blog) for blogs written by Pact maintainers.
 
 If you've seen a really good talk that's not on this list, please submit [a PR to this page](https://github.com/pact-foundation/docs.pact.io/blob/master/website/docs/blogs_videos_and_articles.md) with the new link.
 
@@ -31,7 +31,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
   ](https://www.youtube.com/watch?v=OZz7UyHnyKg) (Video)
 - [How to establish quality gates in a Microservices architecture](https://www.cigniti.com/blog/microservices-testing-quality-gates-model/)
 - [Microservice architecture testing strategies](https://www.cigniti.com/blog/microservices-architecture-testing-strategies/)
-- [Reduce the Cost of Migrating to a Microservice Architecture. A kreuzwerker / Pactflow webinar with Q&A](https://vimeo.com/526231279?utm_source=pact-oss-docs&utm_campaign=m2m) (Video)
+- [Reduce the Cost of Migrating to a Microservice Architecture. A kreuzwerker / PactFlow webinar with Q&A](https://vimeo.com/526231279?utm_source=pact-oss-docs&utm_campaign=m2m) (Video)
 - [Deploy with Speed and Confidence Using Contract Testing and Pact – TestJS Summit (Matt Fellows)](https://www.youtube.com/watch?v=W20AmP0XgkU?utm_source=pact-oss-docs&utm_campaign=m2m) (Video)
 
 **Customer Stories**
