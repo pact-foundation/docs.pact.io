@@ -6,15 +6,26 @@ title: Overview
 
 We have some great case studies covering the use of Pact, just click on a logo to take you a post!
 
+## eBay
+
+> "By utilizing contract testing, we can establish a systematic workflow to make the process enforceable and detect compatibility issues early."
+
+> "Contract testing promotes the idea of isolated unit tests against the integration point based on a predefined contract rather than a real end-to-end interaction, making it comparatively fast and stable."
+
+> "We believe contract testing is valuable for testing integration points in microservices architecture and can help evolve services with confidence."
+
+<a href="https://tech.ebayinc.com/engineering/api-evolution-with-confidence-a-case-study-of-contract-testing-adoption-at-ebay"><img src="/img/logos/brand/ebay.png" alt="eBay Logo" width="150" /></a>
+
+
 ## Gov.UK Pay
 
-> By switching to contract testing we now have confidence that any service we deploy will always be compatible with the things it needs to connect with
+> "By switching to contract testing we now have confidence that any service we deploy will always be compatible with the things it needs to connect with"
 
 <a href="./case_studies/case_study_govuk"><img src="/img/logos/brand/govuk.png" alt="Government Digital Services Logo" width="150" /></a>
 
 ## Atlassian: Jira
 
-> A project with a tight deadline (8 weeks), external customers, and a lot of "unknown unknowns", led us to one overarching driver: we needed to move quickly, and iterate on our API fast as we received feedback from our external customers. The team moved to a specification-first approach, meaning APIs were documented, codified in tests and shared with all parties.
+> "A project with a tight deadline (8 weeks), external customers, and a lot of "unknown unknowns", led us to one overarching driver: we needed to move quickly, and iterate on our API fast as we received feedback from our external customers. The team moved to a specification-first approach, meaning APIs were documented, codified in tests and shared with all parties."
 
 <a href="./case_studies/case_study_atlassian"><img src="/img/logos/brand/atlassian.svg" alt="Atlassian Logo" width="150" /></a>
 
