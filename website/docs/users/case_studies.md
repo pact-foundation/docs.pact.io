@@ -14,7 +14,7 @@ We have some great case studies covering the use of Pact, just click on a logo t
 
 > "We believe contract testing is valuable for testing integration points in microservices architecture and can help evolve services with confidence."
 
-<a href="https://tech.ebayinc.com/engineering/api-evolution-with-confidence-a-case-study-of-contract-testing-adoption-at-ebay"><img src="/img/logos/brand/ebay.png" alt="eBay Logo" width="150" /></a>
+<a href="https://tech.ebayinc.com/engineering/api-evolution-with-confidence-a-case-study-of-contract-testing-adoption-at-ebay"><img src="/img/logos/brand/ebay.svg" alt="eBay Logo" width="150" /></a>
 
 
 ## Gov.UK Pay
