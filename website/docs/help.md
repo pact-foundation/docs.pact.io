@@ -18,7 +18,7 @@ We're on a free plan, so we don't have unlimited history, however, you may be ab
 
 PactFlow runs live Getting Started events on a fortnighly basis that cover the basics of contract testing, Pact and PactFlow + Q&A - you can [register here](https://smartbear.zoom.us/webinar/register/WN_raWSrPHuQR-2H8m_V1l-vQ/) 
 
-You can also head over to the [PactFlow YouTube channel] (https://www.youtube.com/c/Pactflow/playlists) to check out training materials, including searching prior [recordings of Ask Me Anything sessions] (https://www.youtube.com/playlist?list=PLwy9Bnco-IpdgdZce-rXeR7EF2_6T8z7S)
+You can also head over to the [PactFlow YouTube channel](https://www.youtube.com/c/Pactflow/playlists) to check out training materials, including searching prior [recordings of Ask Me Anything sessions](https://www.youtube.com/playlist?list=PLwy9Bnco-IpdgdZce-rXeR7EF2_6T8z7S)
 
 ## Search on Stack Overflow
 
