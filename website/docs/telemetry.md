@@ -30,6 +30,14 @@ On Windows (PowerShell):
 $env:PACT_DO_NOT_TRACK = 'true'
 ```
 
+Maven pom.xml>surefire :
+```xml
+<property>
+    <name>pact_do_not_track</name>
+    <value>true</value>
+</property>
+```
+
 ### Disabling telemetry for your profile in all sessions
 
 To disable telemetry permanenently (for all future sessions), you need to add a new item to your list of permanent environment variables.
