@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.4 - Support matching rules for message metadata
+
+
 ## 1.0.3 - Bugfix Release
 
 * 2c8467ed - fix: Header matching rules with an index were not being applied #238 (Ronald Holshausen, Mon Jan 9 16:45:51 2023 +1100)
