@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.10.1 - Minatenance Release (supports message metadata)
+
+
 ## 0.10.0 - Bugfix Release
 
 * 14e3b8ff - feat: Add short option for custom headers (Ronald Holshausen, Tue Jan 10 15:36:25 2023 +1100)
