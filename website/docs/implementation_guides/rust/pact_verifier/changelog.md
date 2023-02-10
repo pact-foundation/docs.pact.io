@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.13.21 - Bugfix Release
+
+* 0a248af1 - fix: Verification output comes from the plugin, so do not display any when a plugin is used (Ronald Holshausen, Fri Feb 10 12:46:13 2023 +1100)
+* 1e7331f1 - fix: Upgrade plugin driver to 0.3.1 (Ronald Holshausen, Wed Feb 8 13:28:07 2023 +1100)
+
 ## 0.13.20 - Bugfix Release
 
 * 4409441b - fix: Matching rules are not being applied correctly to message metadata #245 (Ronald Holshausen, Mon Jan 9 13:43:41 2023 +1100)
