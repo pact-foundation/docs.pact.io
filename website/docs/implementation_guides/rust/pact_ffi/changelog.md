@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.1 - Maintenance Release
+
+* c368c651 - fix: Pass any custom header values on to the plugin verification call (Ronald Holshausen, Thu Feb 16 13:52:03 2023 +1100)
+* 1e7331f1 - fix: Upgrade plugin driver to 0.3.1 (Ronald Holshausen, Wed Feb 8 13:28:07 2023 +1100)
+
 ## 0.4.0 - Add FFI functions for plugin authors to parse Pact JSON and get matching rules and generators + bugfixes
 
 * 3760c2b3 - fix: matcher_from_integration_json in mockserver/bodies.rs doesn't support all MatchingRules #247 (Ronald Holshausen, Wed Jan 11 13:58:33 2023 +1100)
