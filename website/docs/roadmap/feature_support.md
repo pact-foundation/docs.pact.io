@@ -60,6 +60,7 @@ There are multiple implementations of Pact, and while we try to keep feature par
 | Run a single interaction when verifying a pact                         | ?          | N         | N        |
 | Injecting values from provider state callbacks                         |            | N         | N        |
 | Date/Time expressions with generators                                  |            | N         | N        |
+| XML                                  | Y           | N(1)         | N        |
 
 `#` - these implementations wrap the shared "pact-ruby-standalone" "shared core"
 
