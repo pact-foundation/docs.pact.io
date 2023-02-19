@@ -80,7 +80,7 @@ const siteConfig = {
   themeConfig: {
     announcementBar: {
       id: 'announcement-bar',
-      content: '<div id="announcement-bar">🎂 Happy Official 10th Birthday, Pact! Read more about Pact history story <a target="_blank" href="/blog/2022/11/17/pact-facts-a-history-lesson">here</a>.</div>',
+      content: '<div id="announcement-bar">🎂 Happy Official 10th Birthday, Pact! Read more about Pact history <a target="_blank" href="/blog/2022/11/17/pact-facts-a-history-lesson">here</a>.</div>',
       backgroundColor: '#454CF0',
       textColor: '#fff',
       isCloseable: false,
