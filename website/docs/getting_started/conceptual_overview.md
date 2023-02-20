@@ -37,7 +37,7 @@ associate with the unique application version identifier (usually a git commit s
 
 Branches in the Pact Broker are designed to model repository (git, svn etc) branches. A branch in the Pact Broker belongs to an application. A branch may have many application versions, and an application version may belong to many branches (but typically, it will belong to just one).
 
-> _note_: if you are using feature toggles or other configuration systems that change the behavior depending on a configuration. The same commit in a repository may interact with different versions of a pact, and therefore require different pacticipant versions
+> _note_: if you are using feature toggles or other configuration systems that change the behavior depending on a configuration. The same commit in a repository may interact with different versions of a pact, and therefore require different participant versions
 
 The general recommendation is to set the branch name when you publish a pact, and set with the environment when you deploy.
 
