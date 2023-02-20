@@ -135,6 +135,11 @@ It’s true. We would love your support in helping review any of these PRs, as w
 - <https://github.com/pact-foundation/pact-go/pull/262>
 
 
+## Community Posts
+
+- Barry Irvine from GoCity, wrote a great post about Pact contract testing in Android. you can read it [here](https://medium.com/go-city/pact-contract-testing-in-android-ff7e996d0910)
+
+
 ## Getting involved with Pact  
 
 We have <3 for all our contributors and maintainers – we have reached the heights of today because of the hours and work many people have put into the Pact ecosystem.  
