@@ -37,7 +37,7 @@ associate with the unique application version identifier (usually a git commit s
 
 Branches in the Pact Broker are designed to model repository (git, svn etc) branches. A branch in the Pact Broker belongs to an application. A branch may have many application versions, and an application version may belong to many branches (but typically, it will belong to just one).
 
-> _note_: if you are using feature toggles or other configuration systems that change the behavior depending on a configuration. The same commit in a repository may interact with different versions of a pact, and therefore require different pacticipant versions
+> _note_: if you are using feature toggles or other configuration systems that change the behavior depending on a configuration. The same commit in a repository may interact with different versions of a pact, and therefore require different participant versions
 
 The general recommendation is to set the branch name when you publish a pact, and set with the environment when you deploy.
 
@@ -91,13 +91,13 @@ version that the production consumer is at, it is not safe to deploy this versio
 also don't want to merge it into main until this gets fixed. Similarly provider version 741a54 has only verified
 pact version 3. So it's not safe to deploy to either staging or prod, and should definitely not be merged to main.
 
-## Generalizing: the pacticipant
+## Generalizing: the participant
 
-We have generalized the "consumer" and "provider" roles of a pact using the term __pacticipant__. A particular
-pact publication has two pacticipants: the consumer and the provider.  A verification result also has two
-pacticipants: the consumer and the provider.
+We have generalized the "consumer" and "provider" roles of a pact using the term participant. A particular
+pact publication has two participant: the consumer and the provider.  A verification result also has two
+participant: the consumer and the provider.
 
-![Pacticipant domain model](../media/conceptual_overview_images/pacticipant.png)
+![Participant domain model](../media/conceptual_overview_images/participant.png)
 
-This generalized concept of a pacticipant can be useful because sometimes you can perform the same operations on a
-pacticipant regardless of whether it is a consumer or a provider.
+This generalized concept of a participant can be useful because sometimes you can perform the same operations on a
+participant regardless of whether it is a consumer or a provider.
