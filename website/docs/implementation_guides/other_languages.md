@@ -32,7 +32,7 @@ A number of languages currently wrap the pact mock service to create user facing
 
 ### Native c interface integration (v2,v3,v4 specification support)
 
-We have exposed a fully functional [C interface](https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_mock_server_ffi) that can be integrated into most modern languages, OS and architectures. Follow the documentation there for further guidance.
+We have exposed a fully functional [C interface](https://github.com/pact-foundation/pact-reference/tree/master/rust) that can be integrated into most modern languages, OS and architectures. Follow the documentation there for further guidance.
 
 #### Reference code
 
