@@ -6,6 +6,12 @@ Check out the official Pact blog at [docs.pact.io/blog](https://docs.pact.io/blo
 
 If you've seen a really good talk that's not on this list, please submit [a PR to this page](https://github.com/pact-foundation/docs.pact.io/blob/master/website/docs/blogs_videos_and_articles.md) with the new link.
 
+## 2023
+
+**Articles**
+
+- [Creating a consumer contract test in Android for Retrofit](https://medium.com/go-city/pact-contract-testing-in-android-ff7e996d0910)
+
 ## 2022
 
 **Articles**
