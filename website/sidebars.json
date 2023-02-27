@@ -470,5 +470,17 @@
         }
       ]
     }
+  ],
+  "help": [
+    {
+      "type": "category",
+      "label": "Help",
+      "items": [
+        "help",
+        "help/how_to_ask_for_help",
+        "help/amas",
+        "help/smartbear"
+      ]
+    }
   ]
 }
