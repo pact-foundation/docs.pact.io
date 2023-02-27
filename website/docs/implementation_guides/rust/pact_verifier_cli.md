@@ -12,7 +12,7 @@ The Pact Verifier works by taking all the interactions (requests and responses) 
 
 ## Command line interface
 
-The pact verifier is bundled as a single binary executable `pact_verifier_cli`. Running this with out any options displays the standard help.
+The pact verifier is bundled as a single binary executable `pact_verifier_cli`. Running this without any options displays the standard help.
 
 ```console
 pact_verifier_cli
