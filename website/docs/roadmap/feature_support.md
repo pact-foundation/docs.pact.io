@@ -13,8 +13,9 @@ There are multiple implementations of Pact, and while we try to keep feature par
 | Type based matching \("like"\)                                         | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
 | Flexible array length \("each like"\)                                  | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
 | Verify a pact that uses the Pact specification v3 format               | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
-| Pact specification v3 matchers                                         | Y        | Y             |              | Y             | Y             |             |                | Y             |
-| Pact specification v3 generators                                       | Y        | Y             |              | Y             | Y             |             |                | Y             |
+| Pact specification v2                                                  | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
+| Pact specification v3                                                  | Y        | Y             |              | Y             | Y             |             |                | Y             |
+| Pact specification v4                                                  | Y        | Y             |              |               | Y             |             |                |               |
 | Multiple provider states \(pact creation\)                             | Y        | Y             |              |               | Y             |             |                | Y             |
 | Multiple provider states \(pact verification\)                         | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
 | Publish pacts to Pact Broker                                           | Y        | Y             | Y            | Y             | Y             | CLI          | CLI             | CLI            |
@@ -42,8 +43,9 @@ There are multiple implementations of Pact, and while we try to keep feature par
 | Type based matching \("like"\)                                         | Y          | Y         | Y        |
 | Flexible array length \("each like"\)                                  | Y          | Y         | Y        |
 | Verify a pact that uses the Pact specification v3 format               | ?          | Y         | N        |
-| Pact specification v3 matchers                                         | ?          | Y         | Y        |
-| Pact specification v3 generators                                       |            | Y         | Y        |
+| Pact specification v2                                                  | Y          | Y         | Y        |
+| Pact specification v3                                                  | Y          | Y         | Y        |
+| Pact specification v4                                                  | ?          | Y         |         |
 | Multiple provider states \(pact creation\)                             | ?          | Y         | Y        |
 | Multiple provider states \(pact verification\)                         | ?          | Y         | N        |
 | Publish pacts to Pact Broker                                           | ?          | N         | N        |
