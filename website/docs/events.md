@@ -7,10 +7,10 @@ title: Events
 
 ## Upcoming community events
 
-**13-17th Mar 2034 - 2023 Python Web Conference**
+**13-17th Mar 2023 - Python Web Conference**
 
 * [@dawoudsheraz](https://twitter.com/dawoudsheraz) on *Why you should contract test your Microservices*
- * [Event page](https://2023.pythonwebconf.com/presentations/why-you-should-contract-test-your-microservices)
+   * [Event page](https://2023.pythonwebconf.com/presentations/why-you-should-contract-test-your-microservices)
 
 
 ## Past events
