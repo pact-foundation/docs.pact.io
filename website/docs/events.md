@@ -1,14 +1,23 @@
 ---
 title: Events
 ---
-## Upcoming events
+## Upcoming official events
+
+** TBA **
+
+## Upcoming community events
+
+**13-17th Mar 2034 - 2023 Python Web Conference**
+
+* [@dawoudsheraz](https://twitter.com/dawoudsheraz) on *Why you should contract test your Microservices*
+ * [Event page](https://2023.pythonwebconf.com/presentations/why-you-should-contract-test-your-microservices)
+
+
+## Past events
 
 **14 Dec 2022 - Pact Plugin Framework: Workshop**
 
 * [Event page](/events/plugins-framework-workshop)
-
-
-## Past events
 
 **18 Nov 2022 - Pact Plugin Framework Launch**
 
