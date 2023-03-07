@@ -12,6 +12,9 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 
 - [Creating a consumer contract test in Android for Retrofit](https://medium.com/go-city/pact-contract-testing-in-android-ff7e996d0910)
 
+**Customer Stories**
+- [eBay - API evolution with Confidence](https://tech.ebayinc.com/engineering/api-evolution-with-confidence-a-case-study-of-contract-testing-adoption-at-ebay/)
+  
 ## 2022
 
 **Articles**
