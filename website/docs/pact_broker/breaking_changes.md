@@ -9,3 +9,5 @@ title: Planned breaking changes in version 3.0
 * Make nullable foreign keys not nullable
 * Do not allow array JSON request bodies
 * Drop support for case-insensitive resource names
+* Drop support for modifying contracts?
+* Disallow modification of verification results
