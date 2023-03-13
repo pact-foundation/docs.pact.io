@@ -11,3 +11,4 @@ title: Planned breaking changes in version 3.0
 * Drop support for case-insensitive resource names
 * Drop support for modifying contracts?
 * Disallow modification of verification results
+* Drop support for proxy badge provider mode
