@@ -8,3 +8,4 @@ title: Planned breaking changes in version 3.0
 * Rename failed to failure
 * Make nullable foreign keys not nullable
 * Do not allow array JSON request bodies
+* Drop support for case-insensitive resource names
