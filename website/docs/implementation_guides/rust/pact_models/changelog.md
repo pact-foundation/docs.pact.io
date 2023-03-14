@@ -4,6 +4,18 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.6 - Maintenance Release
+
+* f04a3273 - feat: add a simple header parser to pact_models #259 (Ronald Holshausen, Tue Mar 14 16:38:54 2023 +1100)
+* 80ec8f1a - Revert "fix: Add UnwindSafe trait bound to all Pact and Interaction trait methods so they can be used in a FFI context" (Ronald Holshausen, Tue Feb 28 16:46:43 2023 +1100)
+* 3b82429f - Revert "fix: Bumping minor version as the last change broke everything using the traits" (Ronald Holshausen, Tue Feb 28 16:46:09 2023 +1100)
+* 5c802419 - Revert "fix: UnwindSafe trait bound was missing on the read/write functions" (Ronald Holshausen, Tue Feb 28 16:45:31 2023 +1100)
+* 019a7ea1 - fix: UnwindSafe trait bound was missing on the read/write functions (Ronald Holshausen, Tue Feb 28 16:28:29 2023 +1100)
+* 5e0307cb - fix: Bumping minor version as the last change broke everything using the traits (Ronald Holshausen, Tue Feb 28 16:06:45 2023 +1100)
+* b5ab945a - fix: Add UnwindSafe trait bound to all Pact and Interaction trait methods so they can be used in a FFI context (Ronald Holshausen, Tue Feb 28 15:19:04 2023 +1100)
+* 1c45b63c - fix: add a test to reflect behaviour as per V4 spec (Ronald Holshausen, Mon Jan 30 15:22:02 2023 +1100)
+* ba24b0a8 - fix: correct parsing of JSON encoded bodies as per V4 spec (Ronald Holshausen, Mon Jan 30 15:19:38 2023 +1100)
+
 ## 1.0.4 - Bugfix Release
 
 * 155dae40 - fix: Support RequestResponsePact loading from V4 formatted JSON #246 (Ronald Holshausen, Wed Jan 11 12:32:01 2023 +1100)
