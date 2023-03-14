@@ -44,6 +44,10 @@ As a general rule, Pact supports network proxies through the usual means of envi
 
 If the above does not resolve your issues, you will need to speak with your network administrator to allow access to the tooling.
 
+:::note
+Our CLI and tooling does not support NTLM proxies. If you use an NTLM or Kerberos protocol proxy, you might be able to connect through an authentication proxy like [Cntlm](http://cntlm.sourceforge.net/).
+:::
+
 ## Docker
 
 This section provides some additional guidance on how to use Docker with the above information.
