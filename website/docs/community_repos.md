@@ -7,35 +7,35 @@ There are loads of awesome Pact projects in the wild, if you have seen one, plea
 Please try to add
 
 - type (full workflows / consumer / provider)
-- transport mechanism (HTTP,Kafka,Soap etc)
+- transport mechanism (HTTP, Kafka, Soap, etc)
 - language of implementation (split by consumer/provider if including both)
   
 ## Full Workflows
 
-- [https://github.com/PauloGoncalvesBH/contract-test-nirvana](https://github.com/PauloGoncalvesBH/contract-test-nirvana)
+- [Contract test example](https://github.com/PauloGoncalvesBH/contract-test-nirvana)
   - Description: A diamond level contract testing implementation is exemplified in this repository.
   - Consumer Language: JavaScript
   - Provider Language: JavaScript
   - Transport Mechanism: HTTP
-- [https://github.com/lirantal/pact-workshop-consumer-nodejs](https://github.com/lirantal/pact-workshop-consumer-nodejs)
+- [Pact Workshop in Node.js](https://github.com/lirantal/pact-workshop-consumer-nodejs)
   - Description: A full workshop going through implementing YouMDB - a movies database service with a movies and reviews service
   - Consumer Language: JavaScript
   - Provider Language: JavaScript
   - Transport Mechanism: HTTP
-- [https://github.com/quarkusio/quarkus-super-heroes](https://github.com/quarkusio/quarkus-super-heroes)
+- [Quarkus Superheroes Sample](https://github.com/quarkusio/quarkus-super-heroes)
   - Description: This is a sample application demonstrating Quarkus features and best practices. The application allows superheroes to fight against supervillains, it features multi-protocol, with the RESTful services tested with Pact
   - Consumer Language: Java
   - Provider Language: Java
   - Transport Mechanism: HTTP
   - Supporting material
     - [How to avoid common pitfalls with modern microservices testing](https://www.youtube.com/watch?v=vYwkDPrzqV8) (Video, [slides](https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx/) also available)
-- [https://github.com/AndrewJanuary/pact-ruby-demo](https://github.com/AndrewJanuary/pact-ruby-demo)
+- [pact-ruby-demo](https://github.com/AndrewJanuary/pact-ruby-demo)
   - Description: A demonstration of Consumer Driven Contract Testing for a message based (non-HTTP) producer and consumer relationship using the [pact-message-ruby gem](https://github.com/pact-foundation/pact-message-ruby).
   - Consumer Language: Ruby
   - Provider Language: Ruby
   - Transport Mechanism: Message
-- [https://github.com/sergeyklay/provider-pact-example](https://github.com/sergeyklay/provider-pact-example) and [https://github.com/sergeyklay/consumer-pact-example](https://github.com/sergeyklay/consumer-pact-example)
-  - Description: Provider- and Consumer-side demo using consumer-driven contract testing
+- [Provider API Example](https://github.com/sergeyklay/provider-pact-example) and [Consumer API Example](https://github.com/sergeyklay/consumer-pact-example)
+  - Description: Provider- and Consumer-side demo using Consumer Driven Contract Testing
   - Consumer Language: Python
   - Provider Language: Python
   - Transport Mechanism: HTTP
