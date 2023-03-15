@@ -34,3 +34,8 @@ Please try to add
   - Consumer Language: Ruby
   - Provider Language: Ruby
   - Transport Mechanism: Message
+- [https://github.com/sergeyklay/provider-pact-example](https://github.com/sergeyklay/provider-pact-example) and [https://github.com/sergeyklay/consumer-pact-example](https://github.com/sergeyklay/consumer-pact-example)
+  - Description: Provider- and Consumer-side demo using consumer-driven contract testing
+  - Consumer Language: Python
+  - Provider Language: Python
+  - Transport Mechanism: HTTP
