@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.7 - Bugfix Release
+
+
 ## 1.0.6 - Maintenance Release
 
 * f04a3273 - feat: add a simple header parser to pact_models #259 (Ronald Holshausen, Tue Mar 14 16:38:54 2023 +1100)
