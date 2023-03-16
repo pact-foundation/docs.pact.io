@@ -7,7 +7,8 @@ There are multiple implementations of Pact, and while we try to keep feature par
 | Feature                                                                | Pact-JVM | Pact JS ^    | Pact Ruby \# | Pact NET ^   | Pact Go ^    | Pact PHP \# | Pact Python \# | Pact Swift ^ |
 | :--------------------------------------------------------------------- | :------- | :------------ | :----------- | :------------ | :------------ | :---------- | :------------- | :------------ |
 | HTTP pacts                                                             | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
-| Asychronous message pacts                                              | Y        | Y             |              | Y             | Y             | Y           | Y              |               |
+| Asychronous messaging                                              | Y        | Y             | Y            | Y             | Y             | Y           | Y              |               |
+| Sychronous messaging                                              | Y        | Y             | N            | N             | Y             | N           | N              |               |
 | Plugins                                              | Y        | Y             |              |              | Y             |            |               |               |
 | Regular expression matching                                            | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
 | Type based matching \("like"\)                                         | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
@@ -37,7 +38,8 @@ There are multiple implementations of Pact, and while we try to keep feature par
 | Feature                                                                | pact4s | Pact Rust | Pact C++ |
 | :--------------------------------------------------------------------- | :--------- | :-------- | :------- |
 | HTTP pacts                                                             | Y          | Y         | Y        |
-| Asychronous message pacts                                              |            | N(1)      | N        |
+| Asychronous messaging                                              |            | N(1)      | N        |
+| Sychronous messaging                                              |            | N(1)      | N        |
 | Plugins                                              |            | N(1)      | N        |
 | Regular expression matching                                            | Y          | Y         | Y        |
 | Type based matching \("like"\)                                         | Y          | Y         | Y        |
