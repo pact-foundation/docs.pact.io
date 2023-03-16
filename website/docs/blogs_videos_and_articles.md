@@ -8,6 +8,10 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 
 ## 2023
 
+**Videos**
+
+- [Dave Farley - Don't do E2E Testing!](https://www.youtube.com/watch?v=QFCHSEHgqFE)
+
 **Articles**
 
 - [Creating a consumer contract test in Android for Retrofit](https://medium.com/go-city/pact-contract-testing-in-android-ff7e996d0910)
