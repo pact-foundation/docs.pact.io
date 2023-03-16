@@ -12,3 +12,6 @@ title: Planned breaking changes in version 3.0
 * Drop support for modifying contracts?
 * Disallow modification of verification results
 * Drop support for proxy badge provider mode
+* Remove redundant webhook creation endpoints
+* Remove deprecated pact publication endpoints
+* 
