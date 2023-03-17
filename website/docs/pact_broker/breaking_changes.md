@@ -15,3 +15,4 @@ title: Planned breaking changes in version 3.0
 * Remove redundant webhook creation endpoints
 * Remove deprecated pact publication endpoints
 * Make the providerVersionBranch not allowed to be blank in PactsForVerificationJSONQuerySchema
+* Update all error responses to use problem+json
