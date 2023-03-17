@@ -7,7 +7,7 @@ title: Planned breaking changes in version 3.0
 * Remove option to order by semantic version.
 * Rename failed to failure
 * Make nullable foreign keys not nullable
-* Do not allow array JSON request bodies
+* Do not allow array JSON request bodies (Beth can't remember why this is a thing now)
 * Drop support for case-insensitive resource names
 * Drop support for modifying contracts?
 * Disallow modification of verification results
