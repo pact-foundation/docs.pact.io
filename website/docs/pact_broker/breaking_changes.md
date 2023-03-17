@@ -16,4 +16,4 @@ title: Planned breaking changes in version 3.0
 * Remove deprecated pact publication endpoints
 * Make the providerVersionBranch not allowed to be blank in PactsForVerificationJSONQuerySchema
 * Update all error responses to use problem+json
-* Make PUT/PATCH constent for all resources
+* Make PUT/PATCH consistent for all resources
