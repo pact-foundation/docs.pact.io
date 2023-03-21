@@ -21,7 +21,15 @@ Set environment variable `VERBOSE=true`. This will cause the HTTP requests and r
 
 ## Pact JS
 
-TBC
+**Latest (10.x.x, 11.x.x)**
+
+Set the `logLevel` property to `trace` when configuring the `PactV3({...})` or `PactV4({...})` class, or as an option to the verifier.
+
+**9.x.x**
+
+For consumer tests, set the `logLevel` property to `debug` when configuring the `Pact({...})` class. Logs will be emitted to the console. 
+
+For provider tests, set the `verbose` property to `true` on the `Verifier` class to log additional HTTP requests and responses to a `pact.log` file in the directory specified by the `logDir` property.
 
 ## Pact JVM
 
@@ -41,4 +49,14 @@ TBC
 
 ## Pact Go
 
-TBC
+**1.x.x**
+
+For consumer tests, set the `LogLevel` property to `debug` on the `Pact` struct. Logs will be emitted to the console.
+
+For provider tests, specify `PactLogDir` to write verbose HTTP request and responses to a `pact.log` file in the given directory, and set `PactLogLevel` string to `debug`.
+
+**2.x.x**
+
+You can either set the `LOG_LEVEL` environment variable to `TRACE` before running your tests or add `SetLogLevel("trace")` to the top of your test.
+
+*NOTE: `SetLogLevel` can only be set once across your entire suite and cannot be changed dynamically*
