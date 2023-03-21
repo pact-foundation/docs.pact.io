@@ -40,7 +40,7 @@ Network proxies are often used in corporate environments as an important layer o
 As a general rule, Pact supports network proxies through the usual means of environment variables. The following is a guide to ensuring you're best setup to work with them:
 
 1. Ensure the `http_proxy`, `https_proxy` and the `no_proxy` directives are set as environment variables (usually, by excluding the address of the mock server such as localhost or 127.0.0.1) and also allowing access to your Pact Broker Host.
-2. If you can't bypass the proxy and the proxy is intercepting your secure traffic, you wil need to also configure SSL (see previous section)
+2. If you can't bypass the proxy and the proxy is intercepting your secure traffic, you will need to also configure SSL (see previous section)
 
 If the above does not resolve your issues, you will need to speak with your network administrator to allow access to the tooling.
 
