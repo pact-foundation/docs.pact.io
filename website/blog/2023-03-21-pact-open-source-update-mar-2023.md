@@ -103,7 +103,7 @@ We’ve all seen ChatGPT in the news, as it has become a living room conversatio
 
 ## Pact community corner
 
-This month, I caught up with Tien Vo, who has been helping bring the Rust core to Pact-PHP, about why Pact caught his eye, what brought him to contributing, and how we can help him out!
+This month, I caught up with [Tien Vo](https://github.com/tienvx), who has been helping bring the Rust core to Pact-PHP, about why Pact caught his eye, what brought him to contributing, and how we can help him out!
 
 **What brought you to using Pact in the first place?**
 
