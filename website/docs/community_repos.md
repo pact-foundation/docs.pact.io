@@ -17,11 +17,13 @@ Please try to add
   - Consumer Language: JavaScript
   - Provider Language: JavaScript
   - Transport Mechanism: HTTP
+  - Author: [Paulo Gonçalves](https://github.com/PauloGoncalvesBH)
 - [Pact Workshop in Node.js](https://github.com/lirantal/pact-workshop-consumer-nodejs)
   - Description: A full workshop going through implementing YouMDB - a movies database service with a movies and reviews service
   - Consumer Language: JavaScript
   - Provider Language: JavaScript
   - Transport Mechanism: HTTP
+  - Author: [Liran Tal](https://github.com/lirantal)
 - [Quarkus Superheroes Sample](https://github.com/quarkusio/quarkus-super-heroes)
   - Description: This is a sample application demonstrating Quarkus features and best practices. The application allows superheroes to fight against supervillains, it features multi-protocol, with the RESTful services tested with Pact
   - Consumer Language: Java
@@ -29,13 +31,16 @@ Please try to add
   - Transport Mechanism: HTTP
   - Supporting material
     - [How to avoid common pitfalls with modern microservices testing](https://www.youtube.com/watch?v=vYwkDPrzqV8) (Video, [slides](https://hollycummins.com/modern-microservices-testing-pitfalls-devoxx/) also available)
+  - Author: [QuarkusIO](https://github.com/quarkusio)
 - [pact-ruby-demo](https://github.com/AndrewJanuary/pact-ruby-demo)
   - Description: A demonstration of Consumer Driven Contract Testing for a message based (non-HTTP) producer and consumer relationship using the [pact-message-ruby gem](https://github.com/pact-foundation/pact-message-ruby).
   - Consumer Language: Ruby
   - Provider Language: Ruby
   - Transport Mechanism: Message
+  - Author: [Andrew January](https://github.com/AndrewJanuary)
 - [Provider API Example](https://github.com/sergeyklay/provider-pact-example) and [Consumer API Example](https://github.com/sergeyklay/consumer-pact-example)
   - Description: Provider- and Consumer-side demo using Consumer Driven Contract Testing
   - Consumer Language: Python
   - Provider Language: Python
   - Transport Mechanism: HTTP
+  - Author: [Serghei Iakovlev](https://github.com/sergeyklay)
