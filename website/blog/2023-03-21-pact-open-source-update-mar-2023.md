@@ -175,7 +175,7 @@ Pact FFI v0.4.0 was released, adding FFI functions for plugin authors to parse P
 A big thanks to early users of the plugin, who have provided invaluable feedback:
 
 - [Jason Taylor](https://github.com/jasonltaylor)
-- Satish Sundararajan
+- Sathish Sundararajan
 - [Riley Martine](https://github.com/rmartine-ias)
 - [Ali Ustek](https://github.com/austek)
 
