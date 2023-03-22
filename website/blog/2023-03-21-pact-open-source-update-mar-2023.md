@@ -105,6 +105,8 @@ We’ve all seen ChatGPT in the news, as it has become a living room conversatio
 
 This month, I caught up with [Tien Vo](https://github.com/tienvx), who has been helping bring the Rust core to Pact-PHP, about why Pact caught his eye, what brought him to contributing, and how we can help him out!
 
+![Tien Vo](https://user-images.githubusercontent.com/19932401/226894825-f2361d34-31a8-45e6-904e-5bc79585761f.png)
+
 **What brought you to using Pact in the first place?**
 
 > I heard about Pact from my ex-employer. AFAIK they are still not using Pact. I was introduced to microservices architecture long ago. Till today, it is complex to me. Too many techniques, too many tools need to be learned. But I think I need to find the answer for this question first: how to prevent someone from changing the code in a provider, and it breaks the consumers.
