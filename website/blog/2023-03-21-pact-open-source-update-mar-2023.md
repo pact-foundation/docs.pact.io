@@ -201,7 +201,7 @@ Our **current recommendation** for publishing pacts is to **use the Pact CLI too
 
 ### Pact-Python
 
-[Serghei Lakovlev](https://github.com/sergeyklay) recently joined the pact-python community and has dropped [a raft of PRs](https://github.com/pact-foundation/pact-python/pulls/sergeyklay) to help bring pact-python up to speed.
+[Serghei Iakovlev](https://github.com/sergeyklay) recently joined the pact-python community and has dropped [a raft of PRs](https://github.com/pact-foundation/pact-python/pulls/sergeyklay) to help bring pact-python up to speed.
 We would love to get our fellow **#pythonistas** across these, so if you can offer any support from a review or testing perspective, join us in our pact-python Slack channel, or see
 [our pinned call out](https://github.com/pact-foundation/pact-python/issues/88) for maintainers and support of the v3 Pact specification to register your interest
 
