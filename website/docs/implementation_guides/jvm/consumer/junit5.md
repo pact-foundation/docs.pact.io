@@ -12,7 +12,7 @@ The library is available on maven central using:
 
 * group-id = `au.com.dius.pact.consumer`
 * artifact-id = `junit5`
-* version-id = `4.2.X`
+* version-id = `4.4.X`
 
 ## Usage
 
@@ -237,6 +237,26 @@ message queue or topic as a notification or event. With Pact tests, we will be t
 works with the messages setup as the expectations in test. This should be the message handler code that processes the
 actual messages that come off the message queue in production.
 
+For example:
+
+```java
+builder.given("Some Provider State")
+    .expectsToReceive("a test message")
+    .withContent("{\"value\": \"test\"}")
+    .toPact();
+```
+
+or using a Dsl object:
+
+```java
+builder.given("Some Provider State")
+    .expectsToReceive("a test message")
+    .withContent(new PactDslJsonBody()
+      .stringValue("testParam1", "value1")
+      .stringValue("testParam2", "value2"))
+    .toPact();
+```
+
 You can use either the V3 Message Pact or the V4 Asynchronous Message interaction to test these types of interactions.
 
 For a V3 message pact example, see [AsyncMessageTest](https://github.com/pact-foundation/pact-jvm/blob/ac6a0eae0b18183f6f453eafddb89b90741ace42/consumer/junit5/src/test/java/au/com/dius/pact/consumer/junit5/AsyncMessageTest.java).
@@ -259,7 +279,7 @@ builder.given("SomeProviderState")
         md.add("metadata3", 10L);
         md.matchRegex("partitionKey", "[A-Z]{3}\\d{2}", "ABC01");
     })
-    .withContent(body)
+    .withContent("{\"value\": \"test\"}")
     .toPact();
 ```
 
@@ -339,3 +359,9 @@ class CsvClientTest {
 We are tracking anonymous analytics to gather important usage statistics like JVM version
 and operating system. To disable tracking, set the 'pact_do_not_track' system property or environment
 variable to 'true'.
+
+# Mixing Pact and non-Pact test methods in the same test class
+
+By default, the Pact lifecycle will be invoked for every test method and will expect there to be a method annotated
+with `@Pact` for each test method invoked. To add non-Pact tests, just annotate the non-Pact test method with the
+`@PactIgnore` annotation.

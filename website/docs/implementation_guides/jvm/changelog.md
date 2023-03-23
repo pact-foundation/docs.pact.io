@@ -4,6 +4,34 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.4.8 - Bugfix Release
+
+* 8ab6b7ac8 - feat: Update readme with support mixing pact and non-pact test methods with @PactIgnore annotation #1674 (Ronald Holshausen, Tue Mar 7 10:57:09 2023 +1100)
+* 3bb4a08fa - feat: Support mixing pact and non-pact test methods with @PactIgnore annotation #1674 (Ronald Holshausen, Tue Mar 7 10:50:34 2023 +1100)
+* 92018c0f1 - fix: InteractionFilter ByRequestPath was using concrete class and did not work with V4 interactions #1673 (Ronald Holshausen, Mon Mar 6 17:13:37 2023 +1100)
+* 67a667024 - feat(JUnit5): Support multiple @MockServerConfig annotations on a provider test #1675 (Ronald Holshausen, Mon Mar 6 14:44:56 2023 +1100)
+* 0da32ec3a - fix merging message pacts - old messages taking precedence (ilya.aliaksandrovich, Fri Feb 24 17:32:22 2023 +0100)
+
+## 4.4.7 - Maintenance Release
+
+* 5bc8bc683 - fix: PactVerificationExtension will fail when used with other extensions in a static context #1666 (Ronald Holshausen, Fri Feb 24 12:41:00 2023 +1100)
+* 3010a102b - feat: Add support for JSONObject with MessagePactBuilder #1669 (Ronald Holshausen, Fri Feb 24 11:59:17 2023 +1100)
+
+## 4.4.6 - Maintenance Release: Supports injecting request metadata from plugins into provider tests
+
+* 461b9e348 - feat: RequestData metadata needs to be a mutable Map (Ronald Holshausen, Wed Feb 15 16:32:48 2023 +1100)
+* 49f4d908e - feat: Support modifying the request metadata in the provider test before being sent to the plugin (Ronald Holshausen, Wed Feb 15 16:29:06 2023 +1100)
+* 21ada1b2e - fix: support metadata mismatches from results from plugins (Ronald Holshausen, Wed Feb 8 13:44:49 2023 +1100)
+* 1bee97d14 - feat: add support for NotEmpty matcher in V4 DSL (Ronald Holshausen, Wed Feb 8 13:41:20 2023 +1100)
+* e71eb4d39 - feat: Upgrade plugin driver to 0.3.0 (supports message metadata) (Ronald Holshausen, Mon Feb 6 15:12:13 2023 +1100)
+
+## 4.4.5 - Bugfix Release
+
+* 8c965dca6 - fix(regression): Changes for #1641 broke the use of plugin mock servers (Ronald Holshausen, Thu Feb 2 16:17:10 2023 +1100)
+* f4d017152 - feat: support JSON encoded bodies with V4 Pact files (Ronald Holshausen, Tue Jan 31 16:31:55 2023 +1100)
+* 3e63af682 - fix: correct how the bodies are presisted as per the spec #1658 (Ronald Holshausen, Mon Jan 30 14:32:29 2023 +1100)
+* 4c74ef9ea - fix: correctly decode Pact files with JSON string contents #1658 (Ronald Holshausen, Mon Jan 30 14:03:20 2023 +1100)
+
 ## 4.4.4 - Maintenance Release
 
 * a5eb417c2 - fix: restrict tests with reverse lookups to Linux agents #405 (Ronald Holshausen, Wed Jan 18 16:26:19 2023 +1100)
