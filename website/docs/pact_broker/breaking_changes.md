@@ -17,3 +17,4 @@ title: Planned breaking changes in version 3.0
 * Make the providerVersionBranch not allowed to be blank in PactsForVerificationJSONQuerySchema
 * Update all error responses to use problem+json
 * Make PUT/PATCH consistent for all resources
+* Do not allow blank values in matrix query - it makes it hard to tell if the user has intentionally submitted a blank value or if the client always sets a value
