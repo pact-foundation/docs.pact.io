@@ -5,6 +5,33 @@ sidebar_label: Introduction
 
 This section describes the various request/response matching techniques available in your `Consumer` tests. Note the examples below demonstrate use of the Ruby DSL, please refer to your particular language and framework as implementations differ.
 
+The default mode is for Pact to verify exact values, which can make your tests brittle to minor variations in data that in reality may not actually break your system. Matchers, as they are called, are a way to loosen these assertions in a way that preserves the safety guarantees. For example, the most common way matchers are used are to describe the shape of a response body in forms of their _types_. 
+
+**Example**
+
+Given the following JSON object that is returned in response to a call to `POST /users {...}`:
+
+```json
+{
+  "uuid": "fc763eba-0905-41c5-a27f-3934ab26786c",
+  "firstName": "Tester",
+  "lastName": "McPerson",
+  "version": 1
+}
+```
+
+It is likely that the specific values of `firstName`, `lastName` and `version` are not important for the consumer, but the types  ...
+
+
+<a name="golden-rule"/>
+
+:::info The Golden Rule for Matchers
+Think of the matchers as saying “this test covers all cases that pass this matcher”, not “this is the response schema”
+
+ &dash; Tim Jones
+:::
+
+
 
 ## Pact matching features
 
@@ -145,7 +172,7 @@ animal_service.given("some alligators exist").
   ...
 ```
 
-### Flexible matching
+### Array matching
 
 Flexible length arrays:
 
@@ -180,8 +207,17 @@ Pact.service_consumer "Zoo App" do
 end
 ```
 
+## Other Matchers
+
+All matchers available 
+
+* [V2] https://github.com/pact-foundation/pact-specification/tree/version-4#supported-matching-rules
+* [V3] https://github.com/pact-foundation/pact-specification/tree/version-4#supported-matching-rules
+* [V4] https://github.com/pact-foundation/pact-specification/tree/version-4#supported-matching-rules
+
 ## Best practice
 
+Watch [this video](https://youtu.be/oPuHb9Rl8Zo?t=933) for some handy tips on matching.
 ### Request matching
 
 As a rule of thumb, you generally want to use exact matching when you're setting up the expectations for a request \(`upon_receiving(...).with(...)`\) because you're under control of the data at this stage, and according to Postel's Law, we want to be "strict" with what we send out. Note that the request matching does not allow "unexpected" values to be present in JSON request bodies or query strings. \(It does however allow extra headers, because we found that writing expectations that included the headers added by the various frameworks that might be used resulted in tests that were very fiddly to maintain.\)
@@ -197,3 +233,11 @@ If you are using a Pact Broker to exchange pacts, then avoid using random data i
 #### NOTE
 
 _If you are writing tests on the_ `Consumer` _side to a different language on the_ `Provider` _side, you must ensure you use a common Pact Specification between them or you will be unable to validate._
+
+## Bad practice
+
+### Trying to document the provider API
+
+A Pact test is not about describing the possible responses, it’s about ensuring that the API response types for the respective scenarios are adequately covered.
+
+For example, if you could say “it might be a person or a team”, you could pass your tests without ever checking that the provider and consumer agree about what a Team should look like. This is why we don't support an `OR` matcher or [optional attributes](/faq#why-is-there-no-support-for-specifying-optional-attributes)

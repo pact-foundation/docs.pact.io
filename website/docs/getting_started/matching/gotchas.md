@@ -30,3 +30,4 @@ Be one with your regex and know what you're matching. Take for example validatin
 
 A change in the provider enum can easily break the compatibility of the API, and this unfortunate matcher may provide an unintended verification result as it does not match on the full string (it's missing the `^` and `$` at each end).  For example, adding `_RESULT` to the enum names will not break a pact with this regular expression, so the change from `INTEGER` to `INTEGER_RESULT` would not be picked up. For durability, try `^(OBJECT|STRING|INTEGER|FLOAT|BOOLEAN|TIME)$` instead.
 
+You may also be falling into the trap of an `OR` matcher. Remember - the purpose of a matcher is not to define the possible API responses, but to define the use cases that are covered by the current test.
