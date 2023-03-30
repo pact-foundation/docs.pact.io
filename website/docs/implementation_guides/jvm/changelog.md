@@ -4,11 +4,36 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.5.5 - Support verification tests for sync request/response messages with MessageTestTarget
+
+* f07ffeb25 - update changelog for release 4.4.9 (Ronald Holshausen, Thu Mar 30 14:11:25 2023 +1100)
+* b1e5c4833 - feat(JUnit5): Add example to Junit 5 readme #1681 (Ronald Holshausen, Thu Mar 30 13:59:13 2023 +1100)
+* c07f70799 - feat(JUnit5): Support verification tests for sync request/response messages with MessageTestTarget #1681 (Ronald Holshausen, Thu Mar 30 13:38:08 2023 +1100)
+* 1721cb046 - feat(DSL): check varargs for NULL values #1679 (Ronald Holshausen, Wed Mar 29 11:45:58 2023 +1100)
+
 ## 4.4.9 - Support verification tests for sync request/response messages with MessageTestTarget
 
 * b1e5c4833 - feat(JUnit5): Add example to Junit 5 readme #1681 (Ronald Holshausen, Thu Mar 30 13:59:13 2023 +1100)
 * c07f70799 - feat(JUnit5): Support verification tests for sync request/response messages with MessageTestTarget #1681 (Ronald Holshausen, Thu Mar 30 13:38:08 2023 +1100)
 * 1721cb046 - feat(DSL): check varargs for NULL values #1679 (Ronald Holshausen, Wed Mar 29 11:45:58 2023 +1100)
+
+## 4.5.4 - Bugfix Release
+
+* be98ba2f8 - fix: verifyMessage must pass through any plugin config to the content matcher (Ronald Holshausen, Tue Mar 21 18:05:46 2023 +1100)
+
+## 4.5.3 - Bugfix Release
+
+* e2905aeb8 - fix(JUnit5): Initialise any plugins before running the provider verification (Ronald Holshausen, Thu Mar 16 16:12:54 2023 +1100)
+* 83a17c93d - feat: update the general verifier to support verification via plugins (Ronald Holshausen, Thu Mar 16 12:10:29 2023 +1100)
+
+## 4.5.2 - Bugfix Release
+
+* f970f249e - update changelog for release 4.4.8 (Ronald Holshausen, Tue Mar 7 11:47:02 2023 +1100)
+* 8ab6b7ac8 - feat: Update readme with support mixing pact and non-pact test methods with @PactIgnore annotation #1674 (Ronald Holshausen, Tue Mar 7 10:57:09 2023 +1100)
+* 3bb4a08fa - feat: Support mixing pact and non-pact test methods with @PactIgnore annotation #1674 (Ronald Holshausen, Tue Mar 7 10:50:34 2023 +1100)
+* 92018c0f1 - fix: InteractionFilter ByRequestPath was using concrete class and did not work with V4 interactions #1673 (Ronald Holshausen, Mon Mar 6 17:13:37 2023 +1100)
+* 67a667024 - feat(JUnit5): Support multiple @MockServerConfig annotations on a provider test #1675 (Ronald Holshausen, Mon Mar 6 14:44:56 2023 +1100)
+* 0da32ec3a - fix merging message pacts - old messages taking precedence (ilya.aliaksandrovich, Fri Feb 24 17:32:22 2023 +0100)
 
 ## 4.4.8 - Bugfix Release
 
@@ -18,10 +43,30 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 * 67a667024 - feat(JUnit5): Support multiple @MockServerConfig annotations on a provider test #1675 (Ronald Holshausen, Mon Mar 6 14:44:56 2023 +1100)
 * 0da32ec3a - fix merging message pacts - old messages taking precedence (ilya.aliaksandrovich, Fri Feb 24 17:32:22 2023 +0100)
 
+## 4.5.1 - Fix Maven plugin
+
+* bf08170dc - fix: task to generate Maven plugin descriptor was accidentally commented out #1672 (Ronald Holshausen, Thu Mar 2 14:41:44 2023 +1100)
+
+## 4.5.0 - General Release
+
+* f58634072 - feat: Add support for gradle/maven plugin canideploy on specific env #1668 (Ronald Holshausen, Fri Feb 24 15:47:43 2023 +1100)
+* 0af645954 - update changelog for release 4.5.0-beta.1 (Ronald Holshausen, Wed Feb 15 17:27:49 2023 +1100)
+* bffd26aba - feat: add support for Spring 6 and Springboot 3 #1660 (Ronald Holshausen, Tue Feb 14 16:45:02 2023 +1100)
+* a21d7cda5 - fix: alias the BuilderUtils functions on PactBuilder (Ronald Holshausen, Fri Dec 16 09:22:35 2022 +1100)
+* 2d7ea20ac - update changelog for release 4.5.0-beta.0 (Ronald Holshausen, Wed Dec 14 15:40:24 2022 +1100)
+* ccaf27ee9 - feat: Add support for plugin GenerateContentRequest (Ronald Holshausen, Wed Dec 14 15:26:28 2022 +1100)
+
 ## 4.4.7 - Maintenance Release
 
 * 5bc8bc683 - fix: PactVerificationExtension will fail when used with other extensions in a static context #1666 (Ronald Holshausen, Fri Feb 24 12:41:00 2023 +1100)
 * 3010a102b - feat: Add support for JSONObject with MessagePactBuilder #1669 (Ronald Holshausen, Fri Feb 24 11:59:17 2023 +1100)
+
+## 4.5.0-beta.1 - Maintenance Release
+
+* bffd26aba - feat: add support for Spring 6 and Springboot 3 #1660 (Ronald Holshausen, Tue Feb 14 16:45:02 2023 +1100)
+* a21d7cda5 - fix: alias the BuilderUtils functions on PactBuilder (Ronald Holshausen, Fri Dec 16 09:22:35 2022 +1100)
+* 2d7ea20ac - update changelog for release 4.5.0-beta.0 (Ronald Holshausen, Wed Dec 14 15:40:24 2022 +1100)
+* ccaf27ee9 - feat: Add support for plugin GenerateContentRequest (Ronald Holshausen, Wed Dec 14 15:26:28 2022 +1100)
 
 ## 4.4.6 - Maintenance Release: Supports injecting request metadata from plugins into provider tests
 
@@ -82,6 +127,11 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 * 8aae4d414 - update changelog for release 4.3.18 (Ronald Holshausen, Fri Dec 23 14:06:59 2022 +1100)
 * b1d6c01c0 - fix: write date/time matchers in the correct format as per the spec #1617 (Ronald Holshausen, Fri Dec 23 11:49:18 2022 +1100)
 * aa117914c - fix: Update matching rule loading code to support correct + incorrect formatted date/time matchers #1617 (Ronald Holshausen, Fri Dec 23 11:13:54 2022 +1100)
+* 102e67362 - bugfix: fix custom header propagation in list case (Artem Ptushkin, Tue Dec 6 10:14:01 2022 +0100)
+
+## 4.5.0-beta.0 - Support for plugin GenerateContentRequest
+
+* ccaf27ee9 - feat: Add support for plugin GenerateContentRequest (Ronald Holshausen, Wed Dec 14 15:26:28 2022 +1100)
 * 102e67362 - bugfix: fix custom header propagation in list case (Artem Ptushkin, Tue Dec 6 10:14:01 2022 +0100)
 
 ## 4.4.2 - Fix transitive dependencies
