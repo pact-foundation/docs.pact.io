@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.4.9 - Support verification tests for sync request/response messages with MessageTestTarget
+
+* b1e5c4833 - feat(JUnit5): Add example to Junit 5 readme #1681 (Ronald Holshausen, Thu Mar 30 13:59:13 2023 +1100)
+* c07f70799 - feat(JUnit5): Support verification tests for sync request/response messages with MessageTestTarget #1681 (Ronald Holshausen, Thu Mar 30 13:38:08 2023 +1100)
+* 1721cb046 - feat(DSL): check varargs for NULL values #1679 (Ronald Holshausen, Wed Mar 29 11:45:58 2023 +1100)
+
 ## 4.4.8 - Bugfix Release
 
 * 8ab6b7ac8 - feat: Update readme with support mixing pact and non-pact test methods with @PactIgnore annotation #1674 (Ronald Holshausen, Tue Mar 7 10:57:09 2023 +1100)
