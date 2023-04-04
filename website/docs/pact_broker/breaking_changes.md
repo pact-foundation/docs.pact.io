@@ -18,3 +18,6 @@ title: Planned breaking changes in version 3.0
 * Update all error responses to use problem+json
 * Make PUT/PATCH consistent for all resources
 * Do not allow blank values in matrix query - it makes it hard to tell if the user has intentionally submitted a blank value or if the client always sets a value
+* Add pacticipant name to contract publish endpoint URL
+* Remove deprecated JSON in pacticipants endpoint
+* Paginate all collection endpoints by default
