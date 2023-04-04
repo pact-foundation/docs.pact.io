@@ -77,27 +77,30 @@ This starts the master mock server. This server needs to be running for the othe
 
 ```console
 $ ./pact_mock_server_cli help start
-pact_mock_server_cli-start v1.0.0
+pact_mock_server_cli-start [CLIVERSION]
 Starts the master mock server
 
 USAGE:
-    pact_mock_server_cli start [FLAGS] [OPTIONS]
-
-FLAGS:
-        --help           Prints help information
-        --no-file-log    Do not log to an output file
-        --no-term-log    Use a simple logger instead of the term based one
+    pact_mock_server_cli start [OPTIONS]
 
 OPTIONS:
-        --base-port <base-port>      the base port number that mock server ports will be allocated from. If not
-                                     specified, ports will be randomly assigned by the OS.
+        --base-port <base-port>      the base port number that mock server ports will be allocated
+                                     from. If not specified, ports will be randomly assigned by the
+                                     OS.
     -h, --host <host>                hostname the master mock server runs on (defaults to localhost)
-    -l, --loglevel <loglevel>        Log level for mock servers to write to the log file (defaults to info) [possible
-                                     values: error, warn, info, debug, trace, none]
-    -o, --output <output>            the directory where to write files to (defaults to current directory)
+        --help                       Print help information
+    -l, --loglevel <loglevel>        Log level for mock servers to write to the log file (defaults
+                                     to info) [possible values: error, warn, info, debug, trace,
+                                     none]
+        --no-file-log                Do not log to an output file
+        --no-term-log                Use a simple logger instead of the term based one
+    -o, --output <output>            the directory where to write files to (defaults to current
+                                     directory)
     -p, --port <port>                port the master mock server runs on (defaults to 8080)
-        --server-key <server-key>    the server key to use to authenticate shutdown requests (defaults to a random
-                                     generated one)
+        --server-key <server-key>    the server key to use to authenticate shutdown requests
+                                     (defaults to a random generated one)
+    -v, --version                    Print version information
+
 
 ```
 
@@ -122,25 +125,26 @@ will be displayed.
 
 ```console
 $ ./pact_mock_server_cli help create
-pact_mock_server_cli-create v1.0.0
+pact_mock_server_cli-create [CLIVERSION]
 Creates a new mock server from a pact file
 
 USAGE:
-    pact_mock_server_cli create [FLAGS] [OPTIONS] --file <file>
-
-FLAGS:
-    -c, --cors-preflight    Handle CORS pre-flight requests
-        --help              Prints help information
-        --no-file-log       Do not log to an output file
-        --no-term-log       Use a simple logger instead of the term based one
-        --tls               Enable TLS with the mock server (will use a self-signed certificate)
+    pact_mock_server_cli create [OPTIONS] --file <file>
 
 OPTIONS:
+    -c, --cors-preflight         Handle CORS pre-flight requests
     -f, --file <file>            the pact file to define the mock server
     -h, --host <host>            hostname the master mock server runs on (defaults to localhost)
-    -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to info) [possible
-                                 values: error, warn, info, debug, trace, none]
+        --help                   Print help information
+    -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to
+                                 info) [possible values: error, warn, info, debug, trace, none]
+        --no-file-log            Do not log to an output file
+        --no-term-log            Use a simple logger instead of the term based one
     -p, --port <port>            port the master mock server runs on (defaults to 8080)
+        --tls                    Enable TLS with the mock server (will use a self-signed
+                                 certificate)
+    -v, --version                Print version information
+
 
 ```
 
@@ -164,22 +168,22 @@ Lists out all running mock servers with their ID, port, provider name and status
 
 ```console
 $ ./pact_mock_server_cli list --help
-pact_mock_server_cli-list v1.0.0
+pact_mock_server_cli-list [CLIVERSION]
 Lists all the running mock servers
 
 USAGE:
-    pact_mock_server_cli list [FLAGS] [OPTIONS]
-
-FLAGS:
-        --help           Prints help information
-        --no-file-log    Do not log to an output file
-        --no-term-log    Use a simple logger instead of the term based one
+    pact_mock_server_cli list [OPTIONS]
 
 OPTIONS:
     -h, --host <host>            hostname the master mock server runs on (defaults to localhost)
-    -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to info) [possible
-                                 values: error, warn, info, debug, trace, none]
+        --help                   Print help information
+    -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to
+                                 info) [possible values: error, warn, info, debug, trace, none]
+        --no-file-log            Do not log to an output file
+        --no-term-log            Use a simple logger instead of the term based one
     -p, --port <port>            port the master mock server runs on (defaults to 8080)
+    -v, --version                Print version information
+
 
 ```
 
@@ -199,25 +203,41 @@ sub-command. If there is any errors, no pact file will be written and the errors
 
 ```console
 $ ./pact_mock_server_cli verify --help
-pact_mock_server_cli-verify v1.0.0
+pact_mock_server_cli-verify [CLIVERSION]
 Verify the mock server by id or port number, and generate a pact file if all ok
 
 USAGE:
-    pact_mock_server_cli verify [FLAGS] [OPTIONS] --mock-server-id <mock-server-id> --mock-server-port <mock-server-port>
-
-FLAGS:
-        --help           Prints help information
-        --no-file-log    Do not log to an output file
-        --no-term-log    Use a simple logger instead of the term based one
+    pact_mock_server_cli verify [OPTIONS]
 
 OPTIONS:
-    -h, --host <host>                            hostname the master mock server runs on (defaults to localhost)
+    -h, --host <host>
+            hostname the master mock server runs on (defaults to localhost)
+
+        --help
+            Print help information
+
+    -i, --mock-server-id <mock-server-id>
+            the ID of the mock server
+
     -l, --loglevel <loglevel>
-            Log level for mock servers to write to the log file (defaults to info) [possible values: error, warn, info,
-            debug, trace, none]
-    -i, --mock-server-id <mock-server-id>        the ID of the mock server
-    -m, --mock-server-port <mock-server-port>    the port number of the mock server
-    -p, --port <port>                            port the master mock server runs on (defaults to 8080)
+            Log level for mock servers to write to the log file (defaults to info) [possible values:
+            error, warn, info, debug, trace, none]
+
+    -m, --mock-server-port <mock-server-port>
+            the port number of the mock server
+
+        --no-file-log
+            Do not log to an output file
+
+        --no-term-log
+            Use a simple logger instead of the term based one
+
+    -p, --port <port>
+            port the master mock server runs on (defaults to 8080)
+
+    -v, --version
+            Print version information
+
 
 ```
 
@@ -255,25 +275,41 @@ Shutdown the mock server by id or port number, releasing all its resources.
 
 ```console
 $ ./pact_mock_server_cli help shutdown
-pact_mock_server_cli-shutdown v1.0.0
+pact_mock_server_cli-shutdown [CLIVERSION]
 Shutdown the mock server by id or port number, releasing all its resources
 
 USAGE:
-    pact_mock_server_cli shutdown [FLAGS] [OPTIONS] --mock-server-id <mock-server-id> --mock-server-port <mock-server-port>
-
-FLAGS:
-        --help           Prints help information
-        --no-file-log    Do not log to an output file
-        --no-term-log    Use a simple logger instead of the term based one
+    pact_mock_server_cli shutdown [OPTIONS]
 
 OPTIONS:
-    -h, --host <host>                            hostname the master mock server runs on (defaults to localhost)
+    -h, --host <host>
+            hostname the master mock server runs on (defaults to localhost)
+
+        --help
+            Print help information
+
+    -i, --mock-server-id <mock-server-id>
+            the ID of the mock server
+
     -l, --loglevel <loglevel>
-            Log level for mock servers to write to the log file (defaults to info) [possible values: error, warn, info,
-            debug, trace, none]
-    -i, --mock-server-id <mock-server-id>        the ID of the mock server
-    -m, --mock-server-port <mock-server-port>    the port number of the mock server
-    -p, --port <port>                            port the master mock server runs on (defaults to 8080)
+            Log level for mock servers to write to the log file (defaults to info) [possible values:
+            error, warn, info, debug, trace, none]
+
+    -m, --mock-server-port <mock-server-port>
+            the port number of the mock server
+
+        --no-file-log
+            Do not log to an output file
+
+        --no-term-log
+            Use a simple logger instead of the term based one
+
+    -p, --port <port>
+            port the master mock server runs on (defaults to 8080)
+
+    -v, --version
+            Print version information
+
 
 ```
 
