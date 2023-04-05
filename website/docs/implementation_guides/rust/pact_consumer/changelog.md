@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.10.6 - Bugfix Release
+
+* 7bd44a0d - fix: PactBuilder drop handler was cauing plugins to be shutdown twice (Ronald Holshausen, Wed Apr 5 14:44:26 2023 +1000)
+* 6aa389c9 - fix: Make using_plugin consume self so that the builder will have the same lifetime as the returned async one (Ronald Holshausen, Wed Apr 5 14:43:43 2023 +1000)
+* 6f0c4b2f - feat: Upgrade pact-plugin-driver to 0.4.0 which uses a shared gRPC channel to each plugin (Ronald Holshausen, Tue Apr 4 14:32:36 2023 +1000)
+* 63be53b2 - fix: allow the pact builders to set the overwrite flag (Ronald Holshausen, Mon Apr 3 14:53:36 2023 +1000)
+* f8aea4fc - fix: request and response builders were incorrectly setting empty bodies from plugin contents (Ronald Holshausen, Mon Apr 3 14:52:29 2023 +1000)
+
 ## 0.10.5 - Maintenance Release
 
 * 11c701b4 - fix: Upgrade pact_matching to 1.0.6 (fixes some issues with matching HTTP headers) (Ronald Holshausen, Wed Mar 15 14:54:54 2023 +1100)
