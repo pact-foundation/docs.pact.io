@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.3 - Bugfix Release
+
+* 0af00359 - fix: use a shared global tokio runtime so shared plugin connections can be used (Ronald Holshausen, Wed Apr 5 14:05:11 2023 +1000)
+
 ## 0.4.2 - Bugfix Release
 
 * 6f0c4b2f - feat: Upgrade pact-plugin-driver to 0.4.0 which uses a shared gRPC channel to each plugin (Ronald Holshausen, Tue Apr 4 14:32:36 2023 +1000)
