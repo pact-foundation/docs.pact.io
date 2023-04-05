@@ -15,7 +15,7 @@ The Pact Verifier works by taking all the interactions (requests and responses) 
 The pact verifier is bundled as a single binary executable `pact_verifier_cli`. Running this without any options displays the standard help.
 
 ```console
-pact_verifier_cli
+$ pact_verifier_cli,ignore
 Standalone pact verifier for provider pact verification
 
 Usage: pact_verifier_cli [OPTIONS]
@@ -30,6 +30,7 @@ Logging options:
       --full-log             This emits human-readable, single-line logs for each event that occurs, with the current span context displayed before the formatted representation of the event.
       --compact-log          Emit logs optimized for short line lengths.
   -j, --json <json-file>     Generate a JSON report of the verification
+  -x, --junit <junit-file>   Generate a JUnit XML report of the verification
       --no-colour            Disables ANSI escape codes in the output [aliases: no-color]
 
 Loading pacts options:
@@ -38,6 +39,11 @@ Loading pacts options:
   -u, --url <url>                URL of pact file to verify (can be repeated)
   -b, --broker-url <broker-url>  URL of the pact broker to fetch pacts from to verify (requires the provider name parameter) [env: PACT_BROKER_BASE_URL=]
       --ignore-no-pacts-error    Do not fail if no pacts are found to verify
+
+Authentication options:
+      --user <user>          Username to use when fetching pacts from URLS [env: PACT_BROKER_USERNAME=]
+      --password <password>  Password to use when fetching pacts from URLS [env: PACT_BROKER_PASSWORD=]
+  -t, --token <token>        Bearer token to use when fetching pacts from URLS [env: PACT_BROKER_TOKEN=]
 
 Provider options:
   -h, --hostname <hostname>
@@ -54,7 +60,7 @@ Provider options:
           Base path to add to all requests
       --request-timeout <request-timeout>
           Sets the HTTP request timeout in milliseconds for requests to the target API and for state change requests.
-      --header <custom-header>
+  -H, --header <custom-header>
           Add a custom header to be included in the calls to the provider. Values must be in the form KEY=VALUE, where KEY and VALUE contain ASCII characters (32-127) only. Can be repeated.
       --disable-ssl-verification
           Disables validation of SSL certificates
@@ -98,12 +104,7 @@ Pact Broker options:
           Enables Pending Pacts
       --include-wip-pacts-since <include-wip-pacts-since>
           Allow pacts that don't match given consumer selectors (or tags) to  be verified, without causing the overall task to fail. For more information, see https://pact.io/wip
-      --user <user>
-          Username to use when fetching pacts from URLS [env: PACT_BROKER_USERNAME=]
-      --password <password>
-          Password to use when fetching pacts from URLS [env: PACT_BROKER_PASSWORD=]
-  -t, --token <token>
-          Bearer token to use when fetching pacts from URLS [env: PACT_BROKER_TOKEN=]
+
 ```
 
 ## Options
@@ -194,7 +195,7 @@ An example well formed argument value might be:
 
 This will verify all the pacts for the `happy_provider` found in the pact broker (running on localhost) against the provider running on localhost port 5050. Only the pacts for the consumers `Consumer` and `Consumer2` will be verified.
 
-```console
+```console,ignore
 $ pact_verifier_cli -b http://localhost -n 'happy_provider' -p 5050 --filter-consumer Consumer --filter-consumer Consumer2
 21:59:28 [WARN] pact_matching::models: No metadata found in pact file "http://localhost/pacts/provider/happy_provider/consumer/Consumer/version/1.0.0", assuming V1.1 specification
 21:59:28 [WARN] pact_matching::models: No metadata found in pact file "http://localhost/pacts/provider/happy_provider/consumer/Consumer2/version/1.0.0", assuming V1.1 specification
