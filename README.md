@@ -5,15 +5,17 @@
 ![Sync Pact docs](https://github.com/pact-foundation/docs.pact.io/workflows/Sync%20Pact%20docs/badge.svg)
 
 ## Table of Contents
-1. [Local development](#local-development)
-2. [Adding pages](#adding-pages)
-3. [Moving pages](#moving-pages)
-4. [Automatic syncing from the markdown files in each Pact implementation repository](#automatic-syncing-from-the-markdown-files-in-each-pact-implementation-repository)
-5. [Slack history](#slack-history)
-6. [Hosting](#hosting)
-7. [Search](#search)
-8. [Contributing](#contributing)
-9. [Contact](#contact)
+- [Pact Docs Website](#pact-docs-website)
+  - [Table of Contents](#table-of-contents)
+  - [Local development](#local-development)
+  - [Adding pages](#adding-pages)
+  - [Moving pages](#moving-pages)
+  - [Automatic syncing from the markdown files in each Pact implementation repository](#automatic-syncing-from-the-markdown-files-in-each-pact-implementation-repository)
+  - [Slack history](#slack-history)
+  - [Hosting](#hosting)
+  - [Search](#search)
+  - [Contributing](#contributing)
+  - [Contact](#contact)
 
 ## Local development
 
@@ -49,6 +51,7 @@ The markdown files in the following directories are synced from their respective
 * `docs/implementation_guides/net`
 * `docs/pact_broker/client_cli`
 * `docs/pact_broker/docker_images/`
+* `docs/pact_broker/pact_broker_on_kubernetes/`
 
 Each of the above Pact repositories has a Github workflow that triggers the [sync-docs](.github/workflows/sync-docs.yml) workflow when any markdown files are edited on `master`.
 

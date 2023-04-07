@@ -11,6 +11,7 @@ on:
       - pact-cpp-docs-updated
       - pact-broker-docker-pactfoundation-docs-updated
       - pact-broker-docker-dius-docs-updated
+      - pact-broker-helm-chart-docs-updated
       - pact-broker-client-docs-updated
       - pact-net-docs-updated
       - pact-broker-docs-updated
@@ -30,6 +31,7 @@ on:
           - pact-cpp-docs-updated
           - pact-broker-docker-pactfoundation-docs-updated
           - pact-broker-docker-dius-docs-updated
+          - pact-broker-helm-chart-docs-updated
           - pact-broker-client-docs-updated
           - pact-net-docs-updated
           - pact-broker-docs-updated
@@ -87,6 +89,10 @@ jobs:
     - name: Sync dius/pact-broker Docker image docs
       run: bundle exec scripts/sync/pact_broker_docker_dius.rb && echo 'COMMIT_MESSAGE=synced dius/pact-broker docker image docs' >> $GITHUB_ENV
       if: steps.identify_event.outputs.update_event == 'pact-broker-docker-dius-docs-updated'
+
+    - name: Sync Pact Broker Helm Chart docs
+      run: bundle exec scripts/sync/pact_broker_kubernetes_helm_chart.rb && echo 'COMMIT_MESSAGE=synced pact-broker Helm Chart docs' >> $GITHUB_ENV
+      if: steps.identify_event.outputs.update_event == 'pact-broker-helm-chart-docs-updated'
 
     - name: Sync Pact Broker Client docs
       run: bundle exec scripts/sync/pact_broker_client.rb && echo 'COMMIT_MESSAGE=synced pact broker client docs' >> $GITHUB_ENV
