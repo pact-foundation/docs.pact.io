@@ -18,6 +18,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 
 **Customer Stories**
 - [eBay - API evolution with Confidence](https://tech.ebayinc.com/engineering/api-evolution-with-confidence-a-case-study-of-contract-testing-adoption-at-ebay/)
+- [Discover Financial Services - Break free from end-to-end testing: Why contract testing is the key to microservices success](https://technology.discover.com/posts/end-to-end-contract-testing)
   
 ## 2022
 
