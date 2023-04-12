@@ -10,7 +10,7 @@ INCLUDE = [
 IGNORE = []
 CUSTOM_ACTIONS = [
   [:all, ->(md_file_contents) { md_file_contents.extract_title } ],
-  ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "Deploy with Helm" } ]
+  ["README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "Deploy with Helm"; md_file_contents.fields[:slug] = "./readme" } ]
 ]
 
 FileUtils.mkdir_p DESTINATION_DIR
