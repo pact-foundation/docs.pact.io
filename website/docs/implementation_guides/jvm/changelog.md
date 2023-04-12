@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.5.6 - Bugfix Release
+
+* 2070ce537 - fix(JUnit5): Provider name can be provided with the @Pact annotation #1684 (Ronald Holshausen, Wed Apr 12 15:03:07 2023 +1000)
+* 8a70a1af3 - fix(JUnit5): IllegalStateException was being raised when mutiple Pacts were confgured for the same provider #1457 (Ronald Holshausen, Wed Apr 12 11:40:12 2023 +1000)
+* 9aebbb575 - fix(JUnit5): do not overwrite class level provider name is the method one is empty (Ronald Holshausen, Tue Apr 11 16:21:10 2023 +1000)
+
 ## 4.5.5 - Support verification tests for sync request/response messages with MessageTestTarget
 
 * f07ffeb25 - update changelog for release 4.4.9 (Ronald Holshausen, Thu Mar 30 14:11:25 2023 +1100)
