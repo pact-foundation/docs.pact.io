@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.11 - Bugfix Release
+
+* 867936d6 - fix: V4 models were not including the key in the implementation of equals (Ronald Holshausen, Fri Apr 14 11:16:34 2023 +1000)
+
 ## 1.0.10 - Bugfix Release
 
 * 6f70f30a - fix: exclude headers from the pact conflict check (Ronald Holshausen, Wed Mar 15 15:23:19 2023 +1100)
