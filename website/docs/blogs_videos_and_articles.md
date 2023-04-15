@@ -72,7 +72,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 - [Die Mobiliar - Insurance](https://medium.com/@dany.marques/how-to-set-up-pact-tests-with-angular-jest-ae157f272428)
 
 **Articles**:
-
+- [Contract Tests with Pact Course](https://testautomationu.applitools.com/pact-contract-tests/)
 - [API Conference NL](https://apiconference.net/microservices/testing-microservices-with-consumer-driven-contracts/)
 - [Oracle](https://blogs.oracle.com/javamagazine/how-to-test-java-microservices-with-pact?source=:em:nw:mt::RC_WWMK190726P00001:NSL400044496&elq_mid=159020&sh=112606151426090819312817243332&cmid=WWMK190726P00001C0008)
 - [kreuzwerker](https://kreuzwerker.de/post/migrating-pact-contract-tests-from-junit4-to-junit5)
