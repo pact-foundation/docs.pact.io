@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.12 - Fixes hash function for generators
+
+
 ## 1.0.11 - Bugfix Release
 
 * 867936d6 - fix: V4 models were not including the key in the implementation of equals (Ronald Holshausen, Fri Apr 14 11:16:34 2023 +1000)
