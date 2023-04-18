@@ -7,8 +7,8 @@ There are multiple implementations of Pact, and while we try to keep feature par
 | Feature                                                                | Pact-JVM | Pact JS ^    | Pact Ruby \# | Pact NET ^   | Pact Go ^    | Pact PHP \# | Pact Python \# | Pact Swift ^ |
 | :--------------------------------------------------------------------- | :------- | :------------ | :----------- | :------------ | :------------ | :---------- | :------------- | :------------ |
 | HTTP pacts                                                             | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
-| Asychronous messaging                                              | Y        | Y             | Y            | Y             | Y             | Y           | Y              |               |
-| Sychronous messaging                                              | Y        | Y             | N            | N             | Y             | N           | N              |               |
+| Asynchronous messaging                                              | Y        | Y             | Y            | Y             | Y             | Y           | Y              |               |
+| Synchronous messaging                                              | Y        | Y             | N            | N             | Y             | N           | N              |               |
 | Plugins                                              | Y        | Y             |              |              | Y             |            |               |               |
 | Regular expression matching                                            | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
 | Type based matching \("like"\)                                         | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
