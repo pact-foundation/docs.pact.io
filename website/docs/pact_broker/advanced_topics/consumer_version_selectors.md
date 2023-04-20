@@ -15,7 +15,7 @@ A consumer version selector has the following properties:
 
 - `mainBranch`: if the key is specified, can only be set to `true`. Return the pacts for the configured `mainBranch` of each consumer. Use of this selector requires that the consumer has configured the `mainBranch` property, and has set a branch name when publishing the pacts. As of October 2021, this is not yet supported in all Pact client libraries.
 
-- `branch`: the branch name of the consumer versions to get the pacts for. Use of this selector requires that the consumer has configured a branch name when publishing the pacts. As of October 2021, this is not yet supported in all Pact client libraries. As of October 2021, this is not yet supported in all Pact client libraries.
+- `branch`: the branch name of the consumer versions to get the pacts for. Use of this selector requires that the consumer has configured a branch name when publishing the pacts. As of October 2021, this is not yet supported in all Pact client libraries.
 
 - `fallbackBranch`: the name of the branch to fallback to if the specified `branch` does not exist. Use of this property is discouraged as it may allow a pact to pass on a feature branch while breaking backwards compatibility with the main branch, which is generally not desired. It is better to use two separate consumer version selectors, one with the main branch name, and one with the feature branch name, rather than use this property. As of October 2021, this is not yet supported in all Pact client libraries.
 
