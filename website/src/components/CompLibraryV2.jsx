@@ -1,12 +1,12 @@
 import React from 'react';
-import { Remarkable } from 'remarkable';
+const MarkdownIt = require('markdown-it');
 
 
 export class MarkdownBlock extends React.Component {
 
   getRawMarkup(markdown) {
-    var md = new Remarkable();
-    return { __html: md.render(markdown) };
+    var md = new MarkdownIt();
+    return { __html: md.render(markdown.toString()) };
   }
 
   render() {
