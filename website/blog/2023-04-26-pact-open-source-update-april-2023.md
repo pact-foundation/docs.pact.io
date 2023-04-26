@@ -139,7 +139,7 @@ Let me know if these work, and we can move them under the Pact-Foundation!
 
 https://github.com/YOU54F/scoop
 
-### Choco
+### Choco
 
 `choco install pact --version=0.0.1`
 
