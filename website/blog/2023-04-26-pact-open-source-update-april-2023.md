@@ -83,6 +83,10 @@ It leaves our current state of play of support like this.
 
 Due to open source, the build system being available on GitHub, the power of ARM processors (via M1/M2 processors found in Apple machines), and leaps and bounds in virtualization / emulation technologies, it's really easy to spin up ephemeral build boxes, than ever before. The build systems themselves are still incredibly complex, but thankfully I managed to munge a few community forks, into one gotta-build-em all solution.
 
+You can check out the current PR [here](https://github.com/phusion/traveling-ruby/pull/133)
+
+This means our support table will possibly extend now to
+
 | OS     | Ruby      | Architecture   | Supported |
 | -------| -------   | ------------   | --------- |
 | MacOS  | 3.2.2     | x86_64         | ✅        |
