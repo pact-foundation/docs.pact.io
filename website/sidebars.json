@@ -321,16 +321,6 @@
     ]
   },
   "pact_broker": {
-    "Dockerized Pact Broker": [
-      "pact_broker/docker_images",
-      "pact_broker/docker_images/pactfoundation",
-      "pact_broker/docker_images/dius"
-    ],
-    "Pact Broker Client CLI": [
-      "pact_broker/client_cli",
-      "pact_broker/client_cli/readme",
-      "pact_broker/client_cli/changelog"
-    ],
     "Pact Broker": [
       "pact_broker",
       "pact_broker/overview",
@@ -398,6 +388,20 @@
         "items": ["pact_broker/api/webhooks", "pact_broker/api/pacticipants", "pact_broker/api/pagination"]
       },
       "pact_broker/changelog"
+    ],
+    "Pact Broker Client CLI": [
+      "pact_broker/client_cli",
+      "pact_broker/client_cli/readme",
+      "pact_broker/client_cli/changelog"
+    ],
+    "Pact Broker - Docker": [
+      "pact_broker/docker_images",
+      "pact_broker/docker_images/pactfoundation",
+      "pact_broker/docker_images/dius"
+    ],
+    "Pact Broker - Kubernetes": [
+      "pact_broker/kubernetes",
+      "pact_broker/kubernetes/readme"
     ]
   },
   "resources": [
