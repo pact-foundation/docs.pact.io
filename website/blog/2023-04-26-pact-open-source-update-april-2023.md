@@ -147,7 +147,7 @@ https://github.com/YOU54F/choco
 
 ## SmartBear Supported
 
-We spoke last month about what SmartBear supported means for Pact on our newly published [page](https://docs.pact.io/help/smartbear). We started engaging without core maintainer group and are listening intently to the feedback before we share it out with the wider contributor group to get your valued input.
+We spoke last month about what SmartBear supported means for Pact on our newly published [page](https://docs.pact.io/help/smartbear). We started engaging with our core maintainer group and are listening intently to the feedback before we share it out with the wider contributor group to get your valued input.
 
 We all want to ensure Pact is here forever!
 
