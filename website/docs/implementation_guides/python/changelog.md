@@ -5,7 +5,6 @@ custom_edit_url: https://github.com/pact-foundation/pact-python/edit/master/CHAN
 <!-- This file has been synced from the pact-foundation/pact-python repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 ### 1.7.0
-  * 9c1132e - Merge pull request #325 from pact-foundation/pactflow_camelcase (Yousaf Nabi, Fri Jan 27 12:29:59 2023 +0000)
   * 44cda33 - chore: /s/Pactflow/PactFlow (Yousaf Nabi, Thu Jan 26 16:11:54 2023 +0000)
   * 1bbdd37 - feat: Enhance provider states for pact-message (#322) (nsfrias, Tue Jan 24 17:04:29 2023 +0000)
   * 53ca129 - chore: add workflow to create a jira issue for pactflow team when smartbear-supported label added to github issue (Beth Skurrie, Wed Jan 18 10:51:05 2023 +1100)
