@@ -220,7 +220,7 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 
 #### Features
 
-* support specifying team UUID when creating a webhook in PactFlow	 ([c4201e1](https://github.com/pact-foundation/pact_broker-client/commit/c4201e1))
+* support specifying team UUID when creating a webhook in Pactflow	 ([c4201e1](https://github.com/pact-foundation/pact_broker-client/commit/c4201e1))
 
 <a name="v1.45.0"></a>
 ### v1.45.0 (2021-06-16)
