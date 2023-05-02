@@ -127,6 +127,12 @@
 
 # Used in publish contracts response
 [[redirects]]
+  from = "/go/view-pact-changes"
+  to = "/pact_broker/advanced_topics/see_changes_pact?utm_source=pact&utm_medium=client_library"
+  status = 301
+
+# Used in publish contracts response
+[[redirects]]
   from = "/go/webhooks"
   to = "/pact_broker/webhooks/?utm_source=pact&utm_medium=client_library"
   status = 301
@@ -149,6 +155,11 @@
   to = "/pact_broker/advanced_topics/wip_pacts?utm_source=pact&utm_medium=client_library"
   status = 301
 
+# Used in can-i-deploy output
+[[redirects]]
+  from = "/go/cid-polling"
+  to = "/pact_broker/client_cli/readme?utm_source=pact&utm_medium=client_library#polling"
+  status = 301
 
 # Used in record-release help output
 
