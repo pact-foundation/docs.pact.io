@@ -5,7 +5,7 @@ description: From zero to running Pact tests in 5 mins
 ---
 
 
-This getting started guide can be run purely in the browser or on your local mahcine, with the intention to get you across the key concepts quickly. As we go through, there will be code snippets to demonstrate concepts. These are not runnable, but are there to assist with explanation. When there is code to run, you will be presented with a REPL as per below. Simply hit the green ▶ button, and the output will be displayed in the terminal below. Give it a shot now:
+This getting started guide can be run purely in the browser or on your local machine, with the intention to get you across the key concepts quickly. As we go through, there will be code snippets to demonstrate concepts. These are not runnable, but are there to assist with explanation. When there is code to run, you will be presented with a REPL as per below. Simply hit the green ▶ button, and the output will be displayed in the terminal below. Give it a shot now:
 
 <iframe frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/Getting-Started-Intro?lite=true"></iframe>
 
