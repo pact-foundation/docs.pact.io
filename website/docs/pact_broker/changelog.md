@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.107.0"></a>
+
+### v2.107.0 (2023-05-02)
+
 <a name="v2.107.0.beta.1"></a>
 
 ### v2.107.0.beta.1 (2023-05-01)
