@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.2 - Removed auto-generated keys and updates all trait methods so they can be used in an FFI context
+
+* f8f0e773 - fix: Add RefUnwindSafe trait bound to all Pact and Interaction trait methods so they can be used in an FFI context (Ronald Holshausen, Mon May 15 12:37:16 2023 +1000)
+* cf55b3c5 - fix: do not auto-generate the interaction key if not set #264 (Ronald Holshausen, Mon May 8 11:10:20 2023 +1000)
+* 5eed834a - feat: Update date validation to check for leap years (Ronald Holshausen, Tue May 2 14:22:10 2023 +1000)
+
 ## 1.0.13 - Maintenance Release
 
 
