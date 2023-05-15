@@ -318,7 +318,9 @@
       "recipes/lambdaasync",
       "recipes/lambdahttp",
       "recipes/cypress"
-    ]
+    ],
+    "Ecosystems":
+    ["diagrams/ecosystem"]
   },
   "pact_broker": {
     "Pact Broker": [
@@ -427,6 +429,7 @@
       "Contributing": [
         "contributing",
         "contributing/code",
+        "contributing/ci",
         "contributing/docs",
         "contributing/contributors",
         "contributing/code-of-conduct"
