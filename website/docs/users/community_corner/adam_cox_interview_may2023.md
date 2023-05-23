@@ -2,9 +2,14 @@
 title: Community Corner - Adam Cox
 ---
 
+>
+:::note Adam Cox
+
 We talk to Adam Cox from Sky about his journey at Sky, from introducing Pact to the team, to adventures with embedded devices, websockets, and how the Pact Plugin framework is helping them push the envelope.
 
-![Adam Cox](https://github.com/pact-foundation/pact-ruby-standalone/assets/19932401/e2af26c8-30aa-406f-9796-2077076f488d)
+:::
+<div><img src="https://github.com/pact-foundation/pact-ruby-standalone/assets/19932401/e2af26c8-30aa-406f-9796-2077076f488d" alt="Adam Cox" width="150" heigh="150" /></div>
+
 
 >**What brought you to using Pact in the first place?**
 
@@ -83,17 +88,17 @@ have to re-do a load of stuff it can be frustrating.
 
 One really awesome thing about the new Pact stuff - Rust. The core is all in Rust, 
 the plugin driver is in Rust (well the one we use), the consumer library in Rust is first 
-Pact Interview3class i.e. not using the FFI and our plugin is written in Rust. I love working in Rust 
+class i.e. not using the FFI and our plugin is written in Rust. I love working in Rust 
 and so for me especially it has been an amazing opportunity to read and write a lot 
 of Rust code and that has been so much fun - and a bit frustrating. Rust can be a bit 
 frustrating sometimes 😂 
 
 Fun, exciting and at times frustrating - yep, that sums it up I think.
 
+
 >**We hear you Adam!**
-
-![image](https://github.com/pact-foundation/pact-ruby-standalone/assets/19932401/135cade6-5f7d-4949-9954-779a18160108)
-
+<div>
+<img src="https://github.com/pact-foundation/pact-ruby-standalone/assets/19932401/135cade6-5f7d-4949-9954-779a18160108" alt="Adam Cox" width="150" heigh="150" /></div>
 
 >**Could you tell us a bit more detail about the plugin your team has 
 been building, maybe we should start off with your team, (ahem: 
