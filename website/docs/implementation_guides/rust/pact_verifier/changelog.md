@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.0 - Bugfixes + Update Pact models to 1.1 (breaking change)
+
+* 71b38a87 - fix: Add Custom Header option not replacing already existing headers #275 (Ronald Holshausen, Tue May 23 15:05:20 2023 +1000)
+* 64d6a75c - feat: implemented initial compatibility tests (Ronald Holshausen, Wed May 17 12:14:36 2023 +1000)
+* 261ecf47 - fix: Add RefUnwindSafe trait bound to all Pact and Interaction uses (Ronald Holshausen, Mon May 15 13:59:31 2023 +1000)
+* 59946c3f - fix: hanlde validation errors from Pactbroker correctly #273 (Ronald Holshausen, Mon May 8 15:40:11 2023 +1000)
+
 ## 0.15.3 - Bugfix Release
 
 * 84b9d9e9 - fix: Upgrade pact models to 1.0.11 (fixes generated key for V4 Pacts) (Ronald Holshausen, Fri Apr 14 17:10:58 2023 +1000)
