@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.5 - Bugfix Release
+
+* f72f8191 - feat: Implemented the remaining V1 HTTP consumer compatability suite feature (Ronald Holshausen, Thu May 18 14:12:40 2023 +1000)
+* 261ecf47 - fix: Add RefUnwindSafe trait bound to all Pact and Interaction uses (Ronald Holshausen, Mon May 15 13:59:31 2023 +1000)
+* 95664129 - feat: add method pactffi_given_with_params to allow a provider state to be repeated with different values (Ronald Holshausen, Tue May 2 11:41:10 2023 +1000)
+
 ## 0.4.4 - Bugfix Release
 
 * a4192b38 - feat: add FFI function to validate a Date/Time string against a format #265 (Ronald Holshausen, Mon Apr 17 12:48:01 2023 +1000)

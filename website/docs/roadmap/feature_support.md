@@ -19,7 +19,7 @@ There are multiple implementations of Pact, and while we try to keep feature par
 | Pact specification v4                                                  | Y        | Y             |              |               | Y             |             |                |               |
 | Multiple provider states \(pact creation\)                             | Y        | Y             |              |               | Y             |             |                | Y             |
 | Multiple provider states \(pact verification\)                         | Y        | Y             | Y            | Y             | Y             | Y           | Y              | Y             |
-| Publish pacts to Pact Broker                                           | Y        | Y             | Y            | Y             | Y             | CLI          | CLI             | CLI            |
+| Publish pacts to Pact Broker                                           | Y        | Y             | Y            | CLI           | Y             | CLI          | CLI             | CLI            |
 | Tag consumer version in Pact Broker when publishing pact               | Y        | Y             | Y            | CLI            | CLI            | CLI          | CLI             | CLI            |
 | Dynamically fetch pacts for provider from Pact Broker for verification | Y        | Y             | Y            | Y             | Y             | Y           | Y              | \*            |
 | Dynamically fetch pacts for provider with specified tags               | Y        | Y             | Y            | Y             | Y             | Y           | Y              | \*            |
