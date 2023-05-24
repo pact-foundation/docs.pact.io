@@ -77,25 +77,28 @@ p.netlifyThanks {
     fill: #56a211;
     transform: translateY(0.25em);
     margin-left: 12px;
-  }
-
-  .i_thumbsdown {
-    fill: #e9430f;
-    transform: scale(-1, -1) translateY(-0.25em);
-  }
-
-  svg {
     height: 1.5em;
     width: 1.5em;
     margin: 0 0 0 6px;
   }
 
+  .i_thumbsdown {
+    fill: #e9430f;
+    transform: scale(-1, -1) translateY(-0.25em);
+    height: 1.5em;
+    width: 1.5em;
+    margin: 0 0 0 6px;
+  }
 
-  svg:focus {
+  .i_thumbsup:focus {
     cursor: pointer;
     fill: var(--ifm-color-primary);
   }
 
+  .i_thumbsdown:focus {
+    cursor: pointer;
+    fill: var(--ifm-color-primary);
+  }
 
   html[data-theme="dark"] .docsRating {
     color: #cee9f3;

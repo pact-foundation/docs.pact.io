@@ -318,7 +318,9 @@
       "recipes/lambdaasync",
       "recipes/lambdahttp",
       "recipes/cypress"
-    ]
+    ],
+    "Ecosystems":
+    ["diagrams/ecosystem"]
   },
   "pact_broker": {
     "Pact Broker": [
@@ -427,6 +429,7 @@
       "Contributing": [
         "contributing",
         "contributing/code",
+        "contributing/ci",
         "contributing/docs",
         "contributing/contributors",
         "contributing/code-of-conduct"
@@ -443,6 +446,9 @@
             "users/case_studies/case_study_atlassian",
             "users/case_studies/case_study_boostinsurance",
             "users/case_studies/case_study_m1finance"
+          ],
+          "Community Corner": [
+            "users/community_corner/adam_cox_interview_may2023"
           ]
         }
       ]

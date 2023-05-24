@@ -206,7 +206,15 @@ const siteConfig = {
         'groovy',
         'scala',
       ]
-    }
+    },
+
+    // https://docusaurus.io/docs/next/markdown-features/diagrams#theming
+    mermaid: {
+      theme: {light: 'neutral', dark: 'neutral'},
+      options: {
+        useMaxWidth: true,
+      },
+    },
     // ...
   },
 
@@ -227,7 +235,12 @@ const siteConfig = {
 
   // On page navigation for the current documentation page.
   // onPageNav: 'separate',
-
+  
+  // https://docusaurus.io/docs/next/markdown-features/diagrams
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   presets: [
     [
       '@docusaurus/preset-classic',
