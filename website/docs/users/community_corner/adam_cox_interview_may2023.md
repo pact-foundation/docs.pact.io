@@ -5,7 +5,7 @@ title: Community Corner - Adam Cox
 >
 :::note Adam Cox
 
-We talk to Adam Cox from Sky about his journey at Sky, from introducing Pact to the team, to adventures with embedded devices, websockets, and how the Pact Plugin framework is helping them push the envelope.
+We talk to Adam Cox about his journey at Sky, from introducing Pact to the team, to adventures with embedded devices, websockets, and how the Pact Plugin framework is helping them push the envelope.
 
 :::
 <div><img src="https://github.com/pact-foundation/pact-ruby-standalone/assets/19932401/e2af26c8-30aa-406f-9796-2077076f488d" alt="Adam Cox" width="150" heigh="150" /></div>

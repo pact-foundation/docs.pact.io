@@ -51,13 +51,154 @@ The OCD gods have been appeased. You can all rest easy now, thanks to Adam Rodge
 
 ### Pact-Broker
 
-As the `pact_broker` nears its birthday, it decided that is better get ready. You'll now find the latest `pact_broker` and `pact_broker-docker` projects have been upgrades to support Ruby `3.2`.
+[![pulls](https://badgen.net/docker/pulls/pactfoundation/pact-broker?icon=docker&label=pulls)](https://hub.docker.com/r/pactfoundation/pact-broker)
+[![stars](https://badgen.net/docker/stars/pactfoundation/pact-broker?icon=docker&label=stars)](https://hub.docker.com/r/pactfoundation/pact-broker)
+
+As the `pact_broker` nears its birthday, it decided that it better get ready. You'll now find the latest `pact_broker` and `pact_broker-docker` projects have been upgrades to support Ruby `3.2`, and `pact_broker-docker` now comes in the following flavours via [this PR](https://github.com/pact-foundation/pact-ruby-cli/pull/98).
+
+[![size: amd64](https://badgen.net/docker/size/pactfoundation/pact-broker/latest-multi/amd64?icon=docker&label=size%3Aamd64)](https://hub.docker.com/r/pactfoundation/pact-broker)
+[![size: arm64](https://badgen.net/docker/size/pactfoundation/pact-broker/latest-multi/arm64?icon=docker&label=size%3Aarm64)](https://hub.docker.com/r/pactfoundation/pact-broker)
+[![size: arm](https://badgen.net/docker/size/pactfoundation/pact-broker/latest-multi/arm?icon=docker&label=size%3Aarm)](https://hub.docker.com/r/pactfoundation/pact-broker)
+
+#### New Tagging Format
+
+#### Docker Multi-Arch Info
 
 You'll be able to pull multi-arch builds for `arm/arm64` machines soon, by adding the `-multi` flag to your `pact_broker` tag.
 
+By default, vanilla tags, are built only for amd64
+
+```
+docker run --platform=linux/amd64 --rm -it --entrypoint /bin/sh pactfoundation/pact-broker:latest -c 'uname -sm'
+``
+
+returns 
+
+```console
+Linux x86_64
+```
+
+We need some `binfmt` emulators, to run multi-arch
+
+Note: You only need the `binfmt` emulators, if you plan on running a non-native image. Unless you are testing, you wouldn't normally want to do this :)
+
+```sh
+docker run --privileged --rm tonistiigi/binfmt --install all
+```
+
+We can now run multi-arch images
+
+```sh
+docker run --platform=linux/arm64 --rm -it --entrypoint /bin/sh pactfoundation/pact-broker:latest-multi -c 'uname -sm'
+docker run --platform=linux/amd64 --rm -it --entrypoint /bin/sh pactfoundation/pact-broker:latest-multi -c 'uname -sm'
+docker run --platform=linux/arm/v7 --rm -it --entrypoint /bin/sh pactfoundation/pact-broker:latest-multi -c 'uname -sm'
+```
+
+returns
+
+```console
+Linux aarch64
+Linux x86_64
+Linux armv7l
+```
+
+#### Armageddon - Go Forth and multi-manifest
+
+Prepare your docker builder
+
+```sh
+docker buildx create --platform linux/arm64,linux/arm/v8,linux/amd64 --name multi_arch_builder
+docker buildx use multi_arch_builder
+```
+
+Building your own multi-arch images
+
+Note: (this will push the multi-manifest image to Dockerhub), remove `push=true` if you don't want to.
+
+- Replace `DOCKER_IMAGE_ORG_AND_NAME` & `TAG` with your required values
+
+```sh
+docker buildx build --platform=linux/amd64,linux/arm64,linux/arm \
+    --output=type=image,push=true \
+    -t ${DOCKER_IMAGE_ORG_AND_NAME}:${TAG} .
+```
+
+### Pact-Ruby-Cli
+
+[![pulls](https://badgen.net/docker/pulls/pactfoundation/pact-cli?icon=docker&label=pulls)](https://hub.docker.com/r/pactfoundation/pact-cli)
+[![stars](https://badgen.net/docker/stars/pactfoundation/pact-cli?icon=docker&label=stars)](https://hub.docker.com/r/pactfoundation/pact-cli)
+
+
+Not to be outshone, by the Pact Broker Docker, Pact Ruby Cli now comes in the following flavours
+
+[![size: amd64](https://badgen.net/docker/size/pactfoundation/pact-cli/latest-multi/amd64?icon=docker&label=size%3Aamd64)](https://hub.docker.com/r/pactfoundation/pact-cli)
+[![size: arm64](https://badgen.net/docker/size/pactfoundation/pact-cli/latest-multi/arm64?icon=docker&label=size%3Aarm64)](https://hub.docker.com/r/pactfoundation/pact-cli)
+[![size: arm](https://badgen.net/docker/size/pactfoundation/pact-cli/latest-multi/arm?icon=docker&label=size%3Aarm)](https://hub.docker.com/r/pactfoundation/pact-cli)
+
+#### New Tagging Format
+
+On 23rd May 2023, introduced in this [PR](https://github.com/pact-foundation/pact-ruby-cli/pull/112) , the format of the docker tag changed from ending with the Pact Cli Gem version (`0.51.0.4`), where `.4` noted a change to the one of the packaged gems, to ending with the Pact Cli gem version (`0.52.0-pactcli0.52.0`). Read about the new versioning scheme [here](https://github.com/pact-foundation/pact-ruby-cli#versioning).
+
+#### Alpine 3.18 & Ruby 3.2.2
+
+[Alpine 3.18 is out](https://www.alpinelinux.org/posts/Alpine-3.18.0-released.html), and Pact-Ruby-Cli is [now up to date](https://github.com/pact-foundation/pact-ruby-cli/pull/113)
+
+### Pact-Ruby-Standalone
+
+pact-ruby-standalone 2.0.1 is out!
+
+- has [some fancier instructions](https://github.com/pact-foundation/pact-ruby-standalone/pull/108), in case it goes pear when downloading
+- lots of [docker files created for users](https://github.com/pact-foundation/pact-ruby-standalone/pull/109), tested x-plat
+
+but most importantly, the latest Ruby runtime, and native arm64 architecture.
+
+#### Supported Platforms
+
+Ruby is not required on the host platform, Ruby 3.2.2 is provided in the distributable.
+
+| OS     | Ruby      | Architecture   | Supported |
+| -------| -------   | ------------   | --------- |
+| MacOS  | 3.2.2     | x86_64         | ✅        |
+| MacOS  | 3.2.2     | aarch64 (arm64)| ✅        |
+| Linux  | 3.2.2     | x86_64         | ✅        |
+| Linux  | 3.2.2     | aarch64 (arm64)| ✅        |
+| Windows| 3.2.2     | x86_64         | ✅        |
+| Windows| 3.2.2     | x86            | ✅        |
+| Windows| 3.2.2     | aarch64 (arm64)| 🚧        |
+
+🚧 - Tested under emulation mode x86 / x86_64 in Windows on ARM
+
+You'll see the roll out of improved CLI documentation on our main site, more distribution methods and a slicker experience overall soon.
+
 ### Pact FFI
 
+- A smorgasbord of [fixes and a small feature went into 0.4.4](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_ffi/CHANGELOG.md#044---bugfix-release) of Pact FFI.
+
 ### Pact Plugins
+
+- Pact-Rust and Pact-JVM [now support auto-loading](https://github.com/pact-foundation/pact-plugins/blob/88a2e1b77a602acc86204976bf8185fa3f5a6611/drivers/rust/driver/CHANGELOG.md?plain=1#L13) of Pact-Plugins
+
+### Pact Erlang
+
+Oh yeah, you heard that right!
+
+With thanks to community contributor Priyaranjan Mudliar, Pact-Erlang is alive.
+
+It describes itself as
+
+>An OTP library for contract testing using pact and generating consumer pacts
+
+and is proudly using the new Pact Rust core, via the FFI. We've been pleased to help guide Priyaranjan along the journey, its a first pass and doesn't contain a full feature-set. Be sure to drop him a ⭐ on his repo to show your support, and even better, if your an Erlang user, why not give it a go.
+
+### Pact Broker Client
+
+Cucumber community contributor David Goss paid us a visit and [dropped a fix in](https://github.com/pact-foundation/pact_broker-client/pull/132) whilst he was there.
+
+If [you are like Homer](https://www.youtube.com/watch?v=VjpcLplkMUs) and often leave a trailing URL on your `PACT_BROKER_BASE_URL` or `--broker-base-url` values, consider yourself sorted.
+
+You may notice [some improved next steps](https://github.com/pact-foundation/pact_broker-client/pull/133) when publishing provider contracts, and highlighted URL's, hopefully indicating to the user, useful next steps.
+
+We hope this helps, please try it out and let us know!
 
 ## Pact Ecosystems
 
@@ -121,3 +262,19 @@ You can drop into any repository with a `.github/workflows/*.yml` or `.cirrus.ym
 #### Linux or MacOS workflows
 
    `cirrus run --output github-actions`
+
+## Community Corner - Adam Cox
+
+If you've been around out GitHub repos or Slack, over the last couple of months, you can be sure to have seen Adam Cox's name pop up.
+
+Well this month, we have an absolute treat. We have the pleasure of opening a new community corner section on our site, dedicated to your voice.
+
+we are honoured to help the community but a name to the face, Adam Cox about his journey at Sky, from introducing Pact to the team, to adventures with embedded devices, websockets, and how the Pact Plugin framework is helping them push the envelope.
+
+Be sure to check it our [here](/users/community_corner/adam_cox_interview_may2023.md)
+
+## Thats a wrap
+
+That’s it for this month. Stay safe and carry on coding!
+
+- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact.
