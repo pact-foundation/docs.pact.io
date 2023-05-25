@@ -12,7 +12,7 @@ title: Pact Plugins Directory
 
 ## Released Plugins
 
-A list of available known plugins, please add your to the list.
+A list of available known plugins, please add yours to the list.
 
 |Name | Type   |  Language |  code | Support |
 |---|---|---|---|---|
@@ -28,7 +28,7 @@ These templates come with all the boilerplate out the way, so you can concentrat
 
 ## Demos
 
-We have built out some demos based on a few scenario's, that you can run on your machine or in browser via our interactive tutorials.
+We have built out some demos based on a few scenarios that you can run on your machine or in browser via our interactive tutorials.
 
 1. [Area Calculator](https://github.com/pact-foundation/pact-plugins/tree/main/examples/gRPC/area_calculator)
    1. [Proto file](https://github.com/pact-foundation/pact-plugins/blob/main/examples/gRPC/area_calculator/proto/area_calculator.proto)
