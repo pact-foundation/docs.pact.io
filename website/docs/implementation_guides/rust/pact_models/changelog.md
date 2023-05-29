@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.3 - Bugfix Release
+
+* 743b1823 - fix: MockServerURL generator was fetching the incorrect field from the test context (Ronald Holshausen, Mon May 29 14:58:19 2023 +1000)
+
 ## 1.1.2 - Removed auto-generated keys and updates all trait methods so they can be used in an FFI context
 
 * f8f0e773 - fix: Add RefUnwindSafe trait bound to all Pact and Interaction trait methods so they can be used in an FFI context (Ronald Holshausen, Mon May 15 12:37:16 2023 +1000)
