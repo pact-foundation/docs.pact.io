@@ -4,7 +4,7 @@ title: Webhooks
 
 ## Introduction
 
-Webhooks allow you to trigger an HTTP request when a pact is changed, a pact is published, or a verification is published. The most common use case for webhooks is to trigger a provider build every time a pact changes, and to trigger a consumer build every time a verification is published.
+Webhooks allow you to trigger an HTTP request when a pact is changed, a pact is published, or a verification is published. The most common use case for webhooks is to trigger a provider build every time a pact changes, and to [update PR status checks](https://docs.pact.io/blog/2018/07/16/publishing-pact-verification-statuses-to-github) when a verification is published.
 
 Webhooks can be used in conjunction with the [can-i-deploy](/pact_broker/can_i_deploy) tool \(a CLI that allows you to easily check the verification status of your pacts\), to allow you to fully automate the CI/CD process for all the applications that use the Pact Broker, ensuring both sides of the contract are fulfilled before deploying.
 

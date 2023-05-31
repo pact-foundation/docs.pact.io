@@ -10,48 +10,50 @@ This project provides a command line interface to manage and install Pact plugin
 
 Running `pact-plugin-cli` without any options displays the standard help.
 
-```console
-❯ pact-plugin-cli 0.0.0
+```console,ignore
+$ pact-plugin-cli
 CLI utility for Pact plugins
 
-USAGE:
-    pact-plugin-cli [OPTIONS] <SUBCOMMAND>
+Usage: pact-plugin-cli [OPTIONS] <COMMAND>
 
-OPTIONS:
-    -d, --debug      Enable debug level logs
-    -h, --help       Print help information
-    -V, --version    Print version information
-    -y, --yes        Automatically answer Yes for all prompts
+Commands:
+  list     List installed plugins
+  env      Print out the Pact plugin environment config
+  install  Install a plugin
+  remove   Remove a plugin
+  enable   Enable a plugin version
+  disable  Disable a plugin version
+  help     Print this message or the help of the given subcommand(s)
 
-SUBCOMMANDS:
-    disable    Disable a plugin version
-    enable     Enable a plugin version
-    env        Print out the Pact plugin environment config
-    help       Print this message or the help of the given subcommand(s)
-    install    Install a plugin
-    list       List installed plugins
-    remove     Remove a plugin
+Options:
+  -y, --yes      Automatically answer Yes for all prompts
+  -d, --debug    Enable debug level logs
+  -t, --trace    Enable trace level logs
+  -v, --version  Print CLI version
+  -h, --help     Print help
+
 ```
 
 ### Displaying environment configuration
 
 The `env` command will display any environment configuration that is being used.
 
-```console
-❯ pact-plugin-cli env
+```console,ignore
+$ pact-plugin-cli env
 ┌──────────────────┬─────────────────────┬────────────────────────────┐
 │ Configuration    ┆ Source              ┆ Value                      │
 ╞══════════════════╪═════════════════════╪════════════════════════════╡
 │ Plugin Directory ┆ $HOME/.pact/plugins ┆ /home/ronald/.pact/plugins │
 └──────────────────┴─────────────────────┴────────────────────────────┘
+
 ```
 
 ### Listing installed plugins
 
 Running the `list` command will list installed plugins.
 
-```console
-❯ pact-plugin-cli list
+```console,ignore
+$ pact-plugin-cli list
 ┌──────────┬─────────┬───────────────────┬───────────────────────────────────────────┬─────────┐
 │ Name     ┆ Version ┆ Interface Version ┆ Directory                                 ┆ Status  │
 ╞══════════╪═════════╪═══════════════════╪═══════════════════════════════════════════╪═════════╡
@@ -66,19 +68,17 @@ Running the `list` command will list installed plugins.
 The `disable` command will disable a version of a plugin, while the `enable` command will enable it again.
 
 ```console
-❯ pact-plugin-cli enable --help
-pact-plugin-cli-enable 0.0.0
+$ pact-plugin-cli enable --help
 Enable a plugin version
 
-USAGE:
-    pact-plugin-cli enable <NAME> [VERSION]
+Usage: pact-plugin-cli enable <NAME> [VERSION]
 
-ARGS:
-    <NAME>       Plugin name
-    <VERSION>    Plugin version. Not required if there is only one plugin version
+Arguments:
+  <NAME>     Plugin name
+  [VERSION]  Plugin version. Not required if there is only one plugin version
 
-OPTIONS:
-    -h, --help    Print help information
+Options:
+  -h, --help  Print help
 
 ```
 
@@ -90,25 +90,25 @@ A particular version of a plugin can be removed with the `remove` command. It re
 If there is only a single version, the version value can be omitted.
 
 ```console
-❯ ./target/debug/pact-plugin-cli remove --help
-pact-plugin-cli-remove 0.0.0
+$ pact-plugin-cli remove --help
 Remove a plugin
 
-USAGE:
-    pact-plugin-cli remove <NAME> [VERSION]
+Usage: pact-plugin-cli remove [OPTIONS] <NAME> [VERSION]
 
-ARGS:
-    <NAME>       Plugin name
-    <VERSION>    Plugin version. Not required if there is only one plugin version
+Arguments:
+  <NAME>     Plugin name
+  [VERSION]  Plugin version. Not required if there is only one plugin version
 
-OPTIONS:
-    -h, --help    Print help information
+Options:
+  -y, --yes   Automatically answer Yes for all prompts
+  -h, --help  Print help
+
 ```
 
 This will prompt to confirm the removal of the plugin, but that can be overridden with the `-y,-yes` option.
 
-```console
-❯ pact-plugin-cli -y remove csv
+```console,ignore
+$ pact-plugin-cli -y remove csv
 Removed plugin with name 'csv' and version '0.0.1'
 ```
 
@@ -118,23 +118,58 @@ The `install` command can download and install a plugin from a GitHub release pa
 operating system and architecture required. If there are SHA256 digests of the download files, it will also check the digest
 against the downloaded one.
 
+```console
+$ pact-plugin-cli install --help
+Install a plugin
+
+A plugin can be either installed from a URL, or for a known plugin, by name (and optionally version).
+
+Usage: pact-plugin-cli install [OPTIONS] <SOURCE>
+
+Arguments:
+  <SOURCE>
+          Where to fetch the plugin files from. This should be a URL or the name of a known plugin
+
+Options:
+  -t, --source-type <SOURCE_TYPE>
+          The type of source to fetch the plugin files from. Will default to Github releases.
+          
+          Valid values: github
+
+  -y, --yes
+          Automatically answer Yes for all prompts
+
+  -s, --skip-if-installed
+          Skip installing the plugin if the same version is already installed
+
+  -v, --version <VERSION>
+          The version to install. This is only used for known plugins
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+```
+
 You can point it to a release version, of use the latest link to download the latest version. I.e., for the Protobuf plugin,
 https://github.com/pactflow/pact-protobuf-plugin/releases/tag/v-0.1.7 will install version 0.1.7, while
 https://github.com/pactflow/pact-protobuf-plugin/releases/latest will install the latest version.
 
 If the version of the plugin has already been installed, it will prompt to delete the existing one first. That can be
-overridden with the `-y,-yes` option.
+overridden with the `-y, -yes` option.
+
+To skip installing the plugin if the version is already installed, use the `-s, --skip-if-installed` option.
 
 Example of installing the CSV plugin:
 
-```console
-❯ pact-plugin-cli -y install https://github.com/pact-foundation/pact-plugins/releases/tag/csv-plugin-0.0.1
+```console,ignore
+$ pact-plugin-cli -y install https://github.com/pact-foundation/pact-plugins/releases/tag/csv-plugin-0.0.1
 Installing plugin csv version 0.0.1
 Downloaded https://github.com/pact-foundation/pact-plugins/releases/download/csv-plugin-0.0.1/pact-csv-plugin-linux-x86_64.gz to /home/ronald/.pact/plugins/csv-0.0.1/pact-csv-plugin-linux-x86_64.gz
   [00:00:03] [#######################################################################################################################################################################] 3.43MiB/3.43MiB (973.64KiB/s, 0s)
 Downloaded https://github.com/pact-foundation/pact-plugins/releases/download/csv-plugin-0.0.1/pact-csv-plugin-linux-x86_64.gz.sha256 to /home/ronald/.pact/plugins/csv-0.0.1/pact-csv-plugin-linux-x86_64.gz.sha256
   [00:00:00] [#############################################################################################################################################################################] 115B/115B (185.98KiB/s, 0s)
 Installed plugin csv version 0.0.1 OK
+
 ```
 
 ## Installing
@@ -142,7 +177,7 @@ Installed plugin csv version 0.0.1 OK
 The CLI executable can be downloaded from the GitHub release page (i.e., https://github.com/pact-foundation/pact-plugins/releases/tag/pact-plugin-cli-v0.0.0).
 There will be a file for each major OS and architecture. It just needs to be unzipped (using gunzip) and made executable on Unix.
 
-```console
+```console,ignore
 ❯ wget https://github.com/pact-foundation/pact-plugins/releases/download/pact-plugin-cli-v0.0.0/pact-plugin-cli-linux-x86_64.gz
 --2022-06-03 13:45:17--  https://github.com/pact-foundation/pact-plugins/releases/download/pact-plugin-cli-v0.0.0/pact-plugin-cli-linux-x86_64.gz
 Resolving github.com (github.com)... 52.64.108.95
@@ -189,7 +224,7 @@ SUBCOMMANDS:
 
 The executable can also be installed using the Rust Cargo command.
 
-```console
+```console,ignore
 ❯ cargo install pact-plugin-cli
 ```
 

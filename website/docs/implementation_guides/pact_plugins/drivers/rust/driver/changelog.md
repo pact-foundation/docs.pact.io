@@ -11,6 +11,64 @@ https://github.com/pact-foundation/pact-plugins/tree/main/drivers
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
 
 
+* c2bb2a6 - chore: Use "Minimum version, with restricted compatibility range" for all Pact crate versions (Ronald Holshausen, Tue May 23 11:49:28 2023 +1000)
+* 88a2e1b - bump version to 0.4.4 (Ronald Holshausen, Mon May 15 13:51:36 2023 +1000)
+
+# 0.4.3 - Maintenance Release
+
+* f9b9ca2 - chore: Update dependecies and upgrade pact models to 1.1 (Ronald Holshausen, Mon May 15 13:29:39 2023 +1000)
+* a915437 - bump version to 0.4.3 (Ronald Holshausen, Tue Apr 18 10:58:32 2023 +1000)
+
+# 0.4.2 - Support auto-downloading plugins
+
+* 9424024 - chore: cleanup unused import (Ronald Holshausen, Tue Apr 18 10:55:11 2023 +1000)
+* a01455d - fix: only display download progress bar when invoked from CLI (Ronald Holshausen, Tue Apr 18 10:46:58 2023 +1000)
+* 639caeb - fix: when auto-installing a plugin, need to correctly set the plugin dir (Ronald Holshausen, Mon Apr 17 16:37:16 2023 +1000)
+* f6706d6 - refactor: Move all code to download plugins to the driver to support auto-installing known plugins (Ronald Holshausen, Mon Apr 17 15:57:31 2023 +1000)
+* 586aba8 - bump version to 0.4.2 (Ronald Holshausen, Wed Apr 5 16:51:15 2023 +1000)
+
+# 0.4.1 - Bugfix Release
+
+* b84a0ba - revert "feat: Use a shared channel and gRPC client to communicate with a plugin" (Ronald Holshausen, Wed Apr 5 16:48:56 2023 +1000)
+* 5fb6107 - chore: Update the generated proto code (Ronald Holshausen, Wed Apr 5 13:50:31 2023 +1000)
+* 88cbfc0 - bump version to 0.4.1 (Ronald Holshausen, Tue Apr 4 14:13:50 2023 +1000)
+
+# 0.4.0 - Use shared gRPC plugin client
+
+* 6235b6c - feat: Use a shared channel and gRPC client to communicate with a plugin (Ronald Holshausen, Tue Apr 4 13:47:14 2023 +1000)
+* 550c331 - refactor: Use a shared channel to the plugin which is clonable (Ronald Holshausen, Mon Apr 3 15:28:56 2023 +1000)
+* 6ed7c4d - refactor: Move plugin repository models to the plugin driver (Ronald Holshausen, Mon Apr 3 11:27:14 2023 +1000)
+* 548f9ea - chore: Bump minor version, update all dependecies (esp tonic to 0.9.0) (Ronald Holshausen, Mon Apr 3 10:33:23 2023 +1000)
+* ea27510 - bump version to 0.3.4 (Ronald Holshausen, Tue Mar 14 16:57:43 2023 +1100)
+
+# 0.3.3 - Maintenance Release
+
+* 922c57c - chore: bump pact models to 1.0.6 (Ronald Holshausen, Tue Mar 14 16:54:32 2023 +1100)
+* 9954abb - chore: fix driver build on musl (Ronald Holshausen, Tue Mar 14 14:06:19 2023 +1100)
+* 0a73143 - chore: use log crate, as tracing::log::max_level is not available on Alpine (Ronald Holshausen, Tue Mar 14 13:48:30 2023 +1100)
+* 8ae7e7e - fix: require the log feature for tracing crate (Ronald Holshausen, Tue Mar 14 12:12:26 2023 +1100)
+* 8e335d5 - bump version to 0.3.3 (Ronald Holshausen, Thu Feb 16 12:00:23 2023 +1100)
+
+# 0.3.2 - Bugfix Release
+
+* 1ffd3ad - fix: InteractionVerificationData fields were not public and there was no constructor function (Ronald Holshausen, Thu Feb 16 11:43:26 2023 +1100)
+* d30b769 - chore: fix failing build (Ronald Holshausen, Wed Feb 8 15:55:22 2023 +1100)
+* d06f7f8 - chore: check for PACT_DO_NOT_TRACK in both upper and lower case (Ronald Holshausen, Wed Feb 8 14:41:06 2023 +1100)
+* 1b7e6ee - bump version to 0.3.2 (Ronald Holshausen, Wed Feb 8 13:22:17 2023 +1100)
+
+# 0.3.1 - Bugfix Release
+
+* abdf9a7 - chore: Update dependencies (Ronald Holshausen, Wed Feb 8 13:19:02 2023 +1100)
+* 8d98e65 - feat: add field to mock server mismatches to indicate the type of mismatch (Ronald Holshausen, Tue Feb 7 15:49:21 2023 +1100)
+* 4a23448 - bump version to 0.3.1 (Ronald Holshausen, Mon Feb 6 14:47:37 2023 +1100)
+
+# 0.3.0 - Support configuring matching rules and generators for message metadata
+
+* 66a0f01 - feat: Support configuring matching rules and generators for message metadata (Ronald Holshausen, Mon Feb 6 14:20:41 2023 +1100)
+* 17c66d9 - bump version to 0.2.3 (Ronald Holshausen, Fri Dec 16 16:25:26 2022 +1100)
+
+# 0.2.2 - Bugfix Release
+
 * 2de4518 - feat: Support passing a test context through to the start mock server call (Ronald Holshausen, Fri Dec 16 16:14:48 2022 +1100)
 * 6a4739b - chore: Upgrade tokio to latest (Ronald Holshausen, Fri Dec 16 11:01:40 2022 +1100)
 * 7fdc756 - bump version to 0.2.2 (Ronald Holshausen, Wed Dec 14 14:46:27 2022 +1100)
