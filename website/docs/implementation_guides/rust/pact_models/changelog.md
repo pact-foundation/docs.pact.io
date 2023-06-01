@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.4 - Bugfix Release
+
+* 9d3205a0 - fix: Support fraction of seconds with more then 3 digits #279 (Ronald Holshausen, Wed May 31 14:40:41 2023 +1000)
+
 ## 1.1.3 - Bugfix Release
 
 * 743b1823 - fix: MockServerURL generator was fetching the incorrect field from the test context (Ronald Holshausen, Mon May 29 14:58:19 2023 +1000)
