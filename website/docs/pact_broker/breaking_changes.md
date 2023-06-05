@@ -24,6 +24,8 @@ title: Planned breaking changes in version 3.0
 * Update all error responses to use problem+json (medium)
 * Make PUT/PATCH consistent for all resources (large)
 * Paginate all collection endpoints by default (medium)
+* Come up with a consistent approach to naming the top level element in a collection resource (eg. domain label `pacticipants` or generic `items`) (medium)
+* Come up with a consistent approach for controlling the inclusion of embedded resources (medium)
 
 ## Database changes
 
