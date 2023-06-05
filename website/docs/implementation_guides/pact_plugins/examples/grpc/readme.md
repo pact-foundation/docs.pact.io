@@ -11,4 +11,7 @@ https://github.com/pact-foundation/pact-plugins/tree/main/examples
 
 Example projects that use Pact to test gRPC interactions:
 
-[Area Calculator Example](https://github.com/pact-foundation/pact-plugins/blob/main/area_calculator)
+* [Area Calculator Example](https://github.com/pact-foundation/pact-plugins/blob/main/area_calculator)
+* [Example of dealing with gRPC metadata](https://github.com/pact-foundation/pact-plugins/blob/main/metadata)
+* [Validating messages with enums](https://github.com/pact-foundation/pact-plugins/blob/main/test_enums)
+* [Verifying gRPC error responses](https://github.com/pact-foundation/pact-plugins/blob/main/grpc_status)
