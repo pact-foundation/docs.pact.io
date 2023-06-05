@@ -241,8 +241,7 @@
       "Stubs": ["getting_started/stubs"]
     },
     "telemetry",
-    "implementation_guides/ssl",
-    "implementation_guides/pact_specification"
+    "implementation_guides/ssl"
   ],
   "getting-started": [
     {
@@ -279,6 +278,7 @@
         "getting_started/verifying_pacts",
         "getting_started/provider_states",
         "getting_started/sharing_pacts",
+        "getting_started/specification",
         "getting_started/further_reading"
       ]
     },
