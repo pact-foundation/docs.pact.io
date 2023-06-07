@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.1 - Bugfix Release
+
+* 4fbd45cc - fix: Mock server errors were not being printed if the test was panicking due to a failed assertion #282 (Ronald Holshausen, Wed Jun 7 11:27:15 2023 +1000)
+
 ## 1.0.0 - Bugfixes + Update Pact models to 1.1 (breaking change)
 
 * 6aac93bb - feat: Update message builders to support adding message metadata (Ronald Holshausen, Tue May 23 16:00:19 2023 +1000)
