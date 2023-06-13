@@ -19,7 +19,12 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 **Customer Stories**
 - [eBay - API evolution with Confidence](https://tech.ebayinc.com/engineering/api-evolution-with-confidence-a-case-study-of-contract-testing-adoption-at-ebay/)
 - [Discover Financial Services - Break free from end-to-end testing: Why contract testing is the key to microservices success](https://technology.discover.com/posts/end-to-end-contract-testing)
-  
+
+**Talks**
+
+* [@dawoudsheraz](https://twitter.com/dawoudsheraz) on [*Why you should contract test your Microservices*](https://2023.pythonwebconf.com/presentations/why-you-should-contract-test-your-microservices)
+  * [Slides](https://github.com/DawoudSheraz/conference-talks/tree/master/python-web-conf-23)
+
 ## 2022
 
 **Articles**
