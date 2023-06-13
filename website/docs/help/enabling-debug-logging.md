@@ -33,7 +33,7 @@ For provider tests, set the `verbose` property to `true` on the `Verifier` class
 
 ## Pact JVM
 
-Set the logging level to `debug` in the logging framework used in your project. This will cause the HTTP requests and responses to be logged in the test output.
+Set the logging level to `debug` in the logging framework used in your project. [These docs](https://hc.apache.org/httpclient-legacy/logging.html) may assist you in enabling logging for the HTTP client used by the Pact library. Note that Maven CLI, Gradle CLI and Springboot have their own methods of configuring logging, and you will need to consult the docs for the relevant framework in your project.
 
 ## Pact Python
 
