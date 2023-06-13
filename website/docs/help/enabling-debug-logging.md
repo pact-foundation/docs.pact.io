@@ -33,7 +33,7 @@ For provider tests, set the `verbose` property to `true` on the `Verifier` class
 
 ## Pact JVM
 
-Set the logging level to `debug` in the logging framework used in your project.
+Set the logging level to `debug` in the logging framework used in your project. This will cause the HTTP requests and responses to be logged in the test output.
 
 ## Pact Python
 
