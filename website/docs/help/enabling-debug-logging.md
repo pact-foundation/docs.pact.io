@@ -33,7 +33,7 @@ For provider tests, set the `verbose` property to `true` on the `Verifier` class
 
 ## Pact JVM
 
-TBC
+Set the logging level to `debug` in the logging framework used in your project.
 
 ## Pact Python
 
