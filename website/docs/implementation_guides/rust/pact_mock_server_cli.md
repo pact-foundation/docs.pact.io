@@ -93,7 +93,7 @@ OPTIONS:
                                      to info) [possible values: error, warn, info, debug, trace,
                                      none]
         --no-file-log                Do not log to an output file
-        --no-term-log                Use a simple logger instead of the term based one
+        --no-term-log                Turns off using terminal ANSI escape codes
     -o, --output <output>            the directory where to write files to (defaults to current
                                      directory)
     -p, --port <port>                port the master mock server runs on (defaults to 8080)
@@ -139,7 +139,7 @@ OPTIONS:
     -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to
                                  info) [possible values: error, warn, info, debug, trace, none]
         --no-file-log            Do not log to an output file
-        --no-term-log            Use a simple logger instead of the term based one
+        --no-term-log            Turns off using terminal ANSI escape codes
     -p, --port <port>            port the master mock server runs on (defaults to 8080)
         --tls                    Enable TLS with the mock server (will use a self-signed
                                  certificate)
@@ -180,7 +180,7 @@ OPTIONS:
     -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to
                                  info) [possible values: error, warn, info, debug, trace, none]
         --no-file-log            Do not log to an output file
-        --no-term-log            Use a simple logger instead of the term based one
+        --no-term-log            Turns off using terminal ANSI escape codes
     -p, --port <port>            port the master mock server runs on (defaults to 8080)
     -v, --version                Print version information
 
@@ -230,7 +230,7 @@ OPTIONS:
             Do not log to an output file
 
         --no-term-log
-            Use a simple logger instead of the term based one
+            Turns off using terminal ANSI escape codes
 
     -p, --port <port>
             port the master mock server runs on (defaults to 8080)
@@ -302,7 +302,7 @@ OPTIONS:
             Do not log to an output file
 
         --no-term-log
-            Use a simple logger instead of the term based one
+            Turns off using terminal ANSI escape codes
 
     -p, --port <port>
             port the master mock server runs on (defaults to 8080)
