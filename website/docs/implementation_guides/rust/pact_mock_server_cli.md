@@ -77,29 +77,21 @@ This starts the master mock server. This server needs to be running for the othe
 
 ```console
 $ ./pact_mock_server_cli help start
-pact_mock_server_cli-start [CLIVERSION]
 Starts the master mock server
 
-USAGE:
-    pact_mock_server_cli start [OPTIONS]
+Usage: pact_mock_server_cli start [OPTIONS]
 
-OPTIONS:
-        --base-port <base-port>      the base port number that mock server ports will be allocated
-                                     from. If not specified, ports will be randomly assigned by the
-                                     OS.
-    -h, --host <host>                hostname the master mock server runs on (defaults to localhost)
-        --help                       Print help information
-    -l, --loglevel <loglevel>        Log level for mock servers to write to the log file (defaults
-                                     to info) [possible values: error, warn, info, debug, trace,
-                                     none]
-        --no-file-log                Do not log to an output file
-        --no-term-log                Turns off using terminal ANSI escape codes
-    -o, --output <output>            the directory where to write files to (defaults to current
-                                     directory)
-    -p, --port <port>                port the master mock server runs on (defaults to 8080)
-        --server-key <server-key>    the server key to use to authenticate shutdown requests
-                                     (defaults to a random generated one)
-    -v, --version                    Print version information
+Options:
+      --help                     Print help and exit
+  -o, --output <output>          the directory where to write files to (defaults to current directory)
+      --base-port <base-port>    the base port number that mock server ports will be allocated from. If not specified, ports will be randomly assigned by the OS.
+  -v, --version                  Print version information and exit
+  -p, --port <port>              port the master mock server runs on (defaults to 8080)
+      --server-key <server-key>  the server key to use to authenticate shutdown requests (defaults to a random generated one)
+  -h, --host <host>              hostname the master mock server runs on (defaults to localhost)
+  -l, --loglevel <loglevel>      Log level for mock servers to write to the log file (defaults to info) [possible values: error, warn, info, debug, trace, none]
+      --no-term-log              Turns off using terminal ANSI escape codes
+      --no-file-log              Do not log to an output file
 
 
 ```
@@ -125,25 +117,21 @@ will be displayed.
 
 ```console
 $ ./pact_mock_server_cli help create
-pact_mock_server_cli-create [CLIVERSION]
 Creates a new mock server from a pact file
 
-USAGE:
-    pact_mock_server_cli create [OPTIONS] --file <file>
+Usage: pact_mock_server_cli create [OPTIONS] --file <file>
 
-OPTIONS:
-    -c, --cors-preflight         Handle CORS pre-flight requests
-    -f, --file <file>            the pact file to define the mock server
-    -h, --host <host>            hostname the master mock server runs on (defaults to localhost)
-        --help                   Print help information
-    -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to
-                                 info) [possible values: error, warn, info, debug, trace, none]
-        --no-file-log            Do not log to an output file
-        --no-term-log            Turns off using terminal ANSI escape codes
-    -p, --port <port>            port the master mock server runs on (defaults to 8080)
-        --tls                    Enable TLS with the mock server (will use a self-signed
-                                 certificate)
-    -v, --version                Print version information
+Options:
+  -f, --file <file>          the pact file to define the mock server
+      --help                 Print help and exit
+  -c, --cors-preflight       Handle CORS pre-flight requests
+  -v, --version              Print version information and exit
+  -p, --port <port>          port the master mock server runs on (defaults to 8080)
+      --tls                  Enable TLS with the mock server (will use a self-signed certificate)
+  -h, --host <host>          hostname the master mock server runs on (defaults to localhost)
+  -l, --loglevel <loglevel>  Log level for mock servers to write to the log file (defaults to info) [possible values: error, warn, info, debug, trace, none]
+      --no-term-log          Turns off using terminal ANSI escape codes
+      --no-file-log          Do not log to an output file
 
 
 ```
@@ -168,21 +156,18 @@ Lists out all running mock servers with their ID, port, provider name and status
 
 ```console
 $ ./pact_mock_server_cli list --help
-pact_mock_server_cli-list [CLIVERSION]
 Lists all the running mock servers
 
-USAGE:
-    pact_mock_server_cli list [OPTIONS]
+Usage: pact_mock_server_cli list [OPTIONS]
 
-OPTIONS:
-    -h, --host <host>            hostname the master mock server runs on (defaults to localhost)
-        --help                   Print help information
-    -l, --loglevel <loglevel>    Log level for mock servers to write to the log file (defaults to
-                                 info) [possible values: error, warn, info, debug, trace, none]
-        --no-file-log            Do not log to an output file
-        --no-term-log            Turns off using terminal ANSI escape codes
-    -p, --port <port>            port the master mock server runs on (defaults to 8080)
-    -v, --version                Print version information
+Options:
+      --help                 Print help and exit
+  -v, --version              Print version information and exit
+  -p, --port <port>          port the master mock server runs on (defaults to 8080)
+  -h, --host <host>          hostname the master mock server runs on (defaults to localhost)
+  -l, --loglevel <loglevel>  Log level for mock servers to write to the log file (defaults to info) [possible values: error, warn, info, debug, trace, none]
+      --no-term-log          Turns off using terminal ANSI escape codes
+      --no-file-log          Do not log to an output file
 
 
 ```
@@ -203,40 +188,29 @@ sub-command. If there is any errors, no pact file will be written and the errors
 
 ```console
 $ ./pact_mock_server_cli verify --help
-pact_mock_server_cli-verify [CLIVERSION]
 Verify the mock server by id or port number, and generate a pact file if all ok
 
-USAGE:
-    pact_mock_server_cli verify [OPTIONS]
+Usage: pact_mock_server_cli verify [OPTIONS]
 
-OPTIONS:
-    -h, --host <host>
-            hostname the master mock server runs on (defaults to localhost)
-
-        --help
-            Print help information
-
-    -i, --mock-server-id <mock-server-id>
-            the ID of the mock server
-
-    -l, --loglevel <loglevel>
-            Log level for mock servers to write to the log file (defaults to info) [possible values:
-            error, warn, info, debug, trace, none]
-
-    -m, --mock-server-port <mock-server-port>
-            the port number of the mock server
-
-        --no-file-log
-            Do not log to an output file
-
-        --no-term-log
-            Turns off using terminal ANSI escape codes
-
-    -p, --port <port>
-            port the master mock server runs on (defaults to 8080)
-
-    -v, --version
-            Print version information
+Options:
+      --help
+          Print help and exit
+  -i, --mock-server-id <mock-server-id>
+          the ID of the mock server
+  -m, --mock-server-port <mock-server-port>
+          the port number of the mock server
+  -v, --version
+          Print version information and exit
+  -p, --port <port>
+          port the master mock server runs on (defaults to 8080)
+  -h, --host <host>
+          hostname the master mock server runs on (defaults to localhost)
+  -l, --loglevel <loglevel>
+          Log level for mock servers to write to the log file (defaults to info) [possible values: error, warn, info, debug, trace, none]
+      --no-term-log
+          Turns off using terminal ANSI escape codes
+      --no-file-log
+          Do not log to an output file
 
 
 ```
@@ -275,40 +249,29 @@ Shutdown the mock server by id or port number, releasing all its resources.
 
 ```console
 $ ./pact_mock_server_cli help shutdown
-pact_mock_server_cli-shutdown [CLIVERSION]
 Shutdown the mock server by id or port number, releasing all its resources
 
-USAGE:
-    pact_mock_server_cli shutdown [OPTIONS]
+Usage: pact_mock_server_cli shutdown [OPTIONS]
 
-OPTIONS:
-    -h, --host <host>
-            hostname the master mock server runs on (defaults to localhost)
-
-        --help
-            Print help information
-
-    -i, --mock-server-id <mock-server-id>
-            the ID of the mock server
-
-    -l, --loglevel <loglevel>
-            Log level for mock servers to write to the log file (defaults to info) [possible values:
-            error, warn, info, debug, trace, none]
-
-    -m, --mock-server-port <mock-server-port>
-            the port number of the mock server
-
-        --no-file-log
-            Do not log to an output file
-
-        --no-term-log
-            Turns off using terminal ANSI escape codes
-
-    -p, --port <port>
-            port the master mock server runs on (defaults to 8080)
-
-    -v, --version
-            Print version information
+Options:
+      --help
+          Print help and exit
+  -i, --mock-server-id <mock-server-id>
+          the ID of the mock server
+  -m, --mock-server-port <mock-server-port>
+          the port number of the mock server
+  -v, --version
+          Print version information and exit
+  -p, --port <port>
+          port the master mock server runs on (defaults to 8080)
+  -h, --host <host>
+          hostname the master mock server runs on (defaults to localhost)
+  -l, --loglevel <loglevel>
+          Log level for mock servers to write to the log file (defaults to info) [possible values: error, warn, info, debug, trace, none]
+      --no-term-log
+          Turns off using terminal ANSI escape codes
+      --no-file-log
+          Do not log to an output file
 
 
 ```
