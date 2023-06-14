@@ -37,6 +37,7 @@ title: Planned breaking changes in version 3.0
 * Make the providerVersionBranch not allowed to be blank in PactsForVerificationJSONQuerySchema (small)
 * Do not allow blank values in matrix query - it makes it hard to tell if the user has intentionally submitted a blank value or if the client always sets a value (small)
 * Add pacticipant name to contract publish endpoint URL (small - but requires change to clients)
+* Make pacticipants embedded in integration decorator
 
 ## Other
 
