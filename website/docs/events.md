@@ -3,15 +3,13 @@ title: Events
 ---
 ## Upcoming official events
 
-** TBA **
+**October 2023 - Pactober**
+
+* Pactober - A global celebration of Pact.
 
 ## Upcoming community events
 
-**13-17th Mar 2023 - Python Web Conference**
-
-* [@dawoudsheraz](https://twitter.com/dawoudsheraz) on *Why you should contract test your Microservices*
-   * [Event page](https://2023.pythonwebconf.com/presentations/why-you-should-contract-test-your-microservices)
-
+  ** Let us know ** 
 
 ## Past events
 
