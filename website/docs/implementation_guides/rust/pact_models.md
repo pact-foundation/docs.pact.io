@@ -14,3 +14,12 @@ This library provides the core models for dealing with Pact files. It supports t
 
 The `Pact` struct has methods to read and write pact JSON files. It supports all the specification
 versions up to V4, but will convert a V1, V1.1 and V2 spec file to a V3 format.
+
+## Crate features
+
+All features are enabled by default
+
+* `datetime`: Enables support of date and time expressions and generators. This will add the
+`chronos` crate as a dependency.
+* `xml`: Enables support for parsing XML documents. This feature will add the `sxd-document`
+crate as a dependency.
