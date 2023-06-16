@@ -31,6 +31,7 @@ title: Planned breaking changes in version 3.0
 ## Database changes
 
 * Make nullable foreign keys not nullable (For backwards compatiblity, all foreign keys added to existing tables need to be nullable, but for data integrity purposes, we want them to be not-nullable. Need a major version to make this change) (medium)
+* Drop any pretense of support for MySQL - delete all tests and references to MySQL.
 
 ## Bug fixes/poor implementation choices that are breaking changes
 
