@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.6 - Bugfix Release
+
+* 727ea824 - fix: Support string escape sequences in matching definitions #283 (Ronald Holshausen, Wed Jun 21 14:55:42 2023 +1000)
+
 ## 1.1.5 - Add crate features for date/time and XML support
 
 
