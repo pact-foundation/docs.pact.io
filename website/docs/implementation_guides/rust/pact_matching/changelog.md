@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.1 - Bugfix Release
+
+* 37673fac - fix: correct tests after upgrading pact_models (Ronald Holshausen, Mon May 29 15:13:44 2023 +1000)
+
 ## 1.1.0 - Update Pact models to 1.1 (breaking change)
 
 * f72f8191 - feat: Implemented the remaining V1 HTTP consumer compatability suite feature (Ronald Holshausen, Thu May 18 14:12:40 2023 +1000)
