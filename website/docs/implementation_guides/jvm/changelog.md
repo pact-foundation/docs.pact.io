@@ -4,6 +4,38 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.5.7 - [?62;1;4c
+
+* abf5fb86b - fix: EachValue matcher was applying the associated rule to the list and not the items in the list (Ronald Holshausen, Thu Jun 22 15:29:09 2023 +1000)
+* a2f7fbfb3 - fix: Support string escape sequences in matching definitions (Ronald Holshausen, Wed Jun 21 16:53:26 2023 +1000)
+* 0cd9ad025 - feat: Implemented scenarios for no provider state callback configured + request filters (Ronald Holshausen, Thu Jun 15 16:04:50 2023 +1000)
+* a7a339bb8 - Squashed 'compatibility-suite/pact-compatibility-suite/' changes from 89749010a..aa10f0521 (Ronald Holshausen, Thu Jun 15 16:03:48 2023 +1000)
+* fdea11eae - feat: Add builder interface for plugins to provide DSL to construct interactions (Ronald Holshausen, Wed Jun 7 14:54:26 2023 +1000)
+* 7c41fc104 - feat: implement compatibility suite provider state steps (Ronald Holshausen, Wed May 31 10:13:57 2023 +1000)
+* 0f5dc4184 - feat: Call provider state callbacks with empty state when there is no state defined (Ronald Holshausen, Wed May 31 10:13:15 2023 +1000)
+* 45df56972 - Squashed 'compatibility-suite/pact-compatibility-suite/' changes from 4ced3ca47..89749010a (Ronald Holshausen, Wed May 31 10:11:46 2023 +1000)
+* 18265d7ff - fix: correct the compatibility suite steps after latest update (Ronald Holshausen, Tue May 30 14:28:15 2023 +1000)
+* b699ccde5 - Squashed 'compatibility-suite/pact-compatibility-suite/' changes from 722ff956f..4ced3ca47 (Ronald Holshausen, Tue May 30 12:58:20 2023 +1000)
+* 7e8d7fc78 - fix: MockServerURLGenerator was not combining URL fragments correctly (Ronald Holshausen, Tue May 30 12:57:20 2023 +1000)
+* b369fecf7 - feat: got the remaining V1 HTTP provider scenarios passing (Ronald Holshausen, Thu May 25 15:48:58 2023 +1000)
+* e43d28319 - Squashed 'compatibility-suite/pact-compatibility-suite/' changes from 70e1b0a4f..722ff956f (Ronald Holshausen, Thu May 25 15:48:03 2023 +1000)
+* b7b2a12f9 - feat: Implemented initial V1 HTTP provider specs in compatibility suite (Ronald Holshausen, Thu May 25 14:53:14 2023 +1000)
+* c83dd5d29 - Squashed 'compatibility-suite/pact-compatibility-suite/' changes from b3323750e..70e1b0a4f (Ronald Holshausen, Thu May 25 14:48:46 2023 +1000)
+* 3db9bce9f - Merge compatibility suite commit 'c83dd5d2971131c897cfab511a8c502d0b506961' (Ronald Holshausen, Thu May 25 14:48:46 2023 +1000)
+* a0a5a9648 - use valid module name in manifest (Daniel Heinrich, Mon May 22 14:01:31 2023 +0200)
+* b250377e3 - Squashed 'compatibility-suite/pact-compatibility-suite/' changes from 7c4fb6b9f..b3323750e (Ronald Holshausen, Thu May 18 15:06:00 2023 +1000)
+* dbc59a4dc - feat: Implement the remaining V1 HTTP consumer scenarios (Ronald Holshausen, Wed May 17 16:04:33 2023 +1000)
+* d3dad3d29 - Squashed 'compatibility-suite/pact-compatibility-suite/' changes from 203d64c52..7c4fb6b9f (Ronald Holshausen, Wed May 17 16:02:22 2023 +1000)
+* e4eab7be4 - feat: Implement initial compatibility suite feature for V1/HTTP interactions (Ronald Holshausen, Tue May 16 13:09:13 2023 +1000)
+* 8baa3bde5 - Squashed 'compatibility-suite/pact-compatibility-suite/' changes from 7938b5832..203d64c52 (Ronald Holshausen, Tue May 16 13:06:53 2023 +1000)
+* b5092bba9 - feat: Add compatibility-suite to CI build (Ronald Holshausen, Mon May 15 14:54:36 2023 +1000)
+* 4ab3cda81 - Squashed 'compatibility-suite/pact-compatibility-suite/' changes from b5ba1cc60..7938b5832 (Ronald Holshausen, Mon May 15 14:29:20 2023 +1000)
+* e39ce0b9d - Merge pact-compatibility-suite (Ronald Holshausen, Mon May 15 14:29:20 2023 +1000)
+* fa65ca2b5 - Allow to set the port via an expression. (holomekc, Fri May 12 13:49:55 2023 +0200)
+* 276bf561a - Squashed 'compatibility-suite/pact-compatibility-suite/' content from commit b5ba1cc60 (Ronald Holshausen, Mon May 1 15:23:04 2023 +1000)
+* 6f072fb25 - Merge commit '276bf561a9a87cf2ed734cc30c31f2b495be8d4e' as 'compatibility-suite/pact-compatibility-suite' (Ronald Holshausen, Mon May 1 15:23:04 2023 +1000)
+* d3dbc522c - Use shorthand annotation instead of @ExtendWith (Holly Cummins, Wed Apr 19 15:01:00 2023 +0100)
+
 ## 4.5.6 - Bugfix Release
 
 * 2070ce537 - fix(JUnit5): Provider name can be provided with the @Pact annotation #1684 (Ronald Holshausen, Wed Apr 12 15:03:07 2023 +1000)
