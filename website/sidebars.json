@@ -238,6 +238,26 @@
       ]
     },
     {
+      "Maintainer Guide": [
+        "implementation_guides/maintainer/readme",
+        "implementation_guides/maintainer/general/readme",
+        "implementation_guides/maintainer/ffi/readme",
+        {
+          "DSL": [
+            "implementation_guides/maintainer/dsl/readme",
+            "implementation_guides/maintainer/dsl/consumer/readme",
+            "implementation_guides/maintainer/dsl/provider/readme",
+            "implementation_guides/maintainer/dsl/http/readme",
+            "implementation_guides/maintainer/dsl/message/readme",
+            "implementation_guides/maintainer/dsl/plugins/readme"
+          ]
+        },
+        "implementation_guides/maintainer/testing/readme",
+        "implementation_guides/maintainer/checklist/readme",
+        "implementation_guides/maintainer/example/readme"
+      ]
+    },
+    {
       "Stubs": ["getting_started/stubs"]
     },
     "telemetry",
@@ -319,8 +339,7 @@
       "recipes/lambdahttp",
       "recipes/cypress"
     ],
-    "Ecosystems":
-    ["diagrams/ecosystem"]
+    "Ecosystems": ["diagrams/ecosystem"]
   },
   "pact_broker": {
     "Pact Broker": [
@@ -387,7 +406,11 @@
       {
         "type": "category",
         "label": "API Docs",
-        "items": ["pact_broker/api/webhooks", "pact_broker/api/pacticipants", "pact_broker/api/pagination"]
+        "items": [
+          "pact_broker/api/webhooks",
+          "pact_broker/api/pacticipants",
+          "pact_broker/api/pagination"
+        ]
       },
       "pact_broker/changelog"
     ],
@@ -415,7 +438,10 @@
       "Events": [
         "events",
         {
-          "Webinars and Workshops": ["events/plugins-framework-workshop", "events/plugins-framework-launch"]
+          "Webinars and Workshops": [
+            "events/plugins-framework-workshop",
+            "events/plugins-framework-launch"
+          ]
         }
       ]
     },
