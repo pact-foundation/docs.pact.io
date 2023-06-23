@@ -4,7 +4,7 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-## 4.5.7 - [?62;1;4c
+## 4.5.7 - Bugfix Release
 
 * abf5fb86b - fix: EachValue matcher was applying the associated rule to the list and not the items in the list (Ronald Holshausen, Thu Jun 22 15:29:09 2023 +1000)
 * a2f7fbfb3 - fix: Support string escape sequences in matching definitions (Ronald Holshausen, Wed Jun 21 16:53:26 2023 +1000)
