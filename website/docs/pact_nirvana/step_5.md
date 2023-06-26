@@ -31,26 +31,24 @@ If you use feature branches for your consumer development, it is recommended to 
 
 ## Tasks
 
-### A. Publish the pact from your consumer PR pipeline
+### A. Publish the pact from your consumer pull request pipeline
 
-If you have done it correctly, then the consumer contract tests should run as part of your regular test run. But you still need to modify your PR validation job to publish the pact, correctly identifying the consumer version and apply a tag with the PR branch name
+If you have done it correctly, then the consumer contract tests should run as part of your regular test run. But you still need to modify your pull request validation job to publish the pact, correctly identifying the consumer version and apply a tag with the pull request branch name
 
 1. Configure your consumer build to run the Pact tests and publish its pact to the Broker as part of its main build \(consult the documentation for your chosen language\). Consumer Pact tests typically run after the unit tests, and before deploying to a test environment.
-2. Configure a tag name to be used for every consumer build that publishes a pact (again, see your Pact language docs). The recommended default is to dynamically determine and use the name of your git/svn branch. If this doesn’t work for you, then you could hardcode it to something like "master" or "stable". It will make the configuration simpler if each consumer and provider uses the same tag name for the stable "main line" of development, so it's best to decide on this together.
+2. Configure a tag name to be used for every consumer build that publishes a pact (again, see your Pact language docs). The recommended default is to dynamically determine and use the name of your git/svn branch. If this doesn’t work for you, then you could hardcode it to something like "master" or "stable".
 
 ### B. Modify the consumer commit pipeline to tag with master branch
 
-After you have set up the consumer PR pipeline to publish pacts, you need to also modify your consumer's main
-branch commit pipeline to indicate that a particular consumer version is now in the main branch.
-
-### C. Add a step at the beginning of the pipeline to apply the tag with the name of your main branch (e.g. master, trunk or main)
+After you have set up the consumer pull request pipeline to publish pacts, you need to also modify your consumer's main
+branch pipeline to indicate that a particular consumer version is now in the main branch.
 
 The provider verification needs this information so it can get the latest pact that has been committed to the main
 branch. If it gets the latest pact, it may get a pact that is committed on a feature branch and not ready for verification.
 
-### D. Configure pact to be verified when provider changes
+### C. Configure pact to be verified when provider changes
 
-Once the consumer is publishing its pacts and is tagging them with the correct branch names, you can now add Pact verification to your provider PR pipeline.
+Once the consumer is publishing its pacts and is tagging them with the correct branch names, you can now add Pact verification to your provider pull request pipeline.
 
 Pact verification should run as part of your regular unit test run. But you should change the tag it verifies against to be the name of the consumer's main branch instead of `latest`.
 
