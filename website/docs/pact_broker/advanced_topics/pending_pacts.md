@@ -109,7 +109,7 @@ Let's walk through the "pending" lifecycle of a particular pact content version 
 
 1. Provider is configured to verify the pacts with following consumer version selectors.
    1. `{ mainBranch: true }` and `{ deployedOrReleased: true }`,
-   2. `enablePending` option is set to `false`.
+   2. `enablePending` option is set to `true`.
 2. Provider build runs, both retrieved pacts (the consumers `main` branch pact, and the consumer pact deployed to `production`) are currently passing verification from the `main` branch of the provider.
 3. Consumer publishes a new pact with for the branch `main` that has a new unsupported interaction in it.
 4. Next time the provider build runs, the `main` pact is returned for verification with `pending: true`.
@@ -128,7 +128,7 @@ This time, let's walk through the lifecycle of a pact content version with an in
 
 1. (As above) Provider is configured to verify the pacts with following consumer version selectors.
    1. `{ mainBranch: true }` and `{ deployedOrReleased: true }`,
-   2. `enablePending` option is set to `false`.
+   2. `enablePending` option is set to `true`.
 2. (As above) Provider build runs, both retrieved pacts (the consumers `main` branch pact, and the consumer pact deployed to `production`) are currently passing verification from the `main` branch of the provider.
 3. (As above) Consumer publishes a new pact with branch `main` that has a new unsupported interaction in it.
 4. (As above) Next time the provider build runs, the `main` pact is returned for verification with `pending: true`.
