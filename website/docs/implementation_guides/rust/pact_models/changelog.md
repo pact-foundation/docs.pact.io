@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.7 - Bugfix Release
+
+* 7dd89384 - feat: Add application/x-www-form-urlencoded to the known content types (Ronald Holshausen, Wed Jul 5 16:58:21 2023 +1000)
+* f6ba3b2a - fix: When writing V4 format, correct the content type set on the body (Ronald Holshausen, Wed Jul 5 16:57:40 2023 +1000)
+* 52d6bfab - feat: Add method to DocPath to return a lower-case copy of the path (Ronald Holshausen, Wed Jun 28 15:20:39 2023 +1000)
+
 ## 1.1.6 - Bugfix Release
 
 * 727ea824 - fix: Support string escape sequences in matching definitions #283 (Ronald Holshausen, Wed Jun 21 14:55:42 2023 +1000)
