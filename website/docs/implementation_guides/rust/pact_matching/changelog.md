@@ -4,6 +4,16 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.2 - Bugfix Release
+
+* 692120aa - feat: Add support for matching application/x-www-form-urlencoded encoded bodies (Ronald Holshausen, Thu Jul 6 12:41:59 2023 +1000)
+* 72818ea7 - feat: Update to latest compatibility-suite and correct some error messages (Ronald Holshausen, Wed Jul 5 15:29:03 2023 +1000)
+* 445ea1ee - fix: Header matching rules should be looked up in a case-insenstive way (Ronald Holshausen, Wed Jun 28 15:21:32 2023 +1000)
+* 95753e29 - fix: Correct the use of matching rules on repeated header values (Ronald Holshausen, Wed Jun 28 11:57:35 2023 +1000)
+* 6a7e504e - fix: Correct the use of matching rules on repeated query parameters (Ronald Holshausen, Wed Jun 28 11:56:07 2023 +1000)
+* d5df06ac - fix: Regex matcher was incorrectly being applied to lists (Ronald Holshausen, Wed Jun 28 11:52:45 2023 +1000)
+* f88adb2a - fix: Correct the format of matching errors on JSON (Ronald Holshausen, Wed Jun 28 11:51:10 2023 +1000)
+
 ## 1.1.1 - Bugfix Release
 
 * 37673fac - fix: correct tests after upgrading pact_models (Ronald Holshausen, Mon May 29 15:13:44 2023 +1000)
