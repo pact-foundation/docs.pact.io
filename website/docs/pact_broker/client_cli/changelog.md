@@ -4,6 +4,31 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.68.0"></a>
+### v1.68.0 (2023-07-08)
+
+#### Features
+
+* support Cirrus CI environment	 ([7610f28](https://github.com/pact-foundation/pact_broker-client/commit/7610f28))
+
+#### Bug Fixes
+
+* pact-broker --help command failed with Could not find command "__broker_base_url" (#135)	 ([7edfd58](https://github.com/pact-foundation/pact_broker-client/commit/7edfd58))
+
+<a name="v1.67.0"></a>
+### v1.67.0 (2023-05-04)
+
+#### Features
+
+* colour first url in magenta for ease of reading	 ([90e8f51](https://github.com/pact-foundation/pact_broker-client/commit/90e8f51))
+* output provider contract link on publish (#118)	 ([132b024](https://github.com/pact-foundation/pact_broker-client/commit/132b024))
+* add helper text for Docker usage when pact file not found	 ([2aab2d5](https://github.com/pact-foundation/pact_broker-client/commit/2aab2d5))
+
+#### Bug Fixes
+
+* trim trailing slash from base url	 ([ccd6417](https://github.com/pact-foundation/pact_broker-client/commit/ccd6417))
+* do not allow an empty environment name to be used in the can-i-deploy command	 ([a3bfe8a](https://github.com/pact-foundation/pact_broker-client/commit/a3bfe8a))
+
 <a name="v1.66.1"></a>
 ### v1.66.1 (2023-01-11)
 
