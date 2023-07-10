@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.8 - Bugfix Release
+
+
 ## 1.1.7 - Bugfix Release
 
 * 7dd89384 - feat: Add application/x-www-form-urlencoded to the known content types (Ronald Holshausen, Wed Jul 5 16:58:21 2023 +1000)
