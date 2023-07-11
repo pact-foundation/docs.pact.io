@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.3 - Add crate features to turn-off some behaviour and dependencies
+
+
 ## 1.1.2 - Bugfix Release
 
 * 692120aa - feat: Add support for matching application/x-www-form-urlencoded encoded bodies (Ronald Holshausen, Thu Jul 6 12:41:59 2023 +1000)
