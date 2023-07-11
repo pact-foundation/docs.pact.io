@@ -91,7 +91,7 @@ jobs:
       if: steps.identify_event.outputs.update_event == 'pact-broker-docker-dius-docs-updated'
 
     - name: Sync Pact Broker Helm Chart docs
-      run: bundle exec scripts/sync/pact_broker_kubernetes_helm_chart.rb && echo 'COMMIT_MESSAGE=synced pact-broker Helm Chart docs' >> $GITHUB_ENV
+      run: bundle exec scripts/sync/pact_broker_helm_chart.rb && echo 'COMMIT_MESSAGE=synced pact-broker Helm Chart docs' >> $GITHUB_ENV
       if: steps.identify_event.outputs.update_event == 'pact-broker-helm-chart-docs-updated'
 
     - name: Sync Pact Broker Client docs
