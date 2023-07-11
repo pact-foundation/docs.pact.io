@@ -115,6 +115,8 @@ $ ./pact_mock_server_cli start -l debug -o logs/
 This creates a new pact mock server managed by the master server from a pact file. The ID and port of the mock server
 will be displayed.
 
+Note, the tls option will only be available if the tls create feature is enabled. 
+
 ```console
 $ ./pact_mock_server_cli help create
 Creates a new mock server from a pact file
