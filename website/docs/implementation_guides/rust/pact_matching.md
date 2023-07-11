@@ -24,6 +24,14 @@ expected and actual request, response or message model from the `pact_models` cr
 To compare any incoming request, it first needs to be converted to a `pact_models::Request` and then can be compared. Same for
 any response.
 
+## Crate features
+All features are enabled by default
+
+* `datetime`: Enables support of date and time expressions and generators. This will add the `chronos` crate as a dependency.
+* `xml`: Enables support for parsing XML documents. This feature will add the `sxd-document` crate as a dependency.
+* `plugins`: Enables support for using plugins. This feature will add the `pact-plugin-driver` crate as a dependency. 
+* `multipart`: Enables suport for MIME multipart bodies. This feature will add the `multer` crate as a dependency.
+ 
 ## Reading and writing Pact files
 
 The `Pact` struct in the `pact_models` crate has methods to read and write pact JSON files. It supports all the specification
