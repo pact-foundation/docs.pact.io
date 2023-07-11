@@ -41,3 +41,12 @@ it will be merged with any existing pact file.
 
 Returns Ok if the pact file was successfully written. Returns an Err if the file can not be written, or there is no 
 mock server running on that port.
+
+## Crate features
+All features are enabled by default
+
+* `datetime`: Enables support of date and time expressions and generators.
+* `xml`: Enables support for parsing XML documents.
+* `plugins`: Enables support for using plugins.
+* `multipart`: Enables support for MIME multipart bodies.
+* `tls`: Enables support for mock servers using TLS. This will add the following dependencies: hyper-rustls, rustls, rustls-pemfile, tokio-rustls.
