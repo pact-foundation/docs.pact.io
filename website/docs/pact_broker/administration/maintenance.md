@@ -34,6 +34,11 @@ The keep selectors operate in a very similar way to the [consumer version select
 
 These properties can be used in any combination, except that `latest` and `max_age` should not be used together.
 
+:::note
+
+The selectors `{ "deployed": true }` and `{ "released": true }` will automatically be added to the keep selectors, meaning that all versions that have ever been deployed or released will be kept.
+
+:::
 #### Examples
 
 * keep all `main` versions less than 30 days old: `{"max_age": 30, "tag": "main"}`
