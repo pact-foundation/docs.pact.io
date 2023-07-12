@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.2 - Bugfixes + added crate features to disable functionality
+
+* 6661077a - feat: Add support for disabling plugins with consumer DSL (Ronald Holshausen, Tue Jul 11 16:53:12 2023 +1000)
+* 445ea1ee - fix: Header matching rules should be looked up in a case-insenstive way (Ronald Holshausen, Wed Jun 28 15:21:32 2023 +1000)
+* e58aa917 - fix: no need to wrap the Pact for a mock server in a mutex (mock server is already behind a mutex) as this can cause deadlocks #274 (Ronald Holshausen, Wed Jun 14 13:26:54 2023 +1000)
+* cd536170 - feat: Add builder interface for plugins to provide DSL to construct interactions (Ronald Holshausen, Wed Jun 7 15:12:15 2023 +1000)
+
 ## 1.0.1 - Bugfix Release
 
 * 4fbd45cc - fix: Mock server errors were not being printed if the test was panicking due to a failed assertion #282 (Ronald Holshausen, Wed Jun 7 11:27:15 2023 +1000)
