@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.1 - Bugfix Release
+
+* 95753e29 - fix: Correct the use of matching rules on repeated header values (Ronald Holshausen, Wed Jun 28 11:57:35 2023 +1000)
+* 693418fb - fix: Provider state teardown calls were not being invoked when there are no provider states (Ronald Holshausen, Wed May 31 13:39:49 2023 +1000)
+* 61bd331a - fix: correct test after changes for compatibility suite (Ronald Holshausen, Tue May 30 12:26:07 2023 +1000)
+* 8b0ecd8b - fix: Correct verifier error logging and handling optional JSON fields (Ronald Holshausen, Tue May 30 11:51:41 2023 +1000)
+* 2211094e - feat: Implemented the initial provider verification campatibility suite steps (Ronald Holshausen, Mon May 29 09:31:09 2023 +1000)
+
 ## 1.0.0 - Bugfixes + Update Pact models to 1.1 (breaking change)
 
 * 71b38a87 - fix: Add Custom Header option not replacing already existing headers #275 (Ronald Holshausen, Tue May 23 15:05:20 2023 +1000)
