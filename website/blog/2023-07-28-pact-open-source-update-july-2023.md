@@ -23,6 +23,49 @@ Never fear, a double-dose of Pact Open Source updates are here!
 ### Pact-xyz
 
 <!-- libary updates here -->
+### Pact-Reference
+
+A raft of bug-fixes and features have been applied across the pact-reference project.
+
+Fixes
+
+- https://github.com/pact-foundation/pact-reference/issues/274
+- https://github.com/pact-foundation/pact-reference/issues/283
+- 
+Releases
+
+- https://github.com/pact-foundation/pact-reference/releases/tag/libpact_models-v1.1.4
+- https://github.com/pact-foundation/pact-reference/releases/tag/pact_consumer-v1.0.1
+- https://github.com/pact-foundation/pact-reference/releases/tag/pact_mock_server_cli-v1.0.1
+- https://github.com/pact-foundation/pact-reference/releases/tag/libpact_mock_server-v1.2.0
+- https://github.com/pact-foundation/pact-reference/releases/tag/pact_mock_server_cli-v1.0.2
+- https://github.com/pact-foundation/pact-reference/releases/tag/libpact_models-v1.1.5
+- https://github.com/pact-foundation/pact-reference/releases/tag/libpact_models-v1.1.6
+- https://github.com/pact-foundation/pact-reference/releases/tag/libpact_matching-v1.1.1
+- https://github.com/pact-foundation/pact-reference/releases/tag/libpact_models-v1.1.7
+- https://github.com/pact-foundation/pact-reference/releases/tag/libpact_models-v1.1.8
+- https://github.com/pact-foundation/pact-reference/releases/tag/libpact_matching-v1.1.2
+- https://github.com/pact-foundation/pact-reference/releases/tag/libpact_matching-v1.1.3
+- https://github.com/pact-foundation/pact-reference/releases/tag/libpact_mock_server-v1.2.1
+- https://github.com/pact-foundation/pact-reference/releases/tag/pact_mock_server_cli-v1.0.3
+- https://github.com/pact-foundation/pact-reference/releases/tag/pact_consumer-v1.0.2
+- https://github.com/pact-foundation/pact-reference/releases/tag/pact_verifier-v1.0.1
+- https://github.com/pact-foundation/pact-reference/releases/tag/pact_verifier_cli-v1.0.0
+  - https://github.com/pact-foundation/pact-reference/commit/b9e034b2f3a04e4aabcd623c2dbfdccbfe98a1eb
+- https://github.com/pact-foundation/pact-reference/releases/tag/pact_consumer-v1.0.3
+  - https://github.com/pact-foundation/pact-reference/issues/290
+  - https://github.com/pact-foundation/pact-reference/issues/299
+- https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.4.6
+  - https://github.com/pact-foundation/pact-reference/issues/300
+  - https://github.com/pact-foundation/pact-reference/issues/299
+
+### Pact-Net
+
+The PactNet 5.0 RFC is complete with PactNet [5.0.0.beta.1](https://github.com/pact-foundation/pact-net/releases/tag/5.0.0-beta.1) now released.
+
+This bring in the ability to generate V4 Specification Pact's using the same API as V3 sync and async pacts and utilise combined pact files for both http and message based interactions. This removes the limitation requiring services which comprise of both http and message-based interactions to be named differently.
+
+See the [migration guide for upgrading to PactNet 5.x](https://github.com/pact-foundation/pact-net/blob/master/docs/upgrading-to-5.md)
 
 ### Pact-Go
 
@@ -40,6 +83,8 @@ This update replaces the pact-ruby core, with the pact-rust core, utilized throu
   - Windows x86_64
 
 Please note that Alpine Linux is not supported at this time.
+
+- support binary bodies in async plugin messages was added in https://github.com/pact-foundation/pact-go/pull/302 fixing https://github.com/pact-foundation/pact-go/issues/265
 
 ### Pact-JS
 
@@ -62,6 +107,31 @@ In addition, the new releases now support versions of Node 16 and greater, CI te
 
 - Pact-JS v12 Release Notes https://github.com/pact-foundation/pact-js/releases/tag/v12.0.0
 - Pact-JS-Core v14 Release Notes https://github.com/pact-foundation/pact-js-core/releases/tag/v14.0.0
+
+- Support for eachKey and eachValue matchers has been added to pact-js https://github.com/pact-foundation/pact-js/pull/1103 which closes https://github.com/pact-foundation/pact-js/issues/952
+### Jest-Pact
+
+Updated to reference peer-dep of pact-js 12.x
+
+https://github.com/pact-foundation/jest-pact/pull/242
+
+### NestJs-Pact
+
+Updated to reference peer-dep of pact-js 11.x and nest-js 10.x
+
+https://github.com/pact-foundation/nestjs-pact/pull/47
+
+### Pact-Broker
+
+Pagination support was added https://github.com/pact-foundation/pact_broker/pull/622
+
+You can find the current documentation and supported endpoints [here](https://github.com/pact-foundation/pact_broker/blob/master/docs/api/PAGINATION.md)
+
+A few performance enhancements were made at the same time.
+
+- https://github.com/pact-foundation/pact_broker/pull/617
+- https://github.com/pact-foundation/pact_broker/pull/621
+- https://github.com/pact-foundation/pact_broker/pull/620
 
 ### Pact-Python
 
@@ -102,9 +172,19 @@ Oh Hi FFI :blobwave:
 
 [#262 Pact FFI in Pact PHP](https://github.com/pact-foundation/pact-php/issues/262)
 
+### Pact in the community
+
+#### Pact-graph-network
+
+We [mentioned](https://docs.pact.io/blog/2022/11/17/pact-2022-end-of-year-wrapup#dec) Guillaume Camus's pact-graph-network tool back in December. It's just [been updated](https://github.com/ManoManoTech/pact-graph-network/releases/tag/v0.8.0) to support multiple target architectures, and [now supports authentication mechanisms](https://github.com/ManoManoTech/pact-graph-network#usage) whether you have a basic auth protected Pact Broker, or a Bearer token protected PactFlow Broker.
+
+So what are waiting for? Go forth and generate some broker charts, and why not share us your graphs via https://twitter.com/@pact_up or pact-slack.
+
 ## Hello Jo!
 
-<!-- Jo's intro -->
+I imagine you've heard of [Cucumber](https://cucumber.io/), the testing tool, not the veggie, If not, Cucumber is a tool for running automated acceptance tests guided by a technique called BDD (Behaviour-Driven Development), written in plain language called Gherkin. It has strong overlaps with our principles of contract testing and the Pact DSL, and is often part of a development teams tool-set alongside Pact for developing robust, quality systems. The similarities don't end there, it also has a thriving community which has been spearheaded by Jo Laing, in [GitHub](https://github.com/cucumber), [Slack](https://cucumber.io/docs/community/get-in-touch/) and in [many events](https://cucumber.io/resources/) across the globe.
+
+I have the pleasure of inviting her to join me in my role as community shepherd, and know she will be helping to bring some organisation to the fold, including things like maintainer sessions and training, she has worked on the [Cucumber school](https://cucumber.io/school/) which is an incredible free resource to help those learn about BDD, I would :heart: a Pact School - if such a thing would float users boats.
 
 ## Pactober
 
