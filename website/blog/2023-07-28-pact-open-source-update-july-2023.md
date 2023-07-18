@@ -126,7 +126,6 @@ In addition, the new releases now support versions of Node 16 and greater, CI te
 
 [Updated to reference peer-dep of pact-js 12.x](https://github.com/pact-foundation/jest-pact/pull/242)
 
-
 ### NestJs-Pact
 
 [Updated to reference peer-dep of pact-js 11.x and nest-js 10.x](https://github.com/pact-foundation/nestjs-pact/pull/47)
