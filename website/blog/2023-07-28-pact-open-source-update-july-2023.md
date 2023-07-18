@@ -11,7 +11,7 @@ hide_table_of_contents: false
 
 :wave: Hello, its July, it's scorching so I hope you've got an ice cream to accompany you this episode or maybe a brolly if you are stuck in a rain-shower!
 
-For the keener of our readers, you may note we missed our June episode. I was on holiday ( a rare treat! ) which was spent mainly away from the keyboard, with
+For the keener of our readers, you may note we missed our June episode. I was on holiday ( a rare treat! ) which was spent mainly away from the keyboard,
 with the exception of a little flurry in pact-python.
 
 Never fear, a double-dose of Pact Open Source updates are here!
