@@ -137,6 +137,8 @@ graph TD;
 
 ### A. Set up a Pact Broker
 
+The rest of this guide assumes you are using a Pact Broker or PactFlow Broker.
+
 #### Pact Broker
 
 >You'll find the quickest way to run the Pact-Broker locally is via our [example docker-compose setup](https://docs.pact.io/pact_broker/docker_images/pactfoundation#running-with-docker-compose)
@@ -144,11 +146,12 @@ graph TD;
 
 #### PactFlow Broker
 
-> To continue with this guide, quickly and for free, you can sign up to PactFlow's Starter Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=five_minute_guide_dev_plan) which will set you up with your own SaaS PactFlow Broker.
+> You can sign up to PactFlow's free Starter Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=five_minute_guide_dev_plan) which will set you up with your own SaaS PactFlow Broker.
 
-1. Read the Pact Broker [home page](https://github.com/pact-foundation/pact_broker), \(taking note of the various deployment options available to you in the Usage section\), or sign up to a SaaS free starter plan at [PactFlow](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=effective_pact_setup_step_1).
-<!-- 2. Deploy a Pact Broker to a network that has access to both consumer and provider CI systems so it can trigger builds.
-   1. This may be your -->
+:::info
+For the purposes of this guide to Pact Nirvana, we will not use any PactFlow specific features, so you can safely trial a poc and revert
+back to an Open Source Pact Broker at the end.
+:::
 
 #### Next Steps
 
