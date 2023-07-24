@@ -10,6 +10,7 @@ Recipes and pre-built integrations to test common scenarios in Pact
 | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
 | [GraphQL](/recipes/graphql)                             | Strategies for testing GraphQL endpoints (example with Apollo)                                                                      |
 | [API Gateway](/recipes/apigateway)                      | Strategies for dealing with API Gateways, such as AWS API Gateway, Kong etc.                                                        |
+| [AWS Signed Requests](/recipes/awssignedrequests)                      | How to test services AWS services that use [signed requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html)                                                        |
 | [Lambda/FaaS (Asynchronous)](/recipes/lambdaasync)      | How to write contract tests for asynchronous lambda functions / FaaS                                                                |
 | [Lambda (HTTP)](/recipes/lambdahttp)                    | How to write contract tests for HTTP based lambdas with AWS SAM                                                                     |
 | [ELT processes / file transfers](https://dius-au.medium.com/contract-testing-serverless-and-asynchronous-applications-part-2-76b5576c789e) | How to use Message Pact to test JSON file transfers to S3, Dynamo |
