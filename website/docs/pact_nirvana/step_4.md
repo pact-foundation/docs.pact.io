@@ -206,7 +206,7 @@ Run your tests and they should retrieve the pact file from your Broker, and succ
 
 This verification task by url, will be used by webhooks, will be triggered, whenever a consumer contract involving our provider, that requires verification is published. Our webhook will be configured in a later step.
 
-See our recommendations for this task [here](https://docs.pact.io/provider/recommended_configuration#verification-triggered-by-a-contract-requiring-verification-published)
+See our recommendations for this task [here](https://docs.pact.io/provider/recommended_configuration#verification-triggered-by-a-contract-requiring-verification-published):
 
 - Set the URL as a configurable property such as `PACT_URL` environment variable.
 - Configure publication of verification results, by a `CI` flag so that verification results are only published from `CI` systems
