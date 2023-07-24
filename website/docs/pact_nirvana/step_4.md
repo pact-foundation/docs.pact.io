@@ -149,7 +149,7 @@ The rest of this guide assumes you are using a Pact Broker or PactFlow Broker.
 > You can sign up to PactFlow's free Starter Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=five_minute_guide_dev_plan) which will set you up with your own SaaS PactFlow Broker.
 
 :::info
-For the purposes of this guide to Pact Nirvana, we will not use any PactFlow specific features, so you can safely trial a poc and revert
+For the purposes of this guide to Pact Nirvana, we will not use any PactFlow specific features, so you can safely trial a POC and revert
 back to an Open Source Pact Broker at the end.
 :::
 
