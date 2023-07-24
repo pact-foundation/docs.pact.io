@@ -44,26 +44,97 @@ Click below to expand and see each a diagram representing each level
 <details >
   <summary>Bronze diagram</summary>
 
-![Bronze diagram](pact_nirvana/images/bronze.png)
+```mermaid
+graph LR;
+    consumer-test(["Consumer Test"])
+    pact-file(("Pact File"))
+    provider-veri-by-url(["Provider Verification by Local File"])
+    consumer-test-- write -->pact-file-- read -->provider-veri-by-url
+```
 </details>
 <details >
   <summary>Silver diagram</summary>
 
-![Silver diagram](pact_nirvana/images/silver.png)
+```mermaid
+graph LR;
+    consumer-test(["Consumer Test"])
+    pact-broker[["Pact Broker"]]
+    provider-veri-by-url(["Provider Verification by URL"])
+    consumer-test-- publish -->pact-broker-- retrieve pact by url -->provider-veri-by-url
+```
 </details>
 <details >
   <summary>Gold diagram</summary>
 
-![Gold diagram](pact_nirvana/images/gold.png)
+```mermaid
+sequenceDiagram
+    Consumer->>Broker: publish pact with branch [feat 123]
+    Note left of Consumer: PR validation pipeline
+
+    Consumer->>Broker: publish pact with branch [main]
+    Note left of Consumer: Commit/main pipeline
+    Note right of Provider: PR validation pipeline
+    Provider-)Broker: verify against consumer's main branch and deployed versions
+    Provider-)Broker: publish results, including provider version + branch
+```
 </details>
 <details >
   <summary>Diamond diagram</summary>
 
-![Diamond diagram](pact_nirvana/images/diamond.png)
+
+```mermaid
+sequenceDiagram
+    Note left of Consumer: PR validation pipeline
+    Consumer->>Broker: publish pact with branch [feat abc]
+    alt: pact has changed, verification does not exist
+      Broker->>Verifier: {webhook} run verification for pact version 123 [feat abc]
+      Consumer-->Broker: can-i-deploy --to-environment dev
+      Consumer->>Consumer: wait for results...
+      Verifier->>Verifier: pull provider from main branch
+      Verifier->>Broker: get pact version 123
+      Verifier->>Verifier: verify against pact
+
+      alt: verification passed
+        Broker->>Consumer: Yes
+      else: verification failed
+        Broker->>Consumer: NO
+      end
+    else: no change to pact, verification exists
+      # TODO: how do we do the can-i-merge check now with branches?
+      #       need https://github.com/pact-foundation/pact_broker-client/issues/138
+      Consumer-->Broker: can-i-deploy --to-environment dev
+      alt: verification passed
+        Broker->>Consumer: Yes
+      else: verification failed
+        Broker->>Consumer: NO
+      end
+    end
+```
 </details>
 
 <details >
   <summary>Diamond with release branch diagram</summary>
 
-![Diamond with release branch diagram](pact_nirvana/images/diamond-release.png)
+```mermaid
+sequenceDiagram
+    Note left of Provider: PR validation pipeline
+    Provider->>Broker: verify pacts with [mainBranch] and [deployedOrReleased] selectors
+    Provider->>Broker: publish results, tag with provider branch [feat abc]
+    Provider->>Broker: can-i-deploy --to-environment [staging]
+    Note left of Provider: Main branch commit pipeline
+    Provider->>Broker: verify pacts with [mainBranch] and [deployedOrReleased] selectors
+    Provider->>Broker: publish results, tag with provider branch [main]
+    Provider->>Broker: can-i-deploy --to-environment [staging]
+    Provider->>Provider: deploy to [staging]
+    Provider->>Broker: pact-broker record-deployment --environment [staging]
+    Note left of Provider: Release branch pipeline
+    Provider->>Broker: can-i-deploy --to-environment [preprod]
+    Provider->>Broker: can-i-deploy --to-environment [prod]
+    Provider->>Provider: cut release branch
+    Provider->>Provider: deploy to [preprod]
+    Provider->>Provider: run [preprod] tests
+    Provider->>Broker: can-i-deploy --to-environment [prod]
+    Provider->>Provider: deploy to [prod]
+    Provider->>Broker: pact-broker record-deployment --environment [prod]
+```
 </details>
