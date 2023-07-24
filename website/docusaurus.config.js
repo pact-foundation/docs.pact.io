@@ -210,7 +210,7 @@ const siteConfig = {
 
     // https://docusaurus.io/docs/next/markdown-features/diagrams#theming
     mermaid: {
-      theme: {light: 'neutral', dark: 'neutral'},
+      theme: {light: 'neutral', dark: 'dark'},
       options: {
         useMaxWidth: true,
       },
