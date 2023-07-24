@@ -9,7 +9,7 @@ Environments allow you to ensure backwards compatibility between production and 
 
 Before you deploy to a production environment, you need to know whether or not your app is compatible with the versions of the other apps that already exist in that environment. The old-fashioned way of managing these dependencies involved deploying sets of pre-tested applications together, creating a bottleneck and meaning that speedy development and testing on one application may be negated by slow development and testing on another.
 
-## Lets record our deployments
+## Let's record our deployments
 
 Now we're ready to tell the pact-broker when we deploy a version of our application, and switch `can-i-deploy` to use environment names rather than branch names.
 
