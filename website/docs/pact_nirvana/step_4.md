@@ -113,7 +113,7 @@ The following diagram shows what a fully fledged Pact supported release pipeline
 graph TD;
     build(["Provider Build"]) 
     isolated-tests(["Isolated Tests"])
-    verify-pacts(["Verify Pacts"])
+    verify-pacts(["Verify Pacts by Consumer Version Selectors"])
     can-i-deploy-test(["Can I Deploy to test?"])
     deploy-to-test("Deploy to test")
     integrated-tests("Integrated Tests")
