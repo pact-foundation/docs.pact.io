@@ -35,7 +35,7 @@ provider or consumer is now in the main branch.
 
 The first step is to start recording deployments with the pact-cli tooling when the consumer or provider is deployed to an environment. So when you successfully deploy to staging, record the deployment of that application version to production; when you successfully deploy to prod, record the production tag. Do this for each environment you deploy to. 
 
-__Note:__ You may have multiple versions of an application live, if so, use `record-release`. This is similar but wont undeploy the other versions of the application in a specified environment
+__Note:__ You may have multiple versions of an application live, if so, use `record-release`. This is similar but won't undeploy the other versions of the application in a specified environment
 
 1. Add a step to your deployment process so that when the consumer is deployed to an environment, the relevant pacticipant version in the broker is recorded with the name of the environment (eg. `test`, `production`). This functionality is provided by the [pact broker CLI](/pact_broker/client_cli/readm#record-deployment) which is available as a standalone executable, and a Docker image. Alternatively you can use the API for creating environments and recording releases or deployements, with documentation [here](https://docs.pact.io/pact_broker/recording_deployments_and_releases#environments).
 2. Use the `deployedOrReleased` selector to the list of pacts the provider will verify (eg. `{ consumerVersionSelectors: { deployedOrReleased: "true" }, { mainBranch: "true"} }`), see the consumer version selectors documentation page [here](https://docs.pact.io/pact_broker/advanced_topics/consumer_version_selectors)
