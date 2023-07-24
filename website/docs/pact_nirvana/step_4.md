@@ -180,7 +180,7 @@ Debug this until it works and looks good:-
 
 - Your consumer pact is published
 - It has the agreed consumer and provider team names displayed
-- It has the correct consumer version (ideally relating to a git sha)
+- It has the correct consumer version (ideally relating to a git sha. We recommend [`absolute-version`](https://www.npmjs.com/package/absolute-version))
 - It has a branch associated with it
 
 :::tip
