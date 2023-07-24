@@ -49,7 +49,7 @@ part of running your provider test suite both locally and in CI/CD.
 
 There are two types of pact verification that will be performed
 
-1. Pact verification by URL or filepath (This will be designed to be triggered by a webhook, when a consumer contract changes)
+1. Pact verification by URL or file path (This will be designed to be triggered by a webhook, when a consumer contract changes)
 2. Pact verification by consumer version selectors (This will be designed to run, whenever the provider codebase changes and runs in CI)
 
 You can make sure it works correctly before setting up all that automation.  
