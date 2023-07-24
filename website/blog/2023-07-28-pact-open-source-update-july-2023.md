@@ -20,6 +20,7 @@ Never fear, a double-dose of Pact Open Source updates are here!
 
 It has been a busy two months in the world of Pact, read on for updates on
 
+- Pact Docs
 - Pact Reference
 - Pact Net
 - Pact Go
@@ -30,6 +31,18 @@ It has been a busy two months in the world of Pact, read on for updates on
 - Pact Python
 - Pact PHP
 - Pact in the community
+
+### Pact Docs
+
+The [path to Pact Nirvana guide](https://docs.pact.io/pact_nirvana) is now updated to cover
+
+- Branches
+- Recording Deployments
+- `can-i-deploy --to-environment`
+- `contract_requiring_verification_published` webhook
+- New diagrams courtesy of MermaidJS
+
+Want to see `can-i-merge` functionality incorporated into the broker? Vote on [this feature request](https://pact.canny.io/feature-requests/p/add-can-i-merge-functionality)
 
 ### Pact-Reference
 
@@ -195,13 +208,47 @@ I imagine you've heard of [Cucumber](https://cucumber.io/), the testing tool, no
 
 I have the pleasure of inviting her to join me in my role as community shepherd, and know she will be helping to bring some organisation to the fold, including things like maintainer sessions and training, she has worked on the [Cucumber school](https://cucumber.io/school/) which is an incredible free resource to help those learn about BDD, I would :heart: a Pact School - if such a thing would float users boats.
 
+## Community Corner - Olivier Picaud
+
+Autonomy within development teams is really valuable, tied with standardisation and goverance in an organisation, it can empower your teams. However it isn't all roses, it can also lead to fragmented tooling across the landscape, especially when developing microservice-based architectures in the dream of multiple protocols and languages all working in harmony. The landscape is always moving quickly but we are going to shine the spotlight on how open-source, both in terms of its tools, its users and contributors are helping to push things forward.
+
+gRPC makes it easier to build high-performance microservices by providing generated service entrypoints in a variety of different languages. Bazel complements these efforts with a capable and fast polyglot build environment. Pact now offers the ability to test gRPC
+services via its extensible plugin mechanism, and it complements both gRPC and Bazel well, affording engineers the confidence to build applications in a stable repeatable manner, all whilst gaining that rich feedback from contract-testing.
+
+We caught up with [Olivier Picaud](https://github.com/opicaud), who felt the draw, and utilised the power of open-source not only to power his journey of learning, but to share his progress, so that others can follow along. You can find his pull request showcasing his work [here](https://github.com/pact-foundation/pact-reference/pull/255)
+
+>To learn monorepos, i put in place some grpc microservices using pact to validate interactions.
+>Also, to facilitate the monorepo building, i am using Bazel and so i "bazelify" protobuf-plugin and pact-reference to get a >pact_verifier_cli and protobuf-plugin compiled from source --> Today, local consumer/provider testing is working well.
+
+>From Docker (and then from Kubernetes) i am trying to use the image you provide https://hub.docker.com/r/you54f/pact_verifier_cli, with the addition of protobuf-plugin from Bazel :) (still currently in dev)
+
+>See here:
+
+>- https://github.com/opicaud/pact-reference (fork)
+>- https://github.com/opicaud/pact-protobuf-plugin (fork)
+>- https://github.com/opicaud/monorepo
+
+>What I learned and still learning is :
+
+>- improving cohesion of teams by pulling them in a monorepo structure
+>- improving local development and determinism by providing one tool and the necessary toolchains for different platforms coming with the monorepo --> pact-reference and pact-protobuf-plugin was "bazelifed" for this purpose
+>- optimizing test strategy (and notably with pact-grpc) to provide enough confidence to just run health checks when products are deployed.
+providing an unique pipeline to build / test / release and deploy using gitops magic monorepo's components in less than 10 minutes to accelerate feedback (incremental builds are amazed for this purpose)
+>- I am currently migrating to bazel 6.0 because they use a new way of dealing with dependencies and then i will need to realign my fork to your master to pull out few updates that you made guys :) and then continuing to provide an end-to-end flow (i do not have an cli for instance to "play" with the entire product)
+
+>It's also very nice to participate to the community, i've participate to few others bazel-project by testing PR, providing feedback and red tests :)
+
+Thanks Oliver for taking the time to share with us. It's exciting to hear about pull requests dropping in other areas outside of Pact as part of this effort. I hope this empowers others to take on journeys of discovery through code, through collaboration, as that is how our open source ecosystem in enriched.
+
+Are you using Bazel in your organisation? Are you building tooling on top of pact-reference? Why not let us know! We could bring it into the codebase as part of an external builds directory as suggested by [Ron](https://github.com/pact-foundation/pact-reference/pull/255#issuecomment-1467264412) so don't by shy!
+
 ## Pactober
 
 __Celebrating Pact's 10 Year Milestone__
 
 2023 marks 10 years of Pact Open Source. To celebrate, during the month of October – which we’ve coined Pactober – we’re facilitating community events across the globe to celebrate and acknowledge the journey and look forward to the future of Pact.
 
-Be sure to bookmark our [Pactober event page](https://pact.io/pactober.html) where you can register to keep up to date, or to join us in hosting an event. We want to bring you all in to the celebrations, and help bring more contributors to the Pact family and help it live for another
+Be sure to bookmark our [Pactober event page](https://pact.io/pactober) where you can register to keep up to date, or to join us in hosting an event. We want to bring you all in to the celebrations, and help bring more contributors to the Pact family and help it live for another
 10 years and beyond
 
 ## Thats a wrap
