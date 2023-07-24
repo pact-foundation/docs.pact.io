@@ -28,6 +28,7 @@ Alternatively, a pact may have been verified by the “master” version of the 
 
 Another reason that an extra "safe to deploy?" check is required (as well as the verification tests themselves) is that when the [pending feature](/pact_broker/advanced_topics/pending_pacts/) is enabled to ensure that newly changed pacts do not break the provider build, the build will not necessarily be breaking any more to let you know of an incompatibility.
 
+## Can I Deploy?
 The `can-i-deploy` tool is a CLI that has been written to query the Matrix to ensure that you are safe to deploy. You can read a detailed description of how it works [here](/pact_broker/can_i_deploy/).
 
 Ultimately, we will want to ask if you can deploy to a particular environment. But a good first step in that direction is to just make sure your change is compatible with what your consumers and providers have currently checked into their main branch.
