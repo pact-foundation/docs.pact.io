@@ -16,6 +16,7 @@ The Pact way of managing these dependencies is to use the Pact Matrix - this is 
 ![Pact matrix](/img/pact-matrix.png)
 </details>
 
+### Pre-verified contracts
 One very important thing to note is that a verification is associated with the pact _content_ itself, not with a specific consumer version. This means that if a pact does not change between publications, any previous verifications are automatically applied to the new pact publication, effectively “pre-verifying” it. \(For this reason, it is best not to use any random data in a pact, as this will cause the broker to consider it a new revision of the pact.\) Linking a verification to the pact content rather than to the application version also means that we can do a “cartesian join” of pacts/verifications, resulting in many more "compatible" versions than would otherwise be the case.
 
 The way you check if you are safe to deploy is to determine if there is a row in the matrix that contains the version of the application you’re about to deploy and the version of the other application that already exists in that environment. You can do this with the [`can-i-deploy`](/pact_broker/can_i_deploy/) tool, which will be described in more detail below.
