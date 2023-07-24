@@ -5,7 +5,7 @@ sidebar_label: 6. Platinum - Add can-i-deploy with branch to PR pipelines
 
 Before we merge a PR, it would be good to know if this change is compatible with the consumers and/or providers the application talks to.
 
-We can answer this question using the can-i-deploy feature of Pact.
+We can answer this question using the **can-i-deploy** feature of Pact.
 
 ## The Matrix
 The Pact way of managing these dependencies is to use the Pact Matrix - this is the matrix generated when you create a table of all the consumer and provider versions that have been tested against each other using Pact. You can view the Pact Matrix for any pair of applications by opening `/matrix/provider/PROVIDER/consumer/CONSUMER` in your Pact Broker.
