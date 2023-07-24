@@ -315,6 +315,7 @@
       "recipes/kafka",
       "recipes/graphql",
       "recipes/apigateway",
+      "recipes/awssignedrequests",
       "recipes/lambdaasync",
       "recipes/lambdahttp",
       "recipes/cypress"

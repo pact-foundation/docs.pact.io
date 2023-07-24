@@ -82,4 +82,4 @@ In some cases, requests need to be signed with dynamic information, for example,
 
 In these cases, you can't use static API tokens because you need access to the request information to construct a valid token.
 
-[Read](https://docs.pact.io/provider/handling_auth) our strategies for handling such use cases.
+See the [example recipe](/recipes/awssignedrequests), or [read](https://docs.pact.io/provider/handling_auth) our strategies for handling such use cases more generally.
