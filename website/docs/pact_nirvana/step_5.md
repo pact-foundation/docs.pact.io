@@ -48,9 +48,9 @@ If you use feature branches for your consumer development, it is recommended to 
 If you have done it correctly, then the consumer contract tests should run as part of your regular test run. But you still need to modify your pull request validation job to publish the pact, correctly identifying the consumer version and apply a branch with the pull request branch name
 
 1. Configure your consumer build to run the Pact tests and publish its pact to the Broker as part of its CI build \(consult the documentation for your chosen language\). Consumer Pact tests typically run after the unit tests, and before deploying to a test environment.
-2. Configure a branch name to be used for every consumer build that publishes a pact (again, see your Pact language docs). The recommended default is to dynamically determine and use the name of your git/svn branch. If this doesn’t work for you, then you could hardcode it to something like "master" or "stable".
+2. Configure a branch name to be used for every consumer build that publishes a pact (again, see your Pact language docs). The recommended default is to dynamically determine and use the name of your git/svn branch. If this doesn’t work for you, then you could hardcode it to something like "main" or "stable".
 
-### B. Modify the consumer commit pipeline to publish with master branch
+### B. Modify the consumer commit pipeline to publish with main branch
 
 After you have set up the consumer pull request pipeline to publish pacts, you need to also modify your consumer's main
 branch pipeline to indicate that a particular consumer version is now in the main branch. Usually this would be performed by your CI system running the same unit tests on the main branch after a pull request is merged.
@@ -66,7 +66,7 @@ Pact verification by consumer version selectors should run as part of your regul
 
 1. As per step 4, configure your provider build to fetch the pact(s) from the broker with consumer version selectors and publish the verification results as part of its main build \(consult the documentation for your chosen language\). This would typically happen after the unit tests, and before deploying to a test environment. You can find the recommended configuration [here](/provider/recommended_configuration#verification-triggered-by-provider-change).
 2. In the provider verification configuration, ensure the pact that is being verified from the latest pact for the main branch (see the relevant documentation for your library). This will help keep your provider builds green.
-   1. `{ "mainBranch": true }` assuming our consumer was published from `main` / `master` / `master` - see [docs](https://docs.pact.io/pact_broker/branches#automatic-main-branch-detection) for setup in your pact-broker.
+   1. `{ "mainBranch": true }` assuming our consumer was published from `main` / `master` - see [docs](https://docs.pact.io/pact_broker/branches#automatic-main-branch-detection) for setup in your pact-broker.
 
 ### Notes
 

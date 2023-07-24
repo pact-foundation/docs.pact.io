@@ -83,7 +83,21 @@ The provider branch is used to determine the pending status because it is common
 
 This diagram, while not entirely accurate (there is no stored state, it's a dynamic calculation) is a helpful way of understanding the pending state transitions for a pact version and a particular provider branch.
 
-![Pending pact state diagram](/img/pending-state-diagram.png)
+```mermaid
+---
+title: Pending pact state diagram
+---
+stateDiagram-v2
+    state "Pending" as pending
+    state "Not Pending" as notpending
+
+    [*] --> pending
+    pending --> pending: Failed verification published
+    pending --> notpending: successful verification published
+    notpending --> notpending: Successful verification published
+    notpending --> notpending: Failed verification published
+    notpending --> [*]
+```
 
 ### How it is used
 

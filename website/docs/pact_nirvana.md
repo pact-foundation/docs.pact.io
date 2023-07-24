@@ -11,9 +11,13 @@ By the end of the guide, you will understand how to create a release pipeline th
 
 This guide focuses on the scenario where the consumer and provider are both being deployed to an environment rather than released to customers (e.g. a mobile app). That workflow is slightly different, and that guidance will be coming soon.
 
+:::tip
+For a complete hands-on workshop implementing the steps in this guide with GitHub, see: https://docs.pactflow.io/docs/workshops/ci-cd
+:::
+
 ### How to use this document
 
-Each integration is different. Each organisation has different history and culture, and each team may have different processes for development, testing, and deployment. Each of these differences affect the best choices for Pact workflow.
+Each integration is different. Each organisation has different history and culture, and each team   y have different processes for development, testing, and deployment. Each of these differences affect the best choices for Pact workflow.
 
 However, there are many similarities in the steps necessary on the journey to a full-featured and effective Pact setup \(_"Pact Nirvana"_\). This document describes those steps.
 
@@ -34,8 +38,6 @@ As Pact has been implemented in many different languages, this document will out
 7. Diamond level - Add Pact to your deploy pipelines
 8. Honors Course - To come in future...
    1. Add provider state
-   2. Pending Pacts
-   3. Verifying Pacts that are Works in Progress
    4. Working with Feature Flags
 
 Click below to expand and see each a diagram representing each level

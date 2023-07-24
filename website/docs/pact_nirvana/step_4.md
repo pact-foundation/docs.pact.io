@@ -238,6 +238,32 @@ they relate to a known build.
 5. Run the provider task, it should fetch pacts matching your consumer version selectors and verify them as per before
    1. `{ "mainBranch": true }` assuming our consumer was published from `main` / `master` / `master` - see [docs](https://docs.pact.io/pact_broker/branches#automatic-main-branch-detection) for setup in your pact-broker.
 
+### E. Enable WIP and Pending Pacts
+
+:::tip
+This task should be run when the provider code changes
+
+* The verification task will run as part of the normal CI/CD pipeline for the provider
+* The verification task will fetch and verify all the relevant pacts from all consumers from the Pact Broker to ensure no regressions have occurred, and also verify any new pacts that have been published.
+:::
+
+Extending the selector configuration from step `D`, we also recommend you enable the Pending and "work in progress" (WIP) pacts features in your verification step.
+
+Enabling the [pending pacts](/pact_broker/advanced_topics/pending_pacts) feature stops changed pacts breaking the main provider build, whilst still providing feedback to the consumer team about the contract compatibility.
+
+The ["work in progress"](/pact_broker/advanced_topics/wip_pacts) feature ensures any new contracts are automatically verified in the provider's main pipeline build without requiring an update to the provider configuration. This feature solves the problem of provider teams having to manually update and commit changes to their verification configuration to publish verifications for feature pacts from CI, and enables consumers to get feedback on their changes as quickly as possible.
+
+Together, these features enable providers to verify as many contracts as possible without disrupting the main build, and without requiring manual intervention from the provider team.
+
+To enable these features, you will need to:
+
+1. Enable `includeWipPactsSince` to a fixed date e.g. `2023-01-01`
+2. Set the `pending` flag to `true`
+
+Refer to the [WIP](/pact_broker/advanced_topics/wip_pacts) and [Pending](/pact_broker/advanced_topics/pending_pacts) Pacts documentation for more information and consnult your language guide for the specific way of configuring this.
+
+*NOTE: If you are automatically bringing in a pact using the "matching feature branch names" approach, you might want to disable this feature on your feature branches, so that a feature pact correctly fails the branch build until it is fully implemented, and then passes to let you know you can merge.*
+
 ### Notes
 
 In these examples, we will be both publishing pacts and verifying from our local machine.

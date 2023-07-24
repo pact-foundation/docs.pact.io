@@ -6,7 +6,7 @@ description: How to use Pact with API Gateways
 
 :::info
 
-This document is currently in **DRAFT** status
+This document is currently in **DRAFT** status (needs diagrams)
 
 :::
 
