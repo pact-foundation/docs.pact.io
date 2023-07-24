@@ -31,7 +31,7 @@ reduces the chance of breakage, but it's still a possibility, and we want to che
 Note also that the first step in our commit pipeline is to let the broker know that a particular version of the 
 provider or consumer is now in the main branch.
 
-### Add record-deployment to your commit pipelines
+### Add `record-deployment` to your commit pipelines
 
 The first step is to start recording deployments with the pact-cli tooling when the consumer or provider is deployed to an environment. So when you successfully deploy to staging, record the deployment of that application version to production; when you successfully deploy to prod, record the production tag. Do this for each environment you deploy to. 
 
