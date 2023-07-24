@@ -16,24 +16,42 @@ Now we're ready to tell the pact-broker when we deploy a version of our applicat
 <details open>
   <summary>Diamond level diagram</summary>
 
-![Diamond level diagram](images/diamond.png)
+```mermaid
+sequenceDiagram
+    Note left of Provider: PR validation pipeline
+    Provider->>Broker: verify pacts with [mainBranch] and [deployedOrReleased] selectors
+    Provider->>Broker: publish results, tag with provider branch [feat abc]
+    Provider->>Broker: can-i-deploy --to-environment [staging]
+    Provider->>Broker: can-i-deploy --to-environment [prod]
+    Note left of Provider: Commit pipeline
+    Provider->>Broker: verify pacts with [mainBranch] and [deployedOrReleased] selectors
+    Provider->>Broker: publish results, tag with provider branch [main]
+    Provider->>Broker: can-i-deploy --to-environment [staging]
+    Provider->>Provider: deploy to [staging]
+    Provider->>Broker: pact-broker record-deployment --environment [staging]
+    Provider->>Provider: run tests
+    Provider->>Broker: can-i-deploy --to-environment [prod]
+    Provider->>Provider: deploy to [prod]
+    Provider->>Broker: pact-broker record-deployment --environment [prod]
+```
 </details>
 
-Note how in the PR pipeline we are checking to see if we can deploy to all the environments that we deploy to from 
-the main branch. The rationale for this is that we don't want to merge something into our main branch which we know 
-will break once we deploy - we want our main branch to stay clean and not get blocked by broken builds.  If you 
+Note how in the PR pipeline we are checking to see if we can deploy to all the environments that we deploy to from
+the main branch. The rationale for this is that we don't want to merge something into our main branch which we know
+the main branch. The rationale for this is that we don't want to merge something into our main branch which we know
+will break once we deploy - we want our main branch to stay clean and not get blocked by broken builds.  If you
 deploy to other environments such as preprod, you would want to check that environment as well.
 
-Then, when we're actually ready to deploy to an environment, we check again. We do this because the version of the 
-other side of the contract could have changed since the PR validation ran.  Doing the check in the PR pipeline 
+Then, when we're actually ready to deploy to an environment, we check again. We do this because the version of the
+other side of the contract could have changed since the PR validation ran.  Doing the check in the PR pipeline
 reduces the chance of breakage, but it's still a possibility, and we want to check for that before we deploy.
 
-Note also that the first step in our commit pipeline is to let the broker know that a particular version of the 
+Note also that the first step in our commit pipeline is to let the broker know that a particular version of the
 provider or consumer is now in the main branch.
 
 ### Add `record-deployment` to your commit pipelines
 
-The first step is to start recording deployments with the pact-cli tooling when the consumer or provider is deployed to an environment. So when you successfully deploy to staging, record the deployment of that application version to production; when you successfully deploy to prod, record the production tag. Do this for each environment you deploy to. 
+The first step is to start recording deployments with the pact-cli tooling when the consumer or provider is deployed to an environment. So when you successfully deploy to staging, record the deployment of that application version to production; when you successfully deploy to prod, record the production tag. Do this for each environment you deploy to.
 
 __Note:__ You may have multiple versions of an application live, if so, use `record-release`. This is similar but won't undeploy the other versions of the application in a specified environment
 
@@ -43,17 +61,17 @@ __Note:__ You may have multiple versions of an application live, if so, use `rec
 
 ### Add can-i-deploy to your commit pipelines
 
-Once you have successfully run your pipeline with the tagging, you can safely add `can-i-deploy` checks before you 
+Once you have successfully run your pipeline with the tagging, you can safely add `can-i-deploy` checks before you
 deploy to an environment, to make sure it's safe to deploy.
 
 ### Add can-i-deploy to environments to your PR pipelines
 
-The final step is to make sure before you merge a PR that you can successfully deploy to all the environments that are 
+The final step is to make sure before you merge a PR that you can successfully deploy to all the environments that are
 targeted from the main branch (staging, prod, preprod, etc.)
 
 ### What if we use a release branch?
 
-If you use a release branch, then you do not deploy to prod and preprod from your main branch, so you can eliminate 
+If you use a release branch, then you do not deploy to prod and preprod from your main branch, so you can eliminate
 that check on the PR pipeline.
 
 However, before you cut a release branch, you want to check if you can deploy to preprod and prod.
@@ -68,12 +86,33 @@ It might look something like this:
 <details open>
   <summary>Diamond with release branch diagram</summary>
 
-![Diamond with release branch diagram](images/diamond-release.png)
+```mermaid
+sequenceDiagram
+    Note left of Provider: PR validation pipeline
+    Provider->>Broker: verify pacts with [mainBranch] and [deployedOrReleased] selectors
+    Provider->>Broker: publish results, tag with provider branch [feat abc]
+    Provider->>Broker: can-i-deploy --to-environment [staging]
+    Note left of Provider: Main branch commit pipeline
+    Provider->>Broker: verify pacts with [mainBranch] and [deployedOrReleased] selectors
+    Provider->>Broker: publish results, tag with provider branch [main]
+    Provider->>Broker: can-i-deploy --to-environment [staging]
+    Provider->>Provider: deploy to [staging]
+    Provider->>Broker: pact-broker record-deployment --environment [staging]
+    Note left of Provider: Release branch pipeline
+    Provider->>Broker: can-i-deploy --to-environment [preprod]
+    Provider->>Broker: can-i-deploy --to-environment [prod]
+    Provider->>Provider: cut release branch
+    Provider->>Provider: deploy to [preprod]
+    Provider->>Provider: run [preprod] tests
+    Provider->>Broker: can-i-deploy --to-environment [prod]
+    Provider->>Provider: deploy to [prod]
+    Provider->>Broker: pact-broker record-deployment --environment [prod]
+```
 </details>
 
 ### Modify can-i-deploy in your consumer and provider PR validation pipelines
 
-Now that you are recorded your provider with the environment it is deployed to, you can modify your PR pipeline to 
+Now that you are recorded your provider with the environment it is deployed to, you can modify your PR pipeline to
 ask if you can deploy to the agreed environment, rather than to the main branch.
 
 Congratulations! You have fully operationalized Pact!
