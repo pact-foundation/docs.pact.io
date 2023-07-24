@@ -217,6 +217,9 @@ services via its extensible plugin mechanism, and it complements both gRPC and B
 
 We caught up with [Olivier Picaud](https://github.com/opicaud), who felt the draw, and utilised the power of open-source not only to power his journey of learning, but to share his progress, so that others can follow along. You can find his pull request showcasing his work [here](https://github.com/pact-foundation/pact-reference/pull/255)
 
+<div><img src="https://avatars.githubusercontent.com/u/1059698?v=4" alt="Olivier Picaud" width="150" heigh="150" /></div>
+<br/>
+
 >To learn monorepos, i put in place some grpc microservices using pact to validate interactions.
 >Also, to facilitate the monorepo building, i am using Bazel and so i "bazelify" protobuf-plugin and pact-reference to get a >pact_verifier_cli and protobuf-plugin compiled from source --> Today, local consumer/provider testing is working well.
 
