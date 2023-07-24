@@ -241,7 +241,7 @@ providing an unique pipeline to build / test / release and deploy using gitops m
 
 >It's also very nice to participate to the community, i've participate to few others bazel-project by testing PR, providing feedback and red tests :)
 
-Thanks Oliver for taking the time to share with us. It's exciting to hear about pull requests dropping in other areas outside of Pact as part of this effort. I hope this empowers others to take on journeys of discovery through code, through collaboration, as that is how our open source ecosystem in enriched.
+Thanks Olivier for taking the time to share with us. It's exciting to hear about pull requests dropping in other areas outside of Pact as part of this effort. I hope this empowers others to take on journeys of discovery through code, through collaboration, as that is how our open source ecosystem in enriched.
 
 Are you using Bazel in your organisation? Are you building tooling on top of pact-reference? Why not let us know! We could bring it into the codebase as part of an external builds directory as suggested by [Ron](https://github.com/pact-foundation/pact-reference/pull/255#issuecomment-1467264412) so don't by shy!
 
