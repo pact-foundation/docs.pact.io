@@ -6,7 +6,17 @@ sidebar_label: 5. Gold - integrate with your PR pipelines
 <details open>
   <summary>Gold diagram</summary>
 
-![Gold diagram](images/gold.png)
+```mermaid
+sequenceDiagram
+    Consumer->>Broker: publish pact with branch [feat 123]
+    Note left of Consumer: PR validation pipeline
+
+    Consumer->>Broker: publish pact with branch [main]
+    Note left of Consumer: Commit/main pipeline
+    Note right of Provider: PR validation pipeline
+    Provider-)Broker: verify against consumer's main branch and deployed versions
+    Provider-)Broker: publish results, including provider version + branch
+```
 </details>
 
 The goal with this level is to add Pact support to your PR pipeline. This ensures that these builds will fail if the contract tests or verification tests fail.

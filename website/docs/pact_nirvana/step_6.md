@@ -40,23 +40,50 @@ This is much more the case for native apps, where you will likely have many old 
 
 In these cases, checking to see if your provider is compatible with the consumer version checked into main is not sufficient. We'll talk about how to check against what is actually deployed in a particular environment in the next section.
 
-### Add can-i-deploy to consumer PR pipeline
+### Add `can-i-deploy` to consumer PR pipeline
 
 <details open>
   <summary>Platinum diagram</summary>
 
-![Platinum level diagram](images/platinum.png)
+```mermaid
+sequenceDiagram
+    Note left of Consumer: PR validation pipeline
+    Consumer->>Broker: publish pact with branch [feat abc]
+    alt: pact has changed, verification does not exist
+      Broker->>Verifier: {webhook} run verification for pact version 123 [feat abc]
+      Consumer-->Broker: can-i-deploy --to-environment dev
+      Consumer->>Consumer: wait for results...
+      Verifier->>Verifier: pull provider from main branch
+      Verifier->>Broker: get pact version 123
+      Verifier->>Verifier: verify against pact
+
+      alt: verification passed
+        Broker->>Consumer: Yes
+      else: verification failed
+        Broker->>Consumer: NO
+      end
+    else: no change to pact, verification exists
+      # TODO: how do we do the can-i-merge check now with branches?
+      #       need https://github.com/pact-foundation/pact_broker-client/issues/138
+      Consumer-->Broker: can-i-deploy --to-environment dev
+      alt: verification passed
+        Broker->>Consumer: Yes
+      else: verification failed
+        Broker->>Consumer: NO
+      end
+    end
+```
 </details>
 
 This step is a bit tricky.
 
-In your consumer PR pipeline, can-i-deploy with the branch of main will check to see if this consumer has been 
+In your consumer PR pipeline, can-i-deploy with the branch of main will check to see if this consumer has been
 verified against the provider that is currently in the provider's main branch.
 
-But if your consumer just generated and published a new version of the pact, this will always fail because the 
+But if your consumer just generated and published a new version of the pact, this will always fail because the
 provider could not possibly have run verification against a newly changed pact.
 
-You avoid this situation by registering a webhook in the Pact Broker that is triggered by the publication of a 
+You avoid this situation by registering a webhook in the Pact Broker that is triggered by the publication of a
 new pact. This webhook calls a job that runs provider verification for the new Pact.
 
 So to get can-i-deploy working in your consumer PR pipeline, you need to follow these steps:

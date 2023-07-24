@@ -12,7 +12,7 @@ Now you have two different sets of tests in two different codebases. The artifac
 
 ```mermaid
 graph LR;
-    consumer-test(["Consumer Test"]) 
+    consumer-test(["Consumer Test"])
     pact-broker(["Pact Broker"])
     provider-veri-by-url(["Provider Verification by URL"])
     consumer-test-- publish -->pact-broker-- retrieve pact by url -->provider-veri-by-url
@@ -22,7 +22,7 @@ graph LR;
 
 ```mermaid
 graph LR;
-    provider-build(["Provider Build"]) 
+    provider-build(["Provider Build"])
     pact-broker(["Pact Broker"])
     provider-veri-by-selectors(["Provider Verification by Consumer Version Selectors"])
     provider-build-- query -->pact-broker-- retrieve pact by selectors -->provider-veri-by-selectors
@@ -80,7 +80,7 @@ The following diagram shows what a fully fledged Pact supported release pipeline
 
 ```mermaid
 graph TD;
-    build(["Consumer Build"]) 
+    build(["Consumer Build"])
     isolated-tests(["Isolated Tests"])
     generate-pacts(["Generate Pacts"])
     can-i-deploy-test(["Can I Deploy to test?"])
@@ -111,7 +111,7 @@ The following diagram shows what a fully fledged Pact supported release pipeline
 
 ```mermaid
 graph TD;
-    build(["Provider Build"]) 
+    build(["Provider Build"])
     isolated-tests(["Isolated Tests"])
     verify-pacts(["Verify Pacts by Consumer Version Selectors"])
     can-i-deploy-test(["Can I Deploy to test?"])
@@ -198,13 +198,10 @@ This task should be run when the pact changes
 Now you can see if you can run your provider tests, this time pulling the pact file not from your local filesystem,
 but from the broker.
 
-Ensure your provider can login to the Broker, and view the uploaded pact. Note the URL of the uploaded pact contract.
-
-Reconfigure your provider project to instead of verifying the pact from the local file system, but to use the URL instead.
-
-Run your tests and they should retrieve the pact file from your Broker, and successfully verify it.
-
-This verification task by url, will be used by webhooks, will be triggered, whenever a consumer contract involving our provider, that requires verification is published. Our webhook will be configured in a later step.
+1. Ensure your provider can login to the Broker, and view the uploaded pact. Note the URL of the uploaded pact contract.
+2. Reconfigure your provider project to instead of verifying the pact from the local file system, but to use the URL instead.
+3. Run your tests and they should retrieve the pact file from your Broker, and successfully verify it.
+4. This verification task by url, will be used by webhooks, will be triggered, whenever a consumer contract involving our provider, that requires verification is published. Our webhook will be configured in a later step.
 
 See our recommendations for this task [here](https://docs.pact.io/provider/recommended_configuration#verification-triggered-by-a-contract-requiring-verification-published):
 

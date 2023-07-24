@@ -6,7 +6,13 @@ sidebar_label: 3. Bronze - get a single test working manually
 <details open>
   <summary>Bronze diagram</summary>
 
-![Bronze diagram](images/bronze.png)
+```mermaid
+graph LR;
+    consumer-test(["Consumer Test"])
+    pact-file(("Pact File"))
+    provider-veri-by-url(["Provider Verification by Local File"])
+    consumer-test-- write -->pact-file-- read -->provider-veri-by-url
+```
 </details>
 
 If you have not used Pact before, consider trying it out on a [spike](https://en.wikipedia.org/wiki/Spike_%28software_development%29) application first.
@@ -23,14 +29,14 @@ The simplest first steps you can take
 
 ### Write a consumer test with no provider state
 
-Pact is a consumer-driven contract testing framework. That means that the contract is established by the consumer, 
-based on their understanding of the interface they're consuming from the provider and their specific needs as a consumer.  
-This is actually important and powerful. Too often a provider guesses at what their consumer needs and comes up with an 
+Pact is a consumer-driven contract testing framework. That means that the contract is established by the consumer,
+based on their understanding of the interface they're consuming from the provider and their specific needs as a consumer.
+This is actually important and powerful. Too often a provider guesses at what their consumer needs and comes up with an
 API based on that.   When you let the consumers drive the contract, it is much better aligned with their needs.
 
 So you write the consumer test first.  You can read more about consumer tests [here](https://docs.pact.io/consumer).
 
-If you are on the provider team, you don't own this test, although you can work with your consumer team to help them 
+If you are on the provider team, you don't own this test, although you can work with your consumer team to help them
 write it.  But ultimately the consumer owns these tests and drives the understanding of the contract.
 
 Note that if at all possible this first test should not introduce the complexity of provider states. You can add that as a later step.
@@ -41,18 +47,18 @@ You can see an example and overview of a consumer test [here](https://docs.pact.
 
 ### Manually run the provider verification test
 
-When you run the consumer test and it runs successfully, it is going to generate a pact file (for more information you 
+When you run the consumer test and it runs successfully, it is going to generate a pact file (for more information you
 can read [this overview](https://docs.pact.io/getting_started/how_pact_works#consumer-testing)). This file records a series of interactions where the consumer sends a request and the producer returns an expected response.
 
-Now you need to see if the provider behaves as the consumer expects. Ultimately this will happen automatically as 
-part of running your provider test suite both locally and in CI/CD. 
+Now you need to see if the provider behaves as the consumer expects. Ultimately this will happen automatically as
+part of running your provider test suite both locally and in CI/CD.
 
 There are two types of pact verification that will be performed
 
 1. Pact verification by URL or file path (This will be designed to be triggered by a webhook, when a consumer contract changes)
 2. Pact verification by consumer version selectors (This will be designed to run, whenever the provider codebase changes and runs in CI)
 
-You can make sure it works correctly before setting up all that automation.  
+You can make sure it works correctly before setting up all that automation.
 
 This step will perform verification type 1, allowing providers to verify pacts from a local file path, or remote URL. This is useful for
 debugging or running provider verifications locally, in future.
