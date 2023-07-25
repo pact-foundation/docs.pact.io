@@ -76,6 +76,7 @@ There are a couple of ways, you can act as the CI system locally.
 These will provide you the ability to run the following combinations.
 
 | OS     | CI System        | Architecture  | Tool  | Notes |
+| ------ | ---------------- | ------------- | ----- | ----- |
 | Linux  | GitHub Actions   | x86_64        | act   | requires docker |
 | Linux  | Cirrus CI        | x86_64        | cirrus-cli   | requires docker or podman and x86_64 host |
 | Linux  | Cirrus CI        | aarch64       | cirrus-cli    | requires docker or podman and aarch64 host |
@@ -189,10 +190,5 @@ This allows us to reuse our tasks across cirrus-ci, and ideally run the same scr
 
 ##### Gotchas
 
-1. cirrus cli ignores the `arm_container` task, and expects `container` which are setup in cirrus-ci to become `amd64`/`x86_64` hosts.
-   1. If you change `arm_container` to `container`, you can run the task on a macOS arm64 host, but the docker default platform will be `arm64`/`aarch64` which means you might not get the results you are expecting.
-   2. There are settings to configure, but these don't appear to work for me, or I haven't found the right combo yet.
-      1. `CIRRUS_ARCH` as an `env` var (https://cirrus-ci.org/guide/docker-builder-vm/#docker-builder-vm)
-      2. `architecture` as a `container` property (https://cirrus-ci.org/guide/docker-builder-vm/#under-the-hood)
-2. You'll need at least 50gb to 100gb to run macOS instance tests locally, as they pull down a ventura virtual machine
-3. If you get stuck on the steps for CI, you can boot a virtual macOS or linux machine, perform all the steps you need, test them out, then script them up
+1. You'll need at least 50gb to 100gb to run macOS instance tests locally, as they pull down a ventura virtual machine
+2. If you get stuck on the steps for CI, you can boot a virtual macOS or linux machine, perform all the steps you need, test them out, then script them up
