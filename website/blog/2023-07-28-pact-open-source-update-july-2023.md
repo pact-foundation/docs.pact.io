@@ -192,7 +192,34 @@ Whats next for Pact-PHP?
 
 Oh Hi FFI :blobwave:
 
-[#262 Pact FFI in Pact PHP](https://github.com/pact-foundation/pact-php/issues/262)
+[#326 Support for V3 / V4 + Plugins Via FFI](https://github.com/pact-foundation/pact-php/pull/326)
+
+#### What is the current status
+
+Pact-PHP does not currently support v3+ features of the rust core, in the mainline branch. 
+
+V3+ features are now available for beta testing in `ffi` branch, in a view to stabilise and release into the mainline.
+
+We would <3 your support
+
+#### How can I test this today
+
+Anyone can start testing `pact-php` with `pact_ffi` code by updating their `composer.json`
+
+`"pact-foundation/pact-php": "dev-ffi as 10.0.0"`
+
+- [Migration Guide](https://github.com/pact-foundation/pact-php/blob/ffi/UPGRADE-10.0.md)
+
+#### How can I submit feedback
+
+All feedback is gratefully received, positive feedback is great, as it allows us to ascertain how well the package is doing for users. Constructive criticism is okay too, but see the next section
+
+- Reply in this issue
+- Raise a new issue, clearly stating you are using the `ffi` branch
+
+#### How can I contribute
+
+If you want to help improve Pact-PHP, read the [`DEVELOPING.md`](https://github.com/pact-foundation/pact-php/blob/ffi/DEVELOPING.md) documentation, fork the repo and have a play!
 
 ### Pact in the community
 
@@ -204,9 +231,20 @@ So what are waiting for? Go forth and generate some broker charts, and why not s
 
 ## Hello Jo
 
-I imagine you've heard of [Cucumber](https://cucumber.io/), the testing tool, not the veggie, If not, Cucumber is a tool for running automated acceptance tests guided by a technique called BDD (Behaviour-Driven Development), written in plain language called Gherkin. It has strong overlaps with our principles of contract testing and the Pact DSL, and is often part of a development teams tool-set alongside Pact for developing robust, quality systems. The similarities don't end there, it also has a thriving community which has been spearheaded by Jo Laing, in [GitHub](https://github.com/cucumber), [Slack](https://cucumber.io/docs/community/get-in-touch/) and in [many events](https://cucumber.io/resources/) across the globe.
+I imagine you've heard of [Cucumber](https://cucumber.io/), the testing tool, not the veggie, If not, Cucumber is a tool for running automated acceptance tests guided by a technique called BDD (Behaviour-Driven Development), written in plain language called Gherkin. It has strong overlaps with our principles of contract testing and the Pact DSL, and is often part of a development teams tool-set alongside Pact for developing robust, quality systems. The similarities don't end there, it also has a thriving community which has been spearheaded by Jo Laing, across [Slack](https://cucumber.io/docs/community/get-in-touch/) and in [many events](https://cucumber.io/resources/) across the globe.
 
-I have the pleasure of inviting her to join me in my role as community shepherd, and know she will be helping to bring some organisation to the fold, including things like maintainer sessions and training, she has worked on the [Cucumber school](https://cucumber.io/school/) which is an incredible free resource to help those learn about BDD, I would :heart: a Pact School - if such a thing would float users boats.
+That leads us nicely into what has Jo been up to this week!
+
+Jo volunteered at AgileConf Scotland, where she tasked with speaker support duties for a workshop.
+
+A principles-based approach to create test automation strategies that work at scale, hosted by none other than Antonello Caboni (a Pact community speaker) & Nicola Sedgewick (a former CukenFest speaker). It's a smöl ol' world.
+
+The penny dropped as slides for contact testing appeared and Jo had to declare her new role in the Pact community.
+
+<p style={{textAlign:"center"}}><div><img src="https://github.com/pact-foundation/docs.pact.io/assets/19932401/1f28383e-eadf-4bf6-814a-7f6457aaa279" alt="jo_anton_agilescotland" width="450" height="300"/></div></p>
+<br/>
+
+So that leads me to announce to you, that I have the pleasure of inviting her to join me in my role as community shepherd, and know she will be helping to bring some organisation to the fold, including things like maintainer sessions and training, she has worked on the [Cucumber school](https://cucumber.io/school/) which is an incredible free resource to help those learn about BDD, I would :heart: a Pact School - if such a thing would float users boats.
 
 ## Community Corner - Olivier Picaud
 
@@ -217,7 +255,7 @@ services via its extensible plugin mechanism, and it complements both gRPC and B
 
 We caught up with [Olivier Picaud](https://github.com/opicaud), who felt the draw, and utilised the power of open-source not only to power his journey of learning, but to share his progress, so that others can follow along. You can find his pull request showcasing his work [here](https://github.com/pact-foundation/pact-reference/pull/255)
 
-<div><img src="https://avatars.githubusercontent.com/u/1059698?v=4" alt="Olivier Picaud" width="150" heigh="150" /></div>
+<div><img src="https://avatars.githubusercontent.com/u/1059698?v=4" alt="Olivier Picaud" width="150" height="150" /></div>
 <br/>
 
 >To learn monorepos, i put in place some grpc microservices using pact to validate interactions.
