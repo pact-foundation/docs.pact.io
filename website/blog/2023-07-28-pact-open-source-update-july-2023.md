@@ -237,7 +237,7 @@ That leads us nicely into what has Jo been up to this week!
 
 Jo volunteered at AgileConf Scotland, where she was tasked with speaker support duties for a workshop.
 
-A principles-based approach to create test automation strategies that work at scale, hosted by none other than Antonello Caboni (a Pact community speaker) & Nicola Sedgwick (a former CukenFest speaker). It's a smöl ol' world.
+A principles-based approach to create test automation strategies that work at scale, hosted by none other than [Antonello Caboni](https://www.linkedin.com/in/antonellocaboni/) (a Pact community speaker) & [Nicola Sedgwick](https://www.linkedin.com/in/nicolasedgwick/) (a former CukenFest speaker). It's a smöl ol' world.
 
 The penny dropped as slides for contact testing appeared and Jo had to declare her new role in the Pact community.
 
