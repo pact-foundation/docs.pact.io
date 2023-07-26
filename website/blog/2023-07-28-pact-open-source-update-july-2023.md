@@ -235,7 +235,7 @@ I imagine you've heard of [Cucumber](https://cucumber.io/), the testing tool, no
 
 That leads us nicely into what has Jo been up to this week!
 
-Jo volunteered at AgileConf Scotland, where she tasked with speaker support duties for a workshop.
+Jo volunteered at AgileConf Scotland, where she was tasked with speaker support duties for a workshop.
 
 A principles-based approach to create test automation strategies that work at scale, hosted by none other than Antonello Caboni (a Pact community speaker) & Nicola Sedgewick (a former CukenFest speaker). It's a smöl ol' world.
 
@@ -279,7 +279,7 @@ providing an unique pipeline to build / test / release and deploy using gitops m
 
 >It's also very nice to participate to the community, i've participate to few others bazel-project by testing PR, providing feedback and red tests :)
 
-Thanks Olivier for taking the time to share with us. It's exciting to hear about pull requests dropping in other areas outside of Pact as part of this effort. I hope this empowers others to take on journeys of discovery through code, through collaboration, as that is how our open source ecosystem in enriched.
+Thanks Olivier for taking the time to share with us. It's exciting to hear about pull requests dropping in other areas outside of Pact as part of this effort. I hope this empowers others to take on journeys of discovery through code, through collaboration, as that is how our open source ecosystem is enriched.
 
 Are you using Bazel in your organisation? Are you building tooling on top of pact-reference? Why not let us know! We could bring it into the codebase as part of an external builds directory as suggested by [Ron](https://github.com/pact-foundation/pact-reference/pull/255#issuecomment-1467264412) so don't by shy!
 
