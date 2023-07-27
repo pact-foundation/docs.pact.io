@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.4 - Bugfix Release
+
+* ac885b89 - fix: Date/Time matchers should fall back to ISO 8601 formats if no format string is provided (Ronald Holshausen, Thu Jul 27 10:42:17 2023 +1000)
+* 8a22a66a - fix: correct equality error message to match compatibility-suite (Ronald Holshausen, Wed Jul 26 14:30:48 2023 +1000)
+* 2e45e223 - fix: Update matching error messages to be in line with the compatibility-suite (Ronald Holshausen, Tue Jul 25 17:42:03 2023 +1000)
+
 ## 1.1.3 - Add crate features to turn-off some behaviour and dependencies
 
 
