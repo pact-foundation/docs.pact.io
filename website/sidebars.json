@@ -251,7 +251,6 @@
         "getting_started",
         "getting_started/how_pact_works",
         "5-minute-getting-started-guide",
-        "getting_started/feature_toggles",
         { "id": "plugins/quick_start", "type": "doc", "label": "Pact Plugins" }
       ]
     },
@@ -309,6 +308,9 @@
       "pact_nirvana/step_6",
       "pact_nirvana/step_7",
       "pact_nirvana/notes_1"
+    ],
+    "Feature Toggles": [
+      "implementation_guides/feature_toggles"
     ],
     "Recipes": [
       "recipes",
