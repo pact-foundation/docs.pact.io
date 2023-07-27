@@ -263,6 +263,12 @@ We caught up with [Olivier Picaud](https://github.com/opicaud), who felt the dra
 
 >From Docker (and then from Kubernetes) i am trying to use the image you provide https://hub.docker.com/r/you54f/pact_verifier_cli, with the addition of protobuf-plugin from Bazel :) (still currently in dev)
 
+>EDIT1: Docker is not used anymore, it has been replaced by OCI images
+
+>EDIT2: Tests are not running from Docker images anymore, but directly from the build via pact_verifier_cli and pact-protobuf-plugins. To ensure a deterministic build, pact_verifier_cli and pact-protobuf-plugin are compiled "just in time" during build process (or use cache if already built).
+
+>EDIT3: Idea for the community : providing a "rules_pact" Bazel rule --> to use directly Pact from Bazel projects with pact_verifier_cli and other Pact tools as embedded toolchains ?
+
 >See here:
 
 >- https://github.com/opicaud/pact-reference (fork)
