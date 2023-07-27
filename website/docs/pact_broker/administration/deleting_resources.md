@@ -8,6 +8,14 @@ Once you have opened the API Browser, either paste the URL of the resource you w
 
 Note that if you delete a pacticipant resource, all related pacticipant versions, pacts, verifications and webhooks get deleted along with it. If you delete a pacticipant version resource, the associated pacts and verifications get deleted with it. Otherwise, you can just delete an individual pact resource.
 
+## Deleting a pacticipant
+
+* Open the API browser.
+* Under the `Links` section, click on the green arrow next to the `pb:pacticipants` relation. A list of pacticipants will be shown.
+* Under the `Links` section, click on the yellow `!` button next to the pacticipant you wish to delete. A form to submit a request will be shown.
+* Change the `Method:` to `DELETE` and then click `Make Request`.
+
+
 ## Deleting multiple pacts
 
 You can delete all pacts for a given consumer/provider by sending a `DELETE` request to `/pacts/provider/{provider}/consumer/{consumer}/versions`. 
