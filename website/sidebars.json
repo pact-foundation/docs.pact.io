@@ -309,9 +309,6 @@
       "pact_nirvana/step_7",
       "pact_nirvana/notes_1"
     ],
-    "Feature Toggles": [
-      "implementation_guides/feature_toggles"
-    ],
     "Recipes": [
       "recipes",
       "recipes/kafka",
@@ -320,7 +317,8 @@
       "recipes/awssignedrequests",
       "recipes/lambdaasync",
       "recipes/lambdahttp",
-      "recipes/cypress"
+      "recipes/cypress",
+      "implementation_guides/feature_toggles"
     ],
     "Ecosystems":
     ["diagrams/ecosystem"]
