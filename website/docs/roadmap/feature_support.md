@@ -33,7 +33,7 @@ There are multiple implementations of Pact, and while we try to keep feature par
 | Run a single interaction when verifying a pact                         | Y        | Y             | Y            | \*            | Y             | \*          | \*             | \*            |
 | Injecting values from provider state callbacks                         | Y        | Y             |              |               | Y             |             |                |               |
 | Date/Time expressions with generators                                  | Y        | Y             |              |               | Y             |             |                |               |
-| XML                                  | Y        | Y             |              |               | Y             |             |                |               |
+| XML                                  | Y        | Y             |              |               |              |             |                |               |
 
 | Feature                                                                | pact4s | Pact Rust | Pact C++ |
 | :--------------------------------------------------------------------- | :--------- | :-------- | :------- |
