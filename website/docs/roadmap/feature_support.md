@@ -28,7 +28,7 @@ There are multiple implementations of Pact, and while we try to keep feature par
 | Pending pacts                                                          | Y        | Y             | Y            | Y             | Y             | Y           | Y              | N             |
 | WIP pacts                                                              | Y        | Y             | Y            | Y             | Y             | Y           | Y              | N             |
 | JSON test results output                                               | Y        |               | Y            |               | Y             | \*          | \*             | \*            |
-| XML test results output                                                | N        |               | Y            |               | Y             | \*          | \*             | \*            |
+| XML test results output                                                | N        |               | Y            |               |               | \*          | \*             | \*            |
 | Markdown test results output                                           | Y        |               |              |               |               |             |                |               |
 | Run a single interaction when verifying a pact                         | Y        | Y             | Y            | \*            | Y             | \*          | \*             | \*            |
 | Injecting values from provider state callbacks                         | Y        | Y             |              |               | Y             |             |                |               |
