@@ -69,7 +69,7 @@ Unlike Webmock:
 
 ### How does Pact differ from Pacto?
 
-[Pacto][pacto] is another Ruby implementation of a library that provides a mock service and provider verification using consumer driven contracts. It differs from Pact in the following ways.
+[Pacto][pacto] is another Ruby implementation of a library that provides a mock service and provider verification using consumer driven contracts, it is [no longer maintained](https://github.com/thoughtworks/pacto). It differs from Pact in the following ways.
 
 * Pacto has the ability to create contracts by recording interactions with an existing service. This makes the contracts easy to set up.
 * Once the Pacto contracts are created, they are static, and are used to verify both the consumer and the provider. This would make it easy to determine whether a broken contract is due to a change in the consumer or a change in the provider.
