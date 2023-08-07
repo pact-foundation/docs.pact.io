@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.11 - Maintenance Release
+
+
 ## 1.1.10 - Bugfix Release
 
 * a03fc5f0 - fix: V3 message binary content was not being base64 decoded correctly when loaded from a Pact file (Ronald Holshausen, Fri Aug 4 15:41:38 2023 +1000)
