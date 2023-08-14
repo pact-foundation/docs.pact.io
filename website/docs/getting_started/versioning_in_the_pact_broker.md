@@ -112,7 +112,7 @@ This is mostly likely due to the fact that you have an application that is both 
 Here is the scenario:
 
 * App A is a consumer of App B, which is a consumer of App C. This means App B is a consumer and a provider.
-* App B and App C are configured to verify the pacts of their consumers from their `main` branch ie. the consumer version selectors is set to `[ { "branch": "main" }]`. This configuration means "verify the pact from the latest application version of branch `main`". 
+* App B and App C are configured to verify the pacts of their consumers from their `main` branch ie. the consumer version selectors is set to `[{ "branch": "main" }]`. This configuration means "verify the pact from the latest application version of branch `main`". 
 * App B has a webhook configured so that when App A's consumer contract changes, App B's provider verifications are executed.
 * Every time a build runs, the application version used to publish to PactFlow increments _(this is the thing that is going to cause problems)_.
 * App B pipeline runs, and it publishes a consumer contract with version `B.1` and branch `main`. It also runs provider verifications for App A, and publishes the results with version `B.1` and branch `main`. So far, so good.
