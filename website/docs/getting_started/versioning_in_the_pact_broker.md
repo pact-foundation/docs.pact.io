@@ -101,9 +101,9 @@ The best practices for application versioning while using pact are also good bes
 2. If you are unable to include a pointer to version control inside the application version number, then ensure that you are able to tag the version control repository with a unique application version number at build time.
 3. Avoid having random data in your contracts. If your contracts contain random data, then a unique pact contract may be created when the contract has not actually changed. If this happens, you can’t take advantage of Pact’s duplicate contract detection.
 
-### Troubleshooting
+## Troubleshooting
 
-#### When running provider verifications in the provider's release pipeline, there are no pacts found for a consumer
+### When running provider verifications in the provider's release pipeline, there are no pacts found for a consumer
 
 "I am publishing consumer contracts with branch `main`, and my provider verification has the consumer version selector `{ branch: "main" }`, but there is no pact being returned."
 
