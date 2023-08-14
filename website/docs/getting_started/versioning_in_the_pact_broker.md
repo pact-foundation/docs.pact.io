@@ -97,7 +97,29 @@ The best practices for application versioning while using pact are also good bes
    * The consumer version will definitely change whenever the pact contract changes \(satisfying rule 1 above\)
    * Feature branches will automatically have different versions to master branch versions \(satisfying rule 2 above\)
    * Versions can always be known at deploy time \(satisfying rule 3 above\)
-   * You can also identify and checkout the production version of the provider if you need to [prevent missing verifications](https://docs.pact.io/pact_nirvana#8-prevent-missing-verifications).
+   * You can also identify and checkout the production version of the provider.
 2. If you are unable to include a pointer to version control inside the application version number, then ensure that you are able to tag the version control repository with a unique application version number at build time.
 3. Avoid having random data in your contracts. If your contracts contain random data, then a unique pact contract may be created when the contract has not actually changed. If this happens, you can’t take advantage of Pact’s duplicate contract detection.
 
+### Troubleshooting
+
+#### When running provider verifications in the provider's release pipeline, there are no pacts found for a consumer
+
+eg. "I am publishing consumer contracts with branch 'main', and my provider verification has the consumer version selector `{ branch: "main" }`, but there is no pact being returned."
+
+This is mostly likely due to the fact that you have an application that is both a consumer and provider, and it is publishing results to PactFlow with a non-deterministic version number (eg. including the build number in the version number)
+
+Here is the scenario:
+
+* App A is a consumer of App B, which is a consumer of App C. This means App B is a consumer and a provider.
+* App B and App C are configured to verify the pacts of their consumers from their `main` branch ie. the consumer version selectors is set to `[ { "branch": "main" }]`. This configuration means "verify the pact from the latest application version of branch `main`". 
+* App B has a webhook configured so that when App A's consumer contract changes, App B's provider verifications are executed.
+* Every time a build runs, the application version used to publish to PactFlow increments _(this is the thing that is going to cause problems)_.
+* App B pipeline runs, and it publishes a consumer contract with version `B.1` and branch `main`. It also runs provider verifications for App A, and publishes the results with version `B.1` and branch `main`. So far, so good.
+* App A pipeline runs, and it publishes a changed consumer contract with version `A.1`
+* The webhook triggers App B to execute its provider verifications. It publishes the verification results with version `B.2` and branch `main`
+  * _Note: this is the same version of the codebase that published the “B.1” consumer contract, but now PactFlow thinks there are 2 different versions._
+  * In PactFlow, the latest App B version on branch `main` is `B.2`, which has a verification result _but no pact_.
+* App C now runs its pipeline, and attempts to verify the pact for the latest version of App B from branch `main`, however, none exists. Depending on which Pact implementation you are using, and how the verification task is configured, and whether or not there are other pacts found, at this point, the task will either exit with an error, or will pass without giving any indication that an expected pact was not present.
+
+The solution to this problem is to use a deterministic pacticipant version number so that when the webhook-triggered provider verifications are executed, they publish the verification results with the same pacticipant version number that is used to publish the consumer contracts during the normal pipeline execution.
