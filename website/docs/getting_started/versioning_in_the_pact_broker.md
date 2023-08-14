@@ -105,7 +105,7 @@ The best practices for application versioning while using pact are also good bes
 
 #### When running provider verifications in the provider's release pipeline, there are no pacts found for a consumer
 
-eg. "I am publishing consumer contracts with branch 'main', and my provider verification has the consumer version selector `{ branch: "main" }`, but there is no pact being returned."
+"I am publishing consumer contracts with branch `main`, and my provider verification has the consumer version selector `{ branch: "main" }`, but there is no pact being returned."
 
 This is mostly likely due to the fact that you have an application that is both a consumer and provider, and it is publishing results to PactFlow with a non-deterministic version number (eg. including the build number in the version number)
 
