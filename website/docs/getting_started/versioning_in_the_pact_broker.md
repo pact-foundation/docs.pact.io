@@ -117,7 +117,7 @@ Here is the scenario:
 * Every time a build runs, the application version used to publish to PactFlow increments _(this is the thing that is going to cause problems)_.
 * App B pipeline runs, and it publishes a consumer contract with version `B.1` and branch `main`. It also runs provider verifications for App A, and publishes the results with version `B.1` and branch `main`. So far, so good.
 * App A pipeline runs, and it publishes a changed consumer contract with version `A.1`
-* The webhook triggers App B to execute its provider verifications. It publishes the verification results with version `B.2` and branch `main`
+* The webhook triggers App B to execute its provider verifications. It publishes the verification results with version `B.2` and branch `main`.
   * _Note: this is the same version of the codebase that published the “B.1” consumer contract, but now PactFlow thinks there are 2 different versions._
   * In PactFlow, the latest App B version on branch `main` is `B.2`, which has a verification result _but no pact_.
 * App C now runs its pipeline, and attempts to verify the pact for the latest version of App B from branch `main`, however, none exists. Depending on which Pact implementation you are using, and how the verification task is configured, and whether or not there are other pacts found, at this point, the task will either exit with an error, or will pass without giving any indication that an expected pact was not present.
