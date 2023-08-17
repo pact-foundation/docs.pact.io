@@ -30,29 +30,29 @@ For this recipe, we will be utilizing all but the ‘Validate type’ Java block
 ## Starting the PACT JVM from Java
 
 To use the standalone JVM of PACT we will need to create a static class called PactService. This will handle the command to run and close the PACT Standalone Server.  The class will have the following functions:
-- >	startPactService – will start the service through the CLI command
-- >	stopPactService – will stop the Java process
+- 	startPactService – will start the service through the CLI command
+- 	stopPactService – will stop the Java process
 
 ```Java
 public static Process startPactService() throws IOException, InterruptedException {
-		String command = "pact-jvm-server " 
-				+ pactServicePort 
-				+ " -l " 
-				+ mockPactServerPort 
-				+ " -u " 
-				+ mockPactServerPort
-				+ " --broker "
-				+ brokerUrl
-				+ " -v 3"; 
+  String command = "pact-jvm-server "
+		+ pactServicePort 
+		+ " -l " 
+		+ mockPactServerPort 
+		+ " -u " 
+		+ mockPactServerPort
+		+ " --broker "
+		+ brokerUrl
+		+ " -v 3"; 
 		
-		Process pactService = Runtime.getRuntime().exec(command);
+	Process pactService = Runtime.getRuntime().exec(command);
 		
-		return pactService;
-	}
+	return pactService;
+}
 	
-	public static void stopPactService() throws ClientProtocolException, IOException {
-		pactService.destroy();
-	}
+public static void stopPactService() throws ClientProtocolException, IOException {
+	pactService.destroy();
+}
 ```
 
 By setting the service to a variable, we will be able to then stop the running process later with the `.destroy()` command.
@@ -71,24 +71,24 @@ Now that we have the service running, all we need to do is make some API calls t
 
 ```Java
 public static void createPactMockServer(String pactBody) throws ClientProtocolException, IOException, InterruptedException {
-		CloseableHttpClient client = HttpClients.createDefault();
-		HttpPost post = new HttpPost("http://localhost:" + pactServicePort + "/create?state=NoUsers&path=/sub/ref/path");
-		ResponseHandler<String> handler = new BasicResponseHandler();
+  CloseableHttpClient client = HttpClients.createDefault();
+  HttpPost post = new HttpPost("http://localhost:" + pactServicePort + "/create?state=NoUsers&path=/sub/ref/path");
+  ResponseHandler<String> handler = new BasicResponseHandler();
 		
-		post.setHeader("Content-Type", "application/json");
-		post.setEntity(new StringEntity(pactBody));
+  post.setHeader("Content-Type", "application/json");
+  post.setEntity(new StringEntity(pactBody));
 		
-		client.execute(post, handler);
+  client.execute(post, handler);
 	    	    
-	    close();
-	}
+  close();
+}
 ```
 
 The variable pactServicePort is the port that the PACT service is running on. The pactBody can be passed from another Java function that can use the ConsumerPactBuilder to set up the pact interactions that would be required to be sent. This would be very similar to the example logic provided here: https://docs.pact.io/implementation_guides/jvm/consumer
 
 ### From Mule
 
-An example setup from Mule would be like the below image is passing a variable from another Java Class.
+An example setup from Mule would be like the below image passing a variable from another Java Class.
 
  
 
