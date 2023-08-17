@@ -1,3 +1,9 @@
+---
+id: munit
+title: MUnit (Mule4) with Pact
+description: How to use Pact for testing MuleSoft (Mule 4) APIs with MUnit
+---
+
 # Problem Statement: PACT with Mule 4 (MuleSoft)
 
 As of Mule 4, it is no longer possible to extend the MUnit runner through Java code. Previously, the solution of PACT testing with MuleSoft was to extend “FunctionalMunitSuite” in your test class. An example can be found here: https://docs.mulesoft.com/munit/1.3/munit-tests-with-java#creating-your-suite-class
