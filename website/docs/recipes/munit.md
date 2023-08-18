@@ -18,7 +18,7 @@ In a nutshell, the solution is to have MUnit be the test runner and execute the 
 
 First, we need to understand the MUnit test layout. It has a very similar test structure to other unit testing tools, such as Jest, jUnit, nUnit, etc., with the usual before suite, before test, after test, and after suite. The test logic is formed into the test blocks where “flows” are executed in the test scripts. An empty MUnit test would look like the following:
 
- [TODO: Add Image]
+ ![Anypoint Studio MUnit Test Layout](../../static/img/docs/recipes/munit/anypoint-test-struct.png)
 
 In the test block, we can see it is divided into three sections; execution, behavior, and validation. The assertions for tests come from MUnit tools providing a low code UI block that we configure for each type of unit test assertion we wish to perform on the flow. 
 
@@ -29,7 +29,7 @@ Looking through the Mule Palette, in addition to these low code blocks there are
 •	Validate type: check instance is of a given class
 
  
-[TODO: Add Image]
+![Mule Java Palette](../../static/img/docs/recipes/munit/mule-palette-java.png)
 
 For this recipe, we will be utilizing all but the ‘Validate type’ Java block, but you are welcome to use it in your own solution. 
 
@@ -69,7 +69,7 @@ More information on the Pact JVM can be found here: https://docs.pact.io/impleme
 
 From Anypoint Studio, we will use the "Invoke Static" Java block to call the `startPactService()` method within the PactService class. This will start running the Pact standalone server as a separate Java process on the machine. 
 
-[TODO: Add Image] 
+![Java Invoke static widget](../../static/img/docs/recipes/munit/start-service.png) 
 
 ## Creating a Mock Service
 
@@ -98,7 +98,7 @@ When setting up the `pactBody` variable, I found the need to use the "New" and "
 
 An example setup from Anypoint Studio would be like the below image passing a variable from another Java class.
 
- [TODO: Add Image]
+![Example of creating the Mock Server](../../static/img/docs/recipes/munit/create-mock-server.png) 
 
 ### Hooking up to MUnit test
 
