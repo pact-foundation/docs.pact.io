@@ -20,3 +20,4 @@ Recipes and pre-built integrations to test common scenarios in Pact
 | [Kafka](/recipes/kafka)                                 | How to test Kafka messages with Pact                                                                                                |
 | [Jest](https://github.com/pact-foundation/jest-pact)   | A Pact adaptor for to allow you to easily run tests with Jest                                                                       |
 | [Mocha](https://github.com/pact-foundation/mocha-pact) | A Pact adaptor for to allow you to easily run tests with Mocha                                                                      |
+| [MUnit (Mule4) with Pact](/recipes/munit) | How to use Pact for testing MuleSoft (Mule 4) APIs with MUnit                                                                     |
