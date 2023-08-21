@@ -318,6 +318,7 @@
       "recipes/lambdaasync",
       "recipes/lambdahttp",
       "recipes/cypress",
+      "recipes/munit",
       "implementation_guides/feature_toggles"
     ],
     "Ecosystems":
