@@ -9,7 +9,23 @@ title: Events
 
 ## Upcoming community events
 
-  ** Let us know ** 
+### DevOps Playground: Get hands-on with Pact, Mule 4 and MUnit (London) - August 31, 2023
+
+The DevOps Playground meetup event is hosting another event showcasing Pact at the end of August.
+
+https://www.meetup.com/devopsplayground/events/295147445/
+
+You can check out the one they performed last year Pact-NET and dotnet.
+
+Youtube: https://www.youtube.com/watch?v=VDigIOV7lzM
+
+### How to avoid common pitfalls with modern microservices testing (Boston,MA) - September 14, 2023
+
+Eric Deandrea who has been touring the conference circuit this year, is on fire and hosting a meeting local at his local Java Users Group about Pact & contract testing with Quarkus.
+
+If your based in Boston, MA, you should pop over.
+
+https://www.meetup.com/nejug1/events/294642505/
 
 ## Past events
 

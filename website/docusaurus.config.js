@@ -205,6 +205,7 @@ const siteConfig = {
         'docker',
         'groovy',
         'scala',
+        'erlang'
       ]
     },
 
