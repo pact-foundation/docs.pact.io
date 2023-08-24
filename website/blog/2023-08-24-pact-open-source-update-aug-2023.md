@@ -13,7 +13,7 @@ hide_table_of_contents: false
 
 However if you've been in the office, _not_ worrying about your deployments because you use Pact, huzzah.
 
-Whatever you've been up to, the community has been busy aswell, so we've rounded up some of the latest happenings in the world of Pact to sink your teeth into.
+Whatever you've been up to, the community has been busy as well, so we've rounded up some of the latest happenings in the world of Pact to sink your teeth into.
 
 ## OSS Updates
 
@@ -35,7 +35,7 @@ It has been another busy month in the world of Pact, I've pulled out some change
 
 #### MUnit (Mule4) with Pact Recipe
 
-Are you an MulesSoft user running MUnit?
+Are you an MuleSoft user running MUnit?
 If so, check out the [latest recipe](https://docs.pact.io/recipes/munit) on our site, kindly provided by [Grace Sandford](https://github.com/TheTreeofGrace)!
 
 Got something you want to share? Why not drop in a pull request. You can find out ways you can help [here](https://docs.pact.io/contributing#pact---how-you-can-help)
@@ -46,7 +46,7 @@ Our Pact getting started guide has been updated to the latest pact-js version, w
 
 https://github.com/pact-foundation/pact-5-minute-getting-started-guide
 
-Fancy creating one in your favourite Pact client language? Whats stopping you?
+Fancy creating one in your favourite Pact client language? What's stopping you?
 
 ### Pact-Go
 
@@ -68,11 +68,15 @@ https://github.com/pact-foundation/pact-reference/pull/312
 
 Looking to improve on the error messages returned in various scenarios during provider verification.
 
-Why not hope into Slack or GitHub and let us know what would be on your wish list, to help you when it goes wrong.
+Why not hop into Slack or GitHub and let us know what would be on your wish list, to help you when it goes wrong.
 
 ### Pact-JVM
 
+<<<<<<< HEAD:website/blog/2023-08-24-pact-open-source-update-aug-2023.md
 - The maintainer of [Kotlin-Logging](https://github.com/oshai/kotlin-logging) [Osad Shai](https://github.com/oshai), dropped in and upgraded his library in Pact-JVM in this [PR](https://github.com/pact-foundation/pact-jvm/pull/1703). It's awesome to see some real world testing from a package maintainer, I like doing the smae when I am fixing up open source projects. The test subjects are the one's already using your libraries. It is also why I get stoked to see public repos showcasing Pact.
+=======
+- The maintainer of Kotlin-Logging Osad Shai, dropped in and upgraded his library in Pact-JVM in this [PR](https://github.com/pact-foundation/pact-jvm/pull/1703). It's awesome to see some real-world testing from a package maintainer, I like doing the same when I am fixing up open source projects. The test subjects are the ones already using your libraries. It is also why I get stoked to see public repos showcasing Pact.
+>>>>>>> ef1c449631a790cdcd001e0c8d6b00dfd88fb60b:website/blog/2023-08-28-pact-open-source-update-aug-2023.md
 
 - [Victor Enaud](https://github.com/victorenaud) spotted a [bug](https://github.com/pact-foundation/pact-jvm/issues/1705) in Pact-JVM, applied a [fix](https://github.com/pact-foundation/pact-jvm/pull/1706) which ultimately was rejected in favour of another solution, but we are super grateful for both the excellent report, and an attempted solution!
 
@@ -86,7 +90,7 @@ Checkout a sample of the PactV3 interface, powered by the Pact FFI in the follow
 
 You can also find more V3 examples [here](https://github.com/YOU54F/pact-python/tree/3.0.0b0/examples/v3) and a grpc example [here](https://github.com/YOU54F/pact-python/blob/3.0.0b0/examples/v4/grpc/test_grpc_consumer.py)
 
-I'm inviting Pythonistas who are itching for that V3 and V4 functionality to collaborate with me on the aforementioned PR to help bring your Python projects up to be speed with all the latest pact features.
+I'm inviting Pythonistas who are itching for that V3 and V4 functionality to collaborate with me on the aforementioned PR to help bring your Python projects up to speed with all the latest pact features.
 
 ```python
 """pact test for product service client"""
@@ -111,50 +115,50 @@ PACT_DIR = os.path.dirname(os.path.realpath(__file__))
 
 @pytest.fixture
 def consumer():
-    return ProductConsumer(
-        'http://{host}:{port}'
-        .format(host=PACT_MOCK_HOST, port=PACT_MOCK_PORT)
-    )
+    return ProductConsumer(
+        'http://{host}:{port}'
+        .format(host=PACT_MOCK_HOST, port=PACT_MOCK_PORT)
+    )
 
 
 @pytest.fixture(scope='session')
 def pact(request):
-    pact = PactV3(
-        'pactflow-example-consumer-python-v3',
-        'pactflow-example-provider-python-v3',
-        hostname=PACT_MOCK_HOST,
-        port=PACT_MOCK_PORT,
-        pact_dir="./pacts",
-    )
+    pact = PactV3(
+        'pactflow-example-consumer-python-v3',
+        'pactflow-example-provider-python-v3',
+        hostname=PACT_MOCK_HOST,
+        port=PACT_MOCK_PORT,
+        pact_dir="./pacts",
+    )
 
-    return pact
+    return pact
 
 def test_get_product(pact: PactV3, consumer):
-    expected = {
-        'id': "27",
-        'name': 'Margharita',
-        'type': 'Pizza'
-    }
+    expected = {
+        'id': "27",
+        'name': 'Margharita',
+        'type': 'Pizza'
+    }
 
-    (pact
-     .new_http_interaction('interaction')
-     .given('a product with ID 10 exists')
-     .upon_receiving('a request to get a product')
-     .with_request('GET', '/product/10')
-     .will_respond_with(200, body=Like(expected), headers=[{"name": 'content-type', "value": 'application/json'}]))
+    (pact
+     .new_http_interaction('interaction')
+     .given('a product with ID 10 exists')
+     .upon_receiving('a request to get a product')
+     .with_request('GET', '/product/10')
+     .will_respond_with(200, body=Like(expected), headers=[{"name": 'content-type', "value": 'application/json'}]))
 
-    with pact:
-        pact.start_service()
-        user = consumer.get_product('10')
-        assert user.name == 'Margharita'
-        result = pact.verify()
-        assert MockServerStatus(result.return_code) == MockServerStatus.SUCCESS
+    with pact:
+        pact.start_service()
+        user = consumer.get_product('10')
+        assert user.name == 'Margharita'
+        result = pact.verify()
+        assert MockServerStatus(result.return_code) == MockServerStatus.SUCCESS
 
 ```
 
 ### Pact-PHP
 
-[Tien Vo](https://github.com/tienvx) has been working had in the pact-php ffi branch, introducing an auto-installing plugins feature in this [PR](https://github.com/pact-foundation/pact-php/pull/330).
+[Tien Vo](https://github.com/tienvx) has been working hard in the pact-php ffi branch, introducing an auto-installing plugins feature in this [PR](https://github.com/pact-foundation/pact-php/pull/330).
 
 You can pick this up in the latest alpha from packagist. See the release [here](https://github.com/pact-foundation/pact-php/releases/tag/10.0.0-alpha2)
 
@@ -169,19 +173,19 @@ PactRef = pact:v4(<<"myapp">>, <<"animal_service">>),
 AnimalObject = #{<<"name">> => <<"Mary">>, <<"type">> => <<"alligator">>},
 {ok, Port} = pact:interaction(PactRef,
 #{
-    given => <<"an alligator with the name Mary exists">>,
-    upon_receiving => <<"a request to GET an animal: Mary">>,
-    with_request => #{
-        method => <<"GET">>,
-        path => <<"/animals/Mary">>
-    },
-    will_respond_with => #{
-        status => 200,
-        headers => #{
-            <<"Content-Type">> => <<"application/json">>
-        },
-        body => thoas:encode(AnimalObject)
-    }
+    given => <<"an alligator with the name Mary exists">>,
+    upon_receiving => <<"a request to GET an animal: Mary">>,
+    with_request => #{
+        method => <<"GET">>,
+        path => <<"/animals/Mary">>
+    },
+    will_respond_with => #{
+        status => 200,
+        headers => #{
+            <<"Content-Type">> => <<"application/json">>
+        },
+        body => thoas:encode(AnimalObject)
+    }
 }),
 ?assertMatch({ok, AnimalObject}, animal_service_interface:get_animal(Port, "Mary")),
 {ok, matched} = pact:verify(PactRef),
@@ -191,7 +195,7 @@ pact:cleanup(PactRef).
 
 ### Pact CLI tooling
 
-Would you want to see all our pact cli tooling, in a single place?
+Would you want to see all our pact CLI tooling, in a single place?
 
 Is file size a concern to you?
 
@@ -205,11 +209,11 @@ Hop onto [Slack](https://slack.pact.io/), or drop us a message in GitHub and pro
 
 ## Community Events
 
-Are you hosting events about Pact? Why not let us know!
+Are you hosting events about Pact? Why not let us know?
 
 ### DevOps Playground: Get hands-on with Pact, Mule 4 and MUnit (London)
 
-The DevOps Playground meetup event are hosting another event showcasing Pact at the end of August.
+The DevOps Playground meetup event is hosting another event showcasing Pact at the end of August.
 
 https://www.meetup.com/devopsplayground/events/295147445/
 
@@ -229,14 +233,14 @@ It's now fallen out of maintenance, but many of our long-standing community cont
 
 ## Pactober
 
-We've been squirreling away organising an awesome lineup for [Pactober's](https://pact.io/pactober) main event on the 10th October. You can see the updated pages in the below links.
+We've been squirrelling away organising an awesome lineup for [Pactober's](https://pact.io/pactober) main event on the 10th October. You can see the updated pages in the below links.
 
 - [Full Schedule](https://pact.io/pactober#schedule_container)
 - [Main Event](https://pact.io/birthday)
 
 Add your own event!
 
-- Chat to us in out [Pactober Slack](https://pact-foundation.slack.com/archives/C05G8DSD82U) channel
+- Chat to us in our [Pactober Slack](https://pact-foundation.slack.com/archives/C05G8DSD82U) channel
 - Drop a pull request on the website using the [following template](https://github.com/pact-foundation/pact.io/blob/master/pages/pactober/2023/template.html) with:-
   - Your proposed event time
   - Your Event landing page
