@@ -72,11 +72,7 @@ Why not hop into Slack or GitHub and let us know what would be on your wish list
 
 ### Pact-JVM
 
-<<<<<<< HEAD:website/blog/2023-08-24-pact-open-source-update-aug-2023.md
-- The maintainer of [Kotlin-Logging](https://github.com/oshai/kotlin-logging) [Osad Shai](https://github.com/oshai), dropped in and upgraded his library in Pact-JVM in this [PR](https://github.com/pact-foundation/pact-jvm/pull/1703). It's awesome to see some real world testing from a package maintainer, I like doing the smae when I am fixing up open source projects. The test subjects are the one's already using your libraries. It is also why I get stoked to see public repos showcasing Pact.
-=======
-- The maintainer of Kotlin-Logging Osad Shai, dropped in and upgraded his library in Pact-JVM in this [PR](https://github.com/pact-foundation/pact-jvm/pull/1703). It's awesome to see some real-world testing from a package maintainer, I like doing the same when I am fixing up open source projects. The test subjects are the ones already using your libraries. It is also why I get stoked to see public repos showcasing Pact.
->>>>>>> ef1c449631a790cdcd001e0c8d6b00dfd88fb60b:website/blog/2023-08-28-pact-open-source-update-aug-2023.md
+- The maintainer of [Kotlin-Logging](https://github.com/oshai/kotlin-logging) [Osad Shai](https://github.com/oshai), dropped in and upgraded his library in Pact-JVM in this [PR](https://github.com/pact-foundation/pact-jvm/pull/1703). It's awesome to see some real-world testing from a package maintainer, I like doing the same when I am fixing up open source projects. The best subjects are the one's already using your libraries. It is also why I get stoked to see public repos showcasing Pact.
 
 - [Victor Enaud](https://github.com/victorenaud) spotted a [bug](https://github.com/pact-foundation/pact-jvm/issues/1705) in Pact-JVM, applied a [fix](https://github.com/pact-foundation/pact-jvm/pull/1706) which ultimately was rejected in favour of another solution, but we are super grateful for both the excellent report, and an attempted solution!
 
