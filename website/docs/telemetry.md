@@ -4,7 +4,7 @@ title: Telemetry
 
 The Pact team strive to develop great open source tools for the community. We rely on the community's input to help us iterate on and improve Pact. Telemetry is additional information that helps us to better understand the community's needs, diagnose issues, and prioritise feature work.
 
-The Pact Broker and Pact libraries collect telemetry, such as generic usage metrics and system and environment information. For details of the types of telemetry collected, see [Types of information collected](#types-of-information-collected).
+The Pact client libraries (e.g. Pact JS, Pact JVM) collect telemetry, such as generic usage metrics and system and environment information. For details of the types of telemetry collected, see [Types of information collected](#types-of-information-collected).
 
 We do not collect personal information, such as usernames or email addresses. It also does not extract sensitive project-level information.
 
