@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.70.0"></a>
+### v1.70.0 (2023-08-29)
+
+#### Features
+
+* sort can-i-deploy table by consumer name, then provider name	 ([83412e7](https://github.com/pact-foundation/pact_broker-client/commit/83412e7))
+* do not accept gzip responses when VERBOSE=true	 ([a72a529](https://github.com/pact-foundation/pact_broker-client/commit/a72a529))
+
 <a name="v1.69.0"></a>
 ### v1.69.0 (2023-08-29)
 
