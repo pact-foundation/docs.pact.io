@@ -64,8 +64,6 @@ Imagine version version 4 of Bar has been deployed to prod.
 | Foo      | 2                | Bar      | 4 \(prod\)       | true    |
 | Foo      | 2                | Bar      | 5                | true    |
 
-
-
 To determine if Foo v2 can be deployed with the latest prod version of Bar, our selectors would be:
 
 `{"pacticipant": "Foo", "version": "2"}` and `{"pacticipant": "Bar", environment: "prod"}` and our options would be `{"latestby": "cvpv"}`.
@@ -87,10 +85,10 @@ To determine if Foo v2 can be deployed with the latest prod versions of all its 
 * `pacticipant` (String) - the name of the pacticipant (application)
 * `version` (String) - the version number
 * `branch` (String) - the name of the pacticipant version branch
-* `mainBranch` (Boolean, default falsey) - whether or not the version(s) described are from the main branch of the pacticipant, as set in the `mainBranch` property of the `pacticipant` resource.
+* `mainBranch` (Boolean) - whether or not the version(s) described are from the main branch of the pacticipant, as set in the `mainBranch` property of the `pacticipant` resource.
 * `environment` (String) - the name of the environment that the pacticipant version is deployed to
 * `tag` (String) - the name of the pacticipant version tag (supersede by branch and environments)
-* `latest` (Boolean, default falsey) - used in conjuction with other properties to indicate whether the selector is describing the *latest* version from a branch/with a tag/for a pacticipant, or all of them. Note that when used with tags, the "latest" is calculated using the creation date of the pacticipant version, NOT the creation date of the tag.
+* `latest` (Boolean) - used in conjuction with other properties to indicate whether the selector is describing the *latest* version from a branch/with a tag/for a pacticipant, or all of them. Note that when used with tags, the "latest" is calculated using the creation date of the pacticipant version, NOT the creation date of the tag.
 
 ## Selector examples
 
@@ -104,3 +102,34 @@ To determine if Foo v2 can be deployed with the latest prod versions of all its 
 * The latest version of application Foo with tag "test": `{ "pacticipant": "Foo", "tag": "test", "latest": true }`
 * The version(s) of application Foo currently deployed to production: `{ "pacticipant": "Foo", "environment": "production" }`
 * The version of application Foo currently deployed to production: `{ "pacticipant": "Foo", "environment": "production" }`
+
+## Options
+
+The options used when querying the matrix are as important as the selectors themselves. The options are where the "target" is specified for a can-i-deploy query.
+
+Grouping options:
+
+* `latestby` (String): This property (as described above) removes the rows for the overridden pacts/verifications from the results. The options are `cvp` (show only the latest row for each consumer version and provider) and `cvpv` (show only the latest row each consumer version and provider version). For a can-i-deploy query with one selector, it should be set to `cvp`. For a can-i-deploy query with two selectors, it should be set to `cvpv`.
+
+Target options:
+
+* `latest` (Boolean): Used on its own or in conjuction with the `mainBranch` or `tag` options.
+  * When used on its own the matrix query answers the question "Is the specified pacticipant version compatible with the latest version of each of the applications with which it integrates".
+  * When used with the `mainBranch` option, the matrix query answers the question "Is the specified pacticipant version compatible with the main branches of the applications with which it integrates", where the main branch for each pacticipant is specified in its `mainBranch` property.
+  * When used with the `tag` option, the matrix query answers the question "Is the specified pacticipant version compatible with the latest version with the given tag for each of the applications with which it integrates". This variant has been superseded by the `environment` option.
+* `environment` (String): The name of the environment into which the application is being deployed. Not to be used with the `latest` option.
+* `tag` (String): Used before environments were supported as a first class resource. Generally used in conjuction with the `latest` option.
+* `mainBranch` (Boolean): When used on its own it returns results for all the versions on the main branches of each of the applications that the specified pacticipant versions integrate with. This is not very useful, so generally, the `mainBranch` is used in conjuction with `latest=true`.
+
+## Matrix queries vs can-i-deploy query
+
+The Matrix can be queried using selectors of varying degrees of specificity (eg. just by pacticipant name, with version numbers, branches/environments etc). The can-i-deploy query is a specific variant of the matrix query that answers the question "can I deploy this application version(s) to a particular environment".
+
+A matrix query is a can-i-deploy query if all of the following are true:
+
+* There is a single selector and a "target" described in the options (the most common use case) OR there are multiple selectors.
+* One or more of the selectors represents a single pacticipant version (because you can only deploy one version of an application at a time - it doesn't make sense to say "can I deploy every version of Foo from the main branch at once").
+
+## can-i-deploy vs can-i-merge
+
+The can-i-merge query is the same as can-i-deploy, except the "target" is "the main branches of the integrated applications".
