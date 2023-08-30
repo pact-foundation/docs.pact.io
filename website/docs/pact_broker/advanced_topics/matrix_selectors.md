@@ -90,7 +90,7 @@ To determine if Foo v2 can be deployed with the latest prod versions of all its 
 * `tag` (String) - the name of the pacticipant version tag (supersede by branch and environments)
 * `latest` (Boolean) - used in conjuction with other properties to indicate whether the selector is describing the *latest* version from a branch/with a tag/for a pacticipant, or all of them. Note that when used with tags, the "latest" is calculated using the creation date of the pacticipant version, NOT the creation date of the tag.
 
-## Selector examples
+### Selector examples
 
 * All versions of application Foo: `{ "pacticipant": "Foo" }`
 * The latest version of application Foo: `{ "pacticipant": "Foo", "latest": true }`
@@ -121,7 +121,15 @@ Target options:
 * `tag` (String): Used before environments were supported as a first class resource. Generally used in conjuction with the `latest` option.
 * `mainBranch` (Boolean): When used on its own it returns results for all the versions on the main branches of each of the applications that the specified pacticipant versions integrate with. This is not very useful, so generally, the `mainBranch` is used in conjuction with `latest=true`.
 
-## Matrix queries vs can-i-deploy query
+### Options examples
+
+* Can I deploy Foo v1 to the production environment: `{ "environment": "production", "latestby": "cvp" }`
+* Can I deploy Foo v1 with the latest version of each of its integrated applications: `{ "latest": true, "latestby": "cvp" }`
+* Can I deploy Foo v1 with the latest version that has the tag "prod" for each of its integrated applications: `{ "latest": true, "tag": "prod", "latestby": "cvp" }`
+* Is Foo v1 compatible with the latest version of the main branch of each of its integrated applications: `{ "mainBranch": true, "latest": true, "latestby": "cvp" }`
+* Is Foo v1 compatible with all the versions of the main branch of each of its integrated applications (syntactically valid but not useful): `{ "mainBranch": true, "latestby": "cvp" }`
+
+## Matrix queries vs can-i-deploy
 
 The Matrix can be queried using selectors of varying degrees of specificity (eg. just by pacticipant name, with version numbers, branches/environments etc). The can-i-deploy query is a specific variant of the matrix query that answers the question "can I deploy this application version(s) to a particular environment".
 
