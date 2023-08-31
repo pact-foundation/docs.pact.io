@@ -101,7 +101,6 @@ To determine if Foo v2 can be deployed with the latest prod versions of all its 
 * All versions of application Foo with tag "test": `{ "pacticipant": "Foo", "tag": "test" }`
 * The latest version of application Foo with tag "test": `{ "pacticipant": "Foo", "tag": "test", "latest": true }`
 * The version(s) of application Foo currently deployed to production: `{ "pacticipant": "Foo", "environment": "production" }`
-* The version of application Foo currently deployed to production: `{ "pacticipant": "Foo", "environment": "production" }`
 
 ## Options
 
