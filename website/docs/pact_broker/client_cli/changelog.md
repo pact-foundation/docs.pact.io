@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.71.0"></a>
+### v1.71.0 (2023-09-07)
+
+#### Features
+
+* publish provider contracts using all in one endpoint (#141)	 ([a9f87a8](https://github.com/pact-foundation/pact_broker-client/commit/a9f87a8))
+
 <a name="v1.70.0"></a>
 ### v1.70.0 (2023-08-29)
 
