@@ -250,7 +250,7 @@ We couldn't be more proud to see they are using Pact in their projects, and have
 
 It also features [Dawoud Sheraz](https://github.com/dawoudsheraz), who we mentioned earlier in the year about his talk at Python Web Conf. The video is referenced in the above post, but you can watch it [here](https://www.youtube.com/watch?v=nA2Pv00dPgE)
 
-### GitLab
+### GitLab
 
 GitLab are using Pact and have written some great [documentation](https://docs.gitlab.com/ee/development/testing_guide/contract/) to support its use in their project.
 
