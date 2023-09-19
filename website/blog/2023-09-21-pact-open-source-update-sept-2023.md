@@ -16,7 +16,7 @@ getting to work on open-source, as their job. Feel inspired? Join us! We are alw
 
 ## Pactober
 
-We've been squirrelling away organising an awesome lineup for [Pactober's](https://pact.io/pactober) main event on the 10th October and we are pleased to announce
+We've been squirrelling away behind the scenes organising [Pactober's](https://pact.io/pactober) main event on the 10th October and we are pleased to announce
 some of our awesome lineup.
 
 Your links for reference
@@ -78,11 +78,10 @@ Alternatively, we can look at outstanding issues and PR's as they can often serv
 Finally, don't forget to check out more ways you can help, https://docs.pact.io/contributing  if any of these take your fancy?|
 
 You can find your fellow builders over in the #pactober-builders channel in Slack.
- 
 
 ### Pactober Workshops
 
-We akready a few Pact HTTP based workshops, in a few languages, listed [here](https://docs.pact.io/implementation_guides/workshops#pact-workshops---from-0-to-pact-in-2-hours)
+We already have a few Pact HTTP based workshops, in a few languages, listed [here](https://docs.pact.io/implementation_guides/workshops#pact-workshops---from-0-to-pact-in-2-hours)
 
 I'll be hosting four sessions throughout Pactober, walking users through the existing workshop, and running some all new ones in the process.
 
@@ -91,31 +90,37 @@ I'll be hosting four sessions throughout Pactober, walking users through the exi
 - [Pactober Workshop 3 - CI/CD workshop (Plugin Pact)](https://github.com/pact-foundation/devrel/issues/23)
 - [Pactober Workshop 4 - Maintainer/contributor workshop How Pact is built](https://github.com/pact-foundation/devrel/issues/24)
 
-We will need to build out workshops for Message & Plugin Pact, and also our various existing workshops, could do with some love, to utilse the latest features and versions of 
-not only Pact but to reflect the newer styles of creating API's in each respective language.
+We will need to build out workshops for Message & Plugin Pact, and also our various existing workshops, could do with some love, to utilise the latest features and versions of 
+not only Pact but the client language itself.
 
 We would love any support in helping work on these, but if not, and you just fancy participating along with others during the workshops, then feel free to join me!
-
 
 ## OSS Updates
 
 It has been another busy month in the world of Pact, I've pulled out some changes from the changes from community to showcase in our latest round of Open Source updates.
 
-- Pact Python
+- PactFlow new starter, and what it means for you
+  - Pact Python
 - Pact Rust
 - Pact PHP
+- Pact Plugins
+- Pact Broker
+- Pact Broker Client
+- Pact JS
+- Pact Broker Chart
+- Feature requests
+  - Dont Massl the Hoff (Massl based authentication)
 
 ### PactFlow new starter, and what it means for you
 
 >We ❤️ open source. We created Pactflow because we wanted to create a sustainable avenue to work on open source projects, and solve big problems that benefit a global developer community. Instead of the train rides, late nights and weekends where most of our contributions previously originated, this would be our day job.
 
 We [said that](https://pactflow.io/blog/why-build-an-open-source-company/) back in 2021. It would be awesome to work on an open-source project, and get paid for it, as part of your job. For me, its a dream come true. We've wanted to share that opportunity with others,
-especially as Pact grows in popularity, and gaining active maintainers is a challenge for many an open-source project, even those much larger than our own. Just look at [Curls contributor graph](https://github.com/curl/curl/graphs/contributors)/
+especially as Pact grows in popularity, and gaining active maintainers is a challenge for many an open-source project, even those much larger than our own. Just look at [Curls contributor graph](https://github.com/curl/curl/graphs/contributors)!
 
-We also are actutely aware that some of our libraries are suffering from bit-rot, languishing whilst each client implementations native language comes out with new features, and additions, that could be utilised, and they are missing core Pact features, yet to be implemented,
-which causes struggles in documentating a cohesive Pact experience, in your own multi-language/multi-protocol landscapes.
+We also are actutely aware that some of our libraries are suffering from bit-rot, languishing whilst each client implementations native language comes out with new features, and additions, that could be utilised, and they are missing core Pact features, implemented in Rust but not delivered in the client library, which causes struggles in documentating a cohesive Pact experience, in your own multi-language/multi-protocol landscapes.
 
-That being said, we are proud to be able to announce a new starter to the PactFlow family, and by default extension, the Pact Family. Enter Josh.
+That being said, we are proud to be able to announce a new starter to the PactFlow family, and by default extension, the Pact Family, who will help alleviate some of that burden. Enter Josh.
 
 #### Joshua Ellis
 
@@ -130,12 +135,12 @@ Outside of work, my wife and I love finding good food spots in Melbourne. We hav
 
 **So what will Josh be working on?**
 
-Proficient in Python and Rust, we will see him help bring Pact-Python up to modern standards, and implement Pact V4 functionality, in a production ready manner, rather than my hack it to get something working xD
+Proficient in Python and Rust, we will see him help bring Pact-Python up to modern standards, and implement Pact V4 functionality, in a production ready manner, rather than my hack it to get something working xD.
 
 > I have recently onboarded with SmartBear, and my focus to begin with will be the Python code. I'm looking forward to working with you all, and improving the Python code!
 In particular, I will be building upon the amazing work done in [#367](https://github.com/pact-foundation/pact-python/pull/367) to get pact-python working with the Rust core. As a bit of ground work, I have created two issues above to get my feet wet, before tackling the much larger task of supporting V4 fully.
 
->In any case, please feel free to message me with any ideas, or just to say hi :blobwave: (edited) 
+>In any case, please feel free to message me with any ideas, or just to say hi :blobwave:
 
 Josh has been tackling the build system and examples for starters, check out the progress, and even better, why not drop us a review, he would love the feedback, and gives him a chance to connect with you all.
 
@@ -159,7 +164,6 @@ but seriously though, what's been happening?
 - [feat: Add ffi function pactffi_with_multipart_file_v2](https://github.com/pact-foundation/pact-reference/pull/323)
 
 ### Pact PHP
-
 
 Tien Vo has been busy again, bringing more features to the `ffi` branch
 
@@ -191,9 +195,10 @@ Utilising the above change, was the Pact Broker client, for provider-contract pu
 - [feat: publish provider contracts using all in one endpoint](https://github.com/pact-foundation/pact_broker-client/pull/141/files)
 
 
-Whilst the endpoint, and `pactflow` command, is for a closed-source tool, please be reminded that this can serve as a useful pointer for implementing your own provider driven
-contract flow, in an open source broker. Check out an example repo https://github.com/pactflow/pactflow-jsonschema-example and supporting blog post 
-https://pactflow.io/blog/contract-testing-using-json-schemas-and-open-api-part-2/
+Whilst the above PR, and `pactflow` command, is for integrating with closed-source tool PactFlow, please be reminded that this can serve as a useful pointer 
+for implementing your own provider driven contract flow, in an open source broker. 
+
+Check out an example repo https://github.com/pactflow/pactflow-jsonschema-example and supporting blog post https://pactflow.io/blog/contract-testing-using-json-schemas-and-open-api-part-2/
 
 With a bit of tinkering, you can agument your workflows with https://github.com/pactflow/swagger-mock-validator, itself a fork of Atlassians [original](https://bitbucket.org/atlassian/swagger-mock-validator)
 
@@ -227,7 +232,6 @@ As an example: -
 
 _NB:-_ - I don't think it will be cli opts, but rather environment variables, to match the existing conventions for [using TLS](https://docs.pact.io/pact_broker/advanced_topics/using-tls)
 
-
 **PR's**
 
 - https://github.com/pact-foundation/pact-support/pull/99
@@ -235,6 +239,22 @@ _NB:-_ - I don't think it will be cli opts, but rather environment variables, to
 - https://github.com/pact-foundation/pact_broker-client/pull/142
 
 Thanks to [Lluís Xavier Casals Garcia](https://github.com/lluis-jt) for raising and [Gerald Molina](https://github.com/gmolki) for the PR's
+
+## Pact in the wild
+
+### Open edX
+
+[Open edX](https://openedx.org/) is a community-driven, open-source project powering edX.org and thousands of other online education sites around the world.
+
+We couldn't be more proud to see they are using Pact in their projects, and have written a brilliant post for their engineers. You can read it [here](https://openedx.atlassian.net/wiki/spaces/AC/pages/3769663499/Pact+-+Contract+Testing)
+
+It also features [Dawoud Sheraz](https://github.com/dawoudsheraz), who we mentioned earlier in the year about his talk at Python Web Conf. The video is referenced in the above post, but you can watch it [here](https://www.youtube.com/watch?v=nA2Pv00dPgE)
+
+### GitLab
+
+GitLab are using Pact and have written some great [documentation](https://docs.gitlab.com/ee/development/testing_guide/contract/) to support its use in their project.
+
+If you haven't tried about GitLab, why not look at testing it out, you can run the community edition, self hosted, and see the existing Pact tests (and run them) for yourself.
 
 ## Community Events
 
