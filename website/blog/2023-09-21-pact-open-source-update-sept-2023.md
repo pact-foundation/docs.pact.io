@@ -11,13 +11,13 @@ hide_table_of_contents: false
 
 :wave: Hello, its September, and we are a week away from [Pactober](https://pact.io/pactober) - A celebration of 10 years of Pact.
 
-I'll be letting you know what you can look forward to, recapping this months activities in our repos, and introducing a new starter to the PactFlow, who is living the dream,
+I'll be letting you know what you can look forward to, recapping this month's activities in our repos, and introducing a new starter to the PactFlow, who is living the dream,
 getting to work on open-source, as their job. Feel inspired? Join us! We are always hiring.
 
 ## Pactober
 
 We've been squirrelling away behind the scenes organising [Pactober's](https://pact.io/pactober) main event on the 10th October and we are pleased to announce
-some of our awesome lineup.
+some of our stellar speakers.
 
 Your links for reference
 
@@ -75,13 +75,13 @@ We've got plenty of requests on our [Canny roadmap](https://pact.canny.io/featur
  
 Alternatively, we can look at outstanding issues and PR's as they can often serve as a good source of inspiration, or things that can easily be sewn up.
  
-Finally, don't forget to check out more ways you can help, https://docs.pact.io/contributing  if any of these take your fancy?|
+Finally, don't forget to check out more ways you can help, https://docs.pact.io/contributing  if any of these take your fancy?
 
-You can find your fellow builders over in the #pactober-builders channel in Slack.
+You can find your fellow builders over in the [#pactober-builders](https://pact-foundation.slack.com/archives/C05P9A3KY05) channel in Slack.
 
 ### Pactober Workshops
 
-We already have a few Pact HTTP based workshops, in a few languages, listed [here](https://docs.pact.io/implementation_guides/workshops#pact-workshops---from-0-to-pact-in-2-hours)
+We already have a few Pact HTTP based workshops, in a few languages, listed [here](https://docs.pact.io/implementation_guides/workshops#pact-workshops---from-0-to-pact-in-2-hours).
 
 I'll be hosting four sessions throughout Pactober, walking users through the existing workshop, and running some all new ones in the process.
 
@@ -97,7 +97,7 @@ We would love any support in helping work on these, but if not, and you just fan
 
 ## OSS Updates
 
-It has been another busy month in the world of Pact, I've pulled out some changes from the changes from community to showcase in our latest round of Open Source updates.
+It has been another busy month in the world of Pact, I've pulled out some changes from the community to showcase in our latest round of Open Source updates.
 
 - PactFlow new starter, and what it means for you
   - Pact Python
@@ -157,7 +157,7 @@ Love Pact? Want to join the team? Why not give us a shout!
 We were meant to have done some rust stuff, but we've been too busy laughing at this [interview with a senior rust developer](https://youtu.be/TGfQu0bQTKc?si=fCdo094aDOupnjrH)
 
 
-but seriously though, what's been happening?
+But seriously though, what's been happening?
 
 - [fix: Allow matching string values using content type matching rule](https://github.com/pact-foundation/pact-reference/pull/319)
 - [chore: renable aarch64-unknown-linux-gnu](https://github.com/pact-foundation/pact-reference/pull/321)
@@ -172,7 +172,7 @@ Tien Vo has been busy again, bringing more features to the `ffi` branch
 - [Use Rust FFI #13: Multipart](https://github.com/pact-foundation/pact-php/pull/333)
 - [Use Rust FFI #14: Xml example](https://github.com/pact-foundation/pact-php/pull/335)
 
-The last one could do with some eyes, and we would still love to know if you have tested this out. Please let us know in the #pact-php channel or via GitHub.
+The last one could do with some eyes, and we would still love to know if you have tested this out. Please let us know in the [#pact-php](https://pact-foundation.slack.com/archives/C9W94PXPY) channel or via GitHub.
 
 ### Pact Plugins
 
