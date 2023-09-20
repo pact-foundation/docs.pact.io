@@ -24,6 +24,10 @@ Your links for reference
 - [Full Schedule](https://pact.io/pactober#schedule_container)
 - [Main Event](https://pact.io/birthday)
 
+**Want to attend?**
+
+We will be providing links in Slack, but for all the latest updates, be sure to fill out our [Pactober registration form](https://cucumber.typeform.com/PactoberEoI)
+
 ### Speakers
 
 Just some of our fantastic line-up that you will hear from over the month
@@ -65,11 +69,25 @@ Just some of our fantastic line-up that you will hear from over the month
 
 - Event Page - https://pact.io/pactober/2023/fireside-chat
 
+### Got something to say?
+
+Love Pact as much as Jameshd?
+
+![](https://pact.io/assets/img/events/community2-nov-2020.png)
+
+Why not shout about it, in whatever way suits you and we will be sure to feature it throughout Pactober’s Birthday session.
+
+**Ways you can do this**
+
+- Fill out the [Pactober registration form](https://cucumber.typeform.com/PactoberEoI)
+- Catch up with us in [Slack](https://slack.pact.io)
+- Find us in GitHub, in our [DevRel repository](https://github.com/pact-foundation/devrel)
+
 ### Pactober Builders
 
 During Pactober, we'd love to invite you to help build something on our roadmap, take part in a Bug-Bash or in our Doc-Drive.
  
-_Need some inspiration?_
+**_Need some inspiration?_**
 
 We've got plenty of requests on our [Canny roadmap](https://pact.canny.io/feature-requests), and although many are not planned, you can see from the votes, as to how well received it may be from the community. 
  
@@ -99,7 +117,7 @@ We would love any support in helping work on these, but if not, and you just fan
 
 It has been another busy month in the world of Pact, I've pulled out some changes from the community to showcase in our latest round of Open Source updates.
 
-- PactFlow new starter, and what it means for you
+- PactFlow's New Starter, and what it means for you
   - Pact Python
 - Pact Rust
 - Pact PHP
@@ -111,7 +129,7 @@ It has been another busy month in the world of Pact, I've pulled out some change
 - Feature requests
   - Dont Massl the Hoff (Massl based authentication)
 
-### PactFlow new starter, and what it means for you
+### PactFlow's New Starter, and what it means for you
 
 >We ❤️ open source. We created Pactflow because we wanted to create a sustainable avenue to work on open source projects, and solve big problems that benefit a global developer community. Instead of the train rides, late nights and weekends where most of our contributions previously originated, this would be our day job.
 
@@ -260,7 +278,9 @@ If you haven't tried about GitLab, why not look at testing it out, you can run t
 
 Are you hosting events about Pact? Why not let us know?
 
-We can't wait for you to get involved, whether you attend one of the sessions throughout the month, or you decide to host something yourself. Long live Pact and its awesome community!
+We can't wait for you to get involved, whether you attend one of the sessions throughout the month of Pactober, or you decide to host something yourself. Long live Pact and its awesome community!
+
+Dont forget that throughout October, we will be providing links in Slack, but for all the latest updates, be sure to fill out our [Pactober registration form](https://cucumber.typeform.com/PactoberEoI)
 
 ## Thats a wrap
 
