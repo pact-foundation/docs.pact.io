@@ -9,19 +9,17 @@ draft: false
 hide_table_of_contents: false
 ---
 
-:wave: Hello, its September, and we are a week away from [Pactober](https://pact.io/pactober) - A celebration of 10 years of Pact.
+:wave: Hello, it's September, and we are a week away from [Pactober](https://pact.io/pactober) - A celebration of 10 years of Pact.
 
-I'll be letting you know what you can look forward to, recapping this month's activities in our repos, and introducing a new starter to the PactFlow, who is living the dream,
-getting to work on open-source, as their job. Feel inspired? Join us! We are always hiring.
+I'll be letting you know what you can look forward to, recapping this month's activities in our repos, and introducing a new starter to PactFlow, who is living the dream - getting to work on open-source - as their job. Feel inspired? Join us! We are always hiring.
 
 ## Pactober
 
-We've been squirrelling away behind the scenes organising [Pactober's](https://pact.io/pactober) main event on the 10th October and we are pleased to announce
-some of our stellar speakers.
+We've been squirrelling away behind the scenes organising [Pactober's](https://pact.io/pactober) main event on the 10th October and we are pleased to announce some of our stellar speakers.
 
-Your links for reference
+Your links for reference:
 
-- [Full Schedule](https://pact.io/pactober#schedule_container)
+- [Full Schedule](https://pact.io/pactober#schedule)
 - [Main Event](https://pact.io/birthday)
 
 **Want to attend?**
@@ -30,7 +28,7 @@ We will be providing links in Slack, but for all the latest updates, be sure to 
 
 ### Speakers
 
-Just some of our fantastic line-up that you will hear from over the month
+Just some of our fantastic line-up that you will hear from over the month.
 
 #### Sam Newman
 
@@ -80,7 +78,8 @@ Why not shout about it, in whatever way suits you and we will be sure to feature
 **Ways you can do this**
 
 - Fill out the [Pactober registration form](https://cucumber.typeform.com/PactoberEoI)
-- Catch up with us in [Slack](https://slack.pact.io)
+- Catch up with us in [Slack](https://slack.pact.io) 
+- 👋 Send a 30s video wishing Pact a happy birthday, telling us a short story, or a written message to one of the  Yousaf, Matt Fellows or Jo Laing and we'll ❤️ you forever
 - Find us in GitHub, in our [DevRel repository](https://github.com/pact-foundation/devrel)
 
 ### Pactober Builders
@@ -108,8 +107,7 @@ I'll be hosting four sessions throughout Pactober, walking users through the exi
 - [Pactober Workshop 3 - CI/CD workshop (Plugin Pact)](https://github.com/pact-foundation/devrel/issues/23)
 - [Pactober Workshop 4 - Maintainer/contributor workshop How Pact is built](https://github.com/pact-foundation/devrel/issues/24)
 
-We will need to build out workshops for Message & Plugin Pact, and also our various existing workshops, could do with some love, to utilise the latest features and versions of 
-not only Pact but the client language itself.
+We will need to build out workshops for Message & Plugin Pact, and also our various existing workshops, could do with some love, to utilise the latest features and versions of not only Pact but the client language itself.
 
 We would love any support in helping work on these, but if not, and you just fancy participating along with others during the workshops, then feel free to join me!
 
@@ -213,8 +211,7 @@ Utilising the above change, was the Pact Broker client, for provider-contract pu
 - [feat: publish provider contracts using all in one endpoint](https://github.com/pact-foundation/pact_broker-client/pull/141/files)
 
 
-Whilst the above PR, and `pactflow` command, is for integrating with closed-source tool PactFlow, please be reminded that this can serve as a useful pointer 
-for implementing your own provider driven contract flow, in an open source broker. 
+Whilst the above PR, and `pactflow` command, is for integrating with closed-source tool PactFlow, please be reminded that this can serve as a useful pointer for implementing your own provider driven contract flow, in an open source broker. 
 
 Check out an example repo https://github.com/pactflow/pactflow-jsonschema-example and supporting blog post https://pactflow.io/blog/contract-testing-using-json-schemas-and-open-api-part-2/
 
