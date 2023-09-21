@@ -79,7 +79,7 @@ Why not shout about it, in whatever way suits you and we will be sure to feature
 
 - Fill out the [Pactober registration form](https://cucumber.typeform.com/PactoberEoI)
 - Catch up with us in [Slack](https://slack.pact.io) 
-- 👋 Send a 30s video wishing Pact a happy birthday, telling us a short story, or a written message to one of the  Yousaf, Matt Fellows or Jo Laing and we'll ❤️ you forever
+- 👋 Send a 30s video wishing Pact a happy birthday, telling us a short story, or a written message to either Matt Fellows, Jo Laing or I (Yousaf) and we'll ❤️ you forever
 - Find us in GitHub, in our [DevRel repository](https://github.com/pact-foundation/devrel)
 
 ### Pactober Builders
