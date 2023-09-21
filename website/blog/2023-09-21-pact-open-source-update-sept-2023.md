@@ -4,7 +4,7 @@ author: Yousaf Nabi
 authorURL: https://twitter.com/you54f
 tags: [pact, oss, community]
 keywords: [pact, oss, community]
-date: 2023-09-20
+date: 2023-09-21
 draft: false
 hide_table_of_contents: false
 ---
@@ -269,7 +269,7 @@ It also features [Dawoud Sheraz](https://github.com/dawoudsheraz), who we mentio
 
 GitLab are using Pact and have written some great [documentation](https://docs.gitlab.com/ee/development/testing_guide/contract/) to support its use in their project.
 
-If you haven't tried about GitLab, why not look at testing it out, you can run the community edition, self hosted, and see the existing Pact tests (and run them) for yourself.
+If you haven't tried about GitLab, why not look at testing it out, you can run the community edition for free, on your local machine, see the existing Pact tests (and run them) for yourself.
 
 ## Community Events
 
