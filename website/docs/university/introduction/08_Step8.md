@@ -2,12 +2,28 @@
 title: Step 8 - Authorization
 sidebar_label: Step 8 - Authorization
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 It turns out that not everyone should be able to use the API. After a discussion with the team, it was decided that a time-bound bearer token would suffice. The token must be in `yyyy-MM-ddTHHmm` format and within 1 hour of the current time.
 
 In the case a valid bearer token is not provided, we expect a `401`. Let's update the consumer to pass the bearer token, and capture this new `401` scenario.
 
 In `consumer/src/api.js`:
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]}>
+<TabItem value="javascript">
 
 ```javascript
     generateAuthToken() {
@@ -32,6 +48,19 @@ In `consumer/src/api.js`:
             .then(r => r.data);
     }
 ```
+
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="gradle">
+</TabItem>
+<TabItem value="ruby">
+</TabItem>
+<TabItem value="c#">
+</TabItem>
+<TabItem value="golang">
+</TabItem>
+</Tabs>
 
 In `consumer/src/api.pact.spec.js` we add authentication headers to the request setup for the existing tests:
 

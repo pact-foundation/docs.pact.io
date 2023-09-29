@@ -2,13 +2,30 @@
 title: Step 2 - Client Tested but integration fails
 sidebar_label: Step 2 - Client Tested but integration fails
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Now lets create a basic test for our API client. We're going to check 2 things:
 
 1. That our client code hits the expected endpoint
 2. That the response is marshalled into an object that is usable, with the correct ID
 
-You can see the client interface test we created in `consumer/src/api.spec.js`:
+You can see the client interface test we created:
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]}>
+<TabItem value="javascript">
+
+in `consumer/src/api.spec.js`:
 
 ```javascript
 import API from "./api";
@@ -56,7 +73,173 @@ describe("API", () => {
 });
 ```
 
+</TabItem>
+<TabItem value="java">
 
+in `consumer/src/test/java/io/pact/workshop/product_catalogue/clients/ProductServiceClientTest.java`:
+
+```java
+  @Test
+  void getProductById(@Wiremock WireMockServer server, @WiremockUri String uri) {
+      productServiceClient.setBaseUrl(uri);
+      server.stubFor(
+          get(urlPathEqualTo("/products/10"))
+              .willReturn(aResponse()
+              .withStatus(200)
+              .withBody("{\n" +
+                  "            \"id\": 50,\n" +
+                  "            \"type\": \"CREDIT_CARD\",\n" +
+                  "            \"name\": \"28 Degrees\",\n" +
+                  "            \"version\": \"v1\"\n" +
+                  "        }\n")
+              .withHeader("Content-Type", "application/json"))
+      );
+    
+      Product product = productServiceClient.getProductById(10);
+      assertThat(product, is(equalTo(new Product(10L, "28 Degrees", "CREDIT_CARD", "v1"))));
+  }
+```
+
+</TabItem>
+<TabItem value="gradle">
+
+in `consumer/src/test/java/au/com/dius/pactworkshop/consumer/ProductServiceTest.java`:
+
+```java
+class ProductServiceTest {
+
+  private WireMockServer wireMockServer;
+  private ProductService productService;
+
+  @BeforeEach
+  void setUp() {
+    wireMockServer = new WireMockServer(options().dynamicPort());
+
+    wireMockServer.start();
+
+    RestTemplate restTemplate = new RestTemplateBuilder()
+      .rootUri(wireMockServer.baseUrl())
+      .build();
+
+    productService = new ProductService(restTemplate);
+  }
+
+  @AfterEach
+  void tearDown() {
+    wireMockServer.stop();
+  }
+
+  @Test
+  void getAllProducts() {
+    wireMockServer.stubFor(get(urlPathEqualTo("/products"))
+      .willReturn(aResponse()
+        .withStatus(200)
+        .withHeader("Content-Type", "application/json")
+        .withBody("[" +
+          "{\"id\":\"9\",\"type\":\"CREDIT_CARD\",\"name\":\"GEM Visa\",\"version\":\"v2\"},"+
+          "{\"id\":\"10\",\"type\":\"CREDIT_CARD\",\"name\":\"28 Degrees\",\"version\":\"v1\"}"+
+          "]")));
+
+    List<Product> expected = Arrays.asList(new Product("9", "CREDIT_CARD", "GEM Visa", "v2"),
+      new Product("10", "CREDIT_CARD", "28 Degrees", "v1"));
+
+    List<Product> products = productService.getAllProducts();
+
+    assertEquals(expected, products);
+  }
+
+  @Test
+  void getProductById() {
+    wireMockServer.stubFor(get(urlPathEqualTo("/products/50"))
+      .willReturn(aResponse()
+        .withStatus(200)
+        .withHeader("Content-Type", "application/json")
+        .withBody("{\"id\":\"50\",\"type\":\"CREDIT_CARD\",\"name\":\"28 Degrees\",\"version\":\"v1\"}")));
+
+    Product expected = new Product("50", "CREDIT_CARD", "28 Degrees", "v1");
+
+    Product product = productService.getProduct("50");
+
+    assertEquals(expected, product);
+  }
+}
+```
+
+</TabItem>
+<TabItem value="ruby">
+
+in `client_spec.rb`
+
+```ruby
+    require 'spec_helper'
+    require 'client'
+
+
+    describe Client do
+
+
+      let(:json_data) do
+        {
+          "test" => "NO",
+          "date" => "2013-08-16T15:31:20+10:00",
+          "count" => 100
+        }
+      end
+      let(:response) { double('Response', :success? => true, :body => json_data.to_json) }
+
+
+      it 'can process the json payload from the provider' do
+        HTTParty.stub(:get).and_return(response)
+        expect(subject.process_data).to eql([1, Time.parse(json_data['date'])])
+      end
+
+    end
+```
+
+</TabItem>
+<TabItem value="c#">
+
+not implemented
+
+</TabItem>
+<TabItem value="golang">
+
+in `consumer/client/client_test.go`
+
+```go
+func TestClientUnit_GetUser(t *testing.T) {
+	userID := 10
+
+	// Setup mock server
+	server := httptest.NewServer(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
+		assert.Equal(t, req.URL.String(), fmt.Sprintf("/user/%d", userID))
+		user, _ := json.Marshal(model.User{
+			FirstName: "Sally",
+			LastName:  "McDougall",
+			ID:        userID,
+			Type:      "admin",
+			Username:  "smcdougall",
+		})
+		rw.Write([]byte(user))
+	}))
+	defer server.Close()
+
+	// Setup client
+	u, _ := url.Parse(server.URL)
+	client := &Client{
+		BaseURL: u,
+	}
+	user, err := client.GetUser(userID)
+	assert.NoError(t, err)
+
+	// Assert basic fact
+	assert.Equal(t, user.ID, userID)
+}
+
+```
+
+</TabItem>
+</Tabs>
 
 ![Unit Test With Mocked Response](diagrams/workshop_step2_unit_test.svg)
 

@@ -2,6 +2,8 @@
 title: Step 3 - Pact to the rescue
 sidebar_label: Step 3 - Pact to the rescue
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Unit tests are written and executed in isolation of any other services. When we write tests for code that talk to other services, they are built on trust that the contracts are upheld. There is no way to validate that the consumer and provider can communicate correctly.
 
@@ -21,6 +23,19 @@ The consumer can define the state of an interaction using the `given` property.
 Note how similar it looks to our unit test:
 
 In `consumer/src/api.pact.spec.js`:
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]}>
+<TabItem value="javascript">
 
 ```javascript
 import path from "path";
@@ -115,6 +130,18 @@ describe("API Pact test", () => {
 });
 ```
 
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="gradle">
+</TabItem>
+<TabItem value="ruby">
+</TabItem>
+<TabItem value="c#">
+</TabItem>
+<TabItem value="golang">
+</TabItem>
+</Tabs>
 
 ![Test using Pact](diagrams/workshop_step3_pact.svg)
 

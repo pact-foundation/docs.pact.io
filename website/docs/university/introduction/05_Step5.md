@@ -2,12 +2,28 @@
 title: Step 5 - Back to the client we go
 sidebar_label: Step 5 - Back to the client we go
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 We now need to update the consumer client and tests to hit the correct product path.
 
 First, we need to update the GET route for the client:
 
 In `consumer/src/api.js`:
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]}>
+<TabItem value="javascript">
 
 ```javascript
 async getProduct(id) {
@@ -35,6 +51,19 @@ describe("getting one product", () => {
 
 ...
 ```
+
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="gradle">
+</TabItem>
+<TabItem value="ruby">
+</TabItem>
+<TabItem value="c#">
+</TabItem>
+<TabItem value="golang">
+</TabItem>
+</Tabs>
 
 ![Pact Verification](diagrams/workshop_step5_pact.svg)
 

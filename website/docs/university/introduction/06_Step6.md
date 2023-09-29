@@ -2,6 +2,9 @@
 title: Step 6 - Consumer updates contract for missing products
 sidebar_label: Step 6 - Consumer updates contract for missing products
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 We're now going to add 2 more scenarios for the contract
 
@@ -12,6 +15,19 @@ We're now going to add 2 more scenarios for the contract
 Let's write a test for these scenarios, and then generate an updated pact file.
 
 In `consumer/src/api.pact.spec.js`:
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]}>
+<TabItem value="javascript">
 
 ```javascript
 // within the 'getting all products' group
@@ -68,6 +84,19 @@ test("product does not exist", async () => {
   });
 });
 ```
+
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="gradle">
+</TabItem>
+<TabItem value="ruby">
+</TabItem>
+<TabItem value="c#">
+</TabItem>
+<TabItem value="golang">
+</TabItem>
+</Tabs>
 
 Notice that our new tests look almost identical to our previous tests, and only differ on the expectations of the _response_ - the HTTP request expectations are exactly the same.
 

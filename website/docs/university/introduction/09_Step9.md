@@ -2,10 +2,26 @@
 title: Step 9 - Implement authorisation on the provider
 sidebar_label: Step 9 - Implement authorisation on the provider
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 We will add a middleware to check the Authorization header and deny the request with `401` if the token is older than 1 hour.
 
 In `provider/middleware/auth.middleware.js`
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]}>
+<TabItem value="javascript">
 
 ```javascript
 // 'Token' should be a valid ISO 8601 timestamp within the last hour
@@ -27,6 +43,19 @@ const authMiddleware = (req, res, next) => {
 
 module.exports = authMiddleware;
 ```
+
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="gradle">
+</TabItem>
+<TabItem value="ruby">
+</TabItem>
+<TabItem value="c#">
+</TabItem>
+<TabItem value="golang">
+</TabItem>
+</Tabs>
 
 In `provider/server.js`
 

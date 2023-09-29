@@ -18,7 +18,7 @@ The diagram below highlights the interaction for retrieving a product with ID 10
 
 ![Sequence Diagram](diagrams/workshop_step1_class-sequence-diagram.svg)
 
-You can see the client interface we created in `consumer/src/api.js`:
+You can see the client interface we created
 
 
 <Tabs
@@ -29,11 +29,12 @@ values={[
 {label: 'Java', value: 'java', },
 {label: 'Gradle', value: 'gradle', },
 {label: 'Ruby', value: 'ruby', },
-{label: 'Python', value: 'python', },
 {label: 'C#', value: 'c#', },
 {label: 'Golang', value: 'golang', }
 ]}>
 <TabItem value="javascript">
+
+in `consumer/src/api.js`:
 
 ```javascript
 export class API {
@@ -70,16 +71,142 @@ export class API {
 </TabItem>
 
 <TabItem value="java">
+
+in `consumer/src/main/java/io/pact/workshop/product_catalogue/clients/ProductServiceClient.java`:
+
+```java
+@Service
+public class ProductServiceClient {
+  @Autowired
+  private RestTemplate restTemplate;
+
+  @Value("${serviceClients.products.baseUrl}")
+  private String baseUrl;
+
+  public ProductServiceResponse fetchProducts() {
+    return restTemplate.getForObject(baseUrl + "/products", ProductServiceResponse.class);
+  }
+
+  public Product fetchProductById(long id) {
+    return restTemplate.getForObject(baseUrl + "/products/" + id, Product.class);
+  }
+}
+```
+
 </TabItem>
 <TabItem value="gradle">
+
+in `consumer/src/main/au/com/dius/pactworkshop/consumer/ProductService.java`:
+
+```java
+@Service
+public class ProductService {
+
+    private final RestTemplate restTemplate;
+
+    @Autowired
+    public ProductService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
+    public List<Product> getAllProducts() {
+        return restTemplate.exchange("/products",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Product>>(){}).getBody();
+    }
+
+    public Product getProduct(String id) {
+        return restTemplate.getForEntity("/products/{id}", Product.class, id).getBody();
+    }
+}
+```
+
 </TabItem>
 <TabItem value="ruby">
+
+in `client.rb`:
+
+```ruby
+    require 'httparty'
+    require 'uri'
+    require 'json'
+
+    class Client
+
+
+      def load_provider_json
+        response = HTTParty.get(URI::encode('http://localhost:8081/provider.json?valid_date=' + Time.now.httpdate))
+        if response.success?
+          JSON.parse(response.body)
+        end
+      end
+
+
+    end
+```
+
 </TabItem>
-<TabItem value="python">
-</TabItem>
-<TabItem value="C#">
+
+<TabItem value="c#">
+
+in `Consumer/src/ApiClient.cs`:
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+namespace Consumer
+{
+    public class ApiClient
+    {
+        private readonly Uri BaseUri;
+
+        public ApiClient(Uri baseUri)
+        {
+            this.BaseUri = baseUri;
+        }
+
+        public async Task<HttpResponseMessage> GetAllProducts()
+        {
+            using (var client = new HttpClient { BaseAddress = BaseUri })
+            {
+                try
+                {
+                    var response = await client.GetAsync($"/api/products");
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("There was a problem connecting to Products API.", ex);
+                }
+            }
+        }
+
+        public async Task<HttpResponseMessage> GetProduct(int id)
+        {
+            using (var client = new HttpClient { BaseAddress = BaseUri })
+            {
+                try
+                {
+                    var response = await client.GetAsync($"/api/product/{id}");
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("There was a problem connecting to Products API.", ex);
+                }
+            }
+        }
+    }
+}
+```
+
 </TabItem>
 <TabItem value="golang">
+
+in the `consumer/client` package:
 
 ```go
 type Client struct {

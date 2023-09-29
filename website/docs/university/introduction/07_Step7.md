@@ -2,6 +2,9 @@
 title: Step 7 - Adding the missing states
 sidebar_label: Step 7 - Adding the missing states
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 Our code already deals with missing users and sends a `404` response, however our test data fixture always has product ID 10 and 11 in our database.
 
@@ -17,6 +20,19 @@ We're going to add handlers for all our states:
 - product with ID 11 does not exist
 
 Let's open up our provider Pact verifications in `provider/product/product.pact.test.js`:
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+{label: 'Java', value: 'java', },
+{label: 'Gradle', value: 'gradle', },
+{label: 'Ruby', value: 'ruby', },
+{label: 'C#', value: 'c#', },
+{label: 'Golang', value: 'golang', }
+]}>
+<TabItem value="javascript">
 
 ```javascript
 // add this to the Verifier opts
@@ -40,6 +56,19 @@ stateHandlers: {
   },
 }
 ```
+
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="gradle">
+</TabItem>
+<TabItem value="ruby">
+</TabItem>
+<TabItem value="c#">
+</TabItem>
+<TabItem value="golang">
+</TabItem>
+</Tabs>
 
 Let's see how we go now:
 
