@@ -19,6 +19,7 @@ title: Planned breaking changes in version 3.0
 * Remove deprecated pact publication endpoints (small)
 * Remove deprecated JSON in pacticipants endpoint (small)
 * Many of the collection resources have both a _link and an _embedded - can we drop the _link?
+* Remove embedded latestVersion from pacticipant resource (small)
 
 ## API improvements
 
