@@ -18,6 +18,7 @@ title: Planned breaking changes in version 3.0
 * Remove redundant webhook creation endpoints (small)
 * Remove deprecated pact publication endpoints (small)
 * Remove deprecated JSON in pacticipants endpoint (small)
+* Many of the collection resources have both a _link and an _embedded - can we drop the _link?
 
 ## API improvements
 
@@ -41,7 +42,6 @@ title: Planned breaking changes in version 3.0
 * Make pacticipants embedded in integration decorator
 * Remove extra `branches` collection from matrix decorator (only need the branch versions).
 * Remove extra `branches` collection from version decorator.
-* Many of the collection resources have both a _link and an _embedded - can we drop the _link?
 
 ## Other
 
