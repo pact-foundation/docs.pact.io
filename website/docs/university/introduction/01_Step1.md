@@ -39,6 +39,13 @@ _`npm install`_
 
 :::
 
+## Learning Objectives
+
+| Step                                                                 | Title                                                   | Concept Covered                          | Learning objectives                                                                                                                                                                                              | Further Reading                                                                                                                                           |
+|----------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [step 1](https://github.com/pact-foundation/pact-workshop-js/tree/step1)   | Create our consumer before the Provider API even exists | Consumer-driven design                   | <ul><li>Understand use case</li></ul>                                                                                                                                                                             | <ul><li>https://martinfowler.com/articles/consumerDrivenContracts.html</li></ul>|
+<hr/>
+
 We need to first create an HTTP client to make the calls to our provider service:
 
 ![Simple Consumer](diagrams/workshop_step1.svg)

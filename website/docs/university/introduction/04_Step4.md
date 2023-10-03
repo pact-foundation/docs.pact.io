@@ -39,6 +39,13 @@ _`npm install`_
 
 :::
 
+## Learning Objectives
+
+| Step                                                                 | Title                                                   | Concept Covered                          | Learning objectives                                                                                                                                                                                              | Further Reading                                                                                                                                           |
+|----------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [step 4](https://github.com/pact-foundation/pact-workshop-js/tree/step4)   | Verify the consumer pact with the Provider API          | Provider side pact test                  | <ul><li>Understand basic Provider-side Pact concepts</li><li>Place provider side testing in a broader testing context (e.g. where it fits on the pyramid)</li></ul>                                               | <ul><li>https://docs.pact.io/5-minute-getting-started-guide#scope-of-a-provider-pact-test</li></ul>                                                       |
+<hr/>
+
 We need to make the pact file (the contract) that was produced from the consumer test available to the Provider module. This will help us verify that the provider can meet the requirements as set out in the contract. For now, we'll hard code the path to where it is saved in the consumer test, in step 11 we investigate a better way of doing this.
 
 Now let's make a start on writing Pact tests to validate the consumer contract:

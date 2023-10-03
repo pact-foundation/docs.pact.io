@@ -41,6 +41,13 @@ _`npm install`_
 :::
 
 
+## Learning Objectives
+
+| Step                                                                 | Title                                                   | Concept Covered                          | Learning objectives                                                                                                                                                                                              | Further Reading                                                                                                                                           |
+|----------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [step 7](https://github.com/pact-foundation/pact-workshop-js/tree/step7)   | Update API to handle `404` case                         | Provider States                          | <ul><li>How Pact deals with "stateful" interactions, via the concept of "Provider States"</li></ul>                                                                                                               | <ul><li>https://docs.pact.io/getting_started/provider_states</li></ul>                                                                                    |
+<hr/>
+
 
 Our code already deals with missing users and sends a `404` response, however our test data fixture always has product ID 10 and 11 in our database.
 

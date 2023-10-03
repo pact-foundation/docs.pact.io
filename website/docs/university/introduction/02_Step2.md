@@ -39,6 +39,13 @@ _`npm install`_
 
 :::
 
+## Learning Objectives
+
+| Step                                                                 | Title                                                   | Concept Covered                          | Learning objectives                                                                                                                                                                                              | Further Reading                                                                                                                                           |
+|----------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [step 2](https://github.com/pact-foundation/pact-workshop-js/tree/step2)   | Write a unit test for our consumer                      | -                                        | <ul><li>How to write a basic unit test for an HTTP Client</li><li>Understand how a unit test is unable to catch certain integration issues</li></ul>                                                              | <ul><li>https://docs.pact.io/faq/convinceme</li></ul>                                                                                                     |                                           |
+<hr/>
+
 Now lets create a basic test for our API client. We're going to check 2 things:
 
 1. That our client code hits the expected endpoint

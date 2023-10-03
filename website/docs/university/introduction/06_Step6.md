@@ -41,6 +41,13 @@ _`npm install`_
 :::
 
 
+## Learning Objectives
+
+| Step                                                                 | Title                                                   | Concept Covered                          | Learning objectives                                                                                                                                                                                              | Further Reading                                                                                                                                           |
+|----------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [step 6](https://github.com/pact-foundation/pact-workshop-js/tree/step6)   | Write a pact test for `404` (missing User) in consumer  | Testing API invariants                   | <ul><li>Understand how we can test "stateful" APIs without having to create complex, sequential API calls</li></ul>                                                                                               |                                                                                                                                                           |
+<hr/>
+
 
 We're now going to add 2 more scenarios for the contract
 

@@ -41,6 +41,13 @@ _`npm install`_
 :::
 
 
+## Learning Objectives
+
+| Step                                                                 | Title                                                   | Concept Covered                          | Learning objectives                                                                                                                                                                                              | Further Reading                                                                                                                                           |
+|----------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [step 8](https://github.com/pact-foundation/pact-workshop-js/tree/step8)   | Write a pact test for the `401` case                    | Testing authenticated APIs               | <ul><li>Service evolution - adding a new feature</li></ul>                                                                                                                                                        |                                                                                                                                                           |
+<hr/>
+
 
 It turns out that not everyone should be able to use the API. After a discussion with the team, it was decided that a time-bound bearer token would suffice. The token must be in `yyyy-MM-ddTHHmm` format and within 1 hour of the current time.
 

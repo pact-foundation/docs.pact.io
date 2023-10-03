@@ -39,6 +39,13 @@ _`npm install`_
 
 :::
 
+## Learning Objectives
+
+| Step                                                                 | Title                                                   | Concept Covered                          | Learning objectives                                                                                                                                                                                              | Further Reading                                                                                                                                           |
+|----------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [step 3](https://github.com/pact-foundation/pact-workshop-js/tree/step3)   | Write a Pact test for our consumer                      | Consumer side pact test                  | <ul><li>Understand basic Consumer-side Pact concepts</li><li>Understand "Matchers" to avoid test data brittleness</li><li>Demonstrate that Pact tests are able to catch a class of integration problems</li></ul> | <ul><li>https://docs.pact.io/5-minute-getting-started-guide#scope-of-a-consumer-pact-test</li><li>https://docs.pact.io/best_practices/consumer</li></ul>| |
+<hr/>
+
 
 Unit tests are written and executed in isolation of any other services. When we write tests for code that talk to other services, they are built on trust that the contracts are upheld. There is no way to validate that the consumer and provider can communicate correctly.
 

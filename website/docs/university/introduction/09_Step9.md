@@ -41,6 +41,13 @@ _`npm install`_
 :::
 
 
+## Learning Objectives
+
+| Step                                                                 | Title                                                   | Concept Covered                          | Learning objectives                                                                                                                                                                                              | Further Reading                                                                                                                                           |
+|----------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [step 9](https://github.com/pact-foundation/pact-workshop-js/tree/step9)   | Update API to handle `401` case                         | Service evolution                        | <ul><li>Understand the challenge of dealing with complex/dynamic data, such as time-bound authentication tokens</li></ul>                                                                                         |                                                                                                                                                           |
+<hr/>
+
 
 We will add a middleware to check the Authorization header and deny the request with `401` if the token is older than 1 hour.
 

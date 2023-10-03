@@ -39,6 +39,13 @@ _`npm install`_
 
 :::
 
+## Learning Objectives
+
+| Step                                                                 | Title                                                   | Concept Covered                          | Learning objectives                                                                                                                                                                                              | Further Reading                                                                                                                                           |
+|----------------------------------------------------------------------|---------------------------------------------------------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [step 5](https://github.com/pact-foundation/pact-workshop-js/tree/step5)   | Fix the consumer's bad assumptions about the Provider   | Humans talking to humans (collaboration) | <ul><li>Understand that a tool facilitates collaboration, it doesn't replace it</li></ul>                                                                                                                         |                                                                                                                                                           |
+<hr/>
+
 We now need to update the consumer client and tests to hit the correct product path.
 
 First, we need to update the GET route for the client:
