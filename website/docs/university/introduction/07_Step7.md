@@ -26,11 +26,6 @@ groupId="sdk-choice"
 defaultValue="javascript"
 values={[
 {label: 'Javascript', value: 'javascript', },
-{label: 'Java', value: 'java', },
-{label: 'Gradle', value: 'gradle', },
-{label: 'Ruby', value: 'ruby', },
-{label: 'C#', value: 'c#', },
-{label: 'Golang', value: 'golang', }
 ]}>
 <TabItem value="javascript">
 

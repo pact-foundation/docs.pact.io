@@ -20,8 +20,8 @@ The diagram below highlights the interaction for retrieving a product with ID 10
 
 You can see the client interface we created
 
-
-<Tabs
+<!-- TODO: Sync code from each repo to render code blocks -->
+<!-- <Tabs
 groupId="sdk-choice"
 defaultValue="javascript"
 values={[
@@ -31,6 +31,13 @@ values={[
 {label: 'Ruby', value: 'ruby', },
 {label: 'C#', value: 'c#', },
 {label: 'Golang', value: 'golang', }
+]}> -->
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
 ]}>
 <TabItem value="javascript">
 
