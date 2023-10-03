@@ -6,6 +6,42 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
+:::info
+**Move to step 8**
+
+_`git checkout step8`_
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+]}>
+<TabItem value="javascript">
+
+_`npm install`_
+
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="gradle">
+</TabItem>
+<TabItem value="ruby">
+</TabItem>
+<TabItem value="python">
+</TabItem>
+<TabItem value="C#">
+</TabItem>
+<TabItem value="golang">
+</TabItem>
+</Tabs>
+
+:::
+
+
+
 It turns out that not everyone should be able to use the API. After a discussion with the team, it was decided that a time-bound bearer token would suffice. The token must be in `yyyy-MM-ddTHHmm` format and within 1 hour of the current time.
 
 In the case a valid bearer token is not provided, we expect a `401`. Let's update the consumer to pass the bearer token, and capture this new `401` scenario.

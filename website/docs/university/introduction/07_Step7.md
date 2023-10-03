@@ -6,6 +6,42 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
+:::info
+**Move to step 7**
+
+_`git checkout step7`_
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+]}>
+<TabItem value="javascript">
+
+_`npm install`_
+
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="gradle">
+</TabItem>
+<TabItem value="ruby">
+</TabItem>
+<TabItem value="python">
+</TabItem>
+<TabItem value="C#">
+</TabItem>
+<TabItem value="golang">
+</TabItem>
+</Tabs>
+
+:::
+
+
+
 Our code already deals with missing users and sends a `404` response, however our test data fixture always has product ID 10 and 11 in our database.
 
 In this step, we will add a state handler (`stateHandlers`) to our provider Pact verifications, which will update the state of our data store depending on which states the consumers require.

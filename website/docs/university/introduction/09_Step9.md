@@ -6,6 +6,42 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
+:::info
+**Move to step 9**
+
+_`git checkout step9`_
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+]}>
+<TabItem value="javascript">
+
+_`npm install`_
+
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="gradle">
+</TabItem>
+<TabItem value="ruby">
+</TabItem>
+<TabItem value="python">
+</TabItem>
+<TabItem value="C#">
+</TabItem>
+<TabItem value="golang">
+</TabItem>
+</Tabs>
+
+:::
+
+
+
 We will add a middleware to check the Authorization header and deny the request with `401` if the token is older than 1 hour.
 
 In `provider/middleware/auth.middleware.js`
@@ -134,4 +170,4 @@ There were 3 pact failures
 
 Oh, dear. _More_ tests are failing. Can you understand why?
 
-*Move on to [step 10](https://github.com/pact-foundation/pact-workshop-js/tree/step10#step-10---request-filters-on-the-provider)*
+*Move on to [step 90](https://github.com/pact-foundation/pact-workshop-js/tree/step10#step-10---request-filters-on-the-provider)*

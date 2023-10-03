@@ -6,6 +6,42 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
+:::info
+**Move to step 6**
+
+_`git checkout step6`_
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+]}>
+<TabItem value="javascript">
+
+_`npm install`_
+
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="gradle">
+</TabItem>
+<TabItem value="ruby">
+</TabItem>
+<TabItem value="python">
+</TabItem>
+<TabItem value="C#">
+</TabItem>
+<TabItem value="golang">
+</TabItem>
+</Tabs>
+
+:::
+
+
+
 We're now going to add 2 more scenarios for the contract
 
 - What happens when we make a call for a product that doesn't exist? We assume we'll get a `404`.

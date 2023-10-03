@@ -5,6 +5,40 @@ sidebar_label: Step 1 - Simple Consumer calling Provider
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+:::info
+**Move to step 1**
+
+_`git checkout step1`_
+
+<Tabs
+groupId="sdk-choice"
+defaultValue="javascript"
+values={[
+{label: 'Javascript', value: 'javascript', },
+]}>
+<TabItem value="javascript">
+
+_`npm install`_
+
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="java">
+</TabItem>
+<TabItem value="gradle">
+</TabItem>
+<TabItem value="ruby">
+</TabItem>
+<TabItem value="python">
+</TabItem>
+<TabItem value="C#">
+</TabItem>
+<TabItem value="golang">
+</TabItem>
+</Tabs>
+
+:::
+
 We need to first create an HTTP client to make the calls to our provider service:
 
 ![Simple Consumer](diagrams/workshop_step1.svg)
