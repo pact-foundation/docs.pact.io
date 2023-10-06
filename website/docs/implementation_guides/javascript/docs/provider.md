@@ -12,7 +12,7 @@ Pact is a consumer-driven contract testing tool, which is a fancy way of saying 
 
 The process looks like this:
 
-![diagram](https://github.com/pact-foundation/pact-js/blob/master/docs/diagrams/summary.png?raw=true)
+![diagram](https://github.com/pact-foundation/pact-js/blob/master/docs/diagrams/summary.png)
 
 1. The consumer writes a unit test of its behaviour using a Mock provided by Pact
 1. Pact writes the interactions into a contract file (as a JSON document)
