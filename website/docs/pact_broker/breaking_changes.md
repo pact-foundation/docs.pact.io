@@ -44,6 +44,7 @@ title: Planned breaking changes in version 3.0
 * Remove extra `branches` collection from matrix decorator (only need the branch versions).
 * Remove extra `branches` collection from version decorator.
 * Move `buildUrl` from version to pact publication and verification. (medium)
+* Prefix relations in `webhook_execution_result_decorator.rb` with `pb:`.
 
 ## Other
 
