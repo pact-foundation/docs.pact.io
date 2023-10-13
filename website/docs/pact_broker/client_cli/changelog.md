@@ -4,6 +4,16 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.73.0"></a>
+### v1.73.0 (2023-10-13)
+
+#### Features
+
+* print warnings and allow error to be raised when unknown option is used	 ([5412121](https://github.com/pact-foundation/pact_broker-client/commit/5412121))
+* raise an error when an em dash is used instead of a normal dash	 ([0e8e773](https://github.com/pact-foundation/pact_broker-client/commit/0e8e773))
+* support --help and -h flags	 ([a6458ab](https://github.com/pact-foundation/pact_broker-client/commit/a6458ab))
+* handle x509 certs in HTTP Client (#142)	 ([c3aa8dc](https://github.com/pact-foundation/pact_broker-client/commit/c3aa8dc))
+
 <a name="v1.72.0"></a>
 ### v1.72.0 (2023-09-11)
 
