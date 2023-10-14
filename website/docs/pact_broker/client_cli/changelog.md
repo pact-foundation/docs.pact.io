@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.74.0"></a>
+### v1.74.0 (2023-10-14)
+
+#### Features
+
+* auto detect commit sha, add shorthand -r flag (#119)	 ([1dac9f8](https://github.com/pact-foundation/pact_broker-client/commit/1dac9f8))
+
+#### Bug Fixes
+
+* support merging v3 pacts	 ([d1e01d0](https://github.com/pact-foundation/pact_broker-client/commit/d1e01d0))
+
 <a name="v1.73.0"></a>
 ### v1.73.0 (2023-10-13)
 
