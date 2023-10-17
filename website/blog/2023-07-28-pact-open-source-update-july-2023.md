@@ -200,7 +200,7 @@ Pact-PHP does not currently support v3+ features of the rust core, in the mainli
 
 V3+ features are now available for beta testing in `ffi` branch, in a view to stabilise and release into the mainline.
 
-We would <3 your support
+We would  your support
 
 #### How can I test this today
 

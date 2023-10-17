@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Pact Open Source Update — May 2023
 author: Yousaf Nabi
 authorURL: https://twitter.com/you54f
@@ -281,4 +281,4 @@ Be sure to check it our [here](/users/community_corner/adam_cox_interview_may202
 
 That’s it for this month. Stay safe and carry on coding!
 
-- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact.
+- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact. -->

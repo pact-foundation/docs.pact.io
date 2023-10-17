@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Pact Open Source Update — July 2022
 author: Yousaf Nabi
 authorURL: https://twitter.com/you54f
@@ -112,4 +112,4 @@ So what are Mike and I up to now? We are looking at our examples with a particul
 
 That's all for now, catch you next month!
 
-- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact.
+- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact. -->

@@ -1,4 +1,4 @@
----
+{/* ---
 title: Trusted by
 ---
 
@@ -13,18 +13,13 @@ const showcase = () => {
 const chunkSize = 3;
 const renderList = []
 for (let i = 0; i < users.length; i += chunkSize) {
-  const chunk = users.slice(i, i + chunkSize);
-  renderList.push(<tr key={'logorow-'+i}>{chunk.map((user) => {
-    return (
-        <td key={user.caption}>
-          <a href={user.infoLink} key={user.caption}>
-            <img src={user.image} alt={user.caption} title={user.caption} width='150'></img>
-          </a>
-        </td>
-    );
-  })}</tr>)
+const chunk = users.slice(i, i + chunkSize);
+renderList.push(<tr key={'logorow-'+i}>{chunk.map((user) => {
+return (
+);
+})})
 }
 return renderList
 }
 
-<div className="logos"><table><tbody>{showcase()}</tbody></table></div>
+<div className="logos"><table><tbody>{showcase()}</tbody></table></div> */}

@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Pact Open Source Update — May 2022
 author: Yousaf Nabi
 authorURL: https://twitter.com/you54f
@@ -103,4 +103,4 @@ There are a multitude of ways, and you don't need to be a code wizard to start:
 
 That's all for now, catch you next month!
 
-- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact.
+- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact. -->

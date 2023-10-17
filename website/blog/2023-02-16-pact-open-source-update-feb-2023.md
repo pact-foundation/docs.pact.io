@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Pact Open Source Update — Feb 2023
 author: Yousaf Nabi
 authorURL: https://twitter.com/you54f
@@ -85,7 +85,7 @@ This is picking up traction, thanks to [Chris Burns](https://github.com/ChrisJBu
 
 ### Pact PHP
 
-With <3 to [Tien Vo Xuan](https://github.com/Tienvx) and others, we now have Rust support in Pact-PHP
+With  to [Tien Vo Xuan](https://github.com/Tienvx) and others, we now have Rust support in Pact-PHP
 
 - <https://github.com/pact-foundation/pact-php/pull/278>
 - <https://github.com/pact-foundation/pact-php/pull/279>
@@ -142,10 +142,10 @@ It’s true. We would love your support in helping review any of these PRs, as w
 
 ## Getting involved with Pact  
 
-We have <3 for all our contributors and maintainers – we have reached the heights of today because of the hours and work many people have put into the Pact ecosystem.  
+We have  for all our contributors and maintainers – we have reached the heights of today because of the hours and work many people have put into the Pact ecosystem.  
 
 Getting involved with an open source project – Pact or otherwise – [can be extremely rewarding](https://docs.pact.io/contributing#why-get-involved-in-open-source-anyway) and allow you to give back to a community in a meaningful way. If you’re passionate about Pact, you can find a way to get involved [here](https://docs.pact.io/contributing#pact---how-you-can-help).
 
 That's all for now, catch you next month!
 
-- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact.
+- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact. -->

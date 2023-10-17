@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Case Study - Atlassian
 ---
 
@@ -42,4 +42,4 @@ The benefits:
 - <https://www.youtube.com/watch?v=-6x6XBDf9sQ>
 - <https://www.atlassian.com/blog/technology/spec-first-api-development>
 
-___
+___ -->

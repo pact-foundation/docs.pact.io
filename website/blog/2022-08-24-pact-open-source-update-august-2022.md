@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Pact Open Source Update — August 2022
 author: Yousaf Nabi
 authorURL: https://twitter.com/you54f
@@ -92,4 +92,4 @@ Read our [Contributing](https://docs.pact.io/contributing) page to find out many
 
 That's all for now, catch you next month!
 
-- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact.
+- Yousaf Nabi — Developer Advocate at PactFlow and Community Shepherd at Pact. -->
