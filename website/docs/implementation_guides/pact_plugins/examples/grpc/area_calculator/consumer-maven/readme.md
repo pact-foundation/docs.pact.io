@@ -1,6 +1,6 @@
 ---
-title: Example Java and JUnit 5 with Gradle consumer project
-custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/examples/gRPC/area_calculator/consumer-jvm/README.md
+title: Example Java and JUnit 5 with Maven consumer project
+custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/examples/gRPC/area_calculator/consumer-maven/README.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
@@ -12,7 +12,7 @@ https://github.com/pact-foundation/pact-plugins/tree/main/examples
 ## Pre-Reqs
 
 - Java 11
-- Gradle
+- Maven
 
 ## Outline
 
@@ -29,11 +29,11 @@ To run the test in this project, it requires the gRPC plugin to be installed. Se
 
 ## Generated gRPC stub
 
-The gRPC stub and Java classes are automatically generated using the Protobuf Gradle plugin.
+The gRPC stub and Java classes are automatically generated using the Protobuf Maven plugin.
 
 ## Test class
 
-The test class [PactConsumerTest](https://github.com/pact-foundation/pact-plugins/blob/main/src/test/java/io/pact/example/grpc/consumer/PactConsumerTest.java) first sets up
+The test class [PactConsumerTest](https://github.com/pact-foundation/pact-plugins/blob/main/examples/gRPC/area_calculator/consumer-maven/src/test/java/io/pact/example/grpc/maven/PactConsumerTest.java) first sets up
 the interaction using the Pact DSL, then during the test method receives a gRPC mock server to use. The generated
 stub classes are then used to send the `ShapeMessage` to the mock server, and an `AreaResponse` message is received back.
 This is then validated.
@@ -41,10 +41,10 @@ This is then validated.
 ## Run the test
 
 ```sh
-./gradlew clean test
+mvn test
 ```
 
-A pact file, will be generated in the `./build/pacts` folder.
+A pact file, will be generated in the `./target/pacts` folder.
 
 ### Pact File
 
@@ -60,7 +60,7 @@ These will be used to replay against the provider to verify the contract can be 
   "interactions": [
     {
       "comments": {
-        "testname": "io.pact.example.grpc.consumer.PactConsumerTest.calculateRectangleArea(MockServer, SynchronousMessages)"
+        "testname": "io.pact.example.grpc.maven.PactConsumerTest.calculateRectangleArea(MockServer, SynchronousMessages)"
       },
       "description": "calculate rectangle area request",
       "interactionMarkup": {
@@ -137,7 +137,7 @@ These will be used to replay against the provider to verify the contract can be 
   ],
   "metadata": {
     "pact-jvm": {
-      "version": "4.5.6"
+      "version": "4.4.2"
     },
     "pactSpecification": {
       "version": "4.0"
@@ -159,4 +159,5 @@ These will be used to replay against the provider to verify the contract can be 
     "name": "area-calculator-provider"
   }
 }
+
 ```
