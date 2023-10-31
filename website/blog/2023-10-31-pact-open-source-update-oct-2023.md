@@ -13,7 +13,18 @@ hide_table_of_contents: false
 
 ## Pactober
 
-ROUND UP
+Your 🗺️ to the months events.
+
+- :tv: : [Improving Software Quality with Contract Testing and Pact with Seb Rose](https://www.youtube.com/watch?v=5vAV1lTGJyE)
+- :tv: : [Opening Keynote - Testing The Boundaries - Sam Newman](https://www.youtube.com/live/s1LOP4Ak5SA?t=2497&feature=shared)
+- :tv: : [Fireside chat Featuring Bas Dijkstra, Lewis Prescott & Dave Farley](https://www.youtube.com/live/s1LOP4Ak5SA?t=6450&feature=shared)
+- :tv: : [Hello from the Pact Core Team with Beth Skurrie, Ron Holshousen & Matt Fellows](https://www.youtube.com/live/s1LOP4Ak5SA?t=577&feature=shared)
+- :tv: : [Pact Updates - Matt Fellows](https://www.youtube.com/live/s1LOP4Ak5SA?t=10794&feature=shared)
+- :tv: : [Pact Blog - Yousaf Nabi](https://www.youtube.com/live/s1LOP4Ak5SA?t=12695&feature=shared)
+- :tv: : [Pact PHP - Tien Vo](https://www.youtube.com/live/s1LOP4Ak5SA?feature=shared&t=13090)
+- :tv: : [Pact Python - Joshua Ellis](https://www.youtube.com/live/s1LOP4Ak5SA?feature=shared&t=12762)
+- :tv: : [Pact TAU Course - Rafaela Avezedo](https://www.youtube.com/watch?v=s1LOP4Ak5SA&t=13400s)
+- :tv: : [Keynote - Beware the Integrated Tests Scam: A Retrospective And An Apology - J.B. Rainsberger](https://www.youtube.com/live/s1LOP4Ak5SA?t=14230&feature=shared)
 
 ### Pactober Workshops
 
@@ -148,6 +159,37 @@ We remember Barry Irvine's post from February about his [adventures with Pact & 
 Nathan shows us Pact through a wider lense at GoCity, as he shows us how they reached Pact Nirvana. It's a great read and motivating if you are on your own Pact journey yourself.
 
 Check it out [here](https://medium.com/go-city/how-we-reached-pact-nirvana-diamond-level-5d55e5c388d0)
+
+## Community Corner - Jo Laing
+
+If you have tuned in you the Pactober events, you'll probably be bored of my voice, so how about hearing from the lovely Jo Laing, your Pact community manager.
+
+**Hello Jo, without further ado, you’ve been getting to know the Pact community this year, how’s it all been going?**
+
+> I can’t deny on being a little apprehensive having come from managing the Cucumber community group where I am super comfortable and familiar, so it was a relief when I realised this community was actually a very similar space and I even recognised some of the member names from the Cucumber community which has helped me join some dots between Cucumber/BDD and Pact/Contract Testing (win, win). Having the support of the amazing team at Pact has been a big bonus too. I’ve also had to face my fear of GitHub and am happy to say it’s honestly not as bad as I thought 😉
+
+**Can you tell us anything about what’s coming up for the Pact community?**
+
+> We’ve started hosting a weekly maintainers community meeting (Check out the open agenda [here](https://docs.google.com/document/d/1v_QWyYEl7rxR5hV0EQAcTFjBbiq5_uzn7_WMMYILRac/edit)) which a few maintainers attend. I’d love to see more attendee’s at those meetings and foster those relationships to build a healthy core maintainer group. 
+> 
+> GitHub triage is the next big focus for the group. Pact has many repositories so we need to do some housekeeping and get a process in place for managing those.
+> 
+> Looking forward to 2024, there will also be a focus on improving and sharing the educational material we have around Pact and contract testing to help guide people who are interested/starting out.
+> 
+> I’d also love to host more Fireside Chat type sessions too, as the session we held at Pactober was just getting juicy when we had to call time. Reach out to me if this appeals to you.
+
+**We worked together to deliver the Pactober event this month 🙌 what were your highlights from the event?**
+
+> Oh so many! Jamming with you on the organisation of the event was fun! I really enjoyed the freedom we had to manage the whole event end to end.  Meeting the speakers was awesome too, what a lovely bunch of people. I’d like to give a big thanks and shout out to everyone from the community involved who helped deliver the event.
+
+> I’m excited to see what we can all collaborate on in the future.
+
+**Your role changed this year to Open Source Community Manager at SmartBear and you now have three open source communities to shepherd – how is that shaping up?**
+
+> Yes, I’ve been set quite a challenge here! Alongside the Cucumber and Pact open source communities, I’ve also been tasked with trying to establish a new community group for another of SmartBear's open source tools, Swagger. Now the Pactober event is mostly wrapped up, I have more time to focus on the planning and setting up of whatever works for this group - so lots of outreach, asking, listening and experimenting with our Swagger users in order to shape up the right community setting.
+> _So much to do!_
+
+So much to do indeed Jo, thank you for taking the time to share with the readers! Couldn't have done this event without you, and looking forward to helping share some of the support, in your journey with the Swagger community and beyond.
 
 ## Community Events
 
