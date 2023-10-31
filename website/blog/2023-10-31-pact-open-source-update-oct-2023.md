@@ -19,23 +19,56 @@ ROUND UP
 
 Want to learn more about Pact, how it works, and how you can get hands-on?
 
-Watch one, or the series of workshops over on our YouTube channel.
+Watch one, or the series of workshops over on our YouTube channel & check out the supporting material
 
 - :tv: [Pactober Workshop 1 - HTTP Pact](https://www.youtube.com/watch?v=Gx-R2Cn1HZE)
-  - https://docs.pact.io/university/introduction/00_1_Intro
+  - [Workshop Course](https://docs.pact.io/university/introduction/00_1_Intro)
+    - Flavours:
+      - [JS](https://github.com/pact-foundation/pact-workshop-js)
+      - [GoLang](https://github.com/pact-foundation/pact-workshop-go)
+      - [.NET](https://github.com/pactflow/pact-workshop-dotnet-core-v1)
+      - [JVM - Gradle/JUnit4/SpringBoot](https://github.com/pact-foundation/pact-workshop-jvm-spring)
+      - [JVM - Maven/JUnit5/SpringBoot](https://github.com/pact-foundation/pact-workshop-Maven-Springboot-JUnit5)
+      - [Ruby](https://github.com/DiUS/pact-workshop-ruby-v2)
+      - [Android](https://github.com/DiUS/pact-workshop-android)
 - :tv: [Pactober Workshop 2 - Message Pact](https://www.youtube.com/watch?v=81N25-4x27E)
-  - https://docs.pact.io/getting_started/how_pact_works#non-http-testing-message-pact
+  - [Ron's intro to Message Pact - Part 1](https://dius.com.au/2017/09/22/contract-testing-serverless-and-asynchronous-applications/)
+  - [Ron's intro to Message Pact - Part 2](https://dius.com.au/2018/10/01/contract-testing-serverless-and-asynchronous-applications---part-2/)
+  - [Pact Specification V3 introducing Message Pact](https://github.com/pact-foundation/pact-specification/tree/version-3?tab=readme-ov-file#version-30)
+  - [How Message Pact Works](https://docs.pact.io/getting_started/how_pact_works#non-http-testing-message-pact)
+  - [Pact V4 Interaction Types](https://github.com/pact-foundation/pact-specification/tree/version-4?tab=readme-ov-file#interactions)
+  - [Example SNS Consumer using Message Pact](https://github.com/pactflow/example-consumer-js-sns) (JS)
+  - [Example SNS Provider using Message Pact](https://github.com/pactflow/example-provider-js-sns) (JS)
 - :tv: [Pactober Workshop 3 - Plugin Pact](https://www.youtube.com/watch?v=0FpzPRSf2VA3)
-  - https://docs.pact.io/plugins/quick_start
-  - https://github.com/pact-foundation/pact-plugins/tree/main/examples
+  - [Pact Plugins Repo](https://github.com/pact-foundation/pact-plugins)
+  - [Pact Plugins Overview](https://docs.pact.io/plugins/quick_start)
+  - [Pact Plugins Examples](https://github.com/pact-foundation/pact-plugins/tree/main/examples)
+  - [Pact Plugins Matching Rules](https://docs.pact.io/implementation_guides/pact_plugins/docs/matching-rule-definition-expressions)
+  - [Pact V4 Interaction Types](https://github.com/pact-foundation/pact-specification/tree/version-4?tab=readme-ov-file#interactions)
+  - [Pact Protobuf Plugin](https://github.com/pactflow/pact-protobuf-plugin) built by PactFlow, well Ron :joy:
+  - [Pact Avro Plugin](https://github.com/austek/pact-avro-plugin) built by [Ali Ustek](https://github.com/austek/pact-avro-plugin/commits?author=austek)
+  - [Create your own Pact Plugin workshop](https://docs.pact.io/plugins/workshops/create-a-plugin/intro)
 - :tv: [Pactober Workshop 4 - How Pact is built](https://www.youtube.com/watch?v=QIza-D-f7DI)
-  - https://docs.pact.io/diagrams/ecosystem
+  - [Pact Specification](https://github.com/pact-foundation/pact-specification)
+  - [Pact Feature Support](https://docs.pact.io/roadmap/feature_support)
+  - [Pact Ecosystem](https://docs.pact.io/diagrams/ecosystem)
+  - [Pact Language Guides](https://docs.pact.io/implementation_guides/cli)
+  - [Pact Compatibility Suite](https://github.com/pact-foundation/pact-compatibility-suite)
+  - [FFI Wiki](https://en.wikipedia.org/wiki/Foreign_function_interface)
+  - [FFI OmniBus](https://jakegoulding.com/rust-ffi-omnibus/)
+  - [C DataTypes Wiki](https://en.wikipedia.org/wiki/C_data_types)
+  - [Pact FFI Online Docs](https://docs.rs/pact_ffi/latest/pact_ffi/) via Docs.rs:
+  - [Pact FFI Code](https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi)
+  - [Pact FFI Releases](https://github.com/pact-foundation/pact-reference/tags) (Look for `libpact_ffi-v<release version>`)
 
 ## OSS Updates
 
 - Pact Rust
 - Pact PHP
 - Pact Python
+- Pact Go
+- Pact Mock Service
+- Pact Broker
 
 ### Pact PHP
 
@@ -55,7 +88,7 @@ Joshua Ellis said Hello World to the Pact community during our Pactober birthday
 
 He has also been super busy in the world of Pact-Python where we've seen a hive of activity.
 
-Josh published his first release, [`v2.1.0`](https://github.com/pact-foundation/pact-python/releases/tag/v2.1.0) which is the first to include pre-built wheels published to GitHub. 
+Josh published his first release, [`v2.1.0`](https://github.com/pact-foundation/pact-python/releases/tag/v2.1.0) which is the first to include pre-built wheels published to GitHub.
 
 This release also drops support for Python 3.6 and 3.7, allowing for improvements to the build-system that will keep Pact-Python healthy and maintainable long into the future.
 
@@ -65,7 +98,7 @@ If you want to get involved, why not reach out via the GitHub repo, or via [#Pac
 
 You'll also notice new issue templates, and labelling across the project, which should hopefully make the triaging process slicker for everyone. Please feel free to try it out and give us feedback, good, bad or ugly!
 
-### Pact-Go
+### Pact Go
 
 Stanislav Vodetskyi helped deliver both a fix and an enhancement to Pact-Go
 
@@ -74,11 +107,21 @@ Stanislav Vodetskyi helped deliver both a fix and an enhancement to Pact-Go
 
 Alex also managed to add a change to our v1 (Ruby-backed) pact-go implementation, which will help him out with running multiple pact verifiers in parallel.
 
-- [fix(verifier): acquire HTTP port atomically](https://github.com/pact-foundation/pact-go/pull/344)
+- [fix(verifier) acquire HTTP port atomically](https://github.com/pact-foundation/pact-go/pull/344)
 
 Are you using Pact-Go v2? Fancy lending a hand updating the [pact-go workshop](https://github.com/pact-foundation/pact-workshop-go), to use pact-go v2?
 
 Let me know, and I'm sure I can dig up some swag!
+
+### Pact Mock Service
+
+As our Pact ruby ecosystem progressed onto Ruby 3.x, it allowed Pact-mock_service to be updated to provide compatibility with Rack 3.
+
+This was kindly provided by provided in this [PR](https://github.com/pact-foundation/pact-mock_service/pull/146) via Adam Forsyth.
+
+### Pact Broker
+
+Ben Brugman made his [first PR ever](https://github.com/pact-foundation/pact-broker-docker/pull/154) :hooray: - This one upgraded Supercronic, which is a core dependency in our Pact Broker Docker image.
 
 ## Pact in the wild
 
