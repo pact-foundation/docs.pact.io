@@ -9,6 +9,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/examp
 https://github.com/pact-foundation/pact-plugins/tree/main/examples
 
 
+## Pre-Reqs
+
+- Java 11
+
+## Outline
+
 This example project has a server implementation in Kotlin for the area calculator service call:
 
 ```protobuf
@@ -27,6 +33,10 @@ To run the test in this project, it requires the gRPC plugin to be installed. Se
 There is a [Pact verification test](https://github.com/pact-foundation/pact-plugins/blob/main/server/src/test/java/io/pact/example/grpc/provider/PactVerificationTest.java) written in Java and JUint 5 that can verify the Kotlin server using a Pact file from
 one of the consumer projects.
 
+```sh
+./gradlew clean test
+```
+
 ## Verifying the gRPC server using Verifier CLI
 
 The server can also be verified by using the [Pact Verifier CLI](https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier_cli).
@@ -37,6 +47,10 @@ from the consumer projects to verify the server.
 ### First, start the server
 
 We can use the Gradle run task for that:
+
+```sh
+./gradlew run
+```
 
 ```console
 gRPC/area_calculator/provider-jvm: 
@@ -142,9 +156,13 @@ Note the port that is printed out above (`37757`), we need to pass that on to th
 
 We use the Pact file from the consumer project and the port from the step above.
 
+```sh
+pact_verifier_cli -f ../consumer-jvm/build/pacts/grpc-consumer-jvm-area-calculator-provider.json -p 37757 -l none
+```
+
 ```console
 gRPC/area_calculator/provider-jvm: 
-❯ pact_verifier_cli -f ../consumer-jvm/build/pacts/protobuf-consumer-area-calculator-provider.json -p 37757 -l none
+❯ pact_verifier_cli -f ../consumer-jvm/build/pacts/grpc-consumer-jvm-area-calculator-provider.json -p 37757 -l none
 2022-05-02T04:29:36.636972Z  INFO main pact_verifier: Pact file requires plugins, will load those now
 2022-05-02T04:29:36.638556Z  WARN tokio-runtime-worker pact_plugin_driver::metrics: 
 

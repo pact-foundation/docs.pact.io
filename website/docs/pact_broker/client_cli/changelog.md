@@ -4,6 +4,56 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.74.0"></a>
+### v1.74.0 (2023-10-14)
+
+#### Features
+
+* auto detect commit sha, add shorthand -r flag (#119)	 ([1dac9f8](https://github.com/pact-foundation/pact_broker-client/commit/1dac9f8))
+
+#### Bug Fixes
+
+* support merging v3 pacts	 ([d1e01d0](https://github.com/pact-foundation/pact_broker-client/commit/d1e01d0))
+
+<a name="v1.73.0"></a>
+### v1.73.0 (2023-10-13)
+
+#### Features
+
+* print warnings and allow error to be raised when unknown option is used	 ([5412121](https://github.com/pact-foundation/pact_broker-client/commit/5412121))
+* raise an error when an em dash is used instead of a normal dash	 ([0e8e773](https://github.com/pact-foundation/pact_broker-client/commit/0e8e773))
+* support --help and -h flags	 ([a6458ab](https://github.com/pact-foundation/pact_broker-client/commit/a6458ab))
+* handle x509 certs in HTTP Client (#142)	 ([c3aa8dc](https://github.com/pact-foundation/pact_broker-client/commit/c3aa8dc))
+
+<a name="v1.72.0"></a>
+### v1.72.0 (2023-09-11)
+
+#### Features
+
+* enable publishing provider contracts using the 'all in one' endpoint	 ([398d58c](https://github.com/pact-foundation/pact_broker-client/commit/398d58c))
+
+<a name="v1.71.0"></a>
+### v1.71.0 (2023-09-07)
+
+#### Features
+
+* publish provider contracts using all in one endpoint (#141)	 ([a9f87a8](https://github.com/pact-foundation/pact_broker-client/commit/a9f87a8))
+
+<a name="v1.70.0"></a>
+### v1.70.0 (2023-08-29)
+
+#### Features
+
+* sort can-i-deploy table by consumer name, then provider name	 ([83412e7](https://github.com/pact-foundation/pact_broker-client/commit/83412e7))
+* do not accept gzip responses when VERBOSE=true	 ([a72a529](https://github.com/pact-foundation/pact_broker-client/commit/a72a529))
+
+<a name="v1.69.0"></a>
+### v1.69.0 (2023-08-29)
+
+#### Features
+
+* can-i-merge (#117)	 ([badb030](https://github.com/pact-foundation/pact_broker-client/commit/badb030))
+
 <a name="v1.68.0"></a>
 ### v1.68.0 (2023-07-08)
 
