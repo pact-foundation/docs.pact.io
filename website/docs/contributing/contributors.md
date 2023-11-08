@@ -61,3 +61,7 @@ Current maintainer: [Ron Holshausen](https://github.com/uglyog)
 ### C++
 
 Current maintainer: [Ron Holshausen](https://github.com/uglyog)
+
+### Bazel
+
+Current maintainer: [Olivier Picaud](https://github.com/opicaud)
