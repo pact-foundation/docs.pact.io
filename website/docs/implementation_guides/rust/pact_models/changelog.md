@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.12 - Bugfix Release
+
+* 07a1e7c2 - fix: Fallback to always generate a value to fix 'Could not generate a random TYPE from null' (tien.xuan.vo, Wed Nov 8 08:12:29 2023 +0700)
+* 3af7357f - feat: Force generators works regardless of value's type (tien.xuan.vo, Fri Nov 3 09:58:17 2023 +0700)
+
 ## 1.1.11 - Maintenance Release
 
 
