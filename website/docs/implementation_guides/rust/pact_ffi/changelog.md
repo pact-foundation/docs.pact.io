@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.10 - Bugfix Release
+
+* c172bcb5 - feat: Add functions for Pact handle -> pointer compatibility #333 (Ronald Holshausen, Mon Nov 13 14:41:51 2023 +1100)
+* 335d52dc - fix: Only specification v3 or higher support binary body's content type matching rule (tien.xuan.vo, Mon Oct 16 22:11:54 2023 +0700)
+
 ## 0.4.9 - Bugfix Release
 
 * 9f8dde99 - fix: Nested array contains matchers where not having their values propogated to the outer matcher #324 (Ronald Holshausen, Fri Sep 22 10:18:56 2023 +1000)
