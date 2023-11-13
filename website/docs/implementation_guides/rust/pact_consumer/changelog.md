@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.5 - Maintenance Release
+
+
 ## 1.0.4 - Bugfix Release
 
 * db59c865 - fix: test test_req_res_message_client was failing on Windows with a channel error (Ronald Holshausen, Fri Aug 18 11:17:15 2023 +1000)
