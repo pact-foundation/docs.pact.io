@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.75.0"></a>
+### v1.75.0 (2023-11-11)
+
+#### Features
+
+* add support for delete-branch command (#151)	 ([6da6202](https://github.com/pact-foundation/pact_broker-client/commit/6da6202))
+
+#### Bug Fixes
+
+* set correct Accept header when publishing provider contracts	 ([abc8ea3](https://github.com/pact-foundation/pact_broker-client/commit/abc8ea3))
+
 <a name="v1.74.0"></a>
 ### v1.74.0 (2023-10-14)
 
