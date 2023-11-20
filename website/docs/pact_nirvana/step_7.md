@@ -38,7 +38,6 @@ sequenceDiagram
 
 Note how in the PR pipeline we are checking to see if we can deploy to all the environments that we deploy to from
 the main branch. The rationale for this is that we don't want to merge something into our main branch which we know
-the main branch. The rationale for this is that we don't want to merge something into our main branch which we know
 will break once we deploy - we want our main branch to stay clean and not get blocked by broken builds.  If you
 deploy to other environments such as preprod, you would want to check that environment as well.
 
