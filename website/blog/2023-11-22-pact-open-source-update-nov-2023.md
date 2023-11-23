@@ -124,7 +124,7 @@ You can register [here](https://bit.ly/49KSSPZ), where if you can't make it, you
 
 ## Community Corner
 
-### Omer Morad introduces AutoMock
+### Omer Morad introduces Automock
 
 We spoke to Omer Morad [back in June 2022](https://docs.pact.io/blog/2022/06/08/pact-open-source-update-june-2022#nestjs--pact--3), where he introduced NestJS-Pact into the Pact Foundation fold. We caught up with him this week, to find out what he's been up to.
 
@@ -132,7 +132,7 @@ We spoke to Omer Morad [back in June 2022](https://docs.pact.io/blog/2022/06/08/
 
 >I've been working on Automock, an open-source mocking framework. Much of my time has been spent manually mocking for unit tests in dependency injection environments like NestJS. It may cause test suites to become unmanageably large and convoluted. For this reason, I made [Automock](https://github.com/automock/automock). By creating mock objects for class dependencies automatically, it simplifies the unit testing procedure. Compatibility across multiple DI and testing frameworks will make the unit testing process easier by allowing developers to focus on writing test cases rather than manually configuring mock configurations.
 
-Awesome! Thanks for sharing with us, hopefully this [AutoMock](https://github.com/automock/automock) is useful to others. You can find Omer in our Pact Slack group where you can talk about all things open source.
+Awesome! Thanks for sharing with us, hopefully this [Automock](https://github.com/automock/automock) is useful to others. You can find Omer in our Pact Slack group where you can talk about all things open source.
 
 ## Thats a wrap
 
