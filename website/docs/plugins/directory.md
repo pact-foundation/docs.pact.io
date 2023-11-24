@@ -17,6 +17,8 @@ A list of available known plugins, please add yours to the list.
 |Name | Type   |  Language |  code | Support |
 |---|---|---|---|---|
 |pact-protobuf-plugin| Protobuf/gRPC  | Rust | [Code](https://github.com/pactflow/pact-protobuf-plugin)| official |
+|pact-csv-plugin| CSV  | Rust | [Code](https://github.com/pact-foundation/pact-plugins/tree/main/plugins)| official |
+|pact-avro-plugin| Avro | Scala | [Code](https://github.com/austek/pact-avro-plugin) | community |
 
 ## Template Plugins
 
