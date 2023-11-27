@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.11 - Bugfix Release
+
+* 82e51872 - Merge pull request #348 from tienvx/update-trace-logs (Ronald Holshausen, Tue Nov 28 09:36:04 2023 +1100)
+* 133bf14f - Merge pull request #347 from tienvx/update-comment-metadata-v2 (Ronald Holshausen, Tue Nov 28 09:35:22 2023 +1100)
+* f87c76e8 - feat: Add pactffi_response_status_v2 (tien.xuan.vo, Wed Nov 22 23:07:05 2023 +0700)
+* aec900ae - feat: Add pactffi_message_with_metadata_v2 (tien.xuan.vo, Mon Nov 20 20:14:26 2023 +0700)
+* e26bf72d - feat: Apply generators to message's contents and metadata (tien.xuan.vo, Mon Nov 20 16:26:39 2023 +0700)
+* 3df61ab7 - feat: Apply generators to message's metadata (tien.xuan.vo, Mon Nov 20 15:08:20 2023 +0700)
+* 755909b8 - Merge pull request #340 from tienvx/generate-message-contents (Ronald Holshausen, Tue Nov 21 15:19:05 2023 +1100)
+* b57a717e - feat: Apply generators to message's contents (tien.xuan.vo, Mon Nov 20 14:45:40 2023 +0700)
+
 ## 0.4.10 - Bugfix Release
 
 * c172bcb5 - feat: Add functions for Pact handle -> pointer compatibility #333 (Ronald Holshausen, Mon Nov 13 14:41:51 2023 +1100)
