@@ -252,7 +252,7 @@ these can be used to match a hypermedia format like Siren, see [Example Pact + S
 
 ```js
 {
-  "actions": arrayContaining(
+  "actions": arrayContaining([
     {
       "name": "update",
       "method": "PUT",
@@ -263,7 +263,7 @@ these can be used to match a hypermedia format like Siren, see [Example Pact + S
       "method": "DELETE",
       "href": url("http://localhost:9000", ["orders", regex("\\d+", "1234")])
     }
-  )
+  ])
 }
 ```
 
