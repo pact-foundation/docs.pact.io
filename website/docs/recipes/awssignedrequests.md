@@ -1,6 +1,6 @@
 ---
 id: awssignedrequests
-title: AWS API Gateway Signed Requestts
+title: AWS API Gateway Signed Requestt
 description: How to use Pact with API Gateway Signed Requests
 ---
 
