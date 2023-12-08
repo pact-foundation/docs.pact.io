@@ -24,7 +24,7 @@ Trigger a build in GitHub using the repository_dispatch event.
     "headers": {
       "Content-Type": "application/json",
       "Accept": "application/vnd.github.everest-preview+json",
-      "Authorization": "Bearer ${user.GithubToken}"
+      "Authorization": "Bearer <YOUR_GITHUB_TOKEN>"
     },
     "body": {
       "event_type": "contract_requiring_verification_published",
@@ -70,7 +70,7 @@ Trigger a build in GitHub using the repository_dispatch event.
     "headers": {
       "Content-Type": "application/json",
       "Accept": "application/vnd.github.everest-preview+json",
-      "Authorization": "Bearer ${user.GithubToken}"
+      "Authorization": "Bearer <YOUR_GITHUB_TOKEN>"
     },
     "body": {
       "event_type": "pact_changed",
