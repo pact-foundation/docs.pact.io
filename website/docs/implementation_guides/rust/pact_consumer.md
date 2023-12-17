@@ -16,7 +16,7 @@ To use it, add it to your dev-dependencies in your cargo manifest:
 
 ```toml
 [dev-dependencies]
-pact_consumer = "1.0"
+pact_consumer = "1.1"
 ```
 
 You can now write a pact test using the consumer DSL.
