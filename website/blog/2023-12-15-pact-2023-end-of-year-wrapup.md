@@ -33,7 +33,7 @@ Diego Herrera introduced spoke at at EdinburghJS with a talk titled Testing serv
 
 ### Mar
 
-Holly Cummins discusses how contract tests combine the lightness of unit tests with the confidence of integration tests, and should be part of your development toolkit, watch it [here](https://www.youtube.com/watch?v=d9CSY8HuZ9U)
+Holly Cummins discusses how contract tests combine the lightness of unit tests with the confidence of integration tests, and should be part of your development toolkit. Watch it [here](https://www.youtube.com/watch?v=d9CSY8HuZ9U)
 
 ### Apr
 
