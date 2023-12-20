@@ -30,15 +30,22 @@ Logging options:
       --full-log             This emits human-readable, single-line logs for each event that occurs, with the current span context displayed before the formatted representation of the event.
       --compact-log          Emit logs optimized for short line lengths.
   -j, --json <json-file>     Generate a JSON report of the verification
-  -x, --junit <junit-file>   Generate a JUnit XML report of the verification
+  -x, --junit <junit-file>   Generate a JUnit XML report of the verification (requires the junit feature)
       --no-colour            Disables ANSI escape codes in the output [aliases: no-color]
 
 Loading pacts options:
-  -f, --file <file>              Pact file to verify (can be repeated)
-  -d, --dir <dir>                Directory of pact files to verify (can be repeated)
-  -u, --url <url>                URL of pact file to verify (can be repeated)
-  -b, --broker-url <broker-url>  URL of the pact broker to fetch pacts from to verify (requires the provider name parameter) [env: PACT_BROKER_BASE_URL=]
-      --ignore-no-pacts-error    Do not fail if no pacts are found to verify
+  -f, --file <file>
+          Pact file to verify (can be repeated)
+  -d, --dir <dir>
+          Directory of pact files to verify (can be repeated)
+  -u, --url <url>
+          URL of pact file to verify (can be repeated)
+  -b, --broker-url <broker-url>
+          URL of the pact broker to fetch pacts from to verify (requires the provider name parameter) [env: PACT_BROKER_BASE_URL=]
+      --webhook-callback-url <webhook-callback-url>
+          URL of a Pact to verify via a webhook callback. Requires the broker-url to be set.
+      --ignore-no-pacts-error
+          Do not fail if no pacts are found to verify
 
 Authentication options:
       --user <user>          Username to use when fetching pacts from URLS [env: PACT_BROKER_USERNAME=]
@@ -104,7 +111,6 @@ Pact Broker options:
           Enables Pending Pacts
       --include-wip-pacts-since <include-wip-pacts-since>
           Allow pacts that don't match given consumer selectors (or tags) to  be verified, without causing the overall task to fail. For more information, see https://pact.io/wip
-
 ```
 
 ## Options
@@ -123,6 +129,12 @@ You can specify the pacts to verify with the following options. They can be repe
 | `-u, --url <url>`               | URL         | Loads a pact from a URL resource                                                                                     |
 | `-d, --dir <dir>`               | Directory   | Loads all the pacts from the given directory                                                                         |
 | `-b, --broker-url <broker-url>` | Pact Broker | Loads all the pacts for the provider from the pact broker. Requires the `-n, --provider-name <provider-name>` option |
+
+#### Verifying a Pact via a webhook callback
+
+The Pact Broker allows for Pacts to be verified via a callback that supplies the URL to the Pact to verify. To verify
+just the Pact from the webhook call, use the `--webhook-callback-url` set to the supplied URL in conjunction with the 
+`--broker-url` option.
 
 ### Provider Options
 
