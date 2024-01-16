@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.12 - Bugfix Release
+
+
 ## 0.4.11 - Bugfix Release
 
 * 82e51872 - Merge pull request #348 from tienvx/update-trace-logs (Ronald Holshausen, Tue Nov 28 09:36:04 2023 +1100)
