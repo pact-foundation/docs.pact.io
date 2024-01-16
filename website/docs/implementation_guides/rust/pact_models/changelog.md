@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.13 - Bugfix Release
+
+* 6e5504cd - fix: matching rules and generators for headers could be written to JSON form incorrectly #355 (Ronald Holshausen, Tue Jan 16 03:44:20 2024 +1100)
+
 ## 1.1.12 - Bugfix Release
 
 * 07a1e7c2 - fix: Fallback to always generate a value to fix 'Could not generate a random TYPE from null' (tien.xuan.vo, Wed Nov 8 08:12:29 2023 +0700)
