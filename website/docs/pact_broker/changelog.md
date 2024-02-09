@@ -4,6 +4,20 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.109.0"></a>
+
+### v2.109.0 (2024-02-01)
+
+#### Features
+
+* use SemanticLogger for Padrino (#662)	 ([5d9d7002](https://github.com/pact-foundation/pact_broker/commit/5d9d7002))
+* improve performance of publication for very large pacts by calculating the content SHA only once per request	 ([a947e409](https://github.com/pact-foundation/pact_broker/commit/a947e409))
+
+#### Bug Fixes
+
+* pass in environment to environment policy when getting an individual environment	 ([5c386a43](https://github.com/pact-foundation/pact_broker/commit/5c386a43))
+* Dockerfile to reduce vulnerabilities (#650)	 ([9aaa3484](https://github.com/pact-foundation/pact_broker/commit/9aaa3484))
+
 <a name="v2.108.0"></a>
 
 ### v2.108.0 (2024-01-05)
