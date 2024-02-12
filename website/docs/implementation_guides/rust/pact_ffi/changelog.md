@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.16 - Bugfix Release
+
+
 ## 0.4.15 - Bugfix Release
 
 * b0f0151e - Merge pull request #383 from pact-foundation/feat/with-matching-rules-2 (Ronald Holshausen, Wed Feb 7 14:54:11 2024 +1100)
