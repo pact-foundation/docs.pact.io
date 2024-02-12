@@ -4,6 +4,23 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.15 - Bugfix Release
+
+* b0f0151e - Merge pull request #383 from pact-foundation/feat/with-matching-rules-2 (Ronald Holshausen, Wed Feb 7 14:54:11 2024 +1100)
+* 95cbe5a9 - fix: Upgrade pact-plugin-driver to 0.5.1 (Ronald Holshausen, Wed Jan 31 19:56:04 2024 +1100)
+
+## 0.4.14 - Bugfix Release
+
+* 36390097 - Merge pull request #371 from YOU54F/chore/renable_verifier_aarch64_linux (Ronald Holshausen, Thu Jan 25 09:59:53 2024 +1100)
+* c412829f - feat: build aarch64-pc-windows-msvc target (ffi/mock_server/verifier) (Yousaf Nabi, Wed Jan 24 12:01:50 2024 +0000)
+* a2ba1cd5 - fix: pin cross to 0.2.5 for glibc 2.23 (Yousaf Nabi, Wed Jan 24 11:54:22 2024 +0000)
+* c74d1876 - feat: enable aarch64-unknown-linux-musl libpact_ffi.a (Yousaf Nabi, Wed Jan 24 12:10:56 2024 +0000)
+* 1b847777 - fix: pin cross to 0.2.5 for glibc 2.23 (Yousaf Nabi, Wed Jan 24 11:54:22 2024 +0000)
+
+## 0.4.13 - Bugfix Release
+
+* 944613df - fix: regression - upgrade pact_models to 1.1.16 #359 (Ronald Holshausen, Fri Jan 19 14:52:36 2024 +1100)
+
 ## 0.4.12 - Bugfix Release
 
 

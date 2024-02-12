@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.2 - Bugfix Release
+
+* 6bb57df0 - fix: metadata matching rules for sync message (Stan, Fri Feb 9 00:16:51 2024 -0800)
+* 95cbe5a9 - fix: Upgrade pact-plugin-driver to 0.5.1 (Ronald Holshausen, Wed Jan 31 19:56:04 2024 +1100)
+
+## 1.1.1 - Maintenace Release
+
+* 944613df - fix: regression - upgrade pact_models to 1.1.16 #359 (Ronald Holshausen, Fri Jan 19 14:52:36 2024 +1100)
+
 ## 1.1.0 - Maintenance Release
 
 

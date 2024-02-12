@@ -4,6 +4,21 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.10 - Bugfix Release
+
+* a8efa111 - fix: was missing an implementation of MinType and MaxType matchers for maps (Ronald Holshausen, Wed Feb 7 12:27:59 2024 +1100)
+* 95cbe5a9 - fix: Upgrade pact-plugin-driver to 0.5.1 (Ronald Holshausen, Wed Jan 31 19:56:04 2024 +1100)
+* c7cb72c5 - Merge pull request #365 from tienvx/test-values-matcher-json-body (Ronald Holshausen, Thu Jan 25 10:36:22 2024 +1100)
+
+## 1.1.9 - Maintenance Release
+
+
+## 1.1.8 - Bugfix Release
+
+* f9792697 - Merge pull request #364 from tienvx/allow-matching-strings-with-values-matcher (Ronald Holshausen, Mon Jan 22 10:51:13 2024 +1100)
+* 045ffbb6 - Merge pull request #363 from tienvx/test-content-type-matcher (Ronald Holshausen, Mon Jan 22 10:45:34 2024 +1100)
+* 944613df - fix: regression - upgrade pact_models to 1.1.16 #359 (Ronald Holshausen, Fri Jan 19 14:52:36 2024 +1100)
+
 ## 1.1.7 - Maintenance Release
 
 

@@ -4,6 +4,26 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.18 - Maintenance Release
+
+* 7222cd27 - fix: Min and Max type matchers were not able to parse their integration form (Ronald Holshausen, Wed Feb 7 09:45:45 2024 +1100)
+
+## 1.1.17 - Bugfix Release
+
+* 57e8d092 - fix: Implemented missing atLeast and atMost options with matching rule definitions (Ronald Holshausen, Sat Jan 20 13:29:30 2024 +1100)
+* e9f7c06f - fix:  Regex generator panics if the regex has any anchors #311 (Ronald Holshausen, Fri Jan 19 19:33:50 2024 +1100)
+
+## 1.1.16 - Bugfix Release
+
+* 0f5f563f - fix: regression - prevous matching rules change broke specification tests #359 (Ronald Holshausen, Fri Jan 19 14:41:37 2024 +1100)
+
+## 1.1.15 - Bugfix Release
+
+* 1d9034aa - fix: regression - generators must support query parameters in q[]= form #359 (Ronald Holshausen, Fri Jan 19 14:03:23 2024 +1100)
+* 01903998 - fix: regression - matching rules must support query parameters in q[]= form #359 (Ronald Holshausen, Fri Jan 19 13:03:21 2024 +1100)
+* 512ed87b - fix: Error where interactions failed to load where being silently ignored #359 (Ronald Holshausen, Fri Jan 19 12:49:01 2024 +1100)
+* ab1d496f - fix: Add set-cookie header to the list of single value headers #353 (Ronald Holshausen, Wed Jan 17 13:46:49 2024 +1100)
+
 ## 1.1.14 - Bugfix Release
 
 * d94c7827 - fix: Support V2 matching rule header/query paths in encoded format #355 (Ronald Holshausen, Tue Jan 16 09:19:21 2024 +1100)
