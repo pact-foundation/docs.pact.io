@@ -1,0 +1,156 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><a id="1697053214.678779"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697053214.678779" ><div class="time">2023-10-11 19:40</div></a><div class="msg">has joined #pact-msw-adapter</div></div></div><br/>
+<div><a id="1697053214.835239"><img src="https://avatars.slack-edge.com/2022-10-06/4188780648804_06ad6132e8393dbb202f_72.png" /></a><div class="message"><div class="username">slacksync</div><a style="text-decoration: none" href="#1697053214.835239" ><div class="time">2023-10-11 19:40</div></a><div class="msg">has joined #pact-msw-adapter</div></div></div><br/>
+<div><a id="1697053227.397679"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1697053227.397679" ><div class="time">2023-10-11 19:40</div></a><div class="msg">has joined #pact-msw-adapter</div></div></div><br/>
+<div><a id="1697053227.476289"><img src="https://avatars.slack-edge.com/2018-04-12/346985093526_697d2fedcd27f4fc4996_72.jpg" /></a><div class="message"><div class="username">matt.fellows</div><a style="text-decoration: none" href="#1697053227.476289" ><div class="time">2023-10-11 19:40</div></a><div class="msg">has joined #pact-msw-adapter</div></div></div><br/>
+<div><a id="1697053274.750389"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697053274.750389" ><div class="time">2023-10-11 19:41</div></a><div class="msg">Trying to run these commands locally, getting this error
+
+```?  pact-msw-adapter git:(main) yarn run example:link 
+yarn run v1.22.19
+$ cd examples/react &amp;&amp; yarn link @pactflow/pact-msw-adapter
+warning package.json: No license field
+error No registered package found called "@pactflow/pact-msw-adapter".```</div></div></div><br/>
+<div><a id="1697053428.679249"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697053428.679249" ><div class="time">2023-10-11 19:43</div></a><div class="msg">I successfully ran `yarn` and even `yarn run example:install` first, but still getting this error</div></div></div><br/>
+<div><a id="1697053482.102959"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697053482.102959" ><div class="time">2023-10-11 19:44</div></a><div class="msg">resolved: I failed to `yarn link` first, my bad</div></div></div><br/>
+<div><a id="1697056073.454769"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697056073.454769" ><div class="time">2023-10-11 20:27</div></a><div class="msg">Has anyone ran the unit tests successfully with the vscode debugger? I'm seeing "debugger attached" messages in the console, and the tests are running successfully, but the program is not stopping at the breakpoints I'm setting. @yousafn could you share your `.vscode/launch.json` if you've gotten this to work?</div></div></div><br/>
+<div><a id="1697210351.809349"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697210351.809349" ><div class="time">2023-10-13 15:19</div></a><div class="msg">You guys use forks for pr's right?</div></div></div><br/>
+<div><a id="1697210995.298239"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697210995.298239" ><div class="time">2023-10-13 15:29</div></a><div class="msg">Ok so I've opened a pull request but I'm not close to done yet, just want to track my work. I've got a basic graphql api working and now I just need to:
+
+1. capture the requests with msw
+2. write the unit test with this captured request
+3. write the transformer to make it pass
+<a href="https://github.com/pactflow/pact-msw-adapter/pull/125/files">https://github.com/pactflow/pact-msw-adapter/pull/125/files</a></div></div></div><br/>
+<div><a id="1697216662.834779"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1697216662.834779" ><div class="time">2023-10-13 17:04</div></a><div class="msg">Hello dude!
+
+I?ve not used the debugger personally for this project (and I?ll be honest, don?t use it generally - never taken the time to really bother to work out how it works xD)
+
+When I was developing I just had my fe end demo app open, which was yarn linked and I was hot reloading on source changes.
+
+Happy to help take a look though and get familiar!</div></div></div><br/>
+<div><a id="1697216749.173319"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1697216749.173319" ><div class="time">2023-10-13 17:05</div></a><div class="msg">Cheers dude! Thanks for this!
+
+You may wish to convert to draft whilst its a WIP and its a sign to users that its not ready for a merge review but people can collab.
+
+(I learned about that feature recently)</div></div></div><br/>
+<div><a id="1697217001.455339"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697217001.455339" ><div class="time">2023-10-13 17:10</div></a><div class="msg">It's ok, I'll try messing with it again once I have time</div></div></div><br/>
+<div><a id="1697218616.870629"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697218616.870629" ><div class="time">2023-10-13 17:36</div></a><div class="msg">thanks, done</div></div></div><br/>
+<div><a id="1697224434.887929"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697224434.887929" ><div class="time">2023-10-13 19:13</div></a><div class="msg">I'm gonna put this on the shelf for the weekend, but could you take a <a href="https://github.com/pactflow/pact-msw-adapter/pull/125/files">https://github.com/pactflow/pact-msw-adapter/pull/125/files</a> @yousafn? Do `yarn install` and then `yarn test ./src/pactFromMswServerGql.msw.spec.ts`; notice how there aren't any requests being matched at all? Not even with `{ onUnhandledRequest: 'error' }` set in the msw server? The <a href="https://github.com/mswjs/examples/issues/63">https://github.com/mswjs/examples/issues/63</a>says the problem is in how the Apollo Client is setup, but you can see I'm passing in `node-fetch` to the client just fine in `graphqlClient.ts`. I'd like to write the logic for handling gql, but msw isn't seeing any requests, which means I cannot write any handlers for it yet. Thanks</div></div></div><br/>
+<div><a id="1697478729.737199"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697478729.737199" ><div class="time">2023-10-16 17:52</div></a><div class="msg">Figured this out; apparently my debug statement inside `graphqlClient.ts` was making a request which was throwing off msw. Removing this code made it work</div></div></div><br/>
+<div><a id="1697479650.044789"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697479650.044789" ><div class="time">2023-10-16 18:07</div></a><div class="msg">got MSW working with graphql in pact-msw-adapter wooo
+``` PASS  src/pactFromMswServerGql.msw.spec.ts
+  API - With MSW mock generating a pact
+    ? should get all books (34 ms)```
+now to write and test the pactfile</div></div></div><br/>
+<div><a id="1697489950.588339"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1697489950.588339" ><div class="time">2023-10-16 20:59</div></a><div class="msg">Ahh nice! I didn?t get a chance over the weekend, doing some gRPC things today/tomorrow. Glad you are moving forward now.
+
+Hope its enjoyable :slightly_smiling_face:</div></div></div><br/>
+<div><a id="1697489992.081649"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1697489992.081649" ><div class="time">2023-10-16 20:59</div></a><div class="msg">ahh I remember that moment when I was hacking - its a good feeling!</div></div></div><br/>
+<div><a id="1697492189.240589"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697492189.240589" ><div class="time">2023-10-16 21:36</div></a><div class="msg">It's fun so far yeah</div></div></div><br/>
+<div><a id="1697558961.412739"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697558961.412739" ><div class="time">2023-10-17 16:09</div></a><div class="msg">So I wrote the msw pact writefile test, and uh, it... passes? I was expecting it to fail. Does this pactfile look right? Again <a href="https://github.com/pactflow/pact-msw-adapter/pull/125/files">https://github.com/pactflow/pact-msw-adapter/pull/125/files</a> for reference. You can run this test with
+
+```yarn install
+ yarn test ./src/pactFromMswServerGql.msw.spec.ts```</div></div></div><br/>
+<div><a id="1697564528.780369"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1697564528.780369" ><div class="time">2023-10-17 17:42</div></a><div class="msg">Hey not sure why you were expecting it to fail, could you elaborate?
+
+Just been taking a little look now which I?ve got time on and off this evening.
+
+Suppose the next step is checking we can verify this on the provider side and we can work out any of the finessing bits.</div></div></div><br/>
+<div><a id="1697564563.577009"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697564563.577009" ><div class="time">2023-10-17 17:42</div></a><div class="msg">I didn't know if it would generate a pact file but it did</div></div></div><br/>
+<div><a id="1697564575.339179"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697564575.339179" ><div class="time">2023-10-17 17:42</div></a><div class="msg">Yeah I can try that next</div></div></div><br/>
+<div><a id="1697565031.204509"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1697565031.204509" ><div class="time">2023-10-17 17:50</div></a><div class="msg">so as long as you make the right request in your test, you will just get returned the response, and have pact file data to write.
+
+If the wrong client request is made, there are no pact files to write.
+
+if you were doing something with the provider response in your system under tests, you can assert on that (given the returned mock response) and assert those expectations are correct.
+
+That would exercise you have the sent the correct request (and would serialise a pact file if calling writeToPactFile) and its on the developer to ensure there are appropriate unit test level assertions on the consumer side</div></div></div><br/>
+<div><a id="1697565162.223429"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1697565162.223429" ><div class="time">2023-10-17 17:52</div></a><div class="msg">just going to grab some tea and then I?m going to run this example
+
+<a href="https://github.com/pact-foundation/pact-js/tree/master/examples/graphql">https://github.com/pact-foundation/pact-js/tree/master/examples/graphql</a>
+
+and check out the pact files that get that spat out, and work backwards from that, do a pact verification and see what if is different, if anything in the files generated by Pact and those crafted by msw-adapter</div></div></div><br/>
+<div><a id="1697573594.953599"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1697573594.953599" ><div class="time">2023-10-17 20:13</div></a><div class="msg">So that is looking good - got a provider verification hooked up and failing on matchers, which is to be expected, pact-msw-adapter was designed to be used for bi-directional so with swagger-mock-validator or PactFlow, which would deal with the matchers.
+
+`x-powered-by header` can be excluded from capture with a header whtelist</div></div></div><br/>
+<div><a id="1697573653.420289"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1697573653.420289" ><div class="time">2023-10-17 20:14</div></a><div class="msg">working from this branch
+
+<a href="https://github.com/pactflow/pact-msw-adapter/tree/gql-scratchpad">https://github.com/pactflow/pact-msw-adapter/tree/gql-scratchpad</a>
+
+that?s me done for now on this for the night, hope that helps you move along! :slightly_smiling_face:</div></div></div><br/>
+<div><a id="1697573793.030909"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1697573793.030909" ><div class="time">2023-10-17 20:16</div></a><div class="msg">I updated the gql example in the pact-js repo to use some of the latest deps
+
+<a href="https://github.com/pact-foundation/pact-js/pull/1124">https://github.com/pact-foundation/pact-js/pull/1124</a>
+
+It needs to move to the apollo/client on the consumer side but that is a yak shave for another day</div></div></div><br/>
+<div><a id="1697581382.852369"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697581382.852369" ><div class="time">2023-10-17 22:23</div></a><div class="msg">Thank you! I'll dig into this again tomorrow</div></div></div><br/>
+<div><a id="1697645337.351969"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697645337.351969" ><div class="time">2023-10-18 16:08</div></a><div class="msg">So it looks like to me not much needs to be done to `pact-msw-adapter` itself for graphql - it seems to just work out of the box?</div></div></div><br/>
+<div><a id="1697646729.370869"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1697646729.370869" ><div class="time">2023-10-18 16:32</div></a><div class="msg">also how to fix the matchers? I thought `pact-js` had a matchers api that can match the body string type instead of the string itself?</div></div></div><br/>
+<div><a id="1698085316.955909"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1698085316.955909" ><div class="time">2023-10-23 18:21</div></a><div class="msg">Hey @matt.fellows @yousafn MSW just released a major upgrade that depends on the built in fetch in nodejs 18 <a href="https://mswjs.io/blog/introducing-msw-2.0/">https://mswjs.io/blog/introducing-msw-2.0/</a></div></div></div><br/>
+<div><a id="1698093241.529219"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1698093241.529219" ><div class="time">2023-10-23 20:34</div></a><div class="msg">awesome, thanks for sharing. really well written post.
+
+i?ve wanted to to upgrade to support msw 1.x for a while but this will probably mean it?s worth jumping to 2.x
+
+i?d also like to drop support for node 16 and below as it?s eol.
+
+not sure when i?d get the time to look at it, at the moment so might be worth raising an issue to track on the repo :ok_hand::skin-tone-5: </div></div></div><br/>
+<div><a id="1698093352.193969"><img src="https://avatars.slack-edge.com/2021-10-20/2614256012247_4f044981d573583bc376_72.jpg" /></a><div class="message"><div class="username">joel.whalen588</div><a style="text-decoration: none" href="#1698093352.193969" ><div class="time">2023-10-23 20:35</div></a><div class="msg">Anytime, I've been enjoying digging into this project I might take a look when I have time</div></div></div><br/>
+<div><a id="1698164861.751949"><img src="https://avatars.slack-edge.com/2023-10-24/6110832481632_953e6ed198c0ba1b6427_72.jpg" /></a><div class="message"><div class="username">jowhalen13</div><a style="text-decoration: none" href="#1698164861.751949" ><div class="time">2023-10-24 16:27</div></a><div class="msg">has joined #pact-msw-adapter</div></div></div><br/>
+<div><a id="1703252225.785719"><img src="https://avatars.slack-edge.com/2023-10-23/6079006376131_270fc38dcab79152d540_72.png" /></a><div class="message"><div class="username">rebecca.fulton</div><a style="text-decoration: none" href="#1703252225.785719" ><div class="time">2023-12-22 13:37</div></a><div class="msg">has joined #pact-msw-adapter</div></div></div><br/>
+<div><a id="1706525360.964409"><img src="https://secure.gravatar.com/avatar/018524205a268e73b7e02f07a9624bbb.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png" /></a><div class="message"><div class="username">dale.wells</div><a style="text-decoration: none" href="#1706525360.964409" ><div class="time">2024-01-29 10:49</div></a><div class="msg">has joined #pact-msw-adapter</div></div></div><br/>
+<div><a id="1706525376.411639"><img src="https://secure.gravatar.com/avatar/018524205a268e73b7e02f07a9624bbb.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png" /></a><div class="message"><div class="username">dale.wells</div><a style="text-decoration: none" href="#1706525376.411639" ><div class="time">2024-01-29 10:49</div></a><div class="msg">Hi there. Is it possible to change the path that?s reflected in the pact file? I?m using the bi-directional approach.
+With the consumer tests, using MSW I?m intercepting a URI that looks like this `<a href="https://base-url.com/service/v2/price/">https://base-url.com/service/v2/price/</a>` . The tests run, and the pact file is generated. The path property for each endpoint defined as follows: `"path": /service/v2/price/`
+On the provider side, the path in the OAS doc is displayed simply as `/price/` (without the leading `/service/v2/`).
+My problem:
+The `can-i-deploy` step fails due to the endpoint `/service/v2/price/`  not existing in the provider spec. Strictly true, but I?d like to get rid of the leading `/service/v2/` . Can I do this programmatically?</div></div></div><br/>
+<div><a id="1706527974.119159"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1706527974.119159" ><div class="time">2024-01-29 11:32</div></a><div class="msg">yes but not with this library as it stands.
+
+easiest way would be to use something like jq or sed on the command line and change the value, prior to publishing the pacts to your broker
+
+i suppose the pact msw adapter interface could allow you to override request data that is used for msw?s matching, and store that in a pact with caveats in place that this is a relatively dangerous thing to do and should be used in caution. </div></div></div><br/>
+<div><a id="1706538787.642509"><img src="https://secure.gravatar.com/avatar/018524205a268e73b7e02f07a9624bbb.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png" /></a><div class="message"><div class="username">dale.wells</div><a style="text-decoration: none" href="#1706538787.642509" ><div class="time">2024-01-29 14:33</div></a><div class="msg">Okay, interesting. I think I?ll go down the jq route. Thanks! </div></div></div><br/>
+<div><a id="1706550463.452859"><img src="https://secure.gravatar.com/avatar/018524205a268e73b7e02f07a9624bbb.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png" /></a><div class="message"><div class="username">dale.wells</div><a style="text-decoration: none" href="#1706550463.452859" ><div class="time">2024-01-29 17:47</div></a><div class="msg">for anyone else who runs into this problem, here?s how I got it working:
+
+```pact=$(cat path/to/pact.json) &amp;&amp; jq '.interactions[].request.path |= sub ("(^\/service\/v2\/)"; "\/")' &lt;&lt;&lt;$pact &gt; path/to/pact.json```
+</div></div></div><br/>
+</div></body></html>
