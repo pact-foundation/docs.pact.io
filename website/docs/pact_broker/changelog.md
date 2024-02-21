@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.109.1"></a>
+
+### v2.109.1 (2024-02-21)
+
+#### Bug Fixes
+
+* improve performance for 'pacts for verification' queries	 ([299a6abe](https://github.com/pact-foundation/pact_broker/commit/299a6abe))
+* correct spelling in message when pact is modified	 ([ae62ae7a](https://github.com/pact-foundation/pact_broker/commit/ae62ae7a))
+
 <a name="v2.109.0"></a>
 
 ### v2.109.0 (2024-02-01)
