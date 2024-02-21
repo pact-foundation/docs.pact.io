@@ -110,7 +110,7 @@ Have you trialed the V10 Beta of Pact-PHP?
 
 Chat to us in: [#pact-php](https://pact-foundation.slack.com/archives/C9W94PXPY)
 
-## Pact Broker
+### Pact Broker
 
 Pact-Broker: [Jörgen Andersson](https://github.com/jorander) is helping keeping the Pact Broker up to date, by updating our base image to Ruby 3.2.3, the Alpine version from 3.17 -> 3.19 and upgrading Supercronic 0.2.29.
 
