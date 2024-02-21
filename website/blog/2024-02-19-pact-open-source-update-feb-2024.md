@@ -9,9 +9,9 @@ draft: false
 hide_table_of_contents: false
 ---
 
-Hello, and welcome to our first Pact Open post of 2024. It seem's customary that you get a month's reprieve from me at the start of every year, so I'll start by saying Happy new year to everyone, and also Happy new year of the Dragon, to those who celebrated the Chinese celebration recently.
+Hello, and welcome to our first Pact Open post of 2024. It seem's customary that you get a month's reprieve from me at the start of every year, so I'll start by saying Happy new year to everyone, and also Happy new year of the Dragon, to those who celebrated the Chinese New Year recently.
 
-I hope you all had the chance to wind-down, relax and spend time with family, whilst looking back, hopefully with a smile, at all the things you achieved last year. If you helped get involved in Pact, in any way, big or small, we are grateful.
+I hope you all had the chance to wind-down, relax and spend time with people you care about, whilst looking back, hopefully with a smile, at all the things you achieved last year. If you helped get involved in Pact, in any way, big or small, we are grateful.
 
 Anyhow, that brings me to February, and I get the pleasure of letting you know what has been happening across the Pact estate over the last 8 weeks!
 
@@ -130,7 +130,7 @@ What does this mean for users of the Pact Ruby Standalone project?
 
 ### Pact Workshops
 
-The following workshops have been updated to use the latest versions of the Pact client libraries
+The following workshops have been updated to use the latest versions of the Pact client libraries:
 
 - [Pact-workshop-go](https://github.com/pact-foundation/pact-workshop-go)
 - [pact-workshop-Maven-Springboot-JUnit5](https://github.com/pact-foundation/pact-workshop-Maven-Springboot-JUnit5)
@@ -138,7 +138,7 @@ The following workshops have been updated to use the latest versions of the Pact
 
 ## Yo dawg, I heard you like Alpine
 
-Unless you've been living under a rock, you've probably heard about Alpine. If not, it is a variant of Linux, which many teams choose to run their builds on due to its tiny footprint, and smaller security surface area. One of the significant areas of differences to more regular flavour of Linux (Debian/Ubuntu/Fedora etc), are it's choice of standard library. With Alpine choosing musl, which others preferring glibc. This poses challenges for distributors of packages used within the Linux ecosystem.
+Unless you've been living under a rock, you've probably heard about Alpine. If not, it is a variant of Linux, which many teams choose to run their builds on due to its tiny footprint, and smaller security surface area. One of the significant areas of differences to more regular flavour of Linux (Debian/Ubuntu/Fedora etc), are it's choice of standard library. With Alpine choosing musl whilst others prefer glibc. This poses challenges for distributors of packages used within the Linux ecosystem.
 
 So lets take a look at our options.
 
@@ -177,7 +177,7 @@ The pact-core consists of a few elements, which are of use to end consumers, and
 
 You can take a look at the ecosystem [here](https://docs.pact.io/diagrams/ecosystem#rust-goldberg-machine)
 
-As the project is built with Rust, we can easily add in musl targets, both aarch64 and x86_64 with Cross (we'll talk a little about cross in our next section).
+As the project is built with Rust, we can easily add in musl targets, both aarch64 and x86_64 with Cross (we'll talk a little about Cross in our next section).
 
 The CLI's are easy, add in our required targets, build with cross, and out pops a musl based executable.
 
@@ -197,7 +197,7 @@ In order to get green test suites, under the Alpine platform, it was necessary t
 
 For two of the plugins, protobuf and csv, these are written in rust, so again we can follow our same pattern to enable musl variants. For our sample build your own plugin template, it is written in GoLang, which uses Goreleaser to build the linux variants. There is the added benefit that the application is built linked against musl, but able to be run on machines that link to glibc or musl, meaning there is no need to produce a separate musl named artifact.
 
-The last of the plugins I took a look at was Avro, which was created by one of our community members Ali Ustek. This particular plugin is written in Java, so required the end user to install at least the JRE, if not the SDK, of Java 17, in order to use it. It also had a requirement on `bash`, in it's startup script, but the author has since updated this to use a `sh` based wrapper, meaning end users on Alpine, won't additionally need to install `bash`. Hooray!
+The last of the plugins I took a look at was [pact-avro-plugin](https://github.com/austek/pact-avro-plugin), created by one of our community members [Ali Ustek](https://github.com/austek). This particular plugin is written in Java, so required the end user to install at least the JRE, if not the SDK, of Java 17, in order to use it. It also had a requirement on `bash`, in it's startup script, but the author has since updated this to use a `sh` based wrapper, meaning end users on Alpine, won't additionally need to install `bash`. Hooray!
 
 #### Lower is better
 
@@ -244,7 +244,7 @@ Ubuntu 22.04 | 2.35
 
 ### Ruby Core
 
-So what about Ruby? I spoke earlier about our fork of traveling-ruby, which recently underwent some updates. Well in my Alpine adventures, I realised that there would now be some disparity between the platforms supported by the Pact Rust core, and the Pact Ruby core. That was an itch, I needed to scratch. Could I bring native musl based support to traveling-ruby? That way not only do we need to tell users, they no longer need bash, due to using sh compliant warpper scripts, but they no longer would need a compatability layer, if one was running Alpine.
+So what about Ruby? I spoke earlier about our fork of traveling-ruby, which recently underwent some updates. Whilst on my Alpine adventures, I realised that there would now be some disparity between the platforms supported by the Pact Rust core, and the Pact Ruby core. That was an itch, I needed to scratch. Could I bring native musl based support to traveling-ruby? That way not only do we need to tell users, they no longer need bash, due to using sh compliant warpper scripts, but they no longer would need a compatability layer, if one was running Alpine.
 
 So similar to Cross, the traveling-ruby package uses Docker images to build for Linux. They are referred to as a holy-build-box, and was originally created by the Phusion team, of Passenger fame (and also the creators of traveling-ruby). The box used for building the current linux packages are based on Centos7 which links to glibc 2.17.
 
@@ -276,7 +276,7 @@ If you spot a repo not covered by the new `macos-14` runner, why not drop a PR i
 
 ### Windows on ARM
 
-Are you running Windows on ARM? Whether you running it natively, or you are enjoying it via your speedy M-Series Apple processors via Apples Virtualisation framework (Check out UTM for a rather splendid open-source virt tool), I've got some good news for you.
+Are you running Windows on ARM? Whether you running it natively, or you are enjoying it via your speedy M-Series Apple processors via Apples Virtualisation framework (Check out [UTM](https://github.com/utmapp/UTM) for a rather splendid open-source virt tool), I've got some good news for you.
 
 We have started to [publish support](https://github.com/pact-foundation/pact-reference/pull/370) for Windows on ARM across a few of our projects. I'll borrow our list of Rust tooling before, as it'll highlight some of the gaps that we still need to cover. If you want to see Windows on ARM via your favourite Pact Client library, why not help fill in some of the blacks.
 
@@ -293,7 +293,7 @@ We have started to [publish support](https://github.com/pact-foundation/pact-ref
 
 So what about Ruby? Not again Saf! Well it turns out Windows on ARM for Ruby, transpired to be a bit more complex, with even x86_64 emulation being broken in some versions. Users would come across this [error](https://github.com/oneclick/rubyinstaller2/issues/308), which would ultimately be solved for arm64 native builds (still broken in x86_64 emulation mode) via this [patchset](https://github.com/ruby/ruby/pull/8995/files).
 
-With this in place, it is now possibly to compile later versions of Ruby > 3.1 for arm64 via a clangarm64 msys2 environment, and official msys2 packages were [released](https://packages.msys2.org/package/mingw-w64-clang-aarch64-ruby?repo=clangarm64) for Ruby 3.1.4.
+With this in place, it is now possible to compile later versions of Ruby > 3.1 for arm64 via a clangarm64 msys2 environment, and official msys2 packages were [released](https://packages.msys2.org/package/mingw-w64-clang-aarch64-ruby?repo=clangarm64) for Ruby 3.1.4.
 
 Traveling-Ruby utilises RubyInstaller2's packages for bundling Ruby and your gems, for distribution, but is awaiting arm64 support, with a request [here](https://github.com/oneclick/rubyinstaller2/issues/362). One can't utilise the msys2 packages directly, without a couple of tweaks, as RI2 maintains it's [own Pacman repository](https://github.com/oneclick/rubyinstaller2-packages) with Ruby builds.
 
@@ -310,15 +310,15 @@ TODO
 
 ![WomenWhoGo London](https://secure.meetupstatic.com/photos/event/5/f/b/5/600_518664501.webp?w=384)
 
-If your based in London, why not link up with the Women Who Go community, who are holding their first in-person event of 2024.
+If you're based in London, why not link up with the Women Who Go community, who are holding their first in-person event of 2024.
 
-You'll get to hear from Sanyia Saidova about Growing your application from prototype to production, and I'll be talking about Pact + GoLang - Contract testing for the past, present and the future (and how you can get involved!)
+You'll get to hear from [Sanyia Saidova](https://deliveroo.engineering/authors/sanyia-saidova/) from Deliveroo who will be speaking about Growing your application from prototype to production, and I'll be talking about Pact + GoLang - Contract testing for the past, present and the future (and how you can get involved!)
 
 You can check out the meetup event [here](https://www.meetup.com/women-who-go-london/events/298730462/)
 
 ## Community shout-outs
 
-We'd love to give a huge shout out to Stanislav Vodetskyi, who has been going above and beyond to improve the Pact-Go experience, by not only dropping PR's in the Pact-Go project, but rolling up his sleeves, learning Rust on the fly, to provide PR's in the Pact-Reference and Pact-Rust project, to improve the gRPC plugin capabilities, either by bug-fixes or improvements.
+We'd love to give a huge shout out to [Stanislav Vodetskyi](https://github.com/stan-is-hate), who has been going above and beyond to improve the Pact-Go experience, by not only dropping PR's in the Pact-Go project, but rolling up his sleeves, learning Rust on the fly, to provide PR's in the Pact-Reference and Pact-Rust project, to improve the gRPC plugin capabilities, either by bug-fixes or improvements.
 
 It's great to the see the plugin framework being actively used in an organisation, and this adoption helps bring more use cases to the table, and the feedback we receive in terms of Slack, GitHub issues or pull-requests, all go a long way to helping new users embrace Pact Plugins and the DX around it.
 
