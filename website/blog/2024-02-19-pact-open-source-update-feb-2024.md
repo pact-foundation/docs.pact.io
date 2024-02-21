@@ -90,7 +90,9 @@ Chat with us in: [#pact-js](https://pact-foundation.slack.com/archives/C9VBGLUM9
 
 ### Python
 
-Pact-Python: TODO
+Pact-Python: Josh has been continuing to work on the pact-compatability-suite integration in order to verify the Pact-Python integration with the Pact Rust libraries works correctly. You can keep track of the road to V3/V4 and the Rust backed implementation in this tracking [issue](https://github.com/pact-foundation/pact-python/issues/396). We saw a community fix: [ensure interactions are not left when exception occur inside with statement](https://github.com/pact-foundation/pact-python/pull/539) from [Jakub Stolarkski](https://github.com/dryobates).
+
+We hope to get a release out shortly, which will bring in an updated pact-ruby-standalone, and support for Python 3.12, and Jakub's fix. Also don't forget to watch the repository, if you want to be first in the loop when the new release lands, and later in the year you can start trialing the pact rust engine in your pact-python projects.
 
 Chat to us in: [#pact-python](https://pact-foundation.slack.com/archives/C9VECUP6E)
 
@@ -302,9 +304,15 @@ So I had a [little dive into RI2](https://github.com/YOU54F/rubyinstaller2/tree/
 
 ## Community Events
 
-### Eric DeAndrea
+### Eric DeAndrea - How to avoid common pitfalls with modern microservices testing
 
-TODO
+Eric DeAndrea [spoke this month at the San Francisco Java User Group](https://www.meetup.com/sfjava/events/298620866/) where he some common battle scars from our experiences in the field. He introduced the testing pyramid and explained why it is important in helping to continuously deploy microservices independently without fear. He also demonstrated, through a test-driven development approach, how the combination of Pact contract testing combined with Quarkus developer joy can help prevent your microservices from breaking in production.
+
+Missed it? Don't worry you can catch the slides [here](https://speakerdeck.com/edeandrea/2-15-24-sf-jug-avoiding-pitfalls-with-modern-microservices-testing), and you can be sure to hear more from Eric throughout the year. I would recommend following his socials for heads up on his next event.
+
+- GitHub: <https://github.com/edeandrea>
+- Twitter/X: <https://twitter.com/edeandrea>
+- LinkedIn: <https://www.linkedin.com/in/edeandrea>
 
 ### WomenWhoGo - London
 
