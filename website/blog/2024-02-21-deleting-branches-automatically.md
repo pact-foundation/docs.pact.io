@@ -59,15 +59,18 @@ If you want to check if your Pact Broker has support for the above relation, you
 
 #### Pact Broker - No Auth - Index
 
-    curl $PACT_BROKER_BASE_URL | jq '._links."pb:pacticipant-branch"'
+    curl $PACT_BROKER_BASE_URL \
+      | jq '._links."pb:pacticipant-branch"'
 
 #### Pact Broker - Basic Auth - Index
 
-    curl --user $PACT_BROKER_USERNAME:$PACT_BROKER_PASSWORD $PACT_BROKER_BASE_URL | jq '._links."pb:pacticipant-branch"'
+    curl --user $PACT_BROKER_USERNAME:$PACT_BROKER_PASSWORD $PACT_BROKER_BASE_URL \
+      | jq '._links."pb:pacticipant-branch"'
 
 #### PactFlow Broker - Bearer Auth - Index
 
-    curl -H "Authorization: Bearer $PACT_BROKER_TOKEN" $PACT_BROKER_BASE_URL | jq '._links."pb:pacticipant-branch"'
+    curl -H "Authorization: Bearer $PACT_BROKER_TOKEN" $PACT_BROKER_BASE_URL \
+      | jq '._links."pb:pacticipant-branch"'
 
 ### Pact CLI
 
