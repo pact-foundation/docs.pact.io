@@ -9,7 +9,7 @@ draft: false
 hide_table_of_contents: false
 ---
 
-Hello, and welcome to our first Pact Open post of 2024. It seem's customary that you get a month's reprieve from me at the start of every year, so I'll start by saying Happy new year to everyone, and also Happy new year of the Dragon, to those who celebrated the Chinese New Year recently.
+Hello, and welcome to our first Pact Open post of 2024. It seems customary that you get a month's reprieve from me at the start of every year, so I'll start by saying Happy New Year to everyone, and also Happy New Year of the Dragon, to those who celebrated the Chinese New Year recently.
 
 I hope you all had the chance to wind-down, relax and spend time with people you care about, whilst looking back, hopefully with a smile, at all the things you achieved last year. If you helped get involved in Pact, in any way, big or small, we are grateful.
 
@@ -29,7 +29,7 @@ Pact-Reference: Lots of changes in the Pact-Reference project, from Ron and othe
   - [fix(pact_matching): Allow matching strings using Values matcher](https://github.com/pact-foundation/pact-reference/pull/364)
 - [Josh Ellis](https://github.com/JP-Ellis) : [feat(ffi): add with_matching_rules ](https://github.com/pact-foundation/pact-reference/pull/383)
 
-Chat with us in: [#pact-rust](https://pact-foundation.slack.com/archives/CA2S7E6KC)
+Chat with us in: [#pact-rust](https://pact-foundation.slack.com/archives/CA2S7E6KC).
 
 ### Pact-Plugins
 
@@ -38,7 +38,7 @@ Pact-Plugins: The pact-protobuf-plugin has seen an uptick in usage, with several
 - [Stanislav Vodetskyi](https://github.com/stan-is-hate) : [Support metadata rules for sync message](https://github.com/pact-foundation/pact-reference/pull/384)
 - [Rohit G Krishnan](https://github.com/rkrishnan2012) : [Fix merging between plugin config and manifest values.](https://github.com/pactflow/pact-protobuf-plugin/issues/41)
 
-Fixes by Ron
+Fixes by Ron:
 
 - [fix: accept empty maps where there is a eachKey or eachValue matcher](https://github.com/pactflow/pact-protobuf-plugin/commit/0a6458c2784bd234d80a31c14e14bf5d739a8565)
 - [fix: when checking for unexpected fields, ignore fields with default values](https://github.com/pactflow/pact-protobuf-plugin/commit/4db432835b26b3d384af88b722c6fad00cf104bc)
@@ -47,7 +47,7 @@ Fixes by Ron
 
 Have you tried out Pact Plugins yet? What's stopping you?
 
-Chat with us in: [#pact-plugins](https://pact-foundation.slack.com/archives/CA2S7E6KC)
+Chat with us in: [#pact-plugins](https://pact-foundation.slack.com/archives/CA2S7E6KC).
 
 ### .NET
 
@@ -60,17 +60,17 @@ Pact-net: [5.0.0-beta.2](https://github.com/pact-foundation/pact-net/releases/ta
 - Upgraded tests to .Net 8 and .Net Frame 4.6.2
 - Find unused ports for the messaging server more efficiently
 
-Want to upgrade? Check out the upgrade guide [here](https://github.com/pact-foundation/pact-net/blob/master/docs/upgrading-to-5.md)
+Want to upgrade? Check out the upgrade guide [here](https://github.com/pact-foundation/pact-net/blob/master/docs/upgrading-to-5.md).
 
-Still on Pact-Net v3.x and want to migrate to the latest stable v4 version? Check out the upgrade guide [here](https://github.com/pact-foundation/pact-net/blob/master/docs/upgrading-to-4.md)
+Still on Pact-Net v3.x and want to migrate to the latest stable v4 version? Check out the upgrade guide [here](https://github.com/pact-foundation/pact-net/blob/master/docs/upgrading-to-4.md).
 
 Whats next? Pact Plugin support! Check out the [RFC](https://github.com/pact-foundation/pact-net/issues/492) for more detail, and feel free to add your feedback.
 
-Chat with us in: [#pact-net](https://pact-foundation.slack.com/archives/C9UTHV2AD)
+Chat with us in: [#pact-net](https://pact-foundation.slack.com/archives/C9UTHV2AD).
 
 ### Golang
 
-Pact-go: v2.0.4 has just been released, which bumps the Pact FFI and includes external contributions from [Armin Becher](https://github.com/becheran) and [Stanislav Vodetskyi](https://github.com/stan-is-hate), thanks guys :rocket:
+Pact-go: v2.0.4 has just been released, which bumps the Pact FFI and includes external contributions from [Armin Becher](https://github.com/becheran) and [Stanislav Vodetskyi](https://github.com/stan-is-hate), thanks guys :rocket:.
 
 - feat: add native lib path function [#376](https://github.com/pact-foundation/pact-go/pull/376)
 - fix: allow empty responses in sync messages (#386)
@@ -78,15 +78,15 @@ Pact-go: v2.0.4 has just been released, which bumps the Pact FFI and includes ex
 
 Armin's change looks to improve the developer experience for GoLang users utilising Windows. Are you one of them?
 
-Chat with us in: [#pact-go](https://pact-foundation.slack.com/archives/C9UTHTFFB)
+Chat with us in: [#pact-go](https://pact-foundation.slack.com/archives/C9UTHTFFB).
 
 ### Node JS
 
-Pact-JS: [v12.2.0](https://github.com/pact-foundation/pact-js/releases/tag/v12.2.0) has just been released. This introduces the PactV4 interface into GA. (It was previously feature-flag enabled), allowing for Pact plugin support to the Pact-JS project. A team effort, led to a [vulnerability fix](https://github.com/pact-foundation/pact-js/pull/1175), closing off an outstanding [issue](https://github.com/pact-foundation/pact-js/issues/1169), thanks [Yukun](https://github.com/yukun-han) & [Rufei](https://github.com/Rufei77). Matchers can now be applied to response bodies, thanks to [this PR](https://github.com/pact-foundation/pact-js-core/pull/486)
+Pact-JS: [v12.2.0](https://github.com/pact-foundation/pact-js/releases/tag/v12.2.0) has just been released. This introduces the `PactV4` interface into GA (it was previously feature-flag enabled). This allows for Pact plugin support to the Pact-JS project. A team effort, led to a [vulnerability fix](https://github.com/pact-foundation/pact-js/pull/1175), closing off an outstanding [issue](https://github.com/pact-foundation/pact-js/issues/1169), thanks [Yukun](https://github.com/yukun-han) & [Rufei](https://github.com/Rufei77). Matchers can now be applied to response bodies, thanks to [this PR](https://github.com/pact-foundation/pact-js-core/pull/486)
 
-Want to see it the plugin framework in action in Pact-JS? Check out our gRPC example [here](https://github.com/pact-foundation/pact-plugins/tree/main/examples/gRPC/area_calculator/js)
+Want to see the plugin framework in action in Pact-JS? Check out our gRPC example [here](https://github.com/pact-foundation/pact-plugins/tree/main/examples/gRPC/area_calculator/js).
 
-Chat with us in: [#pact-js](https://pact-foundation.slack.com/archives/C9VBGLUM9)
+Chat with us in: [#pact-js](https://pact-foundation.slack.com/archives/C9VBGLUM9).
 
 ### Python
 
@@ -94,13 +94,13 @@ Pact-Python: Josh has been continuing to work on the pact-compatability-suite in
 
 We hope to get a release out shortly, which will bring in an updated pact-ruby-standalone, and support for Python 3.12, and Jakub's fix. Also don't forget to watch the repository, if you want to be first in the loop when the new release lands, and later in the year you can start trialing the pact rust engine in your pact-python projects.
 
-Chat to us in: [#pact-python](https://pact-foundation.slack.com/archives/C9VECUP6E)
+Chat to us in: [#pact-python](https://pact-foundation.slack.com/archives/C9VECUP6E).
 
 ### PHP
 
 Pact-PHP: Tien Vo has been on fire over the last 8 weeks, buoyed by Lewis Cowles input at review time. It has been nice to see Lewis dropping in to help lighten the load of Tien as well. It's nice to watch from afar, as I can see them both learning off each other, and goes to show how much collaboration helps as sometimes it can feel like a lonely place when you are just plugging away.
 
-Changes in the FFI branch include
+Changes in the FFI branch include:
 
 - Implementing of the [V1 Consumer](https://github.com/pact-foundation/pact-php/pull/428) / [V1 Provider](https://github.com/pact-foundation/pact-php/pull/429)/ [V2](https://github.com/pact-foundation/pact-php/pull/430) / [V3](https://github.com/pact-foundation/pact-php/pull/431) and [V4](https://github.com/pact-foundation/pact-php/pull/432) pact compatibility suites. If you've not seen the compat suite, it uses Cucumber to describe the Pact features, and Pact-PHP is using the Behat flavour. It is worth taking a look at.
 
@@ -108,7 +108,7 @@ I'd recommend dropping into the FFI branch, and checking out some of the [exampl
 
 Have you trialed the V10 Beta of Pact-PHP?
 
-Chat to us in: [#pact-php](https://pact-foundation.slack.com/archives/C9W94PXPY)
+Chat to us in: [#pact-php](https://pact-foundation.slack.com/archives/C9W94PXPY).
 
 ### Pact Broker
 
@@ -118,7 +118,7 @@ Unfortunately moving to Alpine 3.19, broke Sqlite for x86_64 users, in the same 
 
 What does this mean for you? We will soon be publishing our multi-manifest images, without a `-multi` suffix, which means whether you are running on shiny M-Series macbook, a Raspberry PI, or your Intel/AMD gaming rig, you'll be able to pull the `latest` image, and get a native image that is right for your system.
 
-Chat to us in: [#pact-broker](https://pact-foundation.slack.com/archives/C9VPNUJR2)
+Chat to us in: [#pact-broker](https://pact-foundation.slack.com/archives/C9VPNUJR2).
 
 ### Pact Ruby Standalone
 
@@ -144,20 +144,20 @@ Unless you've been living under a rock, you've probably heard about Alpine. If n
 
 So lets take a look at our options.
 
-1. We provide a single distribution, linked to glibc
+1. We provide a single distribution, linked to glibc:
    1. Users need to be aware that the distribution is linked to glibc.
    2. Alpine users are required to [perform workarounds](https://wiki.alpinelinux.org/wiki/Running_glibc_programs).
-   3. There will be a performance overhead in calling a program linked to glibc, over musl for Alpine users
-   4. Compatibility is not guaranteed, so further issues may occur, which can become complex to diagnose, especially if not reproducible on a glibc based distro
-   5. Maintainers need to ideally update their code to detect the presence of musl, to inform users of compatability issues. In many cases, glibc programs won't run without the Alpine workarounds, and therefore there is no ability in code to provide useful messages to users, so the onus is on them reading the documentation
-2. We provide two distributions, one linked to glibc, one linked to musl
-   1. Users need to be aware of which std library they use, glibc or musl
+   3. There will be a performance overhead in calling a program linked to glibc, over musl for Alpine users.
+   4. Compatibility is not guaranteed, so further issues may occur, which can become complex to diagnose, especially if not reproducible on a glibc based distro.
+   5. Maintainers need to ideally update their code to detect the presence of musl, to inform users of compatability issues. In many cases, glibc programs won't run without the Alpine workarounds, and therefore there is no ability in code to provide useful messages to users, so the onus is on them reading the documentation.
+2. We provide two distributions, one linked to glibc, one linked to musl:
+   1. Users need to be aware of which std library they use, glibc or musl.
    2. Maintainers need to ideally update their code to detect the presence of musl, so they can provide the correct musl package to users. This can be challenging.
    3. Alpine traditionally prefers creating static builds, which can cause the inability of client languages to link to the shared C libraries.
 
 ### Rust Core
 
-Alpine support has not been made available to the pact-reference project, often referred to the Pact Core, with our [official guidance](https://docs.pact.io/docker#alpine-linux) on our website
+Alpine support has not been made available to the pact-reference project, often referred to the Pact Core, with our [official guidance](https://docs.pact.io/docker#alpine-linux) on our website:
 
 >Alpine is not supported as it requires us to build dynamically linked libraries for each specific version of Alpine and musl.
 >It's possible to make it work, but we make no guarantees and it's likely to break in subtle ways and we would instead recommend adopting Ubuntu or Debian which supports linking to glibc.
@@ -177,11 +177,13 @@ The pact-core consists of a few elements, which are of use to end consumers, and
     - [pact-protobuf-plugin](https://github.com/pactflow/pact-protobuf-plugin/pull/47)
     - [pact-csv-plugin](https://github.com/pact-foundation/pact-plugins/pull/56)
 
-You can take a look at the ecosystem [here](https://docs.pact.io/diagrams/ecosystem#rust-goldberg-machine)
+:::note
+You can take a look at the ecosystem [here](https://docs.pact.io/diagrams/ecosystem#rust-goldberg-machine).
+:::
 
 As the project is built with Rust, we can easily add in musl targets, both aarch64 and x86_64 with Cross (we'll talk a little about Cross in our next section).
 
-The CLI's are easy, add in our required targets, build with cross, and out pops a musl based executable.
+The CLIs are easy, add in our required targets, build with cross, and out pops a musl based executable.
 
 Shared libraries are a little more awkward. In order to tell Rust to create a shared library, we use the `cdylib` notation in our `Cargo.toml` file. This pops out shared libaries, when we build it with the following extensions.
 
@@ -262,17 +264,15 @@ For the last year, we have been trialing multi-manifest images for the pact-cli 
 
 We've had a small amount of feedback, mainly all positive, with hopefully the last of the gremlins sorted (Sqlite3 was failing on arm64 images, then x86_64 images, resolved by building from source), so we are beginning to drop the multi suffix.
 
-Pact-CLI has been the first, and also it celebrates it v1.0.0 release. You can find a multi-manifest tag with AMD64/ARM64 and ARM flavours [here](https://hub.docker.com/layers/pactfoundation/pact-cli/1.0.0.0/images/sha256-f3945862389b736f34907bd1b1c205800f17dd3dc242f10f90d490a198bb23c7?context=explore)
+Pact-CLI has been the first, and also it celebrates it v1.0.0 release. You can find a multi-manifest tag with AMD64/ARM64 and ARM flavours [here](https://hub.docker.com/layers/pactfoundation/pact-cli/1.0.0.0/images/sha256-f3945862389b736f34907bd1b1c205800f17dd3dc242f10f90d490a198bb23c7?context=explore).
 
-We would also like to publish our images to GitHub container registry in order to alleviate any pain, DockerHub's rate limits may be imposing on teams. The first of a series of PR's across our images is [here](https://github.com/pact-foundation/pact-ruby-cli/pull/127), and a tracking issue [here](https://github.com/pact-foundation/devrel/issues/29)
+We would also like to publish our images to GitHub container registry in order to alleviate any pain, DockerHub's rate limits may be imposing on teams. The first of a series of PR's across our images is [here](https://github.com/pact-foundation/pact-ruby-cli/pull/127), and a tracking issue [here](https://github.com/pact-foundation/devrel/issues/29).
 
 ### GitHub Actions launches ARM64 MacOS Runners
 
 We recently introduced ARM64 CI testing capabilities via CirrusCI last year, and rolled it out to several of our repositories, which unlocked cross-platform, cross-architecture testing for our maintainers, however due to licensing changes, CirrusCI began limiting OSS users usage, which mean monthly, builds would fail as we moved over our limits.
 
-This was an inconvenience, but not limiting as we had not removed our existing GitHub Actions workflows, and were infact waiting for GitHub to unlock access to MacOS M1 runners for OSS usage. That time came last month, and we have see it applied to a couple of our repositories already.
-
-https://github.blog/changelog/2024-01-30-github-actions-introducing-the-new-m1-macos-runner-available-to-open-source/
+This was an inconvenience, but not limiting as we had not removed our existing GitHub Actions workflows, and were infact waiting for GitHub to unlock access to MacOS M1 runners for OSS usage. That time came [last month](https://github.blog/changelog/2024-01-30-github-actions-introducing-the-new-m1-macos-runner-available-to-open-source/), and we have see it applied to a couple of our repositories already.
 
 If you spot a repo not covered by the new `macos-14` runner, why not drop a PR in on the project?
 
@@ -320,9 +320,9 @@ Missed it? Don't worry you can catch the slides [here](https://speakerdeck.com/e
 
 If you're based in London, why not link up with the Women Who Go community, who are holding their first in-person event of 2024.
 
-You'll get to hear from [Sanyia Saidova](https://deliveroo.engineering/authors/sanyia-saidova/) from Deliveroo who will be speaking about Growing your application from prototype to production, and I'll be talking about Pact + GoLang - Contract testing for the past, present and the future (and how you can get involved!)
+You'll get to hear from [Sanyia Saidova](https://deliveroo.engineering/authors/sanyia-saidova/) from Deliveroo who will be speaking about Growing your application from prototype to production, and I'll be talking about Pact + GoLang - Contract testing for the past, present and the future (and how you can get involved!).
 
-You can check out the meetup event [here](https://www.meetup.com/women-who-go-london/events/298730462/)
+You can check out the meetup event [here](https://www.meetup.com/women-who-go-london/events/298730462/).
 
 ## Community shout-outs
 
