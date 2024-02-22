@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.17 - Bugfix Release
+
+* db3c3818 - Merge pull request #388 from YOU54F/feat/convert_musl_static_to_dynamic_so (Ronald Holshausen, Wed Feb 14 09:17:25 2024 +1100)
+* df22043e - feat: convert musl static .a to .so (Yousaf Nabi, Tue Feb 13 21:51:02 2024 +0000)
+
 ## 0.4.16 - Bugfix Release
 
 
