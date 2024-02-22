@@ -248,13 +248,13 @@ Ubuntu 22.04 | 2.35
 
 ### Ruby Core
 
-So what about Ruby? I spoke earlier about our fork of traveling-ruby, which recently underwent some updates. Whilst on my Alpine adventures, I realised that there would now be some disparity between the platforms supported by the Pact Rust core, and the Pact Ruby core. That was an itch, I needed to scratch. Could I bring native musl based support to traveling-ruby? That way not only do we need to tell users, they no longer need bash, due to using sh compliant warpper scripts, but they no longer would need a compatability layer, if one was running Alpine.
+So what about Ruby? I spoke earlier about our fork of traveling-ruby, which recently underwent some updates. Whilst on my Alpine adventures, I realised that there would now be some disparity between the platforms supported by the Pact Rust core, and the Pact Ruby core. That was an itch, I needed to scratch. Could I bring native musl based support to traveling-ruby? That way not only do we need to tell users, they no longer need bash, due to using sh compliant wrapper scripts, but they no longer would need a compatability layer, if one was running Alpine.
 
 So similar to Cross, the traveling-ruby package uses Docker images to build for Linux. They are referred to as a holy-build-box, and was originally created by the Phusion team, of Passenger fame (and also the creators of traveling-ruby). The box used for building the current linux packages are based on Centos7 which links to glibc 2.17.
 
 So I would need to create an Alpine based holy-build-box and see how far could get. Turns out pretty far and I managed to successfully Alpine/musl based packages for aarch64/x86_64. They were built on an Alpine 3.15 box, and have been tested up to the current 3.19 Alpine release.
 
-Itching to try out the musl based packages? I've published a [release from my fork of pact-ruby-standalone](https://github.com/YOU54F/pact-ruby-standalone/releases/tag/v3.0.0), that you can take them out for a test drive today.
+Itching to try out the musl based packages? I've published a [release from my fork of pact-ruby-standalone](https://github.com/YOU54F/pact-ruby-standalone/releases/tag/v3.0.0), that you can take out for a test drive today.
 
 ## Who and whose ARMy?
 
@@ -280,7 +280,7 @@ If you spot a repo not covered by the new `macos-14` runner, why not drop a PR i
 
 Are you running Windows on ARM? Whether you running it natively, or you are enjoying it via your speedy M-Series Apple processors via Apples Virtualisation framework (Check out [UTM](https://github.com/utmapp/UTM) for a rather splendid open-source virt tool), I've got some good news for you.
 
-We have started to [publish support](https://github.com/pact-foundation/pact-reference/pull/370) for Windows on ARM across a few of our projects. I'll borrow our list of Rust tooling before, as it'll highlight some of the gaps that we still need to cover. If you want to see Windows on ARM via your favourite Pact Client library, why not help fill in some of the blacks.
+We have started to [publish support](https://github.com/pact-foundation/pact-reference/pull/370) for Windows on ARM across a few of our projects. I'll borrow our list of Rust tooling before, as it'll highlight some of the gaps that we still need to cover. If you want to see Windows on ARM via your favourite Pact Client library, why not help fill in some of the blanks.
 
 - [X] [Mock Server CLI](https://github.com/pact-foundation/pact-reference/releases/tag/pact_mock_server_cli-v1.0.4)
 - [X] [Verifier CLI](https://github.com/pact-foundation/pact-reference/releases/tag/pact_verifier_cli-v1.0.3)
