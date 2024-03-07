@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-python/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact-python repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## v2.1.3 (2024-03-07)
+
+### Fix
+
+-   avoid wheel bloat
+
 ## v2.1.2 (2024-03-05)
 
 ### BREAKING CHANGE
