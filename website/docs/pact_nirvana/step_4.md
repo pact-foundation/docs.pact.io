@@ -146,7 +146,7 @@ The rest of this guide assumes you are using a Pact Broker or PactFlow Broker.
 
 #### PactFlow Broker
 
-> You can sign up to PactFlow's free Starter Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=five_minute_guide_dev_plan) which will set you up with your own SaaS PactFlow Broker.
+> You can sign up for PactFlow's free Starter Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=five_minute_guide_dev_plan) which will set you up with your own SaaS PactFlow Broker.
 
 :::info
 For the purposes of this guide to Pact Nirvana, we will not use any PactFlow specific features, so you can safely trial a POC and revert
@@ -184,7 +184,7 @@ Debug this until it works and looks good:-
 - It has a branch associated with it
 
 :::tip
-Although some Pact implementations allow for publishing pacts, as a wrapper around the pact cli tools, these may be outdated, inconsistent, or absent in some implementations. It is our recommendation that you use one of the tools described above in the list
+Although some Pact implementations allow for publishing pacts as a wrapper around the Pact cli tools, these may be outdated, inconsistent, or absent in some implementations. It is our recommendation that you use one of the tools described above in the list
 :::
 
 ### C. Manually verify the pact by URL using the Pact Broker
@@ -192,7 +192,7 @@ Although some Pact implementations allow for publishing pacts, as a wrapper arou
 :::tip
 This task should be run when the pact changes
 
-* We recommend that a separate provider verification pipeline is set up to verify just the changed pact, this will utilise our verification step created in step 3
+* We recommend that a separate provider verification pipeline is set up to verify just the changed pact. This will utilise our verification step created in step 3
 :::
 
 Now you can see if you can run your provider tests, this time pulling the pact file not from your local filesystem,
@@ -206,11 +206,11 @@ but from the broker.
 See our recommendations for this task [here](https://docs.pact.io/provider/recommended_configuration#verification-triggered-by-a-contract-requiring-verification-published):
 
 - Set the URL as a configurable property such as `PACT_URL` environment variable.
-- Configure publication of verification results, by a `CI` flag so that verification results are only published from `CI` systems
+- Configure publication of verification results by a `CI` flag so that verification results are only published from `CI` systems
 - Always set the `provider version` & `provider branch` properties, so when verification results are published to the Pact Broker
 they relate to a known build.
 
-Try running the task again with `CI=true`, such that you publish verification results and can see a green verified build in your Pact Broker UI.
+Try running the task again with `CI=true`, so you can publish verification results and see a green verified build in your Pact Broker UI.
 
 Confirm that the verification results are associated with the `provider version` & `provider branch` properties for your build.
 
@@ -230,12 +230,12 @@ Pact verification should run as part of your providers regular unit test run. We
 2. In the provider verification configuration, setup the consumer version selectors, so the pact that is being verified is the latest for targeted branches and later environments. This will help keep your provider builds green.
    1. Our [recommended configuration](https://docs.pact.io/pact_broker/advanced_topics/consumer_version_selectors#recommended) is here.
 
-3. Configure publication of verification results, by a `CI` flag so that verification results are only published from `CI` systems
+3. Configure publication of verification results by a `CI` flag so that verification results are only published from `CI` systems
 
-4. Always set the `provider version` & `provider branch` properties, so when verification results are published to the Pact Broker
+4. Always set the `provider version` & `provider branch` properties so when verification results are published to the Pact Broker
 they relate to a known build.
 
-5. Run the provider task, it should fetch pacts matching your consumer version selectors and verify them as per before
+5. Run the provider task, it should fetch pacts matching your consumer version selectors and verify them as before
    1. `{ "mainBranch": true }` assuming our consumer was published from `main` / `master` / `master` - see [docs](https://docs.pact.io/pact_broker/branches#automatic-main-branch-detection) for setup in your pact-broker.
 
 ### E. Enable WIP and Pending Pacts
@@ -244,31 +244,31 @@ they relate to a known build.
 This task should be run when the provider code changes
 
 * The verification task will run as part of the normal CI/CD pipeline for the provider
-* The verification task will fetch and verify all the relevant pacts from all consumers from the Pact Broker to ensure no regressions have occurred, and also verify any new pacts that have been published.
+* The verification task will fetch and verify all the relevant pacts from all consumers from the Pact Broker to ensure no regressions have occurred and also verify any new pacts that have been published.
 :::
 
-Extending the selector configuration from step `D`, we also recommend you enable the Pending and "work in progress" (WIP) pacts features in your verification step.
+Extending the selector configuration from step `D`, we recommend enabling the Pending and "work in progress" (WIP) pacts features in your verification step.
 
 Enabling the [pending pacts](/pact_broker/advanced_topics/pending_pacts) feature stops changed pacts breaking the main provider build, whilst still providing feedback to the consumer team about the contract compatibility.
 
 The ["work in progress"](/pact_broker/advanced_topics/wip_pacts) feature ensures any new contracts are automatically verified in the provider's main pipeline build without requiring an update to the provider configuration. This feature solves the problem of provider teams having to manually update and commit changes to their verification configuration to publish verifications for feature pacts from CI, and enables consumers to get feedback on their changes as quickly as possible.
 
-Together, these features enable providers to verify as many contracts as possible without disrupting the main build, and without requiring manual intervention from the provider team.
+Together, these features enable providers to verify as many contracts as possible without disrupting the main build and without requiring manual intervention from the provider team.
 
 To enable these features, you will need to:
 
 1. Enable `includeWipPactsSince` to a fixed date e.g. `2023-01-01`
 2. Set the `pending` flag to `true`
 
-Refer to the [WIP](/pact_broker/advanced_topics/wip_pacts) and [Pending](/pact_broker/advanced_topics/pending_pacts) Pacts documentation for more information and consnult your language guide for the specific way of configuring this.
+Refer to the [WIP](/pact_broker/advanced_topics/wip_pacts) and [Pending](/pact_broker/advanced_topics/pending_pacts) Pacts documentation for more information and consult your language guide for the specific way of configuring this.
 
-*NOTE: If you are automatically bringing in a pact using the "matching feature branch names" approach, you might want to disable this feature on your feature branches, so that a feature pact correctly fails the branch build until it is fully implemented, and then passes to let you know you can merge.*
+*NOTE: If you are automatically bringing in a pact using the "matching feature branch names" approach, you might want to disable this feature on your feature branches so that a feature pact correctly fails the branch build until it is fully implemented and then passes to let you know you can merge.*
 
 ### Notes
 
-In these examples, we will be both publishing pacts and verifying from our local machine.
+In these examples, we will publish pacts and verify from our local machine.
 
-In our next step, we will show Pact being integrated in your CI/CD system.
+In our next step, we will show Pact integration in your CI/CD system.
 
 Traditionally users would not publish from their local machines, and when running local verification tasks would not publish results
 to the Pact Broker. Developers should utilise read only based authentication mechanisms to enforce this.
