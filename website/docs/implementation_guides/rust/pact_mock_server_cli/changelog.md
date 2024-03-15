@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.0.5 - Maintenance Release
+
+* 9196efe4 - feat: verifier/mock_server clis - build for musl (Yousaf Nabi, Thu Feb 8 20:36:10 2024 +0000)
+
 ## 1.0.4 - Maintenance Release
 
 * 36390097 - Merge pull request #371 from YOU54F/chore/renable_verifier_aarch64_linux (Ronald Holshausen, Thu Jan 25 09:59:53 2024 +1100)
