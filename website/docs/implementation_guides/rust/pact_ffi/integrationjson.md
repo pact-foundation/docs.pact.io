@@ -161,3 +161,86 @@ Here the `interests` attribute would be expanded to
   }
 }
 ```
+
+## Supporting multiple matching rules
+
+Matching rules can be combined. These rules will be evaluated with an AND (i.e. all the rules must match successfully 
+for the result to be successful). The main reason to do this is to combine the `EachKey` and `EachValue` matching rules
+on a map structure, but other rules make sense to combine (like the `include` matcher).
+
+To provide multiple matchers, you need to provide an array format. 
+
+For example, assume you have an API that returns results for a document store where the documents are keyed based on some index:
+```json
+{
+  "results": {
+    "AUK-155332": {
+      "title": "...",
+      "description": "...",
+      "link": "http://....",
+      "relatesTo": ["BAF-88654"]
+    }
+  }
+}
+```
+
+Here you may want to provide a matching rule for the keys that they conform to the `AAA-NNNNNNN...` format, as well
+as a type matcher for the values.
+
+So the resulting intermediate JSON would be something like:
+```json
+{
+  "results": {
+    "pact:matcher:type": [
+      {
+        "pact:matcher:type": "each-key",
+        "value": "AUK-155332",
+        "rules": [
+          {
+            "pact:matcher:type": "regex",
+            "regex": "\\w{3}-\\d+"
+          }
+        ]
+      }, {
+        "pact:matcher:type": "each-value",
+        "rules": [
+          {
+            "pact:matcher:type": "type"
+          }
+        ]
+      }
+    ],
+    "AUK-155332": {
+      "title": "...",
+      "description": "...",
+      "link": "http://....",
+      "relatesTo": ["BAF-88654"]
+    }
+  }
+}
+```
+
+## Supporting matching rule definitions
+
+You can use the [matching rule definition expressions](https://docs.rs/pact_models/latest/pact_models/matchingrules/expressions/index.html) 
+in the `pact:matcher:type` field.
+
+For example, with the previous document result JSON, you could then use the following for the `relatesTo` field:
+
+```json
+{
+  "relatesTo": {
+    "pact:matcher:type": "eachValue(matching(regex, '\\w{3}-\\d+', 'BAF-88654'))"
+  }
+}
+```
+
+You can then also combine matchers:
+
+```json
+{
+  "relatesTo": {
+    "pact:matcher:type": "atLeast(1), atMost(10), eachValue(matching(regex, '\\w{3}-\\d+', 'BAF-88654'))"
+  }
+}
+```
