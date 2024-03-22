@@ -39,7 +39,7 @@ To achieve this, when a pact is published, the associated pacticipant version sh
 
 To maintain a green build in your provider’s CI, we will use consumer version selectors to verify the main branch rather than the latest overall pact.
 
-If you use feature branches for your consumer development, it is recommended to publish the pact with the participant version and the name of the branch. If you use feature toggles, the branch could be the name of the feature toggle. Your Pact client library will allow you to configure the name of the branch to be applied when you publish your pacts.
+If you use feature branches for your consumer development, it is recommended to publish the pact with the [pacticipant](https://docs.pact.io/getting_started/terminology#pacticipant) version and the name of the branch. If you use feature toggles, the branch could be the name of the feature toggle. Your Pact client library will allow you to configure the name of the branch to be applied when you publish your pacts.
 
 ## Tasks
 
