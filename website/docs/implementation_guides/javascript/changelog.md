@@ -6,6 +6,56 @@ custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/CHANGELO
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [12.4.0](https://github.com/pact-foundation/pact-js/compare/v12.3.1...v12.4.0) (2024-03-25)
+
+
+### Features
+
+* **corporate proxy:** support in verifier ([f3ec1be](https://github.com/pact-foundation/pact-js/commit/f3ec1be2029c365e1888798f8a78935a0ed3f74c))
+
+## [12.4.0](https://github.com/pact-foundation/pact-js/compare/v12.3.1...v12.4.0) (2024-03-25)
+
+
+### Features
+
+* **corporate proxy:** support in verifier ([f3ec1be](https://github.com/pact-foundation/pact-js/commit/f3ec1be2029c365e1888798f8a78935a0ed3f74c))
+
+
+### [12.3.1](https://github.com/pact-foundation/pact-js/compare/v12.3.0...v12.3.1) (2024-03-25)
+
+
+### Fixes and Improvements
+
+* update to latest pact-core 14.3.3 ([34d8a4b](https://github.com/pact-foundation/pact-js/commit/34d8a4bc9fba6f98590509e1bb1c78b3377792e5))
+
+## [12.3.0](https://github.com/pact-foundation/pact-js/compare/v12.2.0...v12.3.0) (2024-02-28)
+
+
+### Features
+
+* allow v3 matchers in message metadata ([58b1251](https://github.com/pact-foundation/pact-js/commit/58b125133b80327597702ebf7246bc47ad9c8da8))
+
+## [12.2.0](https://github.com/pact-foundation/pact-js/compare/v12.1.3...v12.2.0) (2024-02-09)
+
+
+### Features
+
+* remove feature flag for v4 ([3d8eccc](https://github.com/pact-foundation/pact-js/commit/3d8ecccca04d08972e6ad3f562c90e3f4ab6c130))
+
+
+### Fixes and Improvements
+
+* retire lodash omitby to fix vulnerability ([fedcc2e](https://github.com/pact-foundation/pact-js/commit/fedcc2e23c679300126b858ac4c9cb29353d1f47))
+* revert test workaround / update to matt plugin 0.1.0 ([f306c2b](https://github.com/pact-foundation/pact-js/commit/f306c2bf432ecbd658cd1b91d3122b499bbd0c1f))
+
+### [12.1.3](https://github.com/pact-foundation/pact-js/compare/v12.1.2...v12.1.3) (2024-01-23)
+
+
+### Fixes and Improvements
+
+* **ci:** update matt plugin provider test ([db37296](https://github.com/pact-foundation/pact-js/commit/db3729626b92d4d8342e2c403024cae7f9a39350))
+* support multiple states with same name ([36dfb4f](https://github.com/pact-foundation/pact-js/commit/36dfb4f70b383d1bd59476ea37f219f2c3679e04)), closes [#848](https://github.com/pact-foundation/pact-js/issues/848)
+
 ### [12.1.2](https://github.com/pact-foundation/pact-js/compare/v12.1.1...v12.1.2) (2024-01-07)
 
 
