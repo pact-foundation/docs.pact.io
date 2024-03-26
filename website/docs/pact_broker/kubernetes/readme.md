@@ -50,7 +50,7 @@ helm upgrade -i <release_name> oci://ghcr.io/pact-foundation/pact-broker-chart/p
 
 ## Source Code
 
-* <https://github.com/pact-foundation/pact_broker>
+* https://github.com/pact-foundation/pact_broker
 
 ## Requirements
 

@@ -31,6 +31,6 @@ Now, they:
 
 ### Further material
 
-- <https://technology.blog.gov.uk/2019/01/29/lessons-learnt-using-contract-testing-in-gov-uk-pay/>
+- https://technology.blog.gov.uk/2019/01/29/lessons-learnt-using-contract-testing-in-gov-uk-pay/
 
 ___

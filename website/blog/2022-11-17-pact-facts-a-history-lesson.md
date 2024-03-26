@@ -171,7 +171,7 @@ Beth often refers to the Ruby Goldberg machine, in a nod to Rube Goldberg.
 
 [![image](https://user-images.githubusercontent.com/19932401/202261902-fd61e2a4-7df1-4f1a-a795-b0722a8ecc33.png)](https://en.wikipedia.org/wiki/Rube_Goldberg_machine)
 
-We would love your engineering support in bringing efficiencies to our CI/CD processes used in our open source projects, or your artistic skills, if someone fancies drawing a Pact Rube Goldberg machine <3
+We would love your engineering support in bringing efficiencies to our CI/CD processes used in our open source projects, or your artistic skills, if someone fancies drawing a Pact Rube Goldberg machine ❤️
 
 
 ## Moving beyond HTTP

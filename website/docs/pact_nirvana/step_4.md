@@ -167,7 +167,7 @@ For each of the next steps, you will need to set the following variables to your
 Now that you have your Pact Broker available, you can start taking advantage of it to manage the
 communication between your provider and consumer.
 
-* Ensure you follow the recommended configuration for publishing <https://docs.pact.io/consumer/recommended_configuration>
+* Ensure you follow the recommended configuration for publishing https://docs.pact.io/consumer/recommended_configuration
 * Use one of our [Pact CLI tools](https://docs.pact.io/pact_broker/client_cli)
   1. [Docker](https://hub.docker.com/r/pactfoundation/pact-cli)
   2. [Pact Standalone CLI](https://github.com/pact-foundation/pact-ruby-standalone/releases)

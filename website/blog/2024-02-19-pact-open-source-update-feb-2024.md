@@ -310,9 +310,9 @@ Eric DeAndrea [spoke this month at the San Francisco Java User Group](https://ww
 
 Missed it? Don't worry you can catch the slides [here](https://speakerdeck.com/edeandrea/2-15-24-sf-jug-avoiding-pitfalls-with-modern-microservices-testing), and you can be sure to hear more from Eric throughout the year. I would recommend following his socials for heads up on his next event.
 
-- GitHub: <https://github.com/edeandrea>
-- Twitter/X: <https://twitter.com/edeandrea>
-- LinkedIn: <https://www.linkedin.com/in/edeandrea>
+- GitHub: `<https://github.com/edeandrea>`
+- Twitter/X: `<https://twitter.com/edeandrea>`
+- LinkedIn: `<https://www.linkedin.com/in/edeandrea>`
 
 ### WomenWhoGo - London
 

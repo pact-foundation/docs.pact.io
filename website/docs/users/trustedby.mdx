@@ -6,10 +6,9 @@ Pact is proud to be in use and protecting deployments for the following companie
 
 import Layout from '@theme/Layout';
 import { MarkdownBlock } from '../../src/components/CompLibraryV2';
-const users = require('../../src/data/users.json')
-const repoUrl = "https://github.com/pact-foundation/docs.pact.io"
-const editUrl = `${repoUrl}/edit/master/website/docusaurus.config.js`;
-const showcase = () => {
+import users from '../../src/data/users.json';
+
+export const showcase = () => {
 const chunkSize = 3;
 const renderList = []
 for (let i = 0; i < users.length; i += chunkSize) {
@@ -26,5 +25,6 @@ for (let i = 0; i < users.length; i += chunkSize) {
 }
 return renderList
 }
+
 
 <div className="logos"><table><tbody>{showcase()}</tbody></table></div>

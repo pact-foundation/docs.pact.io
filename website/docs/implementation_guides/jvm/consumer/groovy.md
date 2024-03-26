@@ -21,9 +21,11 @@ to define your pacts. For a full example, have a look at the example JUnit `Exam
 
 If you are using gradle for your build, add it to your `build.gradle`:
 
+    ```gradle
     dependencies {
         testCompile 'au.com.dius.pact.consumer:groovy:4.1.0'
     }
+    ```
     
 In order to avoid the name collision between `au.com.dius.pact.consumer:groovy` and Groovy Gradle plugin's [automatic configuraiton of `groovyClasspath`](https://docs.gradle.org/current/userguide/groovy_plugin.html#sec:automatic_configuration_of_groovyclasspath)
 add the following configuration to your `build.gradle`:
@@ -83,6 +85,7 @@ Then create an instance of the `PactBuilder` in your test.
 
 After running this test, the following pact file is produced:
 
+```json
     {
       "provider" : {
         "name" : "Alice Service"
@@ -108,6 +111,7 @@ After running this test, the following pact file is produced:
         }
       } ]
     }
+```
 
 ### DSL Methods
 
@@ -145,7 +149,7 @@ Defines the request for the interaction. The request data map can contain the fo
 |----------------------------|-------------------------------------------|-----------------------------|
 | method | The HTTP method to use | get |
 | path | The Path for the request | / |
-| query | Query parameters as a Map<String, List> |  |
+| query | Query parameters as a `Map<String, List>` |  |
 | headers | Map of key-value pairs for the request headers | |
 | body | The body of the request. If it is not a string, it will be converted to JSON. Also accepts a PactBodyBuilder. | |
 | prettyPrint | Boolean value to control if the body is pretty printed. See note on Pretty Printed Bodies below |

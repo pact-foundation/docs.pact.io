@@ -32,11 +32,11 @@ Some words from our amazing maintainer [Adam Rodger](https://github.com/adamrodg
 
 Chat with us in: [#pact-net](https://pact-foundation.slack.com/archives/C9UTHV2AD)
 
-### NestJS + Pact = <3
+### NestJS + Pact = ❤️
 
 [Omer Morad](https://github.com/omermorad), our friend in, Tel Aviv, Israel, is a backend-oriented developer, OOP flavored, in a distributed systems world and also a Web artisan, TypeScripter, open-source enthusiast, and guitar player.
 
-He recently brought in <https://github.com/pact-foundation/nestjs-pact> to the pact-foundation and we would love to get it featured on the [awesome-nestjs repo](https://github.com/jmcdo29/testing-nestjs/issues/1676).
+He recently brought in https://github.com/pact-foundation/nestjs-pact to the pact-foundation and we would love to get it featured on the [awesome-nestjs repo](https://github.com/jmcdo29/testing-nestjs/issues/1676).
 
 Are you using NestJS + Pact? Want to help build out an example? Chat with us in: [#pact-nestjs](https://pact-foundation.slack.com/archives/C03ELGE8UMB)
 
@@ -84,7 +84,7 @@ Inspired by our list of tools, but don’t see your [favourite](https://docs.pac
 
 ## Our awesome community
 
-Developer Relations at Pact-Foundation now has a new home @ <https://github.com/pact-foundation/devrel>
+Developer Relations at Pact-Foundation now has a new home @ https://github.com/pact-foundation/devrel
 
 We recently hooked up [Orbit.love](https://orbit.love/), to give us a bit of a glance across our open source estate, and we were able to pull out well over 2k different contributions from just the top 15 in the leaderboard excluding PactFlow’s co-founders!
 

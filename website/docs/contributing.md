@@ -5,7 +5,7 @@ sidebar_label: Contributing
 
 ## Getting involved in Open Source
 
-With <3 to all our [contributors and maintainers](https://docs.pact.io/contributing/contributors), Pact is the success it is today because of the hard work of many people.
+With ❤️ to all our [contributors and maintainers](https://docs.pact.io/contributing/contributors), Pact is the success it is today because of the hard work of many people.
 
 ### Why get involved in Open Source anyway?
 

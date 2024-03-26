@@ -50,63 +50,63 @@ Big thanks to everyone, especially if you aren’t individually called out.
 
 This is picking up traction, thanks to [Chris Burns](https://github.com/ChrisJBurns)  for bringing this into the pact-foundation. A number of users have brought in improvements.
 
-- <https://github.com/pact-foundation/pact-broker-chart/pull/18>
-- <https://github.com/pact-foundation/pact-broker-chart/pull/21>
-- <https://github.com/pact-foundation/pact-broker-chart/pull/22>
-- <https://github.com/pact-foundation/pact-broker-chart/pull/25>
-- <https://github.com/pact-foundation/pact-broker-chart/pull/26>
-- <https://github.com/pact-foundation/pact-broker-chart/pull/28>
+- https://github.com/pact-foundation/pact-broker-chart/pull/18
+- https://github.com/pact-foundation/pact-broker-chart/pull/21
+- https://github.com/pact-foundation/pact-broker-chart/pull/22
+- https://github.com/pact-foundation/pact-broker-chart/pull/25
+- https://github.com/pact-foundation/pact-broker-chart/pull/26
+- https://github.com/pact-foundation/pact-broker-chart/pull/28
 
 ### Pact JS
 
 #### Fixes
 
-- <https://github.com/pact-foundation/pact-js/pull/990>
-- <https://github.com/pact-foundation/pact-js/pull/1008>
-- <https://github.com/pact-foundation/pact-js/pull/1009>
-- <https://github.com/pact-foundation/pact-js/pull/1027>
+- https://github.com/pact-foundation/pact-js/pull/990
+- https://github.com/pact-foundation/pact-js/pull/1008
+- https://github.com/pact-foundation/pact-js/pull/1009
+- https://github.com/pact-foundation/pact-js/pull/1027
 
 ### Pact JVM
 
 #### Feats
 
-- <https://github.com/pact-foundation/pact-jvm/pull/1650>
-- <https://github.com/pact-foundation/pact-jvm/pull/1663>
+- https://github.com/pact-foundation/pact-jvm/pull/1650
+- https://github.com/pact-foundation/pact-jvm/pull/1663
 
 #### Fixes
 
-- <https://github.com/pact-foundation/pact-jvm/pull/1645>
+- https://github.com/pact-foundation/pact-jvm/pull/1645
 
 ### Pact Go
 
 #### Feats
 
-- <https://github.com/pact-foundation/pact-go/pull/261>
+- https://github.com/pact-foundation/pact-go/pull/261
 
 ### Pact PHP
 
-With <3 to [Tien Vo Xuan](https://github.com/Tienvx) and others, we now have Rust support in Pact-PHP
+With ❤️ to [Tien Vo Xuan](https://github.com/Tienvx) and others, we now have Rust support in Pact-PHP
 
-- <https://github.com/pact-foundation/pact-php/pull/278>
-- <https://github.com/pact-foundation/pact-php/pull/279>
+- https://github.com/pact-foundation/pact-php/pull/278
+- https://github.com/pact-foundation/pact-php/pull/279
 
 See the next section for how you can help him and other pact-php users, with some other PR’s awaiting review
 
 ### Pact NET
 
-- <https://github.com/pact-foundation/pact-net/pull/439>
+- https://github.com/pact-foundation/pact-net/pull/439
 
 ### Pact Docs
 
-- <https://github.com/pact-foundation/docs.pact.io/pull/206/files>
+- https://github.com/pact-foundation/docs.pact.io/pull/206/files
 
 ### Jest Pact
 
-- <https://github.com/pact-foundation/jest-pact/pull/218>
+- https://github.com/pact-foundation/jest-pact/pull/218
 
 ## Community PRs awaiting review – we would appreciate your eyes
 
-> “Given enough eyeballs, all bugs are shallow.”
+ “Given enough eyeballs, all bugs are shallow.”
 
 It’s true. We would love your support in helping review any of these PRs, as would the authors. These have all come from the community.
 
@@ -114,25 +114,25 @@ It’s true. We would love your support in helping review any of these PRs, as w
 
 #### Rust
 
-- <https://github.com/pact-foundation/pact-php/pull/280>
-- <https://github.com/pact-foundation/pact-php/pull/281>
-- <https://github.com/pact-foundation/pact-php/pull/282>
-- <https://github.com/pact-foundation/pact-php/pull/283>
-- <https://github.com/pact-foundation/pact-php/pull/284>
-- <https://github.com/pact-foundation/pact-php/pull/285>
+- https://github.com/pact-foundation/pact-php/pull/280
+- https://github.com/pact-foundation/pact-php/pull/281
+- https://github.com/pact-foundation/pact-php/pull/282
+- https://github.com/pact-foundation/pact-php/pull/283
+- https://github.com/pact-foundation/pact-php/pull/284
+- https://github.com/pact-foundation/pact-php/pull/285
 
 #### Community fixes
 
-- <https://github.com/pact-foundation/pact-php/pull/288>
+- https://github.com/pact-foundation/pact-php/pull/288
 
 #### Community Enhancements
 
-- <https://github.com/pact-foundation/pact-php/pull/286>
+- https://github.com/pact-foundation/pact-php/pull/286
 
 
 ### Pact Go
 
-- <https://github.com/pact-foundation/pact-go/pull/262>
+- https://github.com/pact-foundation/pact-go/pull/262
 
 
 ## Community Posts
@@ -142,7 +142,7 @@ It’s true. We would love your support in helping review any of these PRs, as w
 
 ## Getting involved with Pact  
 
-We have <3 for all our contributors and maintainers – we have reached the heights of today because of the hours and work many people have put into the Pact ecosystem.  
+We have ❤️ for all our contributors and maintainers – we have reached the heights of today because of the hours and work many people have put into the Pact ecosystem.  
 
 Getting involved with an open source project – Pact or otherwise – [can be extremely rewarding](https://docs.pact.io/contributing#why-get-involved-in-open-source-anyway) and allow you to give back to a community in a meaningful way. If you’re passionate about Pact, you can find a way to get involved [here](https://docs.pact.io/contributing#pact---how-you-can-help).
 

@@ -58,7 +58,7 @@ In these instances, you can't employ the strategy in Use Case (1) as there is to
 The solution to 2:
 
 1. Write contract tests from Consumer -> Gateway, and Gateway -> Provider in the diagram. That is, you need to have two sets of contract tests. This can be hard to achieve, given the overarching problem statement.
-2. Use PactFlow's bi-directional contract testing feature between client <-> gateway, and verify using OAS. Gateway to downstream systems can choose BDCT or Pact, again depending on similar technical constraints.
+2. Use PactFlow's bi-directional contract testing feature between client `<->` gateway, and verify using OAS. Gateway to downstream systems can choose BDCT or Pact, again depending on similar technical constraints.
 
 ### More on (2) where the gateway is a provider
 

@@ -254,7 +254,8 @@ It's best to run Pact verification tests as part of your unit testing suite, so 
 
 ## Compatibility
 
-<details><summary>Specification Compatibility</summary>
+<details>
+<summary>Specification Compatibility</summary>
 
 | Version | Stable | [Spec] Compatibility | Install            |
 | ------- | ------ | -------------------- | ------------------ |

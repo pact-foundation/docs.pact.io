@@ -16,9 +16,9 @@ Before each interaction is executed, the provider under test will have the oppor
 Generally the state maps to a set of fixture data for mocking out services that the provider is a consumer of (they will have their own pacts)
 
 The pact framework will instruct the test server to enter that state by sending:
-
+    ```
     POST "${config.stateChangeUrl.url}/setup" { "state" : "${interaction.stateName}" }
-
+    ```
 
 ### An example of running provider verification with junit
 

@@ -21,25 +21,25 @@ The contributor community has been hard at work uplifting key languages to integ
 
 ### .NET
 
-Pact-net: Next major release is not far away, with the Pact specification v3 beta stabilising: <https://github.com/pact-foundation/pact-net/> (v4.0.0-beta.3).
+Pact-net: Next major release is not far away, with the Pact specification v3 beta stabilising: https://github.com/pact-foundation/pact-net/ (v4.0.0-beta.3).
 
 Chat with us in: [#pact-net](https://pact-foundation.slack.com/archives/C9UTHV2AD)
 
 ### Golang
 
-Pact-go: Next major release is not far away, with the Pact specification v3 beta stabilising: <https://github.com/pact-foundation/pact-go/tree/2.x.x> (v2.0.0-beta.10).
+Pact-go: Next major release is not far away, with the Pact specification v3 beta stabilising: https://github.com/pact-foundation/pact-go/tree/2.x.x (v2.0.0-beta.10).
 
 Chat with us in: [#pact-go](https://pact-foundation.slack.com/archives/C9UTHTFFB)
 
 ### Node JS
 
-Pact-JS: Pact specification V3 beta now available: <https://github.com/pact-foundation/pact-js/tree/feat/v3.0.0/> (v10.0.0-beta.59). Follow the [roadmap progress.](https://github.com/pact-foundation/pact-js/projects/3)
+Pact-JS: Pact specification V3 beta now available: https://github.com/pact-foundation/pact-js/tree/feat/v3.0.0/ (v10.0.0-beta.59). Follow the [roadmap progress.](https://github.com/pact-foundation/pact-js/projects/3)
 
 Chat with us in: [#pact-js](https://pact-foundation.slack.com/archives/C9VBGLUM9)
 
 ### Swift
 
-Pact-Swift: Pact specification V3 support and provider side verification in Swift: <https://github.com/surpher/PactSwift>.
+Pact-Swift: Pact specification V3 support and provider side verification in Swift: https://github.com/surpher/PactSwift.
 
 Chat with us in: [#pact-swift](https://pact-foundation.slack.com/archives/C9VBGNT4K)
 
@@ -53,7 +53,7 @@ Chat with us in: [#pact4s](https://pact-foundation.slack.com/archives/C02ACMH759
 
 ### Python
 
-Pact-Python: Message support was added in 2021 to enable testing of asynchronous integrations such as RabbitMQ or Kafka (<https://github.com/pact-foundation/pact-python/pull/194>, <https://github.com/pact-foundation/pact-python/pull/251>).
+Pact-Python: Message support was added in 2021 to enable testing of asynchronous integrations such as RabbitMQ or Kafka (https://github.com/pact-foundation/pact-python/pull/194, https://github.com/pact-foundation/pact-python/pull/251).
 
 Chat to us in: [#pact-python](https://pact-foundation.slack.com/archives/C9VECUP6E)
 
@@ -62,7 +62,7 @@ Chat to us in: [#pact-python](https://pact-foundation.slack.com/archives/C9VECUP
 Pact specification V4 is here! We worked hard on listening to the community, after the release of v3, 5 years ago. We consolidation many of the requests people made about things that haven't worked quite properly. One of the biggest changes is consolidation the file format to allow for HTTP and message interactions with a single file.
 
 - 📹 See an AMA from 2021 where Ron Holshausen took us through ["What's in store for Pact specification v4.0?"](https://www.youtube.com/watch?v=u7LzZ6Fm1Ok)
-- 📙 Read the V4 spec RFC for a full list of changes: <https://github.com/pact-foundation/pact-specification/issues/71>
+- 📙 Read the V4 spec RFC for a full list of changes: https://github.com/pact-foundation/pact-specification/issues/71
 - 🚀 Implementations in [Rust](https://github.com/pact-foundation/pact-reference/blob/master/rust/README.md) core and [JVM](https://github.com/pact-foundation/pact-jvm#supported-jdk-and-specification-versions) has been completed
 - 🌍 All our Pact specifications are open-source and you can see them all [here](https://github.com/pact-foundation/pact-specification#index)
 
