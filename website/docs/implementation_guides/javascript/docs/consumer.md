@@ -30,7 +30,8 @@ const { PactV4 } = require("@pact-foundation/pact")
 
 `PactV4` is the latest version of this library, supporting up to and including version 4 of the [Pact Specification](https://github.com/pact-foundation/pact-specification/). It also allows interactions of multiple types (HTTP, async, synchronous). For previous versions, see below.
 
-<!-- <details><summary>Previous versions</summary>
+<details>
+<summary>Previous versions</summary>
 
 ```javascript
 const { Pact } = require("@pact-foundation/pact")   // Supports up to and including Pact Specification version 2
@@ -39,13 +40,14 @@ const { PactV3 } = require("@pact-foundation/pact") // Supportsu up to and inclu
 
 You should use the `PactV4` interface unless you can't, and set the specification version via `spec` to the desired serialisation format.
 
-</details> -->
+</details>
 
 The `PactV4` class provides the following high-level APIs, they are listed in the order in which they typically get called in the lifecycle of testing a consumer:
 
 ### API
 
-<!-- <details><summary>Consumer API</summary>
+<details>
+<summary>Consumer API</summary>
 
 The Pact SDK uses a fluent builder to create interactions. 
 
@@ -62,9 +64,10 @@ The Pact SDK uses a fluent builder to create interactions.
 | `uponReceiving(...)`                   | string                        | The scenario name. The combination of `given` and `uponReceiving` must be unique in the pact file                                                                                                                                                                                                                                                                      |
 | `executeTest(...)`                     | -                             | Executes a user defined function, passing in details of the dynamic mock service for use in the test. If successful, the pact file is updated. The function signature changes depending on the setup and context of the interaction.                                                                                                                                                                                                                          |
 
-</details> -->
+</details>
 
-<!-- <details><summary>Constructor</summary>
+<details>
+<summary>Constructor</summary>
 
 | Parameter  | Required? | Type    | Description                                                                               |
 | ---------- | --------- | ------- | ----------------------------------------------------------------------------------------- |
@@ -78,7 +81,7 @@ The Pact SDK uses a fluent builder to create interactions.
 | `logLevel` | no        | string  | Log level: one of 'trace', 'debug', 'info', 'error', 'fatal' or 'warn'                    |
 | `spec`     | no        | number  | Pact specification version (defaults to 2)                                                |
 
-</details> -->
+</details>
 
 ### Example
 

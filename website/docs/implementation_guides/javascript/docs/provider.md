@@ -28,7 +28,8 @@ The provider interface is in the package: `github.com/pact-foundation/pact-go/v2
 
 ### Provider API Testing
 
-<!-- <details><summary>Provider API</summary>
+<details>
+<summary>Provider API</summary>
 
 Once you have created Pacts for your Consumer, you need to validate those Pacts against your Provider. The Verifier object provides the following API for you to do so:
 
@@ -36,7 +37,7 @@ Once you have created Pacts for your Consumer, you need to validate those Pacts 
 | ------------------ | :-------: | --------- | --------------------- |
 | `verifyProvider()` | See below | `Promise` | Start the Mock Server |
 
-</details> -->
+</details>
 
 1.  Start your local Provider service.
 1.  Optionally, instrument your API with ability to configure [provider states](https://github.com/pact-foundation/pact-provider-verifier/)
@@ -55,7 +56,8 @@ new Verifier(opts).verifyProvider().then(function () {
 
 #### Verification Options
 
-<!-- <details><summary>Verification Options</summary>
+<details>
+<summary>Verification Options</summary>
 
 | Parameter                   | Required? | Type                                                                                  | Description                                                                                                                                                                                        |
 | --------------------------- | --------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -82,7 +84,7 @@ new Verifier(opts).verifyProvider().then(function () {
 | `timeout`                   | false     | number                                                                                | The duration in ms we should wait to confirm verification process was successful. Defaults to 30000.                                                                                               |
 | `logLevel`                  | false     | string                                                                                | not used, log level is set by [environment variable](#debugging-issues-with-pact-js-v3)                                                                                                            |
 
-</details> -->
+</details>
 
 To dynamically retrieve pacts from a Pact Broker for a provider, provide the broker URL, the name of the provider, and the consumer version tags that you want to verify:
 

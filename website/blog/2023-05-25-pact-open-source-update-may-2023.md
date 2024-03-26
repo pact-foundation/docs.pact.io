@@ -22,7 +22,7 @@ Phew, that was close. Right, well now we are sorted, we've got some goodies line
 
 V4 of `Pact-Net` is about to support `V4` of the `Pact-Specification`.
 
-- `<https://github.com/pact-foundation/pact-net/pull/453>`
+- https://github.com/pact-foundation/pact-net/pull/453
 
 The OCD gods have been appeased. You can all rest easy now, thanks to [Adam Rodger](https://github.com/adamrodger).
 
