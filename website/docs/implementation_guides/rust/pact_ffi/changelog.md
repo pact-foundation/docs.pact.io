@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.19 - Bugfix Release
+
+* 6d9ddb76 - Merge pull request #401 from pact-foundation/feat/add-text-comment (Ronald Holshausen, Mon Mar 18 11:05:40 2024 +1100)
+* fca0c4a5 - fix: binary body lifetime issue (JP-Ellis, Tue Mar 12 16:36:43 2024 +1100)
+* 72f83688 - Merge pull request #391 from pact-foundation/chore/fix-pactffi-release (Ronald Holshausen, Wed Feb 28 14:39:04 2024 +1100)
+
 ## 0.4.18 - Maintenance Release
 
 
