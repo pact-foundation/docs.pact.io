@@ -11,6 +11,16 @@ https://github.com/pact-foundation/pact-plugins/tree/main/drivers
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
 
 
+* 497b734 - chore: update release script (Ronald Holshausen, Mon Apr 15 15:12:10 2024 +1000)
+* da4cfb1 - Merge branch 'v0.5.x' (Ronald Holshausen, Mon Apr 15 15:03:30 2024 +1000)
+* c7eec99 - bump version to 0.5.3 (Ronald Holshausen, Mon Apr 15 14:59:08 2024 +1000)
+* 590c70b - chore: Fix dependencies after upgrade to tonic (Ronald Holshausen, Mon Apr 15 14:47:55 2024 +1000)
+* 84c5ade - chore: Upgrade Tonic to 0.11.0 (Ronald Holshausen, Mon Apr 15 14:09:55 2024 +1000)
+* 5309340 - chore: Update dependencies (Ronald Holshausen, Mon Apr 15 11:55:36 2024 +1000)
+* 33dc2f2 - chore: Bump minor version (Ronald Holshausen, Mon Apr 15 11:46:54 2024 +1000)
+
+# 0.5.2 - Bugfix Release
+
 * 96d39bb - chore: update repository.index (Ronald Holshausen, Mon Apr 15 14:56:42 2024 +1000)
 * f31e4de - fix: Correct import for non-Windows targets (Ronald Holshausen, Mon Apr 15 11:37:42 2024 +1000)
 * d9e441e - fix: Tests using plugins on Windows were hanging for 5 minutes (Ronald Holshausen, Mon Apr 15 11:28:57 2024 +1000)
