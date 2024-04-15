@@ -33,7 +33,7 @@ Supported matching rules:
 | integer     | Value must be an integer value (no decimals)                                                          |                    | `matching(integer, 100)`                                                      |         
 | decimal     | Value must be a decimal number (must have at least one significant figure after the decimal point)    |                    | `matching(decimal, 100.01)`                                                  |         
 | datetime    | Value must match a date-time format string                                                            | Format String      | `matching(datetime, 'yyyy-MM-dd HH:mm:ssZZZZZ', '2020-05-21 16:44:32+10:00')` |
-| date        | Value must match a date format string                                                                 | Format String      | `matching(date, 'yyyy-MM-dd', '22:04')`                                       |
+| date        | Value must match a date format string                                                                 | Format String      | `matching(date, 'yyyy-MM-dd', '2020-05-21')`                                       |
 | time        | Value must match a time format string                                                                 | Format String      | `matching(time, 'HH:mm', '22:04')`                                            |
 | regex       | Value must match a regular expression                                                                 | Regular expression | `matching(regex, '\\w{3}\\d+', 'abc123')`                                     |
 | include     | Value must include the example value as a substring                                                   |                    | `matching(include, 'testing')`                                                |
@@ -74,6 +74,28 @@ For example: `eachKey(matching(regex, '\$(\.\w+)+', '$.test.one'))`
 Configures a matching rule to be applied to each value in a map or list.
 
 For example: `eachValue(matching(type, 100))`  
+
+### atLeast(SIZE)
+
+Configures a type matching rule to be applied to a map or list (if another rule is not applied),
+and asserts the length is at least the given size.
+
+For example: `atLeast(2)`
+
+### atMost(SIZE)
+
+Configures a type matching rule to be applied to a map or list (if another rule is not applied), and asserts the
+length is at most the given size.
+If an expression is provided, that will be used instead of the type matching rule.
+
+For example: `atMost(2)`
+
+## Composing expressions
+
+Expressions can be composed by separating them with a comma. For example
+`atLeast(2), atMost(10), eachValue(matching(regex, '\d+', '1234'))`. This will configure an
+array to have at least 2 items, at most 10, and each item in the array must match the
+given regex.
 
 ## Grammar
 

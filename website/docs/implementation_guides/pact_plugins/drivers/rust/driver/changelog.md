@@ -11,6 +11,28 @@ https://github.com/pact-foundation/pact-plugins/tree/main/drivers
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
 
 
+* 96d39bb - chore: update repository.index (Ronald Holshausen, Mon Apr 15 14:56:42 2024 +1000)
+* f31e4de - fix: Correct import for non-Windows targets (Ronald Holshausen, Mon Apr 15 11:37:42 2024 +1000)
+* d9e441e - fix: Tests using plugins on Windows were hanging for 5 minutes (Ronald Holshausen, Mon Apr 15 11:28:57 2024 +1000)
+* 2ff974d - bump version to 0.5.2 (Ronald Holshausen, Wed Jan 31 19:02:58 2024 +1100)
+
+# 0.5.1 - Bugfix Release
+
+* e7dcd4c - chore: update repository.index (Ronald Holshausen, Wed Jan 31 19:00:38 2024 +1100)
+* 1b54a4a - fix: ensure the Pact has the correct interaction keys before sending verification request to a plugin (Ronald Holshausen, Wed Jan 31 16:35:34 2024 +1100)
+* 5d526e3 - bump version to 0.5.1 (Ronald Holshausen, Sat Jan 20 14:29:22 2024 +1100)
+
+# 0.5.0 - Maintenance Release
+
+* a61d1b9 - chore: update repository.index (Ronald Holshausen, Sat Jan 20 14:25:27 2024 +1100)
+* 9fcb42a - chore: Upgrade tonic and prost to latest (Ronald Holshausen, Sat Jan 20 14:01:26 2024 +1100)
+* 1cf8809 - feat: Add support for atLeast and atMost with matching rule definitions (Ronald Holshausen, Sat Jan 20 13:56:43 2024 +1100)
+* 5579e58 - chore: Upgrade dependencies (Ronald Holshausen, Sat Jan 20 08:41:28 2024 +1100)
+* a1a07b4 - chore: dump minor version (Ronald Holshausen, Sat Jan 20 08:12:00 2024 +1100)
+* 0a422f9 - bump version to 0.4.7 (Ronald Holshausen, Thu Dec 14 10:06:34 2023 +1100)
+
+# 0.4.6 - Maintenance Release
+
 * 28621e3 - chore: update repository.index (Ronald Holshausen, Thu Dec 14 10:04:18 2023 +1100)
 * 2979225 - chore: Upgrade dependencies (Ronald Holshausen, Thu Dec 14 09:53:50 2023 +1100)
 * aa38e61 - chore: Upgrade dependencies (Ronald Holshausen, Thu Dec 14 09:33:38 2023 +1100)
