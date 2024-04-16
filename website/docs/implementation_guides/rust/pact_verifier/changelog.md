@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.2.0 - Maintenance Release
+
+
 ## 1.1.0 - Maintenance Release
 
 * 310cb604 - feat: Print provider name in 'no pacts found' message to help debugging (tien.xuan.vo, Wed Feb 7 00:21:44 2024 +0700)
