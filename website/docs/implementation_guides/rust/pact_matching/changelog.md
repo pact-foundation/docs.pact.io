@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.2.0 - Maintenance Release
+
+* fe508268 - Merge pull request #396 from tienvx/match-headers-with-list-matching-rules (Ronald Holshausen, Wed Feb 28 14:01:34 2024 +1100)
+* f117dcd2 - feat: Match headers with ArrayContains and EachValue matchers (tien.xuan.vo, Tue Feb 27 16:07:35 2024 +0700)
+* 1c8a6f06 - feat: Match query with ArrayContains and EachValue matchers (tien.xuan.vo, Tue Feb 27 15:22:34 2024 +0700)
+* 49cdc78a - Merge pull request #382 from tienvx/improve-content-type-match-error-message (Ronald Holshausen, Wed Feb 7 14:35:22 2024 +1100)
+* 20742d98 - feat: Rephrase the content type matching error message (tien.xuan.vo, Wed Feb 7 09:58:13 2024 +0700)
+
 ## 1.1.10 - Bugfix Release
 
 * a8efa111 - fix: was missing an implementation of MinType and MaxType matchers for maps (Ronald Holshausen, Wed Feb 7 12:27:59 2024 +1100)
