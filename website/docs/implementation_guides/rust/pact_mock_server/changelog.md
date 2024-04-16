@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.2.6 - Maintenance Release
+
+
 ## 1.2.5 - Maintenance Release
 
 * 95cbe5a9 - fix: Upgrade pact-plugin-driver to 0.5.1 (Ronald Holshausen, Wed Jan 31 19:56:04 2024 +1100)
