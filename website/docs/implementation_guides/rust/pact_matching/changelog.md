@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.2.1 - Maintenance Release
+
+
 ## 1.2.0 - Maintenance Release
 
 * fe508268 - Merge pull request #396 from tienvx/match-headers-with-list-matching-rules (Ronald Holshausen, Wed Feb 28 14:01:34 2024 +1100)
