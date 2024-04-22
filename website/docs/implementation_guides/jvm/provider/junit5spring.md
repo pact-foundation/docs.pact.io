@@ -87,7 +87,7 @@ For example:
 class MockMvcTestTargetStandaloneMockMvcTestJava {
 
     @TestTemplate
-    @ExtendWith(PactVerificationSpringProvider.class)
+    @ExtendWith(PactVerificationInvocationContextProvider.class)
     void pactVerificationTestTemplate(PactVerificationContext context) {
         context.verifyInteraction();
     }
