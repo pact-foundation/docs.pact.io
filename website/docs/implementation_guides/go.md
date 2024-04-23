@@ -10,13 +10,4 @@ If you'd like to go a little deeper, we have a [workshop](https://github.com/pac
 
 ## Examples
 
-### HTTP APIs
-
-* [API Consumer](https://github.com/pact-foundation/pact-go/tree/master/examples/)
-* [Golang ServeMux](https://github.com/pact-foundation/pact-go/tree/master/examples/mux)
-* [Gin](https://github.com/pact-foundation/pact-go/tree/master/examples/gin)
-
-### Asynchronous APIs
-
-* [Message Queue](https://github.com/pact-foundation/pact-go/tree/master/examples/messages)
-
+See [examples](/implementation_guides/go/docs/examples)
