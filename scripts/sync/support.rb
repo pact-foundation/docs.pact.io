@@ -30,8 +30,14 @@ module UrlAbsolutizer
         elsif synced_source_paths.include?(File.join(path_from_root, 'README.md'))
           "](#{transformed_link})"
         else
-          absolute_url = (Addressable::URI.parse("https://github.com/#{source_repository_slug}/blob/#{branch}/") + path_from_root).to_s + optional_anchor
-          "](#{absolute_url})"
+          # if url is an image, add ?raw=true to the absolute_url
+          if url.end_with?('.png', '.jpg', '.jpeg', '.gif')
+            absolute_url = (Addressable::URI.parse("https://github.com/#{source_repository_slug}/blob/#{branch}/") + path_from_root).to_s + optional_anchor + "?raw=true"
+            "](#{absolute_url})"
+          else
+            absolute_url = (Addressable::URI.parse("https://github.com/#{source_repository_slug}/blob/#{branch}/") + path_from_root).to_s + optional_anchor
+            "](#{absolute_url})"
+          end
         end
       end
     }
