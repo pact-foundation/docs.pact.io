@@ -11,6 +11,11 @@ https://github.com/pact-foundation/pact-plugins/tree/main/drivers
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
 
 
+* a40de4f - chore: Upgrade pact_models to 1.2.0 (Ronald Holshausen, Tue Apr 23 10:33:57 2024 +1000)
+* c3e8e5e - bump version to 0.6.1 (Ronald Holshausen, Tue Apr 16 09:05:24 2024 +1000)
+
+# 0.6.0 - Upgrade Tonic to 0.11.0
+
 * 497b734 - chore: update release script (Ronald Holshausen, Mon Apr 15 15:12:10 2024 +1000)
 * da4cfb1 - Merge branch 'v0.5.x' (Ronald Holshausen, Mon Apr 15 15:03:30 2024 +1000)
 * c7eec99 - bump version to 0.5.3 (Ronald Holshausen, Mon Apr 15 14:59:08 2024 +1000)
