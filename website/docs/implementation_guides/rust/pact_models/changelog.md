@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.2.0 - Support query parameters with no values
+
+* e12cb9f0 - Merge pull request #410 from kageru/fix-user-agent-headers (Ronald Holshausen, Tue Apr 23 09:43:11 2024 +1000)
+* 4e1fca98 - feat: Add extra test cases for query generation (Ronald Holshausen, Mon Apr 22 11:28:02 2024 +1000)
+* c3128a6d - feat: Support optional query parameter values (where there is only a name) (Ronald Holshausen, Mon Apr 22 10:36:05 2024 +1000)
+
 ## 1.1.18 - Maintenance Release
 
 * 7222cd27 - fix: Min and Max type matchers were not able to parse their integration form (Ronald Holshausen, Wed Feb 7 09:45:45 2024 +1100)
