@@ -2,7 +2,7 @@
 title: Overview
 ---
 
-[Pact Go](https://github.com/pact-foundation/pact-go/) currently supports Pact Specification v2. Checkout the [README](/implementation_guides/go/readme) to get started.
+[Pact Go](https://github.com/pact-foundation/pact-go/) currently supports all versions of the Pact specification including support for HTTP, synchronous messages, plugins and more. Checkout the [README](/implementation_guides/go/readme) to get started.
 
 ## Pact Go Workshop
 

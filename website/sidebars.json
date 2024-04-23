@@ -66,7 +66,12 @@
       "Pact Go": [
         "implementation_guides/go",
         "implementation_guides/go/readme",
-        "implementation_guides/go/troubleshooting",
+        "implementation_guides/go/docs/consumer",
+        "implementation_guides/go/docs/examples",
+        "implementation_guides/go/docs/messages",
+        "implementation_guides/go/docs/plugins",
+        "implementation_guides/go/docs/provider",
+        "implementation_guides/go/docs/troubleshooting",
         "implementation_guides/go/changelog"
       ]
     },
