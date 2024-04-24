@@ -4,7 +4,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/docs/tro
 ---
 <!-- This file has been synced from the pact-foundation/pact-go repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-## Output Logging`
+## Output Logging
 
 Pact Go uses a simple log utility ([logutils](https://github.com/hashicorp/logutils))
 to filter log messages. The CLI already contains flags to manage this,
