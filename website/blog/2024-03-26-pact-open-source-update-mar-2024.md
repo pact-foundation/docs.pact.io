@@ -184,7 +184,7 @@ Chat with us in: [#pact-js](https://pact-foundation.slack.com/archives/C9VBGLUM9
 
 [Gearóid Ó Treasaig](https://github.com/gotreasa) upgraded one of our [example repos](https://github.com/pactflow/example-bi-directional-consumer-cypress) which contains our vanilla React "Product" API consumer used across all the JS HTTP based examples, and additionally includes Cypress and [Pact-Cypress-Adapter](https://www.npmjs.com/package/@pactflow/pact-cypress-adapter).
 
-Gearóid utilized [graphite.dev](graphite.dev) to stage his pull-requests in distinct commits. The [PR](https://github.com/pactflow/example-bi-directional-consumer-cypress/pull/74) for good reading if you are preparing for upgrading some major dependencies in your JavaScript project, and want an example to follow. Thank you, we really appreciate it.
+Gearóid utilized [graphite.dev](https://graphite.dev) to stage his pull-requests in distinct commits. The [PR](https://github.com/pactflow/example-bi-directional-consumer-cypress/pull/74) for good reading if you are preparing for upgrading some major dependencies in your JavaScript project, and want an example to follow. Thank you, we really appreciate it.
 
 If you want to get involved, why not pull down the example and try it out, or apply upgrades to one of our many example repos. We would greatly appreciate it, and it is a neat way to start contributing to open source, if you haven't managed to already, but want to start somewhere!
 

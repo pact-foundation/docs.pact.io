@@ -51,7 +51,7 @@ The [Pact Specification](https://github.com/pact-foundation/pact-specification) 
 
 Each language implementation of Pact needs to implement the rules of this specification, and advertise which version\(s\) are supported, corresponding closely to which features are available.
 
-The current version of the specification is [4.0](https://github.com/pact-foundation/pact-specification/tree/version-4). See [/roadmap/feature_support](here) for current language support.
+The current version of the specification is [4.0](https://github.com/pact-foundation/pact-specification/tree/version-4). See [here](/roadmap/feature_support) for current language support.
 
 ## Pact Broker
 

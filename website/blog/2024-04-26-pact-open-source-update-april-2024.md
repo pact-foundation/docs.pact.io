@@ -196,7 +196,7 @@ Check out [Contract Testing in Actions page](https://mng.bz/gv8l) on Manning's s
 
 You can use `CTA45` between April 29 to July 30 to save 45% 🤑
 
-🎥 If you want to give the book some promotion, or offer a quote, reach out to [Marie](https://www.testingwithmarie.com/about), [Lewis](https://www.pactman.co.uk/) or [myself](you@saf.dev)
+🎥 If you want to give the book some promotion, or offer a quote, reach out to [Marie](https://www.testingwithmarie.com/about), [Lewis](https://www.pactman.co.uk/) or [myself](mailto:you@saf.dev)
 :::
 
 ## Thats a wrap
