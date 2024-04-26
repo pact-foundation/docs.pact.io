@@ -89,7 +89,13 @@
       "Pact Scala": ["implementation_guides/scala"]
     },
     {
-      "Pact PHP": ["implementation_guides/php"]
+      "Pact PHP": [
+        "implementation_guides/php/readme",
+        "implementation_guides/php/upgrade-10.0",
+        "implementation_guides/php/docs/additional-examples",
+        "implementation_guides/php/docs/releasing",
+        "implementation_guides/php/docs/software-history"
+      ]
     },
     {
       "Pact Ruby": [
