@@ -15,11 +15,29 @@ Read on to find out, as I'm not going to spoil the surprise. 🙊
 
 ## Pact OSS Updates
 
+## General Updates
+
+GitHub Actions [recently](https://github.blog/changelog/2024-01-30-github-actions-macos-14-sonoma-is-now-available/) switched `macos-latest` runners to `macos-14` which is MacOS Sonoma running on an `arm64` (apple silicon) processor over its predecessor `x86_64` (intel).
+
+Hopefully that hasn't given you much grief, but it certainly has had an impact on some of our workflows which we've needed to rectify.
+
+`macos-11` will be deprecated some time in June, and users should prepare for a time where only `arm64` macos machines are available on GitHub actions, and ensure use of [Rosetta](https://developer.apple.com/documentation/apple-silicon/about-the-rosetta-translation-environment) for any `x86_64` invocations.
+
 ## Specific language updates
 
 ### PHP
 
-Pact-PHP: 
+Pact-PHP:
+
+Tien Vo has been continuing the trend with many more pull requests against the Pact-PHP project, preparing for the launch of Pact-PHP v10.x
+
+Pact-PHP v10.x is now mainlined on the `master` branch, and Pact-PHP v9.x has moved to the `release/9.x` branch.
+
+We've just synced the latest docs from the repo, to the website, so you can find Pact-PHP's new docs [here](https://docs.pact.io/implementation_guides/php/readme)
+
+You can find the full list of April's merged pull-requests [here](https://github.com/pact-foundation/pact-php/pulls?q=is%3Apr+merged%3A2024-04-01..2024-04-26+is%3Aclosed). I've elected not to list them, as the current number is 37! 🚀
+
+Why not help us make it 38!
 
 Chat to us in: [#pact-php](https://pact-foundation.slack.com/archives/C9W94PXPY).
 
@@ -27,13 +45,29 @@ Chat to us in: [#pact-php](https://pact-foundation.slack.com/archives/C9W94PXPY)
 
 Pact-Reference:
 
+We've seen a raft of features and fixes land this month in Pact-Reference. Mainly driven by Tien Vo (Pact-PHP) & Josh Ellis (Pact-Python) during their work in implementing the pact-ffi in their respective languages, and trying to implement the full Pact compatibility suite. We also as usual have users working with the pact-reference project raising issues and proposing fixes via PR's. We are grateful for all the feedback, and contributions to the project.
+
+Features & Fixes:
+
+- [feat: Optional Query Parameter Values](https://github.com/pact-foundation/pact-reference/pull/411)
+- [feat: Match headers with ArrayContains and EachValue matchers](https://github.com/pact-foundation/pact-reference/pull/396)
+- [feat: Match query with ArrayContains and EachValue matchers](https://github.com/pact-foundation/pact-reference/pull/394)
+- [feat: composing matching rules](https://github.com/pact-foundation/pact-reference/pull/405)
+- [fix: Parse user-agent as single value headers](https://github.com/pact-foundation/pact-reference/pull/410)
+
 Chat with us in: [#pact-rust](https://pact-foundation.slack.com/archives/CA2S7E6KC).
 
 ### Pact-Plugins
 
-Pact-Plugins: 
+Pact-Plugins:
 
-- 
+#### Pact Plugin Driver
+
+- Ron found an issue in the Rust plugin driver, which was causing slow-down issues on Windows machines. The upshot of his findings, is that plugin based tests on Windows _should_ run quicker. You can check out the commit [here](https://github.com/pact-foundation/pact-plugins/commit/d9e441e967c7fb53dbe0992b2787dc21fbd67c7e). If you are using the Pact-FFI, I think you'll need to wait for a release beyond `libpact_ffi-v0.4.19` to be cable to consume these.
+
+#### Pact-Protobuf-Plugin
+
+- A range of fixes were released in `v0.3.14` of the `pact-protobuf-plugin` off the back of this raised [issue](https://github.com/pactflow/pact-protobuf-plugin/issues/53). For the full list of changes, see the [changelog](https://github.com/pactflow/pact-protobuf-plugin/blob/main/CHANGELOG.md#0314---bugfix-release)
 
 Have you tried out Pact Plugins yet? What's stopping you?
 
@@ -41,44 +75,70 @@ Chat with us in: [#pact-plugins](https://pact-foundation.slack.com/archives/CA2S
 
 ### .NET
 
-Pact-net: 
+Pact-net:
 
-- 
+- Last month we spoke about releasing musl variants on the Pact FFI library. We saw our first community contribution, in consuming these in a Pact client project, in this [issue](https://github.com/pact-foundation/pact-net/issues/496) and respective [PR](https://github.com/pact-foundation/pact-net/pull/497). This is exciting to see. I'd love to see linux Aarch64 support for musl and non-musl variants. Fancy dropping in a PR?
+- The Road to Pact Plugins.
+  - If you are waiting eagerly for access to the Pact Plugin framework within Pact-Net, why not comment on the [open RFC](https://github.com/pact-foundation/pact-net/issues/492) where you can register your interest in using it, or potentially contributing to it's implementation.
+- The Road to Pact-Net V5.
+  - Are you using Pact-Net V5 Beta? Drop us some feedback and let us know how you are getting on. It's really invaluable in helping us decide when to promote from a beta to a release-candidate.
 
 Chat with us in: [#pact-net](https://pact-foundation.slack.com/archives/C9UTHV2AD).
 
 ### Golang
 
-Pact-go: 
+Pact-go:
 
-- 
+GoLang recently introduced `v1.22.x` which seems to have introduced some defects for the GoLang community, causing segfaults on linux x86_64 machines. This affected some of our users, and was raised [here](https://github.com/pact-foundation/pact-go/issues/402)
+
+#### TL;DR
+
+Linux x86_64 users
+
+- Using GoLang `1.22.x` ?
+  - Resolution: disable `-race`
+- Need to use `-race`?
+  - Resolution: downgrade to `1.21.x`
+
+Features:
+
+- [Janez Justin](https://github.com/jjustin) removed `go-getter` in this [PR](https://github.com/pact-foundation/pact-go/pull/392) in favour of utilising the stdlib's `net/http` and `compress/gzip` to download the pact_ffi dependencies for the project. This helped him resolve an indirect vulnnerablity in Pact-Go and has the additional benefit of greatly reducing the size of the dependency tree. Thanks Janez!
+- Still stuck on Pact-Go v1.x? You can now publish pacts with the `branch` property set, thanks to this [PR](https://github.com/pact-foundation/pact-go/pull/374)
+  - _Note:_ If you are using Pact-Go v2.x, you will utilise the pact-cli tools for publishing pacts, which already supports the branch parameter.
+
+Fixes:
+
+- The main Pact documentation website has been updated to include the new Pact-Go V2 package and documentation. It seems we missed our doc's sync job when promoting V2 from it's beta state. Not to fear though, thanks to a community report for identifying, it has now been rectified and you can find the new documentation here.
+  - https://docs.pact.io/implementation_guides/go
+
 
 Chat with us in: [#pact-go](https://pact-foundation.slack.com/archives/C9UTHTFFB).
 
 ### Pact-JS
 
+
+Features:
+
+- [feat: support matching numbers, bool in query strings](https://github.com/pact-foundation/pact-js/pull/1211)
+
+Fixes:
+
+- [fix: broken eachLike V3 documentation](https://github.com/pact-foundation/pact-js/pull/1209)
+- [fix: updated deprecated eachLike V3 description](https://github.com/pact-foundation/pact-js/pull/1208)
+
 Chat with us in: [#pact-js](https://pact-foundation.slack.com/archives/C9VBGLUM9).
 
 ### Python
 
-Pact-Python: 
+Pact-Python:
+
+🎺 Pythonista’s rejoice.
+
+We are thrilled to announce the release of [Pact Python v2.2](https://github.com/pact-foundation/pact-python/releases/tag/v2.2.0), a significant milestone that not only improves upon the existing features but also offers an exclusive preview into the future of contract testing with Python.
+
+Be sure to read about at pact-pythons new doc site, in its [inaugural blog post](https://pact-foundation.github.io/pact-python/blog/2024/04/11/a-sneak-peek-into-the-pact-python-future/) from maintainer [Josh Ellis](https://github.com/JP-Ellis).
 
 Chat to us in: [#pact-python](https://pact-foundation.slack.com/archives/C9VECUP6E).
-
-### Pact Broker
-
-Pact-Broker: 
-
-Chat to us in: [#pact-broker](https://pact-foundation.slack.com/archives/C9VPNUJR2).
-
-### Pact Ruby CLI
-
-Pact-Ruby-CLI: 
-
-Chat to us in: [#pact-ruby](https://pact-foundation.slack.com/archives/C9VHVEDE1).
-
-### Pact Docs
-
 
 ## Community Events
 
