@@ -15,6 +15,8 @@ This project provides a Pact implementation written in Rust. It supports the [V3
 and [V4 Pact specification](https://github.com/pact-foundation/pact-specification/tree/version-4) and provides shared 
 libraries that can be used in other languages via foreign function interfaces (FFI).
 
+Note: The mock server crates have moved to https://github.com/pact-foundation/pact-core-mock-server.
+
 ## Installing / Getting started
 
 ### Rust Projects
@@ -61,16 +63,13 @@ This is a library that provides the Pact functions for matching requests and res
 
 This is a library that implements exported functions using C bindings for use in foreign languages.
 
-### [pact_mock_server](/implementation_guides/rust/pact_mock_server)
+### [pact_mock_server](https://github.com/pact-foundation/pact-core-mock-server/pact_mock_server)
 
-This is a library that provides an in-process mock server for Pact client tests. It uses the [pact_matching](/implementation_guides/rust/pact_matching)
-library.
+Moved to https://github.com/pact-foundation/pact-core-mock-server.
 
-### [pact_mock_server_cli](/implementation_guides/rust/pact_mock_server_cli)
+### [pact_mock_server_cli](https://github.com/pact-foundation/pact-core-mock-server/pact_mock_server_cli)
 
-This module provides a command line executable that provides a standalone pact mock server and commands for controlling
-the mock servers. It uses the [libpact_mock_server](/implementation_guides/rust/pact_mock_server) and [libpact_matching](/implementation_guides/rust/pact_matching)
-libraries.
+Moved to https://github.com/pact-foundation/pact-core-mock-server.
 
 ### [pact_consumer](/implementation_guides/rust/pact_consumer)
 
@@ -116,8 +115,6 @@ Rust crate documentation is published to the Rust documentation site.
 * [pact_consumer](https://docs.rs/pact_consumer/)
 * [pact_matching](https://docs.rs/pact_matching/)
 * [pact_ffi](https://docs.rs/pact_ffi/)
-* [pact_mock_server](https://docs.rs/pact_mock_server/)
-* [pact_mock_server_cli](https://docs.rs/pact_mock_server_cli/)
 * [pact_models](https://docs.rs/pact_models/)
 * [pact_verifier](https://docs.rs/pact_verifier/)
 * [pact_verifier_cli](https://docs.rs/pact_verifier_cli/)
