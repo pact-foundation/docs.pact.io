@@ -7,6 +7,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v2.0.5 (07 May 2024)
+  * [9d36011](https://github.com/pact-foundation/pact-go/commit/9d36011) - Merge pull request #411 from pact-foundation/dependabot/github_actions/golangci/golangci-lint-action-5 (Yousaf Nabi, Tue Apr 30 17:11:14 2024 +0100)
+  * [2ac35ec](https://github.com/pact-foundation/pact-go/commit/2ac35ec) - Merge pull request #410 from pact-foundation/dependabot/github_actions/actions/upload-artifact-4 (Yousaf Nabi, Tue Apr 30 17:04:03 2024 +0100)
+  * [7b985d6](https://github.com/pact-foundation/pact-go/commit/7b985d6) - fix: Dockerfile to reduce vulnerabilities (#401) (Matt Fellows, Tue Apr 23 15:38:35 2024 +1000)
+
 ### v2.0.4 (13 February 2024)
   * [f893818](https://github.com/pact-foundation/pact-go/commit/f893818) - feat: add native lib path function (#376) (Armin Becher, Tue Feb 13 05:27:44 2024 +0100)
   * [59a586d](https://github.com/pact-foundation/pact-go/commit/59a586d) - fix: allow empty responses in sync messages (#386) (Stanislav Vodetskyi, Mon Feb 12 20:26:57 2024 -0800)
