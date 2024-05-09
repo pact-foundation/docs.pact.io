@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.20 - Maintenance Release
+
+* d7952e15 - Merge pull request #411 from pact-foundation/feat/optional-query-parameter-values (Ronald Holshausen, Mon Apr 22 15:17:01 2024 +1000)
+* c3128a6d - feat: Support optional query parameter values (where there is only a name) (Ronald Holshausen, Mon Apr 22 10:36:05 2024 +1000)
+* e3dc2658 - fix: downgrade JSON parsing from warn to debug in from_integration_json_v2. Fixes #408 (Matt Fellows, Wed Apr 17 13:28:14 2024 +1000)
+
 ## 0.4.19 - Bugfix Release
 
 * 6d9ddb76 - Merge pull request #401 from pact-foundation/feat/add-text-comment (Ronald Holshausen, Mon Mar 18 11:05:40 2024 +1100)
