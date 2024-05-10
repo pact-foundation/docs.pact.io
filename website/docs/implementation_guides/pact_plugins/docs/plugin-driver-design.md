@@ -16,7 +16,7 @@ Main plugin driver responsibilities:
 
 ## Conceptual Overview
 
-![Conceptual Overview](https://github.com/pact-foundation/pact-plugins/blob/main/conceptual-overview.png)
+![Conceptual Overview](https://github.com/pact-foundation/pact-plugins/blob/main/conceptual-overview.png?raw=true)
 
 
 1. Your code 😉
