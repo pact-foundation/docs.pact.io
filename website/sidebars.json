@@ -92,7 +92,12 @@
       "Pact PHP": [
         "implementation_guides/php/readme",
         "implementation_guides/php/upgrade-10.0",
+        "implementation_guides/php/docs/consumer",
+        "implementation_guides/php/docs/provider",
+        "implementation_guides/php/docs/messages",
         "implementation_guides/php/docs/additional-examples",
+        "implementation_guides/php/docs/stub-server",
+        "implementation_guides/php/docs/framework-integrations",
         "implementation_guides/php/docs/releasing",
         "implementation_guides/php/docs/software-history"
       ]
