@@ -4,7 +4,6 @@ custom_edit_url: https://github.com/pact-foundation/pact-php/edit/master/docs/me
 ---
 <!-- This file has been synced from the pact-foundation/pact-php repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-
 The goal is not to test the transmission of an object over a bus but instead vet the contents of the message.
 While examples included focus on a Rabbit MQ, the exact message queue is irrelevant. Initial comparisons require a certain
 object type to be created by the Publisher/Producer and the Consumer of the message.  This includes a metadata set where you

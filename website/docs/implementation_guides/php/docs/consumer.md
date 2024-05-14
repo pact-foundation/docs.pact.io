@@ -4,7 +4,6 @@ custom_edit_url: https://github.com/pact-foundation/pact-php/edit/master/docs/co
 ---
 <!-- This file has been synced from the pact-foundation/pact-php repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-
 All of the following code will be used exclusively for the Consumer.
 
 ## Create Consumer Unit Test
