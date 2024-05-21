@@ -29,8 +29,8 @@ Logging options:
       --pretty-log           Emits excessively pretty, multi-line logs, optimized for human readability.
       --full-log             This emits human-readable, single-line logs for each event that occurs, with the current span context displayed before the formatted representation of the event.
       --compact-log          Emit logs optimized for short line lengths.
-  -j, --json <json-file>     Generate a JSON report of the verification
-  -x, --junit <junit-file>   Generate a JUnit XML report of the verification (requires the junit feature)
+  -j, --json <json-file>     Generate a JSON report of the verification [env: PACT_VERIFIER_JSON_REPORT=]
+  -x, --junit <junit-file>   Generate a JUnit XML report of the verification (requires the junit feature) [env: PACT_VERIFIER_JUNIT_REPORT=]
       --no-colour            Disables ANSI escape codes in the output [aliases: no-color]
 
 Loading pacts options:
@@ -43,7 +43,7 @@ Loading pacts options:
   -b, --broker-url <broker-url>
           URL of the pact broker to fetch pacts from to verify (requires the provider name parameter) [env: PACT_BROKER_BASE_URL=]
       --webhook-callback-url <webhook-callback-url>
-          URL of a Pact to verify via a webhook callback. Requires the broker-url to be set.
+          URL of a Pact to verify via a webhook callback. Requires the broker-url to be set. [env: PACT_WEBHOOK_CALLBACK_URL=]
       --ignore-no-pacts-error
           Do not fail if no pacts are found to verify
 
@@ -54,19 +54,19 @@ Authentication options:
 
 Provider options:
   -h, --hostname <hostname>
-          Provider hostname (defaults to localhost)
+          Provider hostname (defaults to localhost) [env: PACT_PROVIDER_HOSTNAME=]
   -p, --port <port>
-          Provider port (defaults to protocol default 80/443)
+          Provider port (defaults to protocol default 80/443) [env: PACT_PROVIDER_PORT=]
       --transport <transport>
-          Provider protocol transport to use (http, https, grpc, etc.) [default: http]
+          Provider protocol transport to use (http, https, grpc, etc.) [env: PACT_PROVIDER_TRANSPORT=] [default: http]
       --transports <transports>
           Allows multiple protocol transports to be configured (http, https, grpc, etc.) with their associated port numbers separated by a colon. For example, use --transports http:8080 grpc:5555 to configure both.
   -n, --provider-name <provider-name>
-          Provider name (defaults to provider)
+          Provider name (defaults to provider) [env: PACT_PROVIDER_NAME=]
       --base-path <base-path>
-          Base path to add to all requests
+          Base path to add to all requests [env: PACT_PROVIDER_BASE_PATH=]
       --request-timeout <request-timeout>
-          Sets the HTTP request timeout in milliseconds for requests to the target API and for state change requests.
+          Sets the HTTP request timeout in milliseconds for requests to the target API and for state change requests. [env: PACT_PROVIDER_REQUEST_TIMEOUT=]
   -H, --header <custom-header>
           Add a custom header to be included in the calls to the provider. Values must be in the form KEY=VALUE, where KEY and VALUE contain ASCII characters (32-127) only. Can be repeated.
       --disable-ssl-verification
@@ -74,11 +74,11 @@ Provider options:
 
 Provider state options:
   -s, --state-change-url <state-change-url>
-          URL to post state change requests to
+          URL to post state change requests to [env: PACT_PROVIDER_STATE_CHANGE_URL=]
       --state-change-as-query
-          State change request data will be sent as query parameters instead of in the request body
+          State change request data will be sent as query parameters instead of in the request body [env: PACT_PROVIDER_STATE_CHANGE_AS_QUERY=]
       --state-change-teardown
-          State change teardown requests are to be made after each interaction
+          State change teardown requests are to be made after each interaction [env: PACT_PROVIDER_STATE_CHANGE_TEARDOWN=]
 
 Filtering interactions:
       --filter-description <filter-description>
