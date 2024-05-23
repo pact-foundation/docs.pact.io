@@ -20,10 +20,10 @@ hide_table_of_contents: false
 - pact_ffi library comes in both static `*.a` & shared `*.so` variants for musl, depending on the consuming client libraries requirements for ffi interop
 
 | library              | alpine support | version                                                                                                            |
-| -------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------ | --- |
+| -------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------ |
 | pact_ffi             | ✅             | - `x86_64` `.a` from [0.2.4](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.2.4)    |
 |                      |                | - `aarch64` `.a` from [0.4.15](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.4.15) |
-|                      |                | - `.so` from [0.4.17](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.4.17)          |     |
+|                      |                | - `.so` from [0.4.17](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.4.17)          |
 | pact_mock_server_cli | ✅             | - [1.0.5](https://github.com/pact-foundation/pact-reference/releases/tag/pact_mock_server_cli-v1.0.5)              |
 | pact_verifier_cli    | ✅             | - [1.1.1](https://github.com/pact-foundation/pact-reference/releases/tag/pact_verifier_cli-v1.1.1)                 |
 | pact-stub-server     | ✅             | - [0.6.0](https://github.com/pact-foundation/pact-stub-server/releases/tag/v0.6.0)                                 |
@@ -269,6 +269,18 @@ Interested? Well lucky for you, [you can catch the video on YouTube](https://www
 [![TestGuild Yousaf Podcast](https://cdn-bojkm.nitrocdn.com/xNQtoampyRQBytOGuBcersslgKBwHfMI/assets/images/optimized/rev-a0b32fd/testguild.com/wp-content/uploads/2024/05/Yousaf-Nabi-TestGuild_DevOps-Toolchain-without-sponsor-1200x0-c-default.jpg)](https://testguild.com/podcast/performance/p146-yousaf/)
 
 I recently spoke with Joe Colantonio about all things open-source, you can check it out via multiple mediums via the [links](https://testguild.com/podcast/performance/p146-yousaf/) on the TestGuild site, whether you prefer watching a video or listening to a podcast, Joe has got you covered.
+
+### Pact Showcasing at the GitHub Open Source Fair @ The Merge - Berlin
+
+[![OpenSource Fair](https://events-feed.github.com/events/open-source-fair-the-merge-berlin-2024/open-source-fair.png)](https://merge.berlin/)
+
+[THE MERGE](https://merge.berlin/) is a developer experience conference brought to you by GitButler, a dev tool company founded by the co-founder of GitHub. They are bringing together technical founders and execs from companies such as GitHub, Sentry, Heroku, and Tauri to discuss all things developer tools and the communities they built around them.
+
+There will also be an Open Source Fair where 24 selected projects will get the chance to showcase!
+
+We are proud to announce that Pact was selected, so we will be there spreading the Pact love far and wide.
+
+If your in Berlin, June 13th-14th, why not come and talk to us!
 
 ## Book updates - Contract Testing in Action
 
