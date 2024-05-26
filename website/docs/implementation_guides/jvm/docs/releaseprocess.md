@@ -233,12 +233,12 @@ Log onto [oss.sonatype.org](https://oss.sonatype.org) and select `Staging Reposi
 You should see a new staging repository for `au.com.dius` listed. Select the repository and select the Close button. 
 This will close the repository and run all the Maven Central rules.
 
-![close-repo.png](https://github.com/DiUS/pact-jvm/blob/master/close-repo.png)
+![close-repo.png](https://github.com/DiUS/pact-jvm/blob/master/close-repo.png?raw=true)
 
 Once the repository is successfully closed (it takes a few minutes, select the refresh button to re-load ands wait for the
 status to change to `closed`), select the repository again and then select the Release button.
 
-![release-repo](https://github.com/DiUS/pact-jvm/blob/master/release-repo.png)
+![release-repo](https://github.com/DiUS/pact-jvm/blob/master/release-repo.png?raw=true)
 
 ## 5. Create a Github release
 
