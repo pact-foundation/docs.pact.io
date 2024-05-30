@@ -38,6 +38,7 @@
           "type": "category",
           "label": "Provider",
           "items": [
+            "implementation_guides/jvm/provider/spring6",
             "implementation_guides/jvm/provider/junit5spring",
             "implementation_guides/jvm/provider/junit",
             "implementation_guides/jvm/provider/maven",
