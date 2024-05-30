@@ -514,6 +514,27 @@ Example:
 matching(contentType, 'application/json', '{}')
 ```
 
+###### Content Type - Detection Mechanisms for Binary Content
+
+`pact_matching` currently performs the following for matching Binary content-types
+
+1. Determines `expected` `Content-Type` header requested by user in test
+2. Read content buffer with `infer` library, and guess `Content-Type` based on magic bytes
+3. If unsuccessful
+   1. Read content buffer with `tree_magic_mini` library, and guess `Content-Type` based on shared-mime-info DB
+      1. MagicDB is not shipped with pact_matching, due to GPL restrictions, users can add manually
+         1. Linux Alpine - `apk add shared-mime-info`
+         2. MacOS `brew install shared-mime-info`
+            1. `arm64` MacOS requires `tree_magic_mini` [fork](https://github.com/you54f/tree_magic) 
+         3. Linux - Debian`apt-get install -y shared-mime-info`
+4. If either result returns `text/plain`, then manually read bytes using `detect_content_type_from_bytes` function in `pact_models`
+5. If all of `2`, `3`, or `4` fails, then throw error, otherwise return `Ok`
+
+Rust libraries used:
+
+- https://github.com/mbrubeck/tree_magic
+- https://github.com/bojand/infer
+
 ##### Matching an example type by reference
 
 Type matching can also be specified by a reference to an example. References are defined by a dollar (`$`) followed by
