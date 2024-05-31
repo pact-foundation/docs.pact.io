@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.6.10 - Updated DSL methods
+
+* 9d46d36f2 - feat: Allow reusing common DSL parts in different LambdaDslJsonBody objects #1796 (Ronald Holshausen, Wed May 22 11:50:39 2024 +1000)
+* 4752365ad - chore(ci): allow wf dispatch for docs trigger (Yousaf Nabi, Tue Apr 23 15:40:06 2024 +0100)
+* 85b042cc2 - fix: Add user-agent to the list of single value headers (Ronald Holshausen, Tue Apr 23 09:45:37 2024 +1000)
+
 ## 4.6.9 - Bugfix Release
 
 * 9fea4e229 - fix: Add tests for generating URLs with null or empty query parameter values #1788 (Ronald Holshausen, Thu Apr 18 11:20:45 2024 +1000)
