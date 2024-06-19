@@ -4,6 +4,16 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.21 - Bugfix Release
+
+* 3acc9ae5 - Merge pull request #443 from pact-foundation/feat/generate-contents (Ronald Holshausen, Wed Jun 19 14:21:50 2024 +1000)
+* a18b7746 - feat: add `generate_contents` methods (JP-Ellis, Mon Jun 17 14:35:10 2024 +1000)
+* 30bac100 - feat: add with_generators (JP-Ellis, Tue Jun 18 12:08:44 2024 +1000)
+* ab80cd2b - fix: merge pact duplicates with diff desc/same prov state fix: merge message / sync pacts with no provider state (Yousaf Nabi, Sat Jun 8 23:48:30 2024 +0100)
+* 278f56fa - fix: FFI Inmemory sink uses the global static `LOG_BUFFER` in the pact_matching crate #434 (Ronald Holshausen, Tue Jun 11 16:56:15 2024 +1000)
+* b7869cdb - Merge pull request #439 from pact-foundation/feat/with-metadata (Ronald Holshausen, Tue Jun 11 16:19:07 2024 +1000)
+* 968be075 - feat: update content_type_matching logic for binary payloads (Yousaf Nabi, Tue May 28 23:25:07 2024 +0100)
+
 ## 0.4.20 - Maintenance Release
 
 * d7952e15 - Merge pull request #411 from pact-foundation/feat/optional-query-parameter-values (Ronald Holshausen, Mon Apr 22 15:17:01 2024 +1000)
