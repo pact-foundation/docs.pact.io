@@ -11,7 +11,7 @@ hide_table_of_contents: false
 
 👋 It's June, we've just passed the Summer Solstice, and some of you may be engrossed in footie-fever supporting your favourite team at the Euros ⚽. Good luck!
 
-In this month's update, we will be bringing you a raft of updates across the Pact OSS Ecosystem as usual, letting you know how we got on at GitHub's Merge festival in Berlin, and sharing some of the latest community events coming up this year.
+In this month's update, we will showcase what has been happening across the Pact OSS Ecosystem, letting you know how we got on at GitHub's Merge festival in Berlin, and sharing some of the latest community events coming up this year.
 
 ## Pact OSS Updates
 
@@ -21,7 +21,7 @@ In this month's update, we will be bringing you a raft of updates across the Pac
 
 ### Pact-Reference
 
-The Pact Rust core saw a good set of enhancements and fixes this month, in the latest release of pact_ffi 0.4.21.
+The Pact Rust core saw a good set of enhancements and fixes this month, with the latest release of pact_ffi 0.4.21.
 
 This is mostly being driven by an increase of usage of the FFI interface, across client libraries which is resulting in issues being raised and fixed. Some of the key highlights include:
 
