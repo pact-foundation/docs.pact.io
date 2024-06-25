@@ -6,6 +6,31 @@ custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/CHANGELO
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [13.0.0](https://github.com/pact-foundation/pact-js/compare/v12.5.2...v13.0.0) (2024-06-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* update to @pact-foundation/pact-core to 15.x
+
+### Fixes and Improvements
+
+* update to @pact-foundation/pact-core to 15.x ([42f52bb](https://github.com/pact-foundation/pact-js/commit/42f52bb9dbe5c65094e0ce8979605a8457f18ba5))
+
+### [12.5.2](https://github.com/pact-foundation/pact-js/compare/v12.5.1...v12.5.2) (2024-05-30)
+
+
+### Fixes and Improvements
+
+* prevent non-number use in number matcher ([d0ee6c4](https://github.com/pact-foundation/pact-js/commit/d0ee6c42ba5853b69259549191c67015a10c2b5a))
+
+### [12.5.1](https://github.com/pact-foundation/pact-js/compare/v12.5.0...v12.5.1) (2024-05-30)
+
+
+### Fixes and Improvements
+
+* prevent non-number use in number matcher ([0db6f7f](https://github.com/pact-foundation/pact-js/commit/0db6f7ff20d6a753ecc504fccff435d2030de54c))
+
 ## [12.5.0](https://github.com/pact-foundation/pact-js/compare/v12.4.0...v12.5.0) (2024-04-26)
 
 
