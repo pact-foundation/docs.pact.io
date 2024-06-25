@@ -54,6 +54,18 @@ Chat with us in: [#pact-plugins](https://pact-foundation.slack.com/archives/CA2S
 
 ### Pact-Go
 
+Back in April, GoLang recently introduced `v1.22.x` which has affected some of our users, and was raised: [Runtime error occurs with golang 1.22.x](https://github.com/pact-foundation/pact-go/issues/402).
+
+It transpires the error was actually at our end, and was solved by the issues original poster [fix: use the same signature for the same function (#402)](https://github.com/pact-foundation/pact-go/pull/422).
+
+There was some impressive debugging done by the GoLang team which makes for an interesting read. Check it out [here](https://github.com/golang/go/issues/67670).
+
+I'm going to use some of that new found knowledge to help me with my own debugging in the future.
+
+Pact-Go has also been updated to v0.4.21 of the pact_ffi library, bringing smaller binaries, improved content-type detection, and the next pact-go release will be the first to offer native alpine support. Subscribe or star the repo for notifications, otherwise I'll update the post to let you know when it's released.
+
+How are you finding Pact-Go? Let us know in the Slack channel.
+
 #### Pact-Go - Slack
 
 Chat with us in: [#pact-go](https://pact-foundation.slack.com/archives/C9UTHTFFB).
