@@ -19,13 +19,24 @@ In this month's update, we will be bringing you a raft of updates across the Pac
 
 ## Specific language updates
 
-### PHP
-
-#### Pact-PHP - Slack
-
-Chat to us in: [#pact-php](https://pact-foundation.slack.com/archives/C9W94PXPY).
-
 ### Pact-Reference
+
+The Pact Rust core saw a good set of enhancements and fixes this month, in the latest release of pact_ffi 0.4.21.
+
+This is mostly being driven by an increase of usage of the FFI interface, across client libraries which is resulting in issues being raised and fixed. Some of the key highlights include:
+
+- Content Type detection was improved for repeatable behaviour cross-platform. PR [here](https://github.com/pact-foundation/pact-reference/pull/429)
+- Merging pacts would result in duplicate interactions, this has now been fixed. PR [here](https://github.com/pact-foundation/pact-reference/pull/437)
+- Work on improving the message related FFI interface.
+  - Discussion [here](https://github.com/pact-foundation/pact-reference/issues/440), get involved.
+    - [feat(ffi): add async message iterator](https://github.com/pact-foundation/pact-reference/pull/442)
+    - [feat: add with_generators](https://github.com/pact-foundation/pact-reference/pull/444)
+    - [feat: add generate_contents methods](https://github.com/pact-foundation/pact-reference/pull/443)
+    - [feat(ffi): add with_metadata](https://github.com/pact-foundation/pact-reference/pull/439)
+
+Check out the release notes [here](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.4.21)
+
+If you've spotted something, once you've raised an issue, sometimes the best way to try and sort it, is yourself. We are happy to guide through the process, so don't be shy, get involved!
 
 #### Pact-Reference - Slack
 
@@ -33,7 +44,9 @@ Chat with us in: [#pact-rust](https://pact-foundation.slack.com/archives/CA2S7E6
 
 ### Pact-Plugins
 
-#### Pact-Protobuf-Plugin - Slack
+[Ali Ustek](https://github.com/austek) helped with some maintenance work and updated the [pact-plugin JVM driver to Gradle 8](https://github.com/pact-foundation/pact-plugins/commit/5a8e1df161fe7707146ea06b31588b35e9af2d08). It was a decent bit of work and it's much appreciated as it saves the core maintainers time to focus on other areas.
+
+#### Pact-Plugins - Slack
 
 Have you tried out Pact Plugins yet? What's stopping you?
 
@@ -47,15 +60,61 @@ Chat with us in: [#pact-go](https://pact-foundation.slack.com/archives/C9UTHTFFB
 
 ### Pact-JS
 
+Few bits of big news for Pact-JS this month:
+
+- Pact CLI tools (ruby based) have now been moved from `@pact-foundation/pact-core` to `@pact-foundation/pact-cli`. This is to make it easier for users to find the CLI tools, and to make it easier to maintain the codebase. You can find the new CLI tools [here](https://github.com/pact-foundation/pact-js-cli) and read the migration guide [here](https://github.com/pact-foundation/pact-js-core/releases/tag/v15.0.0).
+  - This dropped the package size from 353 MB to 164 MB
+- Alpine Support is here! Pact-JS now supports Alpine Linux, which is a lightweight Linux distribution that is commonly used in containerized environments. This is a big win for users who are using Alpine Linux in their environments previously having to port applications to a glibc (debian etc) based distro.
+  - Pact-JS-Core from [v15.1.0](https://github.com/pact-foundation/pact-js-core/releases/tag/v15.1.0)
+  - Pact-Core from from [v13.1.0](https://github.com/pact-foundation/pact-js/releases/tag/v13.1.0)
+- Package sizes are now smaller, the pact rust core binaries have been made smaller, so despite adding 2 new platform/arch combos, the package size has further been reduced to 116 MB.
+- Content-Type detection is improved via a fix in the pact rust core.
+  - Related pact-js-core issue [here](https://github.com/pact-foundation/pact-js-core/issues/447)
+
+:::info
+- Add `@pact-foundation/pact-cli` into your `package.json` if you rely on the CLI tools in your project.
+- Check your project for any references to `@pact-foundation/pact-core` and update them to `@pact-foundation/pact-cli`.
+
+Let us know how you get on!
+:::
+
 #### Pact-JS - Slack
 
 Chat with us in: [#pact-js](https://pact-foundation.slack.com/archives/C9VBGLUM9).
 
 ### Pact-Python
 
+We spoke last month where [Val Kolovos](https://github.com/valkolovos) assigned himself to one of the tasks: [Add support and example for a message consumer test using Rust engine](https://github.com/pact-foundation/pact-python/issues/380) and we wished him luck!
+
+We are pleased to say that we now have a V3 and V4 async message consumer test example in the Pact-Python codebase. This is a great step forward for the Pact-Python ecosystem, and we are excited to see how this will help users in the future.
+
+Check out the PR here: [Feat/async message consumer](https://github.com/pact-foundation/pact-python/pull/714)
+
+Thanks Val 💛!
+
+If you want to get involved, don't forget, we have a [Pact Compatibility suite](https://github.com/pact-foundation/pact-compatibility-suite) which is a set of BDD style tests to check compatibility between Pact implementations. There are full implementations in JVM, and Rust, with Tien over in Pact-PHP using it to guide and validate his Pact Rust core based implementation of Pact-PHP.
+
 #### Pact-Python - Slack
 
 Chat to us in: [#pact-python](https://pact-foundation.slack.com/archives/C9VECUP6E).
+
+### PHP
+
+The v10 Beta2 release is here, which includes the new pact_ffi 0.4.21 release and all the fixes that came along with it.
+
+Check out the release notes [here](https://github.com/pact-foundation/pact-php/releases/tag/10.0.0-beta2)
+
+Anyone can start testing pact-php with pact_ffi code by updating their `composer.json`
+
+`"pact-foundation/pact-php": "10.0.0-beta2"`
+
+This bring a raft of features to the Pact-PHP ecosystem including V4 Pact Specification support, access to the Pact Plugin ecosystem and huge speed benefits over the 9.x Ruby based release.
+
+You can see a full range of examples [here](https://github.com/pact-foundation/pact-php/tree/master/example)
+
+#### Pact-PHP - Slack
+
+Chat to us in: [#pact-php](https://pact-foundation.slack.com/archives/C9W94PXPY).
 
 ## Community Events
 
