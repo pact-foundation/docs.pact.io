@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.6.11 - Maintenance Release
+
+* af93c029b - fix: Allow core content types to be able to be ovveridden #1812 (Ronald Holshausen, Thu Jul 4 11:29:35 2024 +1000)
+* 029fcaf34 - feat(DSL): Update min and max array like functions to also take a DslPart #1799 (Ronald Holshausen, Thu Jun 20 14:24:13 2024 +1000)
+
 ## 4.6.10 - Updated DSL methods
 
 * 9d46d36f2 - feat: Allow reusing common DSL parts in different LambdaDslJsonBody objects #1796 (Ronald Holshausen, Wed May 22 11:50:39 2024 +1000)
