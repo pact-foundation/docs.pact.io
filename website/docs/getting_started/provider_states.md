@@ -2,6 +2,13 @@
 title: Provider states
 ---
 
+:::info
+
+A good way to think about Provider States is that they are the necessary preconditions for a particular test scenario to run. You can think of them as the analog of `Given` from [Cucumber](https://cucumber.io/docs/gherkin/reference/#given).
+
+> The purpose of Given steps is to put the system in a known state before the user (or external system) starts interacting with the system (in the When steps). Avoid talking about user interaction in Given’s. If you were creating use cases, Given’s would be your preconditions.
+:::
+
 Each interaction in a pact should be verified in isolation, with no context maintained from the previous interactions. Tests that depend on the outcome of previous tests are brittle and land you back in integration test hell, which is the nasty place you're trying to escape by using pacts.
 
 So how do you test a request that requires data to already exist on the provider? Provider states allow you to set up data on the provider by injecting it straight into the data source before the interaction is run, so that it can make a response that matches what the consumer expects. The name of the provider state is specified in the `given` clause of an interaction in the consumer, and then used to find the block of code to run in the provider to set up the right data. If you need to stub a downstream system, or return an error response that is difficult to cause in the normal scheme of things \(e.g. a 500\), this is the place where you can set up stubs.
