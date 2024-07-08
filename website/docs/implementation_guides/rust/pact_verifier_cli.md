@@ -367,7 +367,9 @@ This is supported on Windows, macOS and Linux:
 
 On Linux the standard OpenSSL environment variables `SSL_CERT_FILE` and `SSL_CERT_DIR` will also be respected.
 
-## Verifying V4 Pact files that require plugins
+## Verifying V4 Pact files
+
+### Pact files that require plugins
 
 Pact files that require plugins can be verified with version 0.9.0-beta.0+. For details on how plugins work, see the
 [Pact plugin project](https://github.com/pact-foundation/pact-plugins).
@@ -378,3 +380,11 @@ variable. Each plugin required by the Pact file must be installed there. You wil
 instructions for each plugin, but the default is to unpack the plugin into a sub-directory `<plugin-name>-<plugin-version>`
 (i.e., for the Protobuf plugin 0.0.0 it will be `protobuf-0.0.0`). The plugin manifest file must be present for the
 plugin to be able to be loaded.
+
+### Verifying both HTTP and message interactions
+
+V4 Pact files can support both HTTP and message-based interactions in the same file. In this case, the be able to 
+handle the verification for both types of interactions you need to use the `--transports <transports>` option. This will
+allow configuring different ports to send the different requests to.
+
+For example, `--transports http:8080 message:8081` will send HTTP requests to port 8080 and message requests to port 8081.
