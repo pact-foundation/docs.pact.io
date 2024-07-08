@@ -212,7 +212,7 @@ set, the state change request will not be made.
 #### `--state-change-as-query`
 
 By default, the state for the state change request will be sent as a JSON document in the body of the request. This 
-option forces it to be sent as a query parameters instead.
+option forces it to be sent as query parameters instead.
 
 #### `--state-change-teardown`
 
