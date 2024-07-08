@@ -186,7 +186,7 @@ will receive a POST request with the provider state before the actual request is
 *NOTE:* For verifying messages fetched via HTTP, the provider state is also passed in the request to fetch the message,
 so the state change URL is not required.
 
-For example, if a Pact file being verified has a provider state "a user exists in the database" and the provider state 
+For example, if a Pact file being verified has a provider state *"a user exists in the database"* and the provider state 
 URL is set to `http://localhost:8080/provider-state`, then the following request would be made before the interaction
 is verified:
 
@@ -202,7 +202,7 @@ content-type: application/json
 }
 ```
 
-If any parameters are configured for the provider state, they will be passed in the "params" attribute.
+If any parameters are configured for the provider state, they will be passed in the *"params"* attribute.
 
 #### `-s, --state-change-url <state-change-url>`
 
