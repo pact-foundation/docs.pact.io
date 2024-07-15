@@ -80,7 +80,7 @@ const siteConfig = {
   themeConfig: {
     announcementBar: {
       id: 'announcement-bar',
-      content: '<div id="announcement-bar">📣 Get 45% off Contract Testing in Action for a limited time with code CTA45. Get the book 👉 <a target="_blank" href="https://mng.bz/gv8l?utm_source=docs&utm_medium=web&utm_campaign=meapct052024&utm_content=banner">here</a>.</div>',
+      content: '<div id="announcement-bar">🔥 Join the Waitlist for Early Access to PactFlow\'s AI-Augmented Contract Testing! <a target="_blank" href="https://pactflow.io/ai/?utm_source=docs.pact.io&utm_medium=web&utm_campaign=ai-beta&utm_content=banner">Sign Up Now >></a>.</div>',
       backgroundColor: '#454CF0',
       textColor: '#fff',
       isCloseable: false,
