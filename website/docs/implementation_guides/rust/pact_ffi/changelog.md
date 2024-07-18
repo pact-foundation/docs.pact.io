@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.22 - Bugfix Release
+
+
 ## 0.4.21 - Bugfix Release
 
 * 3acc9ae5 - Merge pull request #443 from pact-foundation/feat/generate-contents (Ronald Holshausen, Wed Jun 19 14:21:50 2024 +1000)
