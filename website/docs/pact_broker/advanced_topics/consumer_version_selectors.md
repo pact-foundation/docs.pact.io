@@ -7,7 +7,19 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Consumer version selectors are the (new) way to configure which pacts the provider verifies. Instead of providing a list of tag names (as in the past) a list of selector objects is provided. These allow a much more flexible and powerful approach to specifying which pacts to verify.
+Consumer version selectors are the way to configure which pacts the provider verifies. A list of selector objects is provided, allowing flexibity in which pacts to verify and enabling you to 
+
+<a name="golden-rule"/>
+
+:::info Default selectors
+The default selectors find pacts that match any of the following criteria:
+
+1. latest version on the main branch.
+1. all versions that have been deployed.
+1. all versions that are currently marked as released.
+  
+The default selectors are a good starting point, before moving to the [recommended selectors](#recommended).
+:::
 
 ## Properties
 
@@ -44,7 +56,7 @@ These are the recommended selectors that will cover the majority of workflows.
 - `{ "mainBranch": true }` - the latest version from the main branch of each consumer, as specified by the consumer's `mainBranch` property.
 - `{ "branch": "<branch>" }` - the latest version from a particular branch of each consumer.
 - `{ "deployedOrReleased": true }` - all the currently deployed and currently released and supported versions of each consumer.
-- `{ "matchingBranch": true` } - the latest version from any branch of the consumer that has the same name as the current branch of the provider. Used for coordinated development between consumer and provider teams using matching feature branch names.
+- `{ "matchingBranch": true }` - the latest version from any branch of the consumer that has the same name as the current branch of the provider. Used for coordinated development between consumer and provider teams using matching feature branch names.
 
 ### Advanced
 
