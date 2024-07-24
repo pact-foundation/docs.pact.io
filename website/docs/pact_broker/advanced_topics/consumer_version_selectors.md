@@ -109,11 +109,6 @@ This is the most common use case.
 - We recommend using `deployedOrReleased` to return the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment, this allows the provider to not know that detail and let the Pact broker take care of it for you)
   - alternatively you can target just `deployed` or just `released` consumers across `all` environments , or consumers only in specified `environments`.
 - We recommend using `mainBranch` to return the pacts associated with any consumers configured `mainBranch` property (your consumer may have the branch `main`, `master` or `develop`, this allows the provider to not know that detail and let the Pact broker take care of it for you)
-- The shown selectors, will target for the provider
-  - any pacts for the consumer associated with their configured `mainBranch` property
-  - any pacts for the consumers, deployed to `any` environment
-    - This if filtered by only pacts `deployed` or `released` to the `test` / `production` environments.
-    - If this consumer/provider pair, has an additional environment `staging`, it would not be picked up, due to the named `test` / `production` environments. Removing these conditions, will return any pacts, deployed or released to any environment, which is the recommended setup for the majority of cases. (coupled with enabling pending pacts.)
 
 <Tabs
 groupId="sdk-choice"
@@ -135,17 +130,11 @@ const verificationOptions = {
   // ....
   consumerVersionSelectors: [
     {
-      mainBranch: true, // (recommended) - Returns the pacts for consumers configured mainBranch property
+      mainBranch: true, 
     },
     {
-      deployedOrReleased: true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
-    },
-    {
-      environment: 'test', // Normally, this would not be needed, as it is recommended to verify the pacts for all currently deployed/currently supported released versions.
-    },
-    {
-      environment: 'production', // Normally, this would not be needed, as it is recommended to verify the pacts for all currently deployed/currently supported released versions.
-    },
+      deployedOrReleased: true,
+    }
   ],
 };
 ```
@@ -158,12 +147,8 @@ const verificationOptions = {
   @au.com.dius.pact.provider.junitsupport.loader.PactBrokerConsumerVersionSelectors
   public static SelectorBuilder consumerVersionSelectors() {
     return new SelectorBuilder()
-      .mainBranch(); // (recommended) - Returns the pacts for consumers configured mainBranch property
-      .deployedOrReleased();  // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
-      .deployedTo('test'); // Normally, this would not be needed, Any versions currently deployed to the specified environment.
-      .deployedTo('production'); // Normally, this would not be needed, Any versions currently deployed to the specified environment.
-      .environment('test') // Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
-      .environment('production') // Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+      .mainBranch(); 
+      .deployedOrReleased(); 
   }
 
 ```
@@ -181,12 +166,8 @@ pact {
 
       fromPactBroker {
         withSelectors {
-            mainBranch() // (recommended) - Returns the pacts for consumers configured mainBranch property
-            deployedOrReleased() // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
-            deployedTo('test') // Normally, this would not be needed, Any versions currently deployed to the specified environment.
-            deployedTo('test') // Normally, this would not be needed, Any versions currently deployed to the specified environment.
-            environment('test')  // Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
-            environment('production')  // Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+            mainBranch() 
+            deployedOrReleased()
         }
       }
     }
@@ -203,12 +184,8 @@ Pact.service_provider "Your provider" do
   honours_pacts_from_pact_broker do
     pact_broker_base_url "..."
     consumer_version_selectors [
-          { mainBranch: true }, # (recommended) - Returns the pacts for consumers configured mainBranch property
-          { deployedOrReleased: true }, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
-          { deployed: "test" }, # Normally, this would not be needed, Any versions currently deployed to the specified environment.
-          { deployed: "production" } # Normally, this would not be needed, Any versions currently deployed to the specified environment.
-          { environment: "test" }, #  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
-          { environment: "production" } #  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+          { mainBranch: true },
+          { deployedOrReleased: true }
         ]
   end
 end
@@ -223,12 +200,8 @@ verifier = Verifier(
     provider="Your provider",
     broker_url="...",
     consumer_version_selectors=[
-        {"mainBranch": True}, # (recommended) - Returns the pacts for consumers configured mainBranch property
-        {"deployedOrReleased": True}, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
-        {"deployed": "test"}, # Normally, this would not be needed, Any versions currently deployed to the specified environment.
-        {"deployed": "production"}, # Normally, this would not be needed, Any versions currently deployed to the specified environment.
-        {"environment": "test"}, #  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
-        {"environment": "production"}, #  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+        {"mainBranch": True},
+        {"deployedOrReleased": True}
     ],
     # ...
 )
@@ -243,12 +216,8 @@ verifier = Verifier(
     verifier.ServiceProvider("My Provider", this.fixture.ServerUri)
         .WithPactBrokerSource(new Uri("https://broker.example.org"), options =>
         {
-            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, // (recommended) - Returns the pacts for consumers configured mainBranch property
-                                                  new ConsumerVersionSelector { DeployedOrReleased = true } // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
-                                                  new ConsumerVersionSelector { Deployed = true, Environment = "test" }, // Normally, this would not be needed, Any versions currently deployed to the specified environment.
-                                                  new ConsumerVersionSelector { Deployed = true, Environment = "production" }, // Normally, this would not be needed, Any versions currently deployed to the specified environment.
-                                                  new ConsumerVersionSelector { Released = true, Deployed = true, Environment = "test" }, //  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
-                                                  new ConsumerVersionSelector { Released = true, Deployed = true, Environment = "production" }, //  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
+            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, 
+                                                  new ConsumerVersionSelector { DeployedOrReleased = true }
                                                   )
                     .PublishResults(version, results =>
                     {
@@ -268,23 +237,11 @@ verifier = Verifier(
  pact.VerifyProvider(t, types.VerifyRequest{
   ConsumerVersionSelectors: []types.ConsumerVersionSelector{
    types.ConsumerVersionSelector{
-    MainBranch:      true,  // (recommended) - Returns the pacts for consumers configured mainBranch property
+    MainBranch:      true,  
    },
    types.ConsumerVersionSelector{
-    DeployedOrReleased:      true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
-   },
-   types.ConsumerVersionSelector{
-    Deployed:         "test", // Normally, this would not be needed, Any versions currently deployed to the specified environment.
-   },
-   types.ConsumerVersionSelector{
-    Deployed:         "production", // Normally, this would not be needed, Any versions currently deployed to the specified environment.
-   },
-   types.ConsumerVersionSelector{
-    Environment:         "test", //  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
-   },
-   types.ConsumerVersionSelector{
-    Environment:         "production", //  Normally, this would not be needed, Any versions currently deployed or released and supported in the specified environment.
-   },
+    DeployedOrReleased:      true,
+   }
   },
         // ...
  })
@@ -297,6 +254,8 @@ verifier = Verifier(
 ### Using a matching branch for coordinated branch development
 
 Dynamically determine the current branch of the provider, see if there is a matching pact for that branch.
+
+`matchingBranch` -  Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhoo
 
 <Tabs
 groupId="sdk-choice"
@@ -318,13 +277,13 @@ const verificationOptions = {
   //...
   consumerVersionSelectors: [
     {
-      matchingBranch: true, // Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
+      matchingBranch: true,
     },
     {
-      mainBranch: true, // (recommended) - Returns the pacts for consumers configured mainBranch property
+      mainBranch: true, 
     },
     {
-      deployedOrReleased: true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+      deployedOrReleased: true,
     },
   ],
 };
@@ -339,9 +298,9 @@ const verificationOptions = {
   @au.com.dius.pact.provider.junitsupport.loader.PactBrokerConsumerVersionSelectors
   public static SelectorBuilder consumerVersionSelectors() {
     return new SelectorBuilder()
-      .matchingBranch(); // Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
-      .mainBranch(); // (recommended) - Returns the pacts for consumers configured mainBranch property
-      .deployedOrReleased();  // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+      .matchingBranch();
+      .mainBranch(); 
+      .deployedOrReleased(); 
   }
 ```
 
@@ -358,9 +317,9 @@ pact {
 
       fromPactBroker {
         withSelectors {
-            matchingBranch() // Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
-            mainBranch() // (recommended) - Returns the pacts for consumers configured mainBranch property
-            deployedOrReleased() // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+            matchingBranch()
+            mainBranch() 
+            deployedOrReleased()
         }
       }
     }
@@ -377,9 +336,9 @@ Pact.service_provider "Your provider" do
   honours_pacts_from_pact_broker do
     pact_broker_base_url "..."
     consumer_version_selectors [
-          { matchingBranch: true }, # Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
-          { mainBranch: true }, # (recommended) - Returns the pacts for consumers configured mainBranch property
-          { deployedOrReleased: true }, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+          { matchingBranch: true }
+          { mainBranch: true }
+          { deployedOrReleased: true }
         ]
   end
 end
@@ -394,9 +353,9 @@ verifier = Verifier(
     provider="Your provider",
     broker_url="...",
     consumer_version_selectors=[
-        {"matchingBranch": True}, #  Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
-        {"mainBranch": True}, # (recommended) - Returns the pacts for consumers configured mainBranch property
-        {"deployedOrReleased": True}, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+        {"matchingBranch": True},
+        {"mainBranch": True},
+        {"deployedOrReleased": True}
     ],
     # ...
 )
@@ -411,9 +370,9 @@ verifier = Verifier(
     verifier.ServiceProvider("My Provider", this.fixture.ServerUri)
         .WithPactBrokerSource(new Uri("https://broker.example.org"), options =>
         {
-            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MatchingBranch = true }, //  Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
-                                                  new ConsumerVersionSelector { DeployedOrReleased = true } // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
-                                                  new ConsumerVersionSelector { MainBranch = true }, // (recommended) - Returns the pacts for consumers configured mainBranch property
+            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MatchingBranch = true }
+                                                  new ConsumerVersionSelector { DeployedOrReleased = true }
+                                                  new ConsumerVersionSelector { MainBranch = true }, 
                                                   )
                     .PublishResults(version, results =>
                     {
@@ -433,13 +392,13 @@ verifier = Verifier(
  pact.VerifyProvider(t, types.VerifyRequest{
   ConsumerVersionSelectors: []types.ConsumerVersionSelector{
    types.ConsumerVersionSelector{
-    MatchingBranch:      true,  //  Returns the pacts for providers configured branch property in the verification task. Normally covered by contract_requiring_verification_published event + corresponding webhook
+    MatchingBranch:      true,
    },
    types.ConsumerVersionSelector{
-    MainBranch:      true,  // (recommended) - Returns the pacts for consumers configured mainBranch property
+    MainBranch:      true,  
    },
    types.ConsumerVersionSelector{
-    DeployedOrReleased:      true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+    DeployedOrReleased:      true,
    },
   },
         // ...
@@ -474,13 +433,13 @@ const verificationOptions = {
   // ....
   consumerVersionSelectors: [
     {
-      mainBranch: true, // (recommended) - Returns the pacts for consumers configured mainBranch property
+      mainBranch: true, 
     },
     {
-      deployed: 'test', // only the latest deployed version to test
+      deployed: 'test',
     },
     {
-      deployedOrReleased: 'production', // all deployed or released versions in production
+      deployedOrReleased: 'production', consumer: 'my-mobile-consumer'
     },
   ],
 };
@@ -494,9 +453,9 @@ const verificationOptions = {
   @au.com.dius.pact.provider.junitsupport.loader.PactBrokerConsumerVersionSelectors
   public static SelectorBuilder consumerVersionSelectors() {
     return new SelectorBuilder()
-      .mainBranch(); // (recommended) - Returns the pacts for consumers configured mainBranch property
-      .deployedTo('test'); // only the latest deployed version to test
-      .environment('production') // all deployed or released versions in production
+      .mainBranch(); 
+      .deployedTo('test');
+      .rawSelectorJson('{ "deployedOrReleased": "production", "consumer": "my-mobile-consumer" }')
   }
 
 ```
@@ -514,9 +473,9 @@ pact {
 
       fromPactBroker {
         withSelectors {
-            mainBranch() // (recommended) - Returns the pacts for consumers configured mainBranch property
-            deployedTo('test') // only the latest deployed version to test
-            environment('production')  // all deployed or released versions in production
+            mainBranch() 
+            deployedTo('test')
+            rawSelectorJson('{ "deployedOrReleased": "production", "consumer": "my-mobile-consumer" }')
         }
       }
     }
@@ -533,9 +492,9 @@ Pact.service_provider "Your provider" do
   honours_pacts_from_pact_broker do
     pact_broker_base_url "..."
     consumer_version_selectors [
-          { mainBranch: true }, # (recommended) - Returns the pacts for consumers configured mainBranch property
-          { deployed: "test" }, # only the latest deployed version to test
-          { environment: "production" } #  all deployed or released versions in production
+          { mainBranch: true },
+          { deployed: "test" },
+          { deployedOrReleased: "production", consumer: "my-mobile-consumer" } 
         ]
   end
 end
@@ -550,9 +509,9 @@ verifier = Verifier(
     provider="Your provider",
     broker_url="...",
     consumer_version_selectors=[
-        {"mainBranch": True}, # (recommended) - Returns the pacts for consumers configured mainBranch property
-        {"deployed": "test"}, # only the latest deployed version to test
-        {"environment": "production"}, # all deployed or released versions in production
+        {"mainBranch": True},
+        {"deployed": "test"},
+        {"deployedOrReleased": "production", consumer: "my-mobile-consumer"}
     ],
     # ...
 )
@@ -567,9 +526,9 @@ verifier = Verifier(
     verifier.ServiceProvider("My Provider", this.fixture.ServerUri)
         .WithPactBrokerSource(new Uri("https://broker.example.org"), options =>
         {
-            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, // (recommended) - Returns the pacts for consumers configured mainBranch property
-                                                  new ConsumerVersionSelector { Deployed = true, Environment = "test" }, // only the latest deployed version to test
-                                                  new ConsumerVersionSelector { Released = true, Deployed = true, Environment = "production" }, // all deployed or released versions in production
+            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, 
+                                                  new ConsumerVersionSelector { Deployed = true, Environment = "test" },
+                                                  new ConsumerVersionSelector { Released = true, Deployed = true, Environment = "production", Consumer: "my-mobile-consumer" }
                                                   )
                     .PublishResults(version, results =>
                     {
@@ -589,13 +548,14 @@ verifier = Verifier(
  pact.VerifyProvider(t, types.VerifyRequest{
   ConsumerVersionSelectors: []types.ConsumerVersionSelector{
    types.ConsumerVersionSelector{
-    MainBranch:      true,  // (recommended) - Returns the pacts for consumers configured mainBranch property
+    MainBranch:      true,  
    },
    types.ConsumerVersionSelector{
     Deployed:         "test", // only the latest deployed version to test
    },
    types.ConsumerVersionSelector{
-    Environment:         "production", //  all deployed or released versions in production
+    DeployedOrReleased: "production",
+    Consumer:           "my-mobile-consumer"
    },
   },
         // ...
@@ -630,16 +590,16 @@ const verificationOptions = {
   // ....
   consumerVersionSelectors: [
     {
-      mainBranch: true, // (recommended) - Returns the pacts for consumers configured mainBranch property
+      mainBranch: true, 
     },
     {
-      deployed: 'test', // Verify the latest deployed `test` version of all consumers
+      deployed: 'test',
     },
     {
-      deployed: 'production', // Verify the latest deployed `production` version of all consumers
+      deployed: 'production',
     },
     {
-      deployedOrReleased: 'production', // Verify all deployed or released `production` versions of my-mobile-consumer
+      deployedOrReleased: 'production',
       consumer: 'my-mobile-consumer'
     },
   ],
@@ -654,10 +614,10 @@ const verificationOptions = {
   @au.com.dius.pact.provider.junitsupport.loader.PactBrokerConsumerVersionSelectors
   public static SelectorBuilder consumerVersionSelectors() {
     return new SelectorBuilder()
-      .mainBranch(); // (recommended) - Returns the pacts for consumers configured mainBranch property
-      .deployedTo('test'); // Verify the latest deployed `test` version of all consumers
-      .deployedTo('production'); // Verify the latest deployed `production` version of all consumers
-      .rawSelectorJson('{ "deployedOrReleased": "production", "consumer": "my-mobile-consumer" }') // Verify all deployed or released `production` versions of my-mobile-consumer
+      .mainBranch(); 
+      .deployedTo('test');
+      .deployedTo('production');
+      .rawSelectorJson('{ "deployedOrReleased": "production", "consumer": "my-mobile-consumer" }')
   }
 
 ```
@@ -675,10 +635,10 @@ pact {
 
       fromPactBroker {
         withSelectors {
-            mainBranch() // (recommended) - Returns the pacts for consumers configured mainBranch property
-            deployedTo('test') // Verify the latest deployed `test` version of all consumers
-            deployedTo('production')  // Verify the latest deployed `production` version of all consumers
-            rawSelectorJson('{ "deployedOrReleased": "production", "consumer": "my-mobile-consumer" }') // Verify all deployed or released `production` versions of my-mobile-consumer
+            mainBranch() 
+            deployedTo('test')
+            deployedTo('production')
+            rawSelectorJson('{ "deployedOrReleased": "production", "consumer": "my-mobile-consumer" }')
         }
       }
     }
@@ -695,10 +655,10 @@ Pact.service_provider "Your provider" do
   honours_pacts_from_pact_broker do
     pact_broker_base_url "..."
     consumer_version_selectors [
-          { mainBranch: true }, # (recommended) - Returns the pacts for consumers configured mainBranch property
-          { deployed: "test" }, # Verify the latest deployed `test` version of all consumers
-          { deployed: "production" }, # Verify the latest deployed `production` version of all consumers
-          { deployedOrReleased: "production", consumer: "my-mobile-consumer" } #  Verify all deployed or released `production` versions of my-mobile-consumer
+          { mainBranch: true },
+          { deployed: "test" },
+          { deployed: "production" },
+          { deployedOrReleased: "production", consumer: "my-mobile-consumer" }
         ]
   end
 end
@@ -713,10 +673,10 @@ verifier = Verifier(
     provider="Your provider",
     broker_url="...",
     consumer_version_selectors=[
-        {"mainBranch": True}, # (recommended) - Returns the pacts for consumers configured mainBranch property
-        {"deployed": "test"}, # Verify the latest deployed `test` version of all consumers
-        {"deployed": "production"}, # Verify the latest deployed `production` version of all consumers
-        {"environment": "production", "consumer": "my-mobile-consumer" }, #  Verify all deployed or released `production` versions of my-mobile-consumer
+        {"mainBranch": True},
+        {"deployed": "test"},
+        {"deployed": "production"},
+        {"deployedOrReleased": "production", "consumer": "my-mobile-consumer" },
     ],
     # ...
 )
@@ -731,10 +691,10 @@ verifier = Verifier(
     verifier.ServiceProvider("My Provider", this.fixture.ServerUri)
         .WithPactBrokerSource(new Uri("https://broker.example.org"), options =>
         {
-            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, // (recommended) - Returns the pacts for consumers configured mainBranch property
-                                                  new ConsumerVersionSelector { Deployed = true, Environment = "test" }, // Verify the latest deployed `test` version of all consumers
-                                                  new ConsumerVersionSelector { Deployed = true, Environment = "production" }, // Verify the latest deployed `production` version of all consumers
-                                                  new ConsumerVersionSelector { Released = true, Deployed = true, Environment = "production", Consumer = "my-mobile-consumer" }, // Verify all deployed or released `production` versions of my-mobile-consumer
+            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, 
+                                                  new ConsumerVersionSelector { Deployed = true, Environment = "test" },
+                                                  new ConsumerVersionSelector { Deployed = true, Environment = "production" },
+                                                  new ConsumerVersionSelector { Released = true, Deployed = true, Environment = "production", Consumer = "my-mobile-consumer" },
                                                   )
                     .PublishResults(version, results =>
                     {
@@ -754,17 +714,17 @@ verifier = Verifier(
  pact.VerifyProvider(t, types.VerifyRequest{
   ConsumerVersionSelectors: []types.ConsumerVersionSelector{
    types.ConsumerVersionSelector{
-    MainBranch:      true,  // (recommended) - Returns the pacts for consumers configured mainBranch property
+    MainBranch:      true,  
    },
    types.ConsumerVersionSelector{
-    Deployed:         "test", // Verify the latest deployed `test` version of all consumers
+    Deployed:         "test",
    },
    types.ConsumerVersionSelector{
-    Deployed:         "production", //  Verify the latest deployed `production` version of all consumers
+    Deployed:         "production",
    },
    types.ConsumerVersionSelector{
-    Environment:         "production", //  Verify all deployed or released `production` versions of my-mobile-consumer
-    Consumer:    "my-mobile-consumer",
+    DeployedOrReleased:         "production",
+    Consumer:                   "my-mobile-consumer",
    },
   },
         // ...
@@ -806,10 +766,10 @@ const verificationOptions = {
   // ....
   consumerVersionSelectors: [
     {
-      mainBranch: true, // (recommended) - Returns the pacts for consumers configured mainBranch property
+      mainBranch: true, 
     },
     {
-      deployedOrReleased: true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+      deployedOrReleased: true,
     },
   ],
 };
@@ -823,8 +783,8 @@ const verificationOptions = {
   @au.com.dius.pact.provider.junitsupport.loader.PactBrokerConsumerVersionSelectors
   public static SelectorBuilder consumerVersionSelectors() {
     return new SelectorBuilder()
-      .mainBranch(); // (recommended) - Returns the pacts for consumers configured mainBranch property
-      .deployedOrReleased();  // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+      .mainBranch(); 
+      .deployedOrReleased(); 
   }
 
 ```
@@ -842,8 +802,8 @@ pact {
 
       fromPactBroker {
         withSelectors {
-            mainBranch() // (recommended) - Returns the pacts for consumers configured mainBranch property
-            deployedOrReleased() // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+            mainBranch() 
+            deployedOrReleased()
         }
       }
     }
@@ -860,8 +820,8 @@ Pact.service_provider "Your provider" do
   honours_pacts_from_pact_broker do
     pact_broker_base_url "..."
     consumer_version_selectors [
-          { mainBranch: true }, # (recommended) - Returns the pacts for consumers configured mainBranch property
-          { deployedOrReleased: true }, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+          { mainBranch: true },
+          { deployedOrReleased: true }
         ]
   end
 end
@@ -876,8 +836,8 @@ verifier = Verifier(
     provider="Your provider",
     broker_url="...",
     consumer_version_selectors=[
-        {"mainBranch": True}, # (recommended) - Returns the pacts for consumers configured mainBranch property
-        {"deployedOrReleased": True}, # (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+        {"mainBranch": True},
+        {"deployedOrReleased": True},
     ],
     # ...
 )
@@ -892,8 +852,8 @@ verifier = Verifier(
     verifier.ServiceProvider("My Provider", this.fixture.ServerUri)
         .WithPactBrokerSource(new Uri("https://broker.example.org"), options =>
         {
-            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, // (recommended) - Returns the pacts for consumers configured mainBranch property
-                                                  new ConsumerVersionSelector { DeployedOrReleased = true } // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+            options.ConsumerVersionSelectors(new ConsumerVersionSelector { MainBranch = true }, 
+                                                  new ConsumerVersionSelector { DeployedOrReleased = true }
                                                   )
                     .PublishResults(version, results =>
                     {
@@ -913,10 +873,10 @@ verifier = Verifier(
  pact.VerifyProvider(t, types.VerifyRequest{
   ConsumerVersionSelectors: []types.ConsumerVersionSelector{
    types.ConsumerVersionSelector{
-    MainBranch:      true,  // (recommended) - Returns the pacts for consumers configured mainBranch property
+    MainBranch:      true,  
    },
    types.ConsumerVersionSelector{
-    DeployedOrReleased:      true, // (recommended) - Returns the pacts for all versions of the consumer that are currently deployed or released and currently supported in any environment.
+    DeployedOrReleased:      true,
    },
   },
         // ...
