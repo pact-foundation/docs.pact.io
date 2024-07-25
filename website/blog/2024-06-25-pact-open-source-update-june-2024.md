@@ -120,7 +120,7 @@ Anyone can start testing pact-php with pact_ffi code by updating their `composer
 
 `"pact-foundation/pact-php": "10.0.0-beta2"`
 
-This bring a raft of features to the Pact-PHP ecosystem including V4 Pact Specification support, access to the Pact Plugin ecosystem and huge speed benefits over the 9.x Ruby based release.
+This brings a raft of features to the Pact-PHP ecosystem including V4 Pact Specification support, access to the Pact Plugin ecosystem and huge speed benefits over the 9.x Ruby based release.
 
 You can see a full range of examples [here](https://github.com/pact-foundation/pact-php/tree/master/example)
 
