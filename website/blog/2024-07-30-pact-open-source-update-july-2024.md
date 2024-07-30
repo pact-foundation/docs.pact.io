@@ -4,12 +4,12 @@ author: Yousaf Nabi
 authorURL: https://twitter.com/you54f
 tags: [pact, oss, community]
 keywords: [pact, oss, community]
-date: 2024-07-26
+date: 2024-07-30
 draft: false
 hide_table_of_contents: false
 ---
 
-👋 Hey all, 2024 is racing ahead ⏳, we are now 207 days into the year 😲, as I write this July Pact Post. As usual, I'll be keeping you up to date with all the latest happenings across the Pact Ecosystem.
+👋 Hey all, 2024 is racing ahead ⏳, we are now 212 days into the year 😲, as I write this July Pact Post. As usual, I'll be keeping you up to date with all the latest happenings across the Pact Ecosystem.
 
 ## Pact OSS Updates
 
@@ -116,7 +116,7 @@ If you want to get involved, don't forget, we have a [Pact Compatibility suite](
 
 Chat to us in: [#pact-python](https://pact-foundation.slack.com/archives/C9VECUP6E).
 
-### PHP
+### Pact-PHP
 
 Tien has been enjoying the summer, and a well deserved break after the epic work bringing the pact rust core to pact-php, so put down that 🍸 and give it a try!
 
@@ -131,6 +131,26 @@ You can see a full range of examples [here](https://github.com/pact-foundation/p
 #### Pact-PHP - Slack
 
 Chat to us in: [#pact-php](https://pact-foundation.slack.com/archives/C9W94PXPY).
+
+### Pact-Net
+
+Want to see Pact Plugin support in .NET?
+
+There is an open [RFC](https://github.com/pact-foundation/pact-net/issues/492) where you can add your input, and possibly contribute to bringing the capabilities to pact-net.
+
+To help nudge this along, I've created a suite of .NET examples exercising many of the known pact plugins in the ecosystem, along with the raw pact_ffi calls required to utilise them.
+
+You can check it out here - https://github.com/YOU54F/pact-dotnet-ffi-plugins
+
+In order to get this into Pact-Net, one would need to propose some API designs in the RFC, and then can leverage the examples I've created (probably adding your own .NET developer flair to them), to leverage Pact-Nets idiomatic API design, and use plugins in their current V1 form.
+
+We appreciate there are some rough edges, and will be opening the floor to a discussions around the existing framework to ascertain where improvements need to be made or if a V2 design is warranted and what that may look like.
+
+However we shouldn't let the future dictate what we can achieve now, so forth and plug pact-net into the pact-plugin ecosystem!
+
+#### Pact-Net - Slack
+
+Chat with us in: [#pact-net](https://pact-foundation.slack.com/archives/C9UTHV2AD).
 
 ## Thats a wrap
 

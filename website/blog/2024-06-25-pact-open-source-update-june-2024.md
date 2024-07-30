@@ -110,7 +110,7 @@ If you want to get involved, don't forget, we have a [Pact Compatibility suite](
 
 Chat to us in: [#pact-python](https://pact-foundation.slack.com/archives/C9VECUP6E).
 
-### PHP
+### Pact-PHP
 
 The v10 Beta2 release is here, which includes the new pact_ffi 0.4.21 release and all the fixes that came along with it.
 
