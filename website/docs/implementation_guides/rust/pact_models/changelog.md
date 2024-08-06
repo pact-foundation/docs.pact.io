@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.2.3 - Support for provider state injected values in plugins
+
+* 033a50ab - feat: Update the matching rule expression parser to support values from provider states (Ronald Holshausen, Fri Aug 2 10:06:52 2024 +1000)
+* 77814aef - fix(pact_models):  fix: when writing pact specs in V2 format, header matchers must be pluralised #449 (Ronald Holshausen, Wed Jul 31 15:08:00 2024 +1000)
+
 ## 1.2.2 - Maintenance Release
 
 
