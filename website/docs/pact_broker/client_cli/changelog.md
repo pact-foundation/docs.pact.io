@@ -4,6 +4,23 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.75.4"></a>
+### v1.75.4 (2024-07-30)
+
+#### Bug Fixes
+
+* remove test files from built gem	 ([4bb7bac](https://github.com/pact-foundation/pact_broker-client/commit/4bb7bac))
+
+<a name="v1.75.3"></a>
+### v1.75.3 (2024-06-17)
+
+<a name="v1.75.2"></a>
+### v1.75.2 (2024-05-13)
+
+#### Bug Fixes
+
+* explicitly require openstruct	 ([fdb70cf](https://github.com/pact-foundation/pact_broker-client/commit/fdb70cf))
+
 <a name="v1.75.1"></a>
 ### v1.75.1 (2023-11-23)
 
