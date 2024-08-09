@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.6.13 - Bugfix Release
+
+* ea14386fa - fix: Need to pass any provider state data through to the plugins (Ronald Holshausen, Wed Aug 7 12:09:02 2024 +1000)
+
 ## 4.6.12 - Bugfix Release
 
 * a8c7a48ee - feat: Update the matching rule expression parser to support values from provider states (Ronald Holshausen, Mon Aug 5 17:38:19 2024 +1000)
