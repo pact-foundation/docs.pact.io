@@ -107,7 +107,7 @@ const siteConfig = {
         { to: '/', label: 'Getting Started', position: 'left' },
         { to: 'consumer', label: 'Guides', position: 'left' },
         {
-          to: 'implementation_guides/cli',
+          to: 'implementation_guides/overview',
           label: 'Pact Docs',
           position: 'left'
         },

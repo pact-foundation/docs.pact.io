@@ -1,5 +1,6 @@
 {
   "docs": [
+     "implementation_guides/overview",
     {
       "Pact command line tools": ["implementation_guides/cli"]
     },
