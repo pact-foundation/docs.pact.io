@@ -4,6 +4,20 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.111.0"></a>
+
+### v2.111.0 (2024-07-26)
+
+#### Features
+
+* add new label api (#703)	 ([ff3f84e2](https://github.com/pact-foundation/pact_broker/commit/ff3f84e2))
+* search pacticipants by display_name	 ([c5945801](https://github.com/pact-foundation/pact_broker/commit/c5945801))
+
+#### Bug Fixes
+
+* **docs**
+  * Update OAS with correct ref to Notice schema	 ([6729b7f8](https://github.com/pact-foundation/pact_broker/commit/6729b7f8))
+
 <a name="v2.110.0"></a>
 
 ### v2.110.0 (2024-04-02)
