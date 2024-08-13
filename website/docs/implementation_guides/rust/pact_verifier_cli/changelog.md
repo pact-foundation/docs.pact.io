@@ -4,6 +4,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.1.4 - Bugfix Release
+
+
 ## 1.1.3 - Feature + Bugfix release
 
 * c68a0eea - feat: Add environment variables for most options (Martijn Pieters, Thu May 16 17:09:43 2024 +0100)
