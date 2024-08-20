@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Consumer version selectors are the way to configure which pacts the provider verifies. A list of selector objects is provided, allowing flexibity in which pacts to verify and enabling you to 
+Consumer version selectors are the way to configure which pacts the provider verifies. A list of selector objects is provided, allowing flexibity in which pacts to verify and enabling you to build resilient and comprehensive verification setups.
 
 <a name="golden-rule"/>
 
