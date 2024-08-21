@@ -7,6 +7,18 @@ custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/cli/C
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
 
 
+* 37a0610 - chore: update repository.index (Ronald Holshausen, Wed Aug 21 12:00:29 2024 +1000)
+* 3e7e007 - chore(plugin-cli): Upgrade dependencies (Ronald Holshausen, Wed Aug 21 11:58:40 2024 +1000)
+* 9dc6d01 - feat(cli): support PACT_PLUGIN_CLI_SKIP_LOAD (Yousaf Nabi, Wed Jul 17 23:37:57 2024 +0100)
+* 16c6f30 - fix(CLI): use the published version of the driver crate (Ronald Holshausen, Tue Jul 16 12:01:11 2024 +1000)
+* 08c7594 - chore(cli): point to local pact-plugin-driver (Yousaf Nabi, Fri Jul 5 01:07:47 2024 +0100)
+* fa6ef38 - deps(cli): update deps (Yousaf Nabi, Thu Jul 4 23:15:40 2024 +0100)
+* 7c2e691 - docs(chore): pact-plugin-cli 0.0.4 added linux aarch64 target (Yousaf Nabi, Mon May 20 13:27:52 2024 +0100)
+* 2a962be - docs(chore): add binary compat table (csv/plugin-cli) (Yousaf Nabi, Mon May 20 13:25:41 2024 +0100)
+* 1f3ac8c - bump version to 0.1.1 (pact-plugin-cli) (Yousaf Nabi, Fri May 10 15:21:06 2024 +0100)
+
+# 0.1.2 - Feature Release
+
 * cd8a64a - chore: update repository.index (Yousaf Nabi, Fri May 10 14:52:15 2024 +0100)
 * 18dbf5c - feat: reduce executable size (Yousaf Nabi, Fri Apr 26 15:46:58 2024 +0100)
 * 20c8dae - feat: linux musl static bins / windows aarch64 (Yousaf Nabi, Thu Apr 25 19:26:03 2024 +0100)
