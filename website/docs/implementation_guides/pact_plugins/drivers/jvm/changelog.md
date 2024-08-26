@@ -11,6 +11,12 @@ https://github.com/pact-foundation/pact-plugins/tree/main/drivers
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)'  TAGNAME..HEAD` replacing TAGNAME and HEAD as appropriate.
 
 
+* d917688 - fix: Remove the use of jakarta.json.Json (Ronald Holshausen, Mon Aug 26 10:03:24 2024 +1000)
+* 31a9aa0 - bump version to 0.5.1 (Ronald Holshausen, Wed Aug 21 15:46:14 2024 +1000)
+* 23bece4 - chore: Update git ignore file (Ronald Holshausen, Wed Aug 21 15:34:28 2024 +1000)
+
+# 0.5.0 - Updated gRPC version
+
 * 89c7792 - chore(jvm-driver): Bump minor version (Ronald Holshausen, Wed Aug 21 15:17:06 2024 +1000)
 * 423ab56 - bump version to 0.1.4 (Ronald Holshausen, Wed Aug 21 12:02:42 2024 +1000)
 * e606980 - update changelog for release 0.1.3 (Ronald Holshausen, Wed Aug 21 12:01:33 2024 +1000)
