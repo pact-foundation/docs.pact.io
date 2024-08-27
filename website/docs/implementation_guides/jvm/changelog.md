@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CHANGELOG.md
 ---
 <!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.6.14 - Bugfix Release
+
+* 4cf45a1a0 - fix: Allow the Pact publish task to set insecure TLS flag #1817 (Ronald Holshausen, Tue Aug 27 16:22:48 2024 +1000)
+* ba845e825 - fix: Support provider tests with multiple targets using different transports #1819 (Ronald Holshausen, Mon Aug 26 14:41:47 2024 +1000)
+* f19f1cfc2 - fix(V4): Http mock server was incorrectly setting the trasnport to https (Ronald Holshausen, Thu Aug 22 15:37:09 2024 +1000)
+
 ## 4.6.13 - Bugfix Release
 
 * ea14386fa - fix: Need to pass any provider state data through to the plugins (Ronald Holshausen, Wed Aug 7 12:09:02 2024 +1000)
