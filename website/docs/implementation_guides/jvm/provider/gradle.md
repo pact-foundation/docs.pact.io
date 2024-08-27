@@ -917,6 +917,8 @@ pact {
 }
 ```
 
+If your broker uses self-signed certificates, set the property `pactBrokerInsecureTLS` to `true`. 
+
 ## Excluding pacts from being published
 
 You can exclude some of the pact files from being published by providing a list of regular expressions that match
