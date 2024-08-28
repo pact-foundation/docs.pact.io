@@ -98,7 +98,7 @@ You can checkout code-snippets below, but here are some links to either document
   - <https://github.com/pact-foundation/pact-net/blob/master/src/PactNet.Abstractions/Verifier/ConsumerVersionSelector.cs>
 - Golang
   - <https://github.com/pact-foundation/pact-go/blob/2.x.x/docs/provider.md#selecting-pacts-to-verify>
-  - <https://github.com/pact-foundation/pact-go/blob/master/types/consumer_version_selector.go>
+  - <https://github.com/pact-foundation/pact-go/blob/master/provider/consumer_version_selector.go>
 
 ## Code examples with branches
 
