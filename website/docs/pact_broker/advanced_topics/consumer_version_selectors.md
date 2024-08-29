@@ -234,12 +234,12 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
- pact.VerifyProvider(t, types.VerifyRequest{
-  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-   types.ConsumerVersionSelector{
+ pact.VerifyProvider(t, provider.VerifyRequest{
+  ConsumerVersionSelectors: []provider.Selector{
+   &provider.ConsumerVersionSelector{
     MainBranch:      true,  
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     DeployedOrReleased:      true,
    }
   },
@@ -389,15 +389,15 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
- pact.VerifyProvider(t, types.VerifyRequest{
-  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-   types.ConsumerVersionSelector{
+ pact.VerifyProvider(t, provider.VerifyRequest{
+  ConsumerVersionSelectors: []provider.Selector{
+   &provider.ConsumerVersionSelector{
     MatchingBranch:      true,
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     MainBranch:      true,  
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     DeployedOrReleased:      true,
    },
   },
@@ -545,15 +545,15 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
- pact.VerifyProvider(t, types.VerifyRequest{
-  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-   types.ConsumerVersionSelector{
+ pact.VerifyProvider(t, provider.VerifyRequest{
+  ConsumerVersionSelectors: []provider.Selector{
+   &provider.ConsumerVersionSelector{
     MainBranch:      true,  
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Deployed:         "test", // only the latest deployed version to test
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     DeployedOrReleased: "production",
     Consumer:           "my-mobile-consumer"
    },
@@ -711,18 +711,18 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
- pact.VerifyProvider(t, types.VerifyRequest{
-  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-   types.ConsumerVersionSelector{
+ pact.VerifyProvider(t, provider.VerifyRequest{
+  ConsumerVersionSelectors: []provider.Selector{
+   &provider.ConsumerVersionSelector{
     MainBranch:      true,  
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Deployed:         "test",
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Deployed:         "production",
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     DeployedOrReleased:         "production",
     Consumer:                   "my-mobile-consumer",
    },
@@ -870,12 +870,12 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
- pact.VerifyProvider(t, types.VerifyRequest{
-  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-   types.ConsumerVersionSelector{
+ pact.VerifyProvider(t, provider.VerifyRequest{
+  ConsumerVersionSelectors: []provider.Selector{
+   &provider.ConsumerVersionSelector{
     MainBranch:      true,  
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     DeployedOrReleased:      true,
    },
   },
@@ -1022,17 +1022,17 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
- pact.VerifyProvider(t, types.VerifyRequest{
-  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-   types.ConsumerVersionSelector{
+ pact.VerifyProvider(t, provider.VerifyRequest{
+  ConsumerVersionSelectors: []provider.Selector{
+   &provider.ConsumerVersionSelector{
     Tag:         "master",
     Latest:      true,
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Tag:         "test",
     Latest:      true,
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Tag:         "production",
     Latest:      true,
    },
@@ -1180,18 +1180,18 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
- pact.VerifyProvider(t, types.VerifyRequest{
-    ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-   types.ConsumerVersionSelector{
+ pact.VerifyProvider(t, provider.VerifyRequest{
+    ConsumerVersionSelectors: []provider.Selector{
+   &provider.ConsumerVersionSelector{
     Tag:         os.Getenv("GIT_BRANCH"),
     FallbackTag: "master",
     Latest:      true,
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Tag:    "test",
     Latest: true,
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Tag:    "production",
     Latest: true,
    },
@@ -1315,18 +1315,18 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
- pact.VerifyProvider(t, types.VerifyRequest{
-  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-   types.ConsumerVersionSelector{
+ pact.VerifyProvider(t, provider.VerifyRequest{
+  ConsumerVersionSelectors: []provider.Selector{
+   &provider.ConsumerVersionSelector{
     Tag:         os.Getenv("GIT_BRANCH"),
     FallbackTag: "master",
     Latest:      true,
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Tag:    "test",
     Latest: true,
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Tag:    "production",
     Latest: false,
    },
@@ -1461,22 +1461,22 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
- pact.VerifyProvider(t, types.VerifyRequest{
-  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-   types.ConsumerVersionSelector{
+ pact.VerifyProvider(t, provider.VerifyRequest{
+  ConsumerVersionSelectors: []provider.Selector{
+   &provider.ConsumerVersionSelector{
     Tag:         os.Getenv("GIT_BRANCH"),
     FallbackTag: "master",
     Latest:      true,
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Tag:         "test",
     Latest:      true,
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Tag:         "production",
     Latest:      true,
    },
-   types.ConsumerVersionSelector{
+   &provider.ConsumerVersionSelector{
     Tag:         "production",
     Consumer:    "my-mobile-consumer",
    },
@@ -1583,9 +1583,9 @@ verifier = Verifier(
   <TabItem value="golang">
 
 ```golang
- pact.VerifyProvider(t, types.VerifyRequest{
-  ConsumerVersionSelectors: []types.ConsumerVersionSelector{
-   types.ConsumerVersionSelector{
+ pact.VerifyProvider(t, provider.VerifyRequest{
+  ConsumerVersionSelectors: []provider.Selector{
+   &provider.ConsumerVersionSelector{
     Latest:      true,
    },
   },
