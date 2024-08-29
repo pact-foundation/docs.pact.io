@@ -4,7 +4,7 @@ author: Yousaf Nabi
 authorURL: https://twitter.com/you54f
 tags: [pact, oss, community]
 keywords: [pact, oss, community]
-date: 2024-08-27
+date: 2024-08-29
 draft: false
 hide_table_of_contents: false
 ---
