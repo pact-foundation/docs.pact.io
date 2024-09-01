@@ -18,6 +18,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 **Articles**
 
 - [Creating a consumer contract test in Android for Retrofit](https://medium.com/go-city/pact-contract-testing-in-android-ff7e996d0910)
+- [Three methodologies of API Development](https://openvalue.blog/posts/2023/11/26/communicating_our_apis_part2/)
 
 **Customer Stories**
 - [eBay - API evolution with Confidence](https://tech.ebayinc.com/engineering/api-evolution-with-confidence-a-case-study-of-contract-testing-adoption-at-ebay/)
