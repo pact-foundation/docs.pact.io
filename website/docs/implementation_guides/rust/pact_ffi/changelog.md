@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.23 - Bugfix Release
+
+* 4d7295a4 - feat: allow non-object matchers for array-contains (M. J. W-H. Campman, Sat Aug 3 13:49:18 2024 -0400)
+* 033a50ab - feat: Update the matching rule expression parser to support values from provider states (Ronald Holshausen, Fri Aug 2 10:06:52 2024 +1000)
+
 ## 0.4.22 - Bugfix Release
 
 
