@@ -233,7 +233,7 @@ verifier = Verifier(
 
   <TabItem value="golang">
 
-```golang
+```go
  pact.VerifyProvider(t, provider.VerifyRequest{
   ConsumerVersionSelectors: []provider.Selector{
    &provider.ConsumerVersionSelector{
@@ -388,7 +388,7 @@ verifier = Verifier(
 
   <TabItem value="golang">
 
-```golang
+```go
  pact.VerifyProvider(t, provider.VerifyRequest{
   ConsumerVersionSelectors: []provider.Selector{
    &provider.ConsumerVersionSelector{
@@ -544,7 +544,7 @@ verifier = Verifier(
 
   <TabItem value="golang">
 
-```golang
+```go
  pact.VerifyProvider(t, provider.VerifyRequest{
   ConsumerVersionSelectors: []provider.Selector{
    &provider.ConsumerVersionSelector{
@@ -710,7 +710,7 @@ verifier = Verifier(
 
   <TabItem value="golang">
 
-```golang
+```go
  pact.VerifyProvider(t, provider.VerifyRequest{
   ConsumerVersionSelectors: []provider.Selector{
    &provider.ConsumerVersionSelector{
@@ -869,7 +869,7 @@ verifier = Verifier(
 
   <TabItem value="golang">
 
-```golang
+```go
  pact.VerifyProvider(t, provider.VerifyRequest{
   ConsumerVersionSelectors: []provider.Selector{
    &provider.ConsumerVersionSelector{
@@ -1021,7 +1021,7 @@ verifier = Verifier(
 
   <TabItem value="golang">
 
-```golang
+```go
  pact.VerifyProvider(t, provider.VerifyRequest{
   ConsumerVersionSelectors: []provider.Selector{
    &provider.ConsumerVersionSelector{
@@ -1179,7 +1179,7 @@ verifier = Verifier(
 
   <TabItem value="golang">
 
-```golang
+```go
  pact.VerifyProvider(t, provider.VerifyRequest{
     ConsumerVersionSelectors: []provider.Selector{
    &provider.ConsumerVersionSelector{
@@ -1314,7 +1314,7 @@ verifier = Verifier(
 
   <TabItem value="golang">
 
-```golang
+```go
  pact.VerifyProvider(t, provider.VerifyRequest{
   ConsumerVersionSelectors: []provider.Selector{
    &provider.ConsumerVersionSelector{
@@ -1460,7 +1460,7 @@ verifier = Verifier(
 
   <TabItem value="golang">
 
-```golang
+```go
  pact.VerifyProvider(t, provider.VerifyRequest{
   ConsumerVersionSelectors: []provider.Selector{
    &provider.ConsumerVersionSelector{
@@ -1582,7 +1582,7 @@ verifier = Verifier(
 
   <TabItem value="golang">
 
-```golang
+```go
  pact.VerifyProvider(t, provider.VerifyRequest{
   ConsumerVersionSelectors: []provider.Selector{
    &provider.ConsumerVersionSelector{

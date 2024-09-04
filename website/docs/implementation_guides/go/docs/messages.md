@@ -112,7 +112,7 @@ A Provider (Producer in messaging parlance) is the system that will be putting a
 
 As per the Consumer case, Pact takes the position of the intermediary (MQ/broker) and checks to see whether or not the Provider sends a message that matches the Consumer's expectations.
 
-```golang
+```go
 func TestV3MessageProvider(t *testing.T) {
 	var user *User
 
