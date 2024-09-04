@@ -265,7 +265,7 @@ The log setup has three main features:
 
 To write something to the log file, you simply use the `log` package, with the level prefixed as per below:
 
-```golang
+```go
 log.Println("[TRACE] ...")
 log.Println("[DEBUG] ...")
 log.Println("[INFO] ...")

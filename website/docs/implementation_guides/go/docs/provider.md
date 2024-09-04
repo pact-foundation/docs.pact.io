@@ -30,7 +30,7 @@ The provider interface is in the package: `github.com/pact-foundation/pact-go/v2
 
 A provider test takes one or more pact files (contracts) as input, and Pact verifies that your provider adheres to the contract. In the simplest case, you can verify a provider as per below.
 
-```golang
+```go
 func TestV3HTTPProvider(t *testing.T) {
 	// 1. Start your Provider API in the background
 	go startServer()
@@ -149,7 +149,7 @@ In most cases, you will want to use a [Pact Broker](https://docs.pact.io/pact_br
 
 The first part of the configuration is to tell Pact how to connect to your broker:
 
-```golang
+```go
 		Provider:        "V3Provider",
 		ProviderVersion: os.Getenv("APP_SHA"),
 		BrokerURL:       os.Getenv("PACT_BROKER_BASE_URL"),
@@ -161,7 +161,7 @@ The provider name uniquely identifies the application and automatically discover
 
 Once connected to the broker, you need to configure which pacts you care about verifying. Consumer version selectors are how we do this. For example, in the following setup we collect all contracts where the tag is `master` or `prod`:
 
-```golang
+```go
 		ConsumerVersionSelectors: []Selector{
 			&ConsumerVersionSelector{
 				Tag: "master",
@@ -221,7 +221,7 @@ The plugin provider interface is in the package: `github.com/pact-foundation/pac
 
 A provider test takes one or more pact files (contracts) as input, and Pact verifies that your provider adheres to the contract. In the simplest case, you can verify a provider as per below.
 
-```golang
+```go
 func TestPluginProvider(t *testing.T) {
 	// 1. Start your Provider API in the background
 	go startServer()

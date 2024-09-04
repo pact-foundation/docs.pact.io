@@ -206,7 +206,8 @@ const siteConfig = {
         'groovy',
         'scala',
         'erlang',
-        'php'
+        'php',
+        'go'
       ]
     },
 

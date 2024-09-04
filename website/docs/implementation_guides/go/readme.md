@@ -193,7 +193,7 @@ In this example, we are going to be testing our User API client, responsible for
 
 Pact tests have a few key properties. We'll demonstrate a common example using the 3A `Arrange/Act/Assert` pattern.
 
-```golang
+```go
 func TestUserAPIClient(t *testing.T) {
 	// Specify the two applications in the integration we are testing
 	// NOTE: this can usually be extracted out of the individual test for re-use)
@@ -245,7 +245,7 @@ The provider interface is in the package: `github.com/pact-foundation/pact-go/v2
 
 A provider test takes one or more pact files (contracts) as input, and Pact verifies that your provider adheres to the contract. In the simplest case, you can verify a provider as per below.
 
-```golang
+```go
 func TestV3HTTPProvider(t *testing.T) {
 	// 1. Start your Provider API in the background
 	go startServer()
