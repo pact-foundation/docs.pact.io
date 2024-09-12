@@ -80,7 +80,7 @@ const siteConfig = {
   themeConfig: {
     announcementBar: {
       id: 'announcement-bar',
-      content: '<div id="announcement-bar">🔥 Join the Waitlist for Early Access to PactFlow\'s AI-Augmented Contract Testing! <a target="_blank" href="https://pactflow.io/ai/?utm_source=docs.pact.io&utm_medium=web&utm_campaign=ai-beta&utm_content=banner">Sign Up Now >></a>.</div>',
+      content: '<div id="announcement-bar">🚀 AI Automation is Here! Simplify Contract Testing with PactFlow. <a target="_blank" href="https://pactflow.io/ai/?utm_source=docs.pact.io&utm_medium=web&utm_campaign=ai-beta&utm_content=banner">Sign Up Now >></a>.</div>',
       backgroundColor: '#454CF0',
       textColor: '#fff',
       isCloseable: false,
