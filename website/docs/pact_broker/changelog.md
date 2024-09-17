@@ -4,6 +4,19 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.112.0"></a>
+
+### v2.112.0 (2024-09-09)
+
+#### Features
+
+* implemented setting cache for can-i-merge badges based on default configuration	 ([e2bce55e](https://github.com/pact-foundation/pact_broker/commit/e2bce55e))
+* add application/hal+json content type for webhook logs (#679)	 ([e84de4f4](https://github.com/pact-foundation/pact_broker/commit/e84de4f4))
+
+#### Bug Fixes
+
+* make clean_task.rb print the payload correctly	 ([10fd69e2](https://github.com/pact-foundation/pact_broker/commit/10fd69e2))
+
 <a name="v2.111.0"></a>
 
 ### v2.111.0 (2024-07-26)
