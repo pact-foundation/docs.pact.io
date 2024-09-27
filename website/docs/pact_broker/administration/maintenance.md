@@ -66,9 +66,3 @@ If you have a very large database, and you are just now enabling the clean, the 
 #### pactfoundation/pact-broker Docker image
 
 See the [environment variable documentation here](/pact_broker/docker_images/pactfoundation#automatic-data-clean-up)
-
-#### dius/pact-broker Docker image
-
-Not released yet.
-
-

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require_relative 'support'
 
-SOURCE_REPO = 'DiUS/pact-jvm'
+SOURCE_REPO = 'pact-foundation/pact-jvm'
 DESTINATION_DIR = relative_path_to('docs/implementation_guides/jvm')
 TRANSFORM_PATH = -> (path) {
   # Rename README.md file, but not the top level README

@@ -2,7 +2,7 @@
 title: Overview
 ---
 
-[Pact JVM](https://github.com/DiUS/pact-jvm) is currently compliant to Pact Specification Version [3.0](https://github.com/pact-foundation/pact-specification/tree/version-3).
+[Pact JVM](https://github.com/pact-foundation/pact-jvm) is currently compliant to Pact Specification Version [4.0](https://github.com/pact-foundation/pact-specification/tree/version-4).
 
 Head to the [README](jvm/readme) to get started with Pact on the JVM \(Java, Scala, Clojure etc.\).
 
