@@ -417,8 +417,7 @@
     ],
     "Pact Broker - Docker": [
       "pact_broker/docker_images",
-      "pact_broker/docker_images/pactfoundation",
-      "pact_broker/docker_images/dius"
+      "pact_broker/docker_images/pactfoundation"
     ],
     "Pact Broker - Kubernetes": [
       "pact_broker/kubernetes",

@@ -10,7 +10,7 @@ We recommend you back up your database before performing an upgrade, just to be 
 
 ## For Docker images
 
-Change the tag to the latest available version (following semantic versioning rules) from the [pact-foundation](https://hub.docker.com/r/pactfoundation/pact-broker/tags?page=1&ordering=last_updated) organisation or the [DiUS](https://hub.docker.com/repository/docker/dius/pact-broker/tags?page=1&ordering=last_updated) organisation, and redeploy your Docker managed infrastructure. Remember not use the tag `latest`, for a production installation of the Pact Broker.
+Change the tag to the latest available version (following semantic versioning rules) from the [pact-foundation](https://hub.docker.com/r/pactfoundation/pact-broker/tags?page=1&ordering=last_updated) organisation, and redeploy your Docker managed infrastructure. Remember not use the tag `latest`, for a production installation of the Pact Broker.
 
 ## For native Ruby installations
 

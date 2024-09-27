@@ -246,7 +246,7 @@ When Pact reads the pact files for verification on the Provider side, it needs t
 **Here are some options**
 
 * Create a Mock authentication service used during testing - this gives you the best control.
-* If using the JVM, you can use [request filters](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-gradle#modifying-the-requests-before-they-are-sent) to modify the request headers before they are sent to the Provider.
+* If using the JVM, you can use [request filters](https://github.com/pact-foundation/pact-jvm/tree/master/pact-jvm-provider-gradle#modifying-the-requests-before-they-are-sent) to modify the request headers before they are sent to the Provider.
 * If using Pact JS you can use [request filters](https://github.com/pact-foundation/pact-js#modify-requests-prior-to-verification-request-filters)
 * If using Pact Go you can use [request filters](https://github.com/pact-foundation/pact-go#request-filtering)
 * Configure a relaxed OAuth2 validation service on the Provider that accepts any valid headers, so long as the match the spec \(e.g. `Authorization` header\). You might leverage the [provider states](http://docs.pact.io/getting_started/provider_states) feature for this.
