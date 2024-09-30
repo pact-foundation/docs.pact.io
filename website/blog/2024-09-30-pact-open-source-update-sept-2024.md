@@ -15,9 +15,9 @@ hide_table_of_contents: false
 
 ### Pact-Plugins
 
-Back in March, [we mentioned](https://docs.pact.io/blog/2024/07/30/pact-open-source-update-july-2024#pact-go) some issues leverage the Pact-Plugin framework with Pact-Go.
+Back in March, [we mentioned](https://docs.pact.io/blog/2024/07/30/pact-open-source-update-july-2024#pact-go) an issue when leveraging the Pact-Plugin framework with Pact-Go.
 
-I'm pleased to say that the change in the pact-plugins repo, was [accepted and merged](https://github.com/pact-foundation/pact-plugins/pull/69), to change the loading mechanism for plugins, from Tokio tasks, to System threads.
+I'm pleased to say that the fix in the pact-plugins repo, was [accepted and merged](https://github.com/pact-foundation/pact-plugins/pull/69), to change the loading mechanism for plugins, from Tokio tasks, to System threads.
 
 #### Pact-Plugins - Slack
 
@@ -134,7 +134,7 @@ Are you talking about Pact or contract-testing this year at an event? Why not le
 
 Generative AI, has become a dining room table topic and you may be wondering how it may impact the world of contract testing.
 
-Both Matt and I take you through a 3-part journey, where we explore the importance of contract testing, the potential of generative ai, and how PactFlow have turned a concept into reality, harnessing the power of Generative AI, Pact best practise, and up to date knowledge of our consumer DSLs in order to allow you to unlock the value potential of contract testing sooner.
+Both Matt and I take you through a 3-part journey, where we explore the importance of contract testing, the potential of Generative AI, and how PactFlow have turned a concept into reality, harnessing the power of GenAI, Pact best practice, and up to date knowledge of our consumer DSL's in order to allow you to unlock the value potential of contract testing sooner.
 
 - [The Case for Contract Testing: Cutting Through API Integration Complexity](https://pactflow.io/blog/ai-automation-part-1/)
 - [Unpacking GenAI’s Role in Contract Testing](https://pactflow.io/blog/ai-automation-part-2/)
@@ -150,7 +150,7 @@ There is potential to couple both approaches, using API design documents as cent
 
 Maybe in the future, we will see Pact being API description aware, in order to verify the implementation adheres to the API description.
 
-However in the interim, one of the most requested comparsion features, was Pact vs AsyncAPI.
+However in the interim, one of the most requested comparison features, was Pact vs AsyncAPI.
 
 AsyncAPI, for those who are unaware, is an API description format that covers event-driven systems, which consume or send messages, with a particular content format. The messages themselves may be transmitted over any number of different protocols, described as bindings in the AsyncAPI.
 
@@ -158,9 +158,9 @@ Message Pact, allows for the contract testing of service messages, without being
 
 A recent introduction to the Pact ecosystem, exposed a plugin mechanism, which allows users to create their own custom content-type matcher & transport capabilities, which allows Pact users to consider content-types and transport capabilities not currently available in Pact, but leveraged in AsyncAPI based descriptions.
 
-In order to try and progress momementum in providing a way to users to leverage AsyncAPI in their Pact journeys, I have created [`pact-asyncapi-comparator`](https://github.com/YOU54F/pact-asyncapi-comparator).
+In order to try and progress momentum in providing a way to users to leverage AsyncAPI in their Pact journeys, I have created [`pact-asyncapi-comparator`](https://github.com/YOU54F/pact-asyncapi-comparator).
 
-It is currently not released to npm, so you will have to leverage the project locally.
+It is currently not released to npm, so you will have to clone and build the project locally.
 
 It will allow for the comparison of `application/json` message content, in a V3 or V4 specification Pact file, against a valid AsyncAPI 2.x/3.x document.
 
