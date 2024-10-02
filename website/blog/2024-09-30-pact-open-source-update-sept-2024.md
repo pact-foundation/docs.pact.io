@@ -13,6 +13,13 @@ hide_table_of_contents: false
 
 ## Pact OSS Updates
 
+### Pact RFCs
+
+We have two RFC's currently awaiting review, why not take a look and add your review in the spirit of collaboration and open-source. The proposers would really appreciate and value your input.
+
+1. [rfc: configuration and shared files](https://github.com/pact-foundation/roadmap/pull/98) proposed by [`@JP-Ellis`](https://github.com/JP-Ellis)
+2. [rfc: Define matching rules for form-urlencoded body](https://github.com/pact-foundation/roadmap/pull/99) by [`@tienvx`](https://github.com/tienvx)
+
 ### Pact-Plugins
 
 Back in March, [we mentioned](https://docs.pact.io/blog/2024/07/30/pact-open-source-update-july-2024#pact-go) an issue when leveraging the Pact-Plugin framework with Pact-Go.
@@ -59,7 +66,7 @@ Chat with us in: [#pact-go](https://pact-foundation.slack.com/archives/C9UTHTFFB
 
 Some examples using the Pact-Python V3 interface, have now been included in the repo, thanks to [Amit S](https://github.com/amit828as) in this [PR](https://github.com/pact-foundation/pact-python/pull/783).
 
-[Val Kolovos](https://github.com/valkolovos) is also working on a Matcher proof of concept [here](https://github.com/pact-foundation/pact-python/pull/761) in order to try and complete this open [issue](https://github.com/pact-foundation/pact-python/issues/746) to Implement a `Matcher` interface.
+[Val Kolovos](https://github.com/valkolovos) is also working on a Matcher proof of concept [here](https://github.com/pact-foundation/pact-python/pull/761) in order to try and complete this open [issue](https://github.com/pact-foundation/pact-python/issues/746) to Implement a `Matcher` interface, it has just been merged, but is awaiting the release of Python 3.14 (which has been delayed by a few days), before it will be released, however you can build the project locally to try out Val's changes today.
 
 #### Pact-Python - Slack
 
@@ -85,6 +92,37 @@ Chat to us in: [#pact-php](https://pact-foundation.slack.com/archives/C9W94PXPY)
 [@trammel](https://github.com/trammel) submitted a [PR](https://github.com/pact-foundation/pact-ruby/pull/322) to remove webrick from a dependency to a dev-dep over in pact-ruby, however it will need [pact_mock-service](https://github.com/pact-foundation/pact-mock_service) to be updated to use an alternative over webrick, and to be able to drop it as a runtime dependency completely. If anyone fancies attempting this, please let us know.
 
 Webrick suffered a round of CVE's recently, so the Pact ruby ecosystem has been updated (pact-ruby-cli, pact-ruby-standalone, pact-broker).
+
+#### Sbmt-Pact - Pact V3/V4 & Plugin Support
+
+The Kuper development team [recently announced](https://x.com/bibendi_one/status/1838174968657449068) an open-source ruby gem, called [`sbmt-pact`](https://github.com/Kuper-Tech/sbmt-pact), which builds on the [pact-ffi](https://github.com/YOU54F/pact-ruby-ffi) ruby wrapper gem I created.
+
+Yuri, a Senior developer at Cooper, has created a [comprehensive blog post](https://habr.com/ru/amp/publications/845964/) (note: written in Russian, so you may need to use your favourite translator) which covers lots of points
+
+>1. general principle of operation of contract tests;
+>2. about the problems we encountered when implementing contract testing and how we solved them;
+>3. how we developed our solution for contract testing of Ruby applications;
+>4. about setting up CI/CD to automate contract tests.
+
+I would wholly recommend reading the article especially as it also explains why `sbmt-pact` came to be
+
+> 1. the [official ruby ​​gem](https://github.com/pact-foundation/pact-ruby/blob/master/CHANGELOG.md) only supported V1/V2 specifications, which only allow testing of http interactions;
+> 1. the grpc/kafka interactions we need are supported in the V3/V4 specifications;
+> 1. a little earlier, in the process of evolution and support of V3/V4 specifications, pact-foundation decided to rework the architecture and switched to [shared rust-core](https://docs.pact.io/plugins/quick_start) , which assumes that test libraries for different stacks use FFI (foreign-function interface) as a single interface for interacting with the core in rust;
+> 1. the official ruby ​​gem remained in limbo for a long time and was not developed, in parallel [pact-ruby-ffi](https://github.com/YOU54F/pact-ruby-ffi/) was created , providing a low-level interface to pact-core;
+> 1. and only recently plans have emerged to develop an official ruby ​​gem and support V3/V4 - see [Pact V3 Tracking Issue](https://github.com/pact-foundation/pact-ruby/issues/318) and [Pact V4 Tracking Issue](https://github.com/pact-foundation/pact-ruby/issues/319) .
+
+I particularly like these two quotes from the summary
+
+> Pact turned out to be not just a framework, but an entire ecosystem ready for any challenges of modern microservice architecture. With support for various languages ​​and protocols, it becomes an indispensable ally in the fight for code quality.
+
+and
+
+>Ruby developers are especially pleased: even when official support lags behind, the community will always find a way out. Our experience with sbmt-pact is a vivid confirmation of this. This once again proves that there are no unsolvable problems in the open-source world.
+
+I totally agree with you Yuri. 🙌
+
+Why not try out [`sbmt-pact`](https://github.com/Kuper-Tech/sbmt-pact), and give the authors some feedback?
 
 #### Pact-Ruby - Slack
 
@@ -160,7 +198,9 @@ A recent introduction to the Pact ecosystem, exposed a plugin mechanism, which a
 
 In order to try and progress momentum in providing a way to users to leverage AsyncAPI in their Pact journeys, I have created [`pact-asyncapi-comparator`](https://github.com/YOU54F/pact-asyncapi-comparator).
 
-It is currently not released to npm, so you will have to clone and build the project locally.
+```
+npx pact-asyncapi-comparator <Pact File Location> <AsyncAPI File Location>
+```
 
 It will allow for the comparison of `application/json` message content, in a V3 or V4 specification Pact file, against a valid AsyncAPI 2.x/3.x document.
 
