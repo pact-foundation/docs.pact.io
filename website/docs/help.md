@@ -12,7 +12,9 @@ Learn more using the [documentation on this site.](implementation_guides/cli)
 
 Please read the [how to ask for help](/help/how_to_ask_for_help) page first, and chat with us in Slack ([signup](https://slack.pact.io)|[login](https://pact-foundation.slack.com)).
 
-We're on a free plan, so we don't have unlimited history, however, you may be able to find the answer to your question in our archive at https://docs.pact.io/slack.
+We're on a free plan, so we don't have unlimited history, however, you may be able to find the answer to your question in our searchable archive of our Slack channels on [linen.dev/s/pact-foundation](https://linen.dev/s/pact-foundation).
+
+Questions have also been asked over on StackOverflow, under the [`pact`](https://stackoverflow.com/questions/tagged/pact) tag. This is a great place to ask more general usage questions for pact, and discover existing answers.
 
 ## Join a live Getting Started event
 
