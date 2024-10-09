@@ -14,7 +14,7 @@ If you're trying to learn how to use Pact, check out our [Getting started](/) se
 
 ## 2. Search on Slack.
 
-We're on a free plan, so we don't have unlimited history, however, you may be able to find the answer to your question in our archive at https://docs.pact.io/slack.
+We're on a free plan, so we don't have unlimited history, however, you may be able to find the answer to your question in our searchable archive of our Slack channels on [linen.dev/s/pact-foundation](https://linen.dev/s/pact-foundation).
 
 ## 3. Find the appropriate Slack channel for your question
 
