@@ -1,8 +1,8 @@
 ---
 title: Releasing Pact-JVM
-custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/docs/ReleaseProcess.md
+custom_edit_url: https://github.com/pact-foundation/pact-jvm/edit/master/docs/ReleaseProcess.md
 ---
-<!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+<!-- This file has been synced from the pact-foundation/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 The Pact-JVM project releases three types of artifacts: Java JAR files to Maven Central, a Gradle plugin to plugins.gradle.org
 and Pact files to pact-foundation.pact.dius.com.au.
@@ -233,12 +233,12 @@ Log onto [oss.sonatype.org](https://oss.sonatype.org) and select `Staging Reposi
 You should see a new staging repository for `au.com.dius` listed. Select the repository and select the Close button. 
 This will close the repository and run all the Maven Central rules.
 
-![close-repo.png](https://github.com/DiUS/pact-jvm/blob/master/close-repo.png?raw=true)
+![close-repo.png](https://github.com/pact-foundation/pact-jvm/blob/master/close-repo.png?raw=true)
 
 Once the repository is successfully closed (it takes a few minutes, select the refresh button to re-load ands wait for the
 status to change to `closed`), select the repository again and then select the Release button.
 
-![release-repo](https://github.com/DiUS/pact-jvm/blob/master/release-repo.png?raw=true)
+![release-repo](https://github.com/pact-foundation/pact-jvm/blob/master/release-repo.png?raw=true)
 
 ## 5. Create a Github release
 
