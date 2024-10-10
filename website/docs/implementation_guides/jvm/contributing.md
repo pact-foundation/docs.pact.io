@@ -1,8 +1,8 @@
 ---
 title: Contributing
-custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/CONTRIBUTING.md
+custom_edit_url: https://github.com/pact-foundation/pact-jvm/edit/master/CONTRIBUTING.md
 ---
-<!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+<!-- This file has been synced from the pact-foundation/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
