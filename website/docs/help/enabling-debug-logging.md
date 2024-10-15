@@ -41,7 +41,18 @@ TBC
 
 ## Pact PHP
 
-TBC
+**10.x.x**
+
+You can call `$config->setLogLevel($logLevel);` to the top of your test.
+
+Available values for `$logLevel` are:
+
+* `TRACE`
+* `DEBUG`
+* `INFO`
+* `WARN`
+* `ERROR`
+* `OFF` or `NONE`
 
 ## Pact Scala
 
