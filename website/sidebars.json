@@ -30,7 +30,6 @@
             "implementation_guides/jvm/consumer/junit",
             "implementation_guides/jvm/consumer/junit5",
             "implementation_guides/jvm/consumer",
-            "implementation_guides/jvm/consumer/specs2",
             "implementation_guides/jvm/consumer/groovy"
           ]
         },
@@ -45,16 +44,82 @@
             "implementation_guides/jvm/provider/gradle",
             "implementation_guides/jvm/provider/junit5",
             "implementation_guides/jvm/provider",
-            "implementation_guides/jvm/provider/sbt",
             "implementation_guides/jvm/provider/lein",
-            "implementation_guides/jvm/provider/spring",
-            "implementation_guides/jvm/provider/scalatest",
-            "implementation_guides/jvm/provider/specs2"
+            "implementation_guides/jvm/provider/spring"
           ]
         },
         "implementation_guides/jvm/pact-jvm-server",
         "implementation_guides/jvm/changelog",
-        "implementation_guides/jvm/docs/system-properties"
+        "implementation_guides/jvm/docs/system-properties",
+        {
+          "type": "category",
+          "label": "V4.5.x",
+          "items": [
+            "implementation_guides/jvm/v4.5.x/readme",
+            {
+              "type": "category",
+              "label": "Consumer",
+              "items": [
+                "implementation_guides/jvm/v4.5.x/consumer/junit",
+                "implementation_guides/jvm/v4.5.x/consumer/junit5",
+                "implementation_guides/jvm/v4.5.x/consumer",
+                "implementation_guides/jvm/v4.5.x/consumer/groovy"
+              ]
+            },
+            {
+              "type": "category",
+              "label": "Provider",
+              "items": [
+                "implementation_guides/jvm/v4.5.x/provider/spring6",
+                "implementation_guides/jvm/v4.5.x/provider/junit5spring",
+                "implementation_guides/jvm/v4.5.x/provider/junit",
+                "implementation_guides/jvm/v4.5.x/provider/maven",
+                "implementation_guides/jvm/v4.5.x/provider/gradle",
+                "implementation_guides/jvm/v4.5.x/provider/junit5",
+                "implementation_guides/jvm/v4.5.x/provider",
+                "implementation_guides/jvm/v4.5.x/provider/lein",
+                "implementation_guides/jvm/v4.5.x/provider/spring"
+              ]
+            },
+            "implementation_guides/jvm/v4.5.x/pact-jvm-server",
+            "implementation_guides/jvm/v4.5.x/changelog",
+            "implementation_guides/jvm/v4.5.x/docs/system-properties"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "v4.1.x",
+          "items": [
+            "implementation_guides/jvm/v4.1.x/readme",
+            {
+              "type": "category",
+              "label": "Consumer",
+              "items": [
+                "implementation_guides/jvm/v4.1.x/consumer/junit",
+                "implementation_guides/jvm/v4.1.x/consumer/junit5",
+                "implementation_guides/jvm/v4.1.x/consumer",
+                "implementation_guides/jvm/v4.1.x/consumer/groovy"
+              ]
+            },
+            {
+              "type": "category",
+              "label": "Provider",
+              "items": [
+                "implementation_guides/jvm/v4.1.x/provider/junit5spring",
+                "implementation_guides/jvm/v4.1.x/provider/junit",
+                "implementation_guides/jvm/v4.1.x/provider/maven",
+                "implementation_guides/jvm/v4.1.x/provider/gradle",
+                "implementation_guides/jvm/v4.1.x/provider/junit5",
+                "implementation_guides/jvm/v4.1.x/provider",
+                "implementation_guides/jvm/v4.1.x/provider/lein",
+                "implementation_guides/jvm/v4.1.x/provider/spring"
+              ]
+            },
+            "implementation_guides/jvm/v4.1.x/pact-jvm-server",
+            "implementation_guides/jvm/v4.1.x/changelog",
+            "implementation_guides/jvm/v4.1.x/docs/system-properties"
+          ]
+        }
       ]
     },
     {
