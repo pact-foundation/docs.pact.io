@@ -41,11 +41,11 @@ TBC
 
 ## Pact PHP
 
-**9.x.x**
-
-You can either set the `PACT_LOGLEVEL` environment variable or call `$config->setLogLevel($logLevel);` to the top of your test.
+You can either set the `PACT_LOGLEVEL` environment variable (if using `MockServerEnvConfig`) or add `$config->setLogLevel($logLevel);` to the top of your test.
 
 Available values for `$logLevel` are:
+
+**9.x.x**
 
 * `DEBUG`
 * `INFO`
@@ -53,10 +53,6 @@ Available values for `$logLevel` are:
 * `ERROR`
 
 **10.x.x**
-
-You can call `$config->setLogLevel($logLevel);` to the top of your test.
-
-Available values for `$logLevel` are:
 
 * `TRACE`
 * `DEBUG`
