@@ -41,6 +41,17 @@ TBC
 
 ## Pact PHP
 
+**9.x.x**
+
+You can either set the `PACT_LOGLEVEL` environment variable or call `$config->setLogLevel($logLevel);` to the top of your test.
+
+Available values for `$logLevel` are:
+
+* `DEBUG`
+* `INFO`
+* `WARN`
+* `ERROR`
+
 **10.x.x**
 
 You can call `$config->setLogLevel($logLevel);` to the top of your test.
