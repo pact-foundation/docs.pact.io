@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker-client/edit/mast
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker-client repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v1.76.2"></a>
+### v1.76.2 (2024-10-13)
+
+#### Bug Fixes
+
+* Add dependency of ostruct to gem, to fix warning ostruct was loaded	 ([eb61c27](https://github.com/pact-foundation/pact_broker-client/commit/eb61c27))
+* Dockerfile to reduce vulnerabilities (#172)	 ([79482c2](https://github.com/pact-foundation/pact_broker-client/commit/79482c2))
+
 <a name="v1.76.1"></a>
 ### v1.76.1 (2024-08-21)
 
