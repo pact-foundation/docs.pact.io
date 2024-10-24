@@ -1,8 +1,8 @@
 ---
 title: pact-jvm-consumer-specs2
-custom_edit_url: https://github.com/DiUS/pact-jvm/edit/master/consumer/specs2/README.md
+custom_edit_url: https://github.com/pact-foundation/pact-jvm/edit/v4.1.x/consumer/specs2/README.md
 ---
-<!-- This file has been synced from the DiUS/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+<!-- This file has been synced from the pact-foundation/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 ## Specs2 Bindings for the pact-jvm library
 
@@ -62,3 +62,9 @@ This spec will be run along with the rest of your specs2 unit tests and will out
 
 By default, when the pact file is written, it will be merged with any existing pact file. To force the file to be 
 overwritten, set the Java system property `pact.writer.overwrite` to `true`.
+
+# Test Analytics
+
+We are tracking anonymous analytics to gather important usage statistics like JVM version
+and operating system. To disable tracking, set the 'pact_do_not_track' system property or environment
+variable to 'true'.
