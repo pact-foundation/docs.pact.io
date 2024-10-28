@@ -60,7 +60,10 @@
     {
       "Pact Net": [
         "implementation_guides/net",
-        "implementation_guides/net/readme"
+        "implementation_guides/net/readme",
+        "implementation_guides/net/docs/messaging-pacts",
+        "implementation_guides/net/docs/upgrading-to-4",
+        "implementation_guides/net/docs/upgrading-to-5"
       ]
     },
     {
