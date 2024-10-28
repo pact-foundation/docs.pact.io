@@ -154,7 +154,7 @@ V5 of pact-net is considered to be pretty stable, and is being used in a few pro
 
 #### Pact-Net - Slack
 
-Chat to us in: [#pact-broker](https://pact-foundation.slack.com/archives/C9UTHV2AD).
+Chat to us in: [#pact-net](https://pact-foundation.slack.com/archives/C9UTHV2AD).
 
 ## Community Events
 
