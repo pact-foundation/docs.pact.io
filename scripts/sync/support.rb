@@ -83,6 +83,18 @@ class MarkdownFileContents
     @lines = lines.collect{ |line| line.gsub(find, replace) }
   end
 
+  def find_and_replace_underlined_headings
+    @lines.each_with_index do |line, index|
+      if line.strip.start_with?('====')
+        @lines[index - 1] = "# #{@lines[index - 1].strip}"
+        @lines.delete_at(index)
+      elsif line.strip.start_with?('------')
+        @lines[index - 1] = "## #{@lines[index - 1].strip}"
+        @lines.delete_at(index)
+      end
+    end
+  end
+
   def remove_lines_including(substring)
     @lines = lines.select{ |line| !line.include?(substring) }
   end

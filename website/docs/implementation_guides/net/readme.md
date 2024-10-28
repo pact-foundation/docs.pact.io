@@ -52,8 +52,8 @@ Watch our [series](https://www.youtube.com/playlist?list=PLwy9Bnco-IpfZ72VQ7hce8
 
 ### Upgrade Guides
 
-- [Upgrade guide for 3.x or lower to 4.x](https://github.com/pact-foundation/pact-net/blob/master/docs/upgrading-to-4.md)
-- [Upgrade guide for 4.x to 5.x](https://github.com/pact-foundation/pact-net/blob/master/docs/upgrading-to-5.md)
+- [Upgrade guide for 3.x or lower to 4.x](/implementation_guides/net/docs/upgrading-to-4)
+- [Upgrade guide for 4.x to 5.x](/implementation_guides/net/docs/upgrading-to-5)
 
 ### Older Versions
 
@@ -228,7 +228,7 @@ method shown in the sample above, so that they can be called from non-.Net code.
 
 ### Messaging Pacts
 
-For writing messaging pacts instead of requests/response pacts, see the [messaging pacts guide](https://github.com/pact-foundation/pact-net/blob/master/docs/messaging-pacts.md).
+For writing messaging pacts instead of requests/response pacts, see the [messaging pacts guide](/implementation_guides/net/docs/messaging-pacts).
 
 ![----------](https://raw.githubusercontent.com/pactumjs/pactum/master/assets/rainbow.png)
 
