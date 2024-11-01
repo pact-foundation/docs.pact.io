@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/pact-foundation/pact-jvm/edit/master/CHANGEL
 ---
 <!-- This file has been synced from the pact-foundation/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.6.15 - Maintenance Release
+
+* 93fe19637 - fix: Log the error response bodies from the Pact Broker #1830 (Ronald Holshausen, Thu Oct 24 11:41:59 2024 +1100)
+* 3b2519972 - fix(mock-server): Setting content length == 0 causes the HTTP exchange to use chunked encoding #1828 (Ronald Holshausen, Wed Oct 23 16:00:35 2024 +1100)
+* ec066a031 - fix: Trim regex anchors before generating random strings from the regex #1826 (Ronald Holshausen, Wed Oct 23 14:27:53 2024 +1100)
+* 62f40d5da - Document usage of pactbroker.providerBranch with the matching branch selector (Tim Vahlbrock, Mon Oct 7 09:30:56 2024 +0200)
+* 5e9ac00ec - fix: faiing test after merging PR (Ronald Holshausen, Thu Aug 29 09:38:17 2024 +1000)
+* 67d957660 - Make plugindriver version consistent (Ruth Bassindale, Wed Aug 28 09:49:35 2024 +0200)
+
 ## 4.6.14 - Bugfix Release
 
 * 4cf45a1a0 - fix: Allow the Pact publish task to set insecure TLS flag #1817 (Ronald Holshausen, Tue Aug 27 16:22:48 2024 +1000)
