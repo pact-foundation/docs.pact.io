@@ -190,7 +190,8 @@ The `publish` is the bit ("Adapter") that knows how to talk to AWS SNS, the `upd
 
 #### Further Reading
 
-Take a look at an [example consumer project](https://docs.pactflow.io/docs/examples/aws/sns/consumer) and its [example provider project](https://docs.pactflow.io/docs/examples/aws/sns/provider) to see this in action.
+- Take a look at an [example consumer project](https://docs.pactflow.io/docs/examples/aws/sns/consumer) and its [example provider project](https://docs.pactflow.io/docs/examples/aws/sns/provider) to see this in action.
+- Try out the [Pact Introduction to Async Messages workshop](http://localhost:3000/university/message-pact-async/00_1_Intro) to see this in action with a Kafka example.
 
 ## Next steps
 

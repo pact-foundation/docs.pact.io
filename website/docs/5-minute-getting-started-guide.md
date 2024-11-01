@@ -4,6 +4,10 @@ title: 5 minute guide
 description: From zero to running Pact tests in 5 mins
 ---
 
+:::info
+- Looking to get started with Pact for Message based systems? Check out our [Pact Introduction to Async Messages workshop](/university/message-pact-async/00_1_Intro)
+:::
+
 
 This getting started guide can be run purely in the browser or on your local machine, with the intention to get you across the key concepts quickly. As we go through, there will be code snippets to demonstrate concepts. These are not runnable, but are there to assist with explanation. When there is code to run, you will be presented with a REPL as per below. Simply hit the green ▶ button, and the output will be displayed in the terminal below. Give it a shot now:
 
@@ -37,6 +41,7 @@ This getting started guide can be run purely in the browser or on your local mac
 <a href="https://replit.com/@pact/pact-5-minute-getting-started-guide?outputonly=1&lite=true">
   <img src="https://img.shields.io/badge/run%20in-browser-blue?logo=react"/>
 </a>
+
 
 ## An example scenario: Order API
 
