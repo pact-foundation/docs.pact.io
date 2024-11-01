@@ -507,6 +507,21 @@
         },
         {
           "type": "category",
+          "label": "Introduction to Message Pact - Async",
+          "items": [
+            "university/message-pact-async/00_1_Intro",
+            "university/message-pact-async/00_2_Outline",
+            "university/message-pact-async/00_3_LearningObjectives",
+            "university/message-pact-async/00_4_Requirements",
+            "university/message-pact-async/00_5_Scenario",
+            "university/message-pact-async/Step1",
+            "university/message-pact-async/Step2",
+            "university/message-pact-async/Step3",
+            "university/message-pact-async/Step4"
+          ]
+        },
+        {
+          "type": "category",
           "label": "Pact Plugins",
           "items": [
             {
