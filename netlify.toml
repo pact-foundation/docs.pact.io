@@ -105,8 +105,8 @@
   status = 301
 
 [[redirects]]
-  from = "/implementation_guides/js"
-  to = "/implementation_guides/js/readme"
+  from = "/implementation_guides/javascript"
+  to = "/implementation_guides/javascript/readme"
   status = 301
 
 # moved path
