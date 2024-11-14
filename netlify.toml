@@ -56,7 +56,7 @@
 
 [[redirects]]
   from = "/implementation_guides"
-  to = "/implementation_guides/cli"
+  to = "/implementation_guides/overview"
   status = 302
 
 [[redirects]]
@@ -102,6 +102,11 @@
 [[redirects]]
   from = "/implementation_guides/jvm/provider_menu"
   to = "/implementation_guides/jvm/provider/junit5spring"
+  status = 301
+
+[[redirects]]
+  from = "/implementation_guides/js"
+  to = "/implementation_guides/js/readme"
   status = 301
 
 # moved path
