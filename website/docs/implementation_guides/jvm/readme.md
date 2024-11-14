@@ -128,7 +128,7 @@ You want to look at: [groovy](/implementation_guides/jvm/consumer/groovy) or [ju
 ### (Use Clojure I)
 
 Clojure can call out to Java, so have a look at [junit](/implementation_guides/jvm/consumer/junit). For an example
-look at [example_clojure_consumer_pact_test.clj](https://github.com/pact-foundation/pact-jvm/blob/master/consumer/junit/src/test/clojure/au/com/pact-foundation/pact/consumer/junit/example_clojure_consumer_pact_test.clj).
+look at [example_clojure_consumer_pact_test.clj](https://github.com/pact-foundation/pact-jvm/blob/master/consumer/junit/src/test/clojure/au/com/dius/pact/consumer/junit/example_clojure_consumer_pact_test.clj).
 
 ### I Use some other jvm language or test framework
 
