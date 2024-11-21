@@ -25,7 +25,13 @@ If you want to run your Pact tests in Docker, please note the following guidance
 **Applicable languages**: Pact JS, Pact .NET, Pact Go, Pact-PHP, Pact C++ and Pact Swift
 :::
 
-Pact currently requires glibc `>= 2.23`. Most modern debian-based images will ship with a compatible version.
+Pact currently supports both glibc (debian based) & musl (alpine) distributions.
+
+If you are running Alpine or a musl libc based distrubution, see the [next section](#alpine-linux).
+
+If you are running Debian-based or a glibc based distrubution, please read on.
+
+Pact requires glibc `>= 2.23`. Most modern debian-based images will ship with a compatible version.
 
 You can check the version of glibc installed via the `ldd` command:
 
@@ -91,7 +97,6 @@ COPY . /app/
 RUN npm test
 ```
 
-
 ### Alpine Linux
 
 Many teams choose to run builds on Alpine Linux due to its tiny footprint, and smaller security surface area. 
@@ -103,6 +108,7 @@ Many teams choose to run builds on Alpine Linux due to its tiny footprint, and s
 
 - Executable builds are static, and therefore the single binary works across musl or glibc based distros (excluding ffi)
 - pact_ffi library comes in both static `*.a` & shared `*.so` variants for musl, depending on the consuming client libraries requirements for ffi interop
+  - If you are consuming this in a client DSL, check the readme's compatability chart to see if it using a musl supported version of pact_ffi. If not, drop in a PR. 
 
 Support is available in the following tools for Alpine from specific versions.
 
