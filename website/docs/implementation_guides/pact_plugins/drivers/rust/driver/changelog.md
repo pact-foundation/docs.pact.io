@@ -11,6 +11,12 @@ https://github.com/pact-foundation/pact-plugins/tree/main/drivers
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
 
 
+* 5501f24 - chore: update repository.index (Ronald Holshausen, Fri Nov 29 15:19:54 2024 +1100)
+* e06d8b3 - fix: When message contents is empty, body is created as Present instead of Empty (Ronald Holshausen, Fri Nov 29 15:00:52 2024 +1100)
+* 294f567 - bump version to 0.7.2 (Ronald Holshausen, Tue Sep 3 15:40:42 2024 +1000)
+
+# 0.7.1 - Bugfix Release
+
 * d7871df - chore: update repository.index (Ronald Holshausen, Tue Sep 3 15:39:21 2024 +1000)
 * 9c2a76d - chore: Cleanup compiler warning (Ronald Holshausen, Tue Sep 3 15:20:18 2024 +1000)
 * b5308af - chore: Cleanup compiler warning (Ronald Holshausen, Tue Sep 3 15:00:36 2024 +1000)
