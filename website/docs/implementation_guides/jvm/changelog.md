@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact-jvm/edit/master/CHANGEL
 ---
 <!-- This file has been synced from the pact-foundation/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.6.16 - Maintenance Release
+
+* 2d2016317 - fix: Dependency conflict with org.slf4j:slf4j-api was causing Spring tests to fail (Ronald Holshausen, Wed Dec 4 14:21:15 2024 +1100)
+* 38c0d27b8 - feat: Update LambdaDsl.newJsonArray to allow setting the number of examples (Ronald Holshausen, Wed Dec 4 10:59:23 2024 +1100)
+* 147a2a661 - fix:  LambdaDslJsonArray has no datetime function #1839 (Ronald Holshausen, Wed Dec 4 10:23:10 2024 +1100)
+* e95461a6a - Fix path to Clojure example (Christoph Burgmer, Thu Nov 14 14:21:10 2024 +0100)
+
 ## 4.6.15 - Maintenance Release
 
 * 93fe19637 - fix: Log the error response bodies from the Pact Broker #1830 (Ronald Holshausen, Thu Oct 24 11:41:59 2024 +1100)
