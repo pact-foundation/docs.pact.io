@@ -15,17 +15,17 @@ Grab your hoverboard, and get prepared for another trip back to the future, with
 
 ![image](https://user-images.githubusercontent.com/19932401/207968429-dad9294a-2221-41cb-b387-6acd7c0bba4f.png)
 
-This year we've seen the migration to the Pact Rust core, featuring V4 spec good including combined interactions and plugins, begin to take fruition in most of the major client libraries, and consistencies across of tooling, documentation and examples. We know there is much more to do, as always, and we've been pleased to see an increasing amount of contributions, across a wide array of repositories in the pact-foundation. We've seen an RFC process created, to help democratise large scale decisions which affect the Pact eco-system, and I would invite you all to get involved in some way, shape or form.
+This year we've seen the migration to the Pact Rust core, featuring V4 spec good including combined interactions and plugins, begin to take fruition in most of the major client libraries, and improvements and consistencies across of tooling, documentation and examples. We know there is much more to do, as always, and we've been pleased to see an increasing amount of contributions, across a wide array of repositories in the pact-foundation. We've seen an RFC process created, to help democratise large scale decisions which affect the Pact eco-system, and I would invite you all to get involved in some way, shape or form.
 
 If you haven't read our monthly blog posts, you can read a round-up of the most significant changes from each month in there. Check out the side-bar to the left to view the older posts.
 
 I've mainly focused on community heroes this time round, where you can find multiple advocates of Pact, spreading the word of not just how to do contract testing, but the why. You'll hear about the worlds first dedicated book to contract-testing. I hope you'll enjoy them, be sure to like and comment on the videos, whether it's to show your appreciation or you just fancy a debate.
 
-I'll also pull out a stand-out change from each month either by the team or one of our many contributors..
+I'll also pull out a stand-out change from each month either by the team or one of our many contributors.
 
 Anyhow, let see what each month has in store for us.
 
-### January
+### Jan
 
 🧑‍💻 [Tien Vo](https://github.com/tienvx) started by year by continuing and productionising the migration of Pact-PHP over to the Rust core. We saw the first community created [pact_compatibility_suite examples](https://docs.pact.io/blog/2024/02/19/pact-open-source-update-feb-2024#php) land this month, and Tien has worked diligently all year, in implementing not only new features to Pact-PHP, but contributions to the Pact ecosystem as a whole, from an [RFC](https://github.com/pact-foundation/roadmap/pull/99) for `form-urlencoded` matching ability, to several changes in the Pact-Rust core and Pact-Plugin ecosystem. It has seen great feedback from users, including Steve Taylor.
 
@@ -45,7 +45,7 @@ Well done Tien! Your hard work has paid off and is very much appreciated by the 
   - Pact-Net v5 Beta was [released](https://docs.pact.io/blog/2024/02/19/pact-open-source-update-feb-2024#net) for V4 Pact compat support and mixed interactions
   - [Pact-JS v12.2.0 GA'd](https://docs.pact.io/blog/2024/02/19/pact-open-source-update-feb-2024#node-js) the PactV4 interface for plugin support
   - Pact-Python's v3 interface was progressing with another implementation of the [pact_compatibility_suite](https://docs.pact.io/blog/2024/02/19/pact-open-source-update-feb-2024#python).
-- 🧑‍💻 A plan was set out to provide better platform support for Linux, in terms of distro compatability, musl and arm64.
+- 🧑‍💻 A plan was set out to provide better platform support for Linux, in terms of distro compatibility, musl and arm64.
   - [Yo dawg, I heard you like Alpine](https://docs.pact.io/blog/2024/02/19/pact-open-source-update-feb-2024#yo-dawg-i-heard-you-like-alpine)
   - [You and whose ARMy?](https://docs.pact.io/blog/2024/02/19/pact-open-source-update-feb-2024#who-and-whose-army)
 
@@ -71,9 +71,9 @@ We've often wondered when a book dedicated to contract testing would appear on t
 
 > We're not aware of any books currently dedicated to contract testing, but here are some that talk about Pact and contract testing as part of a broader microservices development and testing strategy
 
-However good news everybody 🎺 the first one was launched back in April.
+However good news everybody 🎺 the first one was announced back in April.
 
-![contract testing in action](https://mng.bz/gv8l)
+![contract testing in action](http://localhost:3000/assets/images/cover_contract_testing_in_action_small-4884770267dd86a21c15ce58db4af0ba.png)
 
 Community hero(es) of the month: Marie Cruz and Lewis Prescott, for being awesome but also releasing Contract Testing in Action 📕 under the MEAP (Manning Early Access Program), the first book dedicated to contract testing.
 
@@ -93,7 +93,7 @@ Community hero of the month: [Mark Bradley](https://mark-bradley.net/about/) who
 
 ### July
 
-- 🧑‍💻 As you may be aware, there are multiple places where one can get help or request changes to the Pact ecosystem, either across the whole ecosystem, or for an individual repositories. Canny, our public roadmap, GitHub project boards on individual repositories, Slack to name a few.
+As you may be aware, there are multiple places where one can get help or request changes to the Pact ecosystem, either across the whole ecosystem, or for an individual repositories. Canny, our public roadmap, GitHub project boards on individual repositories, Slack to name a few.
 
 Some of Pact's maintainers also work together, and as such conversations, discussions and agreements can be made but not consistently communicated, leaving users, for example who don't frequent Slack, or one of our maintainer sessions, to feel excluded from conversations.
 
@@ -101,11 +101,11 @@ As such we decided to deprecate our Canny roadmap and have migrated the issues t
 
 To try and counter some of the concerns around the decision-making process, we felt a RFC (Request for comments) process would be beneficial to allow for a record of proposed changes and decisions, and provide a central place to users, contributors and maintainers to go.
 
-You can read about the accepted process [here](https://github.com/pact-foundation/roadmap/blob/master/rfc/0000-rfc-process.md)
+- You can read about the accepted process [here](https://github.com/pact-foundation/roadmap/blob/master/rfc/0000-rfc-process.md)
 
-You can get involved via GitHub, but we also catch once every two weeks.
+You can get involved via GitHub, but we also catch once every two weeks in our Maintainer meets.
 
-10am-10:45am UTC (11am GMT / 8pm AEST)
+- 10am-10:45am UTC (11am GMT / 8pm AEST)
 
 You can download a calender invite from our [repo](https://github.com/pact-foundation/roadmap?tab=readme-ov-file#-maintainer-sessions)
 
@@ -161,10 +161,8 @@ Community hero of the month: [Augusto Colombelli](https://github.com/augustocolo
 ### Sept
 
 - 🧑‍💻 We saw our first two RFC's raised. Sweet!
-
-1. [rfc: configuration and shared files](https://github.com/pact-foundation/roadmap/pull/98) proposed by [`@JP-Ellis`](https://github.com/JP-Ellis)
-2. [rfc: Define matching rules for form-urlencoded body](https://github.com/pact-foundation/roadmap/pull/99) by [`@tienvx`](https://github.com/tienvx)
-
+  - [rfc: configuration and shared files](https://github.com/pact-foundation/roadmap/pull/98) proposed by [`@JP-Ellis`](https://github.com/JP-Ellis)
+  - [rfc: Define matching rules for form-urlencoded body](https://github.com/pact-foundation/roadmap/pull/99) by [`@tienvx`](https://github.com/tienvx)
 - 🧑‍💻 Ruby was not to be left out from the Pact Rust core, goodness. my pact-ffi ruby wrapper gem saw its first real world user. Read about it in more detail [here](https://docs.pact.io/blog/2024/09/30/pact-open-source-update-sept-2024#sbmt-pact---pact-v3v4--plugin-support)
 
 Community hero of the month: [Murat K Ozcan](https://github.com/muratkeremozcan) has recently been taking an adventure in the world of Pact, after picking up Marie & Lewis' Contract testing in Action book. He has written 3 posts which are well worth a [read](https://docs.pact.io/blog/2024/09/30/pact-open-source-update-sept-2024#murat-k-ozcan---a-triple-whammy-of-contract-testing-posts).
@@ -188,10 +186,9 @@ Community hero of the month: [Lewis Prescott](https://www.pactman.co.uk/) for ta
 ### Nov
 
 - 🧑‍💻 We've saw a few improvements in the pact-ruby project
-
-1. V3 & V4 Generators thanks to [Steve Taylor](www.github.com/slt)
-2. Pact-provider-verifier now works with Rack 3, after we decided to fork rack-reverse-proxy in order to provide backwards compat with Rack 2 but allow for forwards compat with Rack 3+
-3. Tweaks to Pact contract generation and verification, after ruby json 2.8.0 changes the way that JSON.pretty_generate renders empty collections such as arrays or objects. This allowed us to ensure that contracts generated with pre and post json 2.8.x behave in the same way.
+  - V3 & V4 Generators thanks to [Steve Taylor](www.github.com/slt)
+  - Pact-provider-verifier now works with Rack 3, after we decided to fork rack-reverse-proxy in order to provide backwards compat with Rack 2 but allow for forwards compat with Rack 3+
+  - Tweaks to Pact contract generation and verification, after ruby json 2.8.0 changes the way that JSON.pretty_generate renders empty collections such as arrays or objects. This allowed us to ensure that contracts generated with pre and post json 2.8.x behave in the same way.
 
 I mentioned back in August, about the `sbmt-pact` project, which afforded users the ability to leverage the Pact V3 & V4 specification in Ruby.
 
