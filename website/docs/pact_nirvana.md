@@ -17,7 +17,7 @@ For a complete hands-on workshop implementing the steps in this guide with GitHu
 
 ### How to use this document
 
-Each integration is different. Each organisation has different history and culture, and each team   y have different processes for development, testing, and deployment. Each of these differences affect the best choices for Pact workflow.
+Each integration is different. Each organisation has different history and culture, and each team may have different processes for development, testing, and deployment. Each of these differences affect the best choices for Pact workflow.
 
 However, there are many similarities in the steps necessary on the journey to a full-featured and effective Pact setup \(_"Pact Nirvana"_\). This document describes those steps.
 
