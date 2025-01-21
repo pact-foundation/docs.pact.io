@@ -7,6 +7,18 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v2.0.10 (21 Jan 2025)
+  * [393ca79](https://github.com/pact-foundation/pact-go/commit/393ca79) - fix: update pact-ffi to v0.4.26 (Yousaf Nabi, Tue Jan 21 11:15:00 2025 +0000)
+
+### v2.0.9 (21 Jan 2025)
+  * [a82eff8](https://github.com/pact-foundation/pact-go/commit/a82eff8) - fix: ensure sync messages write metadata to both req & res (Yousaf Nabi, Fri Oct 25 17:28:23 2024 +0100)
+
+### v2.0.8 (04 Sept 2024)
+  * [2d6b6b1](https://github.com/pact-foundation/pact-go/commit/2d6b6b1) - fix: bump libpact_ffi to 0.4.23 (Yousaf Nabi, Wed Sep 4 14:12:24 2024 +0100)
+
+### v2.0.7 (31 July 2024)
+  * [f21750c](https://github.com/pact-foundation/pact-go/commit/f21750c) - fix: update pact-ffi to 0.4.22 (Yousaf Nabi, Thu Jul 18 18:32:45 2024 +0100)
+
 ### v2.0.6 (15 July 2024)
   * [4d46c69](https://github.com/pact-foundation/pact-go/commit/4d46c69) - Merge pull request #445 from lbcjbb/fix-crash (Matt Fellows, Mon Jul 15 10:08:43 2024 +1000)
   * [778a111](https://github.com/pact-foundation/pact-go/commit/778a111) - Merge pull request #431 from yoelb/patch-1 (Matt Fellows, Mon Jul 15 09:34:57 2024 +1000)
