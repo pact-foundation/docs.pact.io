@@ -7,6 +7,8 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v2.1.0 (21 Jan 2025)
+
 ### v2.0.10 (21 Jan 2025)
   * [393ca79](https://github.com/pact-foundation/pact-go/commit/393ca79) - fix: update pact-ffi to v0.4.26 (Yousaf Nabi, Tue Jan 21 11:15:00 2025 +0000)
 
