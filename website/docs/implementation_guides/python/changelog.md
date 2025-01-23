@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-python/edit/main/CHANGE
 ---
 <!-- This file has been synced from the pact-foundation/pact-python repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## v2.3.1 (2025-01-23)
+
+### Fix
+
+-   **v3**: defer setting pact broker source
+
 ## v2.3.0 (2024-12-31)
 
 ### BREAKING CHANGE
