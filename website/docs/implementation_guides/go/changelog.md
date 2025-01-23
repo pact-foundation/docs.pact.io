@@ -7,6 +7,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v2.2.0 (23 Jan 2025)
+  * [5b9bf9c](https://github.com/pact-foundation/pact-go/commit/5b9bf9c) - feat: support linux musl (Yousaf Nabi, Thu Sep 5 22:28:31 2024 +0100)
+
 ### v2.1.0 (21 Jan 2025)
 
 ### v2.0.10 (21 Jan 2025)
