@@ -4,6 +4,19 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.113.0"></a>
+
+### v2.113.0 (2025-02-13)
+
+#### Features
+
+* aggregated provider state endpoint (#734)	 ([108d11a7](https://github.com/pact-foundation/pact_broker/commit/108d11a7))
+* add more logging to data migrations	 ([9482d44d](https://github.com/pact-foundation/pact_broker/commit/9482d44d))
+
+#### Bug Fixes
+
+* make sure last_action_date always returns a DateTime object	 ([d60c264e](https://github.com/pact-foundation/pact_broker/commit/d60c264e))
+
 <a name="v2.112.0"></a>
 
 ### v2.112.0 (2024-09-09)
