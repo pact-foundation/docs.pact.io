@@ -4,6 +4,19 @@ custom_edit_url: https://github.com/pact-foundation/pact-jvm/edit/master/CHANGEL
 ---
 <!-- This file has been synced from the pact-foundation/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.6.17 - Bugfix Release
+
+* b3656418f - fix: Only coerce strings to numbers when comparing headers and query parameters (Ronald Holshausen, Fri Feb 14 10:27:01 2025 +1100)
+* 00e4b409f - Merge commit '8cb9773b51dc729c4d03414bcb8bc0a8843662a1' (Ronald Holshausen, Fri Feb 14 10:24:30 2025 +1100)
+* 8cb9773b5 - Squashed 'compatibility-suite/pact-compatibility-suite/' changes from cc76eac3c..1acfa1ecb (Ronald Holshausen, Fri Feb 14 10:24:30 2025 +1100)
+* 1b1cf8432 - chore(compatibility-suite): Correct the shared steps after updating the compatibility suite (Ronald Holshausen, Thu Feb 13 10:23:52 2025 +1100)
+* f6fa6e3fe - Squashed 'compatibility-suite/pact-compatibility-suite/' changes from 416f3a64d..cc76eac3c (Ronald Holshausen, Thu Feb 13 10:06:48 2025 +1100)
+* 878949219 - Merge commit 'f6fa6e3fe1da4c8fa8a7285f844c3187252365b3' (Ronald Holshausen, Thu Feb 13 10:06:48 2025 +1100)
+* 8c5b0b1da - fix: Only split values of known multi-value headers #1852 (Ronald Holshausen, Wed Feb 12 16:01:17 2025 +1100)
+* d7d30304c - fix: Matching rule paths for fields with only digits should not be written as indices #1851 (Ronald Holshausen, Wed Feb 12 11:21:26 2025 +1100)
+* 5dba442e2 - fix: Lambda based DSL stringType method did not match the old DSL #1850 (Ronald Holshausen, Wed Feb 12 10:27:13 2025 +1100)
+* 287b16c44 - feat: Pass any transport config to the plugin in the test context under the transport_config key (Ronald Holshausen, Mon Dec 16 10:34:56 2024 +1100)
+
 ## 4.6.16 - Maintenance Release
 
 * 2d2016317 - fix: Dependency conflict with org.slf4j:slf4j-api was causing Spring tests to fail (Ronald Holshausen, Wed Dec 4 14:21:15 2024 +1100)
