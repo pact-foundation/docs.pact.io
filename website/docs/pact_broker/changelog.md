@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.113.1"></a>
+
+### v2.113.1 (2025-02-20)
+
+#### Bug Fixes
+
+* Update openapi_first and use it's coverage thing (#783)	 ([b3da850b](https://github.com/pact-foundation/pact_broker/commit/b3da850b))
+* incorrect ProviderStates policy name. (#782)	 ([bddfd2d0](https://github.com/pact-foundation/pact_broker/commit/bddfd2d0))
+
 <a name="v2.113.0"></a>
 
 ### v2.113.0 (2025-02-13)
