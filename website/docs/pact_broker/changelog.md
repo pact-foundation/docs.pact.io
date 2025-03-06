@@ -4,6 +4,18 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.113.2"></a>
+
+### v2.113.2 (2025-03-05)
+
+#### Bug Fixes
+
+* downcase Content-Type header	 ([6eebfbdf](https://github.com/pact-foundation/pact_broker/commit/6eebfbdf))
+* downcase X-Pact-Broker-Version header	 ([8dfb3ac2](https://github.com/pact-foundation/pact_broker/commit/8dfb3ac2))
+* downcase Cache-Control header	 ([6ceae489](https://github.com/pact-foundation/pact_broker/commit/6ceae489))
+* downcase Vary header	 ([a43416a3](https://github.com/pact-foundation/pact_broker/commit/a43416a3))
+* add webmachine monkey patch to exclude webrick default load	 ([ef674d37](https://github.com/pact-foundation/pact_broker/commit/ef674d37))
+
 <a name="v2.113.1"></a>
 
 ### v2.113.1 (2025-02-20)
