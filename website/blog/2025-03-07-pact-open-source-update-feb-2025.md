@@ -177,7 +177,7 @@ Are you talking about Pact or contract-testing this year at an event? Why not le
 
 The North Star of Pact implementations, [Pact Nirvana](https://docs.pact.io/pact_nirvana) is an awesome place to be.
 
-So much so, that Ben Brugman and Ashley Guatarma reached out and said not only had they reached Pact Nirvana, but wanted to celebrate with some Pact swag.
+So much so, that [Ben Brugman](https://www.linkedin.com/in/bernardusbrugman/) and [Ashley Gautama](https://www.linkedin.com/in/ashleygautama/) reached out and said not only had they reached Pact Nirvana, but wanted to celebrate with some Pact swag.
 
 Jo Laing and myself put our creative heads together, and as the first packages have begun to arrive, we can now share what we created with you all.
 
