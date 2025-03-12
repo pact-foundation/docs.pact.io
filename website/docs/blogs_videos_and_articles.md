@@ -7,6 +7,7 @@ Check out the official Pact blog at [docs.pact.io/blog](https://docs.pact.io/blo
 If you've seen a really good talk that's not on this list, please submit [a PR to this page](https://github.com/pact-foundation/docs.pact.io/blob/master/website/docs/blogs_videos_and_articles.md) with the new link.
 
 ## 2024
+- [OLX - Journey to Contract Testing through Pact](https://tech.olx.com/journey-to-contract-testing-through-pact-04a39a3fcc22)
 - [Contract Tests: APIs Guided by Consumers (Augusto Alessio)](https://medium.com/@augustocolombelli/contract-tests-apis-guided-by-consumers-caf8f2460e7c)
 
 ## 2023
