@@ -7,6 +7,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v2.4.0 (24 March 2025)
+  * [eba6b2c](https://github.com/pact-foundation/pact-go/commit/eba6b2c) - fix: update pact-ffi to 0.4.27 (#509) (Matt Fellows, Mon Mar 24 11:56:14 2025 +1100)
+
 ### v2.3.0 (06 March 2025)
   * [8d700cc](https://github.com/pact-foundation/pact-go/commit/8d700cc) - fix: strip v prefix from pact-go verifier version (Yousaf Nabi, Wed Feb 12 14:19:25 2025 +0000)
   * [e6e2c11](https://github.com/pact-foundation/pact-go/commit/e6e2c11) - feat: add metadata.pact-go.version to pact file (Yousaf Nabi, Wed Feb 12 14:18:15 2025 +0000)
