@@ -6,7 +6,16 @@ Check out the official Pact blog at [docs.pact.io/blog](https://docs.pact.io/blo
 
 If you've seen a really good talk that's not on this list, please submit [a PR to this page](https://github.com/pact-foundation/docs.pact.io/blob/master/website/docs/blogs_videos_and_articles.md) with the new link.
 
+## 2025
+
+**Articles**
+
+- [Contract Testing with Examples (JS/TS, Golang + PHP)](https://sarvendev.com/posts/contract-testing-on-examples/)
+
 ## 2024
+
+**Articles**
+
 - [OLX - Journey to Contract Testing through Pact](https://tech.olx.com/journey-to-contract-testing-through-pact-04a39a3fcc22)
 - [Contract Tests: APIs Guided by Consumers (Augusto Alessio)](https://medium.com/@augustocolombelli/contract-tests-apis-guided-by-consumers-caf8f2460e7c)
 
@@ -15,6 +24,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 **Videos**
 
 - [Dave Farley - Don't do E2E Testing!](https://www.youtube.com/watch?v=QFCHSEHgqFE)
+- [Pactober: Celebrating 10 years of Pact (full playlist)](https://www.youtube.com/watch?v=5vAV1lTGJyE&list=PLAlctmP7u5sApbsq9mtWlQcBWIcQKM4Jl)
 
 **Articles**
 
