@@ -105,16 +105,14 @@ graph TD;
 
 ## Rust Goldberg machine
 
-- [pact_cli Toml File](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_cli/Cargo.toml)
 - [pact_consumer Toml File](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_consumer/Cargo.toml)
 - [pact_ffi Toml File](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_ffi/Cargo.toml)
 - [pact_matching Toml File](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_matching/Cargo.toml)
-- [pact_mock_server Toml File](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_mock_server/Cargo.toml)
-- [pact_mock_server_cli Toml File](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_mock_server_cli/Cargo.toml)
+- [pact_mock_server Toml File](https://github.com/pact-foundation/pact-core-mock-server/blob/main/pact_mock_server/Cargo.toml)
+- [pact_mock_server_cli Toml File](https://github.com/pact-foundation/pact-core-mock-server/blob/main/pact_mock_server_cli/Cargo.toml)
 - [pact_models Toml File](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_models/Cargo.toml)
 - [pact_verifier Toml File](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_verifier/Cargo.toml)
 - [pact_verifier_cli Toml File](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_verifier_cli/Cargo.toml)
-- [pact_wasm Toml File](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_wasm/Cargo.toml)
 
 
 ```mermaid
@@ -140,11 +138,7 @@ graph TD;
     pact_models-->pact_verifier-->pact_verifier_cli;
     pact_matching-->pact_consumer;
     pact_models-->pact_consumer;
-    pact_models-->pact_wasm;
     pact-plugin-driver-->pact_verifier;
-
-    pact_matching-->pact_cli;
-    pact_models-->pact_cli;
 
     pact_ffi-->pact-js-core-->pact-js-rust;
     pact-js-rust-->jest-pact;
