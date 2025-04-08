@@ -11,8 +11,13 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 **Articles**
 
 - [Contract Testing with Examples (JS/TS, Golang + PHP)](https://sarvendev.com/posts/contract-testing-on-examples/)
+- [Leverage Consumer-Driven Tests to Prevent Integration Failures Across Distributed Services](https://configr.medium.com/mastering-contract-testing-in-python-with-pact-for-reliable-microservices-0e09f360fbbb)
 
 ## 2024
+
+**Videos**
+
+- [Devoxx UK (Praveen Erode Mohanasundaram, Discover Financial) Contract Testing: The Key to Unlocking E2E Testing Bottlenecks in CI/CD pipelines](https://www.youtube.com/watch?v=RSl_JcWKE3M)
 
 **Articles**
 
@@ -30,7 +35,8 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 
 - [Creating a consumer contract test in Android for Retrofit](https://medium.com/go-city/pact-contract-testing-in-android-ff7e996d0910)
 - [Three methodologies of API Development](https://openvalue.blog/posts/2023/11/26/communicating_our_apis_part2/)
-
+- [Discover Financial - Introduction to Contract Testing](https://technology.discover.com/posts/contract-testing)
+- 
 **Customer Stories**
 - [eBay - API evolution with Confidence](https://tech.ebayinc.com/engineering/api-evolution-with-confidence-a-case-study-of-contract-testing-adoption-at-ebay/)
 - [Discover Financial Services - Break free from end-to-end testing: Why contract testing is the key to microservices success](https://technology.discover.com/posts/end-to-end-contract-testing)
