@@ -4,6 +4,19 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.115.0"></a>
+
+### v2.115.0 (2025-03-17)
+
+#### Features
+
+* group provider states by consumers	 ([e39860a9](https://github.com/pact-foundation/pact_broker/commit/e39860a9))
+
+#### Bug Fixes
+
+* dedupe non unique provider states #789	 ([3cf22169](https://github.com/pact-foundation/pact_broker/commit/3cf22169))
+* explicitly order labels by name	 ([d25746c1](https://github.com/pact-foundation/pact_broker/commit/d25746c1))
+
 <a name="v2.114.0"></a>
 
 ### v2.114.0 (2025-03-06)
