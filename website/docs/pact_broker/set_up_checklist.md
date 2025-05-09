@@ -30,12 +30,12 @@ This will get you to the stage where your consumer and provider have a pact that
 
 This set up will ensure that you can only deploy compatible versions of your consumer and provider to a given environment.
 
-## Consumer team
+### Consumer team
 
 * Ensure the Pact Broker knows which application versions are in each environment by adding a step to the deployment process to [tag](/pact_broker/tags#after-deploying-to-an-environment) the relevant consumer version with the name of the environment \(eg. `test`, `prod`\)
 * Check that you are safe to deploy to a given environment by adding a call to [can-i-deploy](/pact_broker/can_i_deploy) before deploying.
 
-## Provider team
+### Provider team
 
 * To ensure backwards compatibility between the production consumer and the latest provider, add the name of the tag for the production environment \(eg. `prod`\) to the list of tags that the provider verifies.
 * Add a step to the deployment process to [tag](/pact_broker/tags#after-deploying-to-an-environment) the relevant provider version with the name of the environment \(eg. `test`, `prod`\)
