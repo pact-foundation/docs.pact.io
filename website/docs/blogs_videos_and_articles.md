@@ -18,6 +18,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 **Videos**
 
 - [Devoxx UK (Praveen Erode Mohanasundaram, Discover Financial) Contract Testing: The Key to Unlocking E2E Testing Bottlenecks in CI/CD pipelines](https://www.youtube.com/watch?v=RSl_JcWKE3M)
+- [TestWarez - Mastering Microservices Testing with an Effective Testing Strategy](https://www.youtube.com/watch?v=ua8v0n2jltU)
 
 **Articles**
 
