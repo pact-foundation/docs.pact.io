@@ -44,3 +44,9 @@ Please try to add
   - Provider Language: Python
   - Transport Mechanism: HTTP
   - Author: [Serghei Iakovlev](https://github.com/sergeyklay)
+- [Ecommerce Microservices Testing Example](https://github.com/teixeira-fernando/EcommerceApp)
+  - Description: Exploring QA strategies for microservices with Synchronous and Asynchronous communication. Include examples of message-based and HTTP contracts
+  - Consumer Language: Java
+  - Provider Language: Java
+  - Transport Mechanism: HTTP and Message
+  - Author: [Fernando Teixeira](https://github.com/teixeira-fernando)
