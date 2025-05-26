@@ -1,6 +1,11 @@
 ---
 title: 1. Overview
 ---
+
+:::info
+This workshop is also available as a video. [Watch it now](https://www.youtube.com/live/0FpzPRSf2VA?si=h598zz00HvLMQW-v). 
+:::
+
 In the scenario, you will create, publish and use your first [Pact Plugin](https://docs.pact.io/plugins).
 
 We will use a templated project that you can use, to help reduce the amount of boilerplate required to write your Plugin.
