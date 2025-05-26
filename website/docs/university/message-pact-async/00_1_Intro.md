@@ -3,6 +3,10 @@ title: Intro
 sidebar_label: Intro
 ---
 
+:::info
+This workshop is also available as a video. [Watch it now](https://www.youtube.com/live/81N25-4x27E?si=NsmQdmhiSd_y9Jo6). 
+:::
+
 This workshop is aimed at demonstrating core features and benefits of [consumer driven contracts](https://martinfowler.com/articles/consumerDrivenContracts.html) in relation to message based systems with Pact.
 
 Modern distributed architectures are increasingly integrated in a decoupled, asynchronous fashion. Message queues such as ActiveMQ, RabbitMQ, SNS, SQS, Kafka and Kinesis are common, often integrated via small and frequent numbers of microservices (e.g. lambda). These sorts of interactions are referred to as "message pacts".
