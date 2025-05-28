@@ -170,6 +170,12 @@ Check out his expect troubleshooting and reproduction, and if you want to add a 
 
 Are you talking about Pact or contract-testing this year at an event? Why not let us know and get yourself featured!
 
+### APIDays New York - 2025
+
+I delivered a talk at APIDays New York titled Graceful service evolution, driven by open standards, guided by contracts. I'll add a video link when it gets published :)
+
+> A look at contract testing over the ages, as a means for graceful service evolution, and how it neatly intersects with the exponential explosion of use of API’s and uptake of OpenAPI as a defining standard. We will explore what a single source of truth looks like, and how perspectives change depending on your viewpoint. We’ll learning how to tackle challenges, such as versioning, managing breaking changes, provider drift (spec out of sync with implementation), consumer drift ( a view of the used surface area of your API ), helping you combat Hyrum’s law and provide you real world ways to build API’s now with leading open source tools such as Spectral, Pact & Swagger that will last well into the future.
+
 ## Community Projects
 
 We saw [Fernando Teixeira](https://github.com/teixeira-fernando) bring two things to our attention
