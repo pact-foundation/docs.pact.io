@@ -48,7 +48,7 @@ This is all part of a larger offering from SmartBears HaloAI product which is pe
 
 ### Pact RFCs
 
-XML Generates are here, as [Tien](https://github.com/tienvx) Vo's RFC and associated changes were merged into their respective repos.
+XML Generators are here, as [Tien](https://github.com/tienvx) Vo's RFC and associated changes were merged into their respective repos.
 
 Keep an eye out for the examples in pact-php, coming soon. See below links to details, to follow along, or help provide a review.
 
@@ -103,6 +103,8 @@ Chat to us in: [#pact-php](https://pact-foundation.slack.com/archives/C9W94PXPY)
 
 ### Pact-Go
 
+[Pact-Go v2.4.1](https://github.com/pact-foundation/pact-go/releases/tag/v2.4.1) has been released, which includes the latest pact ffi core library, and also mandates the minimum go version to be 1.23, as we are following [Go's eol schedule](https://endoflife.date/go)
+
 #### Pact-Go - Slack
 
 Chat with us in: [#pact-go](https://pact-foundation.slack.com/archives/C9UTHTFFB).
@@ -135,7 +137,7 @@ The Broker saw a fair few features delivered over the last few months
 - [chore(ci): test maintained version of postgres](https://github.com/pact-foundation/pact_broker/pull/792)
 - [fix: refactored the query to filter out duplicate integration rows](https://github.com/pact-foundation/pact_broker/pull/806)
 
-We also had one just land today, to allow for the schema configuration to be changed from its current, of the public schema, which according to release notes, is not recommend in postgres 15+
+We also had one just land today, to allow for the schema configuration to be changed from its current public schema, which according to release notes, is not recommend in postgres 15+
 
 - [chore: Allow schema configuration](https://github.com/pact-foundation/pact_broker/pull/809) which addresses a request to [Add Support for Specifying Database Schema via Environment Variable](https://github.com/pact-foundation/pact_broker/issues/726).
 
@@ -145,7 +147,7 @@ Chat to us in: [#pact-broker](https://pact-foundation.slack.com/archives/C9VPNUJ
 
 ### Pact-Net
 
-[Adam Rodgers](https://github.com/adamrodger) has two draft PR's in play
+[Adam Rodgers](https://github.com/adamrodger) has two draft PR's in play, why not help him out by dropping in for a review.
 
 - [feat!: Make the messaging provider handle scenario requests async](https://github.com/pact-foundation/pact-net/pull/537)
 - [feat!: Invoke async message scenario factories on request](https://github.com/pact-foundation/pact-net/pull/536)
@@ -162,7 +164,7 @@ Chat with us in: [#pact-net](https://pact-foundation.slack.com/archives/C9UTHV2A
 
 [Renaud Martinet](https://github.com/karouf) was having some issues with cross-compat testing with Pact-JVM with release v1.66.0 of pact-ruby.
 
-Check out his expect troubleshooting and reproduction, and if you want to add a review, it would be most welcome.
+Check out his expert troubleshooting and reproduction, and if you want to add a review, it would be most welcome.
 
 - [Fix expected body when using generators](https://github.com/pact-foundation/pact-ruby/pull/353)
 
@@ -178,7 +180,7 @@ I delivered a talk at APIDays New York titled Graceful service evolution, driven
 
 ## Community Projects
 
-We saw [Fernando Teixeira](https://github.com/teixeira-fernando) bring two things to our attention
+We saw [Fernando Teixeira](https://github.com/teixeira-fernando) bring two things to our attention. I'll let him explain why, and then provide you links to the goodness.
 
 > I have been working with Pact for some years, and I noticed that many people still don't understand why they need it. That's why I wanted to have a presentation that focused more on the 'Why' and discuss in more details some of the challenges that it helps to solve.
 
