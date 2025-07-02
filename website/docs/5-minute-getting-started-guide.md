@@ -11,8 +11,6 @@ description: From zero to running Pact tests in 5 mins
 
 This getting started guide can be run purely in the browser or on your local machine, with the intention to get you across the key concepts quickly. As we go through, there will be code snippets to demonstrate concepts. These are not runnable, but are there to assist with explanation. When there is code to run, you will be presented with a REPL as per below. Simply hit the green ▶ button, and the output will be displayed in the terminal below. Give it a shot now:
 
-<iframe frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/Getting-Started-Intro?lite=true"></iframe>
-
 ## Ways to run
 
 > When you've picked an option, click the corresponding button
@@ -29,19 +27,6 @@ This getting started guide can be run purely in the browser or on your local mac
 <a href="https://github.com/pact-foundation/pact-5-minute-getting-started-guide/generate">
   <img src="https://img.shields.io/badge/fork%20our-template-blue?logo=github"/>
 </a>
-
-3. Run it in your browser by creating a new Repl from our template.
-
-> You'll need to sign up, don't worry it is free, and you can run it from your phone, via the [repl.it mobile app](https://replit.com/mobile)
-
-[![Run on Repl.it](https://repl.it/badge/github/pact-foundation/pact-5-minute-getting-started-guide)](https://repl.it/github/pact-foundation/pact-5-minute-getting-started-guide)
-
-4. Run it in your browser by running our [Repl](https://replit.com/@pact)
-
-<a href="https://replit.com/@pact/pact-5-minute-getting-started-guide?outputonly=1&lite=true">
-  <img src="https://img.shields.io/badge/run%20in-browser-blue?logo=react"/>
-</a>
-
 
 ## An example scenario: Order API
 
@@ -260,11 +245,7 @@ Now, in real life you would rinse and repeat for other likely status codes that 
 
 OK enough talk - let's run the consumer test. If you like, click around the project to see the files from above in context. The most interesting file is the consumer test in `./consumer/consumer.spec.js` .
 
->in your repl type `consumer` or `npm run test:consumer` this will run our consumer test `./consumer/consumer.spec.js` which will invoke our Order API client, and create a pact file, if the required interaction took place.
-
-Simply hit the green ▶ button, and the output will be displayed in the terminal below. Give it a shot now:
-
-<iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@pact/pact-5-minute-getting-started-guide?outputonly=1&lite=true"></iframe>
+>in your project, run `npm run test:consumer` this will run our consumer test `./consumer/consumer.spec.js` which will invoke our Order API client, and create a pact file, if the required interaction took place.
 
 ## Sharing the contracts with the provider team
 
@@ -278,9 +259,9 @@ For this purpose, we are going to use a hosted Pact Broker from pactflow.io.
 
 <!-- <iframe style="padding-bottom:20px" frameborder="0" width="100%" height="500px" src="https://repl.it/@mefellows/docspactio-getting-started-publish?lite=true"></iframe> -->
 
-You can see the published pact [here](https://test.pactflow.io/pacts/provider/GettingStartedOrderApi/consumer/GettingStartedOrderWeb/latest) (login using this [special link](https://test.pactflow.io/login?code=98f7810e-c7dc-493b-9c3d-7849952f1d9a&utm_medium=web&utm_source=docs.pact.io)).
+You can see the published pact [here](https://test.pactflow.io/pacticipants/GettingStartedOrderWeb/) (login using this [special link](https://test.pactflow.io/login?code=98f7810e-c7dc-493b-9c3d-7849952f1d9a&utm_medium=web&utm_source=docs.pact.io)).
 
->in your repl type `publish` or `npm run pact:publish` this will run our script `./publish.sh` which will publish our pact files to the PactFlow hosted broker.
+>in your project, run `npm run pact:publish` this will run our script `./publish.sh` which will publish our pact files to the PactFlow hosted broker.
 
 After publishing the pact, we can now verify that the Provider meets these expectations.
 
@@ -406,13 +387,7 @@ describe("Pact Verification", () => {
 
 Let's run the provider test. If you like, click around the project to see the files from above in context. The most interesting file is the consumer test in `./provider/provider.spec.js` .
 
->in your repl type `npm run test:provider` or `provider` this will run our provider test `./provider/provider.spec.js` which will start our Order API provider, connect to our broker, pull down the relevant pacts to verify. Pact will issue these requests against the provider, and verify that the expectations in the pact file are met by the Order API provider.
-
-[![Run on Repl.it](https://repl.it/badge/github/pact-foundation/pact-5-minute-getting-started-guide)](https://repl.it/github/pact-foundation/pact-5-minute-getting-started-guide)
-
-**caveat** - Due to a bug/quirk/feature of Repl.it, due to our provider step starting an express server, this will cause the repl.it to start a [webview](https://docs.replit.com/hosting/deploying-http-servers). This will result in your repl stuck in a waking up loop. 👇. If you get stuck like this, just click on our `Run on Repl.it` button and get your own copy.
-
-<img width="889" alt="repl waking up" src="https://user-images.githubusercontent.com/19932401/208748438-e67f20f9-b1bc-46e8-9f42-8cca788ceec1.png"/>
+>in your project, type `npm run test:provider`. This will run our provider test `./provider/provider.spec.js` which will start our Order API provider, connect to our broker, pull down the relevant pacts to verify. Pact will issue these requests against the provider, and verify that the expectations in the pact file are met by the Order API provider.
 
 ## Whats next?
 
