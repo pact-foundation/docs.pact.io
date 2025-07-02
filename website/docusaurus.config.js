@@ -265,8 +265,8 @@ const siteConfig = {
           // Equivalent to `docsSideNavCollapsible`.
           sidebarCollapsible: true
         },
-        googleAnalytics: {
-          trackingID: 'UA-8926693-8'
+        googleTagManager: {
+          containerId: 'GTM-PFFSBW3',
         },
         theme: {
           customCss: [require.resolve('./src/css/custom.css')]
