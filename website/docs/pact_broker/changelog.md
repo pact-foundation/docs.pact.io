@@ -4,6 +4,27 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.116.0"></a>
+
+### v2.116.0 (2025-07-04)
+
+#### Features
+
+* render sync messages	 ([c0ad9f5b](https://github.com/pact-foundation/pact_broker/commit/c0ad9f5b))
+* render async messages mixed v4 and v3	 ([d727d950](https://github.com/pact-foundation/pact_broker/commit/d727d950))
+* add deployed-environments to pacticipant response and tag versions (#804)	 ([d8c7ee65](https://github.com/pact-foundation/pact_broker/commit/d8c7ee65))
+* show deployed-environments in branch versions response (#803)	 ([cc346010](https://github.com/pact-foundation/pact_broker/commit/cc346010))
+* add tag_versions endpoint	 ([42bf5203](https://github.com/pact-foundation/pact_broker/commit/42bf5203))
+* added deployed-environments to `/parcticipants/$name/versions` abd (#801)	 ([af66f6a3](https://github.com/pact-foundation/pact_broker/commit/af66f6a3))
+
+#### Bug Fixes
+
+* rubocop errors	 ([e311422c](https://github.com/pact-foundation/pact_broker/commit/e311422c))
+* refactored long consumer_contract method	 ([7d8af4d5](https://github.com/pact-foundation/pact_broker/commit/7d8af4d5))
+* remove unsupported Pact::Term from test example	 ([1a4056bd](https://github.com/pact-foundation/pact_broker/commit/1a4056bd))
+* rename interaction_async.erb filename	 ([77ddcb59](https://github.com/pact-foundation/pact_broker/commit/77ddcb59))
+* refactored the query to filter out duplicate integration rows (#806)	 ([7bff0f0d](https://github.com/pact-foundation/pact_broker/commit/7bff0f0d))
+
 <a name="v2.115.0"></a>
 
 ### v2.115.0 (2025-03-17)
