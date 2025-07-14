@@ -22,6 +22,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 
 **Articles**
 
+- [Delivery Hero - How Contract Testing Helped Our Organization to Prevent Production Incidents](https://tech.deliveryhero.com/how-contract-testing-helped-our-organization-to-prevent-production-incidents/)
 - [OLX - Journey to Contract Testing through Pact](https://tech.olx.com/journey-to-contract-testing-through-pact-04a39a3fcc22)
 - [Contract Tests: APIs Guided by Consumers (Augusto Alessio)](https://medium.com/@augustocolombelli/contract-tests-apis-guided-by-consumers-caf8f2460e7c)
 
