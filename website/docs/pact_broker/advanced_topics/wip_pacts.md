@@ -7,7 +7,7 @@ The WIP (work in progress) pacts is a feature that ensures any new contracts are
 
 [Watch a video that explains this concept](https://youtu.be/VnOy9Sv9Opo).
 
-You should enable the work in progress pacts feature by setting `includeWipPactsSince` (or equivalent for your language) in the [provider verification configuration](/provider/recommended_configuration#verification-triggered-by-provider-change) to the date from which you want the changed pacts to start being included (eg. `2021-06-12`) . In the future, this feature will be enabled by default.
+You should enable the work in progress pacts feature by setting `includeWipPactsSince` (or equivalent for your language) in the [provider verification configuration](/provider/recommended_configuration#verification-triggered-by-provider-change) to a *relative* date in the past, from which you want the changed pacts to start being included (eg. for past month from `2025-02-01` set `2025-01-01`).
 :::
 
 Before reading any further, please read the page on [pending pacts](/pact_broker/advanced_topics/pending_pacts), as the concept of a pact being in "pending" state is required for understanding WIP pacts.
@@ -67,3 +67,7 @@ If you follow the [recommended CI/CD setup](/pact_nirvana/step_4), there will be
 The webhook triggered build only runs when the changed pact is first published, to allow the consumer to get quick feedback on the status of the pact. It does not continue to trigger if the same content is published by the same branch repeatedly.
 
 The WIP pacts feature ensures that the changed pact is automatically verified each time the provider's release pipeline runs, even if it is not one of the pacts explicitly configured for verification.
+
+### How far back should I set the date?
+
+The answer of course is "it depends". The rule of thumb is to specify a period wide enough that will enable coverage of the average longest running branch. The main consideration is load on the database - the longer the window, the more load on the server and risk of query timeouts. We recommend starting with a 30 day window, up to a period of no longer than 3 months in most cases.
