@@ -18,7 +18,7 @@ Matching rules
 
 ## V2 Matching rules
 
-V2 only matching rules are found in the export `Matchers` of the `@pact-foundation/pact` package, and can be used with the `PactV2` dsl.
+V2 only matching rules are found in the export `MatchersV2` of the `@pact-foundation/pact` package, and can be used with the `PactV2` dsl.
 
 ### Match common formats
 
@@ -48,7 +48,7 @@ Often times, you find yourself having to re-write regular expressions for common
 ### Match based on type
 
 ```javascript
-const { like, string } = Matchers;
+const { like, string } = MatchersV2;
 
 provider.addInteraction({
   state: 'Has some animals',
@@ -172,14 +172,14 @@ provider.addInteraction({
 });
 ```
 
-## V3 Matching rules
+## V3 / V4 Matching rules
 
-V3 only matching rules are found in the export `MatchersV3` of the `@pact-foundation/pact` package, and can be used with `PactV3` DSL.
+V3/V4 only matching rules are found in the export `Matchers` of the `@pact-foundation/pact` package, and can be used with `Pact` / `PactV3` / `PactV4` DSL.
 
 For example:
 
 ```javascript
-const { PactV3, MatchersV3 } = require('@pact-foundation/pact');
+const { Pact, Matchers } = require('@pact-foundation/pact');
 const {
   eachLike,
   atLeastLike,
@@ -189,7 +189,7 @@ const {
   string,
   regex,
   like,
-} = MatchersV3;
+} = Matchers;
 
 const animalBodyExpectation = {
   id: integer(1),
