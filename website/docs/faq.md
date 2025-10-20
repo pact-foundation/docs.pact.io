@@ -52,6 +52,10 @@ Pact was written by a team that was using microservices that had read/write REST
 
 ### Why is there no support for specifying optional attributes?
 
+:::note
+Refer to our [guide](/recipes/optional) on handling optional values.
+:::
+
 Firstly, it is assumed that you have control over the provider's data \(and consumer's data\) when doing the verification tests. If you don't, then maybe Pact is [not the best tool for your situation](/getting_started/what_is_pact_good_for).
 
 Secondly, if Pact supports making an assertion that element `$.body.name` may be present in a response, then you write consumer code that can handle an optional `$.body.name`, but in fact, the provider gives `$.body.firstname`, no test will ever fail to tell you that you've made an incorrect assumption. Remember that a provider may return extra data without failing the contract, but it must provide at minimum the data you expect.

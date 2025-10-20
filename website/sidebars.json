@@ -335,6 +335,7 @@
     ],
     "Recipes": [
       "recipes",
+      "recipes/optional",
       "recipes/kafka",
       "recipes/graphql",
       "recipes/apigateway",

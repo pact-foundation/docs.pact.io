@@ -8,6 +8,7 @@ Recipes and pre-built integrations to test common scenarios in Pact
 
 | Recipe/Integration                                     | Description                                                                                                                         |
 | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| [Optional Fields](/recipes/optional)                             | How to test payloads with optional fields                                                                      |
 | [GraphQL](/recipes/graphql)                             | Strategies for testing GraphQL endpoints (example with Apollo)                                                                      |
 | [API Gateway](/recipes/apigateway)                      | Strategies for dealing with API Gateways, such as AWS API Gateway, Kong etc.                                                        |
 | [AWS Signed Requests](/recipes/awssignedrequests)                      | How to test services AWS services that use [signed requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html)                                                        |
