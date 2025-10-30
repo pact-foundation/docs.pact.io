@@ -4,6 +4,28 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.117.0"></a>
+
+### v2.117.0 (2025-10-28)
+
+#### Features
+
+* add provider pacts by branch endpoints	 ([0ccff2ec](https://github.com/pact-foundation/pact_broker/commit/0ccff2ec))
+* PACT-4511/updated matrix decorator to return app instance for an env if present (#838)	 ([8bc24e72](https://github.com/pact-foundation/pact_broker/commit/8bc24e72))
+* support provider states by branch/env	 ([f4db396f](https://github.com/pact-foundation/pact_broker/commit/f4db396f))
+
+#### Bug Fixes
+
+* update hal relations for provider pacts	 ([b6e8e8e3](https://github.com/pact-foundation/pact_broker/commit/b6e8e8e3))
+* drop pact-support pin	 ([3c7eb4c5](https://github.com/pact-foundation/pact_broker/commit/3c7eb4c5))
+* fixed the text fixtures (#826)	 ([28035c27](https://github.com/pact-foundation/pact_broker/commit/28035c27))
+
+* **test**
+  * update expectation of webhook_certificates source format dependant on rb version	 ([5364c1b1](https://github.com/pact-foundation/pact_broker/commit/5364c1b1))
+
+* **deps**
+  * add mutex_m/csv/ostruct/pstore	 ([075d2522](https://github.com/pact-foundation/pact_broker/commit/075d2522))
+
 <a name="v2.116.0"></a>
 
 ### v2.116.0 (2025-07-04)
