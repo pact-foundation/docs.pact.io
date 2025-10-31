@@ -275,7 +275,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 * cd6fe27a - fix: map matching logic was not including the EachValue matcher (Ronald Holshausen, Wed Dec 29 15:47:09 2021 +1100)
 * 41b406aa - fix: shared mime-info db not available on Windows (Ronald Holshausen, Wed Dec 29 10:13:43 2021 +1100)
 * a0c9d203 - fix: detect common text types when comparing content type (Ronald Holshausen, Fri Dec 24 16:19:43 2021 +1100)
-* ede663ec - fix: add matching implementations for Vec&lt;u8&;gt; and &Vec&lt;u8&;gt; (Ronald Holshausen, Fri Dec 24 15:24:48 2021 +1100)
+* ede663ec - fix: add matching implementations for Vec&lt;u8&gt; and &Vec&lt;u8&gt; (Ronald Holshausen, Fri Dec 24 15:24:48 2021 +1100)
 
 ## 0.11.5 - Maintenance Release
 
@@ -615,7 +615,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ## 0.4.0 - First V3 specification release
 
 
-## 0.3.1 - Converted OptionalBody::Present to take a Vec&lt;u8&;gt;
+## 0.3.1 - Converted OptionalBody::Present to take a Vec&lt;u8&gt;
 
 
 ## 0.3.0 - Backported matching rules from V3 branch

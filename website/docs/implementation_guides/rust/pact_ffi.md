@@ -93,7 +93,7 @@ You can read about the architecture and design choices of this crate in
 
 ## Compatibility
 
-&lt;details&;gt;&lt;summary&;gt;Supported Platforms&lt;/summary&;gt;
+&lt;details&gt;&lt;summary&gt;Supported Platforms&lt;/summary&gt;
 
 | OS      | Architecture | Supported  | Pact FFI Version |
 | ------- | ------------ | ---------  | ---------------- |

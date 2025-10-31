@@ -287,7 +287,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ## 0.4.0 - First V3 specification release
 
 
-## 0.3.1 - Converted OptionalBody::Present to take a Vec&lt;u8&;gt;
+## 0.3.1 - Converted OptionalBody::Present to take a Vec&lt;u8&gt;
 
 
 ## 0.3.0 - Improved Consumer DSL
