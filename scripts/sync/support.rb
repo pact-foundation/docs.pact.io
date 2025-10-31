@@ -137,7 +137,7 @@ class MarkdownFileContents
             if !in_backticks
               case char
               when '<' then '&lt;'
-              when '>' then '&;gt;'
+              when '>' then '&gt;'
               else char
               end
             else

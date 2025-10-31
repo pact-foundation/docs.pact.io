@@ -90,3 +90,22 @@ $ cmake --build .
 
 You can read about the architecture and design choices of this crate in
 [ARCHITECTURE.md](https://github.com/pact-foundation/pact-reference/blob/master/rust/pact_ffi/ARCHITECTURE.md).
+
+## Compatibility
+
+&lt;details&;gt;&lt;summary&;gt;Supported Platforms&lt;/summary&;gt;
+
+| OS      | Architecture | Supported  | Pact FFI Version |
+| ------- | ------------ | ---------  | ---------------- |
+| OSX     | x86_64       | ✅         | All              |
+| Linux   | x86_64       | ✅         | All              |
+| Windows | x86_64       | ✅         | All              |
+| OSX     | arm64        | ✅         | [>=0.0.1](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.4.14)         |
+| Linux   | arm64        | ✅         | [>=0.3.6](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.3.6)         |         |
+| Windows | arm64        | ✅         | [>=0.4.14](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.4.14)         |
+| Alpine  | x86_64       | ✅         | static - [>=0.2.4](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.2.4)|
+| Alpine  | arm64        | ✅         | static - [>=0.4.15](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.4.15)|
+| Alpine  | x86_64       | ✅         | dynamic - [>=0.4.17](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.4.17)|
+| Alpine  | arm64        | ✅         | dynamic - [>=0.4.17](https://github.com/pact-foundation/pact-reference/releases/tag/libpact_ffi-v0.4.17)|
+
+&lt;/details&gt;

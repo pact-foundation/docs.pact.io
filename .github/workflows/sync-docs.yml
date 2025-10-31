@@ -36,6 +36,9 @@ on:
           - pact-net-docs-updated
           - pact-broker-docs-updated
           - pact-plugins-docs-updated
+          - pact-broker-cli-docs-updated
+          - pact-core-mock-server-docs-updated
+          - pact-stub-server-docs-updated
           - all-docs-updated
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -65,7 +68,15 @@ jobs:
     - name: Sync Pact Python docs
       run: bundle exec scripts/sync/pact_python.rb && echo 'COMMIT_MESSAGE=synced pact-python docs' >> $GITHUB_ENV
       if: steps.identify_event.outputs.update_event == 'pact-python-docs-updated'
-
+    - name: Sync Pact Broker CLI docs
+      run: bundle exec scripts/sync/pact_broker_cli.rb && echo 'COMMIT_MESSAGE=synced pact-broker-cli docs' >> $GITHUB_ENV
+      if: steps.identify_event.outputs.update_event == 'pact-broker-cli-docs-updated'
+    - name: Sync Pact Core Mock Server docs
+      run: bundle exec scripts/sync/pact_mock_server.rb && echo 'COMMIT_MESSAGE=synced pact-core-mock-server docs' >> $GITHUB_ENV
+      if: steps.identify_event.outputs.update_event == 'pact-core-mock-server-docs-updated'
+    - name: Sync Pact Stub Server docs
+      run: bundle exec scripts/sync/pact_stub_server.rb && echo 'COMMIT_MESSAGE=synced pact-stub-server docs' >> $GITHUB_ENV
+      if: steps.identify_event.outputs.update_event == 'pact-stub-server-docs-updated'
     - name: Sync Pact Go docs
       run: bundle exec scripts/sync/pact_go.rb && echo 'COMMIT_MESSAGE=synced pact-go docs' >> $GITHUB_ENV
       if: steps.identify_event.outputs.update_event == 'pact-go-docs-updated'

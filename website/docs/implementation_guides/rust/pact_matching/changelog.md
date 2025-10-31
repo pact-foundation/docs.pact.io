@@ -4,6 +4,82 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 2.0.2 - Support the wasm32-wasip2 target
+
+* e2d2ca33 - fix: compatibility-suite was failing after upgrading pact_matching to 2.0.1 (Ronald Holshausen, Wed Aug 20 10:32:37 2025 +1000)
+
+## 2.0.1 - Bugfix Release
+
+
+## 2.0.0 - 2.0 Release
+
+
+## 2.0.0-beta.3 - Fix for Alpine
+
+* 1d18d3f5 - fix: Onig crate needs default-features = false so it compiles on Alpine (Ronald Holshausen, Wed Jun 11 12:35:06 2025 +1000)
+
+## 2.0.0-beta.2 - Maintenance Release
+
+* 82d078d9 - fix: Upgrade onig to 6.5.1 as the Match Whole String for is_match has been released (Ronald Holshausen, Wed Jun 11 10:00:52 2025 +1000)
+* cb729b65 - Merge pull request #487 from tienvx/use-new-xml-generator (Ronald Holshausen, Mon May 26 11:08:07 2025 +1000)
+* e798b1cf - feat: Use new XML generator (tien.xuan.vo, Tue Feb 11 08:07:43 2025 +0700)
+
+## 2.0.0-beta.1 - Bugfix Release
+
+
+## 2.0.0-beta.0 - V2 matching engine for requests
+
+* a7f218f1 - fix: kiss_xml should be required with the XML feature (Ronald Holshausen, Tue Mar 25 16:52:31 2025 +1100)
+* ec67cd76 - feat: Handle min/max type matchers in XML elements (Ronald Holshausen, Tue Mar 25 11:53:17 2025 +1100)
+* a8eeed06 - feat: Handle type matchers in XML elements (Ronald Holshausen, Tue Mar 25 11:11:12 2025 +1100)
+* b43503a4 - feat: Handle multiple matching rules (Ronald Holshausen, Tue Mar 25 09:16:58 2025 +1100)
+* 974249cc - feat: Handle matching rules on attributes and text nodes (Ronald Holshausen, Mon Mar 24 15:40:24 2025 +1100)
+* d0331624 - feat: Handle incorrect number of XML child elements (Ronald Holshausen, Mon Mar 24 12:01:01 2025 +1100)
+* e6784418 - feat: Simple XML cases passing (Ronald Holshausen, Mon Mar 24 10:41:04 2025 +1100)
+* e32f0dbd - fix: Upgrade pact-plugin-driver to 0.7.3 (Ronald Holshausen, Wed Mar 19 11:20:39 2025 +1100)
+* f565e9cf - feat: Implemented basic XML matching (Ronald Holshausen, Tue Mar 18 16:39:11 2025 +1100)
+* 8cb4964c - fix: Correct for situation where a more specific matcher overrides a more general one (Ronald Holshausen, Fri Mar 14 09:56:46 2025 +1100)
+* 8e460bec - feat: tee and for-each should short-curcuit on error (Ronald Holshausen, Thu Mar 13 17:05:26 2025 +1100)
+* b2a3d6ba - feat: Handle Min/Max type matchers with arrays (Ronald Holshausen, Thu Mar 13 12:14:13 2025 +1100)
+* 8c130bc2 - feat: Fix propogation of type matchers to children (Ronald Holshausen, Wed Mar 12 10:20:38 2025 +1100)
+* 82c7897f - feat: support matching rules with arrays (Ronald Holshausen, Tue Mar 11 15:11:58 2025 +1100)
+* f0373f56 - fix: Need to handle object keys that are numeric (Ronald Holshausen, Tue Mar 11 14:08:10 2025 +1100)
+* 0e328ed2 - fix: remove duplicate container nodes and add matching rules for array items (Ronald Holshausen, Tue Mar 11 13:57:18 2025 +1100)
+* a7a447d9 - feat: header spec tests passing (Ronald Holshausen, Tue Mar 11 12:08:32 2025 +1100)
+* c57885d1 - feat: changes required to get spec tests passing (Ronald Holshausen, Tue Mar 11 11:27:19 2025 +1100)
+* b954e216 - feat: Add support for matching rules with body elements (Ronald Holshausen, Thu Mar 6 16:25:06 2025 +1100)
+* e4b887ba - feat: Add coloured output to the plan summary (Ronald Holshausen, Thu Mar 6 10:53:19 2025 +1100)
+* da1f846c - feat: Add config from environment variables (Ronald Holshausen, Thu Mar 6 10:40:22 2025 +1100)
+* 9b2d588e - feat: Convert an executed plan into the previous result structure (Ronald Holshausen, Wed Mar 5 17:10:07 2025 +1100)
+* 012550f4 - feat: Added generation of a summary for the executed plan (Ronald Holshausen, Wed Mar 5 10:12:05 2025 +1100)
+* c865022f - feat: Add annotation nodes for headers (Ronald Holshausen, Tue Mar 4 10:21:23 2025 +1100)
+* 46784c89 - feat: Add annotation nodes for query parameters (Ronald Holshausen, Tue Mar 4 09:53:58 2025 +1100)
+* 7ced4908 - feat: Add annotation nodes for method and path (Ronald Holshausen, Mon Mar 3 16:04:50 2025 +1100)
+* 187bb2c9 - feat: Handle parameterised header values (Ronald Holshausen, Fri Feb 28 16:20:32 2025 +1100)
+* e9ae798a - feat: Header names need to be lower-cased when comparing them (Ronald Holshausen, Thu Feb 27 12:20:12 2025 +1100)
+* 1c7d67b6 - feat: Support matching headers (Ronald Holshausen, Thu Feb 27 10:33:59 2025 +1100)
+* af436bfd - feat: Support min/max matching rules with query parameters (Ronald Holshausen, Wed Feb 26 11:52:40 2025 +1100)
+* 3db5c6a8 - feat: Support matching rules with query parameters (Ronald Holshausen, Wed Feb 26 11:05:43 2025 +1100)
+* c3a75930 - feat: Implement plan execution for simple query strings (Ronald Holshausen, Tue Feb 25 16:40:43 2025 +1100)
+* 37ff9ab4 - feat: Added support for all the matching rules (Ronald Holshausen, Mon Feb 24 14:35:20 2025 +1100)
+* d86ea2c8 - fix: Content type matcher was not being applied when dealing with multi-part bodies #482 (Ronald Holshausen, Mon Feb 3 17:38:49 2025 +1100)
+* 5bb2b5ae - feat: Got basic request matching test to pass (Ronald Holshausen, Mon Oct 28 17:17:11 2024 +1100)
+* b7ea5d93 - feat: Add plan steps for request path, query parameters and headers (Ronald Holshausen, Thu Aug 1 10:38:58 2024 +1000)
+* a8dfe571 - feat: Add plan steps for request method (Ronald Holshausen, Wed Jul 31 10:38:53 2024 +1000)
+* 035a3561 - feat: Prototype request matching plan (Ronald Holshausen, Tue Jul 30 16:58:34 2024 +1000)
+
+## 1.2.9 - Bugfix Release
+
+* e98a2183 - fix: Do not apply include matcher at the collection level #485 (Ronald Holshausen, Wed Jan 29 17:09:04 2025 +1100)
+* 096deedc - fix: when comparing JSON with number matchers, don't covert numbers in string form to numbers #484 (Ronald Holshausen, Wed Jan 29 16:52:06 2025 +1100)
+* d93dfb3f - fix: Do not apply date/time matchers at the collection level #483 (Ronald Holshausen, Wed Jan 29 14:34:31 2025 +1100)
+
+## 1.2.8 - Bugfix Release
+
+* c1bf98ef - Merge pull request #479 from tienvx/apply-generators-for-form-urlencoded (Ronald Holshausen, Thu Dec 19 15:04:20 2024 +1100)
+* 9c3bfb6f - Merge pull request #463 from tienvx/fix-cant-match-array-of-numbers (Ronald Holshausen, Wed Nov 13 11:04:32 2024 +1100)
+* 5d38945a - fix: Fix can't match array of numbers (tien.xuan.vo, Fri Sep 6 11:13:43 2024 +0700)
+
 ## 1.2.7 - Bugfix Release
 
 

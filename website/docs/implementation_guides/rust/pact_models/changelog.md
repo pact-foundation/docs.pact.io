@@ -4,6 +4,63 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.3.7 - Support wasm32-wasip2 target
+
+
+## 1.3.6 - Maintenance Release
+
+
+## 1.3.5 - Maintenance Release
+
+
+## 1.3.4 - Bugfix Release
+
+* 72da979e - feat: Allow atLeast and atMost first in expression (tien.xuan.vo, Wed Jun 25 01:22:58 2025 +0700)
+* de9ec164 - Merge pull request #496 from tienvx/add-test-case-for-atLeast-atMost-at-beginning (Ronald Holshausen, Thu Jun 19 09:50:28 2025 +1000)
+* 262fbe8e - feat: Support fromProviderState generator in regex matching expression (tien.xuan.vo, Wed Jun 18 23:49:26 2025 +0700)
+
+## 1.3.3 - Fix for Alpine
+
+* 1d18d3f5 - fix: Onig crate needs default-features = false so it compiles on Alpine (Ronald Holshausen, Wed Jun 11 12:35:06 2025 +1000)
+
+## 1.3.2 - Maintenance Release
+
+* 82d078d9 - fix: Upgrade onig to 6.5.1 as the Match Whole String for is_match has been released (Ronald Holshausen, Wed Jun 11 10:00:52 2025 +1000)
+
+## 1.3.1 - Supports generators with XML
+
+* 8084b802 - fix: Handle wildcard in XML generator key (tien.xuan.vo, Fri Mar 14 22:29:27 2025 +0700)
+* 3c7a7b33 - feat: Implement generators for XML (tien.xuan.vo, Mon Feb 10 22:43:08 2025 +0700)
+* 4eb429de - fix: kiss_xml should be required with the XML feature (Ronald Holshausen, Tue Mar 25 16:51:39 2025 +1100)
+
+## 1.3.0 - Support V2 matching engine
+
+* ec67cd76 - feat: Handle min/max type matchers in XML elements (Ronald Holshausen, Tue Mar 25 11:53:17 2025 +1100)
+* a8eeed06 - feat: Handle type matchers in XML elements (Ronald Holshausen, Tue Mar 25 11:11:12 2025 +1100)
+* b43503a4 - feat: Handle multiple matching rules (Ronald Holshausen, Tue Mar 25 09:16:58 2025 +1100)
+* 8664b516 - fix: resolving xml paths now filters nodes when an index is provided (Ronald Holshausen, Mon Mar 24 09:45:03 2025 +1100)
+* 70bfc52d - feat: Added a function fetch XML node using a path (Ronald Holshausen, Tue Mar 18 14:10:21 2025 +1100)
+* befe72ac - feat: Add functions to match a DocPath against an XML document (Ronald Holshausen, Tue Mar 18 11:06:59 2025 +1100)
+* dc333aa9 - fix: Fix test wrong method (tien.xuan.vo, Tue Mar 18 00:54:48 2025 +0700)
+
+## 1.2.7 - Maintenance Release
+
+* c6346594 - fix: join_field should only replace * and not [*] parts (Ronald Holshausen, Fri Mar 14 10:38:08 2025 +1100)
+* 92394a40 - feat: enhancements backported from the V2 matching engine branch (Ronald Holshausen, Fri Mar 14 10:21:40 2025 +1100)
+* a63fb583 - fix: Path weight calculation did not take [*] fragments into account (Ronald Holshausen, Fri Mar 14 09:53:14 2025 +1100)
+* bcf2934b - feat: add additional conversions for docpath (Ronald Holshausen, Tue Mar 11 11:26:28 2025 +1100)
+* 74df5d1d - fix: Remove duplicated timezone entries from timezone_db (Ronald Holshausen, Wed Dec 11 15:45:10 2024 +1100)
+
+## 1.2.6 - Maintenance Release
+
+* 707752ad - feat: Support generators for form urlencoded (tien.xuan.vo, Mon Dec 2 10:10:43 2024 +0700)
+* f3918b61 - Merge pull request #464 from tienvx/fix-cant-compare-each-key-each-value-matching-rules (Ronald Holshausen, Wed Nov 13 11:07:10 2024 +1100)
+* 691ddae5 - fix: Fix can't compare 2 eachKey matching rules, 2 eachValue matching rules (tien.xuan.vo, Fri Sep 6 11:15:59 2024 +0700)
+
+## 1.2.5 - Maintenance Release
+
+* c6aff26f - feat: Add join_index to DocPath (Ronald Holshausen, Fri Nov 1 17:03:10 2024 +1100)
+
 ## 1.2.4 - Bugfix Release
 
 
