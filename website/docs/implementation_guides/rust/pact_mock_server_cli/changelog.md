@@ -1,8 +1,20 @@
 ---
 title: pact_mock_server_cli
-custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/rust/pact_mock_server_cli/CHANGELOG.md
+custom_edit_url: https://github.com/pact-foundation/pact-core-mock-server/edit/main/pact_mock_server_cli/CHANGELOG.md
 ---
-<!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+<!-- This file has been synced from the pact-foundation/pact-core-mock-server repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+
+## 2.0.0-beta.0 - First beta with new mock server
+
+* 833e1c71 - fix: Handling of the mock server ID (Ronald Holshausen, Tue Jul 2 15:46:23 2024 +1000)
+* 36728503 - feat: Use comfy-table to show the list of mock servers (Ronald Holshausen, Tue Jul 2 15:23:55 2024 +1000)
+* 96476c96 - fix: Use the same global manager for all commands (Ronald Holshausen, Tue Jul 2 13:57:33 2024 +1000)
+* 82208f6e - fix: Remove unnecessary task spaning when creating a new mock server (Ronald Holshausen, Tue Jul 2 13:23:11 2024 +1000)
+* 0ac8911c - fix: Incorrect function was used when feature was not enabled (Ronald Holshausen, Mon Jun 17 16:37:07 2024 +1000)
+* af1cc22f - feat: Working mock server with TLS + self-signed cert (Ronald Holshausen, Mon Jun 17 16:20:58 2024 +1000)
+
+## 1.0.6 - Maintenance Release
+
 
 ## 1.0.5 - Maintenance Release
 

@@ -1,8 +1,87 @@
 ---
 title: pact_mock_server
-custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/rust/pact_mock_server/CHANGELOG.md
+custom_edit_url: https://github.com/pact-foundation/pact-core-mock-server/edit/main/pact_mock_server/CHANGELOG.md
 ---
-<!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+<!-- This file has been synced from the pact-foundation/pact-core-mock-server repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+
+## 2.1.3 - Maintenance Release
+
+
+## 2.1.2 - Bugfix Release
+
+* d73852ca - fix: Mock server URL in the test context was incorrectly formatted (Ronald Holshausen, Thu Jun 12 11:14:29 2025 +1000)
+
+## 2.1.1 - Maintenance Release
+
+* 01419502 - fix: rustls-pemfile and rustls-webpki need the default features set (Ronald Holshausen, Wed Jun 11 15:19:11 2025 +1000)
+* cc91078c - fix: Upgrade onig to 6.5.1 as the Match Whole String for is_match fix has been released (Ronald Holshausen, Wed Jun 11 11:46:16 2025 +1000)
+
+## 2.1.0 - Update to Rust 2024 and V2 matching engine
+
+* b225aa1d - feat: Add form_urlencoded feature (Ronald Holshausen, Wed May 21 11:49:39 2025 +1000)
+* b75a6240 - fix: tasklocal LOG_ID needs to be accessable from other crates (Ronald Holshausen, Wed Mar 26 15:39:15 2025 +1100)
+
+## 2.0.4 - Maintenance Release
+
+* 01419502 - fix: rustls-pemfile and rustls-webpki need the default features set (Ronald Holshausen, Wed Jun 11 15:19:11 2025 +1000)
+* cc91078c - fix: Upgrade onig to 6.5.1 as the Match Whole String for is_match fix has been released (Ronald Holshausen, Wed Jun 11 11:46:16 2025 +1000)
+
+## 2.0.3 - Maintenance Release
+
+
+## 2.0.2 - Maintenance Release
+
+
+## 2.0.1 - Bugfix Release
+
+* 5cb006dd - fix: Default the Pact spec version to the version from the Pact if not overridden (Ronald Holshausen, Tue Aug 27 15:06:13 2024 +1000)
+
+## 2.0.0 - Final 2.0.0 release
+
+
+## 2.0.0-beta.5 - Bugfix Release
+
+* 833e1c71 - fix: Handling of the mock server ID (Ronald Holshausen, Tue Jul 2 15:46:23 2024 +1000)
+* fba93b6b - fix: Add a function to attach a mock server to a known manager (Ronald Holshausen, Tue Jul 2 13:48:14 2024 +1000)
+* d80d9e42 - fix: When attaching the mock server to the server manager, the manager needs to take ownership (Ronald Holshausen, Tue Jul 2 13:19:02 2024 +1000)
+
+## 2.0.0-beta.4 - Support HTTP2 + Fix server shutdown
+
+* 65286080 - fix: failing test on MacOS (Ronald Holshausen, Tue Jun 25 16:24:27 2024 +1000)
+* 376b4cf0 - feat: Support HTTP1 + HTTP2 + upgrades + graceful server and connection shutdown (Ronald Holshausen, Tue Jun 25 16:12:33 2024 +1000)
+* 6453371f - fix: add small wait after mockserver shutdown so the events can be completly processed (Ronald Holshausen, Tue Jun 25 13:55:30 2024 +1000)
+* 72259393 - fix: Signal server shutdown with an event instead of dropping the channel send end (Ronald Holshausen, Tue Jun 25 12:13:30 2024 +1000)
+
+## 2.0.0-beta.3 - Remove aws_lc_rs
+
+
+## 2.0.0-beta.2 - Added keep alive option
+
+* fd86ee8b - feat: Added keep alive option to the mock server config (defaults to true) (Ronald Holshausen, Fri Jun 21 15:20:10 2024 +1000)
+
+## 2.0.0-beta.1 - Bugfix Release
+
+* ecd0b143 - fix: blocking when shutting down the mock server can cause deadlocks (Ronald Holshausen, Wed Jun 19 17:37:01 2024 +1000)
+* 9efbb501 - feat: Use the task handles to wait for the mock server tasks to complete on shutdown (Ronald Holshausen, Wed Jun 19 10:57:50 2024 +1000)
+* 89944a4f - fix: Mock server url was incorrect when using IP6 address (Ronald Holshausen, Tue Jun 18 17:17:58 2024 +1000)
+* 9b86e78e - fix: Correct TLS tests after upgrade to latest Rustls (Ronald Holshausen, Tue Jun 18 11:27:20 2024 +1000)
+
+## 2.0.0-beta.0 - Updated mock server using Hyper 1.0 and Rustls 0.23
+
+* 1b702911 - feat: Support user supplied cert and private key (Ronald Holshausen, Tue Jun 18 10:17:40 2024 +1000)
+* cf964174 - fix: Import was used when feature was not enabled (Ronald Holshausen, Mon Jun 17 16:33:38 2024 +1000)
+* 09d31c1c - fix: Update test to use IP4 (Ronald Holshausen, Mon Jun 17 16:24:18 2024 +1000)
+* af1cc22f - feat: Working mock server with TLS + self-signed cert (Ronald Holshausen, Mon Jun 17 16:20:58 2024 +1000)
+* 7a03ba6c - feat: Working mock server with IP4 and IP6 address (Ronald Holshausen, Thu May 16 13:35:41 2024 +1000)
+* d6c70f64 - feat: Allow the mock server address to be specified (Ronald Holshausen, Thu May 16 10:58:11 2024 +1000)
+* 43c8faa0 - feat: Basic mock server working with Hyper 1.0 and IP4 connection (Ronald Holshausen, Thu May 16 10:04:21 2024 +1000)
+
+## 1.2.8 - Maintenance Release
+
+
+## 1.2.7 - Maintenance Release
+
+* c3128a6d - feat: Support optional query parameter values (where there is only a name) (Ronald Holshausen, Mon Apr 22 10:36:05 2024 +1000)
 
 ## 1.2.6 - Maintenance Release
 
