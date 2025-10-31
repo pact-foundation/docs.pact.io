@@ -4,6 +4,33 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.4.28 - Maintenance Release
+
+* 1d18d3f5 - fix: Onig crate needs default-features = false so it compiles on Alpine (Ronald Holshausen, Wed Jun 11 12:35:06 2025 +1000)
+* 82d078d9 - fix: Upgrade onig to 6.5.1 as the Match Whole String for is_match has been released (Ronald Holshausen, Wed Jun 11 10:00:52 2025 +1000)
+* ad9ee539 - fix: Matching rule definitions now take th expression they were parsed from (Ronald Holshausen, Tue Mar 4 09:18:51 2025 +1100)
+
+## 0.4.27 - Bugfix Release
+
+* e32f0dbd - fix: Upgrade pact-plugin-driver to 0.7.3 (Ronald Holshausen, Wed Mar 19 11:20:39 2025 +1100)
+* bdbbd587 - Merge pull request #489 from pulak777/pact-ffi-tests (Ronald Holshausen, Mon Mar 17 09:59:44 2025 +1100)
+* d86ea2c8 - fix: Content type matcher was not being applied when dealing with multi-part bodies #482 (Ronald Holshausen, Mon Feb 3 17:38:49 2025 +1100)
+* e98a2183 - fix: Do not apply include matcher at the collection level #485 (Ronald Holshausen, Wed Jan 29 17:09:04 2025 +1100)
+* 096deedc - fix: when comparing JSON with number matchers, don't covert numbers in string form to numbers #484 (Ronald Holshausen, Wed Jan 29 16:52:06 2025 +1100)
+* d93dfb3f - fix: Do not apply date/time matchers at the collection level #483 (Ronald Holshausen, Wed Jan 29 14:34:31 2025 +1100)
+
+## 0.4.26 - Re-release FFI
+
+* d74af0ab - Merge pull request #462 from tienvx/support-integration-json-for-form-urlencoded (Ronald Holshausen, Thu Dec 19 15:15:09 2024 +1100)
+
+## 0.4.25 - Support for FORM urlencoded bodies
+
+* d74af0ab - Merge pull request #462 from tienvx/support-integration-json-for-form-urlencoded (Ronald Holshausen, Thu Dec 19 15:15:09 2024 +1100)
+
+## 0.4.24 - Bugfix Release
+
+* a85d9e07 - Merge pull request #470 from tienvx/add-error-handling (Ronald Holshausen, Mon Oct 28 08:58:09 2024 +1100)
+
 ## 0.4.23 - Bugfix Release
 
 * 4d7295a4 - feat: allow non-object matchers for array-contains (M. J. W-H. Campman, Sat Aug 3 13:49:18 2024 -0400)

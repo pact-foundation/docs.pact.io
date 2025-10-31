@@ -5,7 +5,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 This library implements the core matching logic required for matching HTTP requests and responses. It is based on the
-[V3 pact specification](https://github.com/pact-foundation/pact-specification/tree/version-3).
+[V4 pact specification](https://github.com/pact-foundation/pact-specification/tree/version-4).
 
 [Online rust docs](https://docs.rs/pact_matching/)
 
@@ -15,8 +15,10 @@ To use it, add it to your dependencies in your cargo manifest:
 
 ```toml
 [dependencies]
-pact_matching = "1.1"
+pact_matching = "2.0"
 ```
+
+Note that this crate uses the 2024 Rust edition, so requires Rust 1.85.0 or later.
 
 This crate provides three functions: `match_request`, `match_response` and `match_message`. These functions take an 
 expected and actual request, response or message model from the `pact_models` crate, and return a vector of mismatches.
@@ -644,3 +646,16 @@ DOLLAR          : '$';
 
 WS : [ \t\n\r] + -> skip ;
 ```
+
+## V2 matching engine
+
+Version 2.0+ has a redesigned matching engine. To enable it, set the `PACT_MATCHING_ENGINE` environment variable to `v2`.
+
+The machine engine now has two phases. The first phase builds a matching plan from the expected interaction as a 
+tree (AST), and then the second phase executes the AST against the actual request or response.
+
+The following environment variables control the matching:
+* `PACT_MATCHING_ENGINE` - Engine to use: `v1` or `v2`.
+* `PACT_V2_MATCHING_COLOURED_OUTPUT` - Enables coloured output with the V2 engine.
+* `PACT_V2_MATCHING_LOG_PLAN_SUMMARY` - Displays a summary of the executed plan. Enabled by default.
+* `PACT_V2_MATCHING_LOG_EXECUTED_PLAN` - Logs the executed plan details (AST).

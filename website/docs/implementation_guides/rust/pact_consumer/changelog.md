@@ -4,6 +4,26 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.4.2 - Maintenance Release
+
+
+## 1.4.1 - Maintenance Release
+
+
+## 1.4.0 - Update to Rust 2024 and pact_matching 2.0.0-beta
+
+* e32f0dbd - fix: Upgrade pact-plugin-driver to 0.7.3 (Ronald Holshausen, Wed Mar 19 11:20:39 2025 +1100)
+* c57885d1 - feat: changes required to get spec tests passing (Ronald Holshausen, Tue Mar 11 11:27:19 2025 +1100)
+* c8f165b7 - fix: correct the build after last change (Ronald Holshausen, Thu Mar 6 09:52:03 2025 +1100)
+* ad9ee539 - fix: Matching rule definitions now take th expression they were parsed from (Ronald Holshausen, Tue Mar 4 09:18:51 2025 +1100)
+
+## 1.3.3 - Maintenance Release
+
+
+## 1.3.2 - Bugfix Release
+
+* f3918b61 - Merge pull request #464 from tienvx/fix-cant-compare-each-key-each-value-matching-rules (Ronald Holshausen, Wed Nov 13 11:07:10 2024 +1100)
+
 ## 1.3.1 - Bugfix Release
 
 

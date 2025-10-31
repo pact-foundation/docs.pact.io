@@ -23,6 +23,7 @@ CUSTOM_ACTIONS = [
     md_file_contents.find_and_replace(/^# /, '## ')
   }],
   ["rust/README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "Overview" } ],
+  ["rust/pact_ffi/README.md", ->(md_file_contents) { md_file_contents.find_and_replace(%r{</details>}, '&lt;/details&gt;') }],
   [:all, ->(md_file_contents) { md_file_contents.escape_things_that_look_like_jsx_tags }]
 ]
 
