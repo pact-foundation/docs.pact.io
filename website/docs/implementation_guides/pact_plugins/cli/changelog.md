@@ -7,6 +7,15 @@ custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/cli/C
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
 
 
+* 77baf74 - chore: rename bin/pact-plugin (not pact-plugin-cli) (Yousaf Nabi, Fri Oct 31 16:16:53 2025 +0000)
+* 6a6a4f8 - feat!: rename binary to pact-plugin (Yousaf Nabi, Fri Oct 24 14:15:16 2025 +0100)
+* 2dda736 - chore: rename bin.rs to bin/pact-plugin (Yousaf Nabi, Fri Oct 31 15:53:31 2025 +0000)
+* 8b291e6 - chore: rename main.rs to lib.rs to align with rust conventions (Yousaf Nabi, Wed Oct 8 23:50:53 2025 +0100)
+* 30771e3 - feat: cli as lib (Yousaf Nabi, Sat Sep 27 18:26:05 2025 +0100)
+* 423ab56 - bump version to 0.1.4 (Ronald Holshausen, Wed Aug 21 12:02:42 2024 +1000)
+
+# 0.1.3 - Adds PACT_PLUGIN_CLI_SKIP_LOAD support + linux aarch64 target
+
 * 37a0610 - chore: update repository.index (Ronald Holshausen, Wed Aug 21 12:00:29 2024 +1000)
 * 3e7e007 - chore(plugin-cli): Upgrade dependencies (Ronald Holshausen, Wed Aug 21 11:58:40 2024 +1000)
 * 9dc6d01 - feat(cli): support PACT_PLUGIN_CLI_SKIP_LOAD (Yousaf Nabi, Wed Jul 17 23:37:57 2024 +0100)
