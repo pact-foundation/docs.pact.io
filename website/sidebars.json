@@ -135,6 +135,7 @@
         "implementation_guides/rust/pact_verifier_cli",
         "implementation_guides/rust/pact_wasm",
         "implementation_guides/rust/pact-stub-server",
+        "implementation_guides/rust/pact-broker-cli",
         {
           "type": "category",
           "label": "Changelogs",
@@ -148,7 +149,8 @@
             "implementation_guides/rust/pact_verifier/changelog",
             "implementation_guides/rust/pact_verifier_cli/changelog",
             "implementation_guides/rust/pact_wasm/changelog",
-            "implementation_guides/rust/pact-stub-server/changelog"
+            "implementation_guides/rust/pact-stub-server/changelog",
+            "implementation_guides/rust/pact-broker-cli/changelog"
           ]
         }
       ]
