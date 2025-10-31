@@ -7,7 +7,10 @@ slug: ./readme
 
 <!-- markdownlint-disable no-inline-html -->
 <div align="center">
-    <img src="https://raw.githubusercontent.com/pact-foundation/pact-python/main/mascot.svg" alt="Pact Python Mascot" height="250" align="left" hspace="20" />
+    <img src="https://raw.githubusercontent.com/pact-foundation/pact-python/main/docs/img/mascot.svg"
+        alt="Pact Python Mascot"
+        height="250" width="225"
+        align="left" hspace="20"/>
     <span>
         <b>Fast, easy and reliable testing for your APIs and microservices.</b>
     </span>
@@ -26,17 +29,17 @@ slug: ./readme
         <td>CI/CD</td>
         <td>
             <a
-                href="https://github.com/pact-foundation/pact-python/actions/workflows/test.yml"><img
+                href="https://github.com/pact-foundation/pact-python/actions/workflows/test.yml?query=branch:main"><img
                 src="https://img.shields.io/github/actions/workflow/status/pact-foundation/pact-python/test.yml?branch=main&label=test"
-                alt="Test Status"/></a>
+                alt="Test Status" /></a>
             <a
-                href="https://github.com/pact-foundation/pact-python/actions/workflows/build.yml"><img
+                href="https://github.com/pact-foundation/pact-python/actions/workflows/build.yml?query=branch:main"><img
                 src="https://img.shields.io/github/actions/workflow/status/pact-foundation/pact-python/build.yml?branch=main&label=build"
-                alt="Build Status"/></a>
+                alt="Build Status" /></a>
             <a
-                href="https://github.com/pact-foundation/pact-python/actions/workflows/docs.yml"><img
+                href="https://github.com/pact-foundation/pact-python/actions/workflows/docs.yml?query=branch:main"><img
                 src="https://img.shields.io/github/actions/workflow/status/pact-foundation/pact-python/docs.yml?branch=main&label=docs"
-                alt="Build Status"/></a>
+                alt="Build Status" /></a>
         </td>
     </tr>
     <tr>
@@ -45,21 +48,21 @@ slug: ./readme
             <a
                 href="https://github.com/pypa/hatch"><img
                 src="https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg"
-                alt="Hatch project"/></a>
+                alt="Hatch project" /></a>
             <a href="https://github.com/astral-sh/ruff"><img
                 src="https://img.shields.io/badge/ruff-ruff?label=linting&color=%23261230"
-                alt="linting - Ruff"/></a>
+                alt="linting - Ruff" /></a>
             <a href="https://github.com/astral-sh/ruff"><img
                 src="https://img.shields.io/badge/ruff-ruff?label=style&color=%23261230"
-                alt="style - Ruff"/></a>
+                alt="style - Ruff" /></a>
             <a
                 href="https://github.com/python/mypy"><img
                 src="https://img.shields.io/badge/types-Mypy-blue.svg"
-                alt="types - Mypy"/></a>
+                alt="types - Mypy" /></a>
             <a
                 href="https://pypi.python.org/pypi/pact-python"><img
                 src="https://img.shields.io/pypi/l/pact-python.svg"
-                alt="License"/></a>
+                alt="License" /></a>
         </td>
     </tr>
     <tr>
@@ -68,28 +71,28 @@ slug: ./readme
             <a
                 href="https://github.com/pact-foundation/pact-python/issues"><img
                 src="https://img.shields.io/github/issues/pact-foundation/pact-python.svg"
-                alt="Issues"/></a>
+                alt="Issues" /></a>
             <a
                 href="https://github.com/pact-foundation/pact-python/discussions"><img
                 src="https://img.shields.io/github/discussions/pact-foundation/pact-python.svg"
-                alt="Discussions"/></a>
+                alt="Discussions" /></a>
             <a
                 href="https://github.com/pact-foundation/pact-python"><img
                 src="https://img.shields.io/github/stars/pact-foundation/pact-python.svg?style=flat"
-                alt="GitHub Stars"/></a>
+                alt="GitHub Stars" /></a>
             <br/>
             <a
                 href="http://slack.pact.io"><img
                 src="https://img.shields.io/badge/slack-pact--foundation-4A154B.svg"
-                alt="Slack"/></a>
+                alt="Slack" /></a>
             <a
                 href="https://stackoverflow.com/questions/tagged/pact"><img
                 src="https://img.shields.io/badge/stackoverflow-pact-F48024.svg"
-                alt="Stack Overflow"/></a>
+                alt="Stack Overflow" /></a>
             <a
                 href="https://twitter.com/pact_up"><img
                 src="https://img.shields.io/badge/X-@pact__up-black.svg"
-                alt="Twitter"/></a>
+                alt="Twitter" /></a>
         </td>
     </tr>
 </table></div>

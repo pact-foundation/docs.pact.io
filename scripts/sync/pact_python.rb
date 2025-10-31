@@ -22,17 +22,18 @@ CUSTOM_ACTIONS = [
     md_file_contents.fields[:title] = 'Changelog'
   }],
   ['README.md', lambda { |md_file_contents|
-    md_file_contents.find_and_replace(%r{<img([^>]*)(?<!/)>}, '<img\1 />')
-    md_file_contents.find_and_replace(%r{(alt="[^"]*")></a>}, '\1/></a>')
     md_file_contents.find_and_replace(/<ul style="list-style-type: none">/, '')
     md_file_contents.find_and_replace(%r{</ul>}, '')
     md_file_contents.find_and_replace(/^\s*<li>/, '<li>')
+    md_file_contents.find_and_replace(/>\s*<\/a>/, ' /\0')
+    md_file_contents.find_and_replace(/hspace="20">/, 'hspace="20"/>')
   }],
   ['examples/README.md', lambda { |md_file_contents|
     md_file_contents.find_and_replace(%r{</br>}, '<br/>')
   }],
   [->(path) { path.end_with?('.md') }, lambda { |md_file_contents|
     md_file_contents.find_and_replace(/<!-- markdownlint-enable no-inline-html -->/, '')
+    md_file_contents.find_and_replace(%r{^.*\/\/\/.*$}, '')
   }]
 ]
 
