@@ -203,10 +203,10 @@ The plugin drivers are required to expose the following API to client language i
 
 The catalogue manager stores all the catalogue entries from the core framework and any loaded plugins.
 
-#### RegisterPluginEntries(name: String, catalogueList: List&lt;CatalogueEntry&;gt;)
+#### RegisterPluginEntries(name: String, catalogueList: List&lt;CatalogueEntry&gt;)
 Function to add a list of entries for a plugin.
 
-#### RegisterCoreEntries(entries: List&lt;CatalogueEntry&;gt;)
+#### RegisterCoreEntries(entries: List&lt;CatalogueEntry&gt;)
 Function to add the list of core framework entries.
 
 #### Entries
