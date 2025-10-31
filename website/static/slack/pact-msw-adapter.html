@@ -153,4 +153,98 @@ i suppose the pact msw adapter interface could allow you to override request dat
 
 ```pact=$(cat path/to/pact.json) &amp;&amp; jq '.interactions[].request.path |= sub ("(^\/service\/v2\/)"; "\/")' &lt;&lt;&lt;$pact &gt; path/to/pact.json```
 </div></div></div><br/>
+<div><a id="1710346540.146189"><img src="https://secure.gravatar.com/avatar/018524205a268e73b7e02f07a9624bbb.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png" /></a><div class="message"><div class="username">dale.wells</div><a style="text-decoration: none" href="#1710346540.146189" ><div class="time">2024-03-13 16:15</div></a><div class="msg">hi! Is there a way to suppress console outputs such as: `[pact-msw-adapter] Adapter enabled`  when I run my tests?</div></div></div><br/>
+<div><a id="1710347528.610189"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1710347528.610189" ><div class="time">2024-03-13 16:32</div></a><div class="msg">Hey,
+
+You can set the logger to false, it was introduced in this PR
+
+<a href="https://github.com/pactflow/pact-msw-adapter/pull/92">https://github.com/pactflow/pact-msw-adapter/pull/92</a>
+
+if you want more granularity, more than happy to accept PR?s</div></div></div><br/>
+<div><a id="1710347790.350409"><img src="https://secure.gravatar.com/avatar/018524205a268e73b7e02f07a9624bbb.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png" /></a><div class="message"><div class="username">dale.wells</div><a style="text-decoration: none" href="#1710347790.350409" ><div class="time">2024-03-13 16:36</div></a><div class="msg">Thanks for the response Yousaf - when I try this, it looks like it wants a Logger type - a simple false won?t suffice (maybe it?s too late in the day for me to look at this)
+```const mswPact = setupPactMswAdapter({
+    server,
+    options: {
+        logger: false,
+        consumer: "shop-ui",
+        providers: {
+            [process.env.PACT_PROVIDER ? process.env.PACT_PROVIDER : "shop"]: ["wallet"],
+        },
+        pactOutDir: "./pacts",
+    },```</div></div></div><br/>
+<div><a id="1710348587.577599"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1710348587.577599" ><div class="time">2024-03-13 16:49</div></a><div class="msg">ahh yeah my apologies, I?ve read the table wrong :sweat_smile:, I?ll have a check and get back to you</div></div></div><br/>
+<div><a id="1710348611.703019"><img src="https://secure.gravatar.com/avatar/018524205a268e73b7e02f07a9624bbb.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png" /></a><div class="message"><div class="username">dale.wells</div><a style="text-decoration: none" href="#1710348611.703019" ><div class="time">2024-03-13 16:50</div></a><div class="msg">No worries - thanks</div></div></div><br/>
+<div><a id="1710349008.359889"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1710349008.359889" ><div class="time">2024-03-13 16:56</div></a><div class="msg">this works for me in a quick test :)
+
+
+```  const emptyConsole = () =&gt; {
+    const emptyFunction = () =&gt; {};
+    const emptyConsole = {
+      log: emptyFunction,
+      debug: emptyFunction,
+      info: emptyFunction,
+      warn: emptyFunction,
+      error: emptyFunction,
+      group: emptyFunction,
+      groupCollapsed: emptyFunction,
+      groupEnd: emptyFunction,
+    };
+    return emptyConsole;
+  };```
+```const mswPact = setupPactMswAdapter({
+    server,
+    options: {
+        logger: emptyConsole(),
+        consumer: "shop-ui",
+        providers: {
+            [process.env.PACT_PROVIDER ? process.env.PACT_PROVIDER : "shop"]: ["wallet"],
+        },
+        pactOutDir: "./pacts",
+    },```
+</div></div></div><br/>
+<div><a id="1710349063.502459"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1710349063.502459" ><div class="time">2024-03-13 16:57</div></a><div class="msg">this is from the test suite in pact-msw-adapter with that in place, as opposed to a very noisy output.
+
+```$ jest --verbose
+ PASS  src/convertMswMatchToPact.msw.spec.ts
+  writes an msw req/res to a pact
+    ? should convert an msw server match to a pact (12 ms)
+
+ PASS  src/pactFromMswServerWithProviderFn.msw.spec.ts
+  API - With MSW mock generating a pact for dynamic providers
+    ? get all products and user (38 ms)
+
+  console.warn
+    [MSW] Warning: intercepted a request without a matching request handler:
+    
+      ? GET <a href="http://localhost:8081/product/11">http://localhost:8081/product/11</a>
+    
+    If you still wish to intercept this unhandled request, please create a request handler for it.
+    Read more: <a href="https://mswjs.io/docs/getting-started/mocks">https://mswjs.io/docs/getting-started/mocks</a>
+
+      at Object.warn (node_modules/msw/lib/core/utils/internal/devUtils.js:31:11)
+      at applyStrategy (node_modules/msw/lib/core/utils/request/onUnhandledRequest.js:170:36)
+      at node_modules/msw/lib/core/utils/request/onUnhandledRequest.js:191:5
+      at fulfilled (node_modules/msw/lib/core/utils/request/onUnhandledRequest.js:33:24)
+
+ PASS  src/pactFromMswServer.msw.spec.ts
+  API - With MSW mock generating a pact
+    ? get all products (29 ms)
+    ? post product ID 10 (4 ms)
+    ? get product ID 10 (3 ms)
+    ? get product ID 10 with visibility hidden (4 ms)
+    ? unhandled route (24 ms)
+    ? creates pact files (5 ms)
+
+Test Suites: 3 passed, 3 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        1.914 s, estimated 2 s
+Ran all test suites.
+?  Done in 2.35s.```</div></div></div><br/>
+<div><a id="1710349237.071469"><img src="https://secure.gravatar.com/avatar/018524205a268e73b7e02f07a9624bbb.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0009-72.png" /></a><div class="message"><div class="username">dale.wells</div><a style="text-decoration: none" href="#1710349237.071469" ><div class="time">2024-03-13 17:00</div></a><div class="msg">awesome, this works perfectly! thanks again</div></div></div><br/>
+<div><a id="1710350289.117849"><img src="https://avatars.slack-edge.com/2021-12-09/2847110156736_e05273c817f2c1a28851_72.png" /></a><div class="message"><div class="username">yousafn</div><a style="text-decoration: none" href="#1710350289.117849" ><div class="time">2024-03-13 17:18</div></a><div class="msg">sweet, I?ve added that to the docs now, cheers dude
+
+<a href="https://github.com/pactflow/pact-msw-adapter?tab=readme-ov-file#log-output">https://github.com/pactflow/pact-msw-adapter?tab=readme-ov-file#log-output</a></div></div></div><br/>
+<div><a id="1711205764.715269"><img src="https://secure.gravatar.com/avatar/abf1bd2b4bc386633a0a354515319cb1.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0023-72.png" /></a><div class="message"><div class="username">oak155online</div><a style="text-decoration: none" href="#1711205764.715269" ><div class="time">2024-03-23 14:56</div></a><div class="msg">has joined #pact-msw-adapter</div></div></div><br/>
+<div><a id="1750181321.015059"><img src="https://secure.gravatar.com/avatar/b5e1dc33f0cb05d62777d4d0ba411565.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0011-72.png" /></a><div class="message"><div class="username">jmirabile</div><a style="text-decoration: none" href="#1750181321.015059" ><div class="time">2025-06-17 17:28</div></a><div class="msg">has joined #pact-msw-adapter</div></div></div><br/>
 </div></body></html>
