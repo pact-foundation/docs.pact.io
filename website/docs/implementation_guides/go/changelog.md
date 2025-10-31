@@ -7,6 +7,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v2.4.2 (31 October 2025)
+  * [31d8d7f0](https://github.com/pact-foundation/pact-go/commit/31d8d7f0) - fix: convert the byte slice to string, async message WithContents (Yousaf Nabi, Thu Oct 30 23:57:48 2025 +0000)
+  * [c34f4178](https://github.com/pact-foundation/pact-go/commit/c34f4178) - fix: update pact-ffi to 0.4.28 (#533) (github-actions[bot], Wed Oct 1 13:48:08 2025 +1000)
+
 ### v2.4.1 (24 March 2025)
   * [eba6b2c](https://github.com/pact-foundation/pact-go/commit/eba6b2c) - fix: update pact-ffi to 0.4.27 (#509) (Matt Fellows, Mon Mar 24 11:56:14 2025 +1100)
 
