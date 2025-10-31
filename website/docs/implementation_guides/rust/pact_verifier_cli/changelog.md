@@ -4,6 +4,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 1.3.0 - [Feature Release]
+
+* e4af2e44 - feat: cli as lib (Yousaf Nabi, Sat Sep 27 18:38:04 2025 +0100)
+
 ## 1.2.0 - Add Exit on first error and Only run previously failed interactions CLI options
 
 
