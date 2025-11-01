@@ -15,7 +15,7 @@ Publishes and retrieves pacts, pacticipants, pacticipant versions, environments,
 
 It is designed as a replacement for the [pact_broker-client](https://github.com/pact-foundation/pact_broker-client) application, written in Ruby.
 
-![Build status](https://github.com/pact-foundation/pact_broker-client/workflows/Test/badge.svg)
+[![Test and Release](https://github.com/pact-foundation/pact-broker-cli/actions/workflows/test.yml/badge.svg)](https://github.com/pact-foundation/pact-broker-cli/actions/workflows/test.yml)
 
 ## Installation
 
