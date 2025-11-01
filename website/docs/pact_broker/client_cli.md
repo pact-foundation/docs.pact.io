@@ -2,6 +2,8 @@
 title: Overview
 ---
 
-The [Pact Broker Client CLI](https://github.com/pact-foundation/pact_broker-client) allows you to create, update, delete and query resources in a Pact Broker (including the `can-i-deploy` command). It is available as a [Docker image](https://hub.docker.com/r/pactfoundation/pact-cli) and a [standalone executable](https://github.com/pact-foundation/pact_broker-client/releases).
+The Pact Broker Client CLI allows you to create, update, delete and query resources in a Pact Broker (including the `can-i-deploy` command).
 
-You can find the documentation [here](/pact_broker/client_cli/readme).
+You can find the documentation for the new cli [here](/implementation_guides/cli/pact-broker-cli).
+
+You can find the documentation for the legacy cli [here](/pact_broker/client_cli/readme).
