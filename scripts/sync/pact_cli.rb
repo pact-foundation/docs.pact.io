@@ -2,7 +2,7 @@
 require_relative 'support'
 
 SOURCE_REPO = 'pact-foundation/pact-cli'
-DESTINATION_DIR = relative_path_to('docs/implementation_guides/rust')
+DESTINATION_DIR = relative_path_to('docs/implementation_guides/cli')
 TRANSFORM_PATH = -> (path) {
   if path.downcase.end_with?('changelog.md')
     File.join(DESTINATION_DIR, "pact-cli", 'changelog.md')
@@ -23,7 +23,7 @@ CUSTOM_ACTIONS = [
     md_file_contents.find_and_replace(/^# /, '## ')
   }],
   [->(path) { path.end_with?('README.md') }, ->(md_file_contents) {
-    md_file_contents.fields[:title] = 'Pact Cli'
+    md_file_contents.fields[:title] = 'Pact'
   }],
 ]
 

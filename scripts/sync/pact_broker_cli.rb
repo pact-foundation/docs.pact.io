@@ -2,7 +2,7 @@
 require_relative 'support'
 
 SOURCE_REPO = 'pact-foundation/pact-broker-cli'
-DESTINATION_DIR = relative_path_to('docs/implementation_guides/rust')
+DESTINATION_DIR = relative_path_to('docs/implementation_guides/cli')
 TRANSFORM_PATH = -> (path) {
   if path.downcase.end_with?('changelog.md')
     File.join(DESTINATION_DIR, "pact-broker-cli", 'changelog.md')
