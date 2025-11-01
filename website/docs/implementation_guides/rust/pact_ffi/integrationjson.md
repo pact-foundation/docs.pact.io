@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## Source Code
+
+https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi
+
+
 To make setting up matching rules and generators easier for language implementations using the Pact FFI functions, a
 JSON format can be used with embedded rules in it. This JSON can be used for most interaction values (i.e. headers,
 query parameters, etc.)
