@@ -4,8 +4,15 @@ require_relative 'support'
 
 SOURCE_REPO = 'pact-foundation/pact-plugins'
 DESTINATION_DIR = relative_path_to('docs/implementation_guides/pact_plugins')
+CLI_DESTINATION_DIR = relative_path_to('docs/implementation_guides/cli')
 TRANSFORM_PATH = lambda { |path|
+  if path == "cli/README.md"
+    "#{CLI_DESTINATION_DIR}/pact-plugin.md"
+  elsif path == "cli/CHANGELOG.md"
+    "#{CLI_DESTINATION_DIR}/pact-plugin/changelog.md"
+  else
   File.join(DESTINATION_DIR, path.downcase)
+  end
 }
 INCLUDE = [
   ->(path) { path.end_with?('.md') }
@@ -33,9 +40,15 @@ CUSTOM_ACTIONS = [
   [->(path) { path.include?('plugins') }, lambda { |md_file_contents|
                                             md_file_contents.add_lines_at_start("## Source Code\n\nhttps://github.com/#{SOURCE_REPO}/tree/main/plugins\n")
                                           }],
+  [->(path) { path.include?('cli') }, lambda { |md_file_contents|
+                                            md_file_contents.add_lines_at_start("## Source Code\n\nhttps://github.com/#{SOURCE_REPO}/tree/main/cli\n")
+                                          }],
   [->(path) { path.include?('plugin-driver-design.md') }, lambda { |md_file_contents|
                                                             md_file_contents.escape_things_that_look_like_jsx_tags
-                                                          }]
+                                                          }],
+  ["cli/README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "Pact Plugin" } ],
+  ["cli/CHANGELOG.md", ->(md_file_contents) { md_file_contents.fields[:title] = "pact-plugin-cli" } ],
+
 ]
 
 FileUtils.mkdir_p DESTINATION_DIR
