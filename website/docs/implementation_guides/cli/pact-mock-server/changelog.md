@@ -4,6 +4,17 @@ custom_edit_url: https://github.com/pact-foundation/pact-core-mock-server/edit/m
 ---
 <!-- This file has been synced from the pact-foundation/pact-core-mock-server repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## Source Code
+
+https://github.com/pact-foundation/pact-core-mock-server/tree/main/pact_mock_server_cli
+
+
+## 2.0.0 - [Feature Release]
+
+* 1bf02075 - fix: ensure we write logs to file (Yousaf Nabi, Fri Oct 24 12:11:05 2025 +0100)
+* 19b1066a - feat: allow setting of pact specification version to output on mock server creation (Yousaf Nabi, Sat Oct 18 01:57:52 2025 +0100)
+* fc2925f6 - feat: cli as lib (Yousaf Nabi, Sat Sep 27 12:04:49 2025 +0100)
+
 ## 2.0.0-beta.0 - First beta with new mock server
 
 * 833e1c71 - fix: Handling of the mock server ID (Ronald Holshausen, Tue Jul 2 15:46:23 2024 +1000)

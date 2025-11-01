@@ -1,8 +1,13 @@
 ---
-title: CLI for managing Pact plugins
+title: Pact Plugin
 custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/cli/README.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+
+## Source Code
+
+https://github.com/pact-foundation/pact-plugins/tree/main/cli
+
 
 This project provides a command line interface to manage and install Pact plugins. It is a single executable binary.
 

@@ -1,8 +1,13 @@
 ---
-title: Pact FFI
+title: README
 custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/rust/pact_ffi/README.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+
+## Source Code
+
+https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi
+
 
 This crate provides a Foreign Function Interface (FFI) to the Pact-Rust crates,
 with the intent of enabling Pact's core matching mechanisms to be used by implementations

@@ -4,6 +4,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-stub-server/edit/master
 ---
 <!-- This file has been synced from the pact-foundation/pact-stub-server repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## Source Code
+
+https://github.com/pact-foundation/pact-stub-server/tree/master
+
+
 ## 0.7.0 - [Feature Release]
 
 * ac5344e - fix: remove pathname from release artifact shasum (Yousaf Nabi, Fri Oct 24 13:56:27 2025 +0100)

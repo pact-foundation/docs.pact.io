@@ -1,8 +1,30 @@
 {
   "docs": [
-     "implementation_guides/overview",
+    "implementation_guides/overview",
     {
-      "Pact command line tools": ["implementation_guides/cli"]
+      "type": "category",
+      "label": "Pact command line tools",
+      "items": [
+        "implementation_guides/cli",
+        "implementation_guides/cli/pact-cli",
+        "implementation_guides/cli/pact-mock-server",
+        "implementation_guides/cli/pact-verifier",
+        "implementation_guides/cli/pact-stub-server",
+        "implementation_guides/cli/pact-broker-cli",
+        "implementation_guides/cli/pact-plugin",
+        {
+          "type": "category",
+          "label": "Changelogs",
+          "items": [
+            "implementation_guides/cli/pact-cli/changelog",
+            "implementation_guides/cli/pact-mock-server/changelog",
+            "implementation_guides/cli/pact-verifier/changelog",
+            "implementation_guides/cli/pact-stub-server/changelog",
+            "implementation_guides/cli/pact-broker-cli/changelog",
+            "implementation_guides/cli/pact-plugin/changelog"
+          ]
+        }
+      ]
     },
     {
       "Pact JS": [
@@ -91,10 +113,14 @@
       ]
     },
     {
-      "Pact Swift": ["implementation_guides/swift"]
+      "Pact Swift": [
+        "implementation_guides/swift"
+      ]
     },
     {
-      "Pact Scala": ["implementation_guides/scala"]
+      "Pact Scala": [
+        "implementation_guides/scala"
+      ]
     },
     {
       "Pact PHP": [
@@ -126,16 +152,10 @@
       "Pact Rust": [
         "implementation_guides/rust",
         "implementation_guides/rust/pact_consumer",
-        "implementation_guides/rust/pact_ffi",
         "implementation_guides/rust/pact_matching",
         "implementation_guides/rust/pact_models",
         "implementation_guides/rust/pact_mock_server",
-        "implementation_guides/rust/pact_mock_server_cli",
         "implementation_guides/rust/pact_verifier",
-        "implementation_guides/rust/pact_verifier_cli",
-        "implementation_guides/rust/pact_wasm",
-        "implementation_guides/rust/pact-stub-server",
-        "implementation_guides/rust/pact-broker-cli",
         {
           "type": "category",
           "label": "Changelogs",
@@ -145,12 +165,16 @@
             "implementation_guides/rust/pact_matching/changelog",
             "implementation_guides/rust/pact_models/changelog",
             "implementation_guides/rust/pact_mock_server/changelog",
-            "implementation_guides/rust/pact_mock_server_cli/changelog",
-            "implementation_guides/rust/pact_verifier/changelog",
-            "implementation_guides/rust/pact_verifier_cli/changelog",
-            "implementation_guides/rust/pact_wasm/changelog",
-            "implementation_guides/rust/pact-stub-server/changelog",
-            "implementation_guides/rust/pact-broker-cli/changelog"
+            "implementation_guides/rust/pact_verifier/changelog"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Pact FFI",
+          "items": [
+            "implementation_guides/rust/pact_ffi",  
+            "implementation_guides/rust/pact_ffi/architecture",
+            "implementation_guides/rust/pact_ffi/integrationjson"
           ]
         }
       ]
@@ -163,17 +187,13 @@
       ]
     },
     {
-      "Pact on Docker": ["docker"]
+      "Pact on Docker": [
+        "docker"
+      ]
     },
     {
       "Pact Plugins": [
         "implementation_guides/pact_plugins/readme",
-        {
-          "CLI Tool": [
-            "implementation_guides/pact_plugins/cli/readme",
-            "implementation_guides/pact_plugins/cli/changelog"
-          ]
-        },
         {
           "Plugin Docs": [
             "implementation_guides/pact_plugins/docs/plugin-driver-design",
@@ -202,13 +222,14 @@
         {
           "Examples": [
             {
-              "csv": ["implementation_guides/pact_plugins/examples/csv/readme"]
+              "csv": [
+                "implementation_guides/pact_plugins/examples/csv/readme"
+              ]
             },
             {
               "gRPC": [
                 "implementation_guides/pact_plugins/examples/grpc/readme",
                 "implementation_guides/pact_plugins/examples/grpc/area_calculator/readme",
-
                 {
                   "go": [
                     "implementation_guides/pact_plugins/examples/grpc/area_calculator/consumer-go/readme",
@@ -259,9 +280,7 @@
         }
       ]
     },
-    {
-      "Other languages": ["implementation_guides/other_languages"]
-    },
+    "implementation_guides/other_languages",
     {
       "Feature support": [
         "roadmap/feature_support",
@@ -270,7 +289,9 @@
       ]
     },
     {
-      "Stubs": ["getting_started/stubs"]
+      "Stubs": [
+        "getting_started/stubs"
+      ]
     },
     "telemetry",
     "implementation_guides/ssl"
@@ -283,7 +304,11 @@
         "getting_started",
         "getting_started/how_pact_works",
         "5-minute-getting-started-guide",
-        { "id": "plugins/quick_start", "type": "doc", "label": "Pact Plugins" }
+        {
+          "id": "plugins/quick_start",
+          "type": "doc",
+          "label": "Pact Plugins"
+        }
       ]
     },
     {
@@ -354,8 +379,9 @@
       "recipes/munit",
       "implementation_guides/feature_toggles"
     ],
-    "Ecosystems":
-    ["diagrams/ecosystem"]
+    "Ecosystems": [
+      "diagrams/ecosystem"
+    ]
   },
   "pact_broker": {
     "Pact Broker": [
@@ -422,7 +448,11 @@
       {
         "type": "category",
         "label": "API Docs",
-        "items": ["pact_broker/api/webhooks", "pact_broker/api/pacticipants", "pact_broker/api/pagination"]
+        "items": [
+          "pact_broker/api/webhooks",
+          "pact_broker/api/pacticipants",
+          "pact_broker/api/pagination"
+        ]
       },
       "pact_broker/changelog"
     ],
@@ -449,13 +479,20 @@
       "Events": [
         "events",
         {
-          "Webinars and Workshops": ["events/plugins-framework-workshop", "events/plugins-framework-launch"]
+          "Webinars and Workshops": [
+            "events/plugins-framework-workshop",
+            "events/plugins-framework-launch"
+          ]
         }
       ]
     },
     {
       "Pact Plugins": [
-        { "id": "plugins/quick_start", "type": "doc", "label": "Quick Start" },
+        {
+          "id": "plugins/quick_start",
+          "type": "doc",
+          "label": "Quick Start"
+        },
         "plugins/directory"
       ]
     },
