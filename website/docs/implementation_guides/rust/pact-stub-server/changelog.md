@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact-stub-server/edit/master
 ---
 <!-- This file has been synced from the pact-foundation/pact-stub-server repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 0.7.0 - [Feature Release]
+
+* ac5344e - fix: remove pathname from release artifact shasum (Yousaf Nabi, Fri Oct 24 13:56:27 2025 +0100)
+* 45e0056 - feat: add file watch mode for hot reloading pact files/dirs (Yousaf Nabi, Thu Oct 23 23:43:13 2025 +0100)
+* eebe3fe - feat: update to hyper 1.x / latest tower (Yousaf Nabi, Thu Oct 23 23:35:30 2025 +0100)
+* 56ccc6a - feat: cli as lib (Yousaf Nabi, Sat Sep 27 11:47:46 2025 +0100)
+
 ## 0.6.2 - Correct the insecure_tls flag with a Pact Broker
 
 * a0fd845 - fix: Honour the insecure_tls flag when fetching Pacts from a Pact Broker #75 (Ronald Holshausen, Tue May 20 16:28:25 2025 +1000)

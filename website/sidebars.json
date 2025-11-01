@@ -2,7 +2,17 @@
   "docs": [
      "implementation_guides/overview",
     {
-      "Pact command line tools": ["implementation_guides/cli"]
+      "type": "category",
+      "label": "Pact command line tools",
+      "items": [
+        "implementation_guides/cli",
+        "implementation_guides/rust/pact-cli",
+        "implementation_guides/rust/pact_mock_server_cli",
+        "implementation_guides/rust/pact_verifier_cli",
+        "implementation_guides/rust/pact-stub-server",
+        "implementation_guides/rust/pact-broker-cli",
+        "implementation_guides/pact_plugins/cli/readme"
+      ]
     },
     {
       "Pact JS": [
@@ -136,6 +146,7 @@
         "implementation_guides/rust/pact_wasm",
         "implementation_guides/rust/pact-stub-server",
         "implementation_guides/rust/pact-broker-cli",
+        "implementation_guides/rust/pact-cli",
         {
           "type": "category",
           "label": "Changelogs",
@@ -150,7 +161,8 @@
             "implementation_guides/rust/pact_verifier_cli/changelog",
             "implementation_guides/rust/pact_wasm/changelog",
             "implementation_guides/rust/pact-stub-server/changelog",
-            "implementation_guides/rust/pact-broker-cli/changelog"
+            "implementation_guides/rust/pact-broker-cli/changelog",
+            "implementation_guides/rust/pact-cli/changelog"
           ]
         }
       ]
