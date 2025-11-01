@@ -1,8 +1,13 @@
 ---
-title: Standalone Pact Verifier
+title: Pact Verifier
 custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/rust/pact_verifier_cli/README.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-reference repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
+
+## Source Code
+
+https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier_cli
+
 
 This project provides a command line interface to verify pact files against a running provider. It is a single 
 executable binary. It implements all the Pact specifications up to [V4](https://github.com/pact-foundation/pact-specification/tree/version-4).
