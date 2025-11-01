@@ -13,18 +13,14 @@ This document covers all available Pact tools and the multiple ways to install t
 
 ## 🛠️ Available Tools
 
-### Unified CLI (Recommended)
-
-**[pact](/implementation_guides/cli/pact-cli)** - All-in-one CLI with extension support
+### **[pact](/implementation_guides/cli/pact-cli)** - All-in-one CLI
 
 - Combines all Pact tools in a single binary
 - Extensible architecture with plugin system
 - Mock/Stub Server, Provider Verifier, Broker Client & Plugin CLI
 - Built-in extension management
 
-### Individual Tools
-
-**[pact-mock-server](/implementation_guides/cli/pact-mock-server)** - Consumer testing
+### **[pact-mock-server](/implementation_guides/cli/pact-mock-server)** - Consumer testing
 
 - HTTP mock server built with Rust
 - Real-time request validation
@@ -32,7 +28,7 @@ This document covers all available Pact tools and the multiple ways to install t
 - Plugin support for custom protocols
 - provides a web api and command line interface to run pact mock servers.
 
-**[pact-verifier](/implementation_guides/cli/pact-verifier)** - Provider verification
+### **[pact-verifier](/implementation_guides/cli/pact-verifier)** - Provider verification
 
 - Verify providers against consumer contracts
 - HTTP, Async/Sync Message & Pact Plugin support.
@@ -40,26 +36,26 @@ This document covers all available Pact tools and the multiple ways to install t
 - Flexible interaction filtering
 - Support for all Pact specifications
 
-**[pact-stub-server](/implementation_guides/cli/pact-stub-server)** - Integration testing
+### **[pact-stub-server](/implementation_guides/cli/pact-stub-server)** - Integration testing
 
 - Designed to support prototyping of mobile applications
 - Generate responses from Pact files
 - Load multiple Pact files simultaneously from file, url or broker
 - Watch mode, to reload files from disk
 
-**[pact-broker-client](/implementation_guides/cli/pact-broker-cli)** - Pact Broker interactions
+### **[pact-broker-client](/implementation_guides/cli/pact-broker-cli)** - Pact Broker interactions
 
 - Publish pacts to broker
 - Check deployment safety (`can-i-deploy`)
 - Record deployment events
 - Manage pacticipant versions, branches and tags
 
-**[pact-plugin](/implementation_guides/cli/pact-plugin)** - Protocol extensions
+### **[pact-plugin](/implementation_guides/cli/pact-plugin)** - Protocol extensions
 
 - Install and manage Pact plugins
 - Support for gRPC, Avro, Csv & custom protocols
 
-**[pact-legacy](https://github.com/pact-foundation/pact-standalone)** - Ruby-based tools
+### **[pact-legacy](https://github.com/pact-foundation/pact-standalone)** - Ruby-based tools
 
 - Legacy compatibility tools
 - Ruby-based implementation
@@ -67,62 +63,129 @@ This document covers all available Pact tools and the multiple ways to install t
 
 ## 🚀 Installation Methods
 
-### Scripts (Cross-Platform - Linux/MacOS/Windows ARM64/AMD64)
+### **Scripts** (Cross-Platform - Linux/MacOS/Windows ARM64/AMD64)
 
 #### *nix Users (including WSL/msys2/mingw)
 
+**Unified CLI**
+
 ```bash
-# Unified CLI
 curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-cli/main/install.sh | sh
+```
 
-# Broker Client
+**Pact Broker Client**
+
+```bash
 curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-broker-cli/main/install.sh | sh
+```
 
-# Pact Legacy
+**Pact Legacy**
+
+```bash
 curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-standalone/master/install.sh | sh
 ```
 
 #### PowerShell (Windows)
 
-```powershell
-# Unified CLI
-iwr -useb https://raw.githubusercontent.com/pact-foundation/pact-cli/main/install.ps1 | iex
+**Unified CLI**
 
-# Broker Client
+```powershell
+iwr -useb https://raw.githubusercontent.com/pact-foundation/pact-cli/main/install.ps1 | iex
+```
+
+**Pact Broker Client**
+
+```powershell
 iwr -useb https://raw.githubusercontent.com/pact-foundation/pact-broker-cli/main/install.ps1 | iex
 ```
 
-### Cargo (Any Rust-supported target)
+### **Cargo** (Any Rust-supported target)
+
+**Unified CLI**
 
 ```sh
-# Unified CLI
 cargo install pact
+```
 
-# Individual tools
+**Pact Verifier**
+
+```sh
 cargo install pact_verifier_cli
+```
+
+**Pact Mock Server**
+
+```sh
 cargo install pact_mock_server_cli
+```
+
+**Pact Stub Server**
+
+```sh
 cargo install pact-stub-server
+```
+
+**Pact Broker Client**
+
+```sh
 cargo install pact-broker-cli
+```
+
+**Pact Plugin**
+
+```sh
 cargo install pact-plugin-cli
 ```
 
-### Homebrew (MacOS/Linux ARM64/AMD64)
+### **Homebrew** (MacOS/Linux ARM64/AMD64)
 
 ```bash
-# Unified CLI
-brew install pact-foundation/tap/pact
-
-# Individual tools
 brew tap pact-foundation/tap
+```
+
+**Unified CLI**
+
+```bash
+brew install pact-foundation/tap/pact
+```
+
+**Pact Mock Server**
+
+```bash
 brew install pact-foundation/tap/pact-mock-server
+```
+
+**Pact Verifier**
+
+```bash
 brew install pact-foundation/tap/pact-verifier
+```
+
+**Pact Stub Server**
+
+```bash
 brew install pact-foundation/tap/pact-stub-server
+```
+
+**Pact Plugin**
+
+```bash
 brew install pact-foundation/tap/pact-plugin
+```
+
+**Pact Broker Client**
+
+```bash
 brew install pact-foundation/tap/pact-broker-client
+```
+
+**Pact Legacy**
+
+```bash
 brew install pact-foundation/tap/pact-legacy
 ```
 
-### Scoop (Windows ARM64/AMD64)
+### **Scoop** (Windows ARM64/AMD64)
 
 ```powershell
 # Unified CLI
@@ -151,37 +214,70 @@ scoop install pact-legacy
     pact --help
 ```
 
-### Chocolatey (Windows ARM64/AMD64)
+### **Chocolatey** (Windows ARM64/AMD64)
+
+- Grab the required package from <https://github.com/pact-foundation/choco/releases>
+
+**Unified CLI**
+
+Download the required package
 
 ```powershell
-# Unified CLI
 curl https://github.com/pact-foundation/choco/releases/download/choco/pact.0.9.1.nupkg -OutFile pact.nupkg
-choco install -y pact --source .
-
-# Windows on ARM - requires ForceARM64 parameter
-choco install pact --params "'/ForceARM64:true'"
 ```
 
-#### Individual Packages
+Install the Unified CLI
 
 ```powershell
-choco install pact-broker-client
-# Download: https://github.com/pact-foundation/choco/releases/download/choco/pact-broker-client.0.5.0.nupkg
+choco install -y pact --source .
+```
 
-choco install pact-mock-server
-# Download: https://github.com/pact-foundation/choco/releases/download/choco/pact-mock-server.2.1.0.nupkg
+Windows on ARM - requires ForceARM64 parameter
 
-choco install pact-verifier
-# Download: https://github.com/pact-foundation/choco/releases/download/choco/pact-verifier.1.3.0.nupkg
+```powershell
+choco install -y pact --params "'/ForceARM64:true'"  --source .
+```
 
-choco install pact-plugin
-# Download: https://github.com/pact-foundation/choco/releases/download/choco/pact-plugin.0.2.0.nupkg
+**Pact Broker Client**
 
-choco install pact-stub-server
-# Download: https://github.com/pact-foundation/choco/releases/download/choco/pact-stub-server.0.7.0.nupkg
+```powershell
+curl https://github.com/pact-foundation/choco/releases/download/choco/pact-broker-client.0.5.0.nupkg -OutFile pact-broker-client.nupkg
+choco install -y pact-broker-client --source .
+```
 
-choco install pact-legacy
-# Download: https://github.com/pact-foundation/choco/releases/download/choco/pact-legacy.2.5.6.nupkg
+**Pact Mock Server**
+
+```powershell
+curl https://github.com/pact-foundation/choco/releases/download/choco/pact-mock-server.2.1.0.nupkg -OutFile pact-mock-server.nupkg
+choco install -y pact-mock-server --source .
+```
+
+**Pact Verifier**
+
+```powershell
+curl https://github.com/pact-foundation/choco/releases/download/choco/pact-verifier.1.3.0.nupkg -OutFile pact-verifier.nupkg
+choco install -y pact-verifier --source .
+```
+
+**Pact Plugin**
+
+```powershell
+curl https://github.com/pact-foundation/choco/releases/download/choco/pact-plugin.0.2.0.nupkg -OutFile pact-plugin.nupkg
+choco install -y pact-plugin --source .
+```
+
+**Pact Stub Server**
+
+```powershell
+curl https://github.com/pact-foundation/choco/releases/download/choco/pact-stub-server.0.7.0.nupkg -OutFile pact-stub-server.nupkg
+choco install -y pact-stub-server --source .
+```
+
+**Pact Legacy**
+
+```powershell
+curl https://github.com/pact-foundation/choco/releases/download/choco/pact-legacy.2.5.6.nupkg -OutFile pact-legacy.nupkg
+choco install -y pact-legacy --source .
 ```
 
 #### Chocolatey GitHub Actions Example
@@ -200,25 +296,31 @@ choco install pact-legacy
     pact --help
 ```
 
-### GitHub Actions
+### **GitHub Actions**
 
 Direct action installation available:
 
+**Unified CLI**
+
 ```yml
-# Unified CLI
 - uses: pact-foundation/pact-cli@main
 - name: Show help
   run: |
     pact --help
     pact broker --help
+```
 
-# Broker Client
+**Pact Broker Client**
+
+```yml
 - uses: pact-foundation/pact-broker-cli@main
 - name: Show help
   run: pact-broker-cli --help
 ```
 
-### Docker (ARM64/AMD64)
+### **Docker** (ARM64/AMD64)
+
+Available on [DockerHub](https://hub.docker.com/u/pactfoundation) & [GitHub Container Registry](https://github.com/orgs/pact-foundation/packages)
 
 ```bash
 # Unified CLI
@@ -268,22 +370,63 @@ pact extension list
 # Install available extensions
 pact extension install pactflow-ai
 pact extension install pact-legacy
+
+# Run pactflow-ai
+pact pactflow-ai
+
+# Run a legacy tool
+pact pact-broker-legacy
 ```
 
 ### 3. Basic Usage Examples
 
+Start Master Mock server for consumer testing
+
 ```bash
-# Mock server for consumer testing
-pact mock --port 8080 --pact-dir ./pacts
+pact mock start --port 1234
+```
 
-# Verify provider
-pact verify --file ./consumer-provider.json --host localhost --port 8080
+Create a mock server
 
-# Publish to broker
-pact broker publish ./pacts --broker-base-url https://broker.com
+```bash
+pact mock create --file examples/foo-bar.json --port 1234
+```
 
-# Check deployment safety
-pact broker can-i-deploy --pacticipant MyApp --version 1.0.0 --to production --broker-base-url https://broker.com
+Verify a provider
+
+```bash
+pact verifier --hostname localhost --port 4567 --file ./examples/fail.json --state-change-url http://localhost:4567/provider-state
+```
+
+Start a pact broker with docker
+
+```bash
+pact broker docker start
+```
+
+Publish some pacts
+
+```bash
+pact broker publish ./pacts --auto-detect-version-properties --broker-base-url http://localhost:9292
+```
+
+Check deployment safety for a provider
+
+```bash
+pact broker can-i-deploy --pacticipant "Example API" --version 4fdf20082263d4c5038355a3b734be1c0054d1e1 --to test --broker-base-url http://localhost:9292
+```
+
+Check deployment safety for a consumer
+
+```bash
+pact broker can-i-deploy --pacticipant "Example App" --version 5556b8149bf8bac76bc30f50a8a2dd4c22c85f30 --to test --broker-base-url http://localhost:9292
+```
+
+Same command as above, with the legacy tooling
+
+```bash
+pact extensions install pact-legacy
+pact pact-broker-legacy can-i-deploy --pacticipant "Example App" --version 5556b8149bf8bac76bc30f50a8a2dd4c22c85f30 --to test --broker-base-url http://localhost:9292
 ```
 
 ## 📚 Documentation & Resources
@@ -309,7 +452,21 @@ pact broker can-i-deploy --pacticipant MyApp --version 1.0.0 --to production --b
 
 ### For Existing Workflows
 
-→ **Individual tools** - Drop-in replacements for existing Ruby tools (tools other than pact-broker-cli will require )
+→ **Individual tools** - Drop-in replacements for existing Ruby tools
+
+#### Migrations
+
+The following examples show the migration path from the legacy pact-ruby tooling to the new Rust based which supports all the latest Pact features.
+
+- Mock Server
+  - Legacy (Ruby) - See [Example](https://github.com/pact-foundation/pact-cli/blob/main/examples/mock_example-ruby.sh)
+  - New (Rust) - See [Example](https://github.com/pact-foundation/pact-cli/blob/main/examples/mock_example-rust.sh)
+- Verifier
+  - Legacy (Ruby) - See [Example](https://github.com/pact-foundation/pact-cli/blob/main/examples/verifier_example-ruby.sh)
+  - New (Rust) - See [Example](https://github.com/pact-foundation/pact-cli/blob/main/examples/verifier_example-rust.sh)
+- Stub
+  - Legacy (Ruby) - See [Example](https://github.com/pact-foundation/pact-cli/blob/main/examples/stub_example-ruby.sh)
+  - New (Rust) - See [Example](https://github.com/pact-foundation/pact-cli/blob/main/examples/stub_example-rust.sh)
 
 ### For CI/CD Pipelines
 
