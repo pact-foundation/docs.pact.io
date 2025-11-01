@@ -10,37 +10,32 @@ You will need to build your own DSL to capture the consumer interactions and ser
 
 There are two options:
 
-1. Using an HTTP interface (simplest)
 1. Integrating to the native pact libraries via a C interface
+1. Using an HTTP or CLI interface via a standalone executable
 
-The HTTP interface is the easiest to do, albeit it does not have support for message pact, XML and later specification versions.
-The C interface is more feature complete, but is a little more complicated to integrate.
+The interface via HTTP or CLI is simpler, however the C interface will be more performant, but is a little more complicated to integrate.
 
-### Using HTTP and the pact-mock-service tool (v2)
+### Using HTTP and the pact-mock-server tool
 
-We'll be using the `pact-mock-service` binary, which can be obtained by downloading the [Pact CLI tools](./cli).
+We'll be using the `pact-mock-server` via the `pact mock` command, which can be obtained by downloading the [Pact CLI tools](./cli/pact-cli).
 
-You interact with the tool via HTTP calls and passing a customer `X-Pact-Mock-Service=true` header.
+You interact with the tool via HTTP calls or CLI calls.
 
 Because of the HTTP interaction, you can very quickly create a wrapper interface to generate pact files and ensure your consumer is compliant.
 
-Here is an example bash script, that shows how to interact with the mock service to produce a contract: https://github.com/pact-foundation/pact-mock_service/blob/master/script/example.sh.
+Here is an example bash script, that shows how to interact with the mock service to produce a contract: <https://github.com/pact-foundation/pact-cli/blob/main/examples/mock_example-rust.sh>.
 
 #### Reference code
 
-A number of languages currently wrap the pact mock service to create user facing libraries such as [Pact JS](https://github.com/pact-foundation/pact-js/blob/master/src/httpPact.ts) and [Pact Go](https://github.com/pact-foundation/pact-go/blob/master/dsl/mock_service.go).
+Most languages wrap the native interface, such as [Pact Go](https://github.com/pact-foundation/pact-go/blob/master/internal/native/mock_server.go), Pact-JS, Pact-Go, Pact-Net, Pact-Python & Pact-Ruby.
 
 ### Native c interface integration (v2,v3,v4 specification support)
 
 We have exposed a fully functional [C interface](https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi) that can be integrated into most modern languages, OS and architectures. Follow the documentation there for further guidance.
 
-#### Reference code
-
-Newer languages wrap the interface, such as [Pact C++](https://github.com/pact-foundation/pact-cplusplus) and [Pact Go](https://github.com/pact-foundation/pact-go/blob/master/internal/native/mock_server.go).
-
 ## Generic Pact Provider Verification
 
-For `Providers` written in languages that don't have native Pact support, you can still verify that they satisfy their Pacts, using the generic [Pact Provider CLI Verification tool](https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier_cli).
+For `Providers` written in languages that don't have native Pact support, you can still verify that they satisfy their Pacts, using the generic [Pact Verifier tool](/cli/pact-verifier).
 
 This setup simplifies Pact Provider verification process in any language.
 
@@ -48,12 +43,14 @@ This setup simplifies Pact Provider verification process in any language.
 
 _Steps_:
 
-2. Publish consumer Pacts to the Pact broker \(or create local ones\)
+1. Publish consumer Pacts to the Pact broker \(or create local ones\)
 1. Create an API
-3. Start your API
-4. Run the Pact Provider Verifier, configuring it to discover the pacts and verify the locally running provider
-5. Stop your API
+1. Start your API
+1. Run the Pact Provider Verifier, configuring it to discover the pacts and verify the locally running provider
+1. Stop your API
 
 The verifier will then replay all of the Pact files against your running API, and will fail \(`exit 1`\) if they are not satisfied.
 
 There is no testing DSL available so you will need to be sensitive to process exit codes when running this in a CI/CD pipeline.
+
+Here is an example bash script, that shows how to interact with the verifier to verify a contract: <http://github.com/pact-foundation/pact-cli/blob/main/examples/verifier_example-rust.sh>.
