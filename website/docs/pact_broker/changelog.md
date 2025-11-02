@@ -4,6 +4,14 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.117.1"></a>
+
+### v2.117.1 (2025-11-02)
+
+#### Bug Fixes
+
+* dashboard loading after zeitwerk rename prep	 ([13112e2f](https://github.com/pact-foundation/pact_broker/commit/13112e2f))
+
 <a name="v2.117.0"></a>
 
 ### v2.117.0 (2025-10-28)
