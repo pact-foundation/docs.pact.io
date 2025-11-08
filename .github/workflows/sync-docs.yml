@@ -5,6 +5,7 @@ on:
     types:
       - pact-js-docs-updated
       - pact-jvm-docs-updated
+      - pact-jvm-mock-docs-updated
       - pact-python-docs-updated
       - pact-go-docs-updated
       - pact-php-docs-updated
@@ -29,6 +30,7 @@ on:
         options:
           - pact-js-docs-updated
           - pact-jvm-docs-updated
+          - pact-jvm-mock-docs-updated
           - pact-python-docs-updated
           - pact-go-docs-updated
           - pact-php-docs-updated
@@ -69,6 +71,10 @@ jobs:
     - name: Sync Pact JVM docs
       run: bundle exec scripts/sync/pact_jvm.rb && echo 'COMMIT_MESSAGE=synced pact-jvm docs' >> $GITHUB_ENV
       if: steps.identify_event.outputs.update_event == 'pact-jvm-docs-updated'
+
+    - name: Sync Pact JVM Mock docs
+      run: bundle exec scripts/sync/pact_jvm_mock.rb && echo 'COMMIT_MESSAGE=synced pact-jvm-mock docs' >> $GITHUB_ENV
+      if: steps.identify_event.outputs.update_event == 'pact-jvm-mock-docs-updated'
 
     - name: Sync Pact Python docs
       run: bundle exec scripts/sync/pact_python.rb && echo 'COMMIT_MESSAGE=synced pact-python docs' >> $GITHUB_ENV
