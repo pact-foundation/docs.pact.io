@@ -4,6 +4,15 @@ custom_edit_url: https://github.com/pact-foundation/pact-jvm/edit/master/CHANGEL
 ---
 <!-- This file has been synced from the pact-foundation/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.6.18 - Maintenance Release
+
+* 57c5bda6f - fix: add Lambda DSL methods that are the same as the old DSL arrayEachLike #1877 (Ronald Holshausen, Mon Nov 10 15:30:04 2025 +1100)
+* 897aaea3c - Reference Quarkus in service providers section (Holly Cummins, Thu Aug 28 19:30:51 2025 +0100)
+* c50f6271d - chore(deps): bump actions/setup-java from 3 to 5 (dependabot[bot], Wed Aug 27 23:37:55 2025 +0000)
+* 4670fa8f4 - Correct Java versions in developer-facing content (Holly Cummins, Wed Aug 27 16:35:52 2025 +0100)
+* 286861e97 - chore(CI): update to actions/cache@v4 (Ronald Holshausen, Thu May 29 13:59:06 2025 +1000)
+* 7a924a007 - fix: Ensure provider state is injected when verifying synchronous message pacts (Ruud Welling, Sun Mar 16 18:44:41 2025 +0100)
+
 ## 4.6.17 - Bugfix Release
 
 * b3656418f - fix: Only coerce strings to numbers when comparing headers and query parameters (Ronald Holshausen, Fri Feb 14 10:27:01 2025 +1100)
