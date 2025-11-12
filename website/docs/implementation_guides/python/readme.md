@@ -1,5 +1,5 @@
 ---
-title: README
+title: Overview
 custom_edit_url: https://github.com/pact-foundation/pact-python/edit/main/README.md
 slug: ./readme
 ---

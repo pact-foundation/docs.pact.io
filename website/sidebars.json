@@ -104,7 +104,6 @@
     },
     {
       "Pact Python": [
-        "implementation_guides/python",
         "implementation_guides/python/readme",
         "implementation_guides/python/docs/consumer",
         "implementation_guides/python/docs/provider",
