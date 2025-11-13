@@ -32,7 +32,7 @@ Pact tests written with the `pact_consumer` crate.
 
 #### Verifying Providers
 
-To verify a provider, you can use the verifier CLI tool. See [Pact Verifier CLI](/implementation_guides/rust/pact_verifier_cli).
+To verify a provider, you can use the verifier CLI tool. See [Pact Verifier CLI](/implementation_guides/cli/pact-verifier).
 
 ### FFI Interface
 
@@ -79,7 +79,7 @@ This is a library that provides the Pact consumer test support and DSL for use i
 
 This library provides support for verifying a provider against pact files.
 
-### [pact_verifier_cli](/implementation_guides/rust/pact_verifier_cli)
+### [pact_verifier_cli](/implementation_guides/cli/pact-verifier)
 
 Command line excutable that uses the [pact_verifier](/implementation_guides/rust/pact_verifier) to be able to verify a running provider against
 pact files.

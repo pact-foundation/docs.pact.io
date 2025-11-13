@@ -112,14 +112,10 @@
       ]
     },
     {
-      "Pact Swift": [
-        "implementation_guides/swift"
-      ]
+      "Pact Swift": ["implementation_guides/swift"]
     },
     {
-      "Pact Scala": [
-        "implementation_guides/scala"
-      ]
+      "Pact Scala": ["implementation_guides/scala"]
     },
     {
       "Pact PHP": [
@@ -171,7 +167,7 @@
           "type": "category",
           "label": "Pact FFI",
           "items": [
-            "implementation_guides/rust/pact_ffi",  
+            "implementation_guides/rust/pact_ffi",
             "implementation_guides/rust/pact_ffi/architecture",
             "implementation_guides/rust/pact_ffi/integrationjson"
           ]
@@ -186,12 +182,11 @@
       ]
     },
     {
-      "Pact on Docker": [
-        "docker"
-      ]
+      "Pact on Docker": ["docker"]
     },
     {
       "Pact Plugins": [
+        "plugins/quick_start",
         "implementation_guides/pact_plugins/readme",
         {
           "Plugin Docs": [
@@ -221,9 +216,7 @@
         {
           "Examples": [
             {
-              "csv": [
-                "implementation_guides/pact_plugins/examples/csv/readme"
-              ]
+              "csv": ["implementation_guides/pact_plugins/examples/csv/readme"]
             },
             {
               "gRPC": [
@@ -276,6 +269,14 @@
             "implementation_guides/pact_plugins/plugins/csv/readme",
             "implementation_guides/pact_plugins/plugins/protobuf/readme"
           ]
+        },
+        {
+          "Proposals": [
+            "implementation_guides/pact_plugins/docs/proposals/readme",
+            "implementation_guides/pact_plugins/docs/proposals/proposal_001_v2_plugin_interface",
+            "implementation_guides/pact_plugins/docs/proposals/proposal_002_support_script_language_plugins",
+            "implementation_guides/pact_plugins/docs/proposals/proposal_003_support_wasm_plugins"
+          ]
         }
       ]
     },
@@ -288,9 +289,7 @@
       ]
     },
     {
-      "Stubs": [
-        "getting_started/stubs"
-      ]
+      "Stubs": ["getting_started/stubs"]
     },
     "telemetry",
     "implementation_guides/ssl"
@@ -302,12 +301,7 @@
       "items": [
         "getting_started",
         "getting_started/how_pact_works",
-        "5-minute-getting-started-guide",
-        {
-          "id": "plugins/quick_start",
-          "type": "doc",
-          "label": "Pact Plugins"
-        }
+        "5-minute-getting-started-guide"
       ]
     },
     {
@@ -377,9 +371,6 @@
       "recipes/cypress",
       "recipes/munit",
       "implementation_guides/feature_toggles"
-    ],
-    "Ecosystems": [
-      "diagrams/ecosystem"
     ]
   },
   "pact_broker": {
@@ -486,26 +477,6 @@
       ]
     },
     {
-      "Pact Plugins": [
-        {
-          "id": "plugins/quick_start",
-          "type": "doc",
-          "label": "Quick Start"
-        },
-        "plugins/directory"
-      ]
-    },
-    {
-      "Contributing": [
-        "contributing",
-        "contributing/code",
-        "contributing/ci",
-        "contributing/docs",
-        "contributing/contributors",
-        "contributing/code-of-conduct"
-      ]
-    },
-    {
       "Case Studies & Users": [
         "users/testimonials",
         "users/trustedby",
@@ -523,6 +494,15 @@
         }
       ]
     }
+  ],
+  "contributing": [
+    "contributing",
+    "contributing/code",
+    "contributing/ci",
+    "contributing/docs",
+    "contributing/contributors",
+    "contributing/code-of-conduct",
+    "diagrams/ecosystem"
   ],
   "university": [
     {

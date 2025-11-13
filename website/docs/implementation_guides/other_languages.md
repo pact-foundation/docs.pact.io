@@ -35,7 +35,7 @@ We have exposed a fully functional [C interface](https://github.com/pact-foundat
 
 ## Generic Pact Provider Verification
 
-For `Providers` written in languages that don't have native Pact support, you can still verify that they satisfy their Pacts, using the generic [Pact Verifier tool](/cli/pact-verifier).
+For `Providers` written in languages that don't have native Pact support, you can still verify that they satisfy their Pacts, using the generic [Pact Verifier tool](/implementation_guides/cli/pact-verifier).
 
 This setup simplifies Pact Provider verification process in any language.
 

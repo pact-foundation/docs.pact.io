@@ -18,7 +18,7 @@ Already know what provider verification is, but need help coding it up? Here are
 * [Pact Go](/implementation_guides/go/readme#provider-api-testing)
 * [Pact Python](/implementation_guides/python/readme#verifying-pacts-against-a-service)
 * [Pact Ruby](/implementation_guides/ruby/verifying_pacts)
-* [Pact Rust](/implementation_guides/rust/pact_verifier_cli)
+* [Pact Rust](/implementation_guides/cli/pact-verifier)
 * [Pact PHP](https://github.com/pact-foundation/pact-php/#basic-provider-usage)
 
 Can't see your language listed above? Go to the [Pact Docs](/implementation_guides/cli) page and double check to see if your language is supported. If it's not, you can use the language agnostic [Provider Verifier CLI](/implementation_guides/cli#provider-verifier).
