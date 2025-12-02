@@ -137,7 +137,7 @@ This readme provides a high-level overview of the Pact Python library. For detai
 -   [Installation](#installation)
 -   [Consumer testing](/implementation_guides/python/docs/consumer)
 -   [Provider testing](/implementation_guides/python/docs/provider)
--   [Examples](/implementation_guides/python/examples)
+-   [Examples](/implementation_guides/python/examples/index)
 
 Documentation for the API is generated from the docstrings in the code which you can view at [`pact-foundation.github.io/pact-python/pact`](https://pact-foundation.github.io/pact-python/api).
 

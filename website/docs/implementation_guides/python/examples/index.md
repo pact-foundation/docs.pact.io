@@ -12,6 +12,14 @@ The code within the examples is intended to be well-documented and you are encou
 
 ## Available Examples
 
+### Patterns Catalog
+
+#### [Pact Patterns Catalog](https://github.com/pact-foundation/pact-python/blob/main/examples/catalog/README.md)
+
+-   **Location**: `examples/catalog/`
+-   **Purpose**: Focused code snippets demonstrating specific Pact patterns
+-   **Content**: Well-documented use cases and techniques without full application context
+
 ### HTTP Examples
 
 #### [aiohttp and Flask](https://github.com/pact-foundation/pact-python/blob/main/examples/http/aiohttp_and_flask/README.md)
