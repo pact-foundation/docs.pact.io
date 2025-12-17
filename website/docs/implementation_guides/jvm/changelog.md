@@ -4,6 +4,13 @@ custom_edit_url: https://github.com/pact-foundation/pact-jvm/edit/master/CHANGEL
 ---
 <!-- This file has been synced from the pact-foundation/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.6.19 - Maintenance Release
+
+* ce88f2729 - Move custom-mimetypes.xml directly to classpath (Carolyn Biggar, Sat Dec 13 00:35:03 2025 +0000)
+* afb1cff55 - [broken build] Change expected supertype for application/json to text/javascript (Carolyn Biggar, Sat Dec 13 00:29:35 2025 +0000)
+* 12029d5dd - [broken build] Upgrade tika-core 2.9.4 > 3.2.3 (Carolyn Biggar, Sat Dec 13 00:25:11 2025 +0000)
+* 7cfade7eb - chore(deps): bump actions/checkout from 2 to 6 (dependabot[bot], Mon Nov 24 16:53:18 2025 +0000)
+
 ## 4.6.18 - Maintenance Release
 
 * 57c5bda6f - fix: add Lambda DSL methods that are the same as the old DSL arrayEachLike #1877 (Ronald Holshausen, Mon Nov 10 15:30:04 2025 +1100)
