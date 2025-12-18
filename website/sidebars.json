@@ -54,7 +54,8 @@
             "implementation_guides/jvm/consumer/junit5",
             "implementation_guides/jvm/consumer",
             "implementation_guides/jvm/consumer/specs2",
-            "implementation_guides/jvm/consumer/groovy"
+            "implementation_guides/jvm/consumer/groovy",
+            "implementation_guides/jvm/consumer/pact-jvm-mock"
           ]
         },
         {
