@@ -4,6 +4,19 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+<a name="v2.118.0"></a>
+
+### v2.118.0 (2026-01-02)
+
+#### Features
+
+* added has_messages column to pact_versions table (#880)	 ([34741dae](https://github.com/pact-foundation/pact_broker/commit/34741dae))
+
+#### Bug Fixes
+
+* remove route overlap and add tests for new routes	 ([45a81474](https://github.com/pact-foundation/pact_broker/commit/45a81474))
+* restore latest pact for branch endpoint	 ([cb867957](https://github.com/pact-foundation/pact_broker/commit/cb867957))
+
 <a name="v2.117.1"></a>
 
 ### v2.117.1 (2025-11-02)
