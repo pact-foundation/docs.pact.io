@@ -27,7 +27,7 @@ There are Pact implementations written in more than 10 languages (see the sideba
 | Go                | [Pact-Go]             | [1️⃣][pact-spec-one][2️⃣][pact-spec-two][3️⃣][pact-spec-three][4️⃣][pact-spec-four]   |
 | PHP               | [Pact-PHP]            | [1️⃣][pact-spec-one][2️⃣][pact-spec-two][3️⃣][pact-spec-three][4️⃣][pact-spec-four]   |
 | Python            | [Pact-Python]         | [1️⃣][pact-spec-one][2️⃣][pact-spec-two][3️⃣][pact-spec-three] (beta) [4️⃣][pact-spec-four] (beta) |
-| Ruby              | [Pact-Ruby]           | [1️⃣][pact-spec-one][2️⃣][pact-spec-two]                                           |
+| Ruby              | [Pact-Ruby]           | [1️⃣][pact-spec-one][2️⃣][pact-spec-two][3️⃣][pact-spec-three] [4️⃣][pact-spec-four] |
 | Swift/Objective-C | [PactSwift]           | [3️⃣][pact-spec-three]                                                            |
 | Swift/Objective-C | [pact-consumer-swift] | [2️⃣][pact-spec-two]                                                              |
 | Scala             | [Scala-Pact]          | [2️⃣][pact-spec-two]                                                              |

@@ -134,6 +134,7 @@
     {
       "Pact Ruby": [
         "implementation_guides/ruby/README",
+        "implementation_guides/ruby/README_v2",
         "implementation_guides/ruby/creating_pacts",
         "implementation_guides/ruby/matching",
         "implementation_guides/ruby/publishing_pacts",
