@@ -86,9 +86,9 @@ Don't forgot to check out some of the latest proposals for the Pact-Plugin frame
 
 | Proposal                                                                                                                                           | State | Discussion                                                     |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | -------------------------------------------------------------- |
-| [V2 Plugin Interface](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/001_V2_Plugin_Interface.md)                         | Draft | https://github.com/pact-foundation/pact-plugins/discussions/83 |
-| [Support script language plugins](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/002_Support_script_language_plugins.md) | Draft | https://github.com/pact-foundation/pact-plugins/discussions/84 |
-| [Support WASM plugins](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/003_Support_WASM_plugins.md)                       | Draft | https://github.com/pact-foundation/pact-plugins/discussions/85 |
+| [V2 Plugin Interface](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/proposal_001_V2_Plugin_Interface.md)                         | Draft | https://github.com/pact-foundation/pact-plugins/discussions/83 |
+| [Support script language plugins](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/proposal_002_Support_script_language_plugins.md) | Draft | https://github.com/pact-foundation/pact-plugins/discussions/84 |
+| [Support WASM plugins](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/proposal_003_Support_WASM_plugins.md)                       | Draft | https://github.com/pact-foundation/pact-plugins/discussions/85 |
 
 #### Pact-Reference - Slack
 

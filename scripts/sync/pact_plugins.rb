@@ -10,6 +10,9 @@ TRANSFORM_PATH = lambda { |path|
     "#{CLI_DESTINATION_DIR}/pact-plugin.md"
   elsif path == "cli/CHANGELOG.md"
     "#{CLI_DESTINATION_DIR}/pact-plugin/changelog.md"
+  elsif path.include?('proposals') && !path.downcase.include?("readme")
+    p = Pathname.new(path)
+    File.join(DESTINATION_DIR, p.dirname, "proposal_#{p.basename.to_s.downcase}")
   else
   File.join(DESTINATION_DIR, path.downcase)
   end
@@ -46,6 +49,9 @@ CUSTOM_ACTIONS = [
   [->(path) { path.include?('plugin-driver-design.md') }, lambda { |md_file_contents|
                                                             md_file_contents.escape_things_that_look_like_jsx_tags
                                                           }],
+  [->(path) { path.include?('proposals') && path.downcase.include?('readme') },  lambda { |md_file_contents|                                                       
+                                                      md_file_contents.fields[:title] = "Overview" 
+                                                    }],
   ["cli/README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "Pact Plugin" } ],
   ["cli/CHANGELOG.md", ->(md_file_contents) { md_file_contents.fields[:title] = "pact-plugin-cli" } ],
 

@@ -104,20 +104,12 @@ const siteConfig = {
         src: 'img/favicon.ico'
       },
       items: [
-        { to: '/', label: 'Getting Started', position: 'left' },
-        { to: 'consumer', label: 'Guides', position: 'left' },
-        {
-          to: 'implementation_guides/overview',
-          label: 'Pact Docs',
-          position: 'left'
-        },
-        {
-          to: 'pact_broker/docker_images',
-          label: 'Pact Broker Docs',
-          position: 'left'
-        },
+        { to: '/', label: 'Getting Started', position: 'left', activeBaseRegex: '^/$|getting_started|faq|5-minute' },
+        { to: 'consumer', label: 'Guides', position: 'left', activeBaseRegex: '^/(consumer|provider|pact_nirvana|recipes)' },
+        { to: 'implementation_guides/overview', label: 'Pact Docs', position: 'left', activeBaseRegex: '^/(implementation_guides|roadmap|wrapper_implementations|telemetry)/' },
+        { to: 'pact_broker', label: 'Pact Broker Docs', position: 'left' },
         { to: 'history', label: 'Resources', position: 'left' },
-        { to: 'contributing', label: 'Contributing', position: 'left' },
+        { to: 'contributing', label: 'Contributing', position: 'left', activeBaseRegex: '^/contributing|diagrams/ecosystem' },
         { to: 'blog', label: 'Blog', position: 'left' },
         { to: 'help', label: 'Help', position: 'left' },
         { to: 'university', label: 'University', position: 'left' }

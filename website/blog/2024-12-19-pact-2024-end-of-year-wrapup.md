@@ -186,7 +186,7 @@ Community hero of the month: [Lewis Prescott](https://www.pactman.co.uk/) for ta
 ### Nov
 
 - 🧑‍💻 We've saw a few improvements in the pact-ruby project
-  - V3 & V4 Generators thanks to [Steve Taylor](www.github.com/slt)
+  - V3 & V4 Generators thanks to [Steve Taylor](https://github.com/slt)
   - Pact-provider-verifier now works with Rack 3, after we decided to fork rack-reverse-proxy in order to provide backwards compat with Rack 2 but allow for forwards compat with Rack 3+
   - Tweaks to Pact contract generation and verification, after ruby json 2.8.0 changes the way that JSON.pretty_generate renders empty collections such as arrays or objects. This allowed us to ensure that contracts generated with pre and post json 2.8.x behave in the same way.
 
@@ -209,9 +209,9 @@ Community hero of the month: Ben Brugman & Ashley Gautama - For reaching Pact Ni
 
 | Proposal                                                                                                                                           | State | Discussion                                                     |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | -------------------------------------------------------------- |
-| [V2 Plugin Interface](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/001_V2_Plugin_Interface.md)                         | Draft | https://github.com/pact-foundation/pact-plugins/discussions/83 |
-| [Support script language plugins](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/002_Support_script_language_plugins.md) | Draft | https://github.com/pact-foundation/pact-plugins/discussions/84 |
-| [Support WASM plugins](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/003_Support_WASM_plugins.md)                       | Draft | https://github.com/pact-foundation/pact-plugins/discussions/85 |
+| [V2 Plugin Interface](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/proposal_001_V2_Plugin_Interface.md)                         | Draft | https://github.com/pact-foundation/pact-plugins/discussions/83 |
+| [Support script language plugins](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/proposal_002_Support_script_language_plugins.md) | Draft | https://github.com/pact-foundation/pact-plugins/discussions/84 |
+| [Support WASM plugins](https://github.com/pact-foundation/pact-plugins/blob/main/docs/proposals/proposal_003_Support_WASM_plugins.md)                       | Draft | https://github.com/pact-foundation/pact-plugins/discussions/85 |
 
 Community hero of the month: [Ruth](https://github.com/huehnerlady) - A long time pact-jvm user, Ruth has been in contact with the team over several issues in her Pact setup, and has provided some of the best reproducible examples I've come across. Glad to see Pact doing so well for you in your organisation, maybe next year we can get you to do a guest blog post. No pressure, but that also applies to my readers. It could be you here, in our wrap up for 2025!
 
