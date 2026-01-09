@@ -199,7 +199,8 @@ const siteConfig = {
         'scala',
         'erlang',
         'php',
-        'go'
+        'go',
+        'kotlin'
       ]
     },
 
