@@ -51,7 +51,7 @@ Please try to add
   - Transport Mechanism: HTTP and Message
   - Author: [Fernando Teixeira](https://github.com/teixeira-fernando)
 - [pacto](https://github.com/pfichtner/pacto)
-  - Description: A Java library that generates Pact contracts directly from your DTOs — keeping consumer-driven contracts DRY and in sync with your models.
+  - Description: A Java library for generating Pact JVM contracts directly from DTO method invocations, supporting nested models, strict and lenient matching modes, and rich matcher definitions while eliminating duplication between DTOs and Pact DSLs.
   - Type: Primarily consumer (also supports provider workflows)
   - Transport Mechanism: Any / transport-agnostic
   - Consumer Language: Java
