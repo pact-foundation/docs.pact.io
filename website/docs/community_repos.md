@@ -50,3 +50,10 @@ Please try to add
   - Provider Language: Java
   - Transport Mechanism: HTTP and Message
   - Author: [Fernando Teixeira](https://github.com/teixeira-fernando)
+- [pacto](https://github.com/pfichtner/pacto)
+  - Description: A Java library that generates Pact contracts directly from your DTOs — keeping consumer-driven contracts DRY and in sync with your models.
+  - Type: Primarily consumer (also supports provider workflows)
+  - Transport Mechanism: Any / transport-agnostic
+  - Consumer Language: Java
+  - Provider Language: Java
+  - Author: [Peter Fichtner](https://github.com/pfichtner)
