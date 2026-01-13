@@ -9,6 +9,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi
 
 
+## 0.5.1 - Bugfix Release
+
+
 ## 0.5.0 - 2.0 Mock server + removed some deprecated functions
 
 * 68ec6875 - feat: parameterize delay in use plugin method (Andrew Marshall, Thu Jul 17 10:22:22 2025 +0100)
