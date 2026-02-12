@@ -1,12 +1,12 @@
 ---
-title: Event driven-systems
+title: Event Driven Systems
 custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/docs/messages.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-js repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 ## Introduction to Message Based API Testing
 
-Modern distributed architectures are increasingly integrated in a decoupled, asynchronous fashion. Message queues such as ActiveMQ, RabbitMQ, SQS, Kafka and Kinesis are common, often integrated via small and frequent numbers of microservices (e.g. lambda).
+Modern distributed architectures are increasingly integrated in a decoupled, asynchronous fashion. Message queues such as ActiveMQ, RabbitMQ, SQS, Kafka and Kinesis are common, often integrated via small and frequent numbers of microservices (for example, Lambda).
 
 Furthermore, the web has things like WebSockets and gRPC which involve bidirectional messaging (synchronous).
 
@@ -196,3 +196,119 @@ describe("Message provider tests", () => {
 1.  We can now run the verification process. Pact will read all of the interactions specified by its consumer, and invoke each function that is responsible for generating that message.
 
 ## Contract Testing Process (Synchronous)
+
+Synchronous messages represent request/response interactions that don't travel over HTTP, for example gRPC calls or WebSocket exchanges. Unlike asynchronous messages (which have a single message), synchronous messages have both a request and one or more responses.
+
+Synchronous message tests use the `addSynchronousInteraction` method on the `Pact` class.
+
+### Consumer
+
+The consumer test defines the expected request and response message contents. In the `executeTest` callback, you receive a `SynchronousMessage` object containing `Request` and `Response` properties to assert against.
+
+```js
+import { Pact, Matchers } from '@pact-foundation/pact';
+
+const { like, integer } = Matchers;
+
+const pact = new Pact({
+  consumer: 'MyConsumer',
+  provider: 'MyProvider',
+});
+
+describe('synchronous message test', () => {
+  it('processes a request and response', async () => {
+    await pact
+      .addSynchronousInteraction('a file upload request')
+      .given('file upload service is available')
+      .withRequest((builder) => {
+        builder.withJSONContent({
+          filename: like('document.pdf'),
+          size: integer(1024),
+        });
+      })
+      .withResponse((builder) => {
+        builder.withJSONContent({
+          id: like('upload-1'),
+          message: like('Upload successful'),
+        });
+      })
+      .executeTest(async (message) => {
+        // message.Request contains the request content
+        // message.Response is an array of response contents
+        const response = message.Response[0];
+        const responseData = JSON.parse(response.content.toString());
+
+        expect(responseData.message).to.equal('Upload successful');
+      });
+  });
+});
+```
+
+With binary content and matching rules (advanced use case):
+
+```js
+import { Pact, Matchers, Rules } from '@pact-foundation/pact';
+
+const requestMatchingRules: Rules = {
+  body: [
+    {
+      path: '$.image',
+      rules: [Matchers.contentType('image/jpeg')],
+    },
+  ],
+};
+
+await pact
+  .addSynchronousInteraction('multipart upload request')
+  .given('file upload service is available')
+  .withRequest((builder) => {
+    builder
+      .withContent('multipart/form-data; boundary=test-boundary', requestBuffer)
+      .withMatchingRules(requestMatchingRules);
+  })
+  .withResponse((builder) => {
+    builder.withJSONContent({
+      id: like('upload-1'),
+      message: like('Upload successful'),
+    });
+  })
+  .executeTest(async (message) => {
+    expect(message.Request).to.not.be.undefined;
+    expect(message.Response).to.be.an('array');
+  });
+```
+
+_NOTE:_ The `withMatchingRules` method on the request and response builders is an advanced feature for cases where the standard DSL does not support a particular matcher or combination of matching rules. Most users will not need it.
+
+### Provider (Producer)
+
+Provider verification for synchronous messages works the same way as asynchronous messages. Map each interaction description to a function that produces the expected message:
+
+```js
+const { MessageProviderPact, providerWithMetadata } = require('@pact-foundation/pact');
+
+const p = new MessageProviderPact({
+  messageProviders: {
+    'a file upload request': providerWithMetadata(
+      () => {
+        return {
+          id: 'upload-1',
+          message: 'Upload successful',
+        };
+      },
+      { contentType: 'application/json' }
+    ),
+  },
+  provider: 'MyProvider',
+  providerVersion: '1.0.0',
+  pactUrls: ['./pacts/myconsumer-myprovider.json'],
+});
+
+describe('synchronous message verification', () => {
+  it('verifies the provider', () => {
+    return p.verify();
+  });
+});
+```
+
+If you are using plugins for synchronous messages with custom transports (for example, gRPC or a TCP protocol), see the [Plugins](/implementation_guides/javascript/docs/plugins) documentation for how to configure transport verification.
