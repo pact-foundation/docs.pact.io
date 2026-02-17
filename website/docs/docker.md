@@ -8,9 +8,9 @@ Often times, you'll want to use Docker to run Pact. For example, a common approa
 
 We provide official containers to run common utilities as Docker images. All images from the `"pactfoundation"` [repository](https://hub.docker.com/u/pactfoundation) can be considered official:
 
-* Mock Server: [https://hub.docker.com/r/pactfoundation/pact-ref-mock-server](https://hub.docker.com/r/pactfoundation/pact-ref-mock-server)
+* Mock Server: [https://hub.docker.com/r/pactfoundation/pact-mock-server](https://hub.docker.com/r/pactfoundation/pact-mock-server)
 * Stub Server: [https://hub.docker.com/r/pactfoundation/pact-stub-server](https://hub.docker.com/r/pactfoundation/pact-stub-server)
-* Provider Verifier: [https://hub.docker.com/r/pactfoundation/pact-ref-verifier](https://hub.docker.com/r/pactfoundation/pact-ref-verifier)
+* Provider Verifier: [https://hub.docker.com/r/pactfoundation/pact-verifier](https://hub.docker.com/r/pactfoundation/pact-verifier)
 * CLI Tools: [https://hub.docker.com/r/pactfoundation/pact-cli](https://hub.docker.com/r/pactfoundation/pact-cli)(Pact Broker client tool plus the Ruby implementation of the mock service & provider verifier.)
 * Pact Broker: [https://hub.docker.com/r/pactfoundation/pact-broker/](https://hub.docker.com/r/pactfoundation/pact-broker/)
 
