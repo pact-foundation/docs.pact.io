@@ -4,6 +4,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-jvm/edit/master/CHANGEL
 ---
 <!-- This file has been synced from the pact-foundation/pact-jvm repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## 4.6.20 - Small Feature Release
+
+* 5caa7c5e9 - feat: Add a JUnit 5 filter by interation type #1894 (Ronald Holshausen, Tue Feb 17 16:21:52 2026 +1100)
+* bb1b8576d - fix: Support message tests where the annotated method is on a parent class #1890 (Ronald Holshausen, Tue Feb 17 10:08:12 2026 +1100)
+* 9d97753dd - feat: Add support for using BodyBuilder implementations with MessageContentsBuilder (Ronald Holshausen, Thu Feb 5 14:15:10 2026 +1100)
+
 ## 4.6.19 - Maintenance Release
 
 * ce88f2729 - Move custom-mimetypes.xml directly to classpath (Carolyn Biggar, Sat Dec 13 00:35:03 2025 +0000)
