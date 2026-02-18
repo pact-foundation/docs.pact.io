@@ -9,6 +9,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_matching
 
 
+## 2.0.3 - Bugfix Release
+
+* 2e7fe4a5 - fix: only split known multi-value HTTP headers on commas (Matt Fellows, Sat Feb 14 21:55:07 2026 +1100)
+
 ## 2.0.2 - Support the wasm32-wasip2 target
 
 * e2d2ca33 - fix: compatibility-suite was failing after upgrading pact_matching to 2.0.1 (Ronald Holshausen, Wed Aug 20 10:32:37 2025 +1000)
