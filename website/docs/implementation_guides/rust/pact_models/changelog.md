@@ -9,6 +9,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_models
 
 
+## 1.3.8 - Bugfix Release
+
+* 2e7fe4a5 - fix: only split known multi-value HTTP headers on commas (Matt Fellows, Sat Feb 14 21:55:07 2026 +1100)
+
 ## 1.3.7 - Support wasm32-wasip2 target
 
 
