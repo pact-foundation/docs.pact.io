@@ -9,6 +9,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi
 
 
+## 0.5.3 - Maintenance Release
+
+* 3b1ed897 - feat: Add option to disable verifier following redirects #513 (Ronald Holshausen, Tue Feb 17 12:13:06 2026 +1100)
+* 2afc3c85 - feat: Add option to disable verifier following redirects #513 (Ronald Holshausen, Tue Feb 17 12:11:50 2026 +1100)
+
 ## 0.5.2 - Bugfix Release
 
 
