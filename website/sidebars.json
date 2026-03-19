@@ -523,6 +523,7 @@
       "label": "Tutorials",
       "items": [
         "tutorials",
+        "university",
         "5-minute-getting-started-guide",
         "implementation_guides/workshops",
         {

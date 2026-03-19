@@ -104,8 +104,8 @@ const siteConfig = {
         src: 'img/favicon.ico'
       },
       items: [
-        { to: '/', label: 'Getting Started', position: 'left', activeBaseRegex: '^/$|^/getting_started($|/how_pact_works|/what_is_pact_good_for|/comparisons)|^/faq' },
-        { to: 'concepts', label: 'Concepts', position: 'left', activeBaseRegex: '^/concepts' },
+        { to: '/', label: 'Getting Started', position: 'left', activeBaseRegex: '^/$|^/getting_started/(how_pact_works|what_is_pact_good_for|comparisons)|^/faq' },
+        { to: 'concepts', label: 'Concepts', position: 'left', activeBaseRegex: '^/concepts|^/getting_started/(conceptual_overview|terminology|testing-scope|matching|verifying_pacts|provider_states|sharing_pacts|specification|further_reading)' },
         { to: 'tutorials', label: 'Tutorials', position: 'left', activeBaseRegex: '^/(tutorials|university|5-minute)' },
         { to: 'consumer', label: 'How-to Guides', position: 'left', activeBaseRegex: '^/(consumer|provider|pact_nirvana|recipes)' },
         { to: 'implementation_guides/overview', label: 'Pact Docs', position: 'left', activeBaseRegex: '^/(implementation_guides|roadmap|wrapper_implementations|telemetry)/' },
