@@ -372,13 +372,15 @@ Note: Most "moves" in this plan are sidebar-only - the actual file paths don't c
 ## Progress log
 
 - [x] **2026-03-19**: Worktree created, PLAN.md written
-- [ ] Phase 2: Resolve consumer.md duplication
-- [ ] Phase 3: Add Concepts sidebar
-- [ ] Phase 4: Tutorials sidebar
-- [ ] Phase 5: Rename Guides → How-to Guides
-- [ ] Phase 6: Reference sidebar
-- [ ] Phase 7: Slim Getting Started
-- [ ] Phase 8: Resources update
-- [ ] Phase 9: Landing page update
-- [ ] Phase 10-12: Landing pages
-- [ ] Phase 13: Final audit
+- [x] **2026-03-19**: Phase 2 — skipped (consumer.mdx is untracked in master, not in worktree; pre-existing issue)
+- [x] **2026-03-19**: Phase 3 — Concepts sidebar added (extracted from getting-started)
+- [x] **2026-03-19**: Phase 4 — Tutorials sidebar created (replacing university key); university.md kept in tutorials sidebar for /university URL context; netlify redirect /university -> /tutorials added
+- [x] **2026-03-19**: Phase 5 — Guides renamed to How-to Guides in navbar and footer
+- [x] **2026-03-19**: Phase 6 — Reference category added within concepts sidebar (specification, further_reading); skipped separate Reference nav item (too thin; docs sidebar untouched per constraints)
+- [x] **2026-03-19**: Phase 7 — Getting Started slimmed: removed Pact Concepts section, 5-min guide, workshops
+- [x] **2026-03-19**: Phase 8 — further_reading remains in Concepts/Reference category (logical home)
+- [x] **2026-03-19**: Phase 9 — Landing page updated with Diataxis signposting table
+- [x] **2026-03-19**: Phase 10 — tutorials.md landing page created
+- [x] **2026-03-19**: Phase 11 — concepts.md landing page created
+- [x] **2026-03-19**: Phase 12 — Reference in concepts sidebar (skipped standalone reference.md; Reference items are a sub-category of Concepts)
+- [ ] Phase 13: Final audit and any remaining redirects
