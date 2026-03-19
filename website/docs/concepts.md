@@ -23,7 +23,6 @@ This section explains the **why** and **how** behind Pact. If you're new to cont
 | Topic | Description |
 |---|---|
 | [Pact specification](/getting_started/specification) | The Pact specification versions and what they support |
-| [Further reading](/getting_started/further_reading) | Curated external articles and talks on contract testing |
 
 ## Not sure where to start?
 
