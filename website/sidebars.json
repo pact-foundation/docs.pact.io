@@ -304,8 +304,7 @@
       "label": "Getting started",
       "items": [
         "getting_started",
-        "getting_started/how_pact_works",
-        "5-minute-getting-started-guide"
+        "getting_started/how_pact_works"
       ]
     },
     {
@@ -315,8 +314,14 @@
         "faq/convinceme"
       ]
     },
+    "faq"
+  ],
+  "concepts": [
+    "concepts",
     {
-      "Pact concepts": [
+      "type": "category",
+      "label": "Pact Concepts",
+      "items": [
         "getting_started/conceptual_overview",
         "getting_started/terminology",
         "getting_started/testing-scope",
@@ -330,13 +335,17 @@
         },
         "getting_started/verifying_pacts",
         "getting_started/provider_states",
-        "getting_started/sharing_pacts",
+        "getting_started/sharing_pacts"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Reference",
+      "items": [
         "getting_started/specification",
         "getting_started/further_reading"
       ]
-    },
-    "implementation_guides/workshops",
-    "faq"
+    }
   ],
   "guides": {
     "Consumer": [
@@ -508,12 +517,14 @@
     "contributing/code-of-conduct",
     "diagrams/ecosystem"
   ],
-  "university": [
+  "tutorials": [
     {
       "type": "category",
-      "label": "Pact University",
+      "label": "Tutorials",
       "items": [
-        "university",
+        "tutorials",
+        "5-minute-getting-started-guide",
+        "implementation_guides/workshops",
         {
           "type": "category",
           "label": "Introduction to Pact",

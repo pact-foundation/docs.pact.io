@@ -104,15 +104,16 @@ const siteConfig = {
         src: 'img/favicon.ico'
       },
       items: [
-        { to: '/', label: 'Getting Started', position: 'left', activeBaseRegex: '^/$|getting_started|faq|5-minute' },
-        { to: 'consumer', label: 'Guides', position: 'left', activeBaseRegex: '^/(consumer|provider|pact_nirvana|recipes)' },
+        { to: '/', label: 'Getting Started', position: 'left', activeBaseRegex: '^/$|^/getting_started($|/how_pact_works|/what_is_pact_good_for|/comparisons)|^/faq' },
+        { to: 'concepts', label: 'Concepts', position: 'left', activeBaseRegex: '^/concepts' },
+        { to: 'tutorials', label: 'Tutorials', position: 'left', activeBaseRegex: '^/(tutorials|university|5-minute)' },
+        { to: 'consumer', label: 'How-to Guides', position: 'left', activeBaseRegex: '^/(consumer|provider|pact_nirvana|recipes)' },
         { to: 'implementation_guides/overview', label: 'Pact Docs', position: 'left', activeBaseRegex: '^/(implementation_guides|roadmap|wrapper_implementations|telemetry)/' },
         { to: 'pact_broker', label: 'Pact Broker Docs', position: 'left' },
         { to: 'history', label: 'Resources', position: 'left' },
         { to: 'contributing', label: 'Contributing', position: 'left', activeBaseRegex: '^/contributing|diagrams/ecosystem' },
         { to: 'blog', label: 'Blog', position: 'left' },
-        { to: 'help', label: 'Help', position: 'left' },
-        { to: 'university', label: 'University', position: 'left' }
+        { to: 'help', label: 'Help', position: 'left' }
       ]
     },
 
@@ -132,7 +133,15 @@ const siteConfig = {
               to: '/'
             },
             {
-              label: 'Guides',
+              label: 'Concepts',
+              to: 'concepts'
+            },
+            {
+              label: 'Tutorials',
+              to: 'tutorials'
+            },
+            {
+              label: 'How-to Guides',
               to: 'consumer'
             },
             {

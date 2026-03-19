@@ -225,3 +225,9 @@
   from = "/implementation_guides/pact_specification"
   to = "/getting-started/specification"
   status = 301
+
+# Diataxis refactor: /university landing page now redirects to /tutorials
+[[redirects]]
+  from = "/university"
+  to = "/tutorials"
+  status = 301

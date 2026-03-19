@@ -21,9 +21,14 @@ To view an animated step-by-step explanation of how Pact works, check out this [
 <iframe width="800" height="450" src="https://www.youtube.com/embed/IetyhDr48RI" frameBorder="0" allow="autoplay; encrypted-media" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player"  allowFullScreen></iframe>
 
 Or, watch the [full series on contract testing](https://www.youtube.com/embed/videoseries?list=PLwy9Bnco-IpfZ72VQ7hce8GicVZs7nm0i).
-## Ready to jump into the code already?
+## Where would you like to go?
 
-Get started with our [5 minute guide](5-minute-getting-started-guide.md).
+| I want to… | Go to… |
+|---|---|
+| Follow a step-by-step tutorial | [Tutorials](/tutorials) — 5-minute quick start, Pact University workshops |
+| Understand how Pact works | [Concepts](/concepts) — terminology, matching, provider states, sharing pacts |
+| Solve a specific problem | [How-to Guides](/consumer) — best practices, CI/CD setup, recipes |
+| Look up API or specification details | [Pact Docs](/implementation_guides/overview) — language clients, CLI, plugins |
 
 ## What is contract testing?
 
