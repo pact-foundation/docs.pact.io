@@ -383,4 +383,27 @@ Note: Most "moves" in this plan are sidebar-only - the actual file paths don't c
 - [x] **2026-03-19**: Phase 10 — tutorials.md landing page created
 - [x] **2026-03-19**: Phase 11 — concepts.md landing page created
 - [x] **2026-03-19**: Phase 12 — Reference in concepts sidebar (skipped standalone reference.md; Reference items are a sub-category of Concepts)
-- [ ] Phase 13: Final audit and any remaining redirects
+- [x] **2026-03-19**: Phase 13 — Final audit complete:
+  - Confirmed: no previously-sidebared pages orphaned by my changes
+  - Fixed: pre-existing bug where university sidebar referenced non-existent Step1..Step13 files; corrected to 01_Step1..13_Step13 (and async 01_Step1..04_Step4)
+  - Guides sidebar converted from shorthand object to explicit array format (same Docusaurus behaviour)
+  - further_reading moved from Concepts/Reference to Resources sidebar (better semantic fit)
+  - All 306 sidebar doc references validated as resolving to real files
+  - JSON and config syntax validated
+
+## Final state
+
+All phases complete. The refactor is ready for review and PR.
+
+### Summary of changes
+| Change | Files affected |
+|---|---|
+| New Concepts sidebar (Pact terminology, matching, provider states, etc.) | `sidebars.json`, `docs/concepts.md` (new) |
+| New Tutorials sidebar (5-min guide + University workshops promoted) | `sidebars.json`, `docs/tutorials.md` (new) |
+| Renamed Guides → How-to Guides in nav + footer | `docusaurus.config.js` |
+| Slimmed Getting Started (removed Pact Concepts, 5-min, workshops) | `sidebars.json`, `docs/getting_started.md` |
+| Signposting table on landing page | `docs/getting_started.md` |
+| Redirect /university → /tutorials | `netlify.toml` |
+| Fixed pre-existing broken Step file references in tutorials sidebar | `sidebars.json` |
+| further_reading moved to Resources | `sidebars.json`, `docs/concepts.md` |
+| **Untouched** implementation_guides, pact_broker, blog | — |
