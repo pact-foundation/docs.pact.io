@@ -1,7 +1,8 @@
 # Conceptual Overview
 
-Using Pact successfully requires you to understand how Pact works and the concepts and terminology behind Pact.
-If you try to build your CI/CD without this foundational understanding, you may find yourself getting confused or getting unexpected results.
+This page explains the core domain model behind Pact: how consumer versions, pact versions, branches, environments, and verification results relate to each other. Understanding these concepts will help you reason about your CI/CD pipeline and avoid unexpected behaviour when publishing or verifying pacts.
+
+For an introduction to how Pact tests work, see [How Pact works](/getting_started/how_pact_works). For terminology definitions, see [Terminology](/getting_started/terminology).
 
 ## Consumers and publishing pacts
 
@@ -41,7 +42,7 @@ Branches in the Pact Broker are designed to model repository (git, svn etc) bran
 
 The general recommendation is to set the branch name when you publish a pact, and set with the environment when you deploy.
 
-I'll discuss later how we use branches and environments to help answer the question: can I deploy?
+Branches and environments are used together to answer the deployment safety question: "can I deploy this version?" — see [can-i-deploy](/pact_broker/can_i_deploy) for how this works in practice.
 
 For example, let's say you have a PetStoreConsumer application.  Every time you change it that's a new version
 of the application.  When you run contract tests for that version, you publish a new pact publication to the broker,
