@@ -119,11 +119,11 @@ Scope excludes `implementation_guides/`, `pact_broker/`, `blog/`, and pages writ
 
 ---
 
-### Phase 17: Housekeeping 🔄 IN PROGRESS
+### Phase 17: Housekeeping ✅ COMPLETE (2026-03-20)
 
 - [x] Commit `DIATAXIS_REVIEW.md` (committed 2026-03-20)
-- [ ] Final build verification — confirm no broken sidebar references
-- [ ] Review for any remaining orphaned pages
+- [x] Final build verification — 2 pre-existing broken links remain in `implementation_guides/` (out of scope); 3 links fixed in concepts.md and step_1.md
+- [x] Review for any remaining orphaned pages — none found
 - [ ] PR / merge to master
 
 ---
@@ -136,4 +136,4 @@ Scope excludes `implementation_guides/`, `pact_broker/`, `blog/`, and pages writ
 - [x] **2026-03-20**: Phase 14 — four content gaps filled (4 new pages)
 - [x] **2026-03-20**: Phase 15 — eight structural fixes applied
 - [x] **2026-03-20**: Phase 16 — tone and style pass complete (T1–T15, 30+ files)
-- [ ] **2026-03-20**: Phase 17 — housekeeping and PR
+- [x] **2026-03-20**: Phase 17 — housekeeping complete; 3 broken links fixed; PR pending
