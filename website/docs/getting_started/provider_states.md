@@ -15,7 +15,7 @@ So how do you test a request that requires data to already exist on the provider
 
 Provider states also allow the consumer to make the same request with different expected responses \(e.g. different response codes, or the same resource with a different subset of data\).
 
-Keep in mind that a provider state is all about the state of the _provider_ \(eg. what data is there, how it is going to handle a given response\), not about the state of the consumer, or about what is in the request.
+A provider state is all about the state of the _provider_ \(eg. what data is there, how it is going to handle a given response\), not about the state of the consumer, or about what is in the request.
 
 Refer to the the [Ruby example](../implementation_guides/ruby/provider_states.md) to see how this plays out in code.
 
