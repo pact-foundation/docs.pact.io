@@ -10,6 +10,7 @@ This section explains the **why** and **how** behind Pact. If you're new to cont
 
 | Topic | Description |
 |---|---|
+| [Why Pact?](/getting_started/why-pact) | The design philosophy behind consumer-driven contracts, generated pact files, and the broker model |
 | [Conceptual overview](/getting_started/conceptual_overview) | A visual and narrative overview of the full Pact workflow |
 | [Terminology](/getting_started/terminology) | Definitions of key Pact terms: consumer, provider, pact, interaction, and more |
 | [Testing scope](/getting_started/testing-scope) | What Pact tests cover, and what it deliberately does not |
@@ -23,6 +24,7 @@ This section explains the **why** and **how** behind Pact. If you're new to cont
 | Topic | Description |
 |---|---|
 | [Pact specification](/getting_started/specification) | The Pact specification versions and what they support |
+| [Pact file format](/getting_started/pact-file-format) | The JSON structure of a pact file, including fields, matching rules, and generators |
 
 ## Not sure where to start?
 

@@ -190,6 +190,7 @@
     },
     {
       "Pact Plugins": [
+        "plugins/concepts",
         "plugins/quick_start",
         "implementation_guides/pact_plugins/readme",
         {
@@ -322,6 +323,7 @@
       "type": "category",
       "label": "Pact Concepts",
       "items": [
+        "getting_started/why-pact",
         "getting_started/conceptual_overview",
         "getting_started/terminology",
         "getting_started/testing-scope",
@@ -342,7 +344,8 @@
       "type": "category",
       "label": "Reference",
       "items": [
-        "getting_started/specification"
+        "getting_started/specification",
+        "getting_started/pact-file-format"
       ]
     }
   ],
@@ -362,6 +365,7 @@
       "label": "Provider",
       "items": [
         "provider",
+        "provider/best_practices",
         "provider/using_provider_states_effectively",
         "provider/handling_auth",
         "provider/recommended_configuration",
