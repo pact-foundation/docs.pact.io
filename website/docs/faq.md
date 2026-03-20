@@ -8,7 +8,7 @@ You can find the answers to some more technical and complex questions [here](/fa
 
 :::
 
-You might also like to look at our [Ask Me Anything videos](/help/amas), which often cover these questions in more detail.
+You might also like to look at the [Ask Me Anything videos](/help/amas), which often cover these questions in more detail.
 
 ### What is Pact good for?
 
@@ -24,9 +24,9 @@ Pact is most valuable for designing and testing integrations where you \(or your
 
 ### Who would typically implement Pact?
 
-Pact is generally implemented by developers, during development. While some testers do write Pact tests, the code-first, white-box nature of Pact testing means that whoever writes the tests needs to have a strong understanding of the code under test, how to write code, how to use the existing testing libraries (eg. Jest, JUnit) and build tools (eg. Maven, npm), how to create and inject stubs, as well as how to use the Pact library itself. Testers who do not have this experience struggle with Pact, and we suggest pairing with a developer in this situation. Business analysts and testers can still benefit from the presence of contracts by using them to understand the underlying interactions between the applications.
+Pact is generally implemented by developers, during development. While some testers do write Pact tests, the code-first, white-box nature of Pact testing means that whoever writes the tests needs to have a strong understanding of the code under test, how to write code, how to use the existing testing libraries (eg. Jest, JUnit) and build tools (eg. Maven, npm), how to create and inject stubs, as well as how to use the Pact library itself. Testers who do not have this experience struggle with Pact — pairing with a developer is recommended in this situation. Business analysts and testers can still benefit from the presence of contracts by using them to understand the underlying interactions between the applications.
 
-The consumer team is responsible for implementing the Pact tests in the consumer codebase that will generate the contract, and for publishing it to a shared location \(usually a [Pact Broker](/pact_broker)\). The provider team is responsible for setting up the Pact verification task in the provider codebase, and for writing the code that sets up the correct data for each `provider state` described in the contract. Both teams are responsible for collaborating and communicating about the API and its usage! Remember that contracts are not a substitute for good communication between teams.
+The consumer team is responsible for implementing the Pact tests in the consumer codebase that will generate the contract, and for publishing it to a shared location \(usually a [Pact Broker](/pact_broker)\). The provider team is responsible for setting up the Pact verification task in the provider codebase, and for writing the code that sets up the correct data for each `provider state` described in the contract. Both teams are responsible for collaborating and communicating about the API and its usage! Contracts are not a substitute for good communication between teams.
 
 ### What is the difference between contract testing and functional testing?
 
@@ -53,18 +53,18 @@ Pact was written by a team that was using microservices that had read/write REST
 ### Why is there no support for specifying optional attributes?
 
 :::note
-Refer to our [guide](/recipes/optional) on handling optional values.
+Refer to the [guide](/recipes/optional) on handling optional values.
 :::
 
 Firstly, it is assumed that you have control over the provider's data \(and consumer's data\) when doing the verification tests. If you don't, then maybe Pact is [not the best tool for your situation](/getting_started/what_is_pact_good_for).
 
-Secondly, if Pact supports making an assertion that element `$.body.name` may be present in a response, then you write consumer code that can handle an optional `$.body.name`, but in fact, the provider gives `$.body.firstname`, no test will ever fail to tell you that you've made an incorrect assumption. Remember that a provider may return extra data without failing the contract, but it must provide at minimum the data you expect.
+Secondly, if Pact supports making an assertion that element `$.body.name` may be present in a response, then you write consumer code that can handle an optional `$.body.name`, but in fact, the provider gives `$.body.firstname`, no test will ever fail to tell you that you've made an incorrect assumption. Note that a provider may return extra data without failing the contract, but it must provide at minimum the data you expect.
 
 The same goes for specifying "SOME\_VALUE or null". If all your provider verification test data returned nulls for this key, you might think that you had validated the "SOME\_VALUE", but in fact, you never had. You could get a completely different "SOME\_VALUE" for this key in production, which may then cause issues.
 
 The same goes for specifying an array with length 0 or more. If all your provider verification data returned 0 length arrays, all your verification tests would pass without you ever having validated the contents of the array. This is why you can only specify an array with minimum length 1 OR a zero length array.
 
-Remember that unlike a schema, which describes all possible states of a document, Pact is "contract by examples". If you need to assert that multiple variations are possible, then you need to provide an example for each of those variations. Consider if it's _really_ important to you before you do add a Pact test for each and every variation however. Remember that each interaction comes with a "cost" of maintenance and execution time, and you need to consider if it is worth the cost in your particular situation. You may be better off handling the common scenarios in the pact, and then writing your consumer to code to gracefully handle unexpected variations (eg. by ignoring that data and raising an alert).
+Remember that unlike a schema, which describes all possible states of a document, Pact is "contract by examples". If you need to assert that multiple variations are possible, then you need to provide an example for each of those variations. Consider if it's _really_ important to you before you do add a Pact test for each and every variation however. Each interaction comes with a cost of maintenance and execution time — consider whether it is worth it in your particular situation. You may be better off handling the common scenarios in the pact, and then writing your consumer code to gracefully handle unexpected variations (eg. by ignoring that data and raising an alert).
 
 ### Why are the pacts generated and not static?
 
@@ -107,7 +107,7 @@ Contract tests replace a certain class of system integration test \(the ones you
 
 The value of contract tests is that they allow you to shift effort from high maintenance, slow feedback tests to low maintenance, fast feedback tests, reducing the overall effort required to release.
 
-We often see end-to-end integration tests used as a catch all across integration, functional and acceptance testing (in the pyramid below, this would be represented as a bigger portion of the "E2E" part of the triangle). Specifically, we see them used as a proxy for [_provider functional tests_](/consumer/contract_tests_not_functional_tests). Separating the integration from the functional aspects often relieves end-to-end tests of a lot of their duties, and in some cases they can be replaced altogether. Read on to see how.
+End-to-end integration tests are often used as a catch-all across integration, functional and acceptance testing (in the pyramid below, this would be represented as a bigger portion of the "E2E" part of the triangle). Specifically, they are often used as a proxy for [_provider functional tests_](/consumer/contract_tests_not_functional_tests). Separating the integration from the functional aspects often relieves end-to-end tests of a lot of their duties, and in some cases they can be replaced altogether. Read on to see how.
 
 **Watch a video: replacing end-to-end integration tests**
 
@@ -142,7 +142,7 @@ If you work in a more traditional "Big Bang Release" environment, choose end to 
 
 #### The Four Key Metrics
 
-Lastly, we find that the [four key metrics](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance) from DORA that correlate to high performing organisations are great ways to measure and report on your contract testing initiative. These metrics are:
+The [four key metrics](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance) from DORA that correlate to high-performing organisations are a great way to measure and report on your contract testing initiative. These metrics are:
 
 * Deployment frequency: how often do you release?
 * Lead time for change: how long does it take to get a release from from commit to production?
@@ -199,7 +199,7 @@ PactFlow is a commercial fork of the Pact Broker, and adds features required to 
 
 Pact is "consumer driven contracts", not "dictator driven contracts". Just because it's called "consumer driven" doesn't mean that the team writing the consumer gets to write a pact and throw it at the provider team without talking about it. The pact should be the starting point of a collaborative effort.
 
-The way Pact works, it's the pact verification task \(in the provider codebase\) that fails when a consumer expects things that are different from what a provider responds with, even if the consumer itself is "wrong". This is a little unfortunate, but it's the nature of the beast. (See this page on [pending pacts](https://pact.io/pending) for how we've fixed this problem.)
+The way Pact works, it's the pact verification task \(in the provider codebase\) that fails when a consumer expects things that are different from what a provider responds with, even if the consumer itself is "wrong". This is a little unfortunate, but it's the nature of the beast. (See this page on [pending pacts](https://pact.io/pending) for how this problem is addressed.)
 
 Running the pact verification task that gets triggered by the "contract content changed" webhook in a separate CI build from the rest of the tests for the provider is a good idea - if you have it in the same build, someone is going to get cranky about another team being able to break their build.
 
@@ -273,9 +273,9 @@ There are multiple situations where you need to traverse more than 2 systems in 
 
 Another common example is where one system calls out to another system first to fetch an authentication token such as a JWT. In this case, there is an API call from consumer A to auth provider B, which is then able to call auth server C.
 
-Where possible, you should try to isolate interactions between two services at any one time. We would generally recommend stubbing out these systems.
+Where possible, try to isolate interactions between two services at any one time. Stubbing out these systems is generally recommended.
 
-See [https://gist.github.com/bethesque/43eef1bf47afea4445c8b8bdebf28df0](https://gist.github.com/bethesque/43eef1bf47afea4445c8b8bdebf28df0) for some more detail on how you might achieve this, and read our advice on [dealing with auth services](/provider/handling_auth).
+See [https://gist.github.com/bethesque/43eef1bf47afea4445c8b8bdebf28df0](https://gist.github.com/bethesque/43eef1bf47afea4445c8b8bdebf28df0) for more detail on how you might achieve this, and read the advice on [dealing with auth services](/provider/handling_auth).
 
 ### How do I test auth cookies?
 
@@ -290,13 +290,13 @@ In this instance you have a few options:
 
 \(1\) doesn't fully represent the true contract, but \(2\) would require more code/effort.
 
-In this case, we suggest you need to weigh up the pros/cons. From a purely theoretical perspective, the answer is “you should include it”. But taking a more balanced view, we say test what gives you value. If the cookie is always going to be implicitly added by the browser \(because that’s how browser’s behave\) and it’s a scenario unlikely to give your team more \(useful\) information about how the system behaves, whilst costing you effort in maintaining it. Then maybe it’s not worth it.
+In this case, weigh up the pros/cons. From a purely theoretical perspective, the answer is “you should include it”. But taking a more balanced view, test what gives you value. If the cookie is always going to be implicitly added by the browser \(because that’s how browser’s behave\) and it’s a scenario unlikely to give your team more \(useful\) information about how the system behaves, whilst costing you effort in maintaining it. Then maybe it’s not worth it.
 
 Sorry, life isn't black and white!
 
 ### Should the database or any other part of the provider be stubbed?
 
-The pact authors' experience with using pacts to test microservices has been that using the set_up hooks to populate the database, and running the verifications with all the real provider code has worked very well, and gives us full confidence that the end to end scenario will work in the deployed code.
+Experience with using pacts to test microservices has shown that using the set_up hooks to populate the database and running the verifications with all the real provider code works very well, giving full confidence that the end-to-end scenario will work in deployed code.
 
 However, if you have a large and complex provider, you might decide to stub some of your application code. You will definitely need to stub calls to downstream systems or to set up error scenarios. Make sure, if you stub, that you don't stub the code that actually parses the request and pulls the expected data out, because otherwise the consumer could be sending absolute rubbish, and the verification task won't fail because that code won't get executed. If the validation happens when you insert a record into the datasource, either don't stub anything, or rethink your validation code.
 
@@ -330,7 +330,7 @@ See below, or the [Pact JS example](https://github.com/pact-foundation/pact-js/t
 
 ### I use GraphQL, SOAP, Protobufs ... do I need contract tests?
 
-This is a hard one. All we can do is provide some general advice, which can be easily summarised as this:
+This is a hard one. Here is some general advice, which can be summarised as this:
 
 > if there is a possibility that the provider and consumer can get out of sync, then contract tests can help
 
@@ -338,14 +338,14 @@ GraphQL is simply an abstraction over HTTP, and it is entirely possible that the
 
 SOAP is the same. Yes, there is a strongly defined schema, however if the provider changes that schema and deploys before a consumer has updated, boom - client down.
 
-Protobufs is something we are still thinking about, and we've yet to test it with Pact in the wild. It does appear unnecessary as it has mechanisms to deal with backwards compatibility - but if you're willing to investigate, please chat to us and tell us how you go :\)
+Protobufs support in Pact is still being considered. It does appear unnecessary as it has mechanisms to deal with backwards compatibility — but if you're willing to investigate, share your findings in the [Pact Slack](https://slack.pact.io).
 
 
 ### How can I tell if I have good contract test coverage of my provider API?
 
 Contract tests aren't intended to provide any particular percentage coverage of the _provider_ code - that's what the provider's own functional tests are for. The important question to be asking is "what proportion of the consumer code _that makes the calls to the provider_ is covered?". If you execute your consumer Pact tests in a separate step in your test suite, you can use standard code coverage tools to determine whether or not your Pact tests have covered a sufficient percentage of your consumer client code.
 
-While the coverage metric can be helpful, it unfortunately won't be able to tell you whether or not you've covered every semantic variation of an endpoint. Determining that is currently beyond the scope of Pact, but is something that we would love to be able to solve in the future.
+While the coverage metric can be helpful, it won't tell you whether you've covered every semantic variation of an endpoint. Determining that is currently beyond the scope of Pact.
 
 ### Why does computer say no in the can-i-deploy tool?
 
