@@ -356,6 +356,7 @@
       "items": [
         "consumer",
         "consumer/contract_tests_not_functional_tests",
+        "consumer/how_to_test_async_messages",
         "consumer/using_pact_to_support_ui_testing",
         "consumer/recommended_configuration"
       ]
