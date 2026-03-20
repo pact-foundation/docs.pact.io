@@ -30,7 +30,7 @@ These templates come with all the boilerplate out the way, so you can concentrat
 
 ## Demos
 
-We have built out some demos based on a few scenarios that you can run on your machine or in browser via our interactive tutorials.
+The following demos cover a few scenarios you can run on your machine or in the browser via interactive tutorials.
 
 1. [Area Calculator](https://github.com/pact-foundation/pact-plugins/tree/main/examples/gRPC/area_calculator)
    1. [Proto file](https://github.com/pact-foundation/pact-plugins/blob/main/examples/gRPC/area_calculator/proto/area_calculator.proto)
