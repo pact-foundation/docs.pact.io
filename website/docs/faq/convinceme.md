@@ -47,7 +47,7 @@ Read the following to un-convince yourself:
 * [http://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam](http://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam)
 * and if you're really keen, [Defect Analysis and Prevention for Software Process Quality Improvement](http://www.ijcaonline.org/volume8/number7/pxc3871759.pdf)
 
-Research tells us that integration tests are more costly in terms of time, effort and maintenance without giving us any more guarantees.
+Research shows that integration tests are more costly in terms of time, effort and maintenance without providing additional guarantees.
 
 **Watch a video**
 
@@ -144,11 +144,9 @@ In fact, you don't even have to use Pact to implement contract testing and gain 
 
 ## OK, I'm convinced but I can't convince my friends
 
-Are you just saying that so we don't feel bad?
-
 Here are some suggestions to win them over:
 
 * Watch some of the great talks over lunch with your team and some popcorn
 * [Ask](https://slack.pact.io) one of the pact contributors to do a brown-bag talk at your office or over hangouts
-* [Chat](https://slack.pact.io) to us in real-time and we'll see if we can debate as your proxy
+* [Chat in real-time on Pact Slack](https://slack.pact.io) — someone from the community can often help make the case
 
