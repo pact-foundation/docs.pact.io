@@ -5,9 +5,9 @@ sidebar_label: Introduction
 
 Or _"The steps for reaching Pact Nirvana"_
 
-This is a technical guide for developers and testers who want to use Pact to implement consumer driven contract testing as part of your ongoing CI/CD workflow.
+This is a **how-to guide** for developers and testers who want to integrate Pact into their CI/CD workflow. Each step addresses a specific task — getting a test running, connecting the Pact Broker, wiring up pipelines, and enabling deployment safety gates.
 
-By the end of the guide, you will understand how to create a release pipeline that allows you to independently deploy any application with the confidence that it will work correctly with the other applications in its environment - without having to run a suite of end to end tests.
+By the end, you will have a release pipeline that allows you to independently deploy any application with the confidence that it will work correctly with the other applications in its environment — without running a suite of end-to-end tests.
 
 This guide focuses on the scenario where the consumer and provider are both being deployed to an environment rather than released to customers (e.g. a mobile app). That workflow is slightly different, and that guidance will be coming soon.
 
