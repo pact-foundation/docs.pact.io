@@ -2,9 +2,9 @@
 title: Verifying Pacts
 ---
 
-"Verifying a pact" is the second step of the Pact testing process. Each request in the pact file is replayed against the provider, and the response is compared with the expected response in the pact file. If the two match, then we know the consumer and provider are compatible.
+"Verifying a pact" is the second step of the Pact testing process. Each request in the pact file is replayed against the provider, and the response is compared with the expected response in the pact file. If the two match, the consumer and provider are compatible.
 
-To verify a pact, we must:
+To verify a pact, you need to:
 
 1. Configure the location of the pact to be verified. This can be a HTTP URL, or a local file system path.
 2. Set up the data for the [provider states](provider_states.md).
