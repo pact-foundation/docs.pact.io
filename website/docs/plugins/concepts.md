@@ -126,5 +126,5 @@ Plugins operate within the Pact interaction model. They cannot:
 
 - See available plugins in the [Plugin Directory](/plugins/directory).
 - Try an existing plugin with the [Plugin Quick Start](/plugins/quick_start).
-- Build your own with the [Create a Plugin workshop](/university/plugins/create-a-plugin/intro).
-- Read the plugin design documents in [Pact Docs](/implementation_guides/pact_plugins/readme) for the full technical specification.
+- Build your own with the [Create a Plugin workshop](/plugins/workshops/create-a-plugin/intro).
+- Read the plugin design documents in [Pact Docs](/implementation_guides/pact_plugins) for the full technical specification.

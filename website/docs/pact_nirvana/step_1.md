@@ -16,5 +16,5 @@ Before working through this guide, make sure you have:
 Before configuring Pact in your own environment, it helps to see what a working pipeline looks like. The [Pact CI/CD workshop](https://docs.pactflow.io/docs/workshops/ci-cd/) gives you a hands-on run through of the full pipeline — from writing a consumer test to deploying safely with `can-i-deploy`.
 
 :::note
-If you are using your own instance of the open source Pact Broker, it does not support secrets and does not have a UI for managing [webhooks](/pact_broker/webhooks). You will need to use the API or HAL Browser to create webhooks, and your CI token will be stored in plain text in the webhook. See the [Webhooks API reference](/pact_broker/advanced_topics/api_docs/webhooks) for details.
+If you are using your own instance of the open source Pact Broker, it does not support secrets and does not have a UI for managing [webhooks](/pact_broker/webhooks). You will need to use the API or HAL Browser to create webhooks, and your CI token will be stored in plain text in the webhook. See the [Webhooks documentation](/pact_broker/webhooks) for details.
 :::
