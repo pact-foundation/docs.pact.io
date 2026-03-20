@@ -6,7 +6,7 @@ Contract tests focus on the messages that flow between a consumer and provider, 
 
 A more subtle distinction is required when it comes to contract testing interactions that don't have side effects, like validation error responses.
 
-Imagine that we have a simple _User Service_ that allows Consumers to register new users, typically with a POST request containing the details of the created user in the body.
+Consider a simple _User Service_ that allows consumers to register new users, typically with a POST request containing the details of the created user in the body.
 
 A simple happy-path scenario for that interaction might look like:
 
@@ -28,11 +28,11 @@ Then
   Expected Response is 409 Conflict
 ```
 
-So far so good, we're covering a new behaviour, with a different response code.
+So far so good — this covers a new behaviour with a different response code.
 
-Now we've been talking to the Team managing the _User Service_ and they tell us that username has a maximum length of 20 characters, also they only allow letters in the username and a blank username is obviously not valid. Maybe that's something we should add in our contract?
+Now, the team managing the _User Service_ has told you that usernames have a maximum length of 20 characters, allow only letters, and cannot be blank. That sounds like something to add to the contract.
 
-This is where we get on the slippery slope... it's very tempting to now add 3 scenarios to our contract, something like:
+This is the slippery slope — it is tempting to now add 3 scenarios to the contract, something like:
 
 ```text
 When "creating a user with a blank username"
@@ -58,7 +58,7 @@ Then
   Expected Response body is { "error": "username can only contain letters" }
 ```
 
-We've gone past the contract testing at this point, we're actually testing that the _User Service_ implements the validation rules correctly: this is functional testing, and it should be covered by the _User Service_ in its own codebase.
+At this point, you have gone past contract testing and are actually testing that the _User Service_ implements validation rules correctly: this is functional testing, and it should be covered by the _User Service_ in its own codebase.
 
 What is the harm in this... more testing is good, right? The issue here is that these scenarios are going too far and create an unnecessarily tight contract - what if the _User Service_ Team decides that actually 20 characters is too restrictive for username and increases it to 50 characters? What if now numbers are allowed in the username? Any Consumer should be unaffected by any of these changes, unfortunately the _Users Service_ will break our Pact just by loosening the validation rules. These are not breaking changes, but by over-specifying our scenarios we are stopping the _User Service_ Team from implementing them.
 
@@ -72,7 +72,7 @@ Then
   Response body is { "error": "<any string>" }
 ```
 
-Subtle, but so much more flexible! Now the _User Service_ Team can change \(most\) of their validation rules without breaking the Pact we give them... we don't really care about each individual business rule, we only care that if we send something wrong, then we understand the way the _User Service_ responds to us.
+Subtle, but so much more flexible! Now the _User Service_ team can change \(most\) of their validation rules without breaking the pact — the contract doesn't need to care about each individual business rule, only that if you send something wrong, you understand how the _User Service_ will respond.
 
 When writing a test for an interaction, ask yourself what you are trying to cover. Contracts should be about catching:
 
@@ -80,7 +80,7 @@ When writing a test for an interaction, ask yourself what you are trying to cove
 * misunderstanding from the consumer about end-points or payload
 * breaking changes by the provider on end-points or payload
 
-In short, your Pact scenarios should not dig into the business logic of the Provider but should stick with verifying that Consumer and Provider have a shared understanding of what requests and responses will be. In our example of validation, write scenarios about _how_ the validation fails, not _why_ the validation fails.
+In short, your Pact scenarios should not dig into the business logic of the provider but should stick with verifying that consumer and provider have a shared understanding of what requests and responses will be. In the validation example above, write scenarios about _how_ validation fails, not _why_ it fails.
 
 ## Which test is responsible for what?
 

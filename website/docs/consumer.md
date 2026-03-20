@@ -51,7 +51,7 @@ Avoid the temptation to make assertions about general business rules that you kn
 
 Typically, exact matching is most appropriate for Pact tests on the consumer side that are running at the unit test level. The same person is responsible for both the expectation and the actual request, so making sure that they match should be straightforward.
 
-If you are using Pact for tests that cover more than just the "client" code, then you might want to use a looser matching (eg. type based matching and regular expressions). Remember that the more of the consumer code you cover with your Pact tests, the less maintainable it is, so do this with caution, and make sure you understand the trade-offs.
+If you are using Pact for tests that cover more than just the "client" code, then you might want to use a looser matching (eg. type based matching and regular expressions). The more consumer code you cover with Pact tests, the less maintainable they become — proceed with caution, and make sure you understand the trade-offs.
 
 For the response, loose matching is generally the recommended option, however, the exact/loose matching decision should be made on a field by field basis. Most of the time, the consumer should not really care about the contents of a response field, and should just care about the type. However, there will be times when the contents do matter, so use exact matching when this is the case. The question to ask yourself when writing the response expectations is "if I made this looser/tighter what bugs would I miss/prevent?"
 
