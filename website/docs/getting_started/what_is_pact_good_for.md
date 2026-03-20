@@ -40,7 +40,7 @@ Pact is fantastic tool for developing and testing intra-organisation microservic
 
 If you use Pact to test a public API, the only way to set up the right provider state is to use the very API that you're actually testing, which will make the tests slower and more brittle compared to the "normal" pact verification tests. Resetting the state between interactions may be quite slow, as you may need to iterate over many APIs to clear previously created data. An alternative might be to modify requests so that they work on a new context each time.
 
-If this is still a better situation for you than integration testing, or using another tool, then you can give it a go! We strongly recommend you do not try to rely on state set up by previous interactions, as this will inevitably lead to flakey tests with dependencies that are hard to reason about. Reliably ordering the interactions within the pact or during replay is not supported in all implementations.
+If this is still a better situation for you than integration testing, or using another tool, you can give it a go. Do not rely on state set up by previous interactions — this will inevitably lead to flaky tests with dependencies that are hard to reason about. Reliably ordering interactions within the pact or during replay is not supported in all implementations.
 
 ### Why Pact may not be the best tool for testing pass through APIs like BFFs
 
