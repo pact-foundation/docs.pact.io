@@ -4,26 +4,9 @@ description: How to use Pact + the can-i-deploy tool to ensure that you are safe
 toc_max_heading_level: 4
 ---
 
-Before you deploy a new version of an application to a production environment, you need to know whether or not the version you're about to deploy is compatible with the versions of the other apps that already exist in that environment. The old-fashioned way of managing these dependencies involved deploying sets of pre-tested applications together, creating a bottleneck, and meaning that speedy development and testing on one application may be negated by slow development and testing on another.
+Before you deploy, you need to confirm that the version you're releasing is compatible with what's already running in the target environment. The `can-i-deploy` tool queries the Pact Broker's verification matrix and tells you whether it's safe to proceed.
 
-The Pact way of managing these dependencies is to use the Pact "Matrix" and the `can-i-deploy` tool. The "Matrix" is the grid created when you create a table of all the consumer and provider versions that have been tested against each other using Pact. \(When a pact is published, the version of the consumer that generated the pact is recorded. When a pact is verified against a provider, the verification results are published to the Pact Broker, along with the version of the provider that verified the pact. When you put all of the consumer versions and provider versions that have been tested against each other into a table, you end up with the "Pact Matrix".\)
-
-You can view the Pact Matrix for any pair of applications by clicking on the little grid icon for your pact in the Pact Broker index page.
-
-Imagine the pact verification matrix for consumer Foo and provider Bar. It shows the consumer version, the provider version, and whether or not the verification passed.
-
-| Foo version \(consumer\) | Bar version \(provider\) | Verification success? |
-| :--- | :--- | :--- |
-| 22 | 56 | true |
-| 23 | 56 | true |
-| 23 | 57 | false |
-| 23 | 58 | true |
-| 24 | 58 | true |
-| 25 | 58 | false |
-
-So how does this help us? Well, if we know that version 56 of Bar is already in our prod environment, looking at the matrix tells us that we are safe to deploy version 22 or 23 to prod, but not any of the versions after. Conversely, if we know that version of 24 of Foo is in prod, then we know we're safe to deploy version 58 of Bar, but not any of the versions before.
-
-Let's see how the Pact Matrix helps us deploy safely in practice.
+For an explanation of how the Pact Matrix works and why it exists, see the [Pact Broker overview](/pact_broker/overview).
 
 In the deployment script for each application that uses Pact, we need to add a step after the successful deployment that notifies the Pact Broker of the event. Depending on which version of the Pact Broker you are using, you will notify the Broker in a different way. The latest versions of the Pact Broker support the [`record-deployment`](/pact_broker/recording_deployments_and_releases/#recording-deployments) and [`record-release`](/pact_broker/recording_deployments_and_releases/#recording-releases) commands. Older versions of the Pact Broker use "tags" to keep track of deployments. See the [section below](#using-can-i-deploy-with-tags) if you are using an version of the Broker that does not support recording deployments.
 
