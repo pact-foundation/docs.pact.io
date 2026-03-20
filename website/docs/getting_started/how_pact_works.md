@@ -2,7 +2,7 @@
 title: How Pact works
 ---
 
-Remember these definitions from the [introduction](/):
+The following definitions are used throughout this page (and align with the [introduction](/)):
 
 * **Consumer**: An application that makes use of the functionality or data from another application to do its job. For applications that use HTTP, the consumer is always the application that initiates the HTTP request \(eg. the web front end\), regardless of the direction of data flow. For applications that use queues, the consumer is the application that reads the message from the queue.
 * **Provider**: An application \(often called a service\) that provides functionality or data for other applications to use, often via an API. For applications that use HTTP, the provider is the application that returns the response. For applications that use queues, the provider \(also called _producer_\) is the application that writes the messages to the queue.
@@ -82,11 +82,9 @@ In many cases, your provider will need to be in a particular state \(such as "us
 
 ## Putting it all together
 
-Here’s a repeat of the two diagrams above:
-
 ![Pact test and verify](/img/pact-test-and-verify.png)
 
-If we pair the consumer test and provider verification process for each interaction, the contract between the consumer and provider is fully tested without having to spin up the services together.
+Pairing the consumer test and provider verification process for each interaction means the contract between the consumer and provider is fully tested without having to spin up the services together.
 
 ## Non-HTTP testing (Message Pact)
 
@@ -94,7 +92,7 @@ Modern distributed architectures are increasingly integrated in a decoupled, asy
 
 There are some minor differences between how Pact works in these cases when compared to the HTTP use case. Pact supports messages by abstracting away the protocol and specific queuing technology (such as Kafka) and focusses on the messages passing between them.
 
-Check our [feature support](/roadmap/feature_support) to ensure your language has this capability.
+Check the [feature support](/roadmap/feature_support) page to ensure your language has this capability.
 
 :::info
 To reiterate: Pact does not know about the various message queueing technologies - there are simply too many! And more importantly, Pact is really about testing the messages that pass between them, you can still write your standard functional tests using other frameworks designed for such things.
@@ -108,7 +106,7 @@ For a step-by-step guide on structuring and writing these tests, see [How to tes
 
 ## Next steps
 
-_Contract tests should focus on the messages \(requests and responses\) rather than the behaviour_. It can be tempting to use contract tests to write general functional tests for the provider. Experience shows this to leads to painful experiences with brittle tests. See [this guide for contract testing best practices](/consumer/contract_tests_not_functional_tests).
+_Contract tests should focus on the messages \(requests and responses\) rather than the behaviour_. Using contract tests as general functional tests for the provider leads to brittle tests. See [this guide for contract testing best practices](/consumer/contract_tests_not_functional_tests).
 
 _Pact tests should be data independent_. Pact tests are best when successful verification doesn’t depend on the specific data that the provider returns. See [this guide](/consumer) for best practices when describing interactions.
 
