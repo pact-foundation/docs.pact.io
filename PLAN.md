@@ -75,7 +75,7 @@ Eight type-mixing and framing issues fixed:
 
 ---
 
-### Phase 16: Tone and style consistency pass 🔄 IN PROGRESS
+### Phase 16: Tone and style consistency pass ✅ COMPLETE (2026-03-20)
 
 Rewrite in-scope pages for consistent tone and style:
 - Second-person voice throughout ("you", not "we" or "I")
@@ -89,39 +89,39 @@ Rewrite in-scope pages for consistent tone and style:
 Scope excludes `implementation_guides/`, `pact_broker/`, `blog/`, and pages written fresh in phases 14–15 (already consistent).
 
 #### Getting Started section
-- [ ] **T1** — `getting_started.md` (landing page)
-- [ ] **T2** — `getting_started/what_is_pact_good_for.md`
-- [ ] **T3** — `getting_started/how_pact_works.md`
-- [ ] **T4** — `getting_started/terminology.md`
-- [ ] **T5** — `getting_started/testing-scope.md`
-- [ ] **T6** — `getting_started/verifying_pacts.md`
-- [ ] **T7** — `getting_started/provider_states.md`
-- [ ] **T8** — `getting_started/sharing_pacts.md`
-- [ ] **T9** — `getting_started/comparisons.md`
+- [x] **T1** — `getting_started.md` (landing page)
+- [x] **T2** — `getting_started/what_is_pact_good_for.md`
+- [x] **T3** — `getting_started/how_pact_works.md`
+- [x] **T4** — `getting_started/terminology.md` (already clean)
+- [x] **T5** — `getting_started/testing-scope.md`
+- [x] **T6** — `getting_started/verifying_pacts.md`
+- [x] **T7** — `getting_started/provider_states.md`
+- [x] **T8** — `getting_started/sharing_pacts.md`
+- [x] **T9** — `getting_started/comparisons.md` (already clean)
 
 #### FAQ
-- [ ] **T10** — `faq.md` + `faq/convinceme.md`
+- [x] **T10** — `faq.md` + `faq/convinceme.md`
 
 #### Consumer how-to
-- [ ] **T11** — `consumer.md` + `consumer/contract_tests_not_functional_tests.md` + `consumer/using_pact_to_support_ui_testing.md` + `consumer/recommended_configuration.md`
+- [x] **T11** — `consumer.md` + `consumer/contract_tests_not_functional_tests.md` + `consumer/using_pact_to_support_ui_testing.md` + `consumer/recommended_configuration.md`
 
 #### Provider how-to
-- [ ] **T12** — `provider.md` + `provider/using_provider_states_effectively.md` + `provider/handling_auth.md` + `provider/recommended_configuration.md` + `provider/how_to_fix_failing_verification_tests.md`
+- [x] **T12** — `provider.md` + `provider/using_provider_states_effectively.md` + `provider/handling_auth.md` + `provider/recommended_configuration.md` + `provider/how_to_fix_failing_verification_tests.md`
 
 #### CI/CD Guide
-- [ ] **T13** — `pact_nirvana/step_2.md` through `step_7.md`
+- [x] **T13** — `pact_nirvana/step_2.md` through `step_7.md`
 
 #### Recipes
-- [ ] **T14** — `recipes.md` + `recipes/optional.md` + `recipes/graphql.md` + `recipes/apigateway.md` + `recipes/awssignedrequests.md` + `recipes/lambdaasync.md` + `recipes/lambdahttp.md` + `recipes/cypress.md` + `recipes/munit.md`
+- [x] **T14** — `recipes.md` + `recipes/optional.md` + `recipes/graphql.md` + `recipes/apigateway.md` + `recipes/awssignedrequests.md` + `recipes/lambdaasync.md` + `recipes/lambdahttp.md` + `recipes/cypress.md` + `recipes/munit.md`
 
 #### Plugins
-- [ ] **T15** — `plugins/quick_start.md` + `plugins/directory.md`
+- [x] **T15** — `plugins/quick_start.md` + `plugins/directory.md`
 
 ---
 
-### Phase 17: Housekeeping ⏳ PENDING
+### Phase 17: Housekeeping 🔄 IN PROGRESS
 
-- [ ] Commit `DIATAXIS_REVIEW.md` (currently untracked)
+- [x] Commit `DIATAXIS_REVIEW.md` (committed 2026-03-20)
 - [ ] Final build verification — confirm no broken sidebar references
 - [ ] Review for any remaining orphaned pages
 - [ ] PR / merge to master
@@ -135,5 +135,5 @@ Scope excludes `implementation_guides/`, `pact_broker/`, `blog/`, and pages writ
 - [x] **2026-03-20**: Sidebar step ID regression fixed (`01_Step1` → `Step1`); site confirmed running
 - [x] **2026-03-20**: Phase 14 — four content gaps filled (4 new pages)
 - [x] **2026-03-20**: Phase 15 — eight structural fixes applied
-- [ ] **2026-03-20**: Phase 16 — tone and style pass (in progress)
+- [x] **2026-03-20**: Phase 16 — tone and style pass complete (T1–T15, 30+ files)
 - [ ] **2026-03-20**: Phase 17 — housekeeping and PR
