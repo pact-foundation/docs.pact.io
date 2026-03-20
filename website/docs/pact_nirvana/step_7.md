@@ -9,9 +9,9 @@ Environments allow you to ensure backwards compatibility between production and 
 
 Before you deploy to a production environment, you need to know whether or not your app is compatible with the versions of the other apps that already exist in that environment. The old-fashioned way of managing these dependencies involved deploying sets of pre-tested applications together, creating a bottleneck and meaning that speedy development and testing on one application may be negated by slow development and testing on another.
 
-## Let's record our deployments
+## Record deployments
 
-Now we're ready to tell the pact-broker when we deploy a version of our application, and switch `can-i-deploy` to use environment names rather than branch names.
+At this step, you configure the pact-broker to be notified when a version of your application is deployed, and switch `can-i-deploy` to use environment names rather than branch names.
 
 <details open>
   <summary>Diamond level diagram</summary>
@@ -36,17 +36,11 @@ sequenceDiagram
 ```
 </details>
 
-Note how in the PR pipeline we are checking to see if we can deploy to all the environments that we deploy to from
-the main branch. The rationale for this is that we don't want to merge something into our main branch which we know
-will break once we deploy - we want our main branch to stay clean and not get blocked by broken builds.  If you
-deploy to other environments such as preprod, you would want to check that environment as well.
+Note how in the PR pipeline, the check is against all environments that are deployed to from the main branch. The rationale is that you don't want to merge something into the main branch that will break on deploy — the main branch should stay clean and not get blocked by broken builds. If you deploy to other environments such as preprod, check those environments as well.
 
-Then, when we're actually ready to deploy to an environment, we check again. We do this because the version of the
-other side of the contract could have changed since the PR validation ran.  Doing the check in the PR pipeline
-reduces the chance of breakage, but it's still a possibility, and we want to check for that before we deploy.
+Then, when you are actually ready to deploy to an environment, check again. The version on the other side of the contract could have changed since the PR validation ran. Checking in the PR pipeline reduces the chance of breakage, but it remains a possibility — so check again just before deploying.
 
-Note also that the first step in our commit pipeline is to let the broker know that a particular version of the
-provider or consumer is now in the main branch.
+Note also that the first step in the commit pipeline is to let the broker know that a particular version of the provider or consumer is now in the main branch.
 
 ### Add `record-deployment` to your commit pipelines
 
@@ -68,12 +62,12 @@ deploy to an environment, to make sure it's safe to deploy.
 The final step is to make sure before you merge a PR that you can successfully deploy to all the environments that are
 targeted from the main branch (staging, prod, preprod, etc.)
 
-### What if we use a release branch?
+### What if you use a release branch?
 
-If you use a release branch, then you do not deploy to prod and preprod from your main branch, so you can eliminate
+If you use a release branch, you do not deploy to prod and preprod from your main branch, so you can eliminate
 that check on the PR pipeline.
 
-However, before you cut a release branch, you want to check if you can deploy to preprod and prod.
+However, before cutting a release branch, check whether you can deploy to preprod and prod.
 
 The general idea is:
 

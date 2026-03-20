@@ -22,7 +22,7 @@ The simplest first steps you can take
 ## Tasks
 
 1. Write a Pact test in your consumer project \(consult [the documentation](/implementation_guides/cli) for your chosen language\) and generate the pact.
-2. Ship the pact file to the provider team via some manual mechanism (we will introduce the concept of a pact broker in a later step)
+2. Ship the pact file to the provider team via some manual mechanism (the Pact Broker is introduced in a later step)
 3. Verify the pact against the provider \(again, consult the documentation for your chosen language\)
 4. Talk about it.
 5. Decide whether or not Pact is the right tool for you, taking into account that there are situations for which Pact is [a good solution](/faq/#what-is-pact-good-for), and situations for which Pact is [not a good solution](/faq/#what-is-pact-not-good-for).
@@ -72,9 +72,9 @@ Usually it won't at the first attempt unless you're pretty lucky.  So now you ca
 
 ### Additional Notes
 
-We also have features such as:
+Pact also includes features such as:
 
 - provider states
 - matchers
 
-However before diving in, follow this guide to make sure you understand how the pact generation and verification steps work, these will form part of our Honours course.
+Before diving in, follow this guide to make sure you understand how the pact generation and verification steps work — these form part of the higher-level steps in this guide.

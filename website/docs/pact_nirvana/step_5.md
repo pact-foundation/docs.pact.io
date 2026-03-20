@@ -37,7 +37,7 @@ By using branches alongside application versions in the broker allows you to sep
 
 To achieve this, when a pact is published, the associated pacticipant version should be published with a branch identifier that will be used by the provider to differentiate between the stable, safe pacts \(eg. branch "master"\) and the potentially breaking pacts \(eg. branch "feat-new-foobar"\).
 
-To maintain a green build in your provider’s CI, we will use consumer version selectors to verify the main branch rather than the latest overall pact.
+To maintain a green build in your provider’s CI, use consumer version selectors to verify the main branch rather than the latest overall pact.
 
 If you use feature branches for your consumer development, it is recommended to publish the pact with the [pacticipant](https://docs.pact.io/getting_started/terminology#pacticipant) version and the name of the branch. If you use feature toggles, the branch could be the name of the feature toggle. Your Pact client library will allow you to configure the name of the branch to be applied when you publish your pacts.
 
@@ -66,11 +66,11 @@ Pact verification by consumer version selectors should be part of your regular u
 
 1. As per step 4, configure your provider build to fetch the pact(s) from the broker with consumer version selectors and publish the verification results as part of its main build \(consult the documentation for your chosen language\). This would typically happen after the unit tests and before deploying to a test environment. You can find the recommended configuration [here](/provider/recommended_configuration#verification-triggered-by-provider-change).
 2. In the provider verification configuration, ensure the pact that is being verified from the latest pact for the main branch (see the relevant documentation for your library). This will help keep your provider builds green.
-   1. `{ "mainBranch": true }` assuming our consumer was published from `main` / `master` - see [docs](https://docs.pact.io/pact_broker/branches#automatic-main-branch-detection) for setup in your pact-broker.
+   1. `{ "mainBranch": true }` assuming the consumer was published from `main` / `master` - see [docs](https://docs.pact.io/pact_broker/branches#automatic-main-branch-detection) for setup in your pact-broker.
 
 ### Notes
 
-Although some language-specific Pact tools \(eg Gradle\), provide methods for publishing, we recommend utilsing one of our [Pact CLI tools](https://docs.pact.io/pact_broker/client_cli)
+Although some language-specific Pact tools \(eg Gradle\) provide methods for publishing, using one of the [Pact CLI tools](https://docs.pact.io/pact_broker/client_cli) is recommended:
   1. [Docker](https://hub.docker.com/r/pactfoundation/pact-cli)
   2. [Pact Standalone CLI](https://github.com/pact-foundation/pact-ruby-standalone/releases)
   3. [Pact Broker Client (Ruby)](https://github.com/pact-foundation/pact_broker-client)
