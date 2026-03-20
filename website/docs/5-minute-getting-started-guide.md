@@ -9,7 +9,7 @@ description: From zero to running Pact tests in 5 mins
 :::
 
 
-This getting started guide can be run purely in the browser or on your local machine, with the intention to get you across the key concepts quickly. As we go through, there will be code snippets to demonstrate concepts. These are not runnable, but are there to assist with explanation. When there is code to run, you will be presented with a REPL as per below. Simply hit the green ▶ button, and the output will be displayed in the terminal below. Give it a shot now:
+This guide walks you through writing your first consumer and provider Pact tests end-to-end using a simple Order API example. By the end, you will have a generated pact file and a passing provider verification.
 
 ## Ways to run
 
@@ -40,16 +40,6 @@ In the Consumer project, we're going to need:
 Note that to create a pact, you _do_ need to write the code that executes the HTTP requests to your service \(in your client class\), but you _don't_ need to write the full stack of consumer code \(eg. the UI\).
 
 ## Testing the Order Web \(consumer\) project
-
-### Scope of a Consumer Pact Test
-
-Ideally, the Pact tests should be "unit tests" for your client class, and they should just focus on ensuring that the request creation and response handling are correct. If you use pact for your UI tests, you'll end up with an explosion of redundant interactions that will make the verification process tedious. Remember that pact is for testing the contract used for communication, and not for testing particular UI behaviour or business logic.
-
-Usually, your application will be broken down into a number of sub-components, depending on what type of application your consumer is \(e.g. a Web application or another API\). This is how you might visualise the coverage of a consumer Pact test:
-
-![Scope of a consumer Pact test](/img/consumer-test-coverage.png)
-
-Here, a _Collaborator_ is a component whose job is to communicate with another system. In our case, this is the `OrderApiClient`communicating with the external `Order Api` system. This is what we want our consumer test to inspect.
 
 ### 1. Start with your model
 
@@ -234,14 +224,7 @@ Running the passing Order API spec will generate a pact file in the configured p
 
 You now have a pact file that can be used to verify your expectations of the Order API provider project.
 
-Now, in real life you would rinse and repeat for other likely status codes that may be returned. For example, consider how you want your client to respond to a:
-
-* 404 \(return null, or raise an error?\)
-* 400 \(how should validation errors be handled, what will the body look like when there is one?\)
-* 500 \(specifying that the response body should contain an error message, and ensuring that your client logs that error message will make your life much easier when things go wrong. Note that it may be hard to force your provider to generate a 500 error on demand. You may need to collaborate with your provider team to create a known provider state that will artificially return a 500 error, or you may just wish to use a standard unit test without a pact to test this.\)
-* 401/403 if there is authorisation.
-
-#### **Run the consumer Tests!**
+#### **Run the consumer tests!**
 
 OK enough talk - let's run the consumer test. If you like, click around the project to see the files from above in context. The most interesting file is the consumer test in `./consumer/consumer.spec.js` .
 
@@ -266,20 +249,6 @@ You can see the published pact [here](https://test.pactflow.io/pacticipants/Gett
 After publishing the pact, we can now verify that the Provider meets these expectations.
 
 ## Testing the Order API \(provider\) project
-
-### Scope of a Provider Pact Test
-
-On the Provider side, Pact needs to replay all of the interactions \(usually HTTP requests\) against your service. There are a number of choices that can be made here, but usually these are the choices:
-
-* Invoke just the controller layer \(in an MVC app, or the "Adapter" in our diagram\) and stub out layers beneath
-* Choosing a real vs mocked out database
-* Choosing to hit mock HTTP servers or mocks for external services
-
-Generally speaking, we test the entire service and mock out external services such as downstream APIs \(which would need their own set of Pact tests\) and databases. This gives you some of the benefits of an integration test without the high costs of maintenance.
-
-This is how you might visualise the coverage of a provider Pact test:
-
-![Provider side Pact test scope](/img/provider-test-coverage.png)
 
 ### 1. Create the Order API
 
