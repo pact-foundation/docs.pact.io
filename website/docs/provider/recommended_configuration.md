@@ -215,7 +215,7 @@ When the pact URL is known, the `pactBrokerUrl`, `providerName`, `consumerVersio
 
 ### Examples
 
-You can find samples in our [webhook template library](/pact_broker/webhooks/template_library) for common build systems and see below for how to configure your provider build to use the pact URL.
+You can find samples in the [webhook template library](/pact_broker/webhooks/template_library) for common build systems and see below for how to configure your provider build to use the pact URL.
 
 <Tabs
   groupId="sdk-choice"
