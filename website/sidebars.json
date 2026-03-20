@@ -551,19 +551,19 @@
             "university/introduction/00_3_LearningObjectives",
             "university/introduction/00_4_Requirements",
             "university/introduction/00_5_Scenario",
-            "university/introduction/01_Step1",
-            "university/introduction/02_Step2",
-            "university/introduction/03_Step3",
-            "university/introduction/04_Step4",
-            "university/introduction/05_Step5",
-            "university/introduction/06_Step6",
-            "university/introduction/07_Step7",
-            "university/introduction/08_Step8",
-            "university/introduction/09_Step9",
-            "university/introduction/10_Step10",
-            "university/introduction/11_Step11",
-            "university/introduction/12_Step12",
-            "university/introduction/13_Step13"
+            "university/introduction/Step1",
+            "university/introduction/Step2",
+            "university/introduction/Step3",
+            "university/introduction/Step4",
+            "university/introduction/Step5",
+            "university/introduction/Step6",
+            "university/introduction/Step7",
+            "university/introduction/Step8",
+            "university/introduction/Step9",
+            "university/introduction/Step10",
+            "university/introduction/Step11",
+            "university/introduction/Step12",
+            "university/introduction/Step13"
           ]
         },
         {
@@ -575,10 +575,10 @@
             "university/message-pact-async/00_3_LearningObjectives",
             "university/message-pact-async/00_4_Requirements",
             "university/message-pact-async/00_5_Scenario",
-            "university/message-pact-async/01_Step1",
-            "university/message-pact-async/02_Step2",
-            "university/message-pact-async/03_Step3",
-            "university/message-pact-async/04_Step4"
+            "university/message-pact-async/Step1",
+            "university/message-pact-async/Step2",
+            "university/message-pact-async/Step3",
+            "university/message-pact-async/Step4"
           ]
         },
         {
