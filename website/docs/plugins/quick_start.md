@@ -12,7 +12,7 @@ The Pact Plugin Framework was created in order to:
 
 * Expand support to the widest range of use cases
 * Improve time-to-market for new features
-* Grow our community (users + contributors)
+* Grow the community (users + contributors)
 
 The framework allows users to extend Pact by creating new types of:
 
@@ -33,7 +33,7 @@ The combination of these interaction types with new transports and protocols, en
 
 ## Conceptual Overview
 
-Diving a bit deeper, let's look at the various system actors and how they work together with Plugins.
+The following diagram shows the various system actors and how they work together with plugins.
 
 ![Conceptual Overview](./workshops/create-a-plugin/assets/conceptual-overview.png)
 
@@ -56,12 +56,12 @@ Diving a bit deeper, let's look at the various system actors and how they work t
 - Try out a pre-made plugin
   - Download the [Pact CLI tool](/plugins/directory#plugin-tooling) for managing plugins
   - Visit the [Pact Plugin Directory](/plugins/directory) and check if one already exists
-  - Check out our [demo applications](/plugins/directory#demos) that you can clone and run on your machine.
+  - Check out the [demo applications](/plugins/directory#demos) that you can clone and run on your machine.
 - Build your own plugin for any use case you and your team require.
-  - Check out our Pact University [workshop](/plugins/workshops/create-a-plugin/intro), where you will create and publish your first distributable Pact Plugin.
+  - Check out the Pact University [workshop](/plugins/workshops/create-a-plugin/intro), where you will create and publish your first distributable Pact Plugin.
     - You can [run it in your browser](https://killercoda.com/pactflow/scenario/create-a-plugin) too!
   - Check out some of the [early protoype plugins](/plugins/directory#plugin-prototypes).
-  - Grab one of our [Pact Plugin Starter kits](/plugins/directory#template-plugins)
+  - Grab one of the [Pact Plugin Starter kits](/plugins/directory#template-plugins)
   - Check out the docs for authors
     - Writing a plugin [guide](https://docs.pact.io/implementation_guides/pact_plugins/docs/writing-plugin-guide)
     - Plugins that provide protocol transport implementations - See [Protocol design docs](https://docs.pact.io/implementation_guides/pact_plugins/docs/protocol-plugin-design).
@@ -78,13 +78,13 @@ Diving a bit deeper, let's look at the various system actors and how they work t
 
 ## FAQ
 
-### Why did we build the Pact Plugin Framework?
+### Why was the Pact Plugin Framework built?
 
 Loved by thousands of development teams globally, Pact was originally created to support the rise of RESTful microservices and has since expanded to support asynchronous messaging, becoming the defacto API contract testing solution.
 
 As architectures have evolved, organisations find that the existing Pact contract testing framework may not support all of their use cases.
 
-The industry has continued to innovate since Pact was created in 2013, and RESTful microservices are now only one of the key use cases today. According to SmartBear’s 2021 State of Quality [report](https://smartbear.com/state-of-software-quality/api/tools/#api-protocols), we are seeing the growth of:
+The industry has continued to innovate since Pact was created in 2013, and RESTful microservices are now only one of the key use cases today. According to SmartBear’s 2021 State of Quality [report](https://smartbear.com/state-of-software-quality/api/tools/#api-protocols), the industry has seen the growth of:
 
 - Protocols such as Protobufs and GraphQL (80% of organisations run multi-protocol and more than 60% of organisations manage three or more)
 - Transports such as gRPC, Websockets and MQTT
@@ -96,7 +96,7 @@ Read the full use case for the Plugin Framework is explained in detail on the [G
 
 ### When did it go live?
 
-It is live today as of December 1st. It was in developer preview since 2021. We [blogged](https://pactflow.io/blog/extending-pact-with-plugins/) about the idea for the Pact Plugin Framework in 2021 and have been actively chipping award at the [roadmap](https://github.com/pactflow/roadmap/issues/33) item to enable developers everywhere to use contract testing where they previously couldn’t.
+It went live on December 1st, after being in developer preview since 2021. The idea for the Pact Plugin Framework was [announced in a blog post](https://pactflow.io/blog/extending-pact-with-plugins/) in 2021, and the [roadmap item](https://github.com/pactflow/roadmap/issues/33) to enable developers everywhere to use contract testing where they previously couldn’t has since been delivered.
 
 Hats off to Ronald Holshausen who undertook the mammoth task of standing up the Framework. With this, development teams can now harness the power of contract testing where they previously couldn’t, applying it to unique and emerging use cases and technologies - no matter the scale or the language, transport, protocol or content type.
 

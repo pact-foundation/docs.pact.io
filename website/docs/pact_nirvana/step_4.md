@@ -3,7 +3,7 @@ title: 4. Silver - manually integrate with Pact Broker
 sidebar_label: 4. Silver - manually integrate with Pact Broker
 ---
 
-Now you have two different sets of tests in two different codebases. The artifacts that tie these tests together are the Pact file, and the verification results. The next step is to automate the exchange of these artifacts. At this level, you still run on your machine, but you have the consumer test publish its pact to the Pact Broker, and manually run provider verification where we will verify the pact from the broker via URL, rather than pointing to our local file system. We will then create a new verification task, which will retrieve the same pact but via consumer version selectors.
+Now you have two different sets of tests in two different codebases. The artifacts that tie these tests together are the Pact file, and the verification results. The next step is to automate the exchange of these artifacts. At this level, you still run on your machine, but you have the consumer test publish its pact to the Pact Broker, and manually run provider verification, pulling the pact from the broker via URL rather than from the local file system. You will then create a new verification task that retrieves the same pact via consumer version selectors.
 
 <details open>
   <summary>Silver diagram</summary>
@@ -35,7 +35,7 @@ graph LR;
 > Sharing is caring
 
 Now that you have created and run your consumer tests, producing a contract \(the pact file\) as an artefact.
-You've shared it with the team responsible for managing the provider manually, and they've confirmed they meet all of the expectations set in it. We need a mechanism to ensure that we can eliminate the manual step of sharing our contracts which will be invaluable as our code changes and evolves.
+You've shared it with the team responsible for managing the provider manually, and they've confirmed they meet all of the expectations set in it. A mechanism is needed to eliminate the manual sharing step, which becomes invaluable as the code changes and evolves.
 
 There are multiple ways to [share pacts](getting_started/sharing_pacts.md), but the recommended approach is to use a Pact Broker which is a service that allows your projects to exchange pacts and verification results in an automated way enabling powerful automation workflows.
 
@@ -69,7 +69,7 @@ There are two reasons that a verification task will need to be run:
 
 2. When the pact changes
 
-* We recommend that a separate provider verification pipeline is set up to verify just the changed pact, this will utilise our verification step created in step 3.
+* A separate provider verification pipeline is recommended to verify just the changed pact, utilising the verification step created in step 3.
 
 ### Consumer pipeline
 
@@ -141,7 +141,7 @@ The rest of this guide assumes you are using a Pact Broker or PactFlow Broker.
 
 #### Pact Broker
 
->You'll find the quickest way to run the Pact-Broker locally is via our [example docker-compose setup](https://docs.pact.io/pact_broker/docker_images/pactfoundation#running-with-docker-compose)
+>The quickest way to run the Pact-Broker locally is via the [example docker-compose setup](https://docs.pact.io/pact_broker/docker_images/pactfoundation#running-with-docker-compose)
 >There are alternative mechanisms listed on the page, such as [OpenShift](https://docs.pact.io/pact_broker/docker_images/pactfoundation#running-with-openshift), or a [Helm Chart](https://docs.pact.io/pact_broker/kubernetes/readme) for Kubernetes
 
 #### PactFlow Broker
@@ -149,8 +149,7 @@ The rest of this guide assumes you are using a Pact Broker or PactFlow Broker.
 > You can sign up for PactFlow's free Starter Plan [here](https://pactflow.io/pricing/?utm_source=ossdocs&utm_campaign=five_minute_guide_dev_plan) which will set you up with your own SaaS PactFlow Broker.
 
 :::info
-For the purposes of this guide to Pact Nirvana, we will not use any PactFlow specific features, so you can safely trial a POC and revert
-back to an Open Source Pact Broker at the end.
+This guide does not use any PactFlow-specific features, so you can safely trial a POC and revert to an open source Pact Broker at the end.
 :::
 
 #### Next Steps
@@ -168,7 +167,7 @@ Now that you have your Pact Broker available, you can start taking advantage of 
 communication between your provider and consumer.
 
 * Ensure you follow the recommended configuration for publishing <https://docs.pact.io/consumer/recommended_configuration>
-* Use one of our [Pact CLI tools](https://docs.pact.io/pact_broker/client_cli)
+* Use one of the [Pact CLI tools](https://docs.pact.io/pact_broker/client_cli)
   1. [Docker](https://hub.docker.com/r/pactfoundation/pact-cli)
   2. [Pact Standalone CLI](https://github.com/pact-foundation/pact-ruby-standalone/releases)
   3. [Pact Broker Client (Ruby)](https://github.com/pact-foundation/pact_broker-client)
@@ -180,11 +179,11 @@ Debug this until it works and looks good:-
 
 - Your consumer pact is published
 - It has the agreed consumer and provider team names displayed
-- It has the correct consumer version (ideally relating to a git sha. We recommend [`absolute-version`](https://www.npmjs.com/package/absolute-version))
+- It has the correct consumer version (ideally relating to a git sha — [`absolute-version`](https://www.npmjs.com/package/absolute-version) is recommended)
 - It has a branch associated with it
 
 :::tip
-Although some Pact implementations allow for publishing pacts as a wrapper around the Pact cli tools, these may be outdated, inconsistent, or absent in some implementations. It is our recommendation that you use one of the tools described above in the list
+Although some Pact implementations allow for publishing pacts as a wrapper around the Pact CLI tools, these may be outdated, inconsistent, or absent in some implementations. The tools described in the list above are recommended.
 :::
 
 ### C. Manually verify the pact by URL using the Pact Broker
@@ -192,7 +191,7 @@ Although some Pact implementations allow for publishing pacts as a wrapper aroun
 :::tip
 This task should be run when the pact changes
 
-* We recommend that a separate provider verification pipeline is set up to verify just the changed pact. This will utilise our verification step created in step 3
+* A separate provider verification pipeline is recommended to verify just the changed pact. This uses the verification step created in step 3.
 :::
 
 Now you can see if you can run your provider tests, this time pulling the pact file not from your local filesystem,
@@ -203,7 +202,7 @@ but from the broker.
 3. Run your tests and they should retrieve the pact file from your Broker, and successfully verify it.
 4. This verification task by url, will be used by webhooks, will be triggered, whenever a consumer contract involving our provider, that requires verification is published. Our webhook will be configured in a later step.
 
-See our recommendations for this task [here](https://docs.pact.io/provider/recommended_configuration#verification-triggered-by-a-contract-requiring-verification-published):
+See the recommendations for this task [here](https://docs.pact.io/provider/recommended_configuration#verification-triggered-by-a-contract-requiring-verification-published):
 
 - Set the URL as a configurable property such as `PACT_URL` environment variable.
 - Configure publication of verification results by a `CI` flag so that verification results are only published from `CI` systems
@@ -223,12 +222,12 @@ This task should be run when the provider code changes
 * The verification task will fetch and verify all the relevant pacts from all consumers from the Pact Broker to ensure no regressions have occurred.
 :::
 
-Pact verification should run as part of your providers regular unit test run. We use consumer version selectors to determine which pacts to select.
+Pact verification should run as part of your provider's regular unit test run. Consumer version selectors are used to determine which pacts to verify.
 
 1. Configure a __new__ provider task which instead of using the Pact URL, uses `consumer-version-selectors`.
 
 2. In the provider verification configuration, setup the consumer version selectors, so the pact that is being verified is the latest for targeted branches and later environments. This will help keep your provider builds green.
-   1. Our [recommended configuration](https://docs.pact.io/pact_broker/advanced_topics/consumer_version_selectors#recommended) is here.
+   1. See the [recommended configuration](https://docs.pact.io/pact_broker/advanced_topics/consumer_version_selectors#recommended).
 
 3. Configure publication of verification results by a `CI` flag so that verification results are only published from `CI` systems
 
@@ -236,7 +235,7 @@ Pact verification should run as part of your providers regular unit test run. We
 they relate to a known build.
 
 5. Run the provider task, it should fetch pacts matching your consumer version selectors and verify them as before
-   1. `{ "mainBranch": true }` assuming our consumer was published from `main` / `master` / `master` - see [docs](https://docs.pact.io/pact_broker/branches#automatic-main-branch-detection) for setup in your pact-broker.
+   1. `{ "mainBranch": true }` assuming the consumer was published from `main` / `master` - see [docs](https://docs.pact.io/pact_broker/branches#automatic-main-branch-detection) for setup in your pact-broker.
 
 ### E. Enable WIP and Pending Pacts
 
@@ -266,9 +265,9 @@ Refer to the [WIP](/pact_broker/advanced_topics/wip_pacts) and [Pending](/pact_b
 
 ### Notes
 
-In these examples, we will publish pacts and verify from our local machine.
+In these examples, pacts are published and verified from a local machine.
 
-In our next step, we will show Pact integration in your CI/CD system.
+The next step covers Pact integration in your CI/CD system.
 
 Traditionally users would not publish from their local machines, and when running local verification tasks would not publish results
 to the Pact Broker. Developers should utilise read only based authentication mechanisms to enforce this.

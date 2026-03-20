@@ -10,13 +10,13 @@ Or, watch the [full series on contract testing](https://www.youtube.com/embed/vi
 
 ## Scope of a Consumer Pact Test
 
-Ideally, the Pact tests should be "unit tests" for your client class, and they should just focus on ensuring that the request creation and response handling are correct. If you use pact for your UI tests, you'll end up with an explosion of redundant interactions that will make the verification process tedious. Remember that pact is for testing the contract used for communication, and not for testing particular UI behaviour or business logic.
+Ideally, the Pact tests should be "unit tests" for your client class, and they should just focus on ensuring that the request creation and response handling are correct. If you use pact for your UI tests, you'll end up with an explosion of redundant interactions that will make the verification process tedious. Pact is for testing the contract used for communication, not for testing particular UI behaviour or business logic.
 
 Usually, your application will be broken down into a number of sub-components, depending on what type of application your consumer is \(e.g. a Web application or another API\). This is how you might visualise the coverage of a consumer Pact test:
 
 ![Scope of a consumer Pact test](/img/consumer-test-coverage.png)
 
-Here, a _Collaborator_ is a component whose job is to communicate with another system. In our case, this is the `OrderApiClient`communicating with the external `Order Api` system. This is what we want our consumer test to inspect.
+Here, a _Collaborator_ is a component whose job is to communicate with another system. In this example, the `OrderApiClient` communicates with the external `Order Api` system — this is what the consumer test inspects.
 
 ## Scope of a Provider Pact Test
 

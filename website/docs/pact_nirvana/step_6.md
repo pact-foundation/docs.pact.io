@@ -3,9 +3,9 @@ title: 6. Platinum - Add can-i-deploy with branch to PR pipelines
 sidebar_label: 6. Platinum - Add can-i-deploy with branch to PR pipelines
 ---
 
-Before we merge a PR, it would be good to know if this change is compatible with the consumers and/or providers the application talks to.
+Before merging a PR, it is valuable to know whether the change is compatible with the consumers and/or providers the application talks to.
 
-We can answer this question using the **can-i-deploy** feature of Pact.
+The **can-i-deploy** feature of Pact answers this question.
 
 ## The Matrix
 The Pact way of managing these dependencies is to use the Pact Matrix - this is the matrix generated when you create a table of all the consumer and provider versions that have been tested against each other using Pact. You can view the Pact Matrix for any pair of applications by opening `/matrix/provider/PROVIDER/consumer/CONSUMER` in your Pact Broker.
@@ -32,13 +32,13 @@ Another reason that an extra "safe to deploy?" check is required (as well as the
 ## Can I Deploy?
 The `can-i-deploy` tool is a CLI that has been written to query the Matrix to ensure that you are safe to deploy. You can read a detailed description of how it works [here](/pact_broker/can_i_deploy/).
 
-Ultimately, we will want to ask if you can deploy to a particular environment. But a good first step in that direction is to just make sure your change is compatible with what your consumers and providers have currently checked into their main branch.
+Ultimately, the goal is to ask whether you can deploy to a particular environment. A good first step is to make sure your change is compatible with what your consumers and providers have currently checked into their main branch.
 
-This is a great step, but it's not fully what we want. It's quite possible that the pact version used by the application checked into the main branch is not the same as the pact version running in production or even staging.  The more frequently you deploy, and the faster you deploy, the less likely this is, but it's definitely a possibility.
+This is a valuable step, but it is not the full picture. It's quite possible that the pact version used by the application checked into the main branch is not the same as the pact version running in production or even staging. The more frequently you deploy, and the faster you deploy, the less likely this is — but it is definitely a possibility.
 
 This is much more the case for native apps, where you will likely have many old pact versions running on user's mobile devices. Any providers those apps talk to need to be compatible with all those versions.
 
-In these cases, checking to see if your provider is compatible with the consumer version checked into main is not sufficient. We'll talk about how to check against what is actually deployed in a particular environment in the next section.
+In these cases, checking to see if your provider is compatible with the consumer version checked into main is not sufficient. The next section covers how to check against what is actually deployed in a particular environment.
 
 ### Add `can-i-deploy` to consumer PR pipeline
 

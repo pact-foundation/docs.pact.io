@@ -62,7 +62,7 @@ The solution to 2:
 
 ### More on (2) where the gateway is a provider
 
-**unit test** - if you can unit test the gateway, Pact is still an option. I’ve written unit-like tests for nginx before, and it was much more straightforward than people thought, the tests ran fast and reliably and it eventually become the backbone of the API gateway for an Aussie stock-exchange listed classifieds company.
+**unit test** - if you can unit test the gateway, Pact is still an option. Unit-like tests for nginx are more straightforward than people expect — they run fast and reliably, and have served as the backbone of API gateway testing at production scale.
 **standard functional/integration testing** - whether a stubbed environment or otherwise
 **configuration based** - Often gateways are fed a configuration file (e.g. Apigee takes a big XML blob). If you can read this in, you can potentially convert it into OAS for provider verification
 
@@ -82,4 +82,4 @@ In some cases, requests need to be signed with dynamic information, for example,
 
 In these cases, you can't use static API tokens because you need access to the request information to construct a valid token.
 
-See the [example recipe](/recipes/awssignedrequests), or [read](https://docs.pact.io/provider/handling_auth) our strategies for handling such use cases more generally.
+See the [example recipe](/recipes/awssignedrequests), or [read](https://docs.pact.io/provider/handling_auth) the strategies for handling such use cases more generally.

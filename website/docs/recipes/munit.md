@@ -8,21 +8,21 @@ description: How to use Pact for testing MuleSoft (Mule 4) APIs with MUnit
 
 As of Mule 4, it is no longer possible to extend the MUnit runner through Java code. Previously, the solution of Pact testing with MuleSoft was to extend “FunctionalMunitSuite” in your test class. An example can be found here: https://docs.mulesoft.com/munit/1.3/munit-tests-with-Java#creating-your-suite-class
 
-However, MuleSoft now wants alignment with the Mule language to be able to provide a better service. Which leaves the outstanding problem; How can we use Pact to test Mule 4 applications?
+However, MuleSoft now wants alignment with the Mule language to be able to provide a better service. This leaves the outstanding problem: how can Pact be used to test Mule 4 applications?
 
-In a nutshell, the solution is to have MUnit be the test runner and execute the standalone Pact-JVM server by calling Java code within the MUnit console. This will allow for both the benefit of MUnit tests along with pact files being created for contract testing. As a result, we will be able to leverage the MUnit unit test coverage while also generating our pact files and publishing them to a Pact Broker or sharing them into your own file storage system.
+In a nutshell, the solution is to have MUnit be the test runner and execute the standalone Pact-JVM server by calling Java code within the MUnit console. This provides the benefit of MUnit tests along with pact files being created for contract testing — leveraging MUnit unit test coverage while also generating pact files and publishing them to a Pact Broker or sharing them to your own file storage system.
 
 ## Consumer
 
-### So how do we do it?
+### How it works
 
-First, we need to understand the MUnit test layout. It has a very similar test structure to other unit testing tools, such as Jest, jUnit, nUnit, etc., with the usual before suite, before test, after test, and after suite. The test logic is formed into the test blocks where “flows” are executed in the test scripts. 
+The first step is to understand the MUnit test layout. It has a very similar test structure to other unit testing tools, such as Jest, jUnit, nUnit, etc., with the usual before suite, before test, after test, and after suite. The test logic is formed into the test blocks where “flows” are executed in the test scripts.
 
 An empty MUnit test would look like the following:
 
 ![Anypoint Studio MUnit Test Layout](../../static/img/docs/recipes/munit/anypoint-test-struct.png)
 
-In the test block, we can see it is divided into three sections; execution, behavior, and validation. The assertions for tests come from MUnit tools providing a low code UI block that we configure for each type of unit test assertion we wish to perform on the flow.
+The test block is divided into three sections: execution, behavior, and validation. Assertions come from MUnit tools providing a low-code UI block configured for each type of unit test assertion on the flow.
 
 Looking through the Mule Palette, in addition to these low code blocks there are also Java blocks for writing Java classes with the ability to call functions. 
 
@@ -35,11 +35,11 @@ The functionality of these blocks is as follows:
 
 ![Mule Java Palette](../../static/img/docs/recipes/munit/mule-palette-java.png)
 
-For this recipe, we will be utilizing all but the ‘Validate type’ Java block, but you are welcome to use it in your own solution.
+This recipe uses all but the ‘Validate type’ Java block — you are welcome to include it in your own solution.
 
 ### Starting the Pact JVM from Java
 
-To use the standalone JVM of Pact we will need to create a static class called PactService. This will handle the command to run and close the Pact Standalone Server. The class will have the following functions:
+To use the standalone JVM of Pact, create a static class called `PactService`. This handles the commands to run and close the Pact Standalone Server. The class needs the following functions:
 
 - `startPactService()`: will start the service through the CLI command
 - `stopPactService()`: will stop the Java process
@@ -66,13 +66,13 @@ public static void stopPactService() throws ClientProtocolException, IOException
 }
 ```
 
-By setting the service to a variable, we will be able to then stop the running process later with the `.destroy()` command.
+Setting the service to a variable allows you to stop the running process later with the `.destroy()` command.
 
 More information on the Pact JVM can be found here: https://docs.pact.io/implementation_guides/jvm/pact-jvm-server
 
 #### From Anypoint Studio
 
-From Anypoint Studio, we will use the "Invoke Static" Java block to call the `startPactService()` method within the PactService class. 
+From Anypoint Studio, use the "Invoke Static" Java block to call the `startPactService()` method within the PactService class.
 
 This will start running the Pact standalone server as a separate Java process on the machine.
 
@@ -80,7 +80,7 @@ This will start running the Pact standalone server as a separate Java process on
 
 ### Creating a Mock Service
 
-Now that we have the service running, all we need to do is make some API calls to localhost with the port. We can use the Java "Invoke static" mule widget for this as we only need to make API calls to set up the Mock API Provider. 
+With the service running, make API calls to localhost on the configured port. Use the Java "Invoke static" Mule widget for this, as only API calls to localhost are needed to set up the Mock API Provider.
 
 Here is an example of using a CloseableHttpClient but you can use any preferred method for making the API calls from Java.
 
@@ -103,7 +103,7 @@ The variable pactServicePort is the port that the Pact service is running on. Th
 
 This would be very similar to the example logic provided here: https://docs.pact.io/implementation_guides/jvm/consumer
 
-When setting up the `pactBody` variable, I found the need to use the "New" and "Invoke" Mule Java blocks in order to avoid errors. However, there might be other solutions where static methods can be used like the rest of the solution.
+When setting up the `pactBody` variable, use the "New" and "Invoke" Mule Java blocks to avoid errors. Other solutions using static methods may also work.
 
 #### From Anypoint Studio
 

@@ -190,6 +190,7 @@
     },
     {
       "Pact Plugins": [
+        "plugins/concepts",
         "plugins/quick_start",
         "implementation_guides/pact_plugins/readme",
         {
@@ -304,8 +305,7 @@
       "label": "Getting started",
       "items": [
         "getting_started",
-        "getting_started/how_pact_works",
-        "5-minute-getting-started-guide"
+        "getting_started/how_pact_works"
       ]
     },
     {
@@ -315,8 +315,15 @@
         "faq/convinceme"
       ]
     },
+    "faq"
+  ],
+  "concepts": [
+    "concepts",
     {
-      "Pact concepts": [
+      "type": "category",
+      "label": "Pact Concepts",
+      "items": [
+        "getting_started/why-pact",
         "getting_started/conceptual_overview",
         "getting_started/terminology",
         "getting_started/testing-scope",
@@ -330,53 +337,76 @@
         },
         "getting_started/verifying_pacts",
         "getting_started/provider_states",
-        "getting_started/sharing_pacts",
-        "getting_started/specification",
-        "getting_started/further_reading"
+        "getting_started/sharing_pacts"
       ]
     },
-    "implementation_guides/workshops",
-    "faq"
+    {
+      "type": "category",
+      "label": "Reference",
+      "items": [
+        "getting_started/specification",
+        "getting_started/pact-file-format"
+      ]
+    }
   ],
-  "guides": {
-    "Consumer": [
-      "consumer",
-      "consumer/contract_tests_not_functional_tests",
-      "consumer/using_pact_to_support_ui_testing",
-      "consumer/recommended_configuration"
-    ],
-    "Provider": [
-      "provider",
-      "provider/using_provider_states_effectively",
-      "provider/handling_auth",
-      "provider/recommended_configuration",
-      "provider/how_to_fix_failing_verification_tests"
-    ],
-    "CI/CD Setup Guide": [
-      "pact_nirvana",
-      "pact_nirvana/step_1",
-      "pact_nirvana/step_2",
-      "pact_nirvana/step_3",
-      "pact_nirvana/step_4",
-      "pact_nirvana/step_5",
-      "pact_nirvana/step_6",
-      "pact_nirvana/step_7",
-      "pact_nirvana/notes_1"
-    ],
-    "Recipes": [
-      "recipes",
-      "recipes/optional",
-      "recipes/kafka",
-      "recipes/graphql",
-      "recipes/apigateway",
-      "recipes/awssignedrequests",
-      "recipes/lambdaasync",
-      "recipes/lambdahttp",
-      "recipes/cypress",
-      "recipes/munit",
-      "implementation_guides/feature_toggles"
-    ]
-  },
+  "guides": [
+    {
+      "type": "category",
+      "label": "Consumer",
+      "items": [
+        "consumer",
+        "consumer/best_practices",
+        "consumer/contract_tests_not_functional_tests",
+        "consumer/how_to_test_async_messages",
+        "consumer/using_pact_to_support_ui_testing",
+        "consumer/recommended_configuration"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Provider",
+      "items": [
+        "provider",
+        "provider/best_practices",
+        "provider/using_provider_states_effectively",
+        "provider/handling_auth",
+        "provider/recommended_configuration",
+        "provider/how_to_fix_failing_verification_tests"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "CI/CD Setup Guide",
+      "items": [
+        "pact_nirvana",
+        "pact_nirvana/step_1",
+        "pact_nirvana/step_2",
+        "pact_nirvana/step_3",
+        "pact_nirvana/step_4",
+        "pact_nirvana/step_5",
+        "pact_nirvana/step_6",
+        "pact_nirvana/step_7",
+        "pact_nirvana/notes_1"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Recipes",
+      "items": [
+        "recipes",
+        "recipes/optional",
+        "recipes/kafka",
+        "recipes/graphql",
+        "recipes/apigateway",
+        "recipes/awssignedrequests",
+        "recipes/lambdaasync",
+        "recipes/lambdahttp",
+        "recipes/cypress",
+        "recipes/munit",
+        "implementation_guides/feature_toggles"
+      ]
+    }
+  ],
   "pact_broker": {
     "Pact Broker": [
       "pact_broker",
@@ -466,6 +496,7 @@
   },
   "resources": [
     "history",
+    "getting_started/further_reading",
     "blogs_videos_and_articles",
     "community_repos",
     "books",
@@ -508,12 +539,15 @@
     "contributing/code-of-conduct",
     "diagrams/ecosystem"
   ],
-  "university": [
+  "tutorials": [
     {
       "type": "category",
-      "label": "Pact University",
+      "label": "Tutorials",
       "items": [
+        "tutorials",
         "university",
+        "5-minute-getting-started-guide",
+        "implementation_guides/workshops",
         {
           "type": "category",
           "label": "Introduction to Pact",
