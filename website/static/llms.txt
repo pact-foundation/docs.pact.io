@@ -1,0 +1,439 @@
+# Pact Docs
+
+> Fast and reliable testing for your APIs and microservices during development. Safety during deployment.
+
+- [Introduction](/index.md)
+
+## help-wip
+
+- [Need help?](/help-wip.md)
+
+## index-wip
+
+- [Pact Docs](/index-wip.md)
+
+## search
+
+- [Search the documentation](/search.md)
+
+## users
+
+- [Who is Using This?](/users.md)
+- [Case Studies](/users/case_studies.md): We have some great case studies covering the use of Pact, just click on a logo to take you a post!
+- [Case Study - Atlassian](/users/case_studies/case_study_atlassian.md): Atlassian: Jira
+- [Case Study - Boost Insurance](/users/case_studies/case_study_boostinsurance.md): Published 16 Feb, 2021
+- [Case Study - Gov.UK Pay](/users/case_studies/case_study_govuk.md): Gov.UK Pay
+- [Case Study - M1 Finance](/users/case_studies/case_study_m1finance.md): Published 29 Sep, 2021
+- [Community Corner - Adam Cox](/users/community_corner/adam_cox_interview_may2023.md): We talk to Adam Cox about his journey at Sky, from introducing Pact to the team, to adventures with embedded devices, websockets, and how the Pact Plugin framework is helping them push the envelope.
+- [Testimonials](/users/testimonials.md): Developers love Pact
+- [Trusted by](/users/trustedby.md): Pact is proud to be in use and protecting deployments for the following companies and more
+
+## tags
+
+- [Tags](/tags.md)
+- [One doc tagged with "diagrams"](/tags/diagrams.md)
+- [2 docs tagged with "webinar"](/tags/webinar.md)
+
+## 5-minute-getting-started-guide
+
+- [5 minute guide](/5-minute-getting-started-guide.md): From zero to running Pact tests in 5 mins
+
+## blogs_videos_and_articles
+
+- [Community videos and articles](/blogs_videos_and_articles.md): Check out the official Pact blog at docs.pact.io/blog and the PactFlow blog for blogs written by Pact maintainers.
+
+## books
+
+- [Books](/books.md): We're not aware of any books currently dedicated to contract testing, but here are some that talk about Pact and contract testing as part of a broader microservices development and testing strategy:
+
+## community_repos
+
+- [Community Projects](/community_repos.md): There are loads of awesome Pact projects in the wild, if you have seen one, please add it to the list. You can scroll down to the bottom of the page, and click Edit this page.
+
+## consumer
+
+- [Writing Consumer tests](/consumer.md): When thinking about authoring consumer pact tests: start with the goal of writing a good set of unit tests for your API client. An important side-effect of doing this with Pact is that you also produce an API contract you can use for contract testing.
+- [Contract Tests vs Functional Tests](/consumer/contract_tests_not_functional_tests.md): Contract tests focus on the messages that flow between a consumer and provider, while functional tests also ensure that the correct side effects have occurred. For example, imagine an endpoint for a collection of /orders that accepts a POST request to create a new order. A contract test would ensure that the consumer and provider had a shared and accurate understanding of the request and response required to create an order, while a functional test for the provider would ensure that when a given request was made, that an Order with the correct attributes was actually persisted to the underlying datastore. A contract test does not check for side effects.
+- [Recommended configuration for publishing pacts](/consumer/recommended_configuration.md): Using Pact + the Pact Broker in your release pipeline works most naturally if you are using a branch based feature development workflow.
+- [Using Pact to support UI testing](/consumer/using_pact_to_support_ui_testing.md): While we don't recommend you generate pacts from your UI tests, you can use Pact to support your UI testing using one of a few approaches.
+
+## contributing
+
+- [Contributing](/contributing.md): Getting involved in Open Source
+- [CI/CD Systems](/contributing/ci.md): Testing
+- [Contributing to the code](/contributing/code.md): We encourage contribution to any of our libraries, if you see something that should be fixed, simply do the following:
+- [Contributor Covenant Code of Conduct](/contributing/code-of-conduct.md): Our Pledge
+- [Contributors](/contributing/contributors.md): Organizations
+- [Contributing to the docs](/contributing/docs.md): Contributing is welcome and easy!
+
+## diagrams
+
+- [Pact Ecosystem](/diagrams/ecosystem.md): Background
+
+## docker
+
+- [Docker](/docker.md): Often times, you'll want to use Docker to run Pact. For example, a common approach is to run all CI builds within a docker container. This guide offers some assistance in those wanting to pursue this path.
+
+## events
+
+- [Events](/events.md): Upcoming official events
+- [Customise contract testing for you with the new Pact Plugin Framework](/events/plugins-framework-launch.md): Webinar
+- [Create a Pact Plugin in an hour](/events/plugins-framework-workshop.md): Workshop
+
+## faq
+
+- [FAQ](/faq.md): You can find the answers to some more technical and complex questions here.
+- [Convince me](/faq/convinceme.md): How to convince your team, your boss or yourself that Contract Testing is a good idea
+- [Question archive](/faq/question_archive.md): Some less commonly, but no less importantly, asked questions.
+
+## getting_started
+
+- [Comparisons with other tools](/getting_started/comparisons.md): How does Pact differ from Spring Cloud Contract?
+- [Conceptual Overview](/getting_started/conceptual_overview.md): Using Pact successfully requires you to understand how Pact works and the concepts and terminology behind Pact.
+- [Further reading](/getting_started/further_reading.md): Talks and Presentations
+- [How Pact works](/getting_started/how_pact_works.md): Remember these definitions from the introduction:
+- [Matching](/getting_started/matching.md): This section describes the various request/response matching techniques available in your Consumer tests. Note the examples below demonstrate use of the Ruby DSL, please refer to your particular language and framework as implementations differ.
+- [Gotchas](/getting_started/matching/gotchas.md): Pact follows Postel's law
+- [Provider states](/getting_started/provider_states.md): A good way to think about Provider States is that they are the necessary preconditions for a particular test scenario to run. You can think of them as the analog of Given from Cucumber.
+- [Provider verification](/getting_started/provider_verification.md): What is it?
+- [Sharing Pacts with the Pact Broker](/getting_started/sharing_pacts.md): The consumer CI generates pact files during the execution of its isolated tests. The provider CI generates verification results during the execution of its isolated tests. These artifacts need to be shared between the projects.
+- [Pact Specification](/getting_started/specification.md): Introduction
+- [Local API stubs](/getting_started/stubs.md): Pact contracts are easily turned into locally running API stubs. Pact contracts lack advanced features such as predicates that you might find in tools like mountebank, however they are useful for many situations - such as e2e tests with tools like Protractor and Karma.
+- [Terminology](/getting_started/terminology.md): Service Consumer
+- [Testing scope](/getting_started/testing-scope.md): Watch a video
+- [Verifying Pacts](/getting_started/verifying_pacts.md): "Verifying a pact" is the second step of the Pact testing process. Each request in the pact file is replayed against the provider, and the response is compared with the expected response in the pact file. If the two match, then we know the consumer and provider are compatible.
+- [Versioning in the Pact Broker](/getting_started/versioning_in_the_pact_broker.md): When using Pact, you have to be careful about how your application version numbers are set. This document describes the versioning concepts used by the Pact Broker, and recommends best practices.
+- [When to use Pact](/getting_started/what_is_pact_good_for.md): When all you have is a hammer everything looks like a nail...
+
+## help
+
+- [Where to go for help](/help.md): This project is maintained by a dedicated group of people. They are always willing to help, but most of the time you'll find the answer to your question in our existing documentation, so please look there first.
+- [Ask Me Anything](/help/amas.md): Previous Ask Me Anything recordings
+- [Enabling debug logging](/help/enabling-debug-logging.md): Enabling debug/verbose logging can help identify the cause of issues. For many Pact libraries, this will allow you to see the HTTP requests and responses when the library interacts with a Pact Broker or PactFlow. For older Pact libraries that wrap a shared Ruby Pact implementation, verbose logging can be enabled by setting the environment variable VERBOSE=true. New Pact libraries that use the shared Rust Pact implementation will have their own language specific ways of enabling verbose logging.
+- [How to ask for help on Slack](/help/how_to_ask_for_help.md): The Pact maintainers and our band of experienced community members love helping you learn how to use Pact! ❤️
+- [SmartBear Supported](/help/smartbear.md): SmartBear is the commercial entity behind the PactFlow product, which is an enterprise edition of the Pact Broker.
+
+## history
+
+- [History](/history.md): Pact was originally written by a development team \(including Ron Holshausen from DiUS\) at realestate.com.au in 2013. They were trying to solve the problem of how to do integration testing for their new Ruby microservices architecture, and they threw together a codebase that was to become the first Pact implementation. As the team was writing Ruby microservices, the serialisation of the "matching logic" \(e.g. regular expressions\) was done using Ruby specific code. The team was under the pump to finish their actual customer deliverable, so they got their Pact MVP working, and left it at that.
+
+## implementation_guides
+
+- [Pact command line tools](/implementation_guides/cli.md): There are Pact implementations written in more than 10 languages (see the sidebar of this page for a full list).
+- [Pact Broker Client](/implementation_guides/cli/pact-broker-cli.md): Source Code
+- [pact-broker-cli](/implementation_guides/cli/pact-broker-cli/changelog.md): Source Code
+- [Pact](/implementation_guides/cli/pact-cli.md): Source Code
+- [pact-cli](/implementation_guides/cli/pact-cli/changelog.md): Source Code
+- [Pact Mock Server](/implementation_guides/cli/pact-mock-server.md): Source Code
+- [pact_mock_server_cli](/implementation_guides/cli/pact-mock-server/changelog.md): Source Code
+- [Pact Plugin](/implementation_guides/cli/pact-plugin.md): Source Code
+- [pact-plugin-cli](/implementation_guides/cli/pact-plugin/changelog.md): Source Code
+- [Pact Stub Server](/implementation_guides/cli/pact-stub-server.md): Source Code
+- [pact-stub-server](/implementation_guides/cli/pact-stub-server/changelog.md): Source Code
+- [Pact Verifier](/implementation_guides/cli/pact-verifier.md): Source Code
+- [pact_verifier_cli](/implementation_guides/cli/pact-verifier/changelog.md): Source Code
+- [README](/implementation_guides/cpp.md): Pact-C++ Build
+- [C++ Consumer DSL](/implementation_guides/cpp/consumer.md): This is a shared library (pact-cpp-consumer) that you can link into your test binaries and it provides a DSL for setting up and running a consumer test. It wraps the Pact-Rust pactffi library, which will need to be linked as well.
+- [Consumer DSL Changelog](/implementation_guides/cpp/consumer/changelog.md): 0.1.0 - Update to new pact_ffi lib and JFrog conan repositry
+- [Working with feature toggles and configurable behavior](/implementation_guides/feature_toggles.md): Normally we think that a particular version of our code is attached to only a single version of a pact.
+- [Overview](/implementation_guides/go.md): Pact Go currently supports all versions of the Pact specification including support for HTTP, synchronous messages, plugins and more. Checkout the README to get started.
+- [Changelog](/implementation_guides/go/changelog.md): Versions
+- [Consumer Tests](/implementation_guides/go/docs/consumer.md): Contract Testing Process (HTTP)
+- [Examples](/implementation_guides/go/docs/examples.md): HTTP APIs
+- [Event driven-systems](/implementation_guides/go/docs/messages.md): Introduction to asynchronous API Testing
+- [Plugins](/implementation_guides/go/docs/plugins.md): HTTP
+- [Provider Verification](/implementation_guides/go/docs/provider.md): Pact Go supports both HTTP and non-HTTP verification (using plugins).
+- [Troubleshooting](/implementation_guides/go/docs/troubleshooting.md): Output Logging
+- [Migration Guide](/implementation_guides/go/migration.md): Major changes from v1.x.x to v2.x.x
+- [README](/implementation_guides/go/readme.md): logo
+- [Troubleshooting](/implementation_guides/go/troubleshooting.md): Here we can find common issues and how to solve them.
+- [Changelog](/implementation_guides/javascript/changelog.md): All notable changes to this project will be documented in this file. See commit-and-tag-version for commit guidelines.
+- [Contributing](/implementation_guides/javascript/contributing.md): We love contributors! Pact-js is maintained and contributed to by developers just like you.
+- [Consumer Tests](/implementation_guides/javascript/docs/consumer.md): Contract Testing Process (HTTP)
+- [GraphQL API](/implementation_guides/javascript/docs/graphql.md): GraphQL is simply an abstraction over HTTP and may be tested via Pact.
+- [Matching](/implementation_guides/javascript/docs/matching.md): Matching makes your tests more expressive and your tests less brittle.
+- [Event Driven Systems](/implementation_guides/javascript/docs/messages.md): Introduction to Message Based API Testing
+- [Migrating from 15.x.x to 16.x.x](/implementation_guides/javascript/docs/migrations/16.md): New features
+- [Migrating from 9.x.x to 10.x.x](/implementation_guides/javascript/docs/migrations/9-10.md): Major changes
+- [Plugins](/implementation_guides/javascript/docs/plugins.md): Plugins are the fundamental extension mechanism in Pact. Using the Plugin Framework, you can combine different plugins with the various in-built interaction types to model most interactions in your architecture.
+- [Provider Verification](/implementation_guides/javascript/docs/provider.md): Pact JS supports both HTTP and non-HTTP verification (using plugins).
+- [Troubleshooting](/implementation_guides/javascript/docs/troubleshooting.md): If you are having issues, a good place to start is setting logLevel: 'debug' when configuring the new Pact({...}) object. This will give you detailed in/out requests as far as Pact sees them during verification.
+- [XML](/implementation_guides/javascript/docs/xml.md): You can write both consumer and provider verification tests with XML requests or responses.
+- [Overview](/implementation_guides/javascript/readme.md): logo
+- [Overview](/implementation_guides/jvm.md): Pact JVM is currently compliant to Pact Specification Version 4.0.
+- [Changelog](/implementation_guides/jvm/changelog.md): 4.6.20 - Small Feature Release
+- [Compatability Suite](/implementation_guides/jvm/compatibility-suite.md): This is the implementation of the Pact Compatability Suite implemented with Cucumber JVM.
+- [pact-compatibility-suite](/implementation_guides/jvm/compatibility-suite/pact-compatibility-suite.md): Set of BDD style tests to check compatibility between Pact implementations.
+- [Pact consumer](/implementation_guides/jvm/consumer.md): Pact Consumer is used by projects that are consumers of an API.
+- [Pact JVM Mock](/implementation_guides/jvm/consumer/consumer/pact-jvm-mock.md): Build status
+- [pact-jvm-consumer-groovy](/implementation_guides/jvm/consumer/groovy.md): Groovy DSL for Pact JVM
+- [pact-jvm-consumer-junit](/implementation_guides/jvm/consumer/junit.md): Provides a DSL and a base test class for use with Junit to build consumer tests.
+- [pact-jvm-consumer-junit5](/implementation_guides/jvm/consumer/junit5.md): JUnit 5 support for Pact consumer tests
+- [Kotlin consumer DSL for Pact-JVM](/implementation_guides/jvm/consumer/kotlin.md)
+- [pact-jvm-consumer-specs2](/implementation_guides/jvm/consumer/specs2.md): Specs2 Bindings for the pact-jvm library
+- [Contributing](/implementation_guides/jvm/contributing.md): 1. Fork it
+- [Releasing Pact-JVM](/implementation_guides/jvm/docs/releaseprocess.md): The Pact-JVM project releases three types of artifacts: Java JAR files to Maven Central, a Gradle plugin to plugins.gradle.org
+- [System Properties](/implementation_guides/jvm/docs/system-properties.md): Theses are all the system properties used by Pact-JVM
+- [Matching requests and responses with Pact-JVM](/implementation_guides/jvm/matching.md): To understand the basic rules of matching, see Matching Gotchas.
+- [Pact server](/implementation_guides/jvm/pact-jvm-server.md): The pact server is a stand-alone interactions recorder and verifier, aimed at clients that are non-JVM or non-Ruby based.
+- [Pact provider](/implementation_guides/jvm/provider.md): The pact provider is responsible for verifying that an API provider adheres to a number of pacts authored by its clients
+- [Gradle plugin to verify a provider](/implementation_guides/jvm/provider/gradle.md): Gradle plugin for verifying pacts against a provider.
+- [Pact junit runner](/implementation_guides/jvm/provider/junit.md): Dependency
+- [Pact Junit 5 Extension](/implementation_guides/jvm/provider/junit5.md): Dependency
+- [Pact Spring/JUnit5 Support](/implementation_guides/jvm/provider/junit5spring.md): This module extends the base Pact JUnit5 module. See that for more details.
+- [Leiningen plugin to verify a provider](/implementation_guides/jvm/provider/lein.md): Leiningen plugin for verifying pacts against a provider. The plugin provides a pact-verify task which will verify all
+- [Verifying a Provider](/implementation_guides/jvm/provider/maven.md): This is a Maven plugin for verifying pacts against a running provider, publishing pacts generated by consumer tests,
+- [Pact sbt plugin](/implementation_guides/jvm/provider/sbt.md): The sbt plugin adds an sbt task for running all provider pacts against a running server.
+- [pact-jvm-provider-scalatest](/implementation_guides/jvm/provider/scalatest.md): Provides an extension to scalatest to validate pact files against a running provider. See
+- [pact-jvm-provider-specs2](/implementation_guides/jvm/provider/specs2.md): Provides an extension to Specs2 Specification to validate a pact file against a running provider. See
+- [Pact Spring/JUnit runner](/implementation_guides/jvm/provider/spring.md): Overview
+- [Pact Spring6/Springboot3 + JUnit5 Support](/implementation_guides/jvm/provider/spring6.md): This module extends the base Pact JUnit5 module (See that for more details) and adds support
+- [README](/implementation_guides/jvm/readme.md): Pact-JVM Build
+- [Upgrading to 4.3.x](/implementation_guides/jvm/upgrade-to-4.3.x.md): Pact specification version defaults to V4
+- [Overview](/implementation_guides/net.md): PactNet is currently compliant up to and including Pact Specification Version 4.0, excluding pact plugins.
+- [Messaging Pacts](/implementation_guides/net/docs/messaging-pacts.md): Messaging pacts work similarly to synchronous request/response pacts in that there is still a consumer
+- [Upgrading to PactNet 4.x](/implementation_guides/net/docs/upgrading-to-4.md): PactNet 4.0.0 is a major rewrite of PactNet to be based on the new [Rust core library]
+- [Upgrading to PactNet 5.x](/implementation_guides/net/docs/upgrading-to-5.md): PactNet 5.x contains some breaking changes to improve the ergonomics of working with the new capabilities of Pact
+- [README](/implementation_guides/net/readme.md): logo
+- [Other Languages](/implementation_guides/other_languages.md): This section describes strategies you can use to test a consumer or provider where a Pact client language doesn't exist.
+- [Pact tooling](/implementation_guides/overview.md): There are Pact implementations written in more than 10 languages (see the sidebar of this page for a full list). The Pact tests for the consumer side of an integration are usually written in the same language as the consumer itself, as they typically run as part of the consumer's unit test suite. On the provider side, the verification tests can be run using either the Pact verifications API for that language, or by running the Pact provider verifier CLI (see below). Under the hood, many of the languages use a native c interface integration (pact ffi), and wrap native language syntax sugar around some of the features.
+- [Overview](/implementation_guides/pact_plugins.md): Source Code
+- [Content Matchers and Generators](/implementation_guides/pact_plugins/docs/content-matcher-design.md): Plugins can provide matchers and generators for different types of content. These contents are the bodies of
+- [Primitive values](/implementation_guides/pact_plugins/docs/matching-rule-definition-expressions.md): Matching Rule Definition Expressions
+- [Plugin drivers](/implementation_guides/pact_plugins/docs/plugin-driver-design.md): Plugin drivers provide the functionality to find, load and interface to the plugins for the Pact test framework. Each language
+- [Overview](/implementation_guides/pact_plugins/docs/proposals.md): Here is the current list of proposed changes to the Pact Plugin architecture.
+- [V2 Plugin Interface (Draft)](/implementation_guides/pact_plugins/docs/proposals/proposal_001_v2_plugin_interface.md): Discussion for this proposal//github.com/pact-foundation/pact-plugins/discussions/83
+- [Support script language plugins (Draft)](/implementation_guides/pact_plugins/docs/proposals/proposal_002_support_script_language_plugins.md): Source Code
+- [Support WASM plugins (Draft)](/implementation_guides/pact_plugins/docs/proposals/proposal_003_support_wasm_plugins.md): Source Code
+- [Protocol Plugin Implementations](/implementation_guides/pact_plugins/docs/protocol-plugin-design.md): One of the features a plugin can provide is a protocol transport implementation. For these, the plugin needs to provide
+- [Guide to writing a Pact plugin](/implementation_guides/pact_plugins/docs/writing-plugin-guide.md): Pact plugins are essentially gRPC servers that run as child processes to the main Pact process (whether in a consumer
+- [Pact plugin driver library for the JVM](/implementation_guides/pact_plugins/drivers/jvm.md): Source Code
+- [Changelog](/implementation_guides/pact_plugins/drivers/jvm/changelog.md): Source Code
+- [Pact plugin driver library for Rust](/implementation_guides/pact_plugins/drivers/rust/driver.md): Source Code
+- [Test project for using plugins via FFI](/implementation_guides/pact_plugins/drivers/rust/driver_ffi.md): Source Code
+- [Changelog](/implementation_guides/pact_plugins/drivers/rust/driver/changelog.md): Source Code
+- [CSV Examples](/implementation_guides/pact_plugins/examples/csv.md): Source Code
+- [gRPC examples](/implementation_guides/pact_plugins/examples/grpc.md): Source Code
+- [Area Calculator Example](/implementation_guides/pact_plugins/examples/grpc/area_calculator.md): Source Code
+- [Example Go consumer project](/implementation_guides/pact_plugins/examples/grpc/area_calculator/consumer-go.md): Source Code
+- [Example Java and JUnit 5 with Gradle consumer project](/implementation_guides/pact_plugins/examples/grpc/area_calculator/consumer-jvm.md): Source Code
+- [Example Java and JUnit 5 with Maven consumer project](/implementation_guides/pact_plugins/examples/grpc/area_calculator/consumer-maven.md): Source Code
+- [Example Rust consumer project](/implementation_guides/pact_plugins/examples/grpc/area_calculator/consumer-rust.md): Source Code
+- [Example Go provider project](/implementation_guides/pact_plugins/examples/grpc/area_calculator/provider-go.md): Source Code
+- [Example JVM provider project](/implementation_guides/pact_plugins/examples/grpc/area_calculator/provider-jvm.md): Source Code
+- [Example Maven provider project](/implementation_guides/pact_plugins/examples/grpc/area_calculator/provider-maven.md): Source Code
+- [Examples dealing with gRPC error responses](/implementation_guides/pact_plugins/examples/grpc/grpc_status.md): Source Code
+- [Example Java and JUnit 5 consumer project](/implementation_guides/pact_plugins/examples/grpc/test_enums/consumer-jvm.md): Source Code
+- [Protobuf Examples](/implementation_guides/pact_plugins/examples/protobuf.md): Source Code
+- [Protobuf JVM Consumer Example](/implementation_guides/pact_plugins/examples/protobuf/protobuf-consumer-jvm.md): Source Code
+- [Protobuf Rust Consumer Example](/implementation_guides/pact_plugins/examples/protobuf/protobuf-consumer-rust.md): Source Code
+- [Simple Example Protobuf provider](/implementation_guides/pact_plugins/examples/protobuf/protobuf-provider.md): Source Code
+- [Example/Prototype plugins](/implementation_guides/pact_plugins/plugins.md): Source Code
+- [CSV Plugin prototype](/implementation_guides/pact_plugins/plugins/csv.md): Source Code
+- [Protobuf Plugin prototype](/implementation_guides/pact_plugins/plugins/protobuf.md): Source Code
+- [Pact Specification](/implementation_guides/pact_specification.md): Introduction
+- [Pact-PHP](/implementation_guides/php/developing.md): Pre Reqs
+- [Additional Examples](/implementation_guides/php/docs/additional-examples.md): If you have additional examples, please feel free to raise a pull request to add a link to your project/example
+- [Pact PHP — Alpine (musl) FFI Troubleshooting](/implementation_guides/php/docs/alpine-ffi-troubleshooting.md): This page explains how to fix a common issue when running Pact PHP v10 on Alpine Linux (musl).
+- [Basic Consumer Usage](/implementation_guides/php/docs/consumer.md): All of the following code will be used exclusively for the Consumer.
+- [Framework Integrations](/implementation_guides/php/docs/framework-integrations.md): There are several external packages to help verifying providers implemented these framework easier:
+- [Message support](/implementation_guides/php/docs/messages.md): The goal is not to test the transmission of an object over a bus but instead vet the contents of the message.
+- [Basic Provider Usage](/implementation_guides/php/docs/provider.md): All of the following code will be used exclusively for Providers. This will run the Pacts against the real Provider and either verify or fail validation on the Pact Broker.
+- [Releasing](/implementation_guides/php/docs/releasing.md): Pact-PHP packages are published to Packagist
+- [History](/implementation_guides/php/docs/software-history.md): 10.X updates internal dependencies and libraries + adds support for pact specification 3.X & 4.X via Pact FFI.
+- [Usage for the optional `pact-stub-service`](/implementation_guides/php/docs/stub-server.md): If you would like to test with fixtures, you can use the pact-stub-service like this:
+- [Troubleshooting](/implementation_guides/php/docs/troubleshooting.md): Can not find/load FFI library
+- [Readme](/implementation_guides/php/readme.md): logo
+- [Upgrading to 10.x](/implementation_guides/php/upgrade-10.0.md): We have migrated from the pact-ruby core, to the pact-reference(rust) core.
+- [Overview](/implementation_guides/python.md): Pact Python is currently in active development and supports Pact Specification v2, pending pacts, and WIP pacts via the pact-ruby-standalone CLI, and has recently introduced a beta v3 interface, with a native c integration to the pact-core and supports Pact V3/V4 specification.
+- [Changelog](/implementation_guides/python/changelog.md): All notable changes to this project will be documented in this file.
+- [Consumer Testing](/implementation_guides/python/docs/consumer.md): Pact is a consumer-driven contract testing tool. The consumer specifies the expected interactions with the provider, which are used to create a contract. This contract is then used to verify that the provider meets the consumer's expectations.
+- [Provider Testing](/implementation_guides/python/docs/provider.md): Pact is a consumer-driven contract testing tool. The consumer specifies the expected interactions with the provider, which are used to create a contract. This contract is then used to verify that the provider behaves as expected.
+- [Examples](/implementation_guides/python/examples.md): This directory contains examples demonstrating how to use Pact in Python for various testing scenarios. While this document and the documentation within the examples themselves are intended to be mostly self-contained, it is highly recommended that you read the Pact Documentation as well.
+- [Overview](/implementation_guides/python/readme.md): <img src="https://raw.githubusercontent.com/pact-foundation/pact-python/main/docs/img/mascot.svg"
+- [Configuration](/implementation_guides/ruby/configuration.md): Menu
+- [Creating pacts](/implementation_guides/ruby/creating_pacts.md): With RSpec
+- [Gotchas](/implementation_guides/ruby/gotchas.md): VCR
+- [Matching](/implementation_guides/ruby/matching.md): Regular expressions
+- [Provider States](/implementation_guides/ruby/provider_states.md): See Provider States for an introduction into this advanced topic.
+- [Publishing pacts](/implementation_guides/ruby/publishing_pacts.md)
+- [README](/implementation_guides/ruby/readme.md): This getting started guide should help you get off the ground using Pact with Ruby. For more detail or advanced topics, head on over to the Ruby Pact GitHub repository.
+- [README v2](/implementation_guides/ruby/readme_v2.md): pact-ruby v2 implements support for the latest versions of Pact specifications:
+- [Verifying Pacts](/implementation_guides/ruby/verifying_pacts.md): See Verifying Pacts for an introduction into this topic.
+- [Overview](/implementation_guides/rust.md): Logo of the project
+- [Pact test DSL for writing consumer pact tests in Rust](/implementation_guides/rust/pact_consumer.md): Source Code
+- [pact_consumer](/implementation_guides/rust/pact_consumer/changelog.md): Source Code
+- [README](/implementation_guides/rust/pact_ffi.md): Source Code
+- [Architecture](/implementation_guides/rust/pact_ffi/architecture.md): Source Code
+- [pact_ffi](/implementation_guides/rust/pact_ffi/changelog.md): Source Code
+- [FFI Integration JSON format](/implementation_guides/rust/pact_ffi/integrationjson.md): Source Code
+- [Publishing the FFI libs to conan repo](/implementation_guides/rust/pact_ffi/publish.md): Source Code
+- [Pact Request and Response Matching](/implementation_guides/rust/pact_matching.md): Source Code
+- [pact_matching](/implementation_guides/rust/pact_matching/changelog.md): Source Code
+- [Pact Mock Server library](/implementation_guides/rust/pact_mock_server.md): Source Code
+- [pact_mock_server](/implementation_guides/rust/pact_mock_server/changelog.md): Source Code
+- [Pact Models](/implementation_guides/rust/pact_models.md): Source Code
+- [pact_models](/implementation_guides/rust/pact_models/changelog.md): Source Code
+- [Pact Verifier library](/implementation_guides/rust/pact_verifier.md): Source Code
+- [pact_verifier](/implementation_guides/rust/pact_verifier/changelog.md): Source Code
+- [Pact Broker Client](/implementation_guides/rust/pact-broker-cli.md): A client for the Pact Broker and PactFlow application.
+- [pact-broker-cli](/implementation_guides/rust/pact-broker-cli/changelog.md): [0.5.0] - 2025-10-30
+- [Standalone Pact Stub Server](/implementation_guides/rust/pact-stub-server.md): Build
+- [pact-stub-server](/implementation_guides/rust/pact-stub-server/changelog.md): 0.7.0 - [Feature Release]
+- [Overview](/implementation_guides/scala.md): * github.com/ITV/scala-pact - independent implementation of the Pact specification. Only provides support for Version 2 of the specification, currently.
+- [TLS/SSL and Proxy Configuration](/implementation_guides/ssl.md): This section describes approaches to handling TLS (often referred to as SSL) configuration, and negotiating coprorate network proxies for clients, such as our CLI tooling or Pact languages (e.g. Pact JS). For Pact Broker hosting configuration, consult the Pact Broker Settings section.
+- [Overview](/implementation_guides/swift.md): pact-consumer-swift for Swift and Objective-C is currently targeting Pact specification v2.
+- [Hands on learning](/implementation_guides/workshops.md): Video Training
+
+## pact_broker
+
+- [Introduction](/pact_broker.md): The Pact Broker is an application for sharing consumer driven contracts and verification results. It is optimised for use with "pacts" \(contracts created by the Pact framework\), but can be used for any type of contract that can be serialized to JSON.
+- [HAL Browser](/pact_broker/administration.md): The Pact Broker exposes its API using a HAL browser. The HAL Browser is a Javascript REST client that allows you to navigate through HAL hypermedia responses in a way similar to following links in HTML pages in a normal web browser.
+- [Deleting resources](/pact_broker/administration/deleting_resources.md): All resources can be deleted by sending an HTTP Delete request to the resource URL. The easiest way is to do that using the embedded API Browser, which you can get to by clicking the "API Browser" link on the Pact Broker index page.
+- [Maintenance](/pact_broker/administration/maintenance.md): Automatic data clean up
+- [Advanced Topics](/pact_broker/advanced_topics.md)
+- [API documentation](/pact_broker/advanced_topics/api_docs.md): This documentation and more can be found in the HAL browser \(/hal-browser/browser.html\) of any running pact broker. To view it, in the links section, click on the docs link \(the book icon\) next to the endpoint you wish to know about.
+- [Pact diff](/pact_broker/advanced_topics/api_docs/pact_diff.md): Allowed methods: GET
+- [Pacticipants](/pact_broker/advanced_topics/api_docs/pacticipant.md): Allowed methods: GET, PATCH, DELETE
+- [Publishing pacts](/pact_broker/advanced_topics/api_docs/publish_pact.md): Allowed methods: PUT
+- [Publishing verification results](/pact_broker/advanced_topics/api_docs/publish_verification_result.md): Allowed methods: POST
+- [Consumer Version Selectors](/pact_broker/advanced_topics/consumer_version_selectors.md): Overview
+- [Matrix selectors](/pact_broker/advanced_topics/matrix_selectors.md): The Matrix is the dataset that is created when all the pacts are joined to all the verifications in the database, and it shows every consumer and provider version that have been tested against each other.
+- [Pacticipants](/pact_broker/advanced_topics/pacticipant.md): Allowed methods: GET, PATCH, DELETE
+- [Pending pacts](/pact_broker/advanced_topics/pending_pacts.md): Enabling the "pending pacts" feature ensures the pact verification task (and therefore, the build) only fails when a breaking change causes a previously supported pact to fail verification. Without the feature enabled, any failing pact (eg. ones with new features) will cause the provider's build to break, blocking the provider from deploying even if it is compatible with its deployed consumers.
+- [Provider verification badges](/pact_broker/advanced_topics/provider_verification_badges.md): See the the Badges section of the configuration page for information about accessing the badges._
+- [Provider verification results](/pact_broker/advanced_topics/provider_verification_results.md): Publishing
+- [How to see what has changed in a pact](/pact_broker/advanced_topics/see_changes_pact.md): Most recent change
+- [Selectors](/pact_broker/advanced_topics/selectors.md): Consumer version selectors
+- [Troubleshooting](/pact_broker/advanced_topics/troubleshooting.md): error 'relation "schema_migrations" does not exist' on initial startup
+- [UI documentation](/pact_broker/advanced_topics/ui_docs.md): Index
+- [Using TLS (Transport Layer Security)](/pact_broker/advanced_topics/using-tls.md): Before you keep going, if you are considering using a self signed certificate, do consider using a free CA signed certificate from Let's Encrypt instead. It will save you a lot of hassle configuring self signed certificates everywhere you connect to the Pact Broker.
+- [Work In Progress pacts](/pact_broker/advanced_topics/wip_pacts.md): The WIP (work in progress) pacts is a feature that ensures any new contracts are automatically verified in the provider's main pipeline build without requiring an update to the provider configuration.
+- [Pacticipants](/pact_broker/api/pacticipants.md): Pacticipant
+- [Pagination](/pact_broker/api/pagination.md): Pagination of results is available for some endpoints used by the Pact Broker. These paginated responses can be used to programmatically load smaller subsections of the api results, in turn enabling improved performance and easier client side management of the data.
+- [Webhooks](/pact_broker/api/webhooks.md): Webhook
+- [Branches](/pact_broker/branches.md): From version 2.82.0 onwards, the Pact Broker supports repository branches as a first class concept. Previously, users were recommended to use version tags to represent the branch with which a particular pacticipant version was associated. Adding explict support for branches allows the Pact Broker to provide simpler documentation, better messaging and sensible defaults.
+- [Planned breaking changes in version 3.0](/pact_broker/breaking_changes.md): Naming changes
+- [Can I Deploy](/pact_broker/can_i_deploy.md): How to use Pact + the can-i-deploy tool to ensure that you are safe to deploy your application.
+- [Changelog](/pact_broker/changelog.md): v2.118.0 (2026-01-02)
+- [Overview](/pact_broker/client_cli.md): The Pact Broker Client CLI allows you to create, update, delete and query resources in a Pact Broker (including the can-i-deploy command).
+- [Using can-i-deploy with tags](/pact_broker/client_cli/can_i_deploy_usage_with_tags.md): The can-i-deploy tool was originally written to support specifying versions and dependencies using tags. This usage has now been superseded by first class support for environments, deployments and releases.
+- [Changelog](/pact_broker/client_cli/changelog.md): v1.77.0 (2024-10-08)
+- [README](/pact_broker/client_cli/readme.md): A client for the Pact Broker and PactFlow. Publishes and retrieves pacts, pacticipants, pacticipant versions, environments, deployments and releases. Supports publishing provider contracts for PactFlow. The functionality is available via a CLI, or via Ruby Rake tasks. You can also use the Pact CLI Docker image.
+- [Features](/pact_broker/configuration/features.md): See the settings page for a comprehensive list of all configuration options.
+- [Settings](/pact_broker/configuration/settings.md): The Pact Broker supports configuration via environment variables or a YAML file from version 2.87.0.1 of the Docker images.
+- [Dockerized Pact Broker](/pact_broker/docker_images.md): The Pact Broker is an application for sharing for Pact contracts and verification results, and is required for integrating Pact into CI/CD pipelines.
+- [pactfoundation/pact-broker](/pact_broker/docker_images/pactfoundation.md): This repository contains a Dockerized version of the Pact Broker. You can pull the pactfoundation/pact-broker image from Dockerhub. If you're viewing these docs on Dockerhub, here is a link to the github repository.
+- [Pact Broker on Kubernetes](/pact_broker/kubernetes.md): The Pact Broker is an application for sharing for Pact contracts and verification results, and is required for integrating Pact into CI/CD pipelines. Kubernetes is an open-source platform for managing containerised workloads and an easy way of deploying the Pact Broker.
+- [Deploy with Helm](/pact_broker/kubernetes/readme.md): Version application AppVersion: 2.105.0.1
+- [Create a network graph](/pact_broker/network_graph.md): Due to the naivety of the layout logic for the network graphs, trying to graph all the applications in one diagram using the current layout would not scale very well. We recommend pulling the data out of the broker and using something like graphviz to visualise the relationships. Here is an example of pulling out the data from the DiUS hosted test Broker.
+- [Overview](/pact_broker/overview.md): The Pact Broker is a service that supports contract testing by enabling the exchange of pacts and verification results.
+- [Pacticipant Version Numbers](/pact_broker/pacticipant_version_numbers.md): When publishing a pact or a verification, the resource is associated with a particular version of the pacticipant \(application\), which is identified by a version number. Just to make it very clear - the version number that is specified in the URL of a pact or a verification is the application version number, not the pact version. Pact versioning is done for you behind the scenes by the Broker, and is based on the content of the pact. On a side note, do not worry about creating too much data by publishing a pact with every build - this is the expected behaviour, and a new database row for the actual pact content is only created when the pact content changes \(so avoid random data in your pacts\).
+- [Publishing and retrieving pacts](/pact_broker/publishing_and_retrieving_pacts.md): Publishing
+- [Quick start guide](/pact_broker/quick_start.md): * Overview
+- [Recording deployments and releases](/pact_broker/recording_deployments_and_releases.md): The features described in this page require:
+- [Set up Checklist](/pact_broker/set_up_checklist.md): This is a high level check list of things that need to be done when setting up an integration to be tested with Pact using the Pact Broker. As there are many Pact implementations in different languages, you will need to consult the documentation for your language to find out how to implement each step. See the Effective Pact Setup Guide for an in depth explanation of the purpose of each step.
+- [Tags](/pact_broker/tags.md): Tags that represent branches and environments, while still supported, have been superseded by first class support for branches and environments. Please read this post for more information. You'll find links at the bottom of the post to help you migrate from tags to branches and environments.
+- [Terraform Provider](/pact_broker/terraform_provider.md): Automating Pact Broker with Terraform
+- [Upgrading](/pact_broker/upgrading.md): The Pact Broker follows semantic versioning rules, and will not knowingly introduce a breaking change to a publicly released feature without incrementing the major version. Features in developer preview or beta release that have been enabled using the PACTBROKERFEATURES setting may change in a non-backwards compatible way however.
+- [Webhooks](/pact_broker/webhooks.md): Introduction
+- [Debugging webhooks](/pact_broker/webhooks/debugging_webhooks.md): Webhooks are executed when either the pact content changes, or a verification is published.
+- [Dynamic variable substitution](/pact_broker/webhooks/dynamic_variable_sub.md): Dynamic variable substitution
+- [Webhooks template library](/pact_broker/webhooks/template_library.md): Please feel free add any that you think might be useful to others.
+- [Webhook Whitelists](/pact_broker/webhooks/webhook_whitelist.md): Webhook Whitelists
+
+## pact_nirvana
+
+- [CI/CD Setup Guide](/pact_nirvana.md): Or "The steps for reaching Pact Nirvana"
+- [Setting up a Pact in a "universal" CI/CD pipeline](/pact_nirvana/notes_1.md): Some organizations have standard CI/CD pipelines that all projects use to release. In this situation, it can be tricky to introduce the verification/can-i-deploy steps because some applications will be using Pact and some won't. can-i-deploy will return an error if you try to use it to deploy an application version that it does not know about, and (depending on the configuration options available in that language) the verification step may also fail if there are no pacts to verify.
+- [1. Get prepared - learn about Pact](/pact_nirvana/step_1.md): Before you read this document, you should:
+- [2. Talk - get team alignment](/pact_nirvana/step_2.md): Contract tests are a big win when it comes to enabling teams to work and deploy independently, but they also require some level of coordination. Consumer contract tests are of very little value unless they're verified against the provider, and a provider can't write contract tests for their system without working with the consumer team to get the tests added to the consumer project.
+- [3. Bronze - get a single test working manually](/pact_nirvana/step_3.md): Bronze diagram
+- [4. Silver - manually integrate with Pact Broker](/pact_nirvana/step_4.md): Now you have two different sets of tests in two different codebases. The artifacts that tie these tests together are the Pact file, and the verification results. The next step is to automate the exchange of these artifacts. At this level, you still run on your machine, but you have the consumer test publish its pact to the Pact Broker, and manually run provider verification where we will verify the pact from the broker via URL, rather than pointing to our local file system. We will then create a new verification task, which will retrieve the same pact but via consumer version selectors.
+- [5. Gold - integrate with your PR pipelines](/pact_nirvana/step_5.md): Gold diagram
+- [6. Platinum - Add can-i-deploy with branch to PR pipelines](/pact_nirvana/step_6.md): Before we merge a PR, it would be good to know if this change is compatible with the consumers and/or providers the application talks to.
+- [Diamond level](/pact_nirvana/step_7.md): It's all very well knowing that your consumer/provider are compatible with the head versions of each other, but if you want to be able to deploy your consumer and provider independently, you also need to be sure that the latest version of the provider is compatible with the production version of the consumer. The ability to do this is a major selling point of Pact.
+
+## plugins
+
+- [Pact Plugins Directory](/plugins/directory.md): Plugin Tooling
+- [Getting started with Pact Plugins](/plugins/quick_start.md): Introduction to Plugins
+- [1. Overview](/plugins/workshops/create-a-plugin/intro.md): This workshop is also available as a video. Watch it now.
+- [2. Conceptual Overview - Plugin Framework](/plugins/workshops/create-a-plugin/step1.md): Introduction to Plugins
+- [3. Transport Overview - gRPC](/plugins/workshops/create-a-plugin/step2.md): The Pact Plugin Driver communicates to plugins using protobufs over gRPC.
+- [4. Choosing a language](/plugins/workshops/create-a-plugin/step3.md): Choosing a language
+- [Creating our first plugin](/plugins/workshops/create-a-plugin/step4.md): The scenario
+- [6. Testing our first plugin](/plugins/workshops/create-a-plugin/step5.md): Test our plugin
+- [Publish our plugin](/plugins/workshops/create-a-plugin/step6.md): Now we are going to publish our plugin so that anybody may use it.
+- [8. Next steps](/plugins/workshops/create-a-plugin/step7.md): If you've made it this far, you should now have a working plugin and run it in a project - how amazing is that! 🎉
+
+## provider
+
+- [Verifying Pacts](/provider.md): Verify your pacts against a locally running instance of the provider
+- [Handling authentication and authorization](/provider/handling_auth.md): There are a few options for handling authentication and authorization during the verification step. When making your decision, it's best to be pragmatic rather than idealistic, and just make sure that you've tested your authentication and authorization integration code somewhere rather than insisting that it has to be in a certain place.
+- [Help! My pact verification tests are failing. What do I do?](/provider/how_to_fix_failing_verification_tests.md): For Ruby, JS, Python, Go and Swift
+- [Recommended configuration for verifying pacts](/provider/recommended_configuration.md): There are typically two different reasons why a pact verification task will need to be run.
+- [Using provider states effectively](/provider/using_provider_states_effectively.md): The purpose of contract testing is to ensure that the consumer and provider have a shared understanding of the messages that will pass between them. When we verify a pact, we are not only ensuring that the provider returns the expected data to the consumer, we are also verifying that the consumer is calling the API correctly.
+
+## recipes
+
+- [Overview](/recipes.md): Recipes and pre-built integrations to test common scenarios in Pact
+- [API Gateway](/recipes/apigateway.md): How to use Pact with API Gateways
+- [AWS API Gateway Signed Request](/recipes/awssignedrequests.md): How to use Pact with API Gateway Signed Requests
+- [Cypress](/recipes/cypress.md): How to integrate Pact with Cypress
+- [GraphQL](/recipes/graphql.md): How to test GraphQL APIs with Pact
+- [Standard JSON](/recipes/kafka.md): How to test Kafka services with Pact
+- [Lambda (async) and FaaS](/recipes/lambdaasync.md): How to test asynchronous Lambda and FaaS applications
+- [Lambda (HTTP)](/recipes/lambdahttp.md): How to test HTTP based Lambdas with AWS SAM
+- [MUnit (Mule4) with Pact](/recipes/munit.md): How to use Pact for testing MuleSoft (Mule 4) APIs with MUnit
+- [Optional Fields](/recipes/optional.md): Strategies for handling optional values in API responses when using Pact.
+
+## roadmap
+
+- [Roadmap](/roadmap.md): Pact Specification and Feature Roadmap
+- [Feature support](/roadmap/feature_support.md): There are multiple implementations of Pact, and while we try to keep feature parity between them, some implementations are ahead of others in terms of feature support.
+
+## telemetry
+
+- [Telemetry](/telemetry.md): The Pact team strive to develop great open source tools for the community. We rely on the community's input to help us iterate on and improve Pact. Telemetry is additional information that helps us to better understand the community's needs, diagnose issues, and prioritise feature work.
+
+## university
+
+- [Pact University](/university.md): Learn how Pact works through a series of purpose built videos, workshops and training material.
+- [Introduction to Pact](/university/hello.md): Goals
+- [Pact JS workshop](/university/introduction.md): Source Code
+- [Intro](/university/introduction/00_1_Intro.md): This workshop is also available as a video. Watch it now.
+- [Workshop Outline](/university/introduction/00_2_Outline.md): - step 1 Create our consumer before the Provider API even exists
+- [Learning Objectives](/university/introduction/00_3_LearningObjectives.md): If running this as a team workshop format, you may want to take a look through the learning objectives, its a big list.
+- [Requirements](/university/introduction/00_4_Requirements.md): Docker
+- [Scenario](/university/introduction/00_5_Scenario.md): There are two components in scope for our workshop.
+- [Further Reading](/university/introduction/further.md): This introductory course provided via Test Automation University on contract testing with Pact is also a helpful resource.
+- [Learning Outcomes](/university/introduction/learning.md): Source Code
+- [Step 1 - Simple Consumer calling Provider](/university/introduction/Step1.md): Move to step 1
+- [Step 10 - Request Filters on the Provider](/university/introduction/Step10.md): Move to step 10
+- [Step 11 - Using a Pact Broker](/university/introduction/Step11.md): Move to step 11
+- [Step 12 - Using Webhooks](/university/introduction/Step12.md): Move to step 12
+- [Step 13 - Using a PactFlow Broker](/university/introduction/Step13.md): Move to step 13
+- [Step 2 - Client Tested but integration fails](/university/introduction/Step2.md): Move to step 2
+- [Step 3 - Pact to the rescue](/university/introduction/Step3.md): Move to step 3
+- [Step 4 - Verify the provider](/university/introduction/Step4.md): Move to step 4
+- [Step 5 - Back to the client we go](/university/introduction/Step5.md): Move to step 5
+- [Step 6 - Consumer updates contract for missing products](/university/introduction/Step6.md): Move to step 6
+- [Step 7 - Adding the missing states](/university/introduction/Step7.md): Move to step 7
+- [Step 8 - Authorization](/university/introduction/Step8.md): Move to step 8
+- [Step 9 - Implement authorisation on the provider](/university/introduction/Step9.md): Move to step 9
+- [Intro](/university/message-pact-async/00_1_Intro.md): This workshop is also available as a video. Watch it now.
+- [Workshop Outline](/university/message-pact-async/00_2_Outline.md): - step 1 Create our consumer before the Provider API even exists
+- [Learning Objectives](/university/message-pact-async/00_3_LearningObjectives.md): If running this as a team workshop format, you may want to take a look through the learning objectives, its a big list.
+- [Requirements](/university/message-pact-async/00_4_Requirements.md): 1 of the following languages, depending on which examples you want to run.
+- [Scenario](/university/message-pact-async/00_5_Scenario.md): There are two components in scope for our workshop.
+- [Further Reading](/university/message-pact-async/further.md): This introductory course provided via Test Automation University on contract testing with Pact is also a helpful resource.
+- [Learning Outcomes](/university/message-pact-async/learning.md): Source Code
+- [Step 1 - Create Consumer (Subscriber)](/university/message-pact-async/Step1.md): Learning Objectives
+- [Step 2 - Create consumer Pact test](/university/message-pact-async/Step2.md): Learning Objectives
+- [Step 3 - Create Provider (Publisher)](/university/message-pact-async/Step3.md): Learning Objectives
+- [Step 4 - Create Provider Pact Test](/university/message-pact-async/Step4.md): Learning Objectives
+
+## wrapper_implementations
+
+- [Wrapper implementations](/wrapper_implementations.md): Rust (strategic) shared core implementations

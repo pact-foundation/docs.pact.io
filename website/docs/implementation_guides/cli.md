@@ -216,7 +216,7 @@ scoop install pact-legacy
 
 ### **Chocolatey** (Windows ARM64/AMD64)
 
-- Grab the required package from <https://github.com/pact-foundation/choco/releases>
+- Grab the required package from [choco](https://github.com/pact-foundation/choco/releases)
 
 **Unified CLI**
 

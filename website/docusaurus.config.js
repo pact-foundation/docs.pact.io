@@ -76,7 +76,20 @@ const siteConfig = {
   // Used for publishing and more
   projectName: 'pact-docs',
   organizationName: 'Pact Foundation',
-
+  plugins: [
+    [
+      '@signalwire/docusaurus-plugin-llms-txt',
+      {
+        content: {
+          enableMarkdownFiles: true,
+          enableLlmsFullTxt: false,
+          includeBlog: false,
+          includePages: true,
+          includeDocs: true,
+        },
+      },
+    ]
+  ],
   themeConfig: {
     announcementBar: {
       id: 'announcement-bar',

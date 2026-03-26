@@ -23,7 +23,7 @@ You interact with the tool via HTTP calls or CLI calls.
 
 Because of the HTTP interaction, you can very quickly create a wrapper interface to generate pact files and ensure your consumer is compliant.
 
-Here is an example bash script, that shows how to interact with the mock service to produce a contract: <https://github.com/pact-foundation/pact-cli/blob/main/examples/mock_example-rust.sh>.
+Here is an example bash script, that shows how to interact with the mock service to produce a contract: [mock_example-rust.sh](https://github.com/pact-foundation/pact-cli/blob/main/examples/mock_example-rust.sh).
 
 #### Reference code
 
@@ -53,4 +53,4 @@ The verifier will then replay all of the Pact files against your running API, an
 
 There is no testing DSL available so you will need to be sensitive to process exit codes when running this in a CI/CD pipeline.
 
-Here is an example bash script, that shows how to interact with the verifier to verify a contract: <http://github.com/pact-foundation/pact-cli/blob/main/examples/verifier_example-rust.sh>.
+Here is an example bash script, that shows how to interact with the verifier to verify a contract: [verifier_example-rust.sh](http://github.com/pact-foundation/pact-cli/blob/main/examples/verifier_example-rust.sh).

@@ -43,7 +43,7 @@ A consumer version selector has the following properties:
 
 - `environment`: the name of the environment containing the consumer versions for which to return the pacts. Used to further qualify `{ "deployed": true }` or `{ "released": true }`. Normally, this would not be needed, as it is recommended to verify the pacts for all currently deployed/currently supported released versions. As of October 2021, this is not yet supported in all Pact client libraries.
 
-- `latest`: true. Used in conjuction with the `tag` property. If a `tag` is specified, and `latest` is `true`, then the latest pact for each of the consumers with that tag will be returned. If a `tag` is specified and the latest flag is *not* set to `true`, *all* the pacts with the specified tag will be returned. (This might seem a bit weird, but it's done this way to match the syntax used for the matrix query params. See <https://docs.pact.io/selectors>).
+- `latest`: true. Used in conjuction with the `tag` property. If a `tag` is specified, and `latest` is `true`, then the latest pact for each of the consumers with that tag will be returned. If a `tag` is specified and the latest flag is *not* set to `true`, *all* the pacts with the specified tag will be returned. (This might seem a bit weird, but it's done this way to match the syntax used for the matrix query params. See [selectors](https://docs.pact.io/selectors).
 
 - `consumer`: allows a selector to only be applied to a certain consumer. Can be specified with any of the above properties.
 
@@ -82,23 +82,23 @@ The Pact Broker API for retrieving pacts by selectors deduplicates the pacts bas
 You can checkout code-snippets below, but here are some links to either documentation, or source code, from the respective languages, around their use of consumer version selectors. Ideally all languages should support raw json version selectors, to allow for extensiblity in the future.
 
 - JavaScript
-  - <https://docs.pact.io/implementation_guides/javascript/docs/provider#verification-options>
-  - <https://github.com/pact-foundation/pact-js-core/blob/master/src/verifier/types.ts#L3>
+  - [verification-options](https://docs.pact.io/implementation_guides/javascript/docs/provider#verification-options)
+  - [verifier-types](https://github.com/pact-foundation/pact-js-core/blob/master/src/verifier/types.ts#L3)
 - Java
-  - <https://docs.pact.io/implementation_guides/jvm/provider/junit#selecting-the-pacts-to-verify-with-consumer-version-selectors-4314>
+  - [selecting-the-pacts-to-verify-with-consumer-version-selectors](https://docs.pact.io/implementation_guides/jvm/provider/junit#selecting-the-pacts-to-verify-with-consumer-version-selectors-4314)
 - Gradle
-  - <https://docs.pact.io/implementation_guides/jvm/provider/gradle#using-consumer-version-selectors-4310>
+  - [using-consumer-version-selectors](https://docs.pact.io/implementation_guides/jvm/provider/gradle#using-consumer-version-selectors-4310)
 - Ruby
-  - <https://docs.pact.io/implementation_guides/ruby/verifying_pacts#fetching-pacts-from-a-pact-broker>
-  - <https://github.com/pact-foundation/pact-ruby/blob/master/lib/pact/pact_broker/pact_selection_description.rb>
+  - [fetching-pacts-from-a-pact-broker](https://docs.pact.io/implementation_guides/ruby/verifying_pacts#fetching-pacts-from-a-pact-broker)
+  - [pact_selection_description.rb](https://github.com/pact-foundation/pact-ruby/blob/master/lib/pact/pact_broker/pact_selection_description.rb)
 - Python - Takes raw json consumer_version_selectors
-  - <https://github.com/pact-foundation/pact-python/blob/89733d6470cfa4b57102438c464f053093ddd858/pact/verifier.py#L109>
+  - [verifier](https://github.com/pact-foundation/pact-python/blob/89733d6470cfa4b57102438c464f053093ddd858/pact/verifier.py#L109)
 - C#
-  - <https://github.com/pact-foundation/pact-net/blob/master/docs/upgrading-to-4.md#provider-tests>
-  - <https://github.com/pact-foundation/pact-net/blob/master/src/PactNet.Abstractions/Verifier/ConsumerVersionSelector.cs>
+  - [provider-tests](https://github.com/pact-foundation/pact-net/blob/master/docs/upgrading-to-4.md#provider-tests)
+  - [ConsumerVersionSelector.cs](https://github.com/pact-foundation/pact-net/blob/master/src/PactNet.Abstractions/Verifier/ConsumerVersionSelector.cs)
 - Golang
-  - <https://github.com/pact-foundation/pact-go/blob/2.x.x/docs/provider.md#selecting-pacts-to-verify>
-  - <https://github.com/pact-foundation/pact-go/blob/master/provider/consumer_version_selector.go>
+  - [selecting-pacts-to-verify](https://github.com/pact-foundation/pact-go/blob/2.x.x/docs/provider.md#selecting-pacts-to-verify)
+  - [consumer_version_selector.go](https://github.com/pact-foundation/pact-go/blob/master/provider/consumer_version_selector.go)
 
 ## Code examples with branches
 

@@ -39,7 +39,7 @@ The benefits:
 
 ### Further material
 
-- <https://www.youtube.com/watch?v=-6x6XBDf9sQ>
-- <https://www.atlassian.com/blog/technology/spec-first-api-development>
+- [youtube](https://www.youtube.com/watch?v=-6x6XBDf9sQ)
+- [spec-first-api-development](https://www.atlassian.com/blog/technology/spec-first-api-development)
 
 ___

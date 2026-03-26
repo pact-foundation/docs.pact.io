@@ -458,7 +458,7 @@ All notable changes to this project will be documented in this file.
 -   Remove MatchableT
 -   Get test to run again
 -   Add boolean alias
--   Fix compatibility with Python <= 3.9
+-   Fix compatibility with Python \<= 3.9
 -   Fix match tests
 -   Remove unused generalisation
 -   Use matchers in v3 examples

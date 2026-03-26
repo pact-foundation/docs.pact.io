@@ -140,7 +140,7 @@ There is an open [RFC](https://github.com/pact-foundation/pact-net/issues/492) w
 
 To help nudge this along, I've created a suite of .NET examples exercising many of the known pact plugins in the ecosystem, along with the raw pact_ffi calls required to utilise them.
 
-You can check it out here - <https://github.com/YOU54F/pact-dotnet-ffi-plugins>
+You can check it out here - [pact-dotnet-ffi-plugins](https://github.com/YOU54F/pact-dotnet-ffi-plugins)
 
 In order to get this into Pact-Net, one would need to propose some API designs in the RFC, and then can leverage the examples I've created (probably adding your own .NET developer flair to them), to leverage Pact-Nets idiomatic API design, and use plugins in their current V1 form.
 
