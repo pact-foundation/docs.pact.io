@@ -31,7 +31,10 @@ CUSTOM_ACTIONS = [
     md_file_contents.clean_up_changelog
     md_file_contents.find_and_replace(/^# /, '## ')
   }],
-  ["rust/README.md", ->(md_file_contents) { md_file_contents.fields[:title] = "Overview" } ],
+  ["rust/README.md", ->(md_file_contents) { 
+    md_file_contents.fields[:title] = "Overview"
+    md_file_contents.find_and_replace(/See \[Pact Verifier CLI\]\(\/implementation_guides\/rust\/pact_verifier_cli\)\./, 'See [Pact Verifier](/implementation_guides/rust/pact_verifier).')
+  }],
   ["rust/pact_ffi/README.md", ->(md_file_contents) { 
     md_file_contents.find_and_replace(%r{</details>}, '&lt;/details&gt;')
     md_file_contents.fields[:title] = "README"
