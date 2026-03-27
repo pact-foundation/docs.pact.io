@@ -31,7 +31,7 @@ We have some great case studies covering the use of Pact, just click on a logo t
 
 ## Others talking about their use of Pact
 
-You can see a list community articles [here](blogs_videos_and_articles), but here is a selection of companies talking about their use of Pact in the wild
+You can see a list community articles [here](/blogs_videos_and_articles), but here is a selection of companies talking about their use of Pact in the wild
 
 ### Mastercard (finance)
 

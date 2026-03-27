@@ -30,7 +30,9 @@ const { Pact } = require("@pact-foundation/pact")
 
 `PactV4` aliased as `Pact` is the latest version of this library, supporting up to and including version 4 of the [Pact Specification](https://github.com/pact-foundation/pact-specification/). It also allows interactions of multiple types (HTTP, async, synchronous). For previous versions, see below.
 
-<details><summary>Previous versions</summary>
+<details>
+
+<summary>Previous versions</summary>
 
 
 ```javascript
@@ -46,7 +48,9 @@ The `Pact` class provides the following high-level APIs, they are listed in the 
 
 ### API
 
-<details><summary>Consumer API</summary>
+<details>
+
+<summary>Consumer API</summary>
 
 The Pact SDK uses a fluent builder to create interactions.
 
@@ -67,7 +71,9 @@ _NOTE:_ V4 also supports interaction metadata for advanced workflows using `pend
 
 </details>
 
-<details><summary>Constructor</summary>
+<details>
+
+<summary>Constructor</summary>
 
 | Parameter  | Required? | Type    | Description                                                                               |
 | ---------- | --------- | ------- | ----------------------------------------------------------------------------------------- |

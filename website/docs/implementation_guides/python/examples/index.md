@@ -94,10 +94,10 @@ sequenceDiagram
 Pact is **consumer driven**. This means that the consumer is responsible for defining the interactions it expects from the provider through the pattern of
 
 <!-- markdownlint-disable no-inline-html -->
-> Given {provider state} <br/>
-> Upon receiving {description} <br/>
-> With {request} <br/>
-> Will respond with {response} <br/>
+> Given \{provider state\} <br/>
+> Upon receiving \{description\} <br/>
+> With \{request\} <br/>
+> Will respond with \{response\} <br/>
 
 
 When the consumer tests are executed, a Pact mock server is set up that will respond to the requests as defined by the consumer. When the consumer tests are merged into the main branch, the Pact contract is sent to the Pact Broker.

@@ -691,8 +691,8 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 * add pb:can-i-deploy-pacticipant-version-to-environment relation	 ([67328194](https://github.com/pact-foundation/pact_broker/commit/67328194))
 
 * **webhooks**
-  * support ${pactbroker.providerVersionDescriptions} template parameter	 ([54a073eb](https://github.com/pact-foundation/pact_broker/commit/54a073eb))
-  * support ${pactbroker.buildUrl} template parameter	 ([9b79b33f](https://github.com/pact-foundation/pact_broker/commit/9b79b33f))
+  * support $\{pactbroker.providerVersionDescriptions\} template parameter	 ([54a073eb](https://github.com/pact-foundation/pact_broker/commit/54a073eb))
+  * support $\{pactbroker.buildUrl\} template parameter	 ([9b79b33f](https://github.com/pact-foundation/pact_broker/commit/9b79b33f))
   * support $pactbroker.consumerVersionBranch template parameter	 ([b97ba84c](https://github.com/pact-foundation/pact_broker/commit/b97ba84c))
 
 #### Bug Fixes
@@ -867,7 +867,7 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 
 * **webhooks**
   * support consumerVersionBranch and providerVersionBranch in the template parameters	 ([6637644f](https://github.com/pact-foundation/pact_broker/commit/6637644f))
-  * support ${pactbroker.currentlyDeployedProviderVersionNumber} in webhook templates (#402)	 ([1e5487f8](https://github.com/pact-foundation/pact_broker/commit/1e5487f8))
+  * support $\{pactbroker.currentlyDeployedProviderVersionNumber\} in webhook templates (#402)	 ([1e5487f8](https://github.com/pact-foundation/pact_broker/commit/1e5487f8))
 
 * **matrix**
   * support querying by branch	 ([110578dc](https://github.com/pact-foundation/pact_broker/commit/110578dc))
@@ -1497,7 +1497,7 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 #### Features
 
 * **webhooks**
-  * support upsert of webhook via a PUT to /webhooks/{uuid}	 ([f9ba9ab5](https://github.com/pact-foundation/pact_broker/commit/f9ba9ab5))
+  * support upsert of webhook via a PUT to /webhooks/\{uuid\}	 ([f9ba9ab5](https://github.com/pact-foundation/pact_broker/commit/f9ba9ab5))
 
 * don't double parse the incoming JSON body when checking if it is invalid.	 ([bd74b82c](https://github.com/pact-foundation/pact_broker/commit/bd74b82c))
 * support saving symbol configuration settings	 ([73db9c2b](https://github.com/pact-foundation/pact_broker/commit/73db9c2b))
@@ -2155,7 +2155,7 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 
 #### Features
 
-* add ${pactbroker.consumerLabels} and ${pactbroker.providerLabels} to webhook templates	 ([afebbc5a](https://github.com/pact-foundation/pact_broker/commit/afebbc5a))
+* add $\{pactbroker.consumerLabels\} and $\{pactbroker.providerLabels\} to webhook templates	 ([afebbc5a](https://github.com/pact-foundation/pact_broker/commit/afebbc5a))
 
 
 <a name="v2.26.1"></a>
@@ -2345,11 +2345,11 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 
 #### Features
 
-* add ${pactbroker.consumerVersionTags} and ${pactbroker.providerVersionTags} to webhook templates	 ([e5121b1](https://github.com/pact-foundation/pact_broker/commit/e5121b1))
-* add ${pactbroker.verificationResultUrl} to webhook templates	 ([e19c9c9](https://github.com/pact-foundation/pact_broker/commit/e19c9c9))
+* add $\{pactbroker.consumerVersionTags\} and $\{pactbroker.providerVersionTags\} to webhook templates	 ([e5121b1](https://github.com/pact-foundation/pact_broker/commit/e5121b1))
+* add $\{pactbroker.verificationResultUrl\} to webhook templates	 ([e19c9c9](https://github.com/pact-foundation/pact_broker/commit/e19c9c9))
 * redact potentially sensitive headers in the webhook resource	 ([619c7e9](https://github.com/pact-foundation/pact_broker/commit/619c7e9))
-* add ${pactbroker.githubVerificationStatus} to webhook templates	 ([abccf7a](https://github.com/pact-foundation/pact_broker/commit/abccf7a))
-* add ${pactbroker.providerVersionNumber} to webhook templates	 ([86bc1ec](https://github.com/pact-foundation/pact_broker/commit/86bc1ec))
+* add $\{pactbroker.githubVerificationStatus\} to webhook templates	 ([abccf7a](https://github.com/pact-foundation/pact_broker/commit/abccf7a))
+* add $\{pactbroker.providerVersionNumber\} to webhook templates	 ([86bc1ec](https://github.com/pact-foundation/pact_broker/commit/86bc1ec))
 
 
 #### Bug Fixes
@@ -2372,7 +2372,7 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 * only log webhook response details when a webhook host whitelist has been configured	 ([3e1c562](https://github.com/pact-foundation/pact_broker/commit/3e1c562))
 * validate webhook host against configurable list on creation	 ([077e37f](https://github.com/pact-foundation/pact_broker/commit/077e37f))
 * validate webhook scheme and http method against configurable lists on creation	 ([d7a2b0a](https://github.com/pact-foundation/pact_broker/commit/d7a2b0a))
-* add ${pactbroker.consumerVersionNumber} to webhook templates	 ([d525527](https://github.com/pact-foundation/pact_broker/commit/d525527))
+* add $\{pactbroker.consumerVersionNumber\} to webhook templates	 ([d525527](https://github.com/pact-foundation/pact_broker/commit/d525527))
 
 
 #### Bug Fixes
@@ -2672,7 +2672,7 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 #### Features
 
 * **webhook templating**
-  * add support for ${pactbroker.pactUrl} in query and body	 ([0eed596](https://github.com/pact-foundation/pact_broker/commit/0eed596))
+  * add support for $\{pactbroker.pactUrl\} in query and body	 ([0eed596](https://github.com/pact-foundation/pact_broker/commit/0eed596))
 
 * **matrix** _(note that the matrix resource is still in beta, and there may be breaking changes in the future)_
   * allow query to determine if a particular pacticipant version is compatible with the latest tagged versions of all its dependencies	 ([ba4a1cc](https://github.com/pact-foundation/pact_broker/commit/ba4a1cc))
@@ -2896,7 +2896,7 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 * 90d4410 - feat(HTML pact): Add home link to HTML pact (Beth Skurrie, Mon Jul 3 16:57:57 2017 +1000)
 * 4eb2095 - feat(HTML pact): Add tag names next to consumer version number (Beth Skurrie, Mon Jul 3 16:56:56 2017 +1000)
 * 1f66b6d - feat(version): Add HAL links to pacts from version resource (Beth Skurrie, Mon Jul 3 16:34:34 2017 +1000)
-* 3f61fb3 - feat(retrieve latest pact): Add HAL links for latest-untagged and latest/{tag} (Beth Skurrie, Mon Jul 3 16:17:54 2017 +1000)
+* 3f61fb3 - feat(retrieve latest pact): Add HAL links for latest-untagged and latest/\{tag\} (Beth Skurrie, Mon Jul 3 16:17:54 2017 +1000)
 
 #### 2.1.1 (2017-07-03)
 * f7af21a - fix(gemspec) (Beth Skurrie, Mon Jul 3 09:53:02 2017 +1000)

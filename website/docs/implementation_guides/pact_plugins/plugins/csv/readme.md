@@ -68,7 +68,9 @@ Without headers:
 
 ## Compatibility
 
-<details><summary>Supported Platforms</summary>
+<details>
+
+<summary>Supported Platforms</summary>
 
 | OS      | Architecture | Supported  | Pact CSV Plugin Version |
 | ------- | ------------ | ---------  | ---------------- |

@@ -17,8 +17,9 @@ Generally the state maps to a set of fixture data for mocking out services that 
 
 The pact framework will instruct the test server to enter that state by sending:
 
-    POST "${config.stateChangeUrl.url}/setup" { "state" : "${interaction.stateName}" }
-
+```text
+POST "${config.stateChangeUrl.url}/setup" { "state" : "${interaction.stateName}" }
+```
 
 ### An example of running provider verification with junit
 
