@@ -10,6 +10,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 
 **Articles**
 
+- [PACT Contract Testing – Because Not Everything Needs Full Integration Tests (Microsoft)](https://devblogs.microsoft.com/ise/pact-contract-testing-because-not-everything-needs-full-integration-tests/#what-is-pact)
 - [Contract Testing with Examples (JS/TS, Golang + PHP)](https://sarvendev.com/posts/contract-testing-on-examples/)
 - [Leverage Consumer-Driven Tests to Prevent Integration Failures Across Distributed Services](https://configr.medium.com/mastering-contract-testing-in-python-with-pact-for-reliable-microservices-0e09f360fbbb)
 
@@ -25,6 +26,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 - [Delivery Hero - How Contract Testing Helped Our Organization to Prevent Production Incidents](https://tech.deliveryhero.com/how-contract-testing-helped-our-organization-to-prevent-production-incidents/)
 - [OLX - Journey to Contract Testing through Pact](https://tech.olx.com/journey-to-contract-testing-through-pact-04a39a3fcc22)
 - [Contract Tests: APIs Guided by Consumers (Augusto Alessio)](https://medium.com/@augustocolombelli/contract-tests-apis-guided-by-consumers-caf8f2460e7c)
+- [Keep your microservice compatible with consumer-driven testing (Avisi)](https://www.avisi.nl/blog/keep-your-microservices-compatible-with-consumer-driven-contract-testing)
 
 ## 2023
 
@@ -60,6 +62,7 @@ If you've seen a really good talk that's not on this list, please submit [a PR t
 - [Testing Microservices End-to-End in Isolation with API Contracts | Lewis Prescott | TestFlix 2022
 ](https://www.youtube.com/watch?v=MtJA90VC9g4)
 - [Contract testing asynchronous messaging with Pact and MockK](https://technology.lastminute.com/contract-testing-asynchronous-messaging-pact-junit-mockk/)
+- [Contract testing (Vendavo)](https://engineering.vendavo.com/contract-testing-a016a75b4655)
 
 ## 2021
 
