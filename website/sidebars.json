@@ -375,6 +375,10 @@
       "recipes/cypress",
       "recipes/munit",
       "implementation_guides/feature_toggles"
+    ],
+    "AI Tools": [
+      "ai_tools/pactflow-skill",
+      "ai_tools/smartbear-mcp"
     ]
   },
   "pact_broker": {
