@@ -40,6 +40,7 @@
 
 ## ai_tools
 
+- [Kiro Power: Swagger Contract Testing](/ai_tools/kiro-power.md): What is a Kiro Power?
 - [PactFlow AI Assistant Skill](/ai_tools/pactflow-skill.md): The PactFlow skill turns your AI coding assistant into a PactFlow and Pact contract testing expert. It provides deep knowledge of consumer test patterns, provider verification configuration, can-i-deploy diagnostics, and full workspace management — surfaced directly in your editor without leaving your flow.
 - [SmartBear MCP Server](/ai_tools/smartbear-mcp.md): The @smartbear/mcp package is a Model Context Protocol server that exposes your PactFlow or Pact Broker workspace as a set of contract-testing_* tools. When configured alongside the PactFlow skill, your AI assistant gains structured, programmatic access to your workspace — direct matrix queries, AI-assisted test generation and review using your live provider states, BDCT cross-contract verification results, and full management of every broker resource.
 

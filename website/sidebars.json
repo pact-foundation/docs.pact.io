@@ -378,7 +378,8 @@
     ],
     "AI Tools": [
       "ai_tools/pactflow-skill",
-      "ai_tools/smartbear-mcp"
+      "ai_tools/smartbear-mcp",
+      "ai_tools/kiro-power"
     ]
   },
   "pact_broker": {
