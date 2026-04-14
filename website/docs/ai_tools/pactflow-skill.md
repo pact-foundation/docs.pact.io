@@ -5,9 +5,17 @@ sidebar_label: PactFlow Skill
 
 # PactFlow AI Assistant Skill
 
-The **PactFlow skill** turns your AI coding assistant into a PactFlow and Pact contract testing expert. It provides deep knowledge of consumer test patterns, provider verification configuration, can-i-deploy diagnostics, and full workspace management — surfaced directly in your editor without leaving your flow.
+The **PactFlow skill** turns your AI coding assistant into a Pact and PactFlow contract testing expert. It provides deep knowledge of consumer test patterns, provider verification configuration, can-i-deploy diagnostics, and full workspace management — surfaced directly in your editor without leaving your flow.
 
-It ships as part of the [`swagger-contract-testing`](https://github.com/pactflow/pactflow-agent-skills) plugin alongside two companion skills: **Drift** (OpenAPI contract testing) and **OpenAPI Parser** (spec analysis).
+It ships as part of the [`swagger-contract-testing`](https://github.com/pactflow/pactflow-agent-skills) plugin alongside two companion skills: 
+
+* **Drift** ☁ (Spec-based API conformance testing tool, PactFlow Cloud only — [docs](https://pactflow.github.io/drift-docs/))
+* **OpenAPI Parser** (spec analysis).
+
+:::tip Works with open-source Pact Broker and PactFlow Cloud
+The skill and MCP server work with both the open-source Pact Broker and PactFlow Cloud. Features marked ☁ require a PactFlow Cloud account. All other capabilities work with Pact and any Pact Broker.
+PactFlow-specific capabilities include: Drift testing, AI test generation and review, bi-directional contract testing, team metrics, the audit log, and all administration tools.
+:::
 
 ---
 
@@ -27,19 +35,35 @@ There are three levels of capability depending on what is installed alongside th
 | Manages webhooks and environments                   | No         | Yes              | Yes                              |
 | Queries the contract matrix directly                | No         | No               | Yes                              |
 | Generates tests using your existing provider states | No         | No               | Yes                              |
-| AI-assisted test generation (PactFlow Cloud)        | No         | No               | Yes                              |
-| AI-assisted test review (PactFlow Cloud)            | No         | No               | Yes                              |
-| BDCT cross-contract verification results            | No         | No               | Yes                              |
+| AI-assisted test generation ☁                       | No         | No               | Yes                              |
+| AI-assisted test review ☁                           | No         | No               | Yes                              |
+| BDCT cross-contract verification results ☁          | No         | No               | Yes                              |
 
 **Skill only** — the assistant has expert knowledge but cannot reach your broker. Useful for writing tests from scratch or working through problems offline.
 
 **Skill + Pact CLI** — with the `pact-broker` CLI installed and broker credentials set in the environment, the skill can run shell commands via the Bash tool to publish pacts, run can-i-deploy, record deployments, manage environments and webhooks, and more. This works with both PactFlow Cloud and open-source Pact Broker, and requires no MCP configuration.
 
-**Full plugin (skill + MCP server)** — the [SmartBear MCP server](./smartbear-mcp.md) exposes `contract-testing_*` tools that go beyond what the CLI supports: direct matrix queries, AI-assisted test generation and review using your live provider states, BDCT cross-contract verification results, and structured access to every broker resource. This is the recommended setup for the richest experience.
+**Full plugin (skill + MCP server)** — the [SmartBear MCP server](./smartbear-mcp.md) exposes `contract-testing_*` tools that go beyond what the CLI supports: direct matrix queries and structured access to every broker resource. On PactFlow Cloud ☁, it also enables AI-assisted test generation and review using your live provider states, BDCT cross-contract verification results, and team metrics. This is the recommended setup for the richest experience.
 
 :::note Pact Plugin Framework
 The word "plugin" in this context refers to an AI coding assistant plugin — a bundle of skills and agents for your IDE. It is unrelated to the [Pact Plugin Framework](/plugins/quick_start), which extends Pact with new transports and protocols (gRPC, Protobuf, etc.).
 :::
+
+---
+
+## PactFlow Cloud features ☁
+
+The following capabilities require a [PactFlow Cloud](https://pactflow.io) account. They are not available with an open-source Pact Broker.
+
+| Feature | Description |
+| ------- | ----------- |
+| [AI-assisted test generation](#writing-consumer-tests) | Generate complete, runnable Pact tests from request/response pairs, API client code, or an OpenAPI spec |
+| [AI-assisted test review](#ai-assisted-test-review-pactflow-cloud-only) | Automated best-practice audit of your existing Pact tests with ranked findings |
+| [Bi-Directional Contract Testing (BDCT)](#bi-directional-contract-testing-pactflow-cloud-only) | Cross-contract verification without the provider running consumer Pact tests — see also the [MCP tool reference](./smartbear-mcp.md#bi-directional-contract-testing--cloud-only) |
+| [Drift](https://pactflow.github.io/drift-docs/) | Detect API drift between your OpenAPI spec and live implementation |
+| [Team metrics](#metrics-and-observability) | Per-team breakdown of contract testing usage |
+| [Workspace administration](./smartbear-mcp.md#administration--cloud-only) | User, team, role, and system account management |
+| [Audit log](./smartbear-mcp.md#audit-log--cloud-only) | Full audit trail of workspace actions |
 
 ---
 
@@ -386,7 +410,9 @@ The skill knows the Pact DSL for every supported language and can generate a com
 
 It applies matching rules correctly by default — `like()` for type matching, `eachLike()` for arrays, `term()` for regex — and knows when exact value matching is appropriate. It will also flag common mistakes like over-specifying response bodies or using exact matching for timestamps and IDs.
 
-**With a live broker connection (PactFlow Cloud):** the `contract-testing_generate_pact_tests` tool generates tests directly from request/response pairs, existing client code, or an OpenAPI spec. Before generating, it calls `contract-testing_get_provider_states` to fetch the provider states already defined in your workspace, so new interactions reuse state names that the provider already knows how to set up.
+**With a live broker connection (OSS + Cloud):** the assistant calls `contract-testing_get_provider_states` to fetch the provider states already defined in your workspace, so new interactions reuse state names the provider already knows how to set up.
+
+**With PactFlow Cloud ☁:** the `contract-testing_generate_pact_tests` tool also generates tests directly from request/response pairs, existing client code, or an OpenAPI spec using AI.
 
 ```
 Generate a consumer test for GET /orders/{id} returning a 200 with order details.
@@ -517,9 +543,9 @@ Which services depend on UserService?
 
 ### Metrics and observability
 
-**With a live broker connection:** `contract-testing_get_metrics` returns workspace-wide usage statistics. On PactFlow Cloud, `contract-testing_get_team_metrics` breaks this down per team.
+**With a live broker connection:** `contract-testing_get_metrics` returns workspace-wide usage statistics. On PactFlow Cloud ☁, `contract-testing_get_team_metrics` breaks this down per team.
 
-### AI-assisted test review (PactFlow Cloud only)
+### AI-assisted test review ☁ (PactFlow Cloud only)
 
 The `contract-testing_review_pact_tests` tool reads your existing test files and returns a ranked list of best-practice violations and improvement recommendations. You can also pass in error output from a failing test run to get targeted diagnosis.
 
@@ -532,7 +558,7 @@ My provider verification is failing with this error output. What's wrong?
 [paste error]
 ```
 
-### Bi-Directional Contract Testing (PactFlow Cloud only)
+### Bi-Directional Contract Testing ☁ (PactFlow Cloud only)
 
 For BDCT workflows, the skill can help you publish a provider contract (OpenAPI spec + self-verification results from Dredd, Schemathesis, or similar), then use the BDCT tools to inspect cross-contract verification results and diagnose compatibility failures — without the provider needing to run the consumer pact suite directly.
 

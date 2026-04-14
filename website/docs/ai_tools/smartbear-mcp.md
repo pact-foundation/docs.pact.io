@@ -5,11 +5,15 @@ sidebar_label: SmartBear MCP
 
 # SmartBear MCP Server
 
-The `@smartbear/mcp` package is a [Model Context Protocol](https://modelcontextprotocol.io) server that exposes your PactFlow or Pact Broker workspace as a set of `contract-testing_*` tools. When configured alongside the [PactFlow skill](./pactflow-skill.md), your AI assistant gains structured, programmatic access to your workspace — direct matrix queries, AI-assisted test generation and review using your live provider states, BDCT cross-contract verification results, and full management of every broker resource.
+The `@smartbear/mcp` package is a [Model Context Protocol](https://modelcontextprotocol.io) server that exposes your PactFlow or Pact Broker workspace as a set of `contract-testing_*` tools. When configured alongside the [PactFlow skill](./pactflow-skill.md), your AI assistant gains structured, programmatic access to your workspace — direct matrix queries and full management of every broker resource. On PactFlow Cloud ☁, it also unlocks AI-assisted test generation and review using your live provider states, BDCT cross-contract verification results, and team metrics.
 
 For the official SmartBear documentation on the MCP server, see the [SmartBear MCP contract testing docs](https://developer.smartbear.com/smartbear-mcp/docs/contract-testing-with-pactflow).
 
 Without the MCP server, the skill can still interact with your broker via the `pact-broker` CLI if it is installed and credentials are set in the environment. The CLI covers the core operations — publishing pacts, can-i-deploy, recording deployments, managing environments and webhooks — but does not expose the contract matrix, AI generation tools, or BDCT results. See the [comparison table](./pactflow-skill.md#skill-vs-pact-cli-vs-full-plugin) for the full breakdown.
+
+:::tip Open-source Pact Broker and PactFlow Cloud
+The skill and MCP server work with both the open-source Pact Broker and PactFlow Cloud. Features marked ☁ require a PactFlow Cloud account. All other capabilities work with Pact and any Pact Broker. PactFlow-specific capabilities include: Drift testing, AI test generation and review, bi-directional contract testing, team metrics, the audit log, and all administration tools.
+:::
 
 ## Installation and configuration
 
@@ -39,10 +43,6 @@ npx @smartbear/mcp@latest
 | `PACT_BROKER_PASSWORD` | Open-source broker | HTTP Basic Auth password                                    |
 
 Use a token **or** username/password — not both.
-
-:::note Cloud-only tools
-Tools marked **☁ Cloud only** require a PactFlow Cloud account. They will not work when connected to an open-source Pact Broker.
-:::
 
 ---
 
