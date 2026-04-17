@@ -7,7 +7,11 @@ description: Installation guide for PactFlow AI coding assistant skills across C
 ---
 <!-- This file has been synced from the pactflow/pact-agent-skills repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-AI assistant skills for PactFlow's contract testing tools.
+Agent skills teach your AI coding assistant — Claude Code, GitHub Copilot, Cursor, Windsurf, and others — how to work with Pact, PactFlow, and Drift. Instead of explaining contract testing concepts every time you start a conversation, the skills give your AI persistent, deep knowledge of consumer test patterns, provider verification, can-i-deploy diagnostics, Drift test authoring, and workspace management.
+
+The plugin goes further: it bundles the [SmartBear MCP server](/ai_tools/smartbear-mcp) alongside the skills, so your assistant can connect directly to your PactFlow workspace or Pact Broker. It can fetch live provider states before generating tests, query the contract matrix to diagnose a failing can-i-deploy, publish pacts and provider contracts, record deployments, and manage environments — all without leaving your editor.
+
+There are two types of components in this repo. **Skills** are context files that activate when the task matches — the assistant reads them and applies the knowledge. **Agents** are autonomous sub-tasks the PactFlow skill delegates to: generating tests, reviewing them for best-practice violations, running a full BDCT flow end-to-end, or auditing workspace health.
 
 | Plugin name                | Skills / Agents        | What it does                                                                                                                                                                                                                                                                                                                                   |
 | -------------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -21,6 +25,8 @@ AI assistant skills for PactFlow's contract testing tools.
 |                            | **bdct-tester**        | Agent: drives a full Bi-Directional Contract Testing flow end-to-end — consumer tests, provider contract verification, publishing, and can-i-deploy.                                                                                                                                                                                          |
 
 The three skills work together: **OpenAPI Parser** analyses a spec and generates Drift test scaffolding; **Drift** runs, iterates, and publishes those tests; **PactFlow** manages the full contract testing lifecycle — from generating Pact tests with AI to safely deploying services. The agents handle specialised sub-tasks autonomously within the PactFlow skill.
+
+**Further reading:** [PactFlow Skill](/ai_tools/pactflow-skill) · [SmartBear MCP](/ai_tools/smartbear-mcp) · [Kiro Power](/ai_tools/kiro-power)
 
 ---
 
@@ -397,7 +403,44 @@ cp -r plugins/swagger-contract-testing/skills/pactflow ~/.codeium/windsurf/skill
 
 ## Installing in Codex
 
-Codex supports [Skills](https://developers.openai.com/codex/skills/) loaded from `SKILL.md` files in named subdirectories.
+Codex supports [Skills](https://developers.openai.com/codex/skills/) loaded from `SKILL.md` files in named subdirectories, and a [Plugin system](https://developers.openai.com/codex/plugins/build) with a `.codex-plugin/plugin.json` manifest for bundled installs.
+
+### Plugin install (recommended)
+
+The plugin manifest bundles all three skills together and wires up the SmartBear MCP server automatically.
+
+**1. Add the marketplace** (repo-scoped, shared with your team):
+
+The repo already ships a marketplace file at `.agents/plugins/marketplace.json`. Codex discovers it automatically when you open the project — no extra configuration needed.
+
+**2. Install the plugin** using the built-in `$plugin-creator` skill or manually via the Codex plugin manager:
+
+```codex
+$plugin install swagger-contract-testing@pactflow-agent-skills
+```
+
+Or install directly from the repo:
+
+```codex
+$plugin install pactflow/pactflow-agent-skills
+```
+
+**3. Configure your PactFlow credentials** in `~/.codex/settings.json`:
+
+```json
+{
+  "pluginConfigs": {
+    "swagger-contract-testing@pactflow-agent-skills": {
+      "options": {
+        "pact_broker_base_url": "https://yourorg.pactflow.io",
+        "pact_broker_token": "your-api-token"
+      }
+    }
+  }
+}
+```
+
+Get your API token from `https://yourorg.pactflow.io/settings/api-tokens`. For an open-source Pact Broker, use `pact_broker_username` and `pact_broker_password` instead of `pact_broker_token`.
 
 ### Using the skill installer
 
@@ -431,26 +474,19 @@ cp -r plugins/swagger-contract-testing/skills/pactflow ~/.agents/skills/pactflow
 
 ## Installing in Kiro
 
-Kiro supports [Agent Skills](https://kiro.dev/docs/skills/) loaded from `SKILL.md` files in named subdirectories. Skills can be workspace-scoped or global.
+### Kiro Power (recommended)
 
-### Kiro Power (recommended for Kiro users)
+The `swagger-contract-testing` Power bundles the skills and SmartBear MCP server into a single install with automatic onboarding, credential validation, and smart task routing. See the [Kiro Power](/ai_tools/kiro-power) page for full details.
 
-For a one-click install that also bundles the SmartBear MCP server, use the Power instead of installing skills individually:
+Open the **Agent Steering & Skills** panel in Kiro, click **+**, choose **Import a Power**, select **GitHub**, and paste:
 
-1. Open the **Powers** panel in Kiro
-2. Click **Add power from GitHub**
-3. Enter: `https://github.com/pactflow/pactflow-agent-skills` and select `powers/swagger-contract-testing`
+```
+https://github.com/pactflow/pactflow-agent-skills/tree/main/powers/swagger-contract-testing
+```
 
-Or install from a local clone:
-1. Open the **Powers** panel in Kiro
-2. Click **Add power from Local Path**
-3. Select: `path/to/pactflow-agent-skills/powers/swagger-contract-testing`
+Set `PACT_BROKER_BASE_URL` and `PACT_BROKER_TOKEN` in your shell profile or Kiro's environment configuration before activating.
 
-Set `PACT_BROKER_BASE_URL` and `PACT_BROKER_TOKEN` in your shell profile or Kiro's secrets manager before activating.
-
----
-
-### Import from GitHub (recommended)
+### Import skills from GitHub
 
 1. Open the **Agent Steering & Skills** panel in Kiro
 2. Click **+** → **Import a skill**
@@ -510,92 +546,3 @@ cp -r plugins/swagger-contract-testing/skills/pactflow ~/.gemini/antigravity/ski
 ```
 
 > Antigravity also supports `.agent/skills/` (singular) for backward compatibility.
-
----
-
-## Plugin contents
-
-```
-plugins/swagger-contract-testing/
-├── agents/
-│   ├── pact-generator.md    # Generates Pact consumer tests and provider state handlers
-│   ├── pact-reviewer.md     # Reviews Pact tests for best-practice violations
-│   ├── pact-implementor.md  # Builds a new Pact client library wrapping the Pact FFI
-│   ├── pact-maintainer.md   # Audits and maintains PactFlow workspace health
-│   └── bdct-tester.md       # Drives a full BDCT flow end-to-end
-│
-├── hooks/
-│   ├── hooks.json               # Hook definitions (SessionStart, PostToolUse)
-│   ├── check-pact-config.sh     # SessionStart: validates PactFlow credentials are set
-│   └── deployment-reminder.sh   # PostToolUse: reminds to record deployments after Bash calls
-│
-└── skills/
-    ├── drift-testing/
-    │   ├── SKILL.md                  # Drift CLI usage, test case patterns, auth, CI/CD
-    │   ├── references/
-    │   │   ├── test-cases.md         # Full test case YAML schema
-    │   │   ├── lua-api.md            # Complete Lua API and lifecycle hooks
-    │   │   ├── cli-reference.md      # All CLI commands and flags
-    │   │   ├── auth.md               # Authentication patterns and credential handling
-    │   │   ├── mock-server.md        # Mock server setup and configuration
-    │   │   └── pactflow-and-cicd.md  # BDCT publishing, GitHub Actions, GitLab CI
-    │   ├── evals/
-    │   │   ├── 01-basic-get-endpoint.json        # Eval: write a test for a GET endpoint
-    │   │   ├── 02-stateful-delete-endpoint.json  # Eval: write a test for a stateful DELETE endpoint
-    │   │   ├── 03-debug-failing-test.json        # Eval: debug a failing test
-    │   │   └── fixtures/
-    │   │       ├── simple-products-api.yaml      # OpenAPI fixture for basic evals
-    │   │       └── products-api-with-failures.md # Fixture describing a failing API
-    │   └── scripts/
-    │       ├── check_coverage.py     # Coverage analysis script
-    │       ├── extract_endpoints.py  # Extract endpoints from OpenAPI specs
-    │       ├── run_loop.sh           # Feedback loop runner (macOS/Linux)
-    │       ├── run_loop.ps1          # Feedback loop runner (Windows)
-    │       ├── start_mock.sh         # Start mock server (macOS/Linux)
-    │       └── start_mock.ps1        # Start mock server (Windows)
-    │
-    ├── openapi-parser/
-    │   ├── SKILL.md                  # Workflow: locate → resolve → enumerate → generate
-    │   ├── evals/
-    │   │   ├── 01-anyof-parameter-variants.json   # Eval: generate tests for anyOf parameter variants
-    │   │   ├── 02-discriminator-with-allof.json   # Eval: generate tests for discriminator + allOf
-    │   │   ├── 03-regex-pattern-field.json        # Eval: generate tests for regex pattern fields
-    │   │   └── fixtures/
-    │   │       ├── anyof-parameter-variants.yaml  # OpenAPI fixture with anyOf parameters
-    │   │       ├── discriminator-with-allof.yaml  # OpenAPI fixture with discriminator and allOf
-    │   │       └── regex-pattern-field.yaml       # OpenAPI fixture with regex pattern fields
-    │   └── references/
-    │       ├── schema-patterns.md    # anyOf/oneOf/allOf/discriminator/$ref/enum/pattern/nullable
-    │       ├── drift-mapping.md      # Mapping every pattern to Drift YAML with full examples
-    │       └── example-repos.md      # Commands for navigating large OpenAPI spec repositories
-    │
-    └── pactflow/
-        ├── SKILL.md                  # Core concepts, MCP setup, workflow, AI tools, diagnostics
-        ├── evals/
-        │   └── evals.json            # 4 eval prompts covering MCP setup, can-i-deploy, JS tests, Kafka/Java
-        └── references/
-            ├── mcp-setup.md          # SmartBear MCP install and config (Claude Code, Desktop, VS Code, Cursor)
-            ├── pact-concepts.md      # Terminology, how Pact works end-to-end, provider states
-            ├── pact-faq.md           # FAQ, what Pact is/isn't good for, comparisons
-            ├── pact-consumer.md      # Writing consumer tests, matching rules, recommended config
-            ├── pact-provider.md      # Provider verification, auth, fixing failures, state handlers
-            ├── pact-messages.md      # Async/message pact (Kafka, SQS, SNS), JS and Java examples
-            ├── pact-plugins.md       # Pact Plugin Framework: gRPC, Protobuf, CSV, Avro
-            ├── pact-implementations.md # Language guides: JS, Go, JVM, Ruby, .NET, PHP, Swift
-            ├── dsl.javascript.md     # JavaScript DSL syntax and patterns
-            ├── dsl.typescript.md     # TypeScript DSL syntax and patterns
-            ├── dsl.java.md           # Java DSL syntax and patterns
-            ├── dsl.kotlin.md         # Kotlin DSL syntax and patterns
-            ├── dsl.golang.md         # Go DSL syntax and patterns
-            ├── dsl.dotnet.md         # .NET DSL syntax and patterns
-            ├── dsl.php.md            # PHP DSL syntax and patterns
-            ├── dsl.swift.md          # Swift DSL syntax and patterns
-            ├── pact-recipes.md       # Optional fields, GraphQL, Kafka, API Gateway, Cypress patterns
-            ├── pact-broker-setup.md  # Broker setup checklist, CLI reference, webhook debugging
-            ├── pact-broker-advanced.md # Consumer version selectors, pending/WIP pacts, branches
-            ├── pact-cicd.md          # Pact Nirvana CI/CD guide, can-i-deploy deep-dive
-            ├── workflow.md           # End-to-end workflow with exact MCP tool calls
-            ├── bdct.md               # Bi-Directional Contract Testing patterns and tools
-            ├── tools.md              # Full contract-testing_* tool catalog with parameters
-            └── pact-docs-index.md    # Complete index of docs.pact.io documentation with URLs
-```

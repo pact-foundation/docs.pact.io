@@ -1,15 +1,15 @@
 ---
 title: SmartBear MCP Server
 sidebar_label: SmartBear MCP
+custom_edit_url: https://github.com/pactflow/pact-agent-skills/edit/main/docs/ai-tools/smartbear-mcp.md
 ---
+<!-- This file has been synced from the pactflow/pact-agent-skills repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
-# SmartBear MCP Server
-
-The `@smartbear/mcp` package is a [Model Context Protocol](https://modelcontextprotocol.io) server that exposes your PactFlow or Pact Broker workspace as a set of `contract-testing_*` tools. When configured alongside the [PactFlow skill](./pactflow-skill.md), your AI assistant gains structured, programmatic access to your workspace — direct matrix queries and full management of every broker resource. On PactFlow Cloud ☁, it also unlocks AI-assisted test generation and review using your live provider states, BDCT cross-contract verification results, and team metrics.
+The `@smartbear/mcp` package is a [Model Context Protocol](https://modelcontextprotocol.io) server that exposes your PactFlow or Pact Broker workspace as a set of `contract-testing_*` tools. When configured alongside the [PactFlow skill](/ai_tools/pactflow-skill), your AI assistant gains structured, programmatic access to your workspace — direct matrix queries and full management of every broker resource. On PactFlow Cloud ☁, it also unlocks AI-assisted test generation and review using your live provider states, BDCT cross-contract verification results, and team metrics.
 
 For the official SmartBear documentation on the MCP server, see the [SmartBear MCP contract testing docs](https://developer.smartbear.com/smartbear-mcp/docs/contract-testing-with-pactflow).
 
-Without the MCP server, the skill can still interact with your broker via the `pact-broker` CLI if it is installed and credentials are set in the environment. The CLI covers the core operations — publishing pacts, can-i-deploy, recording deployments, managing environments and webhooks — but does not expose the contract matrix, AI generation tools, or BDCT results. See the [comparison table](./pactflow-skill.md#skill-vs-pact-cli-vs-full-plugin) for the full breakdown.
+Without the MCP server, the skill can still interact with your broker via the `pact-broker` CLI if it is installed and credentials are set in the environment. The CLI covers the core operations — publishing pacts, can-i-deploy, recording deployments, managing environments and webhooks — but does not expose the contract matrix, AI generation tools, or BDCT results. See the [comparison table](/ai_tools/pactflow-skill#skill-vs-pact-cli-vs-full-plugin) for the full breakdown.
 
 :::tip Open-source Pact Broker and PactFlow Cloud
 The skill and MCP server work with both the open-source Pact Broker and PactFlow Cloud. Features marked ☁ require a PactFlow Cloud account. All other capabilities work with Pact and any Pact Broker. PactFlow-specific capabilities include: Drift testing, AI test generation and review, bi-directional contract testing, team metrics, the audit log, and all administration tools.
@@ -23,7 +23,7 @@ If the PactFlow skill is already active, you can ask it to install and configure
 Set up the SmartBear MCP server
 ```
 
-For manual setup, see the [PactFlow Skill](./pactflow-skill.md#adding-a-live-broker-connection) page for full instructions per tool (Claude Code, Claude Desktop, VS Code, Cursor). The short version:
+For manual setup, see the [PactFlow Skill](/ai_tools/pactflow-skill#adding-a-live-broker-connection) page for full instructions per tool (Claude Code, Claude Desktop, VS Code, Cursor). The short version:
 
 ```bash
 # Claude Code — plugin install handles this automatically
@@ -66,7 +66,7 @@ Generates a complete, runnable Pact test using PactFlow AI. Accepts any combinat
 | `additional_instructions`   | Extra constraints — framework version, test runner, naming conventions                                                                                             |
 | `test_template`             | An existing test file to use as a structural template, so output matches your team's conventions                                                                   |
 
-The [pact-generator subagent](./pactflow-skill.md#pact-generator) always calls `contract-testing_get_provider_states` before invoking this tool, ensuring generated tests reuse existing provider state names from your workspace rather than creating duplicates.
+The [pact-generator subagent](/ai_tools/pactflow-skill#pact-generator) always calls `contract-testing_get_provider_states` before invoking this tool, ensuring generated tests reuse existing provider state names from your workspace rather than creating duplicates.
 
 **Example:**
 
@@ -92,7 +92,7 @@ Reviews existing Pact tests against best practices and returns a prioritised lis
 | `user_instructions`                                 | Areas to focus on, e.g. "check matching rules" or "focus on provider state naming"                         |
 | `error_messages`                                    | Output from a failing test run or broken provider verification — the review will target the actual failure |
 
-The [pact-reviewer subagent](./pactflow-skill.md#pact-reviewer) uses this tool as the core of its review process, passing your files and any error output directly to it.
+The [pact-reviewer subagent](/ai_tools/pactflow-skill#pact-reviewer) uses this tool as the core of its review process, passing your files and any error output directly to it.
 
 **Example:**
 
@@ -547,7 +547,7 @@ contract-testing_create_webhook
         pact_url: "${pactbroker.pactUrl}"
 ```
 
-See the [webhook template library](/pact_broker/webhooks/template_library) for ready-made templates for GitHub Actions, CircleCI, GitLab CI, Jenkins, and Azure DevOps.
+See the [webhook template library](https://github.com/pactflow/pact-agent-skills/blob/main/pact_broker/webhooks/template_library) for ready-made templates for GitHub Actions, CircleCI, GitLab CI, Jenkins, and Azure DevOps.
 
 ---
 
