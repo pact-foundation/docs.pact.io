@@ -377,6 +377,7 @@
       "implementation_guides/feature_toggles"
     ],
     "AI Tools": [
+      "ai_tools/installation",
       "ai_tools/pactflow-skill",
       "ai_tools/smartbear-mcp"
     ]

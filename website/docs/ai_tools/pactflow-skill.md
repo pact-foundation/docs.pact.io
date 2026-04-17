@@ -146,9 +146,42 @@ For an open-source Pact Broker, use `pact_broker_username` and `pact_broker_pass
 
 ---
 
+## Installing in GitHub Copilot CLI
+
+GitHub Copilot CLI supports plugins via the `/plugin` command (requires `gh copilot` v1+).
+
+**1. Add the marketplace:**
+
+```shell
+copilot plugin marketplace add pactflow/pactflow-agent-skills
+```
+
+**2. Install the plugin:**
+
+```shell
+copilot plugin install swagger-contract-testing@pactflow-agent-skills
+```
+
+**3. Configure your PactFlow credentials** in `~/.copilot/settings.json`:
+
+```json
+{
+  "pluginConfigs": {
+    "swagger-contract-testing@pactflow-agent-skills": {
+      "options": {
+        "pact_broker_base_url": "https://yourorg.pactflow.io",
+        "pact_broker_token": "your-api-token"
+      }
+    }
+  }
+}
+```
+
+---
+
 ## Installing the skill only (other AI tools)
 
-If you are using Cursor, Windsurf, GitHub Copilot, Codex, Kiro, or OpenCode, install the skill files directly. You will get domain knowledge but no live broker connection. To add the live connection, configure the [SmartBear MCP server](#adding-a-live-broker-connection) separately.
+If you are using Cursor, Windsurf, GitHub Copilot, Codex, Kiro, OpenCode, or Antigravity, install the skill files directly. You will get domain knowledge but no live broker connection. To add the live connection, configure the [SmartBear MCP server](#adding-a-live-broker-connection) separately.
 
 ### Prerequisites
 
@@ -159,6 +192,10 @@ git clone https://github.com/pactflow/pactflow-agent-skills.git
 ```
 
 The skill files live at `plugins/swagger-contract-testing/skills/pactflow/`.
+
+:::note Windows users
+The install commands below use Unix shell syntax. In PowerShell, replace `mkdir -p path/to/dir` with `New-Item -ItemType Directory -Force -Path path\to\dir` and `cp -r src dst` with `Copy-Item -Recurse src dst`. `~` works in PowerShell 3+ — use `$HOME` in older environments.
+:::
 
 ### GitHub Copilot (VS Code)
 
@@ -244,6 +281,20 @@ Or manually:
 mkdir -p .kiro/skills
 cp -r plugins/swagger-contract-testing/skills/pactflow .kiro/skills/pactflow
 ```
+
+### Antigravity
+
+```bash
+# Project-level (recommended for teams)
+mkdir -p .agents/skills
+cp -r plugins/swagger-contract-testing/skills/pactflow .agents/skills/pactflow
+
+# Global (all your projects)
+mkdir -p ~/.gemini/antigravity/skills
+cp -r plugins/swagger-contract-testing/skills/pactflow ~/.gemini/antigravity/skills/pactflow
+```
+
+Antigravity also discovers skills from `.agent/skills/` (singular) for backward compatibility.
 
 ---
 
