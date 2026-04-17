@@ -158,7 +158,9 @@ class MarkdownFileContents
   def header_lines
     [:title, :sidebar_label, :custom_edit_url, :slug, :description].collect do | key |
       if fields[key]
-        "#{key}: #{fields[key]}"
+        value = fields[key].to_s
+        value = "\"#{value.gsub('"', '\\"')}\"" if value.include?(': ')
+        "#{key}: #{value}"
       end
     end.compact
   end
