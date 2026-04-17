@@ -1,16 +1,16 @@
 ---
 title: PactFlow AI Assistant Skill
 sidebar_label: PactFlow Skill
+custom_edit_url: https://github.com/pactflow/pact-agent-skills/edit/main/docs/ai-tools/pactflow-skill.md
 ---
-
-# PactFlow AI Assistant Skill
+<!-- This file has been synced from the pactflow/pact-agent-skills repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 The **PactFlow skill** turns your AI coding assistant into a Pact and PactFlow contract testing expert. It provides deep knowledge of consumer test patterns, provider verification configuration, can-i-deploy diagnostics, and full workspace management — surfaced directly in your editor without leaving your flow.
 
-It ships as part of the [`swagger-contract-testing`](https://github.com/pactflow/pactflow-agent-skills) plugin alongside two companion skills: 
+It ships as part of the [`swagger-contract-testing`](https://github.com/pactflow/pactflow-agent-skills) plugin alongside two companion skills:
 
-* **Drift** ☁ (Spec-based API conformance testing tool, PactFlow Cloud only — [docs](https://pactflow.github.io/drift-docs/))
-* **OpenAPI Parser** (spec analysis).
+- **Drift** ☁ (Spec-based API conformance testing tool, PactFlow Cloud only — [docs](https://pactflow.github.io/drift-docs/))
+- **OpenAPI Parser** (spec analysis).
 
 :::tip Works with open-source Pact Broker and PactFlow Cloud
 The skill and MCP server work with both the open-source Pact Broker and PactFlow Cloud. Features marked ☁ require a PactFlow Cloud account. All other capabilities work with Pact and any Pact Broker.
@@ -43,10 +43,10 @@ There are three levels of capability depending on what is installed alongside th
 
 **Skill + Pact CLI** — with the `pact-broker` CLI installed and broker credentials set in the environment, the skill can run shell commands via the Bash tool to publish pacts, run can-i-deploy, record deployments, manage environments and webhooks, and more. This works with both PactFlow Cloud and open-source Pact Broker, and requires no MCP configuration.
 
-**Full plugin (skill + MCP server)** — the [SmartBear MCP server](./smartbear-mcp.md) exposes `contract-testing_*` tools that go beyond what the CLI supports: direct matrix queries and structured access to every broker resource. On PactFlow Cloud ☁, it also enables AI-assisted test generation and review using your live provider states, BDCT cross-contract verification results, and team metrics. This is the recommended setup for the richest experience.
+**Full plugin (skill + MCP server)** — the [SmartBear MCP server](/ai_tools/smartbear-mcp) exposes `contract-testing_*` tools that go beyond what the CLI supports: direct matrix queries and structured access to every broker resource. On PactFlow Cloud ☁, it also enables AI-assisted test generation and review using your live provider states, BDCT cross-contract verification results, and team metrics. This is the recommended setup for the richest experience.
 
 :::note Pact Plugin Framework
-The word "plugin" in this context refers to an AI coding assistant plugin — a bundle of skills and agents for your IDE. It is unrelated to the [Pact Plugin Framework](/plugins/quick_start), which extends Pact with new transports and protocols (gRPC, Protobuf, etc.).
+The word "plugin" in this context refers to an AI coding assistant plugin — a bundle of skills and agents for your IDE. It is unrelated to the [Pact Plugin Framework](https://github.com/pactflow/pact-agent-skills/blob/main/plugins/quick_start), which extends Pact with new transports and protocols (gRPC, Protobuf, etc.).
 :::
 
 ---
@@ -55,195 +55,21 @@ The word "plugin" in this context refers to an AI coding assistant plugin — a 
 
 The following capabilities require a [PactFlow Cloud](https://pactflow.io) account. They are not available with an open-source Pact Broker.
 
-| Feature | Description |
-| ------- | ----------- |
-| [AI-assisted test generation](#writing-consumer-tests) | Generate complete, runnable Pact tests from request/response pairs, API client code, or an OpenAPI spec |
-| [AI-assisted test review](#ai-assisted-test-review-pactflow-cloud-only) | Automated best-practice audit of your existing Pact tests with ranked findings |
-| [Bi-Directional Contract Testing (BDCT)](#bi-directional-contract-testing-pactflow-cloud-only) | Cross-contract verification without the provider running consumer Pact tests — see also the [MCP tool reference](./smartbear-mcp.md#bi-directional-contract-testing--cloud-only) |
-| [Drift](https://pactflow.github.io/drift-docs/) | Detect API drift between your OpenAPI spec and live implementation |
-| [Team metrics](#metrics-and-observability) | Per-team breakdown of contract testing usage |
-| [Workspace administration](./smartbear-mcp.md#administration--cloud-only) | User, team, role, and system account management |
-| [Audit log](./smartbear-mcp.md#audit-log--cloud-only) | Full audit trail of workspace actions |
+| Feature                                                                                        | Description                                                                                                                                                                      |
+| ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [AI-assisted test generation](#writing-consumer-tests)                                         | Generate complete, runnable Pact tests from request/response pairs, API client code, or an OpenAPI spec                                                                          |
+| [AI-assisted test review](#ai-assisted-test-review-pactflow-cloud-only)                        | Automated best-practice audit of your existing Pact tests with ranked findings                                                                                                   |
+| [Bi-Directional Contract Testing (BDCT)](#bi-directional-contract-testing-pactflow-cloud-only) | Cross-contract verification without the provider running consumer Pact tests — see also the [MCP tool reference](/ai_tools/smartbear-mcp#bi-directional-contract-testing--cloud-only) |
+| [Drift](https://pactflow.github.io/drift-docs/)                                                | Detect API drift between your OpenAPI spec and live implementation                                                                                                               |
+| [Team metrics](#metrics-and-observability)                                                     | Per-team breakdown of contract testing usage                                                                                                                                     |
+| [Workspace administration](/ai_tools/smartbear-mcp#administration--cloud-only)                      | User, team, role, and system account management                                                                                                                                  |
+| [Audit log](/ai_tools/smartbear-mcp#audit-log--cloud-only)                                          | Full audit trail of workspace actions                                                                                                                                            |
 
 ---
 
-## Installing in Claude Code
+## Installation
 
-Claude Code supports plugins via a marketplace system (requires Claude Code v1.0.33+). Installing the plugin gives you both the skill and the MCP server automatically.
-
-### 1. Add the marketplace
-
-Inside a Claude Code session:
-
-```
-/plugin marketplace add pactflow/pactflow-agent-skills
-```
-
-Or add it to `.claude/settings.json` so teammates are prompted to install it when they open the project:
-
-```json
-{
-  "extraKnownMarketplaces": {
-    "pactflow-agent-skills": {
-      "source": {
-        "source": "github",
-        "repo": "pactflow/pactflow-agent-skills"
-      }
-    }
-  }
-}
-```
-
-### 2. Install the plugin
-
-```
-/plugin install swagger-contract-testing@pactflow-agent-skills
-```
-
-**Scope options:**
-
-| Scope            | Stored in                     | Who it applies to                       |
-| ---------------- | ----------------------------- | --------------------------------------- |
-| `user` (default) | `~/.claude/settings.json`     | You, across all projects                |
-| `project`        | `.claude/settings.json`       | Everyone on the team (commit this file) |
-| `local`          | `.claude/settings.local.json` | You, in this project only (gitignored)  |
-
-### 3. Configure PactFlow credentials
-
-Add a `pluginConfigs` block to `~/.claude/settings.json`:
-
-```json
-{
-  "pluginConfigs": {
-    "swagger-contract-testing@pactflow-agent-skills": {
-      "options": {
-        "pact_broker_base_url": "https://yourorg.pactflow.io",
-        "pact_broker_token": "your-api-token"
-      }
-    }
-  }
-}
-```
-
-Get your API token from `https://yourorg.pactflow.io/settings/api-tokens`.
-
-For an open-source Pact Broker, use `pact_broker_username` and `pact_broker_password` instead of `pact_broker_token`.
-
-### 4. Reload
-
-```
-/reload-plugins
-```
-
-### Managing the plugin
-
-```
-/plugin                          # open plugin manager
-/reload-plugins                  # reload without restarting
-/plugin disable swagger-contract-testing@pactflow-agent-skills
-/plugin uninstall swagger-contract-testing@pactflow-agent-skills
-```
-
----
-
-## Installing the skill only (other AI tools)
-
-If you are using Cursor, Windsurf, GitHub Copilot, Codex, Kiro, or OpenCode, install the skill files directly. You will get domain knowledge but no live broker connection. To add the live connection, configure the [SmartBear MCP server](#adding-a-live-broker-connection) separately.
-
-### Prerequisites
-
-Clone or download the repository:
-
-```bash
-git clone https://github.com/pactflow/pactflow-agent-skills.git
-```
-
-The skill files live at `plugins/swagger-contract-testing/skills/pactflow/`.
-
-### GitHub Copilot (VS Code)
-
-Copy the skill into a discovery location Copilot checks automatically:
-
-```bash
-# .github/skills (most common for GitHub projects)
-mkdir -p .github/skills
-cp -r plugins/swagger-contract-testing/skills/pactflow .github/skills/pactflow
-```
-
-Commit `.github/skills/` to share the skill with your team. No VS Code configuration required.
-
-For a personal install across all your projects:
-
-```bash
-mkdir -p ~/.copilot/skills
-cp -r plugins/swagger-contract-testing/skills/pactflow ~/.copilot/skills/pactflow
-```
-
-### Cursor
-
-```bash
-# Project-level (commit to share with team)
-mkdir -p .cursor/skills
-cp -r plugins/swagger-contract-testing/skills/pactflow .cursor/skills/pactflow
-
-# Global (all your projects)
-mkdir -p ~/.cursor/skills
-cp -r plugins/swagger-contract-testing/skills/pactflow ~/.cursor/skills/pactflow
-```
-
-You can also import from GitHub directly: open **Cursor Settings → Rules → Add Rule → Remote Rule (GitHub)** and point it at `https://github.com/pactflow/pactflow-agent-skills/tree/main/plugins/swagger-contract-testing/skills/pactflow`.
-
-### Windsurf
-
-```bash
-# Project-level (commit to share with team)
-mkdir -p .windsurf/skills
-cp -r plugins/swagger-contract-testing/skills/pactflow .windsurf/skills/pactflow
-
-# Global (all your projects)
-mkdir -p ~/.codeium/windsurf/skills
-cp -r plugins/swagger-contract-testing/skills/pactflow ~/.codeium/windsurf/skills/pactflow
-```
-
-Or use the UI: open the **Cascade** panel → **⋯ menu → Skills → + Workspace** or **+ Global**.
-
-### OpenCode
-
-```bash
-# Global
-cp -r plugins/swagger-contract-testing/skills/pactflow ~/.config/opencode/skills/pactflow
-
-# Project-level
-mkdir -p .opencode/skills
-cp -r plugins/swagger-contract-testing/skills/pactflow .opencode/skills/pactflow
-```
-
-### Codex
-
-```bash
-# Project-level
-mkdir -p .agents/skills
-cp -r plugins/swagger-contract-testing/skills/pactflow .agents/skills/pactflow
-
-# Global
-mkdir -p ~/.agents/skills
-cp -r plugins/swagger-contract-testing/skills/pactflow ~/.agents/skills/pactflow
-```
-
-### Kiro
-
-Use the Import from GitHub option: open **Agent Steering & Skills → + → Import a skill → GitHub** and paste:
-
-```
-https://github.com/pactflow/pactflow-agent-skills/tree/main/plugins/swagger-contract-testing/skills/pactflow
-```
-
-Or manually:
-
-```bash
-mkdir -p .kiro/skills
-cp -r plugins/swagger-contract-testing/skills/pactflow .kiro/skills/pactflow
-```
+For full installation instructions covering Claude Code, GitHub Copilot, Cursor, Windsurf, Kiro, Codex, OpenCode, Antigravity, and more, see the [README installation guide](https://github.com/pactflow/pactflow-agent-skills#installation-guide-for-agentic-idescoding-agents).
 
 ---
 
@@ -253,7 +79,7 @@ If you have the `pact-broker` CLI installed and broker credentials set in your e
 
 ### Install the CLI
 
-See the [Pact CLI installation guide](/implementation_guides/cli/pact-broker-cli) for install options, or ask the skill to install it for you:
+See the [Pact CLI installation guide](https://github.com/pactflow/pact-agent-skills/blob/main/implementation_guides/cli/pact-broker-cli) for install options, or ask the skill to install it for you:
 
 ```
 Install the pact-broker CLI
@@ -461,7 +287,7 @@ My provider verification is failing with 'unexpected body'. Walk me through fixi
 
 ### CI/CD pipeline setup
 
-The skill covers the full [Pact Nirvana](/pact_nirvana) journey — Bronze through Diamond — and can scaffold the exact CI steps for your platform (GitHub Actions, GitLab CI, CircleCI, Jenkins).
+The skill covers the full [Pact Nirvana](https://github.com/pactflow/pact-agent-skills/blob/main/pact_nirvana) journey — Bronze through Diamond — and can scaffold the exact CI steps for your platform (GitHub Actions, GitLab CI, CircleCI, Jenkins).
 
 It will configure:
 
@@ -802,7 +628,7 @@ Publish and verify contracts for our checkout flow
 
 ## SmartBear MCP tools
 
-The full `contract-testing_*` tool catalog — AI generation, can-i-deploy, the contract matrix, BDCT, environments, webhooks, secrets, and more — is documented on the [SmartBear MCP](./smartbear-mcp.md) page.
+The full `contract-testing_*` tool catalog — AI generation, can-i-deploy, the contract matrix, BDCT, environments, webhooks, secrets, and more — is documented on the [SmartBear MCP](/ai_tools/smartbear-mcp) page.
 
 ---
 
