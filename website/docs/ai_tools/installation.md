@@ -72,9 +72,50 @@ The install commands throughout this guide use Unix shell syntax. In PowerShell,
 
 Claude Code supports [Skills](https://code.claude.com/docs/en/skills) via a plugin marketplace system. Requires Claude Code v1.0.33+.
 
-### From this repo (recommended for teams)
+### From Anthropic's community marketplace (recommended)
 
-> **Note:** Because these skills are not listed in Anthropic's official plugin registry, the `.claude/settings.json` configuration below is **mandatory** — without it Claude Code won't know where to find the marketplace and the `/plugin install` commands will fail.
+The plugin is listed in Anthropic's official community plugins marketplace. Add the marketplace and install in two commands:
+
+**1. Add the Anthropic community marketplace:**
+
+```bash
+claude plugin marketplace add anthropics/claude-plugins-community
+```
+
+**2. Install the plugin:**
+
+```bash
+claude plugin install swagger-contract-testing@claude-community
+```
+
+Alternatively, open the **`/plugin`** panel in Claude Code, navigate to **Discover**, search for `swagger-contract-testing`, and click **Install**.
+
+**3. Configure your PactFlow credentials:**
+
+Add a `pluginConfigs` block to `~/.claude/settings.json` with your PactFlow base URL and API token:
+
+```json
+{
+  "pluginConfigs": {
+    "swagger-contract-testing@claude-community": {
+      "options": {
+        "pact_broker_base_url": "https://yourorg.pactflow.io",
+        "pact_broker_token": "your-api-token"
+      }
+    }
+  }
+}
+```
+
+Get your API token from `https://yourorg.pactflow.io/settings/api-tokens`. For an open-source Pact Broker, use `pact_broker_username` and `pact_broker_password` instead of `pact_broker_token`.
+
+Then reload the plugin to start the MCP server:
+
+```claude
+/reload-plugins
+```
+
+### From the PactFlow repo (for teams who want to pin a version)
 
 **1. Add the marketplace** inside a Claude Code session:
 
