@@ -9,6 +9,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_consumer
 
 
+## 1.4.3 - Maintenance Release
+
+
 ## 1.4.2 - Maintenance Release
 
 
