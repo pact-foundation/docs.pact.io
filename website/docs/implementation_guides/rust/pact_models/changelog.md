@@ -9,6 +9,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_models
 
 
+## 1.3.10 - Bugfix Release
+
+* bf2fc778 - fix: ArrayContains variants must serialise as objects in values() (Stan Vodetskyi, Tue Apr 28 14:25:11 2026 -0700)
+
 ## 1.3.9 - add arrayContains expression to matching rule definition parser
 
 * c90ffaea - feat: add arrayContains expression to matching rule definition parser (Stan Vodetskyi, Fri Apr 17 12:41:47 2026 -0700)
