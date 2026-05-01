@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier_cli
 
 
-## 1.3.1 - Maintenance Release
+## 1.3.1 - Feature Release
 
 * 77b6e4c8 - Merge pull request #519 from pact-foundation/fix/docker_platform (Yousaf Nabi, Tue Mar 17 11:41:49 2026 +0000)
 * f991275b - fix: workflow for docker publishing #518 (Yousaf Nabi, Mon Feb 23 17:50:49 2026 +0000)
