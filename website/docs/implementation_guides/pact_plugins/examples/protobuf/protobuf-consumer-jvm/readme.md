@@ -1,5 +1,6 @@
 ---
 title: Protobuf JVM Consumer Example
+sidebar_label: Protobuf JVM Consumer Example
 custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/examples/protobuf/protobuf-consumer-jvm/README.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->

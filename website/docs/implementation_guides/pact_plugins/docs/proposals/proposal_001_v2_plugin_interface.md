@@ -1,5 +1,6 @@
 ---
 title: V2 Plugin Interface (Draft)
+sidebar_label: V2 Plugin Interface (Draft)
 custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/docs/proposals/001_V2_Plugin_Interface.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->

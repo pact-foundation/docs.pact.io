@@ -1,5 +1,6 @@
 ---
 title: Example Go consumer project
+sidebar_label: Example Go consumer project
 custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/examples/gRPC/area_calculator/consumer-go/README.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->

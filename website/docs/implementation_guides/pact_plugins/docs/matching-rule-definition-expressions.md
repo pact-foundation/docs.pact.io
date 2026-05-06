@@ -1,5 +1,6 @@
 ---
 title: Primitive values
+sidebar_label: Primitive values
 custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/docs/matching-rule-definition-expressions.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
@@ -89,6 +90,25 @@ length is at most the given size.
 If an expression is provided, that will be used instead of the type matching rule.
 
 For example: `atMost(2)`
+
+### arrayContains(EXPRESSION [, EXPRESSION, ...])
+
+Configures an array-contains matching rule. Each expression defines a variant
+that must be found in the array. Matching is successful if each variant matches
+at least one item in the array. Order does not matter, and extra items are allowed.
+
+For example: `arrayContains(matching(equalTo, 'PUBLIC'))`
+
+Multiple required values: `arrayContains(matching(equalTo, 'PUBLIC'), matching(regex, 'PRIVATE.*', 'PRIVATE_LINK'))`
+
+With references (for complex object variants):
+`arrayContains(matching($'variant1'), matching($'variant2'))`
+
+Mixed inline and reference variants:
+`arrayContains(matching(equalTo, 'PUBLIC'), matching($'complexVariant'))`
+
+Can be composed with other expressions:
+`atLeast(2), eachValue(matching(type, 'example')), arrayContains(matching(equalTo, 'PUBLIC'))`
 
 ## Composing expressions
 
