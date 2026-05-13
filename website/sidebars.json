@@ -94,7 +94,6 @@
     },
     {
       "Pact Go": [
-        "implementation_guides/go",
         "implementation_guides/go/readme",
         "implementation_guides/go/docs/consumer",
         "implementation_guides/go/docs/provider",
