@@ -15,6 +15,11 @@ The `swagger-contract-testing` Power covers the full contract testing lifecycle:
 
 ## Installing the Power
 
+### Installation from kiro website
+Navigate to [Swagger contract testing](https://kiro.dev/launch/powers/swagger-contract-testing/) in your browser and that will install it in your kiro IDE.
+
+### Manual install
+
 Open the **Agent Steering & Skills** panel in Kiro, click **+**, choose **Import a Power**, select **GitHub**, and paste:
 
 ```

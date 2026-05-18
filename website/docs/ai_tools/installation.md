@@ -33,6 +33,7 @@ The three skills work together: **OpenAPI Parser** analyses a spec and generates
 ## Installation guide for Agentic IDEs/Coding agents
 
 - [Quick install with `npx skills`](#quick-install-with-npx-skills)
+- [Quick install with `gh skill`](#quick-install-with-gh-skill)
 - [Claude Code](#installing-in-claude-code)
 - [OpenCode](#installing-in-opencode)
 - [GitHub Copilot (VS Code)](#installing-in-github-copilot-vs-code)
@@ -52,6 +53,16 @@ npx skills add pactflow/pactflow-agent-skills
 ```
 
 This installs the `swagger-contract-testing` skills for all detected agents in your project (Claude Code, Copilot, Cursor, Windsurf, Kiro, Codex, OpenCode, Antigravity, and more).
+
+## Quick install with `gh skill`
+
+The [`gh skill`](https://github.com/github/gh-skill) GitHub CLI extension installs agent skills directly from any GitHub repository. It works with any tool that reads skills from a standard location (Claude Code, Copilot, Cursor, Windsurf, Kiro, Codex, and more).
+
+```bash
+gh skill install pactflow/pactflow-agent-skills
+```
+
+This pulls the `swagger-contract-testing` skills from this repo and places them in the appropriate skills directory for your project.
 
 ---
 
