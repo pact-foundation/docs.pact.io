@@ -5,6 +5,19 @@ custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/docs/
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+> [!NOTE]
+> This proposal is now treated as a historical umbrella draft rather than the recommended implementation plan.
+> The problem areas identified here are being split into smaller proposals so they can be discussed and delivered
+> independently:
+> - [004 Verification contract cleanup](/implementation_guides/pact_plugins/docs/proposals/proposal_004_verification_contract_cleanup)
+> - [005 Plugin capability negotiation and versioning](/implementation_guides/pact_plugins/docs/proposals/proposal_005_plugin_capability_negotiation_and_versioning)
+> - [006 Field-level matchers and generators](/implementation_guides/pact_plugins/docs/proposals/proposal_006_field_level_matchers_and_generators)
+> - [007 Driver-plugin callback model](/implementation_guides/pact_plugins/docs/proposals/proposal_007_driver_plugin_callback_model)
+> - [008 Plugin observability and logging](/implementation_guides/pact_plugins/docs/proposals/proposal_008_plugin_observability_and_logging)
+> - [009 Host-provided core matching and generation](/implementation_guides/pact_plugins/docs/proposals/proposal_009_host_provided_core_matching_and_generation)
+>
+> This document should not be implemented verbatim without first reconciling it with those later proposals.
+
 Discussion for this proposal: https://github.com/pact-foundation/pact-plugins/discussions/83
 
 ## Summary
