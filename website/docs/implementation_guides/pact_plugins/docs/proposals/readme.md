@@ -9,7 +9,7 @@ Here is the current list of proposed changes to the Pact Plugin architecture. Pr
 
 | Proposal | Phase | State | Discussion |
 |---|---|---|---|
-| [V2 Plugin Interface](/implementation_guides/pact_plugins/docs/proposals/proposal_001_v2_plugin_interface) | Historical | Draft | https://github.com/pact-foundation/pact-plugins/discussions/83 |
+| [V2 Plugin Interface](/implementation_guides/pact_plugins/docs/proposals/proposal_001_v2_plugin_interface) | Historical | Superseded | https://github.com/pact-foundation/pact-plugins/discussions/83 |
 | [Support script language plugins](/implementation_guides/pact_plugins/docs/proposals/proposal_002_support_script_language_plugins) | Not proceeding | Draft | https://github.com/pact-foundation/pact-plugins/discussions/84 |
 | [Support WASM plugins](/implementation_guides/pact_plugins/docs/proposals/proposal_003_support_wasm_plugins) | Background | Draft | https://github.com/pact-foundation/pact-plugins/discussions/85 |
 | [Verification contract cleanup](/implementation_guides/pact_plugins/docs/proposals/proposal_004_verification_contract_cleanup) | Phase 1 | Draft | TBD |
