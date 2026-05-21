@@ -7,6 +7,8 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v2.5.0 (22 May 2026)
+
 ### v2.4.3 (22 April 2026)
   * [dfe16cc](https://github.com/pact-foundation/pact-go/commit/dfe16cc) - fix: upgrade goreleaser config to v2 and fix workflow_dispatch release trigger (#571) (Copilot, Wed Apr 22 14:17:04 2026 +1000)
   * [f7cec64](https://github.com/pact-foundation/pact-go/commit/f7cec64) - fix: resolve "inconsistent definitions" build failure on Go 1.24+ (#568) (Copilot, Wed Apr 22 09:32:21 2026 +1000)
