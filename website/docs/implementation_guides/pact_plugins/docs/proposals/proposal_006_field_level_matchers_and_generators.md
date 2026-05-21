@@ -5,6 +5,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/docs/
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+> [!NOTE]
+> **Implementation phase:** Phase 3 (new functionality). Requires [005](/implementation_guides/pact_plugins/docs/proposals/proposal_005_plugin_capability_negotiation_and_versioning) to be finalised. Design in parallel with [007](/implementation_guides/pact_plugins/docs/proposals/proposal_007_driver_plugin_callback_model); data model decisions in these two proposals must be kept consistent. See the [proposals README](/implementation_guides/pact_plugins/docs/proposals/readme) for the full delivery order.
+
 ## Summary
 
 Add a plugin API for matching and generating data at the field or element level, instead of limiting plugins to whole
@@ -35,6 +38,15 @@ whole-content plugins that are broader and more complex than the problem require
 - Redesigning whole-content matcher/generator flows.
 - Defining a general-purpose callback bus between plugins and the host.
 - Solving plugin runtime/version negotiation on its own.
+
+## WASM compatibility
+
+For gRPC plugins, field-level matching and generation operations will be new RPCs in the plugin service. For WASM plugins, the same operations will be exported WASM functions that the host calls into. The data types used must be representable in both forms.
+
+In practice this means:
+- value types should follow the existing `oneof` pattern (see `MetadataValue` in the current proto) rather than assuming JSON encoding;
+- path expressions should use the existing Pact matching rule expression format already used throughout the interface;
+- mismatch results should reuse the existing `ContentMismatch` type rather than introducing a parallel structure.
 
 ## Open questions
 

@@ -5,6 +5,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/docs/
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+> [!NOTE]
+> **Implementation phase:** Phase 3 (new functionality). Requires [005](/implementation_guides/pact_plugins/docs/proposals/proposal_005_plugin_capability_negotiation_and_versioning) to be finalised. Design in parallel with [006](/implementation_guides/pact_plugins/docs/proposals/proposal_006_field_level_matchers_and_generators). Required by [009](/implementation_guides/pact_plugins/docs/proposals/proposal_009_host_provided_core_matching_and_generation). See the [proposals README](/implementation_guides/pact_plugins/docs/proposals/readme) for the full delivery order.
+
 ## Summary
 
 Define how a plugin can call back into the driver or host framework for shared functionality, including core Pact
@@ -37,6 +40,14 @@ This is especially relevant for richer matcher/generator use cases and for any f
 - Defining the detailed payload model for verification.
 - Solving observability/logging by itself.
 - Redesigning plugin discovery or packaging.
+
+## WASM compatibility
+
+The callback model must map to two fundamentally different transports:
+- **gRPC plugins**: callbacks require either a reverse connection (the plugin connects back to a driver-side gRPC server) or bi-directional streaming. The tradeoffs between these approaches must be evaluated explicitly as part of this proposal.
+- **WASM plugins**: callbacks are host-exported functions that the WASM module imports at load time. There is no network connection.
+
+The primary deliverable of this proposal is the transport-neutral logical interface: what host capabilities can be called, what parameters they accept, what they return, and what the lifecycle and failure rules are. The gRPC and WASM transport mappings follow from that definition and should be treated as secondary concerns.
 
 ## Open questions
 

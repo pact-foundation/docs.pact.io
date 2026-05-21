@@ -5,6 +5,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/docs/
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+> [!NOTE]
+> **Implementation phase:** Phase 2 (observability). Deliver after Phase 1 ([004](/implementation_guides/pact_plugins/docs/proposals/proposal_004_verification_contract_cleanup), [005](/implementation_guides/pact_plugins/docs/proposals/proposal_005_plugin_capability_negotiation_and_versioning)) but before the new functionality proposals in Phase 3. See the [proposals README](/implementation_guides/pact_plugins/docs/proposals/readme) for the full delivery order.
+
 ## Summary
 
 Improve plugin diagnostics so plugin execution, failures, and logs are easier to understand across drivers, runtimes,
@@ -37,6 +40,14 @@ effect of process stdout.
 - Defining the plugin callback protocol.
 - Redesigning verification payloads or field-level matcher APIs.
 - Replacing the existing plugin manifest format.
+
+## WASM compatibility
+
+WASM plugins do not have access to stdout or stderr by default. WASI provides optional I/O but it cannot be relied upon as a universal mechanism. Any logging strategy that depends on capturing process output does not apply to WASM plugins.
+
+Structured log forwarding via a host function call must therefore be the primary logging mechanism, so that the same approach works for both gRPC and WASM plugins. For gRPC plugins this can be complemented by file-based output, but that cannot be the only path.
+
+Delivering this before the Phase 3 functionality proposals ensures that field-level matchers, generators, and callbacks all have a consistent logging path from the start rather than retrofitting observability later.
 
 ## Open questions
 
