@@ -7,6 +7,8 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 
 ## Versions
 
+### v2.5.1 (26 May 2026)
+
 ### v2.5.0 (22 May 2026)
 
 ### v2.4.3 (22 April 2026)
