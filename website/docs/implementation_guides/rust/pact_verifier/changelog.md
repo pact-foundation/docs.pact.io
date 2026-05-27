@@ -9,6 +9,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier
 
 
+## 1.4.0 - Add retry logic when interacting with a Pact broker
+
+* c98502f6 - feat: add --retries / PACT_BROKER_HTTP_RETRIES to pact_verifier_cli (JP-Ellis, Tue May 26 15:39:28 2026 +1000)
+* 8f86cd92 - fix: verifier retry logic (JP-Ellis, Tue May 26 10:43:08 2026 +1000)
+
 ## 1.3.5 - Maintenance Release
 
 
