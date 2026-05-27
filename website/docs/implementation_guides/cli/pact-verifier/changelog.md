@@ -9,6 +9,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier_cli
 
 
+## 1.3.2 - Maintenance release
+
+* c98502f6 - feat: add --retries / PACT_BROKER_HTTP_RETRIES to pact_verifier_cli (JP-Ellis, Tue May 26 15:39:28 2026 +1000)
+
 ## 1.3.1 - Feature Release
 
 * 77b6e4c8 - Merge pull request #519 from pact-foundation/fix/docker_platform (Yousaf Nabi, Tue Mar 17 11:41:49 2026 +0000)
