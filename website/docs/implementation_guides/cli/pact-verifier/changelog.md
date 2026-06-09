@@ -9,6 +9,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier_cli
 
 
+## 1.3.3 - Support V2 plugins
+
+
 ## 1.3.2 - Maintenance release
 
 * c98502f6 - feat: add --retries / PACT_BROKER_HTTP_RETRIES to pact_verifier_cli (JP-Ellis, Tue May 26 15:39:28 2026 +1000)
