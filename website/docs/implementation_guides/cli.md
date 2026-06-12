@@ -55,12 +55,6 @@ This document covers all available Pact tools and the multiple ways to install t
 - Install and manage Pact plugins
 - Support for gRPC, Avro, Csv & custom protocols
 
-### **[pact-legacy](https://github.com/pact-foundation/pact-standalone)** - Ruby-based tools
-
-- Legacy compatibility tools
-- Ruby-based implementation
-- Original Pact-Ruby core with Pact V2 specification support. Superceded by Pact-Rust core.
-
 ## 🚀 Installation Methods
 
 ### **Scripts** (Cross-Platform - Linux/MacOS/Windows ARM64/AMD64)
@@ -77,12 +71,6 @@ curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-cli/main/insta
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-broker-cli/main/install.sh | sh
-```
-
-**Pact Legacy**
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-standalone/master/install.sh | sh
 ```
 
 #### PowerShell (Windows)
@@ -179,12 +167,6 @@ brew install pact-foundation/tap/pact-plugin
 brew install pact-foundation/tap/pact-broker-client
 ```
 
-**Pact Legacy**
-
-```bash
-brew install pact-foundation/tap/pact-legacy
-```
-
 ### **Scoop** (Windows ARM64/AMD64)
 
 ```powershell
@@ -198,7 +180,6 @@ scoop install pact-stub-server
 scoop install pact-verifier
 scoop install pact-plugin
 scoop install pact-broker-client
-scoop install pact-legacy
 ```
 
 #### GitHub Actions Example
@@ -271,13 +252,6 @@ choco install -y pact-plugin --source .
 ```powershell
 curl https://github.com/pact-foundation/choco/releases/download/choco/pact-stub-server.0.7.0.nupkg -OutFile pact-stub-server.nupkg
 choco install -y pact-stub-server --source .
-```
-
-**Pact Legacy**
-
-```powershell
-curl https://github.com/pact-foundation/choco/releases/download/choco/pact-legacy.2.5.6.nupkg -OutFile pact-legacy.nupkg
-choco install -y pact-legacy --source .
 ```
 
 #### Chocolatey GitHub Actions Example
@@ -369,13 +343,9 @@ pact extension list
 
 # Install available extensions
 pact extension install pactflow-ai
-pact extension install pact-legacy
 
 # Run pactflow-ai
 pact pactflow-ai
-
-# Run a legacy tool
-pact pact-broker-legacy
 ```
 
 ### 3. Basic Usage Examples
@@ -420,13 +390,6 @@ Check deployment safety for a consumer
 
 ```bash
 pact broker can-i-deploy --pacticipant "Example App" --version 5556b8149bf8bac76bc30f50a8a2dd4c22c85f30 --to test --broker-base-url http://localhost:9292
-```
-
-Same command as above, with the legacy tooling
-
-```bash
-pact extensions install pact-legacy
-pact pact-broker-legacy can-i-deploy --pacticipant "Example App" --version 5556b8149bf8bac76bc30f50a8a2dd4c22c85f30 --to test --broker-base-url http://localhost:9292
 ```
 
 ## 📚 Documentation & Resources
