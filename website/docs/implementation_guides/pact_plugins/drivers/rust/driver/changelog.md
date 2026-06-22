@@ -1,6 +1,6 @@
 ---
 title: Changelog
-sidebar_label: 1.0.0-beta.2 - Implement V2 plugin interface
+sidebar_label: 1.0.0-beta.3 - V2 Plugin observability and structured log forwarding
 custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/drivers/rust/driver/CHANGELOG.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
@@ -11,6 +11,11 @@ https://github.com/pact-foundation/pact-plugins/tree/main/drivers
 
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
 
+
+* 72cc15c - feat(008): Plugin observability and structured log forwarding (#99) (Ronald Holshausen, Mon Jun 22 15:45:05 2026 +1000)
+* 441ce4b - bump version to 1.0.0-beta.3 (Ronald Holshausen, Tue Jun 9 13:08:32 2026 +1000)
+
+# 1.0.0-beta.2 - Implement V2 plugin interface
 
 * 14f394b - fix: corrected an issue in the v2 plugin driver with interaction config (Ronald Holshausen, Tue Jun 9 12:36:59 2026 +1000)
 * 8928adb - feat: Implement the V2 plugin interface changes as per proposal 004 (Ronald Holshausen, Fri Jun 5 11:39:11 2026 +1000)
