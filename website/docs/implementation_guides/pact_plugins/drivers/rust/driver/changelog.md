@@ -1,6 +1,6 @@
 ---
 title: Changelog
-sidebar_label: 1.0.0-beta.4 - Maintenance Release
+sidebar_label: 1.0.0-beta.5 - Bugfix Release
 custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/drivers/rust/driver/CHANGELOG.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
@@ -11,6 +11,11 @@ https://github.com/pact-foundation/pact-plugins/tree/main/drivers
 
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)' TAGNAME..HEAD .` replacing TAGNAME and HEAD as appropriate.
 
+
+* d0fbfe4 - feat(008): Inject testContext into V2 plugin requests in JVM driver (#101) (Ronald Holshausen, Tue Jun 23 15:52:17 2026 +1000)
+* 6958d21 - bump version to 1.0.0-beta.5 (Ronald Holshausen, Tue Jun 23 14:58:37 2026 +1000)
+
+# 1.0.0-beta.4 - Maintenance Release
 
 * d1f1240 - feat(008): Add test run ID thread-local and inject testContext into V2 plugin requests (#100) (Ronald Holshausen, Tue Jun 23 14:55:48 2026 +1000)
 * 44af519 - bump version to 1.0.0-beta.4 (Ronald Holshausen, Tue Jun 23 09:31:53 2026 +1000)
