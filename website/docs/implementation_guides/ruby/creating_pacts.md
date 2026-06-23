@@ -41,6 +41,6 @@ end
 
 ## With Minitest
 
-Use [pact-consumer-minitest](https://github.com/bethesque/pact-consumer-minitest).
+Use [pact-consumer-minitest](https://github.com/bethesque/pact-consumer-minitest) (archived as of 2026-03-18).
 
 
