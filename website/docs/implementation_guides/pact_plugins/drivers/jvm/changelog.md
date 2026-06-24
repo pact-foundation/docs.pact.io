@@ -1,6 +1,6 @@
 ---
 title: Changelog
-sidebar_label: 1.0.0-beta.4 - V2 Plugin observability and structured log forwarding improvements
+sidebar_label: 1.0.0-beta.5 - Include testRunId in JVM host log messages
 custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/drivers/jvm/CHANGELOG.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
@@ -11,6 +11,11 @@ https://github.com/pact-foundation/pact-plugins/tree/main/drivers
 
 To generate the log, run `git log --pretty='* %h - %s (%an, %ad)'  TAGNAME..HEAD` replacing TAGNAME and HEAD as appropriate.
 
+
+* d273288 - fix(008): Include testRunId in JVM host log messages and plugin log format (#102) (Ronald Holshausen, Wed Jun 24 13:25:06 2026 +1000)
+* b699c8c - bump version to 1.0.0-beta.5 (Ronald Holshausen, Tue Jun 23 16:04:54 2026 +1000)
+
+# 1.0.0-beta.4 - V2 Plugin observability and structured log forwarding improvements
 
 * 6604986 - bump version to 1.0.0-beta.6 (Ronald Holshausen, Tue Jun 23 15:54:08 2026 +1000)
 * 2b1f95f - update changelog for release 1.0.0-beta.5 (Ronald Holshausen, Tue Jun 23 15:53:43 2026 +1000)
