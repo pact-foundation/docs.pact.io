@@ -64,13 +64,7 @@ This document covers all available Pact tools and the multiple ways to install t
 **Unified CLI**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-cli/main/install.sh | sh
-```
-
-**Pact Broker Client**
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-broker-cli/main/install.sh | sh
+curl -fsSL https://d.pactflow.io/pact/install.sh | sh
 ```
 
 #### PowerShell (Windows)
@@ -78,13 +72,7 @@ curl -fsSL https://raw.githubusercontent.com/pact-foundation/pact-broker-cli/mai
 **Unified CLI**
 
 ```powershell
-iwr -useb https://raw.githubusercontent.com/pact-foundation/pact-cli/main/install.ps1 | iex
-```
-
-**Pact Broker Client**
-
-```powershell
-iwr -useb https://raw.githubusercontent.com/pact-foundation/pact-broker-cli/main/install.ps1 | iex
+iwr -useb https://d.pactflow.io/pact/install.ps1 | iex
 ```
 
 ### **Cargo** (Any Rust-supported target)
