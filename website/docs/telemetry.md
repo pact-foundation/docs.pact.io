@@ -4,7 +4,7 @@ title: Telemetry
 
 The Pact team strive to develop great open source tools for the community. We rely on the community's input to help us iterate on and improve Pact. Telemetry is additional information that helps us to better understand the community's needs, diagnose issues, and prioritise feature work.
 
-Pact's distribution channels — Docker images on Docker Hub, CLI binaries on GitHub Releases, and similar — are routed through [Scarf](https://scarf.sh/), which collects anonymized usage analytics about how Pact tools are downloaded. README impressions on github.com and Docker Hub are also tracked via 1x1 pixel images served from `static.scarf.sh`.
+Pact's distribution channels — Docker images on Docker Hub, CLI binaries on GitHub Releases, and some package managers — are routed through [Scarf](https://scarf.sh/), which collects anonymized usage analytics about how Pact tools are downloaded. README impressions on github.com and Docker Hub are also tracked via 1x1 pixel images served from `static.scarf.sh`.
 
 We do not collect personal information, such as usernames or email addresses. Pact tools do not extract sensitive project-level information at runtime.
 
@@ -62,26 +62,6 @@ Maven `pom.xml` > `surefire`:
 </property>
 ```
 
-### Disabling telemetry for your profile in all sessions
-
-To disable install-time analytics permanently for every future session, add `PACT_DO_NOT_TRACK=true` to your permanent environment variables.
-
-In macOS and Linux operating systems, add it to your shell profile:
-
-```bash
-echo "export PACT_DO_NOT_TRACK=true" >> ~/.profile
-source ~/.profile
-```
-
-On Windows:
-
-```sh
-setx PACT_DO_NOT_TRACK "true"
-refresh env
-```
-
-This affects install-time scripts that honor `PACT_DO_NOT_TRACK`. Scarf gateway analytics for pulls and downloads are opted out **by URL** (see above sections), not by environment variable, and the README impression pixel is opted out via image / network blocking.
-
 ## Types of Information Collected
 
 Telemetry collected through [Scarf](https://scarf.sh/) falls into three categories, per [Scarf's Docker / File Packages documentation](https://docs.scarf.sh/packages/):
@@ -91,11 +71,6 @@ Telemetry collected through [Scarf](https://scarf.sh/) falls into three categori
 | System and OS statistics | Parsed from the client `User-Agent` header: Docker client version, language runtime, kernel version, OS (`linux` / `darwin` / `windows`), architecture (`amd64` / `arm64` / `arm`). |
 | Company information | Organisation / company name derived from the source IP via an ASN lookup at request time. Attributes usage at company level, not user level. |
 | Downloads by versions / tags | The tag in a Docker pull, or the version in a release download. Tells maintainers which versions are in active use. |
-
-Additional metadata per Scarf's [privacy policy](https://about.scarf.sh/privacy-policy):
-
-| Category | Description |
-| :-- | :-- |
 | Coarse-grained location | Country, derived from the source IP at request time. |
 | Referring URL | For README pixel impressions, the page that referred the request, when present. |
 | Page parameter | For README pixel impressions, the page name passed in the pixel URL (always `README.md` for Pact's pixels). |
