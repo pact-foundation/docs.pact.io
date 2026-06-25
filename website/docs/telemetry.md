@@ -14,7 +14,7 @@ This data is collected via [Scarf](https://scarf.sh/) and is accessible to Smart
 
 ## Opt Out
 
-Scarf collects analytics at the moment you pull / download a Pact distribution. The primary opt-out is **to use the canonical (Docker Hub / GitHub Releases / etc.) URLs directly instead of the Pact Foundation's Scarf gateway URLs documented in each project's README.**
+Scarf collects analytics at the moment you install or download a Pact distribution. The primary opt-out is **to use the canonical (Docker Hub / GitHub Releases / etc.) URLs directly instead of the Pact Foundation's Scarf gateway URLs documented in each project's README.**
 
 ### Docker images
 
