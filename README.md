@@ -102,3 +102,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 * [Pact Foundation Slack workspace](https://slack.pact.io)
 * [Twitter](https://twitter.com/pact_up)
+
+## Anonymized analytics
+
+This repository's README is instrumented with a [Scarf](https://scarf.sh/) pixel that records anonymized README impressions on github.com so Pact OSS maintainers can see how the docs site is discovered. No personal information, IP addresses, cookies, or persistent identifiers are collected. See [docs.pact.io/telemetry](https://docs.pact.io/telemetry) for the full disclosure and opt-out options.
+
+<img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=4eb08b9f-98b1-4f94-9f0b-47f793362c8a&page=README.md" />
