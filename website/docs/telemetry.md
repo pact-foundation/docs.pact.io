@@ -10,7 +10,7 @@ We do not collect personal information, such as usernames or email addresses. Pa
 
 When consuming Pact tools you can control whether telemetry is enabled, and the setting can be changed at any point in time. If telemetry remains enabled, telemetry data is sent in the background without requiring any additional interaction.
 
-This data is collected via [Scarf](https://scarf.sh/) and is accessible by Pact OSS maintainers.
+This data is collected via [Scarf](https://scarf.sh/) and is accessible to SmartBear.
 
 ## Opt Out
 
