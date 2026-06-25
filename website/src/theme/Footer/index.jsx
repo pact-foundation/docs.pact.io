@@ -122,6 +122,7 @@ function Footer() {
         )}
       </div>
     </footer>
+    <img referrerPolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=4eb08b9f-98b1-4f94-9f0b-47f793362c8a" alt="" style={{display: 'none'}} />
     </div>
   );
 }
