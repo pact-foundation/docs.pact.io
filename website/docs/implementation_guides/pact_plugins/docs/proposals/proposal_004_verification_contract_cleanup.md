@@ -1,6 +1,6 @@
 ---
-title: Verification contract cleanup (Draft)
-sidebar_label: Verification contract cleanup (Draft)
+title: Verification contract cleanup
+sidebar_label: Verification contract cleanup
 custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/docs/proposals/004_Verification_contract_cleanup.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->

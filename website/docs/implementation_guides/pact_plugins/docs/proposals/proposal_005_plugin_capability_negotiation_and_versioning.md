@@ -1,6 +1,6 @@
 ---
-title: Plugin capability negotiation and versioning (Draft)
-sidebar_label: Plugin capability negotiation and versioning (Draft)
+title: Plugin capability negotiation and versioning
+sidebar_label: Plugin capability negotiation and versioning
 custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/docs/proposals/005_Plugin_capability_negotiation_and_versioning.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->

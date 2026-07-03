@@ -7,17 +7,18 @@ custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/docs/
 
 Here is the current list of proposed changes to the Pact Plugin architecture. Proposals 004–009 are listed in delivery order rather than numerical order.
 
-| Proposal | Phase | State | Discussion |
-|---|---|---|---|
-| [V2 Plugin Interface](/implementation_guides/pact_plugins/docs/proposals/proposal_001_v2_plugin_interface) | Historical | Superseded | https://github.com/pact-foundation/pact-plugins/discussions/83 |
-| [Support script language plugins](/implementation_guides/pact_plugins/docs/proposals/proposal_002_support_script_language_plugins) | Not proceeding | Draft | https://github.com/pact-foundation/pact-plugins/discussions/84 |
-| [Support WASM plugins](/implementation_guides/pact_plugins/docs/proposals/proposal_003_support_wasm_plugins) | Background | Draft | https://github.com/pact-foundation/pact-plugins/discussions/85 |
-| [Verification contract cleanup](/implementation_guides/pact_plugins/docs/proposals/proposal_004_verification_contract_cleanup) | Phase 1 | Draft | TBD |
-| [Plugin capability negotiation and versioning](/implementation_guides/pact_plugins/docs/proposals/proposal_005_plugin_capability_negotiation_and_versioning) | Phase 1 | Draft | TBD |
-| [Plugin observability and logging](/implementation_guides/pact_plugins/docs/proposals/proposal_008_plugin_observability_and_logging) | Phase 2 | Draft | TBD |
-| [Field-level matchers and generators](/implementation_guides/pact_plugins/docs/proposals/proposal_006_field_level_matchers_and_generators) | Phase 3 | Draft | TBD |
-| [Driver-plugin callback model](/implementation_guides/pact_plugins/docs/proposals/proposal_007_driver_plugin_callback_model) | Phase 3 | Draft | TBD |
-| [Host-provided core matching and generation](/implementation_guides/pact_plugins/docs/proposals/proposal_009_host_provided_core_matching_and_generation) | Phase 4 | Draft | TBD |
+| Proposal | Phase      | State       | Discussion |
+|---|------------|-------------|---|
+| [V2 Plugin Interface](/implementation_guides/pact_plugins/docs/proposals/proposal_001_v2_plugin_interface) | Historical | Superseded  | https://github.com/pact-foundation/pact-plugins/discussions/83 |
+| [Support script language plugins](/implementation_guides/pact_plugins/docs/proposals/proposal_002_support_script_language_plugins) | Phase 2    | Implemented | https://github.com/pact-foundation/pact-plugins/discussions/84 |
+| [Support WASM plugins](/implementation_guides/pact_plugins/docs/proposals/proposal_003_support_wasm_plugins) | Background | Draft       | https://github.com/pact-foundation/pact-plugins/discussions/85 |
+| [Support Python as a second script language plugin](/implementation_guides/pact_plugins/docs/proposals/proposal_010_support_python_script_plugins) | Phase 2    | Draft       |  |
+| [Verification contract cleanup](/implementation_guides/pact_plugins/docs/proposals/proposal_004_verification_contract_cleanup) | Phase 1    | Implemented |  |
+| [Plugin capability negotiation and versioning](/implementation_guides/pact_plugins/docs/proposals/proposal_005_plugin_capability_negotiation_and_versioning) | Phase 1    | Implemented |  |
+| [Plugin observability and logging](/implementation_guides/pact_plugins/docs/proposals/proposal_008_plugin_observability_and_logging) | Phase 2    | Implemented |  |
+| [Field-level matchers and generators](/implementation_guides/pact_plugins/docs/proposals/proposal_006_field_level_matchers_and_generators) | Phase 3    | Draft       |  |
+| [Driver-plugin callback model](/implementation_guides/pact_plugins/docs/proposals/proposal_007_driver_plugin_callback_model) | Phase 3    | Draft       |  |
+| [Host-provided core matching and generation](/implementation_guides/pact_plugins/docs/proposals/proposal_009_host_provided_core_matching_and_generation) | Phase 4    | Draft       |  |
 
 ## Implementation phases
 

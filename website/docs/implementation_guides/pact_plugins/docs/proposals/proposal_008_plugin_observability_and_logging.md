@@ -1,6 +1,6 @@
 ---
-title: Plugin observability and logging (Draft)
-sidebar_label: Plugin observability and logging (Draft)
+title: Plugin observability and logging
+sidebar_label: Plugin observability and logging
 custom_edit_url: https://github.com/pact-foundation/pact-plugins/edit/main/docs/proposals/008_Plugin_observability_and_logging.md
 ---
 <!-- This file has been synced from the pact-foundation/pact-plugins repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
