@@ -6,6 +6,32 @@ custom_edit_url: https://github.com/pact-foundation/pact-js/edit/master/CHANGELO
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [17.0.1](https://github.com/pact-foundation/pact-js/compare/v17.0.0...v17.0.1) (2026-07-01)
+
+
+### Fixes and Improvements
+
+* **verifier:** run beforeEach/afterEach once per interaction without desyncing on hook failure ([#1865](https://github.com/pact-foundation/pact-js/issues/1865)) ([fed47e2](https://github.com/pact-foundation/pact-js/commit/fed47e220af427d654f8b192333e6d6425118425)), closes [#1864](https://github.com/pact-foundation/pact-js/issues/1864)
+
+## [17.0.0](https://github.com/pact-foundation/pact-js/compare/v16.5.0...v17.0.0) (2026-06-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop node 20, test against node 26 (#1813)
+
+* drop node 20, test against node 26 ([#1813](https://github.com/pact-foundation/pact-js/issues/1813)) ([bdf71f7](https://github.com/pact-foundation/pact-js/commit/bdf71f758cb410f2795b46dc36d173a1399feac3))
+
+
+### Features
+
+* enable scarf download analytics ([#1859](https://github.com/pact-foundation/pact-js/issues/1859)) ([c1d5593](https://github.com/pact-foundation/pact-js/commit/c1d5593ff0580f8439550c0e3ba7300c6c8f608a))
+
+
+### Fixes and Improvements
+
+* ESM import issue ([#1860](https://github.com/pact-foundation/pact-js/issues/1860)) ([f6b204c](https://github.com/pact-foundation/pact-js/commit/f6b204c6bec219b94db8370eee4c44258253be09))
+
 ## [16.5.0](https://github.com/pact-foundation/pact-js/compare/v16.4.0...v16.5.0) (2026-05-24)
 
 
