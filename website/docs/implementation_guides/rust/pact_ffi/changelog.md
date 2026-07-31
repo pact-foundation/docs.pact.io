@@ -9,6 +9,11 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi
 
 
+## 0.5.5 - Bugfix Release
+
+* c98502f6 - feat: add --retries / PACT_BROKER_HTTP_RETRIES to pact_verifier_cli (JP-Ellis, Tue May 26 15:39:28 2026 +1000)
+* 9f100787 - Merge pull request #530 from pact-foundation/fix-ffi-tls-mockserver (Ronald Holshausen, Wed May 20 14:51:04 2026 +1000)
+
 ## 0.5.4 - Maintenance Release
 
 * 2955ac00 - Merge pull request #526 from pact-foundation/feat-ffi-add-reference (Ronald Holshausen, Wed Apr 29 09:22:09 2026 +1000)
