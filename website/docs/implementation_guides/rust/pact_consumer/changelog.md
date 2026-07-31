@@ -9,6 +9,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_consumer
 
 
+## 1.4.6 - Maintenance Release
+
+
+## 1.4.5 - V2 plugin logging improvements
+
+
 ## 1.4.4 - Support V2 plugins
 
 

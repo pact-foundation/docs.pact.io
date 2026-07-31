@@ -9,6 +9,17 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier
 
 
+## 1.4.4 - Bugfix Release
+
+* 7ca9b6c4 - fix: ensure root path is passed when posting to broker (Yousaf Nabi, Wed Jul 8 16:51:24 2026 +0100)
+* 06087bdc - feat: register host-provided core content matcher/generator capabilities (Ronald Holshausen, Wed Jul 22 11:40:50 2026 +1000)
+
+## 1.4.3 - V2 plugin logging improvements
+
+
+## 1.4.2 - Maintenance Release
+
+
 ## 1.4.1 - Support V2 plugins
 
 

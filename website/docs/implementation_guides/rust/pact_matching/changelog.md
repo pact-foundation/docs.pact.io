@@ -9,6 +9,17 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_matching
 
 
+## 2.0.8 - Plugin Host-provided matching and generation interface
+
+* 050ec62d - fix: parenthesize the text-matcher closure to survive async_trait's re-tokenization (Ronald Holshausen, Wed Jul 22 12:00:25 2026 +1000)
+* 06087bdc - feat: register host-provided core content matcher/generator capabilities (Ronald Holshausen, Wed Jul 22 11:40:50 2026 +1000)
+
+## 2.0.7 - V2 plugin logging improvements
+
+
+## 2.0.6 - Maintenance Release
+
+
 ## 2.0.5 - V2 plugin support
 
 
