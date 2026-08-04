@@ -5,7 +5,8 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 <!-- This file has been synced from the pact-foundation/pact-go repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
 
-## Versions
+## Previous releases
+
 
 ### v2.5.1 (26 May 2026)
 
