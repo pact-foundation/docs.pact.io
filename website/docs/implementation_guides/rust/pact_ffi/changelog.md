@@ -9,6 +9,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi
 
 
+## 0.5.6 - Bugfix Release
+
+* b0dd00b8 - fix: when using rustls-no-provider with reqwest we need to set a crypto provider (Ronald Holshausen, Tue Aug 4 17:27:17 2026 +1000)
+
 ## 0.5.5 - Bugfix Release
 
 * c98502f6 - feat: add --retries / PACT_BROKER_HTTP_RETRIES to pact_verifier_cli (JP-Ellis, Tue May 26 15:39:28 2026 +1000)

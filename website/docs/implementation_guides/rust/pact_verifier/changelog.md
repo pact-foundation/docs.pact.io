@@ -9,6 +9,13 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier
 
 
+## 1.4.6 - Maintenance Release
+
+* b0dd00b8 - fix: when using rustls-no-provider with reqwest we need to set a crypto provider (Ronald Holshausen, Tue Aug 4 17:27:17 2026 +1000)
+
+## 1.4.5 - Maintenance Release
+
+
 ## 1.4.4 - Bugfix Release
 
 * 7ca9b6c4 - fix: ensure root path is passed when posting to broker (Yousaf Nabi, Wed Jul 8 16:51:24 2026 +0100)
