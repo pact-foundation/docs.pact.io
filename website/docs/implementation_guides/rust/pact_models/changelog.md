@@ -9,6 +9,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_models
 
 
+## 1.3.14 - Bugfix + Support for matching rules and generators provided by plugins
+
+
 ## 1.3.13 - Maintenance Release
 
 

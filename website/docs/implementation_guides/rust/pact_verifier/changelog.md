@@ -9,6 +9,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier
 
 
+## 1.4.7 - Support matching rules and generators from plugins
+
+
 ## 1.4.6 - Maintenance Release
 
 * b0dd00b8 - fix: when using rustls-no-provider with reqwest we need to set a crypto provider (Ronald Holshausen, Tue Aug 4 17:27:17 2026 +1000)

@@ -9,6 +9,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier_cli
 
 
+## 1.3.5 - Support matching rules and generators from plugins
+
+
 ## 1.3.4 - Bugfix Release
 
 
