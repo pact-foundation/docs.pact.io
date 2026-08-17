@@ -19,6 +19,7 @@ A list of available known plugins, please add yours to the list.
 |pact-protobuf-plugin| Protobuf/gRPC  | Rust | [Code](https://github.com/pactflow/pact-protobuf-plugin)| official |
 |pact-csv-plugin| CSV  | Rust | [Code](https://github.com/pact-foundation/pact-plugins/tree/main/plugins)| official |
 |pact-avro-plugin| Avro | Scala | [Code](https://github.com/austek/pact-avro-plugin) | community |
+|pact-mcp-plugin| Avro | Scala | [Code](https://github.com/pactflow/pact-mcp-plugin) | community |
 
 ## Template Plugins
 
@@ -37,6 +38,7 @@ We have built out some demos based on a few scenarios that you can run on your m
 2. [Pact Plugin](https://github.com/pact-foundation/pact-plugins/tree/main/examples/protobuf)
    1. [Proto file](https://github.com/pact-foundation/pact-plugins/blob/main/proto/plugin.proto)
 3. [CSV](https://github.com/pact-foundation/pact-plugins/tree/main/examples/csv)
+4. [MCP](https://github.com/mefellows/pact-example-mcp)
 
 👉 [Try out gRPC, CSV & Protobuf testing in Go, Rust & Java with Pact Plugins](https://killercoda.com/safdotdev/course/safacoda/grpc_quick_start)
   
