@@ -9,6 +9,10 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi
 
 
+## 0.5.7 - TLS panic fix + v2 plugin support
+
+* 9930b06c - fix: panic when there is no configured TLS provider #546 (Ronald Holshausen, Wed Aug 12 11:08:13 2026 +1000)
+
 ## 0.5.6 - Bugfix Release
 
 * b0dd00b8 - fix: when using rustls-no-provider with reqwest we need to set a crypto provider (Ronald Holshausen, Tue Aug 4 17:27:17 2026 +1000)
