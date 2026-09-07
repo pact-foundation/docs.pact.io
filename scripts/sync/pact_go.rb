@@ -6,10 +6,12 @@ DESTINATION_DIR = relative_path_to('docs/implementation_guides/go')
 TRANSFORM_PATH = -> (path) { File.join(DESTINATION_DIR, path.downcase) }
 INCLUDE = [
   ->(path) { %w{README.md}.include?(path) },
-  ->(path) { %w{CHANGELOG.md MIGRATION.md}.include?(path) },
+  ->(path) { %w{CHANGELOG.md}.include?(path) },
   ->(path) { path.start_with?('docs') && path.end_with?('md') }
 ]
-IGNORE = []
+IGNORE = [
+  ->(path) { path.start_with?('docs/contributing/', 'docs/superpowers/') }
+]
 CUSTOM_ACTIONS = [
   [:all, ->(md_file_contents) { md_file_contents.extract_title } ],
   ['README.md', lambda { |md_file_contents|
