@@ -9,6 +9,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi
 
 
+## 0.5.8 - Bugfix Release
+
+
 ## 0.5.7 - TLS panic fix + v2 plugin support
 
 * 9930b06c - fix: panic when there is no configured TLS provider #546 (Ronald Holshausen, Wed Aug 12 11:08:13 2026 +1000)
