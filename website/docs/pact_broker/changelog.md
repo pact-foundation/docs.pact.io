@@ -4,6 +4,18 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## [2.121.2] _2026-09-17_
+
+
+### 🐛 Bug Fixes
+
+-   Require pact/support/matchers for pact-support 2.0
+
+
+### 📦 Other
+
+-   Boot the app with runtime dependencies only
+
 ## [2.121.1] _2026-09-16_
 
 
