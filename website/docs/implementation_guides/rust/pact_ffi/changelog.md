@@ -9,6 +9,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi
 
 
+## 0.5.9 - Expose a log callback for host language logging
+
+
 ## 0.5.8 - Bugfix Release
 
 
