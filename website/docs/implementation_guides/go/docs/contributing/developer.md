@@ -14,6 +14,8 @@ Run `mise tasks` to list the available commands.
 
 Docker is required for `mise run pact` and the containerised test tasks.
 
+See [compatibility-suite.md](https://github.com/pact-foundation/pact-go/blob/master/compatibility-suite.md) for the Pact compatibility suite (`mise run compat`).
+
 ## Key Branches
 
 ### `1.x.x` 
