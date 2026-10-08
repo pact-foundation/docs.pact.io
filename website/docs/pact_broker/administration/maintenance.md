@@ -17,6 +17,7 @@ A configurable task will run on a cron schedule of your choosing to remove:
   * Duplicate verifications (this happens when verification results for the same pact version content are published by the same provider version multiple times - this can happen quite often under normal operation)
 * Historical webhook execution data (except for the very latest execution for each consumer/provider/event)
 * Application versions and their associated tags/pacts/verifications/webhooks that not in the configurable "keep" list (more on this below).
+* Stale branches that have not been active within the configurable retention period (more on this below).
 
 ### How the application version cleaning works
 
@@ -61,8 +62,58 @@ The selectors combine by "OR", meaning that a version is kept if it matches any 
 
 If you have a very large database, and you are just now enabling the clean, the initial clean up might take some time. To ensure that the clean does not have an impact on the performance of the Broker, it is recommended to set the cron schedule to something quite regular for the first day (eg. every 2 minutes), and set the clean limit quite low (eg. 100). Once the task has stopped deleting any more records, set the schedule back to something like once/twice a day, and make sure the clean limit is higher than the number of new versions you expect in that time period.
 
+### How the stale branch cleaning works
+
+Branches accumulate over time as feature work is merged and abandoned, which degrades query performance and clutters the UI. The clean task automatically deletes stale branches (without touching the associated versions or pacts) based on configurable "keep" selectors.
+
+A branch is considered for deletion if it does not match any of the configured keep selectors. The pacticipant's designated `main_branch` is **always protected** regardless of selectors. Branches are deleted in batches (controlled by a configurable limit) to avoid impacting Broker performance.
+
+### Configuring the "keep branch" selectors
+
+Each branch keep selector can have the following properties:
+
+* `max_age`: the number of days since the branch was last published to, as an integer. Branches last updated within this many days will be kept.
+* `branch`: a branch name (string) or list of branch names (array of strings) that should always be kept regardless of age.
+
+These properties can be used individually or together within a single selector. Selectors combine by "OR" — a branch is kept if it matches any selector.
+
+#### Examples
+
+* keep branches active in the last 90 days: `[{"max_age": 90}]`
+* keep branches active in the last 90 days, and always keep `main` and `develop`: `[{"max_age": 90}, {"branch": ["main", "develop"]}]`
+* disable stale branch cleanup entirely: `[]`
+
+#### Default configuration
+
+The default is `[{"max_age": 90}]`, which deletes any branch that has had no new versions published in the last 90 days (except the pacticipant's `main_branch`).
+
 ### Configuration options
 
 #### pactfoundation/pact-broker Docker image
 
 See the [environment variable documentation here](/pact_broker/docker_images/pactfoundation#automatic-data-clean-up)
+
+#### CleanTask (Ruby/Rake)
+
+If you are running the Pact Broker outside of the Docker image, you can configure the clean task directly in your Rakefile:
+
+```ruby
+PactBroker::DB::CleanTask.new do |task|
+  task.database_connection = # ... your database connection
+  task.keep_version_selectors = [
+    { max_age: 90, branch: "main" },
+    { latest: true, tag: true },
+    { deployed: true },
+    { released: true }
+  ]
+  task.keep_branch_selectors = [
+    { max_age: 90 },
+    { branch: ["main", "develop"] }
+  ]
+  task.version_deletion_limit = 500
+  task.branch_deletion_limit = 100  # defaults to version_deletion_limit if not set
+  task.dry_run = false
+end
+```
+
+Pass `keep_branch_selectors: nil` or `keep_branch_selectors: []` to disable stale branch cleanup entirely.
