@@ -105,6 +105,6 @@ $config->setLogLevel('DEBUG');
 
 * Pros
     * Simple
-* Cons
     * Do not support plugins (e.g. csv, gRPC)
+* Cons
     * Only single sink (stdout)
