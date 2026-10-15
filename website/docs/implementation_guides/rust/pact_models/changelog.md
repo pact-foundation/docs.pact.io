@@ -9,6 +9,9 @@ custom_edit_url: https://github.com/pact-foundation/pact-reference/edit/master/r
 https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_models
 
 
+## 1.3.16 - Body generator fix
+
+
 ## 1.3.15 - Bugfix Release
 
 * 7452d828 - fix: sort interactions before merge_join_by to prevent duplicates on pact merge #550 (Ronald Holshausen, Thu Sep 10 15:52:38 2026 +1000)
