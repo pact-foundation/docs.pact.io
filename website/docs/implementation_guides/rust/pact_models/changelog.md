@@ -10,6 +10,13 @@ https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_models
 
 ## Changelog
 
+## [1.3.17](https://github.com/pact-foundation/pact-reference/compare/pact_models-v1.3.16...pact_models-v1.3.17) - _2026-10-21_
+
+### 🐛 Bug Fixes
+
+
+
+
 ## 1.3.16 - Body generator fix
 
 
