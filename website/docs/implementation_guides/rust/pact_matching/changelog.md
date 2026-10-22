@@ -10,6 +10,18 @@ https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_matching
 
 ## Changelog
 
+## [2.1.0](https://github.com/pact-foundation/pact-reference/compare/pact_matching-v2.0.11...pact_matching-v2.1.0) - _2026-10-21_
+
+### 🚀 Features
+
+
+### 🐛 Bug Fixes
+
+
+### 🛠️ Miscellaneous Tasks
+
+
+
 ## 2.0.11 - Support plugins calling core framework matching rules
 
 
