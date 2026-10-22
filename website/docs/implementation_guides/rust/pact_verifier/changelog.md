@@ -10,6 +10,20 @@ https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier
 
 ## Changelog
 
+## [1.5.0](https://github.com/pact-foundation/pact-reference/compare/pact_verifier-v1.4.7...pact_verifier-v1.5.0) - _2026-10-21_
+
+### 🚀 Features
+
+
+
+### 🐛 Bug Fixes
+
+
+### 🛠️ Miscellaneous Tasks
+
+
+
+
 ## 1.4.7 - Support matching rules and generators from plugins
 
 
