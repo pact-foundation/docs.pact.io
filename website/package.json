@@ -13,7 +13,7 @@
     "@docusaurus/preset-classic": "^3.9.2",
     "@docusaurus/theme-mermaid": "^3.9.2",
     "@signalwire/docusaurus-plugin-llms-txt": "^1.2.2",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "remarkable": "^2.0.1"
