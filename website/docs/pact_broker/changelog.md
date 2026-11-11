@@ -4,6 +4,18 @@ custom_edit_url: https://github.com/pact-foundation/pact_broker/edit/master/CHAN
 ---
 <!-- This file has been synced from the pact-foundation/pact_broker repository. Please do not edit it directly. The URL of the source file can be found in the custom_edit_url value above -->
 
+## [2.124.0] _2026-11-11_
+
+
+### 🚀 Features
+
+-   _(matrix)_ Add matrix_max_limit to cap the matrix query limit
+
+
+### 🐛 Bug Fixes
+
+-   _(matrix)_ Support an environment in a selector alongside a version or latest
+
 ## [2.123.0] _2026-11-11_
 
 
