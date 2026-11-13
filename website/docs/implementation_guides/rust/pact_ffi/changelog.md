@@ -10,6 +10,20 @@ https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_ffi
 
 ## Changelog
 
+## [0.5.13](https://github.com/pact-foundation/pact-reference/compare/pact_ffi-v0.5.12...pact_ffi-v0.5.13) - _2026-11-13_
+
+### 🚀 Features
+
+
+### 🐛 Bug Fixes
+
+
+
+
+### 🏗️ Build and CI
+
+
+
 ## [0.5.12](https://github.com/pact-foundation/pact-reference/compare/pact_ffi-v0.5.11...pact_ffi-v0.5.12) - _2026-10-19_
 
 ### 🐛 Bug Fixes
