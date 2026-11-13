@@ -10,6 +10,18 @@ https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier
 
 ## Changelog
 
+## [1.6.0](https://github.com/pact-foundation/pact-reference/compare/pact_verifier-v1.5.0...pact_verifier-v1.6.0) - _2026-11-13_
+
+### 🚀 Features
+
+
+### 🐛 Bug Fixes
+
+
+### 📦 Other
+
+-   Merge pull request #592 from ChangkeunJ/fix/verifier-form-urlencoded-generators
+
 ## [1.5.0](https://github.com/pact-foundation/pact-reference/compare/pact_verifier-v1.4.7...pact_verifier-v1.5.0) - _2026-10-21_
 
 ### 🚀 Features
