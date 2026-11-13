@@ -10,6 +10,11 @@ https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_models
 
 ## Changelog
 
+## [1.3.18](https://github.com/pact-foundation/pact-reference/compare/pact_models-v1.3.17...pact_models-v1.3.18) - _2026-11-13_
+
+### 📚 Documentation
+
+
 ## [1.3.17](https://github.com/pact-foundation/pact-reference/compare/pact_models-v1.3.16...pact_models-v1.3.17) - _2026-10-21_
 
 ### 🐛 Bug Fixes
