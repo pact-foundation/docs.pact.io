@@ -8,6 +8,12 @@ custom_edit_url: https://github.com/pact-foundation/pact-go/edit/master/CHANGELO
 ## Previous releases
 
 
+## [2.9.1](https://github.com/pact-foundation/pact-go/compare/v2.9.0...v2.9.1) (2026-11-17)
+
+
+### Bug Fixes
+
+
 ## [2.9.0](https://github.com/pact-foundation/pact-go/compare/v2.8.0...v2.9.0) (2026-10-30)
 
 
