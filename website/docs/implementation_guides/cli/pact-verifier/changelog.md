@@ -10,6 +10,17 @@ https://github.com/pact-foundation/pact-reference/tree/master/rust/pact_verifier
 
 ## Changelog
 
+## [1.5.1](https://github.com/pact-foundation/pact-reference/compare/pact_verifier_cli-v1.5.0...pact_verifier_cli-v1.5.1) - _2026-11-23_
+
+### 🐛 Bug Fixes
+
+
+### 🧪 Testing
+
+
+### 🛠️ Miscellaneous Tasks
+
+
 ## [1.5.0](https://github.com/pact-foundation/pact-reference/compare/pact_verifier_cli-v1.4.0...pact_verifier_cli-v1.5.0) - _2026-11-13_
 
 ### 🚀 Features
